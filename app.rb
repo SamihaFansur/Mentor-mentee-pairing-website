@@ -3,7 +3,7 @@ require "sinatra/reloader"
 set :bind, "0.0.0.0"
 
 
-get "/example3" do
+get "/index" do
   # ... app code ...
   erb :view
 end
