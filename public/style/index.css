@@ -1,1501 +1,226 @@
-/*CSS code written in index.css for this website is written by Samiha Fansur*/
-/*All image dimensions are explicit to reduce cumulative layout shift*/
-
-  /*Common for all pages*/
-  body {
-    margin: 0; 
-    background-color: rgba(243, 250, 206, 0.951);
-    font-family: "Gabriola";
-    color: rgb(0, 0, 0);
-  }
-  
-  a {
-    color: #000;
-  }
-
-  footer {
-    bottom: 0;
-    width: 100%;
-    background-color: rgb(246, 205, 139);
-    text-align: center;
-    font-size: 1.42rem;
-  }
-
-  #wrapper {
-    width: 100%;
-    background-color: rgb(237, 246, 193);
-    margin: 0 auto;
-  }
-
-  /*background images combined into one class to avoid code repetition*/
-  .background {
-    background-image: url('../Images/bg.webp');
-    background-attachment: fixed;
-    display: flex;
-    flex-direction: column;
-    background-size: cover;
-    background-position: center center;   /*So that background always remains at the center of the window*/
-    background-repeat: no-repeat;
-    display: block;
-    text-align: left;
-  }
-
-  /*background properties for the 'main' tag*/
-  .backgrounds {
-    background-image: url('../Images/about.webp');
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    background-size: cover;
-    background-position: center center;   /*So that background always remains at the center of the window*/
-    background-repeat: no-repeat;
-  }
-
-  /*Properties for the main heading of every page*/ 
-  .titles {
-    font-family: "Bodoni MT Condensed";
-    text-align: center;
-    margin: 0;
-  }
-
-  /*mobile*/
-  /*About Me page*/
-  #pg1 {
-    padding: 0;
-    font-size: 2.7rem;
-  }
-
-  .hi {
-    position: absolute;
-    margin: 72.2% 0 0 0;
-    padding: 0 2% 2% 2%;
-    background-color: rgba(224, 224, 224, 0.896);
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-
-  #aboutme {
-    margin: 0;
-    padding: 0;
-    flex-direction: column;
-    font-size: 1.1rem;
-    text-align: justify;
-    font-weight: bold;
-  }
-
-  #mypic {
-    padding: 0;
-    display: block;
-    margin: 10% 0 0 14.5%;
-  }
-
-  #me {
-    width: 270.80px;
-    height: 371.2px;
-    margin: 22% 0 0 5%;
-    padding: 5% 0 17% 0;
-  }
-
-  .pics {
-    display: block;
-    float: right;
-    flex-direction: row;
-    margin: 0;
-    padding: 0 3% 0 2%;
-  }
-
-  #sports {
-    height: 145.1px;
-    width: 220px;
-  }
-
-  #reading {
-    height: 220px;
-    width: 144.5px;
-  }
-  
-  #my_hobbies {
-    margin: 3% 3% 3% 4%;
-    padding: 2%;
-  }
-
-  .hobbies {
-    display: block;
-    margin: 2% 2% 1.5% 2%;
-    padding: 0 2% 1% 2%;
-    background-color:rgba(163, 245, 193, 0.86);
-    font-size: 1.25rem;
-  }
-
-  .caption {
-    font-weight: bolder;
-    font-size: 4rem;
-    font-family: "Bodoni MT Condensed";
-  }
-
-  p {
-    margin: 0 auto;
-  }
-
-  .subs {
-    font-weight: bold;
-    font-size: 3rem;
-    color: rgb(29, 106, 61);
-    text-decoration: underline;
-  }
-
-  /*Degree Program Page*/
-  #uni_logo {
-    margin: 22% 0 0 0%;
-    padding: 10% 0 18% 0;
-    visibility: hidden;
-  }
-
-  #uni {
-    padding: 0;
-    display: block;
-    margin: 0;
-  }
-  
-  #pg2 {
-    font-size: 2.4rem;
-    padding: 0;
-  }
-
-  .overview {
-    position: absolute;
-    background-color: rgba(224, 224, 224, 0.89);
-    margin-top: 25.7%;
-    padding: 0 2% 2% 2%;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-
-  #summary {
-    margin: 0;
-    padding: 0;
-    flex-direction: column;
-    font-size: 1.31rem;
-    text-align: justify;
-    font-weight: bold;
-  }
-
-  #modules, #info_modules {
-    font-size: 2rem;
-    margin: 2% 3%;
-    padding: 2%;
-  }
-
-  .captions {
-    font-weight: bolder;
-    font-size: 4rem;
-    font-family: "Bodoni MT Condensed";
-  }
-
-  .sub {
-    font-weight: bold;
-    font-size: 2.5rem;
-    color: rgb(29, 106, 61);
-    text-decoration: underline;
-  }
-
-  #links {
-    display: block;
-    background-color: rgba(163, 245, 193, 0.804);
-    margin: 2%;
-    font-size: 1.3rem;
-    padding: 1.5%;
-  }
-
-  .module {
-    transition-duration: 0.4s;
-    background-color: rgb(178, 250, 220);
-    font-size: 1.3rem;
-    margin-bottom: 1%;
-    padding-left: 2%;
-    border-width: 2px;
-    border-style: solid;
-    border-color: black;
-  }
-
-  .link:link {
-    text-decoration: none;
-  }
-
-  .modules_info {
-    background-color: rgba(163, 245, 193, 0.804);
-    margin: 2% 2% 1.5%;
-  }
-
-  .modules_info p {
-    font-size: 1.6rem;
-    padding:  0.5% 2%;
-  }
-
-  #com1001, #com1002, #com1003, #com1005, #com1006, #com1008, #com1009 {
-    font-weight: bold;
-    font-size: 2.1rem;
-    color: rgb(29, 106, 61);
-    padding-left: 2%;
-    text-decoration: underline;
-    display: flex;
-  }
-
-  #ruby {
-    height: 140.16px;
-    width: 195.99px;
-    float: right;
-    padding: 5% 2% 0 2%;
-  }
-
-  #boolean_algebra {
-    height: 131.28px;
-    width: 197.72px;
-    float: right;
-    display: block;
-    padding: 4% 2% 0 2%;
-  }
-
-  #change {
-    height: 159.32px;
-    width: 179.43px;
-    display: block;
-    float: left;
-    padding: 1.6% 2% 0 0;
-  }
-
-  #miro {
-    height: 143.36px;
-    width: 215.43px;
-    display: block;
-    float: left;
-    padding: 2% 2% 0 0;
-  }
-  
-  #logic {
-    height: 121.52px;
-    width: 231.52px;
-    float: right;
-    display: block;
-    padding: 2% 2% 0 2%;
-  }
-
-  #website {
-    height: 363.52px;
-    width: 192.71px;
-    float: right;
-    display: block;
-    padding: 3% 2% 0 2%;
-  }
-
-  /*Pictorial Quiz Page*/
-  #pg3 {
-    padding: 0;
-    font-size: 5.1rem;
-  }
-
-  .quiz {
-    position: absolute;
-    margin-top: 27%;
-    background-color: rgba(224, 224, 224, 0.9);
-    padding: 0 2% 2% 2%;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-
-  #test {
-    margin: 0;
-    padding: 0;
-    flex-direction: column;
-    font-size: 1.5rem;
-    text-align: justify;
-    font-weight: bold;
-  }
-
-  #test p {
-    margin: 0;
-    padding: 1% 0;
-  }
-
-  #pic {
-    margin: 0 4% 0 7%;
-    padding: 0;
-    display: block;
-    overflow: hidden;
-  }
-
-  #qs {
-    width: 386.09px;
-    height: 363.09px;
-    margin: 25% 0 0 0;
-    padding: 10% 0 6% 0;
-    visibility: hidden;
-  }
-
-  .container {
-    position: relative;
-    width: 50%;
-    margin-bottom: 12%;
-  }
-  
-  .float {
-    padding-left: 10%;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .image {
-    width: 330.22px;
-    height: 375.2px;
-    opacity: 1;
-    display: block;
-    transition: .5s ease;
-    backface-visibility: hidden;
-    margin-top: 15%;
-  }
-  
-  .ans {
-    transition: .5s ease;
-    opacity: 0;
-    position: absolute;
-    top: 187.6px;
-    left: 165.11px;
-    transform: translate(-50%, -50%);
-    text-align: center;
-  }
-  
-  .container:hover .image {
-    opacity: 0.3;
-  }
-  
-  .container:hover .ans {
-    opacity: 1;
-  }
-  
-  .text {
-    background-color: rgb(93, 255, 201);
-    font-size: 24px;
-    font-weight: bold;
-    padding: 16px 22px;
-    border: 3px dashed black;
-  }
-
-  #reveal {
-    display: block;
-    text-align: center;
-    font-size: 2rem;
-    margin: 5% 0;
-    padding: 2%;
-    background-color:rgba(163, 245, 193, 0.86); 
-    text-decoration: underline;
-  }
-
-  /*Weekly Activity Page*/
-  #pg4 {
-    font-size: 2.45rem;
-    padding: 0;
-  }
-
-  .week {
-    position: absolute;
-    margin-top: 26.5%;
-    background-color: rgba(224, 224, 224, 0.896);
-    padding: 2%;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-
-  #activity {
-    margin: 0;
-    padding: 0;
-    flex-direction: column;
-    font-size: 1.28rem;
-    text-align: justify;
-    font-weight: bold;
-  }
-
-  #report {
-    padding: 0;
-    display: block;
-    margin: 18% 0 0 14.5%;
-  }
-
-  #cube {
-    width: 159.56px;
-    height: 180.48px;
-    margin: 22% 0 0 5%; 
-    padding: 60% 0 1% 15%;
-  }
-
-  #info {
-    margin: 3%;
-    padding: 1%;
-  }
-
-  #table {
-    display: block;
-    background-color:rgba(163, 245, 193, 0.86);
-    margin: 2%;
-    padding: 2%;
-  }
-
-  .data, .data tr, .data td {
-    border: 2px solid black;
-    font-size: 1.1rem;
-    border-collapse: collapse;
-    text-align: center;
-  }
-
-  .data {
-    width: 100%;
-    margin: 0 ;
-    border: 3px solid black;
-  }
-
-  #caption {
-    border: 3px solid black;
-    font-size: 1.4rem;
-    text-align: center;
-  }
-
-  .bold {
-    font-weight: bold;
-    font-size: 1rem;
-  }
-
-  #canvas { 
-    border: 1px solid gray;
-    padding: 1%;
-    display: inline;
-    background-color: white;
-    width: 100%;
-  }
-
-  #charts {
-    width: 95%;
-    text-align:center;
-    position: relative;
-    margin-left: 1.3%;
-  }
-
-  #charts button {
-    margin: 1.5%;
-    padding: 0 0.6%;
-    font-size: 0.9rem;
-    margin-right: 2%;
-    font-weight: bold;
-    font-family: "Gabriola";
-    border: 1px solid black;
-    background-color: white;
-  }
-
-  #barChart:hover, #lineGraph:hover, #pieChart:hover {
-    background-color:  rgba(237, 246, 193, 0.951);
-  }
-
-  #greenButton:hover {
-    background-color: rgba(135, 253, 178, 0.819);
-  }
-
-  #blueButton:hover {
-    background-color: rgba(163, 186, 255, 0.798);
-  }
-
-  #purpleButton:hover {
-    background-color: rgba(219, 106, 210, 0.798);
-  }
-
-  /*Contact page*/
-  .contact {
-    margin: 2% 0 0 5%;
-    font-size: 3.5rem;
-    color:  rgb(70, 7, 86);
-    text-align: center;
-    text-decoration: underline;
-  }
-
-  #form {
-    display: block;
-    text-align: left;
-    margin: 22% 0 2% 0;
-    padding: 3%; 
-    background-image: url('../Images/contact.webp');
-    background-size: 100% 100%;
-  }
-
-  .colA {
-    color: rgb(70, 7, 86);
-    text-align: left;
-    font-weight: bold;
-    padding-left: 22%;
-    font-size: 1.45rem;
-    text-decoration: underline rgb(0, 0, 0);
-  }
-
-  .colB {
-    color: rgb(56, 149, 118);
-    text-align: left;
-    font-size: 1.3rem;
-    padding-left: 14%;
-    font-weight: bold;
-  }
-
-  .user {
-    margin-left: 20%;
-    font-size: 1.45rem;
-  }
-
-  .user p {
-    margin: 0;
-  }
-
-  table {
-    width: 100%;
-  }
-
-  label {
-    color:  rgb(70, 7, 86);
-    font-weight: bold;
-  }
-
-  textarea {
-    width: 75%;
-  }
-
-  #name, #email {
-    width: 50%;
-  }  
-
-  #submit, #reset {
-    transition-duration: 0.6s;
-    background-color: rgba(132, 253, 213, 0.771);
-    font-size: 0.91rem;
-    font-weight: bold;
-    font-family: "Gabriola";
-    margin: 0 5% 7% 0;
-    padding: 0 5%;
-  }  
-
-  #submit:hover, #reset:hover {
-    background-color: rgb(212, 160, 226);
-    box-shadow: 0 4px 6px 2px rgba(185, 185, 185, 0.354);
-  }
-
-  /*Accessibility Page*/
-  #statement {
-    display: block;
-    text-align: left;
-    margin: 22% 3% 2% 3%;
-    padding: 2%;
-  }
-
-  .full {
-    display: block;
-    background-color:rgba(163, 245, 193, 0.86);
-    font-size: 1.5rem;
-    text-align: justify;
-    margin: 2%;
-    padding: 1% 2%;
-    border: 3px solid black;
-  }
-
-  #accessibility, #credits {
-    font-weight: bolder;
-    font-size: 4.6rem;
-    font-family: "Bodoni MT Condensed";
-    text-align: center;
-    text-decoration: underline;
-    padding: 1% 0;
-  }
-
-  #sub {
-    font-size: 1.7rem;
-    font-weight: bold;
-    color: rgb(12, 0, 106);
-    text-align: center;
-    padding: 0;
-    border: 2px solid rgb(29, 106, 61);;
-  } 
-
-  #f_link {
-    font-weight: bold;
-    text-decoration: underline;
-  }
-
-  .full p{
-    padding-bottom: 2%;
-  }
-
-  #update {
-    text-align: right;
-    font-weight: bold;
-    text-decoration: underline;
-  }
-
-  .full li, .full li a {
-    color: rgb(12, 0, 106);
-    font-size: 0.9em;
-  }
-  
-  .full li a {
-    font-weight: bold;
-  }
-  
-  /* header */
-  
-  .header {
-    background-color: rgb(246, 205, 139);
-    box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 4px 0px;
-    position: absolute;
-    width: 100%;
-    z-index: 3;
-    font-size: 17pt;
-  }
-  
-  .header ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    overflow: hidden;
-  }
-  
-  .header li .underline {
-    display: block;
-    padding: 20px;
-    text-decoration: none;
-    position: relative;
-  }
-  
-  .header .underline:before {
-    content: "";
-    position: absolute;     
-    visibility: hidden;
-    width: 100%;
-    height: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgb(181, 253, 223);  
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .header .underline:hover:before {
-    visibility: visible;
-    height: 3px;
-  }
-  
-  .header #logo {
-    display: block;
-    float: left;
-    padding: 5px 5px 0px;
-  }
-  
-  /* menu */
-  
-  .header .categories {
-    clear: both;
-    max-height: 0;
-    transition: max-height .2s ease-out;
-  }
-  
-  /* menu categories */
-  
-  .header .pgs {
-    float: right;
-    padding: 28px 20px;
-    position: relative;
-    user-select: none;
-  }
-  
-  .header .pgs .nav {
-    background: #333;
-    display: block;
-    height: 2px;
-    position: relative;
-    transition: background .2s ease-out;
-    width: 18px;
-  }
-  
-  .header .pgs .nav:before, .header .pgs .nav:after {
-    background: #333;
-    content: '';
-    display: block;
-    height: 100%;
-    position: absolute;
-    transition: all .2s ease-out;
-    width: 100%;
-  }
-  
-  .header .pgs .nav:before {
-    top: 5px;
-  }
-  
-  .header .pgs .nav:after {
-    top: -5px;
-  }
-  
-  /* menu button */
-  
-  .header #menu {
-    display: none;
-  }
-  
-  .header #menu:checked ~ .categories {
-    max-height: 600px;  /*So that all menu categories show when hamburger menu is opened*/
-  }
-  
-  .header #menu:checked ~ .pgs .nav {
-    background: transparent;
-  }
-  
-  .header #menu:checked ~ .pgs .nav:before {
-    transform: rotate(-45deg);
-    top:0;
-  }
-  
-  .header #menu:checked ~ .pgs .nav:after {
-    transform: rotate(45deg);
-    top:0;
-  }
-  
-
-  /* Tablet/IPad */
-  @media (min-width: 768px) {    
-    /*About Me Page*/
-    #mypic {
-      display: flex;
-      margin: 0 auto auto 0;
-      padding-left: 0;
-      float: left;
-      align-items: center;
-      justify-content: center;
-    }
-
-    #me {
-      height: 250.92px;
-      width: 183.05px;
-      float: left;
-      margin: 6% 0 4% 0;
-      padding: 8% 0 1% 5.5%;
-    }
-    
-    #pg1 {
-      text-align: left;
-      padding-left: 2%;
-      font-size: 3rem;
-    }
-
-    .hi {
-      position: unset;
-      margin: 11.3% 5% 0 1.7%;
-      padding: 0 2% 0 0;
-      display: block;
-      float: right;
-      height: fit-content;
-    }
-
-    #aboutme {
-      padding-left: 2%;
-      text-align: justify;
-      transform: none;
-      top: 0;
-      display: flex;
-      float: right;
-    } 
-
-    .hobbies {
-      margin: 2% 8% 2% 8%;
-      padding: 0 1% 10% 1.5%;
-      font-size: 1.42rem;
-    }
-    
-    .pics {
-      display: flex;
-      padding: 0 1.6% 0 1.5%;
-    }
-
-    /*Degree Program Page*/
-    #uni {
-      margin: 8% 0 1% 0;
-      display: flex;
-      float: left;
-      align-items: center;
-      justify-content: center;
-    }
-
-    #uni_logo {
-      height: 220.92px;
-      width: 301.44px;
-      float: left;
-      padding: 7% 0 3% 3%;
-      margin: 0;
-      visibility: visible;
-    }
-
-    .overview {
-      position: unset;
-      margin: 4% 5.5% 0 2%;
-      padding: 0 2.5% 0 0;
-      display: block;
-      float: right;
-      height: fit-content;
-    }
-
-    #pg2 {
-      text-align: left;
-      padding-left: 2%;
-      font-size: 1.8rem;
-    }
-  
-    #summary {
-      padding-left: 2%;
-      top: 0;
-      font-size: 1.15rem;
-    }
-
-    #links {
-      margin: 2.3% 17% 2% 17%;
-      padding: 0 2% 0 1%;
-    }
-  
-    .module {
-      font-size: 1.7rem;
-    }  
-  
-    #com1001, #com1002, #com1003, #com1005, #com1006, #com1008, #com1009 {
-      font-size: 2.4rem;
-    }
-
-    #ruby {
-      height: 235.16px;
-      width: 328.83px;
-      padding-top: 2.5%;
-    }
-
-    #boolean_algebra {
-      height: 140.96px;
-      width: 212.3px;
-      padding-top: 3%;
-    }
-
-    #change {
-      height: 235.12px;
-      width: 264.8px;
-      padding: 2% 1% 0 0;
-    }
-  
-    #miro {
-      height: 195.36px;
-      width: 293.57px;
-      padding: 1.3% 1% 0 0;
-    }
-
-    #logic {
-      height: 150px;
-      width: 285.47px;
-      padding: 2% 2% 0 2%;
-    }
-
-    #website {
-      height: 320.48px;
-      width: 169.89px;
-      padding-top: 2%;
-    }
-
-    /*Pictorial Quiz Page*/
-    #pic {
-      display: flex;
-      margin: 7.5% 5% 0 0;
-      float: left;
-      padding-left: 4%;
-      align-items: center;
-      justify-content: center;
-    }
-  
-    #qs {
-      height: 255.92px;
-      width: 273.16px;
-      float: left;
-      padding: 6% 0 2% 1%;
-      margin: 0;
-      visibility: visible;
-    }
-  
-    #pg3{
-      text-align: left;
-      padding-left: 2%;
-      font-size: 3rem;
-    }
-  
-    .quiz {
-      position: unset;
-      margin: 6% 1% 0 1%;
-      padding: 0 2.5% 0 0;
-      display: block;
-      float: right;
-      height: fit-content;
-    }
-  
-    #test {
-      padding-left: 2%;
-      top: 0px;
-      display: flex;
-      font-size: 1.2rem;
-    } 
-  
-    #reveal {
-      margin: 4% 0;
-    }
-  
-    .container {
-      margin: 2% 7% 3.5% 1%;
-      width: 25%;
-    }
-  
-    .float {
-      padding-left: 1.2%;
-      flex-direction: row;
-    }
-    
-    .image {
-      display: inline-block;
-      width: 233.4px;
-      height: 265.2px;
-      margin-top: 0%;
-    }
-  
-    .ans {
-      top: 132.6px;
-      left: 116.7px;
-    }
-
-    /*Weekly Activity Page*/
-    #report {
-      display: flex;
-      margin: 0;
-      float: left;
-      align-items: center;
-      justify-content: center;
-    }
-
-    #cube {
-      height: 240.92px;
-      width: 213px;
-      float: left;
-      margin: 6% 0 2% 0;
-      padding: 6% 0 0 5%;
-    }
-    
-    #pg4 {
-      text-align: left;
-      padding-left: 2%;
-      font-size: 2.73rem;
-    }
-
-    .week {
-      position: unset;
-      margin: 11.3% 5% 0 1.7%;
-      padding: 0 2% 0 0;
-      display: block;
-      float: right;
-      height: fit-content;
-    }
-
-    #activity {
-      padding-left: 2%;
-      font-size: 1.1rem;
-      text-align: justify;
-      top: 0;
-      display: flex;
-      float: right;
-    } 
-
-    .data, .data tr, .data td {
-        font-size: 1.4rem;
-    }
-
-    #charts button {
-      font-size: 1.4rem;
-    }
-
-    #caption {
-      font-size: 2.4rem;
-    }
-  
-    .bold {
-        font-size: 1.5rem;
-    }
-
-    /*Contact Page*/
-    .contact {
-      margin: 3% auto auto 0;
-      padding-left: 5%;
-      font-size: 5rem;
-    }
-
-    #form {
-      margin: 12% 12% 3% 12%;
-    }
-    
-    .colA {
-      font-size: 1.8rem;
-      padding-left: 20.5%;
-      width: 40%;
-    }
-    
-    .colB {
-      font-size: 1.8rem;
-      padding-left: 3%;
-    }
-
-    .user p {
-      margin: 20px;
-    }  
-
-    /*Accessibility Page*/
-    .full {
-      margin: 2% 6% 2% 6%;
-      padding: 0 1% 0.5% 1.5%;
-      font-size: 1.75rem;
-    }  
-
-    #accessibility {
-        font-size: 5.8rem;
-    }
-
-    #sub {
-        font-size: 2.4rem;
-    }
-
-    #statement {
-      margin: 12% 3% 3% 3%;
-    }
-  
-  }
-
-
-  /*Laptop*/
-  @media screen and (min-width: 1024px) {
-    .header li {
-      float: left;
-    }
-
-    .header li .underline {
-      padding: 20px 30px 10px 30px;
-    }
-
-    .header .categories {
-      clear: none;
-      float: right;
-      max-height: none;
-    }
-
-    .header .pgs {
-      display: none;
-    }
-
-    /*About Me Page*/  
-    #mypic {
-      margin: 8% auto 5% 0;
-      padding-left: 6%;
-    }
-
-    #me {
-      height: 320.92px;
-      width: 234.12px;
-      padding: 5.2% 0 0 4%;
-      margin: 0;
-    }    
-  
-    #aboutme {
-      font-size: 1.45rem;
-    } 
-    
-    #pg1 {
-      font-size: 3.5rem;
-    }
-
-    .hi {
-      margin: 5% 10% 0 3%;
-      padding: 0 3% 0 0.7%;
-    }
-    
-    #my_hobbies {
-      margin: 5% 3% 5% 4%;
-    }
-
-    /*Degree Program Page*/
-    #uni {
-      margin: 6% 0 5% 0;
-      padding-left: 4%;
-    }
-
-    #uni_logo {
-      height: 275.93px;
-      width: 376.5px;
-      padding: 8% 0 0 1%;
-    }
-
-    .overview {
-      margin: 8% 6% 0 3%;
-      padding-right: 1.5%;
-    }
-  
-    #summary {
-      display: flex;
-      font-size: 1.3rem;
-    }
-
-    #pg2 {
-      font-size: 2.5rem;
-    }
-
-    #boolean_algebra {
-      padding-top: 0;
-    }
-
-    #change {
-    height: 210.12px;
-    width: 236.65px;
-    padding: 0.8% 1% 0 0;
-    }
-
-    #miro {
-      height: 159.28px;
-      width: 239.36px;
-    }
-
-    #website {
-      height: 338.48px;
-      width: 179.44px;
-      padding-top: 1%;
-    }
-
-    /*Pictorial Quiz Page*/
-    #pg3{
-      font-size: 5rem;
-    }
-    
-    .quiz {
-      margin: 7% 3% 0 3%;
-    }
-    
-    #test {
-      font-size: 1.41rem;
-    } 
-  
-    #pic {
-      margin: 4% 5% 2% 0;
-      padding-left: 3%;
-    }
-  
-    #qs {
-      height: 295.92px;
-      width: 315.85px;
-      padding: 7% 0 0 1%;
-    }
-  
-    .container {
-      margin: 2% 7.5% 3.5% 0.5%;
-    }
-  
-    .image {
-      width: 317.01px;
-      height: 360.2px;
-    }
-  
-    .ans {
-      top: 180.1px;
-      left: 158.51px;
-    }
-
-    /*Weekly Activity Page*/
-    #report {
-      margin: 4% auto 4% 6%;
-    }
-
-    #activity {
-      font-size: 1.32rem;
-    }
-
-    #cube {
-      height: 310.92px;
-      width: 274.88px;
-      padding: 8.5% 1% 0 2.5%;
-      margin: 0;
-    }
-    
-    #pg4 {
-      font-size: 3.5rem;
-    }
-    
-    .week {
-      margin: 8.5% 10% 0 1%;
-    }
-    
-    #info {
-      margin: 5% 3%;
-    }
-    
-    .data, .data tr, .data td {
-      font-size: 1.9rem;
-    }
-    
-    #caption {
-      font-size: 2.6rem;
-    }
-  
-    .bold {
-        font-size: 1.8rem;
-    }
-
-
-    /*Contact Page*/
-    .contact {
-      font-size: 7rem;
-    }
-    
-    .colA {
-      font-size: 1.8rem;
-      padding-left: 25.5%;
-    }    
-
-    .colB {
-      font-size: 2rem;
-      padding-left: 5.5%;
-    }
-
-    /*Accessibility Page*/
-    #statement {
-      margin-bottom: 5%;
-    }
-
-  }
-
-  /* Desktop */
-  @media screen and (min-width: 1440px) {
-
-    /*About Me Page*/
-    #mypic {
-      margin: 0 auto 1% 0;
-    }
-
-    #me {
-      padding: 6.5% 0 0 2.5%;
-    }
-
-    #aboutme {
-      font-size: 1.7rem;
-    }
-
-    #pg1 {
-      font-size: 5rem;
-    }
-
-    .hi {
-      margin: 7% 8% 0 1%;
-      padding: 0 2% 0 0;
-    }
-
-    .caption{
-      font-size: 3.5rem;
-    }
-
-    .subs {
-      font-size: 2.2rem;
-    }
-
-    /*Degree Program Page*/
-    #uni {
-      margin: 5% 0 2% 0;
-      padding-left: 0;
-    }
-  
-    #uni_logo {
-      height: 250.05px;
-      width: 341.19px;
-      padding: 2% 0 0 2.8%;
-    }
-  
-    .overview {
-      margin: 2% 4% 0 2%;
-    }
-  
-    #summary {
-      font-size: 1.8rem;
-    }
-  
-    #pg2 {
-      font-size: 3.7rem;
-    }
-  
-    #links {
-      font-size: 1.6rem;
-      margin: 2.3% 30% 2%;
-      padding: 0 2% 1%;
-    }
-
-    .module:hover {
-      background-color: rgba(237, 246, 193, 0.805);
-      color: black;
-      box-shadow: 0 6px 8px 4px rgba(185, 185, 185, 0.354);
-      font-size: 110%;
-    }
-  
-    #ruby {
-      height: 215.16px;
-      width: 300.85px;
-      padding: 1% 1% 0 2%;
-    }
-  
-    #boolean_algebra {
-      height: 130.96px;
-      width: 197.24px;
-      padding-right: 1%;
-    }
-  
-    #miro {
-      height: 190.04px;
-      width: 285.58px;
-      padding-top: 1%;
-    }
-  
-    #logic {
-      padding: 0 1% 0 2%;
-    }
-  
-    #website {
-      height: 220.48px;
-      width: 116.88px;
-      padding: 0 1% 0 1%;
-    }
-
-    /*Pictorial Quiz Page*/
-      
-    #pic {
-      margin: 5% 5% 1% 0;
-    }
-
-    #qs {
-      padding: 2% 0 0 1%;
-    }
-    
-    .quiz {
-      margin: 2% 4% 0 3%;
-    }
-    
-    #test {
-      font-size: 1.95rem;
-    }
-
-    #reveal {
-      margin: 2% 0;
-    }
-
-    .container {
-      margin: 2% 13% 3.5% auto;
-    }
-
-    .float {
-    padding-left: 7%;
-    }
-
-    .image {
-      width: 352.21px;
-      height: 400.2px;
-    }
-
-    .ans {
-    top: 200.1px;
-    left: 176.11px;
-    }
-
-    /*Weekly Activity Page*/
-    #table {
-      margin: 2% 8%;
-      padding: 2% 0;
-    }
-  
-    #canvas {
-      width: 85%;
-    }
-  
-    #charts {
-      margin-left: 2.5%;
-    }
-  
-    #report {
-      margin: 0.8% auto 0 0.6%;
-    }
-  
-    #cube {
-      padding: 5% 1% 0.5% 9%;
-    }
-
-    .week {
-      margin: 5% 10% 0 1%;
-    }
-  
-    #activity {
-      font-size: 2rem;
-    }
-  
-    #pg4 {
-      font-size: 5rem;
-    }
-  
-    .data {
-      width: 50%;
-      margin: 0 25% 0 25%;
-      border: 3px solid black;
-      font-size: 2.1rem;
-    }
-  
-    #caption {
-      font-size: 2.8rem;
-    }
-
-    /*Contact Page*/
-    #form {
-      margin: 8% 22% 4% 22%;
-    }
-
-    .colA {
-      font-size: 2.2rem;
-      padding-left: 28%;
-    }
-
-    .colB {
-      padding-left: 6%;
-    }
-
-    .user {
-      margin-left: 22%;
-    }
-
-    #submit, #reset {
-      font-size: 1.2rem;
-      margin-bottom: 0;
-    }  
-
-    /*Accessibility Page*/
-    #statement {
-      margin: 7% 3% 2% 3%;
-    }
-
-    .full {
-      font-size: 1.8rem;
-    }
-
-    #accessibility {
-      font-size: 6.5rem;
-    }
-
-    #sub {
-        font-size: 2.7rem;
-    }
-    
-  }
+body {
+  margin: 0; 
+  background-color: rgba(243, 250, 206, 0.951);
+  font-family: "Gabriola";
+  color: rgb(0, 0, 0);
+}
+
+a {
+  color: rgb(255, 255, 255);
+}
+
+footer {
+  width: 100%;
+  background-color: #03203C;
+  text-align: center;
+  font-size: 1.42rem;
+  color: white;
+}
+
+#wrapper {
+  width: 100%;
+  background-color: rgb(237, 246, 193);
+  margin: 0 auto;
+}
+
+/*background images combined into one class to avoid code repetition*/
+.background {
+  background-image: url('../images/bg.jpg');
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  background-size: cover;
+  background-position: center center;   /*So that background always remains at the center of the window*/
+  background-repeat: no-repeat;
+  display: block;
+  text-align: left;
+}
+
+/*background properties for the 'main' tag*/
+.backgrounds {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-size: cover;
+  background-position: center center;   /*So that background always remains at the center of the window*/
+  background-repeat: no-repeat;
+}
+
+/*Properties for the main heading of every page*/ 
+.titles {
+  font-family: "Bodoni MT Condensed";
+  text-align: center;
+  margin: 0;
+}
+
+#page-wrap {
+  width: 800px;
+  margin: 0 auto;
+}
+
+#statement{
+  display: block;
+  text-align: left;
+  margin: 7% 3% 2% 3%;
+  padding: 2%;
+}
+
+.full {
+  display: block;
+  background-color:rgba(255, 255, 255, 0.347);
+  text-align: justify;
+  border: 3px solid black;
+  margin: 2% 2% 1.5%;
+  padding: 0 1% 0.5% 1.5%;
+  font-size: 1.8rem;
+}
+
+.mentoring{
+  font-weight: bolder;
+  font-size: 6.2rem;
+  font-family: "Pristina" ,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  text-decoration: underline;
+  padding: 1% 0;
+  color: #052f55;
+  text-shadow:1px 1px 10px #fff, 1px 1px 10px #ccc;
+}
+
+.full p {
+  font-size: 1.8rem;
+  padding:  0.5% 30% 0% 2%;
+}
+
+#mentoring_sess {
+  height: 237.12px;
+  width: 355.2px;
+  float: right;
+  padding: 3% 2% 0 2%;
+}
+
+#mentors {
+  display: block;
+  text-align: left;
+  margin: 5% 3% 2% 3%;
+  padding: 2%;
+}
+
+.mentor_pics {
+  height: 213.12px;
+  width: 218.88px;
+  border-radius: 50%;
+}
+
+figure {
+  display: inline-block;
+  position: relative;
+  height: 213.12px;
+  width: 280px;
+}
+  
+figcaption {
+  position: absolute;
+  top: 75px;
+  right: 0;
+  left: 250px;
+  width: 200px;
+  height: 180px;
+  line-height: 24px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 2.3rem;
+  color: #2f219d;;
+}
+
+h6 {
+  margin-top: 15px;
+  color: rgb(0, 0, 0);
+  text-shadow:1px 1px 10px rgb(119, 181, 226), 1px 1px 10px #ccc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+
+.full::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+/* header */
+
+.header {
+  background-color: #03203C;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 4px 0px;
+  position: absolute;
+  width: 100%;
+  z-index: 3;
+  font-size: 17pt;
+}
+
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+}
+
+.header li {
+  float: left;
+}
+
+.header li .underline {
+  display: block;
+  padding: 20px 30px 3px 30px;
+  text-decoration: none;
+  position: relative;
+}
+
+.header .underline:before {
+  content: "";
+  position: absolute;     
+  visibility: hidden;
+  width: 100%;
+  height: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #4a9bf8;  
+  transition: all 0.3s ease-in-out;
+}
+
+.header .underline:hover:before {
+  visibility: visible;
+  height: 3px;
+}
+
+.header #logo {
+  display: block;
+  float: left;
+  padding: 5px 5px 0px;
+}
+
+/* menu */
+
+.header .categories {
+  clear: none;
+  float: right;
+  max-height: none;
+}
+
+/* menu categories */
+
+.header .pgs {
+  float: right;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+  display: none;
+}

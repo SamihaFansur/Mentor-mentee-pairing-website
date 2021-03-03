@@ -5,5 +5,5 @@ set :bind, "0.0.0.0"
 
 get "/index" do
   # ... app code ...
-  erb :view
+  erb :index
 end
