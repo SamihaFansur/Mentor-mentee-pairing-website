@@ -7,3 +7,8 @@ get "/index" do
   # ... app code ...
   erb :index
 end
+
+get "/SignUpForm" do
+  # ... app code ...
+  erb :signup
+end

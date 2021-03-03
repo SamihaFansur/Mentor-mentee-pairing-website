@@ -25,7 +25,7 @@ footer {
 
 /*background images combined into one class to avoid code repetition*/
 .background {
-  background-image: url(bg.jpg);
+  background-image: url('../images/bg.jpg');
   background-attachment: fixed;
   display: flex;
   flex-direction: column;
