@@ -8,7 +8,30 @@ get "/index" do
   erb :index
 end
 
+get "/contact" do
+  # ... app code ...
+  erb :contact
+end
+
+get "/accessibility" do
+  # ... app code ...
+  erb :accessibility
+end
+
+get "/LoginPage" do
+  # ... app code ...
+  erb :login
+end
+
 get "/SignUpForm" do
   # ... app code ...
   erb :signup
+end
+
+
+
+post "/index" do
+  puts params
+  redirect "/index"
+
 end
