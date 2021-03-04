@@ -7,8 +7,6 @@ CREATE TABLE users (
     course TEXT,
     course_year TEXT,
     position TEXT,
-    signal TEXT,
-    criteria TEXT,
 );
 
 INSERT INTO users VALUES();
