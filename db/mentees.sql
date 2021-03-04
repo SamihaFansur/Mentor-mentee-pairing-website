@@ -6,7 +6,7 @@ CREATE TABLE mentees (
     phone_number INTEGER,
     course TEXT,
     course_year TEXT,
-    position TEXT,
+    university TEXT,
 );
 
 INSERT INTO mentees VALUES();
