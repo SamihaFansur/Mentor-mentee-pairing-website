@@ -318,6 +318,13 @@
               </select>
             </p>
 
+            <% unless @mentee.errors.size.zero? %>
+              <p><strong class="error">Please correct the errors </strong></p>
+            <% end %>
+
+            <form method="post">
+                <%= erb :"common/mentee_form" %>
+            </form>
 
           </div>
           
