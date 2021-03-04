@@ -2,7 +2,7 @@
     <div class="background" id="statement">
       <!--Our Program-->
       <div class="full"> <!--row-->
-        <div class="title">Sign Up</div> <!--Main page Title-->  
+        <div class="title">Mentee Sign Up</div> <!--Main page Title-->  
         <form name="myform" action="/index" method="post" onsubmit="alert('You will be redirected to the Home Page now...');" >
           <input type="hidden" name="recipients" value="sfansur1@sheffield.ac.uk"> <!--NEED TO REDIRECT TO HOMEPAGE!!!!!-->
           
@@ -16,18 +16,6 @@
             <p>
               <label for="email" class="options">UoS E-mail:</label>
               <input type="email" name="email" id="email" placeholder="Enter your UoS email..." maxlength="40" size="30" required><!--Mandatory field-->
-            </p>
-
-            <p>
-              <strong>Degree: </strong>
-              <input type="radio" id="bsc" name="degrees" value="1" required><!--Value Can be changed-->
-              <label for="bsc">Undergraduate</label>
-
-              <input type="radio" id="msc" name="degrees" value="1"><!--Value Can be changed-->
-              <label for="msc">Masters</label>
-
-              <input type="radio" id="phd" name="degrees" value="1"><!--Value Can be changed-->
-              <label for="phd">PhD</label>
             </p>
 
             <p>
@@ -330,14 +318,6 @@
               </select>
             </p>
 
-            <p>
-              <strong>Positon: </strong> 
-              <input type="radio" id="mentee" name="position" value="1" required> <!--Mentee=1, Mentor=0--><!--Value Can be changed-->
-              <label for="mentee">Mentee</label>
-
-              <input type="radio" id="mentor" name="position" value="0"> <!--Mentee=1, Mentor=0--><!--Value Can be changed-->
-              <label for="mentor">Mentor</label>
-            </p>
 
           </div>
           
