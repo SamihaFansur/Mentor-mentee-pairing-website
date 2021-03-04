@@ -3,7 +3,7 @@ CREATE TABLE users (
     first_name TEXT,
     surname TEXT,
     email TEXT,
-    phone_number TEXT,
+    phone_number INTEGER,
     course TEXT,
     course_year TEXT,
     position TEXT,
