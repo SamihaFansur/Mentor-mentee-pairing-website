@@ -23,6 +23,7 @@ footer {
   margin: 0 auto;
 }
 
+
 /*background images combined into one class to avoid code repetition*/
 .background {
   background-image: url('../images/bg.jpg');
@@ -283,3 +284,4 @@ h6 {
   user-select: none;
   display: none;
 }
+
