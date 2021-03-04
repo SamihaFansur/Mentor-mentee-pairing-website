@@ -1,42 +1,41 @@
 <%= erb :"common/header" %>
-
 <div class="background" id="statement">
     <div class="full">
         <div class="title">Contact</div>
+          <div>
             <h2 class="description">If you need to contact an admin use the section below.</h2>
 
               <img src="images/contact.png" alt="Contact">
            
-      <h2>Contact Admin: </h2>
+              <h2>Contact Admin: </h2>
 
-    <p>Send  an email to admin</p>
+              <p>Send  an email to admin</p>
 
 
-     
- <form name="myform" action="https://www.dcs.shef.ac.uk/cgi-intranet/public/FormMail.php" method="POST">
-      <input type="hidden" name="myself" value="egoodbrand1@sheffield.ac.uk">
-          <p>
-   
-            <label for="from">Your name:</label>
-            <input type="text" name="from" id="from" placeholder="name" maxlength="40" size="20">
-         </p>
-   
-         <p>
-            <label for="email">Your e-mail:</label>
-            <input type="email" name="email" id="email" placeholder="email" maxlength="40" size="20" required>
-         </p>
+               <form name="myform" action="https://www.dcs.shef.ac.uk/cgi-intranet/public/FormMail.php" method="POST">
+                <input type="hidden" name="myself" value="sfansur1@sheffield.ac.uk">
+                    <p>
 
-         <p>
-            <label for="message">Your Message:</label>
-            <input type="text" name="message" id="message" placeholder="message" maxlength="40" size="40" required>
-        </p>
-     <p>
- </p>
+                      <label for="from">Your name:</label>
+                      <input type="text" name="from" id="from" placeholder="name" maxlength="40" size="20">
+                   </p>
 
-     <input type="submit" name="submit" id="submit" value="Submit">
-     <input type="reset">
-       
-      </form>
+                   <p>
+                      <label for="email">Your e-mail:</label>
+                      <input type="email" name="email" id="email" placeholder="email" maxlength="40" size="20" required>
+                   </p>
+
+                   <p>
+                      <label for="message">Your Message:</label>
+                      <input type="text" name="message" id="message" placeholder="message" maxlength="40" size="40" required>
+                  </p>
+
+                 <input type="submit" id="submit" value="Submit">
+                 <input type="reset" id="reset" value="Reset">
+
+              </form>
+          </div>
+            
     </div>
    </div>               
 
