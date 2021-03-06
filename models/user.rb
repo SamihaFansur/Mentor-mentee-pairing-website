@@ -1,7 +1,7 @@
 # A mentee record from the database
 class mentee < Sequel::Model
   def name
-    "#{first_name} #{surname}"
+    "#{fname} #{lname}"
   end
 
   def self.id_exists?(id)
@@ -13,25 +13,23 @@ class mentee < Sequel::Model
   end
 
   def load(params)
-    self.first_name = params.fetch("first_name", "").strip
-    self.surname = params.fetch("surname", "").strip
+    self.fname = params.fetch("fname", "").strip
+    self.lname = params.fetch("lname", "").strip
     self.email = params.fetch("email", "").strip
-    self.phone_number = params.fetch("phone_number", "").strip
-    self.course = params.fetch("course", "").strip
-    self.course_years = params.fetch("course_years", "").strip
-    self.university = params.fetch("university", "").strip
+    self.phoneNum = params.fetch("phoneNum", "").strip
+    self.courseName = params.fetch("course", "").strip
+    self.year = params.fetch("course_years", "").strip
     
   end
 # mentees' imformation would be saved and displayed
   def validate
     super
-    errors.add("first_name", "cannot be empty") if !first_name || first_name.empty?
-    errors.add("surname", "cannot be empty") if !surname || surname.empty?
+    errors.add("fname", "cannot be empty") if !fname || fname.empty?
+    errors.add("lname", "cannot be empty") if !lname || lname.empty?
     errors.add("email", "cannot be empty") if !email || email.empty?
-    errors.add("phone_number", "cannot be empty") if !phone_number || phone_number.empty?
-    errors.add("course", "cannot be empty") if !course || course.empty?
-    errors.add("course_years", "cannot be empty") if !course_years || course_years.empty?
-    errors.add("university", "cannot be empty") if !university || university.empty?
+    errors.add("phoneNum", "cannot be empty") if !phoneNum || phoneNum.empty?
+    errors.add("courseName", "cannot be empty") if !courseName || courseName.empty?
+    errors.add("year", "cannot be empty") if !year || year.empty?
     
 end
 # If mentees forget to finish all the questions, there has some warnings to them

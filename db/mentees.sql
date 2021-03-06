@@ -1,12 +1,11 @@
 CREATE TABLE mentees (
     id INTEGER PRIMARY KEY,
-    first_name TEXT,
-    surname TEXT,
+    fname TEXT,
+    lname TEXT,
     email TEXT,
-    phone_number INTEGER,
-    course TEXT,
-    course_year TEXT,
-    university TEXT,
+    phoneNum INTEGER,
+    courseName TEXT,
+    year INTEGER,
 );
 
 INSERT INTO mentees VALUES();
