@@ -5,7 +5,7 @@ CREATE TABLE mentees (
     email TEXT,
     phoneNum INTEGER,
     courseName TEXT,
-    year INTEGER,
+    cyear INTEGER,
 );
 
 INSERT INTO mentees VALUES();
