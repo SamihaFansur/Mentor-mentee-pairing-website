@@ -3,6 +3,9 @@
       <!--Our Program-->
       <div class="full">
         <div class="title">Mentee Sign Up</div> <!--Main page Title-->  
+        <% unless @mentees.errors.size.zero? %>
+          <p><strong class="error">Please correct the errors below:</strong></p>
+        <% end %>
         <form name="myform" action="/index" method="post" onsubmit="alert('You will be redirected to the Home Page now...');" >
           <input type="hidden" name="recipients" value="sfansur1@sheffield.ac.uk"> <!--NEED TO REDIRECT TO HOMEPAGE!!!!!-->
           
@@ -10,17 +13,27 @@
           <div class="col" id="col1">
             <p>
               <label for="fname" class="options">First name:</label>
-              <input type="text" name="fname" id="fname" maxlength="40" size="30" placeholder="Enter first name..."  required><!--Mandatory field-->
-            </p>
+              <input type="text" name="fname" id="fname" maxlength="40" size="30" placeholder="Enter first name..."  required value="<%= h @mentees.fname %>"><!--Mandatory field-->
+              <% if @mentees.errors.include?("fname") %>
+                <% @mentees.errors["fname"].each do |error| %>
+                  <p class="error"><strong>First name <%= error %></strong></p>
+                <% end %>
+              <% end %>
+           </p>
 
             <p>
               <label for="email" class="options">UoS E-mail:</label>
-              <input type="email" name="email" id="email" placeholder="Enter your UoS email..." maxlength="40" size="30" required><!--Mandatory field-->
-            </p>
+              <input type="email" name="email" id="email" placeholder="Enter your UoS email..." maxlength="40" size="30" required value="<%= h @mentees.email %>"><!--Mandatory field-->
+              <% if @mentees.errors.include?("email") %>
+                <% @mentees.errors["email"].each do |error| %>
+                  <p class="error"><strong>Email <%= error %></strong></p>
+                <% end %>
+              <% end %>
+          </p>
 
             <p>
               <label for="courseName" class="options">Course: </label> <!--Dropdown List-->
-              <select name="courseName" id="courseName" required> <!--Course List-->
+              <select name="courseName" id="courseName" required value="<%= h @mentees.courseName %>"> <!--Course List-->
                 <option value="">Select</option>
                 <option value="1">Accounting and Financial Management (BA)</option>
                 <option value="2">Accounting and Financial Management and Economics (BA)</option>
@@ -289,6 +302,11 @@
                 <option value="265">Zoology with Placement Year (BSc)</option>
 
               </select>
+               <% if @mentees.errors.include?("courseName") %>
+                <% @mentees.errors["courseName"].each do |error| %>
+                  <p class="error"><strong>Course Name <%= error %></strong></p>
+                <% end %>
+              <% end %>
             </p>
             
           </div>
@@ -297,17 +315,27 @@
           <div class="col" id="col2">
             <p>
               <label for="lname" class="options">Last name:</label>
-            <input type="text" name="lname" id="lname" maxlength="40" size="30" placeholder="Enter last name..."  required><!--Mandatory field-->
+              <input type="text" name="lname" id="lname" maxlength="40" size="30" placeholder="Enter last name..."  required value="<%= h @mentees.lname %>"><!--Mandatory field-->
+              <% if @mentees.errors.include?("lname") %>
+                <% @mentees.errors["lname"].each do |error| %>
+                  <p class="error"><strong>Last Name <%= error %></strong></p>
+                <% end %>
+              <% end %>
             </p>
 
             <p>
               <label for="phoneNum" class="options">Phone Number:</label>
-              <input type="tel" name="phoneNum" id="phoneNum" placeholder="+XX XXXXXXXXXX" maxlength="40" size="30" required><!--Mandatory field-->
+              <input type="number" name="phoneNum" id="phoneNum" placeholder="+XX XXXXXXXXXX" maxlength="40" size="30" required value="<%= h @mentees.phoneNum %>"><!--Mandatory field-->
+               <% if @mentees.errors.include?("phoneNum") %>
+                <% @mentees.errors["phoneNum"].each do |error| %>
+                  <p class="error"><strong>Phone Number <%= error %></strong></p>
+                <% end %>
+              <% end %>
             </p>
 
             <p>
               <label for="cyear" class="options">Year of study: </label> <!--Dropdown list-->
-              <select name="cyear" id="cyear" required>
+              <select name="cyear" id="cyear" required value="<%= h @mentees.cyear %>">
                 <option value="">Select</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -316,6 +344,11 @@
                 <option value="5">5</option>
                 <option value="6">6</option>
               </select>
+              <% if @mentees.errors.include?("cyear") %>
+                <% @mentees.errors["cyear"].each do |error| %>
+                  <p class="error"><strong>Course Year <%= error %></strong></p>
+                <% end %>
+              <% end %>
             </p>
 
           </div>

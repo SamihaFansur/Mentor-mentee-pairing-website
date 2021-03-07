@@ -1,16 +1,18 @@
-get "/add" do
-  @mentee = Mentee.new
-  erb :add
+get "/SignUpForm" do
+  @mentees = Mentee.new
+  erb :signup
 end
 
-post "/add" do
-  @mentee = Mentee.new
-  @mentee.load(params)
+post "/SignUpForm" do
+  @mentees = Mentee.new
+  @mentees.load(params)
 
-  if @mentee.valid?
-    @mentee.save_changes
-    redirect "/edit"
+  if @mentees.valid?
+    @mentees.save_changes
+    redirect "/index"
   end
 
-  erb :add
+  erb :signup
 end
+
+

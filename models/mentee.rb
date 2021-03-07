@@ -1,6 +1,4 @@
-require "time_difference"
-
-# A player record from the database
+# A mentee record from the database
 class Mentee < Sequel::Model
   def name
     "#{fname} #{lname}"
@@ -11,7 +9,7 @@ class Mentee < Sequel::Model
   def self.id_exists?(id)
     return false if id.nil? # check the id is not nil
     return false unless Validation.str_is_integer?(id) # check the id is an integer
-    return false if Player[id].nil? # check the database has a record with this id
+    return false if Mentee[id].nil? # check the database has a record with this id
 
     true # all checks are ok - the id exists
   end
