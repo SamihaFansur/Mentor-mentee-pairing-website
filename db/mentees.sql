@@ -5,11 +5,11 @@ CREATE TABLE mentees (
     email TEXT,
     phoneNum INTEGER,
     courseName TEXT,
-    cyear INTEGER,
+    cyear INTEGER
 );
 
-INSERT INTO mentees VALUES();
+/*INSERT INTO mentees VALUES();
 
 SELECT * FROM mentees WHERE id = 1;
 
-DELETE FROM mentees WHERE position = "";
+DELETE FROM mentees WHERE position = "";*/
