@@ -28,9 +28,9 @@ class Mentee < Sequel::Model
     errors.add("fname", "cannot be empty") if !fname || fname.empty?
     errors.add("lname", "cannot be empty") if !lname || lname.empty?
     errors.add("email", "cannot be empty") if !email || email.empty?
-    errors.add("phoneNum", "cannot be empty") if !phoneNum || phoneNum.empty?
+    errors.add("phoneNum", "cannot be empty") if !phoneNum || phoneNum.nil?
     errors.add("courseName", "cannot be empty") if !courseName || courseName.empty?
-    errors.add("cyear", "cannot be empty") if !cyear || cyear.empty?
+    errors.add("cyear", "cannot be empty") if !cyear || cyear.nil?
 
   end
 end

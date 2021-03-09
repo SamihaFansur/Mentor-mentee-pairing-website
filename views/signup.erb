@@ -6,7 +6,7 @@
         <% unless @mentees.errors.size.zero? %>
           <p><strong class="error">Please correct the errors below:</strong></p>
         <% end %>
-        <form name="myform" action="/index" method="post" onsubmit="alert('You will be redirected to the Home Page now...');" >
+        <form name="myform" action="/SignUpForm" method="post" onsubmit="alert('You will be redirected to the Home Page now...');" >
          <!-- <input type="hidden" name="recipients" value="sfansur1@sheffield.ac.uk"> <!--NEED TO REDIRECT TO HOMEPAGE!!!!!-->
           
           <!--Column 1-->
@@ -325,7 +325,7 @@
 
             <p>
               <label for="phoneNum" class="options">Phone Number:</label>
-              <input type="long" name="phoneNum" id="phoneNum" placeholder="+XX XXXXXXXXXX" maxlength="40" size="30" required value="<%= h @mentees.phoneNum %>"><!--Mandatory field-->
+              <input type="text" name="phoneNum" id="phoneNum" placeholder="+XX XXXXXXXXXX" maxlength="40" size="30" required value="<%= h @mentees.phoneNum %>"><!--Mandatory field-->
                <% if @mentees.errors.include?("phoneNum") %>
                 <% @mentees.errors["phoneNum"].each do |error| %>
                   <p class="error"><strong>Phone Number <%= error %></strong></p>
