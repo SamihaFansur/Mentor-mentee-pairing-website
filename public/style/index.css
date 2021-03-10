@@ -173,7 +173,7 @@ h6 {
   font-weight: bold;
 }
 
-#submit {
+.submit {
   margin-top: 30px;
   font-size: 1.3rem;
   font-weight: bold;
@@ -182,7 +182,7 @@ h6 {
   font-family: "Pristina" ,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-#reset {
+.reset {
   font-size: 1.3rem;
   font-weight: bold;
   padding: 5px 20px;
@@ -191,7 +191,7 @@ h6 {
 }
 
 
-#submit:hover, #reset:hover {
+.submit:hover, .reset:hover {
   transition-duration: 0.6s;
   background-color: rgba(194, 166, 251, 0.778);
   box-shadow: 0 4px 6px 2px rgba(185, 185, 185, 0.354);
@@ -204,7 +204,7 @@ h6 {
   clear: both;
 }
 
-#year {
+#cyear {
   width: 60px;
   text-align-last:center;
 }
