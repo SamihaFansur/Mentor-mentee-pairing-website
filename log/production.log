@@ -43,3 +43,14 @@ I, [2021-03-10T00:18:56.220955 #609]  INFO -- : (0.000045s) BEGIN
 I, [2021-03-10T00:18:56.221467 #609]  INFO -- : (0.000257s) INSERT INTO `mentees` (`fname`, `lname`, `email`, `phoneNum`, `courseName`, `cyear`, `username`, `password`) VALUES ('Samiha', 'Fansur', 'sfansur1@sheffield.ac.uk', 7949590613, '12', 2, 'aca20sf', 'SAMIHAfansur11')
 I, [2021-03-10T00:18:56.222221 #609]  INFO -- : (0.000608s) SELECT * FROM `mentees` WHERE `username` = 'aca20sf'
 I, [2021-03-10T00:18:56.318749 #609]  INFO -- : (0.096419s) COMMIT
+I, [2021-03-10T15:13:13.466686 #251]  INFO -- : (0.000208s) PRAGMA foreign_keys = 1
+I, [2021-03-10T15:13:13.469271 #251]  INFO -- : (0.000020s) PRAGMA case_sensitive_like = 1
+I, [2021-03-10T15:13:13.469909 #251]  INFO -- : (0.000069s) SELECT sqlite_version()
+I, [2021-03-10T15:13:13.470177 #251]  INFO -- : (0.000133s) PRAGMA table_info('mentees')
+I, [2021-03-10T15:13:53.386500 #251]  INFO -- : (0.000043s) BEGIN
+E, [2021-03-10T15:13:53.386844 #251] ERROR -- : SQLite3::ConstraintException: UNIQUE constraint failed: mentees.username: INSERT INTO `mentees` (`fname`, `lname`, `email`, `phoneNum`, `courseName`, `cyear`, `username`, `password`) VALUES ('Samiha', 'Fansur', 'sfansur1@sheffield.ac.uk', 7949590613, 'Zoology (BSc)', 1, 'aca20sf', 'SAMIHAfansur11')
+I, [2021-03-10T15:13:53.387606 #251]  INFO -- : (0.000591s) ROLLBACK
+I, [2021-03-10T15:15:23.233408 #251]  INFO -- : (0.000040s) BEGIN
+I, [2021-03-10T15:15:23.233989 #251]  INFO -- : (0.000345s) INSERT INTO `mentees` (`fname`, `lname`, `email`, `phoneNum`, `courseName`, `cyear`, `username`, `password`) VALUES ('Samiha', 'Fansur', 'sfansur1@sheffield.ac.uk', 7949590613, 'Urban Studies and Planning (MPlan (UG))', 2, 'miha', 'SAMIHAfansur11')
+I, [2021-03-10T15:15:23.234312 #251]  INFO -- : (0.000151s) SELECT * FROM `mentees` WHERE `username` = 'miha'
+I, [2021-03-10T15:15:23.327700 #251]  INFO -- : (0.093297s) COMMIT
