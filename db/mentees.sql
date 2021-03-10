@@ -1,5 +1,7 @@
 CREATE TABLE mentees (
-    id INTEGER PRIMARY KEY,
+    /*id INTEGER PRIMARY KEY,*/
+    username TEXT PRIMARY KEY,
+    password TEXT,
     fname TEXT,
     lname TEXT,
     email TEXT,

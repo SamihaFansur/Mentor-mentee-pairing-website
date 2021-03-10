@@ -6,13 +6,13 @@ class Mentee < Sequel::Model
 
   # "self.method" is how we define a class-level method in Ruby (in the same way
   # we'd use "static" in Java, e.g., public static void classMethod(...))
-  def self.id_exists?(id)
-    return false if id.nil? # check the id is not nil
-    return false unless Validation.str_is_integer?(id) # check the id is an integer
-    return false if Mentee[id].nil? # check the database has a record with this id
+  #def self.id_exists?(id)
+  #  return false if id.nil? # check the id is not nil
+  #  return false unless Validation.str_is_integer?(id) # check the id is an integer
+  #  return false if Mentee[id].nil? # check the database has a record with this id
 
-    true # all checks are ok - the id exists
-  end
+  #  true # all checks are ok - the id exists
+  #end
 
   def load(params)
     self.fname = params.fetch("fname", "").strip
@@ -21,6 +21,8 @@ class Mentee < Sequel::Model
     self.phoneNum = params.fetch("phoneNum", "").strip
     self.courseName = params.fetch("courseName", "").strip
     self.cyear = params.fetch("cyear", "").strip
+    self.username = params.fetch("username", "").strip
+    self.password = params.fetch("password", "").strip
   end
 
   def validate
@@ -31,6 +33,13 @@ class Mentee < Sequel::Model
     errors.add("phoneNum", "cannot be empty") if !phoneNum || phoneNum.nil?
     errors.add("courseName", "cannot be empty") if !courseName || courseName.empty?
     errors.add("cyear", "cannot be empty") if !cyear || cyear.nil?
-
+    errors.add("username", "cannot be empty") if username.empty?
+    errors.add("password", "cannot be empty") if password.empty?
   end
+  
+  def exist?
+    other_user = Mentee.first(username: username)
+    !other_user.nil? && other_user.password == password
+  end
+  
 end

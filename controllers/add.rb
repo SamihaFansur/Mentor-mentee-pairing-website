@@ -1,9 +1,9 @@
-get "/SignUpForm" do
+get "/MenteeSignUpForm" do
   @mentees = Mentee.new
-  erb :signup
+  erb :mentee_signup
 end
 
-post "/SignUpForm" do
+post "/MenteeSignUpForm" do
   @mentees = Mentee.new
   @mentees.load(params)
 
@@ -12,7 +12,7 @@ post "/SignUpForm" do
     redirect "/index"
   end
 
-  erb :signup
+  erb :mentee_signup
 end
 
 
