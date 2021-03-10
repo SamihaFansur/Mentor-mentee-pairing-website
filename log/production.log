@@ -54,3 +54,68 @@ I, [2021-03-10T15:15:23.233408 #251]  INFO -- : (0.000040s) BEGIN
 I, [2021-03-10T15:15:23.233989 #251]  INFO -- : (0.000345s) INSERT INTO `mentees` (`fname`, `lname`, `email`, `phoneNum`, `courseName`, `cyear`, `username`, `password`) VALUES ('Samiha', 'Fansur', 'sfansur1@sheffield.ac.uk', 7949590613, 'Urban Studies and Planning (MPlan (UG))', 2, 'miha', 'SAMIHAfansur11')
 I, [2021-03-10T15:15:23.234312 #251]  INFO -- : (0.000151s) SELECT * FROM `mentees` WHERE `username` = 'miha'
 I, [2021-03-10T15:15:23.327700 #251]  INFO -- : (0.093297s) COMMIT
+I, [2021-03-10T15:22:32.393225 #287]  INFO -- : (0.000214s) PRAGMA foreign_keys = 1
+I, [2021-03-10T15:22:32.393346 #287]  INFO -- : (0.000019s) PRAGMA case_sensitive_like = 1
+I, [2021-03-10T15:22:32.394083 #287]  INFO -- : (0.000070s) SELECT sqlite_version()
+I, [2021-03-10T15:22:32.394340 #287]  INFO -- : (0.000125s) PRAGMA table_info('mentees')
+I, [2021-03-10T15:24:56.499003 #308]  INFO -- : (0.000173s) PRAGMA foreign_keys = 1
+I, [2021-03-10T15:24:56.499100 #308]  INFO -- : (0.000015s) PRAGMA case_sensitive_like = 1
+I, [2021-03-10T15:24:56.499646 #308]  INFO -- : (0.000056s) SELECT sqlite_version()
+I, [2021-03-10T15:24:56.499893 #308]  INFO -- : (0.000126s) PRAGMA table_info('mentees')
+I, [2021-03-10T15:25:37.115090 #308]  INFO -- : (0.000045s) BEGIN
+I, [2021-03-10T15:25:37.115592 #308]  INFO -- : (0.000252s) INSERT INTO `mentees` (`fname`, `lname`, `email`, `phoneNum`, `courseName`, `cyear`, `username`, `password`) VALUES ('Samiha', 'Fansur', 'sfansur1@sheffield.ac.uk', 7949590613, 'General Engineering (MEng (Hons))', 4, 'trial1', 'SAMIHA.11')
+I, [2021-03-10T15:25:37.116381 #308]  INFO -- : (0.000137s) SELECT * FROM `mentees` WHERE `username` = 'trial1'
+I, [2021-03-10T15:25:37.412108 #308]  INFO -- : (0.295634s) COMMIT
+I, [2021-03-10T16:08:25.267721 #333]  INFO -- : (0.000194s) PRAGMA foreign_keys = 1
+I, [2021-03-10T16:08:25.267829 #333]  INFO -- : (0.000015s) PRAGMA case_sensitive_like = 1
+I, [2021-03-10T16:08:25.268655 #333]  INFO -- : (0.000066s) SELECT sqlite_version()
+I, [2021-03-10T16:08:25.268941 #333]  INFO -- : (0.000120s) PRAGMA table_info('mentees')
+I, [2021-03-10T16:20:34.245167 #359]  INFO -- : (0.000251s) PRAGMA foreign_keys = 1
+I, [2021-03-10T16:20:34.245303 #359]  INFO -- : (0.000021s) PRAGMA case_sensitive_like = 1
+I, [2021-03-10T16:20:34.246361 #359]  INFO -- : (0.000062s) SELECT sqlite_version()
+I, [2021-03-10T16:20:34.246741 #359]  INFO -- : (0.000179s) PRAGMA table_info('mentees')
+I, [2021-03-10T16:21:07.078088 #359]  INFO -- : (0.000073s) BEGIN
+I, [2021-03-10T16:21:07.079659 #359]  INFO -- : (0.000363s) INSERT INTO `mentees` (`fname`, `lname`, `email`, `phoneNum`, `courseName`, `cyear`, `username`, `password`) VALUES ('Samiha', 'Fansur', 'sfansur1@sheffield.ac.uk', 7949590613, 'Aerospace Engineering with a Foundation Year (BEng | MEng)', 3, 'trial2', 'S.F')
+I, [2021-03-10T16:21:07.080019 #359]  INFO -- : (0.000138s) SELECT * FROM `mentees` WHERE `username` = 'trial2'
+I, [2021-03-10T16:21:07.180007 #359]  INFO -- : (0.099896s) COMMIT
+I, [2021-03-10T16:30:59.219854 #383]  INFO -- : (0.000170s) PRAGMA foreign_keys = 1
+I, [2021-03-10T16:30:59.219947 #383]  INFO -- : (0.000014s) PRAGMA case_sensitive_like = 1
+I, [2021-03-10T16:30:59.220648 #383]  INFO -- : (0.000054s) SELECT sqlite_version()
+I, [2021-03-10T16:30:59.220895 #383]  INFO -- : (0.000112s) PRAGMA table_info('mentees')
+I, [2021-03-10T16:31:34.306457 #383]  INFO -- : (0.000058s) BEGIN
+E, [2021-03-10T16:31:34.306896 #383] ERROR -- : SQLite3::ConstraintException: UNIQUE constraint failed: mentees.username: INSERT INTO `mentees` (`fname`, `lname`, `email`, `phoneNum`, `courseName`, `cyear`, `username`, `password`) VALUES ('Samiha', 'Fansur', 'samiha.fansur.2002@gmail.com', 7949590613, 'Environmental Science (BSc)', 2, 'trial2', 'S.F')
+I, [2021-03-10T16:31:34.307874 #383]  INFO -- : (0.000033s) ROLLBACK
+I, [2021-03-10T16:31:45.309458 #383]  INFO -- : (0.000044s) BEGIN
+I, [2021-03-10T16:31:45.309869 #383]  INFO -- : (0.000228s) INSERT INTO `mentees` (`fname`, `lname`, `email`, `phoneNum`, `courseName`, `cyear`, `username`, `password`) VALUES ('Samiha', 'Fansur', 'samiha.fansur.2002@gmail.com', 7949590613, 'Environmental Science (BSc)', 2, 'trial3', 'S.F')
+I, [2021-03-10T16:31:45.310119 #383]  INFO -- : (0.000109s) SELECT * FROM `mentees` WHERE `username` = 'trial3'
+I, [2021-03-10T16:31:45.602673 #383]  INFO -- : (0.292468s) COMMIT
+I, [2021-03-10T16:36:48.986893 #404]  INFO -- : (0.000181s) PRAGMA foreign_keys = 1
+I, [2021-03-10T16:36:48.986986 #404]  INFO -- : (0.000014s) PRAGMA case_sensitive_like = 1
+I, [2021-03-10T16:36:48.987733 #404]  INFO -- : (0.000057s) SELECT sqlite_version()
+I, [2021-03-10T16:36:48.988003 #404]  INFO -- : (0.000114s) PRAGMA table_info('mentees')
+I, [2021-03-10T16:47:40.404861 #428]  INFO -- : (0.000174s) PRAGMA foreign_keys = 1
+I, [2021-03-10T16:47:40.404949 #428]  INFO -- : (0.000014s) PRAGMA case_sensitive_like = 1
+I, [2021-03-10T16:47:40.405610 #428]  INFO -- : (0.000053s) SELECT sqlite_version()
+I, [2021-03-10T16:47:40.405852 #428]  INFO -- : (0.000110s) PRAGMA table_info('mentees')
+I, [2021-03-10T16:48:40.387023 #450]  INFO -- : (0.000176s) PRAGMA foreign_keys = 1
+I, [2021-03-10T16:48:40.387113 #450]  INFO -- : (0.000014s) PRAGMA case_sensitive_like = 1
+I, [2021-03-10T16:48:40.387776 #450]  INFO -- : (0.000052s) SELECT sqlite_version()
+I, [2021-03-10T16:48:40.388011 #450]  INFO -- : (0.000109s) PRAGMA table_info('mentees')
+I, [2021-03-10T16:52:13.083970 #471]  INFO -- : (0.000183s) PRAGMA foreign_keys = 1
+I, [2021-03-10T16:52:13.084085 #471]  INFO -- : (0.000019s) PRAGMA case_sensitive_like = 1
+I, [2021-03-10T16:52:13.084871 #471]  INFO -- : (0.000064s) SELECT sqlite_version()
+I, [2021-03-10T16:52:13.085169 #471]  INFO -- : (0.000121s) PRAGMA table_info('mentees')
+I, [2021-03-10T17:00:21.938605 #502]  INFO -- : (0.000199s) PRAGMA foreign_keys = 1
+I, [2021-03-10T17:00:21.938701 #502]  INFO -- : (0.000014s) PRAGMA case_sensitive_like = 1
+I, [2021-03-10T17:00:21.939415 #502]  INFO -- : (0.000058s) SELECT sqlite_version()
+I, [2021-03-10T17:00:21.939667 #502]  INFO -- : (0.000115s) PRAGMA table_info('mentees')
+I, [2021-03-10T17:00:21.940578 #502]  INFO -- : (0.000035s) PRAGMA table_info('users')
+E, [2021-03-10T17:00:21.940739 #502] ERROR -- : SQLite3::SQLException: no such table: users: SELECT * FROM `users` LIMIT 1
+I, [2021-03-10T17:00:44.342062 #503]  INFO -- : (0.000171s) PRAGMA foreign_keys = 1
+I, [2021-03-10T17:00:44.342152 #503]  INFO -- : (0.000013s) PRAGMA case_sensitive_like = 1
+I, [2021-03-10T17:00:44.342847 #503]  INFO -- : (0.000056s) SELECT sqlite_version()
+I, [2021-03-10T17:00:44.343090 #503]  INFO -- : (0.000110s) PRAGMA table_info('mentees')
+I, [2021-03-10T17:01:08.330066 #503]  INFO -- : (0.000047s) BEGIN
+I, [2021-03-10T17:01:08.330589 #503]  INFO -- : (0.000267s) INSERT INTO `mentees` (`fname`, `lname`, `email`, `phoneNum`, `courseName`, `cyear`, `username`, `password`) VALUES ('Samiha', 'Fansur', 'sfansur1@sheffield.ac.uk', 7949590613, 'Architectural Engineering (MEng)', 2, 'trial4', 'S.F')
+I, [2021-03-10T17:01:08.330866 #503]  INFO -- : (0.000119s) SELECT * FROM `mentees` WHERE `username` = 'trial4'
+I, [2021-03-10T17:01:08.424333 #503]  INFO -- : (0.093378s) COMMIT

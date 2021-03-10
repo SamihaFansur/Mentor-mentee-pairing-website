@@ -364,7 +364,7 @@
 
           <p>
             <label for="password" class="options">Password:</label>
-            <input type="text" name="password" id="password" placeholder="Enter your password..." maxlength="40" size="30" required value="<%= h @mentees.password %>"><!--Mandatory field-->
+            <input type="password" name="password" id="password" placeholder="Enter your password..." maxlength="40" size="30" required value="<%= h @mentees.password %>"><!--Mandatory field-->
             <% if @mentees.errors.include?("password") %>
               <% @mentees.errors["password"].each do |error| %>
                 <p class="error"><strong>Password <%= error %></strong></p>

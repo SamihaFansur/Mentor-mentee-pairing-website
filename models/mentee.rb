@@ -1,3 +1,5 @@
+require "openssl"
+
 # A mentee record from the database
 class Mentee < Sequel::Model
   def name
