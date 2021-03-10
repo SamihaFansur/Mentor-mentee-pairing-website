@@ -204,3 +204,10 @@ I, [2021-03-10T23:38:26.327814 #394]  INFO -- : (0.000072s) SELECT sqlite_versio
 I, [2021-03-10T23:38:26.328093 #394]  INFO -- : (0.000133s) PRAGMA table_info('mentees')
 I, [2021-03-10T23:38:26.329250 #394]  INFO -- : (0.000110s) PRAGMA table_info('mentors')
 I, [2021-03-10T23:38:34.976826 #394]  INFO -- : (0.000155s) SELECT * FROM `mentees` WHERE (`username` = 'MENTOR1') LIMIT 1
+I, [2021-03-10T23:49:17.202144 #426]  INFO -- : (0.000175s) PRAGMA foreign_keys = 1
+I, [2021-03-10T23:49:17.202233 #426]  INFO -- : (0.000015s) PRAGMA case_sensitive_like = 1
+I, [2021-03-10T23:49:17.202955 #426]  INFO -- : (0.000056s) SELECT sqlite_version()
+I, [2021-03-10T23:49:17.203261 #426]  INFO -- : (0.000158s) PRAGMA table_info('mentees')
+I, [2021-03-10T23:49:17.204322 #426]  INFO -- : (0.000132s) PRAGMA table_info('mentors')
+I, [2021-03-10T23:49:29.050458 #426]  INFO -- : (0.000179s) SELECT * FROM `mentees` WHERE (`username` = 'OMG') LIMIT 1
+I, [2021-03-10T23:49:38.858952 #426]  INFO -- : (0.000159s) SELECT * FROM `mentees` WHERE (`username` = 'trial2') LIMIT 1
