@@ -7,28 +7,17 @@
           <p><strong class="error">Please correct the errors below:</strong></p>
         <% end %>
         <form name="myform" action="/MenteeSignUpForm" method="post" onsubmit="alert('Sign up successful! You will be redirected to the Home Page now...');" >
-         <!-- <input type="hidden" name="recipients" value="sfansur1@sheffield.ac.uk"> <!--NEED TO REDIRECT TO HOMEPAGE!!!!!-->
-          
+         
           <!--Column 1-->
           <div class="col" id="col1">
             <p>
               <label for="fname" class="options">First name:</label>
               <input type="text" name="fname" id="fname" maxlength="40" size="30" placeholder="Enter first name..."  required value="<%= h @mentees.fname %>"><!--Mandatory field-->
-              <% if @mentees.errors.include?("fname") %>
-                <% @mentees.errors["fname"].each do |error| %>
-                  <p class="error"><strong>First name <%= error %></strong></p>
-                <% end %>
-              <% end %>
            </p>
 
             <p>
               <label for="email" class="options">UoS E-mail:</label>
               <input type="email" name="email" id="email" placeholder="Enter your UoS email..." maxlength="40" size="30" required value="<%= h @mentees.email %>"><!--Mandatory field-->
-              <% if @mentees.errors.include?("email") %>
-                <% @mentees.errors["email"].each do |error| %>
-                  <p class="error"><strong>Email <%= error %></strong></p>
-                <% end %>
-              <% end %>
           </p>
 
           <p>
@@ -303,21 +292,11 @@
 
 
             </select>
-             <% if @mentees.errors.include?("courseName") %>
-              <% @mentees.errors["courseName"].each do |error| %>
-                <p class="error"><strong>Course Name <%= error %></strong></p>
-              <% end %>
-            <% end %>
           </p>
           
           <p>
             <label for="username" class="options">Username:</label>
             <input type="text" name="username" id="username" placeholder="Enter your username..." maxlength="40" size="30" required value="<%= h @mentees.username %>"><!--Mandatory field-->
-            <% if @mentees.errors.include?("username") %>
-              <% @mentees.errors["username"].each do |error| %>
-                <p class="error"><strong>Username <%= error %></strong></p>
-              <% end %>
-            <% end %>
           </p>             
             
           </div>
@@ -327,21 +306,11 @@
             <p>
               <label for="lname" class="options">Last name:</label>
               <input type="text" name="lname" id="lname" maxlength="40" size="30" placeholder="Enter last name..."  required value="<%= h @mentees.lname %>"><!--Mandatory field-->
-              <% if @mentees.errors.include?("lname") %>
-                <% @mentees.errors["lname"].each do |error| %>
-                  <p class="error"><strong>Last Name <%= error %></strong></p>
-                <% end %>
-              <% end %>
             </p>
 
             <p>
               <label for="phoneNum" class="options">Phone Number:</label>
               <input type="text" name="phoneNum" id="phoneNum" placeholder="+XX XXXXXXXXXX" maxlength="40" size="30" required value="<%= h @mentees.phoneNum %>"><!--Mandatory field-->
-               <% if @mentees.errors.include?("phoneNum") %>
-                <% @mentees.errors["phoneNum"].each do |error| %>
-                  <p class="error"><strong>Phone Number <%= error %></strong></p>
-                <% end %>
-              <% end %>
             </p>
 
             <p>
@@ -355,21 +324,11 @@
                 <option value="5">5</option>
                 <option value="6">6</option>
               </select>
-              <% if @mentees.errors.include?("cyear") %>
-                <% @mentees.errors["cyear"].each do |error| %>
-                  <p class="error"><strong>Course Year <%= error %></strong></p>
-                <% end %>
-              <% end %>
             </p>
 
           <p>
             <label for="password" class="options">Password:</label>
             <input type="password" name="password" id="password" placeholder="Enter your password..." maxlength="40" size="30" required value="<%= h @mentees.password %>"><!--Mandatory field-->
-            <% if @mentees.errors.include?("password") %>
-              <% @mentees.errors["password"].each do |error| %>
-                <p class="error"><strong>Password <%= error %></strong></p>
-              <% end %>
-            <% end %>
           </p> 
 
           </div>
