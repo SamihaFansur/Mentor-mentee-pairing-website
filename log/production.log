@@ -119,3 +119,7 @@ I, [2021-03-10T17:01:08.330066 #503]  INFO -- : (0.000047s) BEGIN
 I, [2021-03-10T17:01:08.330589 #503]  INFO -- : (0.000267s) INSERT INTO `mentees` (`fname`, `lname`, `email`, `phoneNum`, `courseName`, `cyear`, `username`, `password`) VALUES ('Samiha', 'Fansur', 'sfansur1@sheffield.ac.uk', 7949590613, 'Architectural Engineering (MEng)', 2, 'trial4', 'S.F')
 I, [2021-03-10T17:01:08.330866 #503]  INFO -- : (0.000119s) SELECT * FROM `mentees` WHERE `username` = 'trial4'
 I, [2021-03-10T17:01:08.424333 #503]  INFO -- : (0.093378s) COMMIT
+I, [2021-03-10T18:04:16.681361 #568]  INFO -- : (0.000177s) PRAGMA foreign_keys = 1
+I, [2021-03-10T18:04:16.681467 #568]  INFO -- : (0.000015s) PRAGMA case_sensitive_like = 1
+I, [2021-03-10T18:04:16.682153 #568]  INFO -- : (0.000055s) SELECT sqlite_version()
+I, [2021-03-10T18:04:16.682402 #568]  INFO -- : (0.000114s) PRAGMA table_info('mentees')

@@ -40,8 +40,8 @@ class Mentee < Sequel::Model
   end
   
   def exist?
-    other_user = Mentee.first(username: username)
-    !other_user.nil? && other_user.password == password
+    other_mentees = Mentee.first(username: username)
+    !other_mentees.nil? && other_mentees.password == password
   end
   
 end
