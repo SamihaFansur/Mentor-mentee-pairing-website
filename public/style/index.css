@@ -227,6 +227,46 @@ h6 {
   text-decoration-color: #383CC1;
 }
 
+/*dashboard*/
+.lSide {
+  width: 40%;
+  padding-left: .5rem;
+  margin-left: 1rem;
+  float: left;
+  box-shadow: 5px 0 5px -5px #000000;
+  font-style: italic;
+  color: #000000;
+  background-image: url('../images/bg.jpg');
+  margin-top: 0.5%;
+  font-weight: bold;
+}
+
+.rSide {
+  width: 45%;
+  padding-left: .5rem;
+  margin-right: 1.5rem;
+  float: right;
+  box-shadow: 5px 0 5px -5px #000000;
+  font-style: italic;
+  color: #000000;
+  background-image: url('../images/bg.jpg');
+  margin-top: 0.5%;
+  font-weight: bold;
+}
+
+#user_info {
+  border: 3px dashed #000065;
+  font-size: 2.2rem;
+  background-color:rgba(160, 160, 250, 0.403);
+  margin: 3% 3%;
+}
+
+.search_info {
+  border: 3px dashed #000065;
+  font-size: 2.2rem;
+  background-color:rgba(255, 255, 254, 0.43);
+  text-align: center;
+}
 
 /* header */
 

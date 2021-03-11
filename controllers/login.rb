@@ -1,6 +1,6 @@
-get "/" do
+get "/MenteeDashboard" do
   redirect "/login" unless session[:logged_in]
-  erb :dashboard
+  erb :mentee_dashboard
 end
 
 get "/login" do
@@ -22,7 +22,7 @@ post '/login' do
   if @mentees.valid?
     if @mentees.exist?
       session[:logged_in] = true
-      redirect "/"
+      redirect "/MenteeDashboard"
     else
       @error = "Username/Password combination incorrect"
     end

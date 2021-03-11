@@ -1,34 +1,25 @@
-<%= erb :"common/header" %>
-<div class="background" id="statement">
-  <!--Our Program-->
-  <div class="full">
-    <div class="title">Login</div> <!--Main page Title-->  
+<%= erb :"common/headerB" %>
+<div  id="statement">
+      <!--Our Program-->
+      <div class="full">
+        <aside class="lSide">
+          <div class="full" id="user_info">
+            <p><!--<a href="#com1003" class="link">-->Name: <!--</a>--></p>
+            <p><!--<a href="#com1003" class="link">-->Email: <!--</a>--></p>
+            <p><!--<a href="#com1003" class="link">-->Phone Number: <!--</a>--></p>
+            <p><!--<a href="#com1003" class="link">-->Degree: <!--</a>--></p>
+          </div>
+        </aside>
 
-      <form method="post" action="/login">
-
-        <% unless @error.nil? %>
-        <p><strong class="error"><%= @error %></strong></p>
-        <% end %>
-
-        <p>Username: <br /><input type="text" name="username" value="<%= @mentees.username %>"/></p>
-        <% if @mentees.errors.include?("username") %>
-          <% @mentees.errors["username"].each do |error| %>
-            <p class="error"><strong>Username <%= error %></strong></p>
-          <% end %>
-        <% end %>
-
-        <p>Password: <br /><input type="password" name="password" /></p>
-        <% if @mentees.errors.include?("password") %>
-          <% @mentees.errors["password"].each do |error| %>
-            <p class="error"><strong>Password <%= error %></strong></p>
-          <% end %>
-        <% end %>
-
-        <p><input type="submit" value="Submit"></p>
-
-      </form>
-  </div>
-</div>
+        <aside class="rSide">
+          <div class="full">
+            <p class="search_info"><!--<a href="#com1003" class="link">-->Find a mentor<!--</a>--></p>
+            <p class="search_info"><!--<a href="#com1003" class="link">-->View mentor applications<!--</a>--></p>
+          </div>
+        </aside>
+        
+     </div>
+</div> 
 
 <%= erb :"common/footer" %>
 
