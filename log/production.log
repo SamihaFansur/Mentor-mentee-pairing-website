@@ -374,3 +374,14 @@ I, [2021-03-11T17:46:31.886222 #743]  INFO -- : (0.000209s) SELECT * FROM `mente
 I, [2021-03-11T17:46:44.154361 #743]  INFO -- : (0.000163s) SELECT * FROM `mentees` WHERE (`username` = 'hmm') LIMIT 1
 I, [2021-03-11T17:47:07.609213 #743]  INFO -- : (0.000162s) SELECT * FROM `mentees` WHERE (`username` = 'hmm') LIMIT 1
 I, [2021-03-11T17:47:31.059765 #743]  INFO -- : (0.000161s) SELECT * FROM `mentees` WHERE (`username` = 'hmm') LIMIT 1
+I, [2021-03-11T17:53:50.117609 #775]  INFO -- : (0.000183s) PRAGMA foreign_keys = 1
+I, [2021-03-11T17:53:50.117715 #775]  INFO -- : (0.000018s) PRAGMA case_sensitive_like = 1
+I, [2021-03-11T17:53:50.118432 #775]  INFO -- : (0.000060s) SELECT sqlite_version()
+I, [2021-03-11T17:53:50.118710 #775]  INFO -- : (0.000130s) PRAGMA table_info('mentees')
+I, [2021-03-11T17:53:50.119729 #775]  INFO -- : (0.000099s) PRAGMA table_info('mentors')
+I, [2021-03-11T17:54:18.944916 #775]  INFO -- : (0.001015s) SELECT * FROM `mentors` WHERE (`username` = 'okkk') LIMIT 1
+I, [2021-03-11T17:54:18.945155 #775]  INFO -- : (0.000032s) BEGIN
+I, [2021-03-11T17:54:18.945762 #775]  INFO -- : (0.000345s) INSERT INTO `mentors` (`fname`, `lname`, `email`, `phoneNum`, `username`, `password`) VALUES ('Samiha', 'Fansur', 'sfansur1@sheffield.ac.uk', 7949590613, 'okkk', 'S.F')
+I, [2021-03-11T17:54:18.946050 #775]  INFO -- : (0.000122s) SELECT * FROM `mentors` WHERE `username` = 'okkk'
+I, [2021-03-11T17:54:19.048670 #775]  INFO -- : (0.102487s) COMMIT
+I, [2021-03-11T17:54:34.411858 #775]  INFO -- : (0.000155s) SELECT * FROM `mentors` WHERE (`username` = 'okkk') LIMIT 1

@@ -1,61 +1,62 @@
 <%= erb :"common/header" %>
-    <div class="background" id="statement">
-      <!--Our Program-->
-      <div class="full">
-        <div class="title">Mentor Sign Up</div> <!--Main page Title-->  
-        <% unless @mentors.errors.size.zero? %>
-          <p><strong class="error">Please correct the errors below:</strong></p>
-        <% end %>
-        <form name="myform" action="/MentorSignUpForm" method="post" onsubmit="alert('Sign up successful! You will be redirected to the Home Page now...');" >
-         
-          <!--Column 1-->
-          <div class="col" id="col1">
-            <p>
-              <label for="fname" class="options">First name:</label>
-              <input type="text" name="fname" id="fname" maxlength="40" size="30" placeholder="Enter first name..."  required value="<%= h @mentors.fname %>"><!--Mandatory field-->
-           </p>
+  <div class="background" id="statement">
+    <!--Our Program-->
+    <div class="full">
+      <div class="title">Mentor Sign Up</div> <!--Main page Title-->  
 
-            <p>
-              <label for="email" class="options">UoS E-mail:</label>
-              <input type="email" name="email" id="email" placeholder="Enter your UoS email..." maxlength="40" size="30" required value="<%= h @mentors.email %>"><!--Mandatory field-->
+      <% unless @error.nil? %>
+      <h2><strong class="error"><%= @error %></strong></h2>
+      <% end %>
+
+      <form name="myform" action="/MentorSignUpForm" method="post" onsubmit="alert('Sign up successful! You will be redirected to the Home Page now...');" >
+
+        <!--Column 1-->
+        <div class="col" id="col1">
+          <p>
+            <label for="fname" class="options">First name:</label>
+            <input type="text" name="fname" id="fname" maxlength="40" size="30" placeholder="Enter first name..."  required value="<%= h @mentors.fname %>"><!--Mandatory field-->
+         </p>
+
+          <p>
+            <label for="email" class="options">UoS E-mail:</label>
+            <input type="email" name="email" id="email" placeholder="Enter your UoS email..." maxlength="40" size="30" required value="<%= h @mentors.email %>"><!--Mandatory field-->
+        </p>
+
+        <p>
+          <label for="username" class="options">Username:</label>
+          <input type="text" name="username" id="username" placeholder="Enter your username..." maxlength="40" size="30" required value="<%= h @mentors.username %>"><!--Mandatory field-->
+        </p>             
+
+        </div>
+
+        <!--Column 2-->
+        <div class="col" id="col2">
+          <p>
+            <label for="lname" class="options">Last name:</label>
+            <input type="text" name="lname" id="lname" maxlength="40" size="30" placeholder="Enter last name..."  required value="<%= h @mentors.lname %>"><!--Mandatory field-->
           </p>
 
           <p>
-            <label for="username" class="options">Username:</label>
-            <input type="text" name="username" id="username" placeholder="Enter your username..." maxlength="40" size="30" required value="<%= h @mentors.username %>"><!--Mandatory field-->
-          </p>             
-            
-          </div>
-
-          <!--Column 2-->
-          <div class="col" id="col2">
-            <p>
-              <label for="lname" class="options">Last name:</label>
-              <input type="text" name="lname" id="lname" maxlength="40" size="30" placeholder="Enter last name..."  required value="<%= h @mentors.lname %>"><!--Mandatory field-->
-            </p>
-
-            <p>
-              <label for="phoneNum" class="options">Phone Number:</label>
-              <input type="text" name="phoneNum" id="phoneNum" placeholder="+XX XXXXXXXXXX" maxlength="40" size="30" required value="<%= h @mentors.phoneNum %>"><!--Mandatory field-->
-            </p>
-
-          <p>
-            <label for="password" class="options">Password:</label>
-            <input type="password" name="password" id="password" placeholder="Enter your password..." maxlength="40" size="30" required value="<%= h @mentors.password %>"><!--Mandatory field-->
-          </p> 
-
-          </div>
-          
-            <!--Submit/Reset buttons-->
-          <p>
-            <input type="submit" id="submit" value="Submit">
-            <input type="reset" id="reset" value="Reset">
+            <label for="phoneNum" class="options">Phone Number:</label>
+            <input type="text" name="phoneNum" id="phoneNum" placeholder="+XX XXXXXXXXXX" maxlength="40" size="30" required value="<%= h @mentors.phoneNum %>"><!--Mandatory field-->
           </p>
-          <!--</div>-->
-        </form>
 
-      </div>
+        <p>
+          <label for="password" class="options">Password:</label>
+          <input type="password" name="password" id="password" placeholder="Enter your password..." maxlength="40" size="30" required value="<%= h @mentors.password %>"><!--Mandatory field-->
+        </p> 
 
-    </div> 
+        </div>
 
+          <!--Submit/Reset buttons-->
+        <p>
+          <input type="submit" id="submit" value="Submit">
+          <input type="reset" id="reset" value="Reset">
+        </p>
+        <!--</div>-->
+      </form>
+
+    </div>
+
+  </div> 
 <%= erb :"common/footer" %>

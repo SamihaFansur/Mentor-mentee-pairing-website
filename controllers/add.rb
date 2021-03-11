@@ -10,17 +10,13 @@ post "/MenteeSignUpForm" do
   @error = nil
 
   if @mentees.valid?
-          puts "test 1"
       if @mentees.exist?
-        puts "----------------------user exists---------------------"
         @error = "User exists"
       else
-      puts "test 2"
         @mentees.save_changes
         redirect "/index"
       end
   end
-    puts "test 3"
   erb :mentee_signup
 end
 
@@ -33,13 +29,16 @@ end
 post "/MentorSignUpForm" do
   @mentors = Mentor.new
   @mentors.load(params)
+  @error = nil
 
   if @mentors.valid?
-    @mentors.save_changes
-    redirect "/index"
+      if @mentors.exist?
+        @error = "User exists"
+      else
+        @mentors.save_changes
+        redirect "/index"
+      end
   end
-
   erb :mentor_signup
 end
-
 
