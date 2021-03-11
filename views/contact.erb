@@ -2,46 +2,43 @@
 <div class="background" id="statement">
     <div class="full">
         <div class="title">Contact</div>
-          <div>
+          <div class="contactForm">
             <h2 class="description">If you need to contact an admin use the section below.</h2>
 
               <img src="images/contact.png" alt="Contact">
-           <div class="contactForm">
+           
              
               <h2>Contact Admin: </h2>
 
-              <p>Send  an email to admin</p>
+              <form name="myform" action="https://www.dcs.shef.ac.uk/cgi-intranet/public/FormMail.php" method="POST" onsubmit="alert('Email will be sent now...');" >
+                <input type="hidden" name="recipients" value="egoodbrand1@sheffield.ac.uk">
+                   <div class="user">   
 
+                  <p>
+                    <label for="realname">Your name:</label>
+                    <input type="text" name="realname" id="name" maxlength="40" size="30" placeholder="Enter your name..."  required><!--Mandatory field-->
+                  </p>
 
-    <form name="myform" action="https://www.dcs.shef.ac.uk/cgi-intranet/public/FormMail.php" method="POST" onsubmit="alert('Email will be sent now...');" >
-               <input type="hidden" name="recipients" value="egoodbrand1@sheffield.ac.uk">
-           <div class="user">   
-                  
-          <p>
-            <label for="realname">Your name:</label>
-            <input type="text" name="realname" id="name" maxlength="40" size="30" placeholder="Enter your name..."  required><!--Mandatory field-->
-          </p>
-               
-          <p>
-            <label for="email">E-mail:</label>
-            <input type="email" name="email" id="email" placeholder="Enter your email..." maxlength="40" size="30" required><!--Mandatory field-->
-          </p>
-               
-          <p>
-            <label for="comments">Comments:</label>
-          </p>
-               
-          <p>
-            <textarea name="comments" id="comments" placeholder="Comments..." rows="8" cols="48"></textarea>
-          </p>
-               
-          <!--Submit/Reset buttons-->
-          <p>
-            <input type="submit" id="submit" value="Submit">
-            <input type="reset" id="reset" value="Reset">
-          </p>
-       </div>
-    </form>
+                  <p>
+                    <label for="email">E-mail:</label>
+                    <input type="email" name="email" id="email" placeholder="Enter your email..." maxlength="40" size="30" required><!--Mandatory field-->
+                  </p>
+
+                  <p>
+                    <label for="comments">Comments:</label>
+                  </p>
+
+                  <p>
+                    <textarea name="comments" id="comments" placeholder="Comments..." rows="8" cols="48"></textarea>
+                  </p>
+
+                  <!--Submit/Reset buttons-->
+                  <p>
+                    <input type="submit" id="contact_submit" value="Submit">
+                    <input type="reset" id="contact_reset" value="Reset">
+                  </p>
+                 </div>
+              </form>
              
        </div>
     </div>

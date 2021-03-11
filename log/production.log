@@ -385,3 +385,33 @@ I, [2021-03-11T17:54:18.945762 #775]  INFO -- : (0.000345s) INSERT INTO `mentors
 I, [2021-03-11T17:54:18.946050 #775]  INFO -- : (0.000122s) SELECT * FROM `mentors` WHERE `username` = 'okkk'
 I, [2021-03-11T17:54:19.048670 #775]  INFO -- : (0.102487s) COMMIT
 I, [2021-03-11T17:54:34.411858 #775]  INFO -- : (0.000155s) SELECT * FROM `mentors` WHERE (`username` = 'okkk') LIMIT 1
+I, [2021-03-11T17:57:14.985650 #804]  INFO -- : (0.000185s) PRAGMA foreign_keys = 1
+I, [2021-03-11T17:57:14.985751 #804]  INFO -- : (0.000015s) PRAGMA case_sensitive_like = 1
+I, [2021-03-11T17:57:14.986458 #804]  INFO -- : (0.000060s) SELECT sqlite_version()
+I, [2021-03-11T17:57:14.986724 #804]  INFO -- : (0.000126s) PRAGMA table_info('mentees')
+I, [2021-03-11T17:57:14.987748 #804]  INFO -- : (0.000097s) PRAGMA table_info('mentors')
+I, [2021-03-11T18:01:13.315653 #825]  INFO -- : (0.000419s) PRAGMA foreign_keys = 1
+I, [2021-03-11T18:01:13.315754 #825]  INFO -- : (0.000017s) PRAGMA case_sensitive_like = 1
+I, [2021-03-11T18:01:13.316712 #825]  INFO -- : (0.000064s) SELECT sqlite_version()
+I, [2021-03-11T18:01:13.317001 #825]  INFO -- : (0.000138s) PRAGMA table_info('mentees')
+I, [2021-03-11T18:01:13.318050 #825]  INFO -- : (0.000100s) PRAGMA table_info('mentors')
+I, [2021-03-11T18:23:43.837620 #825]  INFO -- : (0.003307s) SELECT * FROM `mentors` WHERE (`username` = 'zfansur') LIMIT 1
+I, [2021-03-11T18:23:43.837809 #825]  INFO -- : (0.000026s) BEGIN
+I, [2021-03-11T18:23:43.838248 #825]  INFO -- : (0.000241s) INSERT INTO `mentors` (`fname`, `lname`, `email`, `phoneNum`, `username`, `password`) VALUES ('Samiha', 'Fansur', 'sfansur1@sheffield.ac.uk', 7949590613, 'zfansur', 'S.F')
+I, [2021-03-11T18:23:43.838459 #825]  INFO -- : (0.000088s) SELECT * FROM `mentors` WHERE `username` = 'zfansur'
+I, [2021-03-11T18:23:43.927927 #825]  INFO -- : (0.089393s) COMMIT
+I, [2021-03-11T18:24:09.803667 #825]  INFO -- : (0.000136s) SELECT * FROM `mentors` WHERE (`username` = 'aca20sfS') LIMIT 1
+I, [2021-03-11T18:24:09.803838 #825]  INFO -- : (0.000021s) BEGIN
+I, [2021-03-11T18:24:09.804174 #825]  INFO -- : (0.000193s) INSERT INTO `mentors` (`fname`, `lname`, `email`, `phoneNum`, `username`, `password`) VALUES ('Samiha', 'Fansur', 'sfansur1@sheffield.ac.uk', 7949590613, 'aca20sfS', 'S.F')
+I, [2021-03-11T18:24:09.804401 #825]  INFO -- : (0.000084s) SELECT * FROM `mentors` WHERE `username` = 'aca20sfS'
+I, [2021-03-11T18:24:09.903161 #825]  INFO -- : (0.098676s) COMMIT
+I, [2021-03-11T18:25:44.789226 #851]  INFO -- : (0.000177s) PRAGMA foreign_keys = 1
+I, [2021-03-11T18:25:44.789325 #851]  INFO -- : (0.000016s) PRAGMA case_sensitive_like = 1
+I, [2021-03-11T18:25:44.790026 #851]  INFO -- : (0.000056s) SELECT sqlite_version()
+I, [2021-03-11T18:25:44.790275 #851]  INFO -- : (0.000123s) PRAGMA table_info('mentees')
+I, [2021-03-11T18:25:44.791285 #851]  INFO -- : (0.000099s) PRAGMA table_info('mentors')
+I, [2021-03-11T20:23:17.196560 #167]  INFO -- : (0.000189s) PRAGMA foreign_keys = 1
+I, [2021-03-11T20:23:17.209072 #167]  INFO -- : (0.000031s) PRAGMA case_sensitive_like = 1
+I, [2021-03-11T20:23:17.209868 #167]  INFO -- : (0.000068s) SELECT sqlite_version()
+I, [2021-03-11T20:23:17.210128 #167]  INFO -- : (0.000115s) PRAGMA table_info('mentees')
+I, [2021-03-11T20:23:17.211166 #167]  INFO -- : (0.000098s) PRAGMA table_info('mentors')

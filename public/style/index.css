@@ -87,9 +87,9 @@ footer {
   text-shadow:1px 1px 10px #fff, 1px 1px 10px #ccc;
 }
 
-.full p {
+.intro {
   font-size: 1.8rem;
-  padding:  0.5% 30% 0% 2%;
+  padding:  0.5% 0% 0% 2%;
 }
 
 #mentoring_sess {
@@ -173,7 +173,7 @@ h6 {
   font-weight: bold;
 }
 
-#submit {
+#submit, #contact_submit {
   margin-top: 30px;
   font-size: 1.3rem;
   font-weight: bold;
@@ -182,7 +182,7 @@ h6 {
   font-family: "Pristina" ,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-#reset {
+#reset, #contact_reset {
   font-size: 1.3rem;
   font-weight: bold;
   padding: 5px 20px;
@@ -190,8 +190,11 @@ h6 {
   font-family: "Pristina" ,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+#contact_submit {
+  margin-left: 0;
+}
 
-#submit:hover, #reset:hover {
+#submit:hover, #reset:hover, #contact_submit:hover, #contact_reset:hover {
   transition-duration: 0.6s;
   background-color: rgba(194, 166, 251, 0.778);
   box-shadow: 0 4px 6px 2px rgba(185, 185, 185, 0.354);
@@ -215,7 +218,6 @@ h6 {
 }
 
 .contactForm {
-  background-color:red;
   text-align:center;
 }
 
