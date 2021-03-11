@@ -9,10 +9,15 @@ post "/MenteeSignUpForm" do
   @mentees.load(params)
 
   if @mentees.valid?
-    @mentees.save_changes
-    redirect "/index"
+          puts "test 1"
+      if @mentees.exist?
+      else
+      puts "test 2"
+        @mentees.save_changes
+        redirect "/index"
+      end
   end
-
+    puts "test 3"
   erb :mentee_signup
 end
 
