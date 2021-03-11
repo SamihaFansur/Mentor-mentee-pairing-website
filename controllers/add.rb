@@ -7,10 +7,13 @@ end
 post "/MenteeSignUpForm" do
   @mentees = Mentee.new
   @mentees.load(params)
+  @error = nil
 
   if @mentees.valid?
           puts "test 1"
       if @mentees.exist?
+        puts "----------------------user exists---------------------"
+        @error = "User exists"
       else
       puts "test 2"
         @mentees.save_changes

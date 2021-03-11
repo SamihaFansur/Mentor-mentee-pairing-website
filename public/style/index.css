@@ -219,6 +219,12 @@ h6 {
   text-align:center;
 }
 
+.error {
+  color:#120E43;
+  text-decoration: underline;
+  text-decoration-color: #383CC1;
+}
+
 
 /* header */
 

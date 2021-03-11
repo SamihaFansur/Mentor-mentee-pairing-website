@@ -3,9 +3,11 @@
       <!--Our Program-->
       <div class="full">
         <div class="title">Mentee Sign Up</div> <!--Main page Title-->  
-        <% unless @mentees.errors.size.zero? %>
-          <p><strong class="error">Please correct the errors below:</strong></p>
+        
+        <% unless @error.nil? %>
+        <h2><strong class="error"><%= @error %></strong></h2>
         <% end %>
+        
         <form name="myform" action="/MenteeSignUpForm" method="post" onsubmit="alert('Sign up successful! You will be redirected to the Home Page now...');" >
          
           <!--Column 1-->
