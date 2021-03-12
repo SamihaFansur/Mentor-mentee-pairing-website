@@ -1,5 +1,7 @@
 get "/MenteeDashboard" do
   redirect "/login" unless session[:logged_in]
+  username = session[:mentees_username]
+  @mentees = Mentee.first(username: username)
   erb :mentee_dashboard
 end
 
@@ -27,6 +29,7 @@ post '/login' do
   if @mentees.valid?
     if @mentees.exist?
       session[:logged_in] = true
+      session[:mentees_username] = @mentees.username
       redirect "/MenteeDashboard"
     else
       @error = "Username/Password combination incorrect"

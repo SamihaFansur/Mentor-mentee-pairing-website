@@ -4,10 +4,11 @@
       <div class="full">
         <aside class="lSide">
           <div class="full" id="user_info">
-            <p><!--<a href="#com1003" class="link">-->Name: <!--</a>--></p>
-            <p><!--<a href="#com1003" class="link">-->Email: <!--</a>--></p>
-            <p><!--<a href="#com1003" class="link">-->Phone Number: <!--</a>--></p>
-            <p><!--<a href="#com1003" class="link">-->Degree: <!--</a>--></p>
+            <p>Name: <%= h @mentees.name %></p>
+            <p>Email: <%= h @mentees.email %> </p>
+            <p>Phone Number: <%= h @mentees.phoneNum %> </p>
+            <p>Course Name: <%= h @mentees.courseName %> </p>
+            <p>Course Year: <%= h @mentees.cyear %> </p>
           </div>
         </aside>
 

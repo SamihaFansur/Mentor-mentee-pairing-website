@@ -1,4 +1,5 @@
 get "/index" do
+  @logged_in = session[:logged_in]
   erb :index
 end
 
