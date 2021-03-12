@@ -7,6 +7,8 @@ end
 
 get "/MentorDashboard" do
   redirect "/login" unless session[:logged_in]
+  username = session[:mentors_username]
+  @mentors = Mentor.first(username: username)
   erb :mentor_dashboard
 end
 
@@ -41,6 +43,7 @@ post '/login' do
   if @mentors.valid?
     if @mentors.exist?
       session[:logged_in] = true
+      session[:mentors_username] = @mentors.username
       redirect "/MentorDashboard"
     else
       @error = "Username/Password combination incorrect"
