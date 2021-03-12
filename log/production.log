@@ -22,3 +22,8 @@ I, [2021-03-12T00:06:14.588536 #806]  INFO -- : (0.000127s) PRAGMA table_info('m
 I, [2021-03-12T00:06:14.589777 #806]  INFO -- : (0.000162s) PRAGMA table_info('mentors')
 I, [2021-03-12T00:06:27.273347 #806]  INFO -- : (0.000152s) SELECT * FROM `mentees` WHERE (`username` = 'mentor2') LIMIT 1
 I, [2021-03-12T00:06:27.273674 #806]  INFO -- : (0.000122s) SELECT * FROM `mentors` WHERE (`username` = 'mentor2') LIMIT 1
+I, [2021-03-12T00:08:34.941319 #837]  INFO -- : (0.000293s) PRAGMA foreign_keys = 1
+I, [2021-03-12T00:08:34.941487 #837]  INFO -- : (0.000027s) PRAGMA case_sensitive_like = 1
+I, [2021-03-12T00:08:34.942835 #837]  INFO -- : (0.000109s) SELECT sqlite_version()
+I, [2021-03-12T00:08:34.943303 #837]  INFO -- : (0.000245s) PRAGMA table_info('mentees')
+I, [2021-03-12T00:08:34.945270 #837]  INFO -- : (0.000211s) PRAGMA table_info('mentors')

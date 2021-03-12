@@ -99,7 +99,7 @@ footer {
   padding: 3% 2% 0 2%;
 }
 
-#mentors {
+/* #mentors {
   display: block;
   text-align: left;
   margin: 5% 3% 2% 3%;
@@ -137,7 +137,7 @@ h6 {
   margin-top: 15px;
   color: rgb(0, 0, 0);
   text-shadow:1px 1px 10px rgb(119, 181, 226), 1px 1px 10px #ccc;
-}
+} */
 
 * {
   box-sizing: border-box;
