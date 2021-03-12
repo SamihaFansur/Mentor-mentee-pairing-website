@@ -13,6 +13,8 @@ class Mentor < Sequel::Model
     self.phoneNum = params.fetch("phoneNum", "").strip
     self.username = params.fetch("username", "").strip
     self.password = params.fetch("password", "").strip
+    self.jobTitle = params.fetch("jobTitle", "").strip
+    self.industry = params.fetch("industry", "").strip
   end
 
   def validate

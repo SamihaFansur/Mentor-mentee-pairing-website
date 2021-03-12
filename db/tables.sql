@@ -16,6 +16,8 @@ CREATE TABLE mentors (
     fname TEXT,
     lname TEXT,
     email TEXT,
-    phoneNum INTEGER
+    phoneNum INTEGER,
+    jobTitle TEXT,
+    industry TEXT
 );
 

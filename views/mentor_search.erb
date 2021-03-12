@@ -1,0 +1,39 @@
+<%= erb :"common/headerA" %>
+    <div class="background" id="statement">
+      <div class="full">
+        <div class="title">Search for a Mentor</div> <!--Main page Title-->  
+
+            <form>
+              <p>Enter an INDUSTRY to display mentors: 
+              <input type="text" name="industry_search" value="<%= h @industry_search %>"/>
+              <input type="submit" value="Submit" /></p>
+            </form>
+
+          <br />
+
+          <% if @mentors.count > 0 %>
+            <table>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Job Title</th>
+                <th>Industry</th>
+              </tr>
+            <% @mentors.each do |mentor| %>
+              <tr>
+                <td><%= h mentor.name %></td>
+                <td><%= h mentor.email %></td>
+                <td><%= h mentor.phoneNum %></td>
+                <td><%= h mentor.jobTitle %></td>
+                <td><%= h mentor.industry %></td>
+              </tr>
+            <% end %> 
+            </table>
+          <% else %>
+            <p>Your search revealed no mentors</p>
+          <% end %>
+      </div>
+</div>
+
+<%= erb :"common/footer" %>

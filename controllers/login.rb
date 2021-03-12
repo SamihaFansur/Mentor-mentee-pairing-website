@@ -3,10 +3,15 @@ get "/MenteeDashboard" do
   erb :mentee_dashboard
 end
 
+get "/MentorDashboard" do
+  redirect "/login" unless session[:logged_in]
+  erb :mentor_dashboard
+end
+
 get "/login" do
   @mentees = Mentee.new
   
-  @mentors = Mentee.new
+  @mentors = Mentor.new
   erb :login
 end
 
@@ -33,7 +38,7 @@ post '/login' do
   if @mentors.valid?
     if @mentors.exist?
       session[:logged_in] = true
-      redirect "/"
+      redirect "/MentorDashboard"
     else
       @error = "Username/Password combination incorrect"
     end
