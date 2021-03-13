@@ -1,13 +1,56 @@
 get "/index" do
-  @logged_in = session[:logged_in]
+  @header = nil
+#   @logged_in = session[:logged_in]
+#   puts session[:logged_in]
+  if session[:logged_in]
+    puts "check 1"
+    if session[:mentees_username] 
+      puts "mentee logged in"
+      @header = erb:"common/header_menteeA"
+    else
+      puts "mentor logged in"
+      @header = erb:"common/header_mentorA"
+    end
+  else 
+    puts "check 2"
+    @header = erb:"common/headerB"
+  end
   erb :index
 end
 
 get "/contact" do
+   @header = nil
+  if session[:logged_in]
+    puts "check 1"
+    if session[:mentees_username] 
+      puts "mentee logged in"
+      @header = erb:"common/header_menteeA"
+    else
+      puts "mentor logged in"
+      @header = erb:"common/header_mentorA"
+    end
+  else 
+    puts "check 2"
+    @header = erb:"common/headerB"
+  end
   erb :contact
 end
 
 get "/accessibility" do
+   @header = nil
+  if session[:logged_in]
+    puts "check 1"
+    if session[:mentees_username] 
+      puts "mentee logged in"
+      @header = erb:"common/header_menteeA"
+    else
+      puts "mentor logged in"
+      @header = erb:"common/header_mentorA"
+    end
+  else 
+    puts "check 2"
+    @header = erb:"common/headerB"
+  end
   erb :accessibility
 end
 
@@ -16,12 +59,10 @@ get "/SignUpChoices" do
 end
 
 get "/LoginPage" do
-  # ... app code ...
   erb :login
 end
 
 get "/MenteeSignUpForm" do
-  # ... app code ...
   erb :mentee_signup
 end
 
@@ -32,6 +73,5 @@ post "/index" do
 end
 
 get "/MentorSignUpForm" do
-  # ... app code ...
   erb :mentor_signup
 end
