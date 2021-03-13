@@ -4,8 +4,8 @@
         <div class="title">Search for a Mentor</div> <!--Main page Title-->  
 
             <form>
-              <p>Enter an INDUSTRY to display mentors: 
-              <input type="text" name="industry_search" value="<%= h @industry_search %>"/>
+              <p>Enter an COURSE NAME to display mentors: 
+              <input type="text" name="courseName_search" value="<%= h @courseName_search %>"/>
               <input type="submit" value="Submit" /></p>
             </form>
 
@@ -18,7 +18,7 @@
                 <th>Email</th>
                 <th>Phone Number</th>
                 <th>Job Title</th>
-                <th>Industry</th>
+                <th>Course Name</th>
               </tr>
             <% @mentors.each do |mentor| %>
               <tr>
@@ -26,7 +26,7 @@
                 <td><%= h mentor.email %></td>
                 <td><%= h mentor.phoneNum %></td>
                 <td><%= h mentor.jobTitle %></td>
-                <td><%= h mentor.industry %></td>
+                <td><%= h mentor.courseName %></td>
               </tr>
             <% end %> 
             </table>

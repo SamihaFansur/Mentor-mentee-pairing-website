@@ -3,12 +3,12 @@ get "/search" do
   #                            request.cookies.fetch("club_search", "")).strip
   # response.set_cookie("club_search", @club_search)
 
-  @industry_search = params.fetch("industry_search", "").strip
+  @courseName_search = params.fetch("courseName_search", "").strip
 
-  @mentors = if @industry_search.empty?
+  @mentors = if @courseName_search.empty?
                Mentor.all
              else
-               Mentor.where(Sequel.like(:industry, "%#{@industry_search}%"))
+               Mentor.where(Sequel.like(:courseName, "%#{@courseName_search}%"))
              end
 
   erb :mentor_search

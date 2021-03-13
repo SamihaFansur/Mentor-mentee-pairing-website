@@ -14,7 +14,7 @@ class Mentor < Sequel::Model
     self.username = params.fetch("username", "").strip
     self.password = params.fetch("password", "").strip
     self.jobTitle = params.fetch("jobTitle", "").strip
-    self.industry = params.fetch("industry", "").strip
+    self.courseName = params.fetch("courseName", "").strip
   end
 
   def validate
