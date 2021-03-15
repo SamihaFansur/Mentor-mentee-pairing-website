@@ -6,7 +6,7 @@ end
 SimpleCov.coverage_dir "coverage"
 
 # Ensure we use the test database
-ENV["APP_ENV"] = "test"
+ENV["APP_ENV"] = "production"
 
 # load the app
 require_relative "../app"
@@ -35,6 +35,11 @@ def add_test_user
   fill_in "cyear", with: "1"
   click_button "Submit"
 end
+
+  def name
+    "#{fname} #{lname}"
+  end
+
 
 # clear out the database
 def clear_database
