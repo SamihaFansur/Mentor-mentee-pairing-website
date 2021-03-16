@@ -5,6 +5,16 @@ class Mentor < Sequel::Model
   def name
     "#{fname} #{lname}"
   end
+  
+  # "self.method" is how we define a class-level method in Ruby (in the same way
+  # we'd use "static" in Java, e.g., public static void classMethod(...))
+  def self.username_exists?(username)
+   return false if username.nil? # check the username is not nil
+   return false unless Validation.str_is_text?(username) # check the username is text
+   return false if Mentor[username].nil? # check the database has a record with this username
+
+   true # all checks are ok - the username exists
+  end
 
   def load(params)
     self.fname = params.fetch("fname", "").strip
@@ -24,9 +34,9 @@ class Mentor < Sequel::Model
   end
   
   def exist_signup?
-    other_mentees = Mentor.first(username: username)
-    mentees =  Mentor.first(email: email)
-    !other_mentees.nil? ||  !mentees.nil?
+    other_mentors = Mentor.first(username: username)
+    mentors =  Mentor.first(email: email)
+    !other_mentors.nil? ||  !mentors.nil?
   end
   
   def exist_login?

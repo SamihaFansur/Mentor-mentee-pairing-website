@@ -1,4 +1,5 @@
-post "/delete" do
+#MENTEE
+post "/deleteMentee" do
   username = params["username"]
 
   if Mentee.username_exists?(username)
@@ -8,5 +9,19 @@ post "/delete" do
     redirect "/index"
   end
 
-  erb :delete_account
+  erb :delete_mentee_account
+end
+
+#MENTOR
+post "/deleteMentor" do
+  username = params["username"]
+
+  if Mentor.username_exists?(username)
+    mentor = Mentor[username]
+    mentor.delete
+    session.clear
+    redirect "/index"
+  end
+
+  erb :delete_mentor_account
 end

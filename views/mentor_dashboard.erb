@@ -9,12 +9,13 @@
             <p>Phone Number: <%= h @mentors.phoneNum %> </p>
             <p>Job Title: <%= h @mentors.jobTitle %></p>
             <p>Course Name: <%= h @mentors.courseName %> </p>
+            <td><a href="/editMentor?username=<%= h @mentors.username %>">Edit Profile</a></td>
           </div>
         </aside>
 
         <aside class="rSide">
           <div class="full">
-            <p class="search_info"><!--<a href="#com1003" class="link">-->View mentee applications<!--</a>--></p>
+            <p class="search_info">View mentee applications</p>
           </div>
         </aside>
      </div>

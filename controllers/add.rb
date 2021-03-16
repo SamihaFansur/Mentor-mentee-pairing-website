@@ -11,10 +11,10 @@ post "/MenteeSignUpForm" do
 
   if @mentees.valid?
       if @mentees.exist_signup?
-        @error = "User exists"
+        @error = "Username/email exists"
       else
         @mentees.save_changes
-        redirect "/index"
+        redirect "/login"
       end
   end
   erb :mentee_signup
@@ -33,10 +33,10 @@ post "/MentorSignUpForm" do
 
   if @mentors.valid?
       if @mentors.exist_signup?
-        @error = "User exists"
+        @error = "Username/email exists"
       else
         @mentors.save_changes
-        redirect "/index"
+        redirect "/login"
       end
   end
   erb :mentor_signup
