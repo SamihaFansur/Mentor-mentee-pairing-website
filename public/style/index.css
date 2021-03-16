@@ -1,7 +1,7 @@
 body {
   margin: 0; 
-  background-color: rgba(243, 250, 206, 0.951);
-  font-family: "Gabriola";
+  background-color: whitesmoke;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: rgb(0, 0, 0);
 }
 
@@ -10,16 +10,16 @@ a {
 }
 
 footer {
+  padding-bottom: 3px;
   width: 100%;
-  background-color: #03203C;
+  background-color: #1c467c;
   text-align: center;
-  font-size: 1.42rem;
+  font-size: 1.1rem;
   color: white;
 }
 
 #wrapper {
   width: 100%;
-  background-color: rgb(237, 246, 193);
   margin: 0 auto;
 }
 
@@ -67,24 +67,46 @@ footer {
 }
 
 .full {
-  display: block;
+  display: flex;
+  flex-direction: column;
   background-color:rgba(255, 255, 255, 0.347);
-  text-align: justify;
+  align-items: center;
+  text-align: center;
   border: 3px solid black;
   margin: 2% 2% 1.5%;
   padding: 0 1% 0.5% 1.5%;
+  font-size: 1.4rem;
+}
+
+.full p {
   font-size: 1.8rem;
 }
 
-.title{
+.title {
+  display: flex;
+  flex-direction: row;
   font-weight: bolder;
-  font-size: 6.2rem;
-  font-family: "Pristina" ,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  text-align: center;
+  align-items: center;
+  font-size: 2rem;
   text-decoration: underline;
   padding: 1% 0;
-  color: #052f55;
-  text-shadow:1px 1px 10px #fff, 1px 1px 10px #ccc;
+  color: black;
+}
+
+.title h1 {
+  margin: 0;
+  padding-left: 17.43%;
+}
+
+.title img {
+  margin: 0;
+  width: 20%;
+  height: 20%;
+}
+
+.contactBody h2 {
+  font-weight: normal;
+  font-size: 1.4rem;
 }
 
 .intro {
@@ -143,43 +165,58 @@ h6 {
   box-sizing: border-box;
 }
 
-.column, .col {
+.column {
   float: left;
   width: 50%;
   padding: 5px;
 }
 
 .col {
-  width: 45%;
-  border-color: #000065;
-  background-color: rgba(160, 160, 250, 0.097);
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(245, 245, 245, 0.8);
+  border-radius: 10px;
 }
+
 .col p {
+  margin: 5px;
   padding-right: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
-#col1 {
-  padding-left: 120px;
-  margin-left: 75px;
-  border-style: dashed none dashed dashed;
+.col p label{
+  padding: 5px;
+  align-self: flex-start;
 }
 
-#col2 {
-  padding-left: 120px;
-  border-style: dashed dashed dashed none;
+.col p input {
+  padding: 5px;
+  align-self: flex-end;
+}
+
+#signupForm { 
+  display: flex;
+  flex-direction: column;
+  background-color: #0066b3;
+  border-radius: 10px;
+  padding: 20px;
 }
 
 .options {
   font-weight: bold;
 }
 
+#buttons {
+  margin: 5px;
+}
+
 #submit, #contact_submit {
-  margin-top: 30px;
   font-size: 1.3rem;
   font-weight: bold;
   padding: 5px 12px;
-  margin-left: 600px;
-  font-family: "Pristina" ,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 5px;
 }
 
 #reset, #contact_reset {
@@ -187,7 +224,7 @@ h6 {
   font-weight: bold;
   padding: 5px 20px;
   margin-left: 0;
-  font-family: "Pristina" ,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 5px;
 }
 
 #contact_submit {
@@ -218,7 +255,29 @@ h6 {
 }
 
 .contactForm {
-  text-align:center;
+  margin-bottom: 5%;
+  border-radius: 10px;
+  display: flex;
+  background-color:#0066b3;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contactForm h2 {
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+
+.contactForm p {
+  margin: 5% 0;
+  padding: 0%;
+  font-size: 1.4rem;
+}
+
+.myform {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .error {
