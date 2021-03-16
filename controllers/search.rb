@@ -6,9 +6,9 @@ get "/search" do
   @courseName_search = params.fetch("courseName_search", "").strip
 
   @mentors = if @courseName_search.empty?
-               Mentor.all
+               Mentor.order(:courseName).all
              else
-               Mentor.where(Sequel.like(:courseName, "%#{@courseName_search}%"))
+               Mentor.order(:courseName).where(Sequel.like(:courseName, "%#{@courseName_search}%"))
              end
 
   erb :mentor_search
