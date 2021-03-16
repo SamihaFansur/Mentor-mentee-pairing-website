@@ -165,6 +165,8 @@ h6 {
   box-sizing: border-box;
 }
 
+/*Submission Forms*/
+
 .column {
   float: left;
   width: 50%;
@@ -172,31 +174,28 @@ h6 {
 }
 
 .col {
+  width: 100%;
   display: flex;
   flex-direction: column;
   background-color: rgba(245, 245, 245, 0.8);
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .col p {
-  margin: 5px;
+  margin: 10px;
   padding-right: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .col p label{
   padding: 5px;
-  align-self: flex-start;
 }
 
 .col p input {
-  padding: 5px;
-  align-self: flex-end;
+  padding: 5px; 
 }
 
-#signupForm { 
+#signupForm {
+  width: 50%;
   display: flex;
   flex-direction: column;
   background-color: #0066b3;
@@ -209,7 +208,8 @@ h6 {
 }
 
 #buttons {
-  margin: 5px;
+  margin: 15px;
+  padding-top: 5px;
 }
 
 #submit, #contact_submit {
@@ -237,7 +237,6 @@ h6 {
   box-shadow: 0 4px 6px 2px rgba(185, 185, 185, 0.354);
 }
 
-
 .full::after {
   content: "";
   display: table;
@@ -254,6 +253,7 @@ h6 {
   text-align-last:center;
 }
 
+/*Contact Form*/
 .contactForm {
   margin-bottom: 5%;
   border-radius: 10px;
@@ -287,44 +287,83 @@ h6 {
 }
 
 /*dashboard*/
-.lSide {
-  width: 40%;
-  padding-left: .5rem;
-  margin-left: 1rem;
-  float: left;
+
+#dashboard h2 {
+  align-self: flex-start;
+  margin-left: 5%;
+}
+
+#dashboardBody {
+  margin-bottom: 6%;
+  display: flex;
+  flex-direction: row;
   box-shadow: 5px 0 5px -5px #000000;
   font-style: italic;
   color: #000000;
-  background-image: url('../images/bg.jpg');
-  margin-top: 0.5%;
+  /*background-image: url('../images/bg.jpg');*/
   font-weight: bold;
+} 
+
+#dashboardBody a {
+  color: #000066;
+}
+
+.lSide {
+  width: 50%;
+  margin: 2.5%;
+  margin-right: 10%;
 }
 
 .rSide {
-  width: 45%;
-  padding-left: .5rem;
-  margin-right: 1.5rem;
-  float: right;
-  box-shadow: 5px 0 5px -5px #000000;
-  font-style: italic;
-  color: #000000;
-  background-image: url('../images/bg.jpg');
-  margin-top: 0.5%;
-  font-weight: bold;
+  width: 35%;
+  margin: 2.5%;
 }
 
 #user_info {
-  border: 3px dashed #000065;
+  background-color: rgba(255, 255, 255, 0.347);
+  border: 3px solid #000000;
   font-size: 2.2rem;
-  background-color:rgba(160, 160, 250, 0.403);
   margin: 3% 3%;
 }
 
 .search_info {
-  border: 3px dashed #000065;
   font-size: 2.2rem;
-  background-color:rgba(255, 255, 254, 0.43);
   text-align: center;
+}
+
+#searchOptions {
+  margin-top: 50px;
+}
+
+/*Search*/
+#MentorTable {
+  margin: 5% 0 10%;
+  background-color: #0066b3;
+  padding: 5px;
+  border-spacing: 0;
+  border-radius: 3px;
+  width:100%;
+
+}
+#MentorTable th {
+  background-color: #0066b3;
+  padding-bottom: 10px;
+}
+#MentorTable tr:nth-child(even) {
+  background-color: #ade1f8;
+}
+
+#MentorTable tr:nth-child(odd) {
+  background-color: white;
+}
+
+#MentorTable td {
+  padding: 10px;
+  text-align: center; 
+}
+
+#SearchError {
+  margin-bottom: 24%;
 }
 
 /* header */

@@ -1,24 +1,27 @@
 <%= erb :"common/header_menteeA" %>
-<div  id="statement">
+<div class="background" id="statement">
   
-      <div class="full">
-        <aside class="lSide">
-          <div class="full" id="user_info">
-            <p>Name: <%= h @mentees.name %></p>
-            <p>Email: <%= h @mentees.email %> </p>
-            <p>Phone Number: <%= h @mentees.phoneNum %> </p>
-            <p>Course Name: <%= h @mentees.courseName %> </p>
-            <p>Course Year: <%= h @mentees.cyear %> </p>
-            <td><a href="/edit?username=<%= h @mentees.username %>">Edit</a></td>
-          </div>
-        </aside>
+      <div class="full" id="dashboard">
+        <h2>My Dashboard</h2>
+        <div id="dashboardBody">
+          <aside class="lSide">
+            <div id="user_info">
+              <p>Name: <%= h @mentees.name %></p>
+              <p>Email: <%= h @mentees.email %> </p>
+              <p>Phone Number: <%= h @mentees.phoneNum %> </p>
+              <p>Course Name: <%= h @mentees.courseName %> </p>
+              <p>Course Year: <%= h @mentees.cyear %> </p>
+              <td><a href="/edit?username=<%= h @mentees.username %>">Edit</a></td>
+            </div>
+          </aside>
 
-        <aside class="rSide">
-          <div class="full">
-            <p class="search_info"><a href="/search" class="link">Find a mentor</a></p>
-            <p class="search_info"><!--<a href="#com1003" class="link">-->View mentor applications<!--</a>--></p>
-          </div>
-        </aside>
+          <aside class="rSide">
+            <div class="full" id="searchOptions">
+              <p class="search_info"><a href="/search" class="link">Find a mentor</a></p>
+              <p class="search_info"><!--<a href="#com1003" class="link">-->View mentor applications<!--</a>--></p>
+            </div>
+          </aside>
+        </div>
      </div>
   
 </div> 

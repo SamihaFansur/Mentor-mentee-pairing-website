@@ -4,15 +4,15 @@
         <div class="title">Search for a Mentor</div> <!--Main page Title-->  
 
             <form>
-              <p>Enter an COURSE NAME to display mentors: 
+              <p>Enter a COURSE NAME to display mentors: 
                 <input type="text" name="courseName_search" id="searchForMentor" placeholder="Enter course name to search..." maxlength="40" size="30" value="<%= h @courseName_search %>"/>
                 <input type="submit" value="Submit" />
               </p>
             </form>
 
           <% if @mentors.count > 0 %>
-            <table>
-              <tr>
+            <table id="MentorTable">
+              <tr id="TableHeadings">
                 <th>Name</th>
                 <th>Email</th>
                 <th>Phone Number</th>
@@ -30,7 +30,7 @@
             <% end %> 
             </table>
           <% else %>
-            <p>Your search revealed no mentors</p>
+            <p id="SearchError">Your search revealed no mentors</p>
           <% end %>
       </div>
 </div>
