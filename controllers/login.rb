@@ -29,7 +29,7 @@ post '/login' do
   @error = nil
 
   if @mentees.valid?
-    if @mentees.exist?
+    if @mentees.exist_login?
       session[:logged_in] = true
       session[:mentees_username] = @mentees.username
       redirect "/MenteeDashboard"
@@ -41,7 +41,7 @@ post '/login' do
   end
   
   if @mentors.valid?
-    if @mentors.exist?
+    if @mentors.exist_login?
       session[:logged_in] = true
       session[:mentors_username] = @mentors.username
       redirect "/MentorDashboard"

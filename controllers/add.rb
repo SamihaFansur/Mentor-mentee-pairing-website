@@ -10,7 +10,7 @@ post "/MenteeSignUpForm" do
   @error = nil
 
   if @mentees.valid?
-      if @mentees.exist?
+      if @mentees.exist_signup?
         @error = "User exists"
       else
         @mentees.save_changes
@@ -32,7 +32,7 @@ post "/MentorSignUpForm" do
   @error = nil
 
   if @mentors.valid?
-      if @mentors.exist?
+      if @mentors.exist_signup?
         @error = "User exists"
       else
         @mentors.save_changes
