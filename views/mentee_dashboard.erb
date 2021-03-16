@@ -9,6 +9,7 @@
             <p>Phone Number: <%= h @mentees.phoneNum %> </p>
             <p>Course Name: <%= h @mentees.courseName %> </p>
             <p>Course Year: <%= h @mentees.cyear %> </p>
+            <td><a href="/edit?username=<%= h @mentees.username %>">Edit</a></td>
           </div>
         </aside>
 

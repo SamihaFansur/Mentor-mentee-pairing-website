@@ -1,0 +1,34 @@
+<%= erb :"common/header_menteeA" %>
+    <div class="background" id="statement">
+      <div class="full">
+        <div class="title">Edit your information</div> <!--Main page Title-->  
+
+<% if @mentees.nil? %>
+    <p class="error"><strong>Unknown mentee</strong></p>
+<% else %>    
+
+    <% unless @mentees.errors.size.zero? %>
+        <p><strong class="error">Please correct the errors below:</strong></p>
+    <% end %>
+
+    <form method="post">
+        <input type="hidden" name="username" value="<%= @mentees.username %>" />
+        <%= erb :"mentee_signup" %> <!--NEED TO CHANGE THIS TO DISPLAY FORM-->
+    </form>
+
+    <div class="warning">
+        <p><strong>WARNING! Deleting a record cannot be undone.</strong></p>
+
+        <form method="post" action="/delete">
+            <input type="hidden" name="username" value="<%= @mentees.username %>" />
+            <input type="submit" value="Delete" onclick="return confirm('Are you sure?')" />
+        </form>
+    </div>
+
+<% end %>
+
+<p class="navigation">Return to <a href="/MenteeDashboard">Mentee Dashboard</a>.</p>
+      </div>
+</div>
+
+<%= erb :"common/footer" %>

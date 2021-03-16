@@ -8,13 +8,13 @@ class Mentee < Sequel::Model
 
   # "self.method" is how we define a class-level method in Ruby (in the same way
   # we'd use "static" in Java, e.g., public static void classMethod(...))
-  #def self.id_exists?(id)
-  #  return false if id.nil? # check the id is not nil
-  #  return false unless Validation.str_is_integer?(id) # check the id is an integer
-  #  return false if Mentee[id].nil? # check the database has a record with this id
+  def self.username_exists?(username)
+   return false if username.nil? # check the username is not nil
+   return false unless Validation.str_is_text?(username) # check the username is text
+   return false if Mentee[username].nil? # check the database has a record with this id
 
-  #  true # all checks are ok - the id exists
-  #end
+   true # all checks are ok - the id exists
+  end
 
   def load(params)
     self.fname = params.fetch("fname", "").strip

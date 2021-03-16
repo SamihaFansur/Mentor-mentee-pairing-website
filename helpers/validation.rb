@@ -1,9 +1,9 @@
 # Provide various functions for validating data
 module Validation
-  def self.str_is_integer?(str)
+ def self.str_is_text?(str)
     return false if str.nil?
 
-    str.match?(/^(\d)+$/)
+#     str.match?(/^(\d)+$/)
   end
 
 end

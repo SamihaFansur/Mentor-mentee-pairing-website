@@ -5,11 +5,10 @@
 
             <form>
               <p>Enter an COURSE NAME to display mentors: 
-              <input type="text" name="courseName_search" value="<%= h @courseName_search %>"/>
-              <input type="submit" value="Submit" /></p>
+                <input type="text" name="courseName_search" id="searchForMentor" placeholder="Enter course name to search..." maxlength="40" size="30" value="<%= h @courseName_search %>"/>
+                <input type="submit" value="Submit" />
+              </p>
             </form>
-
-          <br />
 
           <% if @mentors.count > 0 %>
             <table>
