@@ -11,9 +11,9 @@ class Mentee < Sequel::Model
   def self.username_exists?(username)
    return false if username.nil? # check the username is not nil
    return false unless Validation.str_is_text?(username) # check the username is text
-   return false if Mentee[username].nil? # check the database has a record with this id
+   return false if Mentee[username].nil? # check the database has a record with this username
 
-   true # all checks are ok - the id exists
+   true # all checks are ok - the username exists
   end
 
   def load(params)
@@ -39,9 +39,14 @@ class Mentee < Sequel::Model
     errors.add("password", "cannot be empty") if password.empty?
   end
   
-  def exist?
+  def exist_signup?
     other_mentees = Mentee.first(username: username)
-    !other_mentees.nil? && other_mentees.password == password
+    mentees =  Mentee.first(email: email)
+    !other_mentees.nil? ||  !mentees.nil?
   end
   
+  def exist_login?
+    other_user = Mentee.first(username: username)
+    !other_user.nil? && other_user.password == password
+  end
 end

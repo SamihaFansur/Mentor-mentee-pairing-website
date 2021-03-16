@@ -23,9 +23,15 @@ class Mentor < Sequel::Model
     errors.add("password", "cannot be empty") if password.empty?
   end
   
-  def exist?
-    other_mentors = Mentor.first(username: username)
-    !other_mentors.nil? && other_mentors.password == password
+  def exist_signup?
+    other_mentees = Mentor.first(username: username)
+    mentees =  Mentor.first(email: email)
+    !other_mentees.nil? ||  !mentees.nil?
+  end
+  
+  def exist_login?
+    other_user = Mentor.first(username: username)
+    !other_user.nil? && other_user.password == password
   end
   
 end
