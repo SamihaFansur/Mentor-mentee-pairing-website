@@ -330,12 +330,12 @@ h6 {
 /* header */
 
 .header {
-  background-color: #03203C;
+  background-color: #1c467c;
   box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 4px 0px;
   position: absolute;
   width: 100%;
   z-index: 3;
-  font-size: 17pt;
+  font-size: 1.3rem;
 }
 
 .header ul {
