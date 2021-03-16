@@ -8,18 +8,24 @@
       <h2><strong class="error"><%= @error %></strong></h2>
       <% end %>
 
-      <form name="myform" action="/MentorSignUpForm" method="post">
+      <form id="signupForm" name="myform" action="/MentorSignUpForm" method="post">
 
-        <!--Column 1-->
-        <div class="col" id="col1">
+        
+        <div class="col">
           <p>
             <label for="fname" class="options">First name:</label>
             <input type="text" name="fname" id="fname" maxlength="40" size="30" placeholder="Enter first name..."  required value="<%= h @mentors.fname %>"><!--Mandatory field-->
-         </p>
+            
+            <label for="lname" class="options">Last name:</label>
+            <input type="text" name="lname" id="lname" maxlength="40" size="30" placeholder="Enter last name..."  required value="<%= h @mentors.lname %>"><!--Mandatory field-->
+          </p>
 
           <p>
             <label for="email" class="options">E-mail:</label>
             <input type="email" name="email" id="email" placeholder="Enter your email..." maxlength="40" size="30" required value="<%= h @mentors.email %>"><!--Mandatory field-->
+          
+            <label for="phoneNum" class="options">Phone Number:</label>
+            <input type="text" name="phoneNum" id="phoneNum" placeholder="+XX XXXXXXXXXX" maxlength="40" size="30" required value="<%= h @mentors.phoneNum %>"><!--Mandatory field-->
           </p>
           
           <p>
@@ -487,30 +493,9 @@
               <option value="Yoga Instructor">Yoga Instructor</option>
               <option value="Youth Volunteer">Youth Volunteer</option>
               <option value="Zoologist">Zoologist</option>
-          </select>
-          </p>
+            </select>
 
-          <p>
-            <label for="username" class="options">Username:</label>
-            <input type="text" name="username" id="username" placeholder="Enter your username..." maxlength="40" size="30" required value="<%= h @mentors.username %>"><!--Mandatory field-->
-          </p>             
-
-        </div>
-
-        <!--Column 2-->
-        <div class="col" id="col2">
-          <p>
-            <label for="lname" class="options">Last name:</label>
-            <input type="text" name="lname" id="lname" maxlength="40" size="30" placeholder="Enter last name..."  required value="<%= h @mentors.lname %>"><!--Mandatory field-->
-          </p>
-
-          <p>
-            <label for="phoneNum" class="options">Phone Number:</label>
-            <input type="text" name="phoneNum" id="phoneNum" placeholder="+XX XXXXXXXXXX" maxlength="40" size="30" required value="<%= h @mentors.phoneNum %>"><!--Mandatory field-->
-          </p>
-          
-          <p>
-              <label for="courseName" class="options">Course: </label> <!--Dropdown List-->
+            <label for="courseName" class="options">Course: </label> <!--Dropdown List-->
             <select name="courseName" id="courseName" required value="<%= h @mentors.courseName %>"> <!--Course List-->
               <option value="">Select</option>
               <option value="Accounting and Financial Management (BA)">Accounting and Financial Management (BA)</option>
@@ -781,23 +766,25 @@
 
 
             </select>
-            </p>
+          </p>
 
           <p>
+            <label for="username" class="options">Username:</label>
+            <input type="text" name="username" id="username" placeholder="Enter your username..." maxlength="40" size="30" required value="<%= h @mentors.username %>"><!--Mandatory field-->
+          
+            
             <label for="password" class="options">Password:</label>
             <input type="password" name="password" id="password" placeholder="Enter your password..." maxlength="40" size="30" required value="<%= h @mentors.password %>"><!--Mandatory field-->
-          </p> 
+          </p>             
 
         </div>
-
-          <!--Submit/Reset buttons-->
-        <p>
+        <!--Submit/Reset buttons-->
+        <p id="buttons">
           <input type="submit" id="submit" value="Submit">
           <input type="reset" id="reset" value="Reset">
         </p>
-        <!--</div>-->
       </form>
-
+      
     </div>
 
   </div> 
