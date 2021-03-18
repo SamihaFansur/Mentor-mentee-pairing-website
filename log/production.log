@@ -632,3 +632,113 @@ I, [2021-03-16T23:34:58.327758 #362]  INFO -- : (0.000173s) SELECT * FROM `mento
 I, [2021-03-16T23:34:59.781750 #362]  INFO -- : (0.000152s) SELECT * FROM `mentors` WHERE `username` = 'finalmentor'
 I, [2021-03-16T23:34:59.781969 #362]  INFO -- : (0.000116s) SELECT * FROM `mentors` WHERE `username` = 'finalmentor'
 I, [2021-03-16T23:35:07.315338 #362]  INFO -- : (0.000151s) SELECT * FROM `mentors` WHERE (`username` = 'finalmentor') LIMIT 1
+I, [2021-03-18T11:36:56.671876 #299]  INFO -- : (0.001755s) PRAGMA foreign_keys = 1
+I, [2021-03-18T11:36:56.671967 #299]  INFO -- : (0.000015s) PRAGMA case_sensitive_like = 1
+I, [2021-03-18T11:36:56.672798 #299]  INFO -- : (0.000065s) SELECT sqlite_version()
+I, [2021-03-18T11:36:56.673054 #299]  INFO -- : (0.000121s) PRAGMA table_info('mentees')
+I, [2021-03-18T11:36:56.674119 #299]  INFO -- : (0.000125s) PRAGMA table_info('mentors')
+I, [2021-03-18T11:37:20.832118 #299]  INFO -- : (0.000254s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T11:37:20.959222 #299]  INFO -- : (0.000161s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T11:39:38.586206 #299]  INFO -- : (0.000154s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T11:40:23.177441 #299]  INFO -- : (0.000173s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T11:41:06.298799 #299]  INFO -- : (0.000155s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T11:42:45.364776 #299]  INFO -- : (0.000174s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T11:43:28.878303 #299]  INFO -- : (0.000158s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T11:43:55.152916 #299]  INFO -- : (0.000159s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T11:44:32.142540 #299]  INFO -- : (0.000172s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T11:45:23.434075 #299]  INFO -- : (0.000194s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T11:45:59.111571 #299]  INFO -- : (0.000159s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T11:47:21.477018 #299]  INFO -- : (0.000160s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T11:48:02.391950 #299]  INFO -- : (0.000157s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T11:48:36.348052 #299]  INFO -- : (0.000158s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T11:49:26.809894 #299]  INFO -- : (0.000158s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T11:49:55.861219 #299]  INFO -- : (0.000161s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T11:50:20.611858 #299]  INFO -- : (0.000165s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T11:51:07.625327 #299]  INFO -- : (0.000154s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T11:51:25.408494 #299]  INFO -- : (0.000177s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T11:52:56.111232 #299]  INFO -- : (0.000162s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T11:54:33.768372 #299]  INFO -- : (0.000167s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T11:55:45.675546 #299]  INFO -- : (0.000164s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T11:57:41.308166 #299]  INFO -- : (0.000157s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T11:58:11.200133 #299]  INFO -- : (0.000152s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T11:58:55.641696 #299]  INFO -- : (0.000160s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T11:59:17.014635 #299]  INFO -- : (0.000164s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T11:59:41.000284 #299]  INFO -- : (0.000156s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T12:00:55.066798 #299]  INFO -- : (0.000166s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T12:01:31.919408 #299]  INFO -- : (0.000156s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T12:02:10.786906 #299]  INFO -- : (0.000155s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T12:02:42.991395 #299]  INFO -- : (0.000156s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T12:02:57.251606 #325]  INFO -- : (0.000183s) PRAGMA foreign_keys = 1
+I, [2021-03-18T12:02:57.251715 #325]  INFO -- : (0.000015s) PRAGMA case_sensitive_like = 1
+I, [2021-03-18T12:02:57.252513 #325]  INFO -- : (0.000066s) SELECT sqlite_version()
+I, [2021-03-18T12:02:57.252779 #325]  INFO -- : (0.000113s) PRAGMA table_info('mentees')
+I, [2021-03-18T12:02:57.253961 #325]  INFO -- : (0.000143s) PRAGMA table_info('mentors')
+I, [2021-03-18T12:03:07.162894 #325]  INFO -- : (0.000187s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T12:03:45.610771 #325]  INFO -- : (0.000163s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T12:04:05.930361 #325]  INFO -- : (0.000174s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T12:04:24.724887 #325]  INFO -- : (0.000165s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T12:05:04.557036 #325]  INFO -- : (0.000162s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T12:06:38.850030 #325]  INFO -- : (0.000173s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T12:07:06.679971 #325]  INFO -- : (0.000160s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T12:07:48.471850 #325]  INFO -- : (0.000172s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T12:09:51.737833 #383]  INFO -- : (0.000180s) PRAGMA foreign_keys = 1
+I, [2021-03-18T12:09:51.737934 #383]  INFO -- : (0.000015s) PRAGMA case_sensitive_like = 1
+I, [2021-03-18T12:09:51.738689 #383]  INFO -- : (0.000063s) SELECT sqlite_version()
+I, [2021-03-18T12:09:51.738950 #383]  INFO -- : (0.000125s) PRAGMA table_info('mentees')
+I, [2021-03-18T12:09:51.740065 #383]  INFO -- : (0.000130s) PRAGMA table_info('mentors')
+I, [2021-03-18T12:09:57.899821 #383]  INFO -- : (0.000211s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T12:11:05.189837 #383]  INFO -- : (0.000163s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T12:11:17.922169 #383]  INFO -- : (0.000164s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T12:11:42.705143 #383]  INFO -- : (0.000155s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T12:11:53.992314 #383]  INFO -- : (0.000178s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T12:12:29.492122 #383]  INFO -- : (0.000161s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T12:12:43.474692 #383]  INFO -- : (0.000175s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T12:13:05.650075 #383]  INFO -- : (0.000173s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T12:13:15.330854 #383]  INFO -- : (0.000166s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T12:13:34.608569 #383]  INFO -- : (0.000193s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T12:16:12.732290 #383]  INFO -- : (0.000172s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T12:19:16.075178 #383]  INFO -- : (0.000165s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T12:19:31.524169 #383]  INFO -- : (0.000162s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T12:20:42.270215 #383]  INFO -- : (0.000168s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T12:21:35.168025 #383]  INFO -- : (0.000173s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T12:21:43.450196 #383]  INFO -- : (0.000203s) SELECT * FROM `mentees` WHERE `username` = 'trial1'
+I, [2021-03-18T12:21:43.450458 #383]  INFO -- : (0.000118s) SELECT * FROM `mentees` WHERE `username` = 'trial1'
+I, [2021-03-18T12:21:58.368150 #383]  INFO -- : (0.000165s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T12:22:01.774055 #383]  INFO -- : (0.000159s) SELECT * FROM `mentees` WHERE `username` = 'trial1'
+I, [2021-03-18T12:22:01.774243 #383]  INFO -- : (0.000084s) SELECT * FROM `mentees` WHERE `username` = 'trial1'
+I, [2021-03-18T12:22:15.284144 #383]  INFO -- : (0.000163s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T12:22:47.127108 #383]  INFO -- : (0.000174s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T12:23:26.729019 #383]  INFO -- : (0.000167s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T12:23:41.806381 #383]  INFO -- : (0.000176s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T12:24:04.983763 #383]  INFO -- : (0.000193s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T12:24:46.768740 #383]  INFO -- : (0.000170s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T12:25:20.361332 #383]  INFO -- : (0.000155s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T12:25:31.579008 #383]  INFO -- : (0.000226s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T12:26:15.890001 #383]  INFO -- : (0.000156s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T12:27:14.010742 #383]  INFO -- : (0.000154s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T12:27:21.102317 #383]  INFO -- : (0.000157s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T12:28:12.690677 #383]  INFO -- : (0.000213s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T12:28:48.275706 #443]  INFO -- : (0.000178s) PRAGMA foreign_keys = 1
+I, [2021-03-18T12:28:48.275812 #443]  INFO -- : (0.000015s) PRAGMA case_sensitive_like = 1
+I, [2021-03-18T12:28:48.276571 #443]  INFO -- : (0.000063s) SELECT sqlite_version()
+I, [2021-03-18T12:28:48.276831 #443]  INFO -- : (0.000125s) PRAGMA table_info('mentees')
+I, [2021-03-18T12:28:48.277983 #443]  INFO -- : (0.000142s) PRAGMA table_info('mentors')
+I, [2021-03-18T12:28:51.332050 #443]  INFO -- : (0.000172s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T12:29:05.028568 #443]  INFO -- : (0.000676s) SELECT * FROM `mentors` ORDER BY `courseName`
+I, [2021-03-18T12:29:15.539842 #443]  INFO -- : (0.000163s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T12:29:26.088262 #443]  INFO -- : (0.000160s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T12:29:58.379352 #443]  INFO -- : (0.000157s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T12:31:34.151678 #443]  INFO -- : (0.000164s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T12:31:58.306996 #443]  INFO -- : (0.000181s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T12:32:12.954844 #443]  INFO -- : (0.000180s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T12:32:39.356141 #443]  INFO -- : (0.001147s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T12:33:27.671559 #443]  INFO -- : (0.000163s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T12:33:27.812685 #443]  INFO -- : (0.000175s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T12:33:33.227215 #443]  INFO -- : (0.000159s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-18T12:33:37.332068 #443]  INFO -- : (0.000161s) SELECT * FROM `mentees` WHERE `username` = 'trial1'
+I, [2021-03-18T12:33:37.332270 #443]  INFO -- : (0.000087s) SELECT * FROM `mentees` WHERE `username` = 'trial1'
+I, [2021-03-18T13:37:24.550625 #476]  INFO -- : (0.000184s) PRAGMA foreign_keys = 1
+I, [2021-03-18T13:37:24.550734 #476]  INFO -- : (0.000015s) PRAGMA case_sensitive_like = 1
+I, [2021-03-18T13:37:24.551510 #476]  INFO -- : (0.000062s) SELECT sqlite_version()
+I, [2021-03-18T13:37:24.551774 #476]  INFO -- : (0.000114s) PRAGMA table_info('mentees')
+I, [2021-03-18T13:37:24.552917 #476]  INFO -- : (0.000113s) PRAGMA table_info('mentors')

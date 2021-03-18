@@ -6,19 +6,21 @@
         <div id="dashboardBody">
           <aside class="lSide">
             <div id="user_info">
-              <p>Name: <%= h @mentees.name %></p>
-              <p>Email: <%= h @mentees.email %> </p>
-              <p>Phone Number: <%= h @mentees.phoneNum %> </p>
-              <p>Course Name: <%= h @mentees.courseName %> </p>
-              <p>Course Year: <%= h @mentees.cyear %> </p>
-              <td><a href="/editMentee?username=<%= h @mentees.username %>">Edit Profile</a></td>
+              <h3>My Info</h3>
+              <p><b>Name:</b> <i><%= h @mentees.name %></i></p>
+              <p><b>Email:</b> <i><%= h @mentees.email %></i> </p>
+              <p><b>Phone Number:</b> <i><%= h @mentees.phoneNum %></i></p>
+              <p><b>Course Name:</b> <i><%= h @mentees.courseName %></i> </p>
+              <p><b>Course Year:</b> <%= h @mentees.cyear %> </p>
             </div>
           </aside>
 
           <aside class="rSide">
             <div class="full" id="searchOptions">
+              <h3>Options</h3>
               <p class="search_info"><a href="/search" class="link">Find a mentor</a></p>
               <p class="search_info"><!--<a href="#com1003" class="link">-->View mentor applications<!--</a>--></p>
+              <p><a href="/editMentee?username=<%= h @mentees.username %>">Edit Profile</a></p>
             </div>
           </aside>
         </div>

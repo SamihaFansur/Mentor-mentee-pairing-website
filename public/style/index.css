@@ -73,6 +73,7 @@ footer {
   align-items: center;
   text-align: center;
   border: 3px solid black;
+  border-radius: 3px;
   margin: 2% 2% 1.5%;
   padding: 0 1% 0.5% 1.5%;
   font-size: 1.4rem;
@@ -294,15 +295,22 @@ h6 {
 }
 
 #dashboardBody {
-  margin-bottom: 6%;
+  margin-bottom: 5%;
+  width: 100%;
+  background-color: #0066b3;
+  border-radius: 4px;
   display: flex;
   flex-direction: row;
-  box-shadow: 5px 0 5px -5px #000000;
-  font-style: italic;
   color: #000000;
-  /*background-image: url('../images/bg.jpg');*/
-  font-weight: bold;
 } 
+
+#dashboardBody h3 {
+  margin: 1%;
+  font-size: 1.6rem;
+  font-style: normal;
+  text-decoration: underline;
+  text-align: center;
+}
 
 #dashboardBody a {
   color: #000066;
@@ -311,28 +319,45 @@ h6 {
 .lSide {
   width: 50%;
   margin: 2.5%;
-  margin-right: 10%;
+  margin-right: 5%;
+  align-self: flex-start;
 }
 
 .rSide {
-  width: 35%;
+  width: 40%;
   margin: 2.5%;
 }
 
+.rSide p {
+  margin: 2%;
+  padding-top: 2%;
+}
+
 #user_info {
-  background-color: rgba(255, 255, 255, 0.347);
+  background-color: rgba(255, 255, 255, 0.7);
   border: 3px solid #000000;
+  border-radius: 3px;
   font-size: 2.2rem;
   margin: 3% 3%;
+  text-align: left;
+}
+
+#user_info p {
+  margin: 5% 0% 5% 10%;
+}
+
+#user_info a {
+  font-size: 1.8rem;
 }
 
 .search_info {
-  font-size: 2.2rem;
   text-align: center;
 }
 
+
 #searchOptions {
   margin-top: 50px;
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
 /*Search*/

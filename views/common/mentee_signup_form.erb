@@ -1,5 +1,5 @@
-<!--Column 1-->
-<div class="col" id="col1">
+<div class="col">
+  <p>Please fill in the information below</p>
   <p>
     <label for="fname" class="options">First name:</label>
     <input type="text" name="fname" id="fname" maxlength="40" size="30" placeholder="Enter first name..."  required value="<%= h @mentees.fname %>"><!--Mandatory field-->
@@ -20,12 +20,9 @@
     <input type="text" name="phoneNum" id="phoneNum" placeholder="+XX XXXXXXXXXX" maxlength="40" size="30" required value="<%= h @mentees.phoneNum %>"><!--Mandatory field-->
   </p>            
 
-</div>
-
 <!--Column 2-->
-<div class="col" id="col2">
   <p>
-    <label for="courseName" class="options">Course Name: </label> <!--Dropdown List-->
+    <label for="courseName" class="options">Course: </label> <!--Dropdown List-->
     <select name="courseName" id="courseName" required value="<%= h @mentees.courseName %>"> <!--Course List-->
       <option value="">Select</option>
       <option value="Accounting and Financial Management (BA)">Accounting and Financial Management (BA)</option>
@@ -324,7 +321,7 @@
 </div>
 
   <!--Submit/Reset buttons-->
-<p>
+<p id="buttons">
   <input type="submit" id="submit" value="Submit">
 <!--   <input type="reset" id="reset" value="Reset"> -->
 </p>
