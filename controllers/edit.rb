@@ -13,6 +13,7 @@ post "/editMentee" do
     @mentees.load(params)
 
     if @mentees.valid?
+      puts @mentees
       @mentees.save_changes
       redirect "/MenteeDashboard"
     end
