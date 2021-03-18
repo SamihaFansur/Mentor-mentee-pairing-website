@@ -15,7 +15,14 @@ post "/MenteeSignUpForm" do
         @error = "Username/email exists"
       else
         @mentees.save_changes
-        send_mail(@mentees.email, "Successful Sign up!", @mentees.username)
+        send_mail(@mentees.email, 
+          "Successful Sign up!", 
+          "Hi "+@mentees.fname+" "+@mentees.lname+"!\n
+          Your username is: "+@mentees.username+"\n
+          Your email: "+@mentees.email+"\n
+          Please use these credentials to login into your mentee account \n
+          \n\n\nRegards\n
+          Team 6")
         redirect "/login"
       end
   end
@@ -47,7 +54,14 @@ post "/MentorSignUpForm" do
         @error = "Username/email exists"
       else
         @mentors.save_changes
-        send_mail(@mentors.email, "Successful Sign up!", @mentors.username)
+        send_mail(@mentors.email, 
+          "Successful Sign up!", 
+          "Hi "+@mentors.fname+" "+@mentors.lname+"!\n
+          Your username is: "+@mentors.username+"\n
+          Your email: "+@mentors.email+"\n
+          Please use these credentials to login into your mentor account \n
+          \n\n\nRegards\n
+          Team 6")
         redirect "/login"
       end
   end
