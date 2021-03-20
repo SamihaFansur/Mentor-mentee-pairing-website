@@ -26,6 +26,18 @@ class Mentee < Sequel::Model
     self.username = params.fetch("username", "").strip
     self.password = params.fetch("password", "").strip
   end
+  
+  def loadEdit(params)
+    self.fname = params.fetch("fname", self.fname).strip
+    self.lname = params.fetch("lname", self.lname).strip
+    self.email = params.fetch("email", self.email).strip
+    self.phoneNum = params.fetch("phoneNum", self.phoneNum).strip
+    self.courseName = params.fetch("courseName").strip unless params.fetch("courseName").strip == ""
+    self.cyear = params.fetch("cyear").strip unless params.fetch("cyear").strip == ""
+    self.username = params.fetch("username", self.username).strip
+    self.password = params.fetch("password", self.password).strip
+    self.description = params.fetch("description").strip 
+  end
 
   def validate
     super

@@ -10,10 +10,9 @@ post "/editMentee" do
 
   if Mentee.username_exists?(username)
     @mentees = Mentee[username]
-    @mentees.load(params)
+    @mentees.loadEdit(params)
 
     if @mentees.valid?
-      puts @mentees
       @mentees.save_changes
       redirect "/MenteeDashboard"
     end
@@ -34,7 +33,7 @@ post "/editMentor" do
 
   if Mentor.username_exists?(username)
     @mentors = Mentor[username]
-    @mentors.load(params)
+    @mentors.loadEdit(params)
 
     if @mentors.valid?
       @mentors.save_changes

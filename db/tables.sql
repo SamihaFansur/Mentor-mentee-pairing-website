@@ -6,7 +6,8 @@ CREATE TABLE mentees (
     email TEXT,
     phoneNum TEXT,
     courseName TEXT,
-    cyear INTEGER
+    cyear INTEGER,
+    description TEXT
 );
 
 CREATE TABLE mentors (
@@ -17,6 +18,7 @@ CREATE TABLE mentors (
     email TEXT,
     phoneNum TEXT,
     jobTitle TEXT,
-    courseName TEXT
+    courseName TEXT,
+    description TEXT
 );
 

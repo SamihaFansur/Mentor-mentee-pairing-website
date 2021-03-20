@@ -17,12 +17,11 @@ post "/MenteeSignUpForm" do
         @mentees.save_changes
         send_mail(@mentees.email, 
           "Successful Sign up!", 
-          "Hi "+@mentees.fname+" "+@mentees.lname+"!\n
-          Your username is: "+@mentees.username+"\n
-          Your email: "+@mentees.email+"\n
-          Please use these credentials to login into your mentee account \n
-          \n\n\nRegards\n
-          Team 6")
+          "Hi "+@mentees.fname+" "+@mentees.lname+"!\n"+
+          "Your username is: "+@mentees.username+"\n"+
+          "Your email: "+@mentees.email+"\n"+
+          "Please use these credentials to login into your mentee account \n"+
+          "\n\n\nRegards\nTeam 6")
         redirect "/login"
       end
   end
@@ -56,12 +55,11 @@ post "/MentorSignUpForm" do
         @mentors.save_changes
         send_mail(@mentors.email, 
           "Successful Sign up!", 
-          "Hi "+@mentors.fname+" "+@mentors.lname+"!\n
-          Your username is: "+@mentors.username+"\n
-          Your email: "+@mentors.email+"\n
-          Please use these credentials to login into your mentor account \n
-          \n\n\nRegards\n
-          Team 6")
+          "Hi "+@mentors.fname+" "+@mentors.lname+"!\n"+
+          "Your username is: "+@mentors.username+"\n"+
+          "Your email: "+@mentors.email+"\n"+
+          "Please use these credentials to login into your mentor account \n"+
+          "\n\n\nRegards\nTeam 6")
         redirect "/login"
       end
   end

@@ -1,27 +1,28 @@
 <div class="col">
   <p>Please fill in the information below</p>
   <p>
-    <label for="fname" class="options">First name:</label>
-    <input type="text" name="fname" id="fname" maxlength="40" size="30" placeholder="Enter first name..."  value="<%= h @mentors.fname %>"><!--Mandatory field-->
+    <label for="fname" class="options">First name: </label>
+    <input type="text" name="fname" id="fname" maxlength="40" size="30" placeholder="Enter first name..."  value="<%= h @mentors.fname %>">
   </p>
 
   <p>
-    <label for="lname" class="options">Last name:</label>
-    <input type="text" name="lname" id="lname" maxlength="40" size="30" placeholder="Enter last name..."  value="<%= h @mentors.lname %>"><!--Mandatory field-->
+    <label for="lname" class="options">Last name: </label>
+    <input type="text" name="lname" id="lname" maxlength="40" size="30" placeholder="Enter last name..."  value="<%= h @mentors.lname %>">
   </p>
 
   <p>
-    <label for="email" class="options">E-mail:</label>
-    <input disabled type="email" name="email" id="email" placeholder="Enter your email..." maxlength="40" size="30" value="<%= h @mentors.email %>"><!--Mandatory field-->
+    <label for="email" class="options">E-mail: </label>
+    <input disabled type="email" name="email" id="email" placeholder="Enter your email..." maxlength="40" size="30" value="<%= h @mentors.email %>">
   </p>
+  
   <p> 
-    <label for="phoneNum" class="options">Phone Number:</label>
-    <input type="text" name="phoneNum" id="phoneNum" placeholder="+XX XXXXXXXXXX" maxlength="40" size="30" value="<%= h @mentors.phoneNum %>"><!--Mandatory field-->
+    <label for="phoneNum" class="options">Phone Number: </label>
+    <input type="text" name="phoneNum" id="phoneNum" placeholder="+XX XXXXXXXXXX" maxlength="40" size="30" value="<%= h @mentors.phoneNum %>">
   </p>
 
   <p>
     <label for="jobTitle" class="options">Job Title: </label> <!--Dropdown List-->
-    <select name="jobTitle" id="jobTitle" required value="<%= h @mentors.jobTitle %>"> <!--Job Title List-->
+    <select name="jobTitle" id="jobTitle" value="<%= h @mentors.jobTitle %>"> <!--Job Title List-->
       <option value="">Select</option>
       <option value="Account Collector">Account Collector</option>
       <option value="Account Executive">Account Executive</option>
@@ -486,9 +487,10 @@
       <option value="Zoologist">Zoologist</option>
     </select>
   </p>
+  
   <p>  
     <label for="courseName" class="options">Course: </label> <!--Dropdown List-->
-    <select name="courseName" id="courseName" required value="<%= h @mentors.courseName %>"> <!--Course List-->
+    <select name="courseName" id="courseName" value="<%= h @mentors.courseName %>"> <!--Course List-->
       <option value="">Select</option>
       <option value="Accounting and Financial Management (BA)">Accounting and Financial Management (BA)</option>
       <option value="Accounting and Financial Management and Economics (BA)">Accounting and Financial Management and Economics (BA)</option>
@@ -761,13 +763,22 @@
   </p>
 
   <p>
-    <label for="username" class="options">Username:</label>
-    <input disabled type="text" name="username" id="username" placeholder="Enter your username..." maxlength="40" size="30" value="<%= h @mentors.username %>"><!--Mandatory field-->
+    <label for="username" class="options">Username: </label>
+    <input disabled type="text" name="username" id="username" placeholder="Enter your username..." maxlength="40" size="30" value="<%= h @mentors.username %>">
   </p>
+  
   <p>
-    <label for="password" class="options">Password:</label>
-    <input type="password" name="password" id="password" placeholder="Enter your password..." maxlength="40" size="30" value="<%= h @mentors.password %>"><!--Mandatory field-->
-  </p>             
+    <label for="password" class="options">Password: </label>
+    <input type="password" name="password" id="password" placeholder="Enter your password..." maxlength="40" size="30" value="<%= h @mentors.password %>">
+  </p>   
+  
+  <p>
+    <label for="description">Description: </label>
+  </p>
+
+  <p>
+    <textarea name="description" id="description" placeholder="Enter a description..." rows="8" cols="48"></textarea>
+  </p>
 
 </div>
 <!--Submit/Reset buttons-->
