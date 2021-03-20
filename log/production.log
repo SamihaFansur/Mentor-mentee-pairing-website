@@ -1743,3 +1743,20 @@ I, [2021-03-20T01:10:29.763395 #1157]  INFO -- : (0.088191s) COMMIT
 I, [2021-03-20T01:10:29.897782 #1157]  INFO -- : (0.000177s) SELECT * FROM `mentors` WHERE (`username` = 'mentor1') LIMIT 1
 I, [2021-03-20T01:10:33.906672 #1157]  INFO -- : (0.000257s) SELECT * FROM `mentors` WHERE `username` = 'mentor1'
 I, [2021-03-20T01:10:33.906981 #1157]  INFO -- : (0.000153s) SELECT * FROM `mentors` WHERE `username` = 'mentor1'
+I, [2021-03-20T01:14:35.057394 #1190]  INFO -- : (0.000174s) PRAGMA foreign_keys = 1
+I, [2021-03-20T01:14:35.057485 #1190]  INFO -- : (0.000018s) PRAGMA case_sensitive_like = 1
+I, [2021-03-20T01:14:35.058190 #1190]  INFO -- : (0.000051s) SELECT sqlite_version()
+I, [2021-03-20T01:14:35.058437 #1190]  INFO -- : (0.000114s) PRAGMA table_info('mentees')
+I, [2021-03-20T01:14:35.059579 #1190]  INFO -- : (0.000108s) PRAGMA table_info('mentors')
+I, [2021-03-20T01:14:58.832408 #1190]  INFO -- : (0.000166s) SELECT * FROM `mentees` WHERE (`username` = 'aca20sf') LIMIT 1
+I, [2021-03-20T01:14:58.832692 #1190]  INFO -- : (0.000091s) SELECT * FROM `mentees` WHERE (`email` = 'sfansur1@sheffield.ac.uk') LIMIT 1
+I, [2021-03-20T01:14:58.832800 #1190]  INFO -- : (0.000015s) BEGIN
+I, [2021-03-20T01:14:58.833946 #1190]  INFO -- : (0.000223s) INSERT INTO `mentees` (`fname`, `lname`, `email`, `phoneNum`, `courseName`, `cyear`, `username`, `password`) VALUES ('Samiha', 'Fansur', 'sfansur1@sheffield.ac.uk', '+44 7721951137', 'Business Management and Japanese Studies (BA)', 2, 'aca20sf', 'S.F')
+I, [2021-03-20T01:14:58.834136 #1190]  INFO -- : (0.000090s) SELECT * FROM `mentees` WHERE `username` = 'aca20sf'
+I, [2021-03-20T01:14:58.922762 #1190]  INFO -- : (0.088564s) COMMIT
+I, [2021-03-20T01:15:34.315510 #1190]  INFO -- : (0.000148s) SELECT * FROM `mentors` WHERE (`username` = 'trial2') LIMIT 1
+I, [2021-03-20T01:15:34.315835 #1190]  INFO -- : (0.000111s) SELECT * FROM `mentors` WHERE (`email` = 'sfansur1@sheffield.ac.uk') LIMIT 1
+I, [2021-03-20T01:15:34.315966 #1190]  INFO -- : (0.000018s) BEGIN
+I, [2021-03-20T01:15:34.319330 #1190]  INFO -- : (0.000205s) INSERT INTO `mentors` (`fname`, `lname`, `email`, `phoneNum`, `username`, `password`, `jobTitle`, `courseName`) VALUES ('Samiha', 'Fansur', 'sfansur1@sheffield.ac.uk', '+971509201172', 'trial2', 'S.F', 'Administrative Manager', 'Architecture (BA)')
+I, [2021-03-20T01:15:34.319560 #1190]  INFO -- : (0.000086s) SELECT * FROM `mentors` WHERE `username` = 'trial2'
+I, [2021-03-20T01:15:34.416305 #1190]  INFO -- : (0.096681s) COMMIT
