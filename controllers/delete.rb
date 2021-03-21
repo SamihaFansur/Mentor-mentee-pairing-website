@@ -14,9 +14,9 @@ end
 
 #MENTOR
 post "/deleteMentor" do
-  username = params["username"]
+  username = params["id"]
 
-  if Mentor.username_exists?(username)
+  if Mentor.id_exists?(username)
     mentor = Mentor[username]
     mentor.delete
     session.clear
