@@ -12,7 +12,7 @@
     <% end %>
 
     <form method="post">
-        <input type="hidden" name="username" value="<%= @mentors.username %>" />
+        <input type="hidden" name="id" value="<%= @mentors.id %>" />
         <%= erb :"common/mentor_edit_form" %>
     </form>
 
@@ -20,7 +20,7 @@
         <p><strong>WARNING! Deleting a record cannot be undone.</strong></p>
 
         <form method="post" action="/deleteMentor">
-            <input type="hidden" name="username" value="<%= @mentors.username %>" />
+            <input type="hidden" name="id" value="<%= @mentors.id %>" />
             <input type="submit" value="Delete" onclick="return confirm('Are you sure?')" />
         </form>
     </div>
