@@ -1,5 +1,6 @@
-#MENTEE
 require "net/http"
+
+#MENTEE
 get "/MenteeSignUpForm" do
   @mentees = Mentee.new
   erb :mentee_signup

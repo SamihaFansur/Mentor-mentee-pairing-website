@@ -3,8 +3,8 @@
       <div class="full">
         <div class="title">Search for a Mentor</div> <!--Main page Title-->  
         
-        <% unless @error.nil? %>
-        <h2><strong class="error"><%= @error %></strong></h2>
+        <% if @error %>
+        <h2><strong class="error">Application already sent!</strong></h2>
         <% end %> 
 
             <form>
