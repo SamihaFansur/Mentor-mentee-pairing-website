@@ -1,0 +1,123 @@
+# Logfile created on 2021-03-21 18:02:43 +0000 by logger.rb/66358
+I, [2021-03-21T18:02:43.804445 #479]  INFO -- : (0.000112s) PRAGMA foreign_keys = 1
+I, [2021-03-21T18:02:43.804509 #479]  INFO -- : (0.000012s) PRAGMA case_sensitive_like = 1
+I, [2021-03-21T18:02:55.791654 #480]  INFO -- : (0.000148s) PRAGMA foreign_keys = 1
+I, [2021-03-21T18:02:55.791765 #480]  INFO -- : (0.000021s) PRAGMA case_sensitive_like = 1
+I, [2021-03-21T18:03:09.990427 #481]  INFO -- : (0.000103s) PRAGMA foreign_keys = 1
+I, [2021-03-21T18:03:09.990512 #481]  INFO -- : (0.000013s) PRAGMA case_sensitive_like = 1
+I, [2021-03-21T18:05:00.942082 #483]  INFO -- : (0.000189s) PRAGMA foreign_keys = 1
+I, [2021-03-21T18:05:00.942183 #483]  INFO -- : (0.000016s) PRAGMA case_sensitive_like = 1
+I, [2021-03-21T18:05:00.942967 #483]  INFO -- : (0.000059s) SELECT sqlite_version()
+I, [2021-03-21T18:05:00.943249 #483]  INFO -- : (0.000153s) PRAGMA table_info('mentees')
+I, [2021-03-21T18:05:00.946326 #483]  INFO -- : (0.000158s) PRAGMA table_info('mentors')
+I, [2021-03-21T18:05:01.196466 #483]  INFO -- : (0.000097s) DELETE FROM `mentees` WHERE (1 = 1)
+I, [2021-03-21T18:05:01.293263 #483]  INFO -- : (0.000144s) SELECT * FROM `mentees` WHERE `username` = '123'
+I, [2021-03-21T18:05:10.155833 #484]  INFO -- : (0.000214s) PRAGMA foreign_keys = 1
+I, [2021-03-21T18:05:10.155924 #484]  INFO -- : (0.000016s) PRAGMA case_sensitive_like = 1
+I, [2021-03-21T18:05:10.156712 #484]  INFO -- : (0.000056s) SELECT sqlite_version()
+I, [2021-03-21T18:05:10.156998 #484]  INFO -- : (0.000155s) PRAGMA table_info('mentees')
+I, [2021-03-21T18:05:10.159846 #484]  INFO -- : (0.000154s) PRAGMA table_info('mentors')
+I, [2021-03-21T18:05:10.404937 #484]  INFO -- : (0.000092s) DELETE FROM `mentees` WHERE (1 = 1)
+I, [2021-03-21T18:05:10.565833 #484]  INFO -- : (0.000121s) DELETE FROM `mentees` WHERE (1 = 1)
+I, [2021-03-21T18:07:05.663729 #557]  INFO -- : (0.000179s) PRAGMA foreign_keys = 1
+I, [2021-03-21T18:07:05.663828 #557]  INFO -- : (0.000020s) PRAGMA case_sensitive_like = 1
+I, [2021-03-21T18:07:05.664721 #557]  INFO -- : (0.000060s) SELECT sqlite_version()
+I, [2021-03-21T18:07:05.665073 #557]  INFO -- : (0.000168s) PRAGMA table_info('mentees')
+I, [2021-03-21T18:07:05.668570 #557]  INFO -- : (0.000185s) PRAGMA table_info('mentors')
+I, [2021-03-21T18:07:05.669674 #557]  INFO -- : (0.000056s) PRAGMA table_info('requests')
+E, [2021-03-21T18:07:05.669866 #557] ERROR -- : SQLite3::SQLException: no such table: requests: SELECT * FROM `requests` LIMIT 1
+I, [2021-03-21T18:09:13.867774 #560]  INFO -- : (0.000180s) PRAGMA foreign_keys = 1
+I, [2021-03-21T18:09:13.867861 #560]  INFO -- : (0.000015s) PRAGMA case_sensitive_like = 1
+I, [2021-03-21T18:09:13.868659 #560]  INFO -- : (0.000059s) SELECT sqlite_version()
+I, [2021-03-21T18:09:13.868931 #560]  INFO -- : (0.000151s) PRAGMA table_info('mentees')
+I, [2021-03-21T18:09:13.871815 #560]  INFO -- : (0.000152s) PRAGMA table_info('mentors')
+I, [2021-03-21T18:09:13.872772 #560]  INFO -- : (0.000084s) PRAGMA table_info('requests')
+I, [2021-03-21T18:09:14.122147 #560]  INFO -- : (0.000095s) DELETE FROM `mentees` WHERE (1 = 1)
+I, [2021-03-21T18:09:14.262233 #560]  INFO -- : (0.000091s) DELETE FROM `mentees` WHERE (1 = 1)
+I, [2021-03-21T18:09:43.429764 #561]  INFO -- : (0.000174s) PRAGMA foreign_keys = 1
+I, [2021-03-21T18:09:43.429845 #561]  INFO -- : (0.000013s) PRAGMA case_sensitive_like = 1
+I, [2021-03-21T18:09:43.430591 #561]  INFO -- : (0.000053s) SELECT sqlite_version()
+I, [2021-03-21T18:09:43.430821 #561]  INFO -- : (0.000119s) PRAGMA table_info('mentees')
+I, [2021-03-21T18:09:43.431906 #561]  INFO -- : (0.000109s) PRAGMA table_info('mentors')
+I, [2021-03-21T18:09:43.432777 #561]  INFO -- : (0.000071s) PRAGMA table_info('requests')
+I, [2021-03-21T18:10:00.726556 #561]  INFO -- : (0.000147s) SELECT * FROM `mentees` WHERE (`username` = 'euan1') LIMIT 1
+I, [2021-03-21T18:10:00.726823 #561]  INFO -- : (0.000092s) SELECT * FROM `mentees` WHERE (`email` = 'euangoodbrand@aol.com') LIMIT 1
+I, [2021-03-21T18:10:00.726929 #561]  INFO -- : (0.000017s) BEGIN
+I, [2021-03-21T18:10:00.727999 #561]  INFO -- : (0.000222s) INSERT INTO `mentees` (`fname`, `lname`, `email`, `phoneNum`, `courseName`, `cyear`, `username`, `password`) VALUES ('Euan', 'Goodbrand', 'euangoodbrand@aol.com', '07956028983', 'Archaeology (BSc)', 1, 'euan1', '123')
+I, [2021-03-21T18:10:00.728190 #561]  INFO -- : (0.000088s) SELECT * FROM `mentees` WHERE `username` = 'euan1'
+I, [2021-03-21T18:10:00.811655 #561]  INFO -- : (0.083408s) COMMIT
+I, [2021-03-21T18:10:04.558645 #561]  INFO -- : (0.000165s) SELECT * FROM `mentees` WHERE (`username` = 'euan1') LIMIT 1
+I, [2021-03-21T18:10:04.693362 #561]  INFO -- : (0.000137s) SELECT * FROM `mentees` WHERE (`username` = 'euan1') LIMIT 1
+I, [2021-03-21T18:10:07.405703 #561]  INFO -- : (0.000778s) SELECT * FROM `mentees` WHERE `username` = 'euan1'
+I, [2021-03-21T18:10:07.405926 #561]  INFO -- : (0.000108s) SELECT * FROM `mentees` WHERE `username` = 'euan1'
+I, [2021-03-21T18:10:14.758625 #561]  INFO -- : (0.000147s) SELECT * FROM `mentees` WHERE `username` = 'euan1'
+I, [2021-03-21T18:10:14.758836 #561]  INFO -- : (0.000096s) SELECT * FROM `mentees` WHERE `username` = 'euan1'
+I, [2021-03-21T18:10:14.759042 #561]  INFO -- : (0.000015s) BEGIN
+I, [2021-03-21T18:10:14.759405 #561]  INFO -- : (0.000161s) UPDATE `mentees` SET `courseName` = 'Aerospace Engineering (MEng)', `cyear` = 3, `description` = 'hello' WHERE (`username` = 'euan1')
+I, [2021-03-21T18:10:14.871920 #561]  INFO -- : (0.112430s) COMMIT
+I, [2021-03-21T18:10:15.067371 #561]  INFO -- : (0.000169s) SELECT * FROM `mentees` WHERE (`username` = 'euan1') LIMIT 1
+I, [2021-03-21T18:10:17.777803 #561]  INFO -- : (0.000231s) SELECT * FROM `mentees` WHERE `username` = 'euan1'
+I, [2021-03-21T18:10:17.778069 #561]  INFO -- : (0.000129s) SELECT * FROM `mentees` WHERE `username` = 'euan1'
+I, [2021-03-21T18:10:20.863866 #561]  INFO -- : (0.000149s) SELECT * FROM `mentees` WHERE `username` = 'euan1'
+I, [2021-03-21T18:10:20.864064 #561]  INFO -- : (0.000091s) SELECT * FROM `mentees` WHERE `username` = 'euan1'
+I, [2021-03-21T18:10:20.952738 #561]  INFO -- : (0.088591s) DELETE FROM `mentees` WHERE `username` = 'euan1'
+I, [2021-03-21T18:11:34.976165 #561]  INFO -- : (0.000167s) SELECT * FROM `mentees` WHERE (`username` = 'euan1') LIMIT 1
+I, [2021-03-21T18:11:34.977238 #561]  INFO -- : (0.000907s) SELECT * FROM `mentees` WHERE (`email` = 'euangoodbrand@aol.com') LIMIT 1
+I, [2021-03-21T18:11:34.977363 #561]  INFO -- : (0.000017s) BEGIN
+I, [2021-03-21T18:11:34.977672 #561]  INFO -- : (0.000187s) INSERT INTO `mentees` (`fname`, `lname`, `email`, `phoneNum`, `courseName`, `cyear`, `username`, `password`) VALUES ('Euan', 'Goodbrand', 'euangoodbrand@aol.com', '07956028983', 'Archaeology and Modern Languages & Cultures (BA)', 3, 'euan1', '123')
+I, [2021-03-21T18:11:34.977851 #561]  INFO -- : (0.000083s) SELECT * FROM `mentees` WHERE `username` = 'euan1'
+I, [2021-03-21T18:11:35.068122 #561]  INFO -- : (0.090211s) COMMIT
+I, [2021-03-21T18:11:59.177122 #561]  INFO -- : (0.000262s) SELECT * FROM `mentees` WHERE (`username` = 'euan1') LIMIT 1
+I, [2021-03-21T18:11:59.277023 #561]  INFO -- : (0.000147s) SELECT * FROM `mentees` WHERE (`username` = 'euan1') LIMIT 1
+I, [2021-03-21T18:12:04.132589 #561]  INFO -- : (0.000148s) SELECT * FROM `mentors` ORDER BY `courseName`
+I, [2021-03-21T18:12:34.485366 #561]  INFO -- : (0.000139s) SELECT * FROM `mentors` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-03-21T18:12:34.485615 #561]  INFO -- : (0.000080s) SELECT * FROM `mentors` WHERE (`email` = 'mentor@gmail.com') LIMIT 1
+I, [2021-03-21T18:12:34.485718 #561]  INFO -- : (0.000014s) BEGIN
+I, [2021-03-21T18:12:34.486045 #561]  INFO -- : (0.000181s) INSERT INTO `mentors` (`fname`, `lname`, `email`, `phoneNum`, `username`, `password`, `jobTitle`, `courseName`) VALUES ('mentor', 'test', 'mentor@gmail.com', '123456789', 'mentor1', '123', 'Administrator', 'Architecture (BA)')
+I, [2021-03-21T18:12:34.486254 #561]  INFO -- : (0.000080s) SELECT * FROM `mentors` WHERE `username` = 'mentor1'
+I, [2021-03-21T18:12:34.576215 #561]  INFO -- : (0.089866s) COMMIT
+I, [2021-03-21T18:12:40.069021 #561]  INFO -- : (0.000135s) SELECT * FROM `mentees` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-03-21T18:12:40.069385 #561]  INFO -- : (0.000107s) SELECT * FROM `mentors` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-03-21T18:12:40.169405 #561]  INFO -- : (0.000132s) SELECT * FROM `mentors` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-03-21T18:12:51.788099 #561]  INFO -- : (0.000111s) SELECT * FROM `requests` WHERE (`mentorID` IS NULL)
+I, [2021-03-21T18:13:03.933786 #561]  INFO -- : (0.000173s) SELECT * FROM `mentees` WHERE (`username` = 'euan1') LIMIT 1
+I, [2021-03-21T18:13:04.031154 #561]  INFO -- : (0.000155s) SELECT * FROM `mentees` WHERE (`username` = 'euan1') LIMIT 1
+I, [2021-03-21T18:13:05.146973 #561]  INFO -- : (0.000154s) SELECT * FROM `mentors` ORDER BY `courseName`
+I, [2021-03-21T18:13:07.510534 #561]  INFO -- : (0.000118s) SELECT * FROM `requests` WHERE (`menteeID` IS NULL) LIMIT 1
+I, [2021-03-21T18:13:07.510715 #561]  INFO -- : (0.000032s) BEGIN
+I, [2021-03-21T18:13:07.511037 #561]  INFO -- : (0.000177s) INSERT INTO `requests` (`mentorID`, `menteeID`) VALUES (NULL, NULL)
+I, [2021-03-21T18:13:07.694700 #561]  INFO -- : (0.183575s) COMMIT
+I, [2021-03-21T18:13:07.790678 #561]  INFO -- : (0.000133s) SELECT * FROM `mentors` ORDER BY `courseName`
+I, [2021-03-21T18:13:19.610031 #561]  INFO -- : (0.000128s) SELECT * FROM `mentees` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-03-21T18:13:19.610283 #561]  INFO -- : (0.000094s) SELECT * FROM `mentors` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-03-21T18:13:19.707232 #561]  INFO -- : (0.000124s) SELECT * FROM `mentors` WHERE (`username` = 'mentor1') LIMIT 1
+E, [2021-03-21T18:13:21.831418 #561] ERROR -- : SQLite3::SQLException: no such column: id: SELECT * FROM `mentees` WHERE (`id` IS NULL) LIMIT 1
+E, [2021-03-21T18:13:21.831713 #561] ERROR -- : Sequel::DatabaseError: SQLite3::SQLException: no such column: id: SELECT * FROM `requests` WHERE (`mentorID` IS NULL)
+E, [2021-03-21T18:13:30.317215 #561] ERROR -- : SQLite3::SQLException: no such column: id: SELECT * FROM `mentees` WHERE (`id` IS NULL) LIMIT 1
+E, [2021-03-21T18:13:30.317426 #561] ERROR -- : Sequel::DatabaseError: SQLite3::SQLException: no such column: id: SELECT * FROM `requests` WHERE (`mentorID` IS NULL)
+I, [2021-03-21T18:22:42.108077 #618]  INFO -- : (0.000166s) PRAGMA foreign_keys = 1
+I, [2021-03-21T18:22:42.108160 #618]  INFO -- : (0.000013s) PRAGMA case_sensitive_like = 1
+I, [2021-03-21T18:22:42.108887 #618]  INFO -- : (0.000053s) SELECT sqlite_version()
+I, [2021-03-21T18:22:42.109140 #618]  INFO -- : (0.000125s) PRAGMA table_info('mentees')
+I, [2021-03-21T18:22:42.110286 #618]  INFO -- : (0.000139s) PRAGMA table_info('mentors')
+I, [2021-03-21T18:22:42.111215 #618]  INFO -- : (0.000073s) PRAGMA table_info('requests')
+I, [2021-03-21T18:22:47.869509 #618]  INFO -- : (0.000149s) SELECT * FROM `mentors` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-03-21T18:23:05.435913 #618]  INFO -- : (0.000196s) SELECT * FROM `mentees` WHERE (`username` = 'euan1') LIMIT 1
+I, [2021-03-21T18:23:05.436350 #618]  INFO -- : (0.000162s) SELECT * FROM `mentees` WHERE (`email` = 'euangoodbrand@aol.com') LIMIT 1
+I, [2021-03-21T18:23:05.436509 #618]  INFO -- : (0.000024s) BEGIN
+I, [2021-03-21T18:23:05.436989 #618]  INFO -- : (0.000260s) INSERT INTO `mentees` (`fname`, `lname`, `email`, `phoneNum`, `courseName`, `cyear`, `username`, `password`) VALUES ('Euan', 'Goodbrand', 'euangoodbrand@aol.com', '07956028983', 'Archaeology (BSc)', 2, 'euan1', '123')
+I, [2021-03-21T18:23:05.437256 #618]  INFO -- : (0.000123s) SELECT * FROM `mentees` WHERE `id` = 1
+I, [2021-03-21T18:23:05.539779 #618]  INFO -- : (0.102431s) COMMIT
+I, [2021-03-21T18:23:10.545450 #618]  INFO -- : (0.000164s) SELECT * FROM `mentees` WHERE (`username` = 'euan1') LIMIT 1
+I, [2021-03-21T18:23:10.657349 #618]  INFO -- : (0.000124s) SELECT * FROM `mentees` WHERE (`username` = 'euan1') LIMIT 1
+I, [2021-03-21T18:23:13.550202 #618]  INFO -- : (0.000151s) SELECT * FROM `mentees` WHERE `id` = 'euan1'
+I, [2021-03-21T18:23:19.491523 #618]  INFO -- : (0.000127s) SELECT * FROM `mentees` WHERE `id` = 'euan1'
+I, [2021-03-21T18:23:32.299357 #618]  INFO -- : (0.000202s) SELECT * FROM `mentees` WHERE `id` = 'euan1'
+I, [2021-03-21T18:46:45.376161 #795]  INFO -- : (0.000170s) PRAGMA foreign_keys = 1
+I, [2021-03-21T18:46:45.376262 #795]  INFO -- : (0.000030s) PRAGMA case_sensitive_like = 1
+I, [2021-03-21T18:46:45.377076 #795]  INFO -- : (0.000059s) SELECT sqlite_version()
+I, [2021-03-21T18:46:45.377381 #795]  INFO -- : (0.000178s) PRAGMA table_info('mentees')
+I, [2021-03-21T18:46:45.380655 #795]  INFO -- : (0.000181s) PRAGMA table_info('mentors')
+I, [2021-03-21T18:46:45.382076 #795]  INFO -- : (0.000141s) PRAGMA table_info('requests')
+I, [2021-03-21T18:46:45.859582 #795]  INFO -- : (0.094993s) DELETE FROM `mentees` WHERE (1 = 1)
+I, [2021-03-21T18:46:46.007537 #795]  INFO -- : (0.000098s) DELETE FROM `mentees` WHERE (1 = 1)

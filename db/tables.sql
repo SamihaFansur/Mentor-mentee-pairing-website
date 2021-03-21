@@ -1,4 +1,5 @@
 CREATE TABLE mentees (
+
   id INTEGER PRIMARY KEY,
   username TEXT,
   password TEXT,
@@ -13,6 +14,7 @@ CREATE TABLE mentees (
 );
 
 CREATE TABLE mentors (
+
   id INTEGER PRIMARY KEY,
   username TEXT,
   password TEXT,
