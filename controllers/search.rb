@@ -16,16 +16,6 @@ post "/addApplication" do
   @requests = Request.new
   @requests.load(params[:menteeID].to_s, params[:mentorID].to_s)
   @mentors = Mentor.first(id: params[:mentorID])
-  puts @mentors
-  puts @mentors.fname
-  puts @mentors.lname
-  puts @mentors.email
-  puts @mentors.phoneNum
-  puts @mentors.courseName
-  puts @mentors.jobTitle
-  puts @mentors.id
-  
-  puts @requests.exist_application?
   
   if @requests.exist_application?
     @error = "Application already sent"
@@ -35,8 +25,8 @@ post "/addApplication" do
      send_mail(@mentors.email, 
           "You have a new mentee application!", 
           "Hi "+@mentors.fname+" "+@mentors.lname+" !\n"+
-          "You have a new mentee application. Please login into your mentor account and view mentee applications \n"+
-          "\n\n\nRegards\nTeam 6")
+          "You have a new mentee application. Please login into your mentor account and view your mentee applications \n"+
+          "\n\nRegards\nTeam 6")
   end
     redirect "/search"
 end

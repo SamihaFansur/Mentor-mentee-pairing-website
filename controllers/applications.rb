@@ -2,9 +2,9 @@ get "/applications" do
   @menteeIDList = []
   IDList = Request.where(mentorID: $mentors.id)
   IDList.each do |id|
-    @menteeIDList.push(Mentee.first(id: id.menteeID))
+    mentee = Mentee.first(id: id.menteeID)
+    @menteeIDList.push(mentee) unless mentee.nil?
   end
-  
   erb :mentee_applications
 end
 
@@ -18,11 +18,20 @@ end
 
 get "/myMentor" do
   @mentorMatchedList = []
-  MIDList = Request.where(menteeID: $mentees.id)
-  puts MIDList
-  MIDList.each do |id|
+  MentorIDList = Request.where(menteeID: $mentees.id)
+  MentorIDList.each do |id|
     @mentorMatchedList.push(Mentor.first(id: id.mentorID))
   end
   
   erb :myMentor
+end
+
+get "/myMentee" do
+ @menteeMatchedList = []
+  MenteeIDList = Request.where(mentorID: $mentors.id)
+  MenteeIDList.each do |id|
+    @menteeMatchedList.push(Mentee.first(id: id.menteeID))
+  end
+  
+  erb :myMentee
 end
