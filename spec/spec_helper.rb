@@ -26,13 +26,17 @@ end
 
 # add a test player
 def add_test_user
-  visit "/signup"
+  visit "/MenteeSignUpForm"
   fill_in "fname", with: "George"
   fill_in "lname", with: "Test"
   fill_in "email", with: "samiha.fansur.2002@gmail.com"
   fill_in "phoneNum", with: "+44 7721851137"
-  fill_in "courseName", with: "CS"
-  fill_in "cyear", with: "1"
+  fill_in "username", with: "123"
+    
+  select "Accounting and Financial Management (BA)", :from => "courseName"
+    
+  select "1", :from => "cyear"
+      
   click_button "Submit"
 end
 
