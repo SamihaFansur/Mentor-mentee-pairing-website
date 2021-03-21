@@ -2,6 +2,10 @@
     <div class="background" id="statement">
       <div class="full">
         <div class="title">Search for a Mentor</div> <!--Main page Title-->  
+        
+        <% unless @error.nil? %>
+        <h2><strong class="error"><%= @error %></strong></h2>
+        <% end %> 
 
             <form>
               <p>Enter a <strong>COURSE NAME</strong> to display mentors: 

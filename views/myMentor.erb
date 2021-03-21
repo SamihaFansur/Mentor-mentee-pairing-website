@@ -1,0 +1,35 @@
+<%= erb :"common/header_menteeA" %>
+<div  id="statement">
+  
+      <div class="full">
+        <% if @mentorMatchedList.count > 0 %>
+            <table id="MatchedMentor">
+              <tr id="TableHeadings">
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Job Title</th>
+                <th>Course Name</th>
+                <th>Description</th>
+              </tr>
+            <% @mentorMatchedList.each do |mentor| %>
+              <tr>
+                <td><%= h mentor.name %></td>
+                <td><%= h mentor.email %></td>
+                <td><%= h mentor.phoneNum %></td>
+                <td><%= h mentor.jobTitle %></td>
+                <td><%= h mentor.courseName %></td>
+                <td><%= h mentor.description %></td>
+                <td>
+                </td>
+              </tr>
+            <% end %> 
+            </table>
+          <% else %>
+            <p id="SearchError">You do not have a mentor yet!</p>
+          <% end %>
+     </div>
+  
+</div> 
+
+<%= erb :"common/footer" %>

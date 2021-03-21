@@ -8,14 +8,21 @@ get "/applications" do
   erb :mentee_applications
 end
 
-post "/match" do  
-#   puts (Mentee.where(id: params[:menteeID])).sql
-#   puts (Mentor.where(id: $mentors.id).update(:menteeMatch => params[:mentee])).sql
-#   puts (Request.where(mentorID: $mentors.id).delete).sql
-  
+post "/match" do    
   Mentee.where(id: params[:menteeID]).update(:mentorMatch => $mentors.id)
   Mentor.where(id: $mentors.id).update(:menteeMatch => params[:menteeID])
   
   Request.where(mentorID: $mentors.id).delete
   redirect "/MentorDashboard"
+end
+
+get "/myMentor" do
+  @mentorMatchedList = []
+  MIDList = Request.where(menteeID: $mentees.id)
+  puts MIDList
+  MIDList.each do |id|
+    @mentorMatchedList.push(Mentor.first(id: id.mentorID))
+  end
+  
+  erb :myMentor
 end
