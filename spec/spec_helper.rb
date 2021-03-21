@@ -6,7 +6,7 @@ end
 SimpleCov.coverage_dir "coverage"
 
 # Ensure we use the test database
-ENV["APP_ENV"] = "production"
+ENV["APP_ENV"] = "testing"
 
 # load the app
 require_relative "../app"
