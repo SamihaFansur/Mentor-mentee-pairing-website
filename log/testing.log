@@ -121,3 +121,38 @@ I, [2021-03-21T18:46:45.380655 #795]  INFO -- : (0.000181s) PRAGMA table_info('m
 I, [2021-03-21T18:46:45.382076 #795]  INFO -- : (0.000141s) PRAGMA table_info('requests')
 I, [2021-03-21T18:46:45.859582 #795]  INFO -- : (0.094993s) DELETE FROM `mentees` WHERE (1 = 1)
 I, [2021-03-21T18:46:46.007537 #795]  INFO -- : (0.000098s) DELETE FROM `mentees` WHERE (1 = 1)
+I, [2021-03-21T20:18:00.486516 #1179]  INFO -- : (0.000202s) PRAGMA foreign_keys = 1
+I, [2021-03-21T20:18:00.486620 #1179]  INFO -- : (0.000019s) PRAGMA case_sensitive_like = 1
+I, [2021-03-21T20:18:00.487458 #1179]  INFO -- : (0.000060s) SELECT sqlite_version()
+I, [2021-03-21T20:18:00.487810 #1179]  INFO -- : (0.000177s) PRAGMA table_info('mentees')
+I, [2021-03-21T20:18:00.489094 #1179]  INFO -- : (0.000145s) PRAGMA table_info('mentors')
+I, [2021-03-21T20:18:00.490299 #1179]  INFO -- : (0.000099s) PRAGMA table_info('requests')
+I, [2021-03-21T20:18:15.889933 #1179]  INFO -- : (0.003707s) SELECT * FROM `mentees` WHERE (`username` = 'test1') LIMIT 1
+I, [2021-03-21T20:18:15.890231 #1179]  INFO -- : (0.000105s) SELECT * FROM `mentees` WHERE (`email` = 'euangoodbrand@gmail.com') LIMIT 1
+I, [2021-03-21T20:18:15.890344 #1179]  INFO -- : (0.000016s) BEGIN
+I, [2021-03-21T20:18:15.890685 #1179]  INFO -- : (0.000200s) INSERT INTO `mentees` (`fname`, `lname`, `email`, `phoneNum`, `courseName`, `cyear`, `username`, `password`) VALUES ('Euan', 'Goodbrand', 'euangoodbrand@gmail.com', '07956028983', 'Aerospace Engineering with a Year in North America (Meng)', 2, 'test1', '123')
+I, [2021-03-21T20:18:15.890871 #1179]  INFO -- : (0.000084s) SELECT * FROM `mentees` WHERE `id` = 1
+I, [2021-03-21T20:18:15.980552 #1179]  INFO -- : (0.089611s) COMMIT
+I, [2021-03-21T20:18:20.599906 #1179]  INFO -- : (0.000174s) SELECT * FROM `mentees` WHERE (`username` = 'test1') LIMIT 1
+I, [2021-03-21T20:18:20.709402 #1179]  INFO -- : (0.000226s) SELECT * FROM `mentees` WHERE (`username` = 'test1') LIMIT 1
+I, [2021-03-21T20:18:22.732292 #1179]  INFO -- : (0.000160s) SELECT * FROM `mentees` WHERE `id` = '1'
+I, [2021-03-21T20:18:22.733360 #1179]  INFO -- : (0.000950s) SELECT * FROM `mentees` WHERE `id` = '1'
+I, [2021-03-21T20:18:24.777779 #1179]  INFO -- : (0.000159s) SELECT * FROM `mentees` WHERE `id` = '1'
+I, [2021-03-21T20:18:24.779151 #1179]  INFO -- : (0.001208s) SELECT * FROM `mentees` WHERE `id` = '1'
+I, [2021-03-21T20:18:24.779428 #1179]  INFO -- : (0.000025s) BEGIN
+I, [2021-03-21T20:18:24.779871 #1179]  INFO -- : (0.000202s) UPDATE `mentees` SET `description` = 'fdehreht' WHERE (`id` = 1)
+I, [2021-03-21T20:18:24.871578 #1179]  INFO -- : (0.091613s) COMMIT
+I, [2021-03-21T20:18:24.981844 #1179]  INFO -- : (0.000863s) SELECT * FROM `mentees` WHERE (`username` = 'test1') LIMIT 1
+I, [2021-03-21T20:18:28.371489 #1179]  INFO -- : (0.000259s) SELECT * FROM `mentees` WHERE `id` = '1'
+I, [2021-03-21T20:18:28.371804 #1179]  INFO -- : (0.000155s) SELECT * FROM `mentees` WHERE `id` = '1'
+I, [2021-03-21T20:19:59.450781 #1201]  INFO -- : (0.000178s) PRAGMA foreign_keys = 1
+I, [2021-03-21T20:19:59.450876 #1201]  INFO -- : (0.000014s) PRAGMA case_sensitive_like = 1
+I, [2021-03-21T20:19:59.451668 #1201]  INFO -- : (0.000057s) SELECT sqlite_version()
+I, [2021-03-21T20:19:59.451919 #1201]  INFO -- : (0.000124s) PRAGMA table_info('mentees')
+I, [2021-03-21T20:19:59.453224 #1201]  INFO -- : (0.000143s) PRAGMA table_info('mentors')
+I, [2021-03-21T20:19:59.454220 #1201]  INFO -- : (0.000075s) PRAGMA table_info('requests')
+I, [2021-03-21T20:20:03.179326 #1201]  INFO -- : (0.000225s) SELECT * FROM `mentees` WHERE `id` = '1'
+I, [2021-03-21T20:20:03.180072 #1201]  INFO -- : (0.000172s) SELECT * FROM `mentees` WHERE `id` = '1'
+I, [2021-03-21T20:20:05.689964 #1201]  INFO -- : (0.001293s) SELECT * FROM `mentees` WHERE `id` = '1'
+I, [2021-03-21T20:20:05.690306 #1201]  INFO -- : (0.000178s) SELECT * FROM `mentees` WHERE `id` = '1'
+I, [2021-03-21T20:20:05.793497 #1201]  INFO -- : (0.103050s) DELETE FROM `mentees` WHERE `id` = 1

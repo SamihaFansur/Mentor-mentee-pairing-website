@@ -1,9 +1,9 @@
 #MENTEE
 post "/deleteMentee" do
-  username = params["username"]
+  id = params["id"]
 
-  if Mentee.username_exists?(username)
-    mentee = Mentee[username]
+  if Mentee.id_exists?(id)
+    mentee = Mentee[id]
     mentee.delete
     session.clear
     redirect "/index"
@@ -14,10 +14,10 @@ end
 
 #MENTOR
 post "/deleteMentor" do
-  username = params["id"]
+  id = params["id"]
 
-  if Mentor.id_exists?(username)
-    mentor = Mentor[username]
+  if Mentor.id_exists?(id)
+    mentor = Mentor[id]
     mentor.delete
     session.clear
     redirect "/index"

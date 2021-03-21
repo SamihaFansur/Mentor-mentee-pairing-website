@@ -20,7 +20,7 @@
         <p><strong>WARNING! Deleting a record cannot be undone.</strong></p>
 
         <form method="post" action="/deleteMentee">
-            <input type="hidden" name="username" value="<%= @mentees.username %>" />
+            <input type="hidden" name="id" value="<%= @mentees.id %>" />
             <input type="submit" value="Delete" onclick="return confirm('Are you sure?')" />
         </form>
     </div>
