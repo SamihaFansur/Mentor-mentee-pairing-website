@@ -1,15 +1,15 @@
 #MENTEE
 get "/editMentee" do
-  username = params["username"]
-  @mentees = Mentee[username] if Mentee.username_exists?(username)
+  id = params["id"]
+  @mentees = Mentee[id] if Mentee.id_exists?(id)
   erb :mentee_edit_info
 end
 
 post "/editMentee" do
-  username = params["username"]
+  id = params["id"]
 
-  if Mentee.username_exists?(username)
-    @mentees = Mentee[username]
+  if Mentee.id_exists?(id)
+    @mentees = Mentee[id]
     @mentees.loadEdit(params)
 
     if @mentees.valid?
@@ -23,16 +23,16 @@ end
 
 #MENTOR
 get "/editMentor" do
-  username = params["username"]
-  @mentors = Mentor[username] if Mentor.username_exists?(username)
+  id = params["id"]
+  @mentors = Mentor[id] if Mentor.id_exists?(id)
   erb :mentor_edit_info
 end
 
 post "/editMentor" do
-  username = params["username"]
+  id = params["id"]
 
-  if Mentor.username_exists?(username)
-    @mentors = Mentor[username]
+  if Mentor.id_exists?(id)
+    @mentors = Mentor[id]
     @mentors.loadEdit(params)
 
     if @mentors.valid?
