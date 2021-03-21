@@ -6,5 +6,12 @@ describe "the signup page" do
         click_link "Sign Up"
         expect(page).to have_content "Mentee"
     end
+    
+    it "will not add a mentee with no details" do
+        visit "/MenteeSignUpForm"
+        click_button "Submit"
+        expect(page).to have_content "Mentee Sign Up"
+    end
+    
 
 end
