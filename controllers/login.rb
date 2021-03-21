@@ -1,14 +1,14 @@
 get "/MenteeDashboard" do
   redirect "/login" unless session[:logged_in]
   username = session[:mentees_username]
-  @mentees = Mentee.first(username: username)
+  $mentees = Mentee.first(username: username)
   erb :mentee_dashboard
 end
 
 get "/MentorDashboard" do
   redirect "/login" unless session[:logged_in]
   username = session[:mentors_username]
-  @mentors = Mentor.first(username: username)
+  $mentors = Mentor.first(username: username)
   erb :mentor_dashboard
 end
 

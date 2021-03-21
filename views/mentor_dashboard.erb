@@ -4,19 +4,20 @@
       <div class="full">
         <aside class="lSide">
           <div class="full" id="user_info">
-            <p>Name: <%= h @mentors.name %></p>
-            <p>Email: <%= h @mentors.email %> </p>
-            <p>Phone Number: <%= h @mentors.phoneNum %> </p>
-            <p>Job Title: <%= h @mentors.jobTitle %></p>
-            <p>Course Name: <%= h @mentors.courseName %> </p>
-            <p><b>Description: </b> <%= h @mentors.description %> </p>
-            <td><a href="/editMentor?username=<%= h @mentors.username %>">Edit Profile</a></td>
+            <p>Name: <%= h $mentors.name %></p>
+            <p>Email: <%= h $mentors.email %> </p>
+            <p>Phone Number: <%= h $mentors.phoneNum %> </p>
+            <p>Job Title: <%= h $mentors.jobTitle %></p>
+            <p>Course Name: <%= h $mentors.courseName %> </p>
+            <p><b>Description: </b> <%= h $mentors.description %> </p>
+            <td><a href="/editMentor?username=<%= h $mentors.username %>">Edit Profile</a></td>
           </div>
         </aside>
 
         <aside class="rSide">
           <div class="full">
-            <p class="search_info">View mentee applications</p>
+            <p class="search_info"><a href="/applications">View mentee applications</a></p>
+<!--             <p class="search_info"><a href="/applications">My Mentee</a></p> -->
           </div>
         </aside>
      </div>
@@ -25,5 +26,3 @@
 
 <%= erb :"common/footer" %>
 
-
-<!--PAGE USED TO LOGIN-->

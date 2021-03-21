@@ -1,0 +1,43 @@
+<%= erb :"common/header_mentorA" %>
+<div  id="statement">
+  
+      <div class="full">
+        <% if @menteeIDList.count > 0 %>
+            <table id="MenteeApplications">
+              <tr id="TableHeadings">
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Course Year</th>
+                <th>Course Name</th>
+                <th>Description</th>
+                <th>Accept application</th>
+              </tr>
+            <% @menteeIDList.each do |mentee| %>
+              <tr>
+                <td><%= h mentee.name %></td>
+                <td><%= h mentee.email %></td>
+                <td><%= h mentee.phoneNum %></td>
+                <td><%= h mentee.cyear %></td>
+                <td><%= h mentee.courseName %></td>
+                <td><%= h mentee.description %></td>
+                <td>
+                  <form method="post" action="match">
+                    <input type="hidden" name="menteeID" value="<%= mentee.id %>">
+                    <input type="hidden" name="mentorID" value="<%= $mentors %>">
+                    <button type="submit">
+                      Accept application
+                    </button>
+                  </form>
+                </td>
+              </tr>
+            <% end %> 
+            </table>
+          <% else %>
+            <p id="SearchError">There are no mentee applications</p>
+          <% end %>
+     </div>
+  
+</div> 
+
+<%= erb :"common/footer" %>

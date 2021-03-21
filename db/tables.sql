@@ -1,24 +1,32 @@
 CREATE TABLE mentees (
-    username TEXT PRIMARY KEY,
-    password TEXT,
-    fname TEXT,
-    lname TEXT,
-    email TEXT,
-    phoneNum TEXT,
-    courseName TEXT,
-    cyear INTEGER,
-    description TEXT
+  id INTEGER PRIMARY KEY,
+  username TEXT,
+  password TEXT,
+  fname TEXT,
+  lname TEXT,
+  email TEXT,
+  phoneNum TEXT,
+  courseName TEXT,
+  cyear INTEGER,
+  description TEXT,
+  mentorMatch INTEGER
 );
 
 CREATE TABLE mentors (
-    username TEXT PRIMARY KEY,
-    password TEXT,
-    fname TEXT,
-    lname TEXT,
-    email TEXT,
-    phoneNum TEXT,
-    jobTitle TEXT,
-    courseName TEXT,
-    description TEXT
+  id INTEGER PRIMARY KEY,
+  username TEXT,
+  password TEXT,
+  fname TEXT,
+  lname TEXT,
+  email TEXT,
+  phoneNum TEXT,
+  jobTitle TEXT,
+  courseName TEXT,
+  description TEXT,
+  menteeMatch INTEGER
 );
 
+CREATE TABLE requests (
+  menteeID INTEGER,
+  mentorID INTEGER
+);

@@ -7,12 +7,13 @@
           <aside class="lSide">
             <div id="user_info">
               <h3>My Info</h3>
-              <p><b>Name: </b> <i><%= h @mentees.name %></i></p>
-              <p><b>Email: </b> <i><%= h @mentees.email %></i> </p>
-              <p><b>Phone Number: </b> <i><%= h @mentees.phoneNum %></i></p>
-              <p><b>Course Name: </b> <i><%= h @mentees.courseName %></i> </p>
-              <p><b>Course Year: </b> <%= h @mentees.cyear %> </p>
-              <p><b>Description: </b> <%= h @mentees.description %> </p>
+              <p><b>ID: </b> <i><%= h $mentees.id %></i></p>
+              <p><b>Name: </b> <i><%= h $mentees.name %></i></p>
+              <p><b>Email: </b> <i><%= h $mentees.email %></i> </p>
+              <p><b>Phone Number: </b> <i><%= h $mentees.phoneNum %></i></p>
+              <p><b>Course Name: </b> <i><%= h $mentees.courseName %></i> </p>
+              <p><b>Course Year: </b> <%= h $mentees.cyear %> </p>
+              <p><b>Description: </b> <%= h $mentees.description %> </p>
             </div>
           </aside>
 
@@ -21,7 +22,7 @@
               <h3>Options</h3>
               <p class="search_info"><a href="/search" class="link">Find a mentor</a></p>
               <p class="search_info"><!--<a href="#com1003" class="link">-->View mentor applications<!--</a>--></p>
-              <p><a href="/editMentee?username=<%= h @mentees.username %>">Edit Profile</a></p>
+              <p><a href="/editMentee?username=<%= h $mentees.username %>">Edit Profile</a></p>
             </div>
           </aside>
         </div>
