@@ -1,5 +1,5 @@
 require_relative "../spec_helper"
-
+#tests the mentor search when it is empty
 describe "the search page" do
   context "with an empty database" do
     it "says the database is empty" do
@@ -7,9 +7,9 @@ describe "the search page" do
       expect(page).to have_content "Your search revealed no mentors"
     end
   end
-
+#tests the mentor search when there is only
   context "with one record in the database" do
-    it "lists the player" do
+    it "lists the mentors" do
       add_test_mentor
       add_test_user
       visit "/login"
@@ -20,8 +20,8 @@ describe "the search page" do
       expect(page).to have_content "George Test"
       clear_database
     end
-
-    it "does not list the mentor when a different club is searched for" do
+#checks that mentor doesnt appear when wrong course is entered
+    it "does not list the mentor when a different courseName is searched for" do
       add_test_mentor
       add_test_user
       fill_in "username", with: "123"
@@ -33,8 +33,8 @@ describe "the search page" do
       expect(page).to have_content "Your search revealed no mentors"
       clear_database
     end
-
-    it "lists the mentor when their jobTitle is searched for" do
+#checks that mentor appears when wrong course is entered
+    it "lists the mentor when their courseName is searched for" do
       add_test_mentor
       add_test_user
       fill_in "username", with: "123"

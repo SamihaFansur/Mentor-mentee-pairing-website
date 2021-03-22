@@ -1,12 +1,12 @@
 require_relative "../spec_helper"
-
+#tests that error message shows up when a nil mentee is attempted to be edited
 describe "the edit page" do
-  it "shows an error when trying to load an invalid player" do
+  it "shows an error when trying to load an invalid mentee" do
     visit "/editMentee?id=1000000"
     expect(page).to have_content "Unknown mentee"
   end
-
-  it "allows editing of a valid player" do
+#checks that a mentee can be edited
+  it "allows editing of a valid mentee" do
     add_test_user
     visit "/login"
     fill_in "username", with: "123"
@@ -18,8 +18,8 @@ describe "the edit page" do
     expect(page).to have_content "George Test"
     clear_database
   end
-
-  it "allows a player record to be changed" do
+#checks that mentee edit is submitted and displayed
+  it "allows a mentee record to be changed" do
     add_test_user
     visit "/login"
     fill_in "username", with: "123"
@@ -32,7 +32,7 @@ describe "the edit page" do
     expect(page).to have_content "New"
     clear_database
   end
-
+#checks that an empty data field can be submitted for mentee
   it "will save empty data field" do
     add_test_user
     visit "/login"
@@ -50,8 +50,8 @@ describe "the edit page" do
     
     
     
-    
-    it "allows editing of a valid player" do
+    #checks that a mentor can be edited
+    it "allows editing of a valid mentor" do
     add_test_mentor
     visit "/login"
     fill_in "username", with: "1234"
@@ -63,8 +63,8 @@ describe "the edit page" do
     expect(page).to have_content "Sam Mentor"
     clear_database
   end
-
-  it "allows a player record to be changed" do
+#checks that mentor edit is submitted and displayed
+  it "allows a mentor record to be changed" do
     add_test_mentor
     visit "/login"
     fill_in "username", with: "1234"
@@ -77,7 +77,7 @@ describe "the edit page" do
     expect(page).to have_content "New"
     clear_database
   end
-
+#checks that an empty data field can be submitted for mentor
   it "will save empty data field" do
     add_test_mentor
     visit "/login"

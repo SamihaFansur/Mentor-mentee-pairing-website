@@ -1,5 +1,5 @@
 require_relative "../spec_helper"
-
+#tests for deleting mentee
 describe "the delete page" do
   it "allows deletion of a valid mentee" do
     add_test_user
@@ -13,8 +13,8 @@ describe "the delete page" do
     expect(page).to have_content "Unknown mentee"
     clear_database
   end
-    
-      it "allows deletion of a valid mentee" do
+    #tests for deleting mentor
+   it "allows deletion of a valid mentor" do
     add_test_mentor
     visit "/login"
     fill_in "username", with: "1234"
