@@ -1,6 +1,6 @@
 require_relative "../spec_helper"
 
-
+#tests the mentor search with an empty database
 RSpec.describe "Mentors App" do
   describe "GET /search" do
     context "when the database is empty" do
