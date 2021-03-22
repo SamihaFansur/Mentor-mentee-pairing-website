@@ -1,40 +1,49 @@
-<%= erb :"common/headerB" %>
-<div class="background" id="statement">
-  <!--Our Program-->
-  <div class="full">
-    <div class="title">Login</div> <!--Main page Title-->  
+require_relative "../spec_helper"
 
-      <form method="post" action="/login">
+describe "the edit page" do
+  it "shows an error when trying to load an invalid player" do
+    visit "/editMentee?id=1000000"
+    expect(page).to have_content "Unknown mentee"
+  end
 
-        <% unless @error.nil? %>
-        <p><strong class="error"><%= @error %></strong></p>
-        <% end %>
+  it "allows editing of a valid player" do
+    add_test_user
+    visit "/login"
+    fill_in "username", with: "123"
+    fill_in "password", with: "123"
+    click_button "Submit"
+    visit "/editMentee?id=1"
+    click_button "Submit"
+    visit "/MenteeDashboard"
+    expect(page).to have_content "George Test"
+    clear_database
+  end
 
-        <p>Username: <br /><input type="text" name="username" id="username" for="username" value="<%= @mentees.username %>"/></p>
-        <% if @mentees.errors.include?("username") %>
-          <% @mentees.errors["username"].each do |error| %>
-            <p class="error"><strong>Username <%= error %></strong></p>
-          <% end %>
-        <% end %>
+  it "allows a player record to be changed" do
+    add_test_user
+    visit "/login"
+    fill_in "username", with: "123"
+    fill_in "password", with: "123"
+    click_button "Submit"
+    visit "/editMentee?id=1"
+    fill_in "fname", with: "New"
+    click_button "Submit"
+    visit "/MenteeDashboard"
+    expect(page).to have_content "New"
+    clear_database
+  end
 
-        <p>Password: <br /><input type="password" name="password" id="password" for="password"/></p>
-        <% if @mentees.errors.include?("password") %>
-          <% @mentees.errors["password"].each do |error| %>
-            <p class="error"><strong>Password <%= error %></strong></p>
-          <% end %>
-        <% end %>
-        
-        <p><input type="submit" value="Submit"></p>
-        
-        <p>Dont have an account?<br>
-        <a href="/SignUpChoices" class="underline">Sign Up</a>
-        </p>
-
-      </form>
-  </div>
-</div>
-
-<%= erb :"common/footer" %>
-
-
-<!--PAGE USED TO LOGIN-->
+  it "will save empty data field" do
+    add_test_user
+    visit "/login"
+    fill_in "username", with: "123"
+    fill_in "password", with: "123"
+    click_button "Submit"
+    visit "/editMentee?id=1"
+    fill_in "fname", with: ""
+    click_button "Submit"
+    visit"/MenteeDashboard"
+    expect(page).to have_content "Test"
+    clear_database
+  end
+end
