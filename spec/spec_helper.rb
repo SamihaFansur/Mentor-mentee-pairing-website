@@ -24,7 +24,7 @@ RSpec.configure do |config|
   config.include Rack::Test::Methods
 end
 
-# add a test player
+# add a test mentee
 def add_test_user
   visit "/MenteeSignUpForm"
   fill_in "fname", with: "George"
@@ -41,6 +41,23 @@ def add_test_user
   click_button "Submit"
 end
 
+# add a test mentor
+def add_test_mentor
+  visit "/MentorSignUpForm"
+  fill_in "fname", with: "George"
+  fill_in "lname", with: "Test"
+  fill_in "email", with: "samiha.fansur.2002@gmail.com"
+  fill_in "phoneNum", with: "+44 7721851137"
+  fill_in "username", with: "1234"
+  fill_in "password", with: "1234"
+    
+  select "Accounting and Financial Management (BA)", :from => "courseName"
+    
+  select "Actor", :from => "jobTitle"
+      
+  click_button "Submit"
+end
+
   def name
     "#{fname} #{lname}"
   end
@@ -49,6 +66,7 @@ end
 # clear out the database
 def clear_database
   DB.from("mentees").delete
+    DB.from("mentors").delete
 end
 
 # ensure we're always starting from a clean database
