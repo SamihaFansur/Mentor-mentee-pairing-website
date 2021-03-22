@@ -66,7 +66,7 @@ end
 # clear out the database
 def clear_database
   DB.from("mentees").delete
-    DB.from("mentors").delete
+  DB.from("mentors").delete
 end
 
 # ensure we're always starting from a clean database
