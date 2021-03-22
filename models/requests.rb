@@ -10,7 +10,10 @@ class Request < Sequel::Model
   
   #Checks if application already sent to prevent multiple submissions
   def exist_application?
-    other_request = Request.first(menteeID: menteeID)
-    !other_request.nil? && other_request.mentorID == mentorID
+    other_request = Request.where(menteeID: menteeID)
+    other_request.each do |requestVar|
+     return true if requestVar.mentorID == mentorID
+    end
+    return false
   end
 end
