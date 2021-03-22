@@ -33,7 +33,8 @@ post "/addApplication" do
     redirect "/search?error=1"
   else
     @requests.save_changes
-     send_mail(@mentors.email, 
+    #Sends an email to mentor that a mentee sent them an application
+    send_mail(@mentors.email, 
           "You have a new mentee application!", 
           "Hi "+@mentors.fname+" "+@mentors.lname+" !\n"+
           "You have a new mentee application. Please login into your mentor account and view your mentee applications \n"+
