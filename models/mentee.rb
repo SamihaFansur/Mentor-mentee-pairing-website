@@ -41,7 +41,8 @@ class Mentee < Sequel::Model
     self.cyear = params.fetch("cyear").strip unless params.fetch("cyear").strip == ""
     self.username = params.fetch("username", self.username).strip
     self.password = params.fetch("password", self.password).strip
-    self.description = params.fetch("description").strip 
+    #Done the last bit since initially description is empty
+    self.description = params.fetch("description").strip unless params.fetch("description").strip == ""
   end
 
   #Validates if username and password is empty
