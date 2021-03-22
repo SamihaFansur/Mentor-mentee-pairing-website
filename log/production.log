@@ -74,3 +74,9 @@ I, [2021-03-22T15:34:08.996929 #2327]  INFO -- : (0.098163s) DELETE FROM `reques
 I, [2021-03-22T15:34:09.148910 #2327]  INFO -- : (0.000166s) SELECT * FROM `mentors` WHERE (`username` = 'mentor1') LIMIT 1
 I, [2021-03-22T15:34:10.255727 #2327]  INFO -- : (0.000069s) SELECT * FROM `mentees` WHERE (`id` = 1) LIMIT 1
 I, [2021-03-22T15:34:10.255837 #2327]  INFO -- : (0.000403s) SELECT * FROM `mentees` WHERE (`id` = 1)
+I, [2021-03-22T15:40:09.983299 #2492]  INFO -- : (0.000180s) PRAGMA foreign_keys = 1
+I, [2021-03-22T15:40:09.983397 #2492]  INFO -- : (0.000018s) PRAGMA case_sensitive_like = 1
+I, [2021-03-22T15:40:09.984315 #2492]  INFO -- : (0.000095s) SELECT sqlite_version()
+I, [2021-03-22T15:40:09.984576 #2492]  INFO -- : (0.000127s) PRAGMA table_info('mentees')
+I, [2021-03-22T15:40:09.985802 #2492]  INFO -- : (0.000138s) PRAGMA table_info('mentors')
+I, [2021-03-22T15:40:09.986789 #2492]  INFO -- : (0.000072s) PRAGMA table_info('requests')
