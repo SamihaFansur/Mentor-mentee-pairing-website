@@ -1,34 +1,25 @@
 <%= erb :"common/header_mentorA" %>
-    <div class="background" id="statement">
-      <div class="full">
-        <div class="title">Edit your information</div> <!--Main page Title-->  
+  <div class="background" id="statement">
+    <div class="full">
+      <div class="title">Edit your information</div> <!--Main page Title-->  
 
-<% if @mentors.nil? %>
-    <p class="error"><strong>Unknown mentor</strong></p>
-<% else %>    
-
-    <% unless @mentors.errors.size.zero? %>
-        <p><strong class="error">Please correct the errors below:</strong></p>
-    <% end %>
-
-    <form method="post">
-        <input type="hidden" name="id" value="<%= @mentors.id %>" />
-        <%= erb :"common/mentor_edit_form" %>
-    </form>
-
-    <div class="warning">
-        <p><strong>WARNING! Deleting a record cannot be undone.</strong></p>
-
-        <form method="post" action="/deleteMentor">
-            <input type="hidden" name="id" value="<%= @mentors.id %>" />
-            <input type="submit" value="Delete" onclick="return confirm('Are you sure?')" />
+        <form method="post">
+          <input type="hidden" name="id" value="<%= @mentors.id %>" />
+          <%= erb :"common/mentor_edit_form" %>
         </form>
+
+        <div class="warning">
+            <p><strong>WARNING! Deleting a record cannot be undone.</strong></p>
+
+            <form method="post" action="/deleteMentor">
+                <input type="hidden" name="id" value="<%= @mentors.id %>" />
+                <input type="submit" value="Delete" onclick="return confirm('Are you sure?')" />
+            </form>
+        </div>
+
+
+      <p class="navigation">Return to <a href="/MentorDashboard">Mentor Dashboard</a>.</p>
     </div>
-
-<% end %>
-
-<p class="navigation">Return to <a href="/MentorDashboard">Mentor Dashboard</a>.</p>
-      </div>
-</div>
+  </div>
 
 <%= erb :"common/footer" %>

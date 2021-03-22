@@ -1,15 +1,16 @@
+<!--PAGE USED TO LOGIN-->
 <%= erb :"common/headerB" %>
 <div class="background" id="statement">
-  <!--Our Program-->
   <div class="full">
     <div class="title">Login</div> <!--Main page Title-->  
 
       <form method="post" action="/login">
-
+        <!-- Throws errors if any are found, displays error messages which are written in the routes -->
         <% unless @error.nil? %>
         <p><strong class="error"><%= @error %></strong></p>
         <% end %>
 
+        <!--Compares the username in the username column in mentees table to check if it matches/exists, if it doesn't then throws error-->
         <p>Username: <br /><input type="text" name="username" id="username" for="username" value="<%= @mentees.username %>"/></p>
         <% if @mentees.errors.include?("username") %>
           <% @mentees.errors["username"].each do |error| %>
@@ -17,6 +18,7 @@
           <% end %>
         <% end %>
 
+        <!--Compares the password in the password column in mentees table to check if it matches/exists, if it doesn't then throws error-->
         <p>Password: <br /><input type="password" name="password" id="password" for="password"/></p>
         <% if @mentees.errors.include?("password") %>
           <% @mentees.errors["password"].each do |error| %>
@@ -35,6 +37,3 @@
 </div>
 
 <%= erb :"common/footer" %>
-
-
-<!--PAGE USED TO LOGIN-->

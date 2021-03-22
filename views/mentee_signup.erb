@@ -1,9 +1,9 @@
 <%= erb :"common/headerB" %>
     <div class="background" id="statement">
-      <!--Our Program-->
       <div class="full">
         <div class="title">Mentee Sign Up</div> <!--Main page Title-->  
         
+        <!-- Displays errors if there are any -->
         <% unless @error.nil? %>
         <h2><strong class="error"><%= @error %></strong></h2>
         <% end %>

@@ -5,6 +5,7 @@
         <h2>Mentee Applications</h2>
         <p>You can only accept 1 mentee application!</p>
         <div class="user_info">
+          <!-- Displays all the mentee applications the mentor has -->
           <% if @menteeIDList.count > 0 %>
               <h2>Mentee Information:</h2>
               <table id="MenteeApplications">
@@ -17,6 +18,7 @@
                   <th>Description</th>
                   <th>Accept application</th>
                 </tr>
+               <!-- Details of each mentee displayed -->
               <% @menteeIDList.each do |mentee| %>
                 <tr>
                   <td><%= h mentee.name %></td>

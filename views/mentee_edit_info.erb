@@ -3,31 +3,21 @@
       <div class="full">
         <div class="title">Edit your information</div> <!--Main page Title-->  
 
-<% if @mentees.nil? %>
-    <p class="error"><strong>Unknown mentee</strong></p>
-<% else %>    
+          <form method="post">
+              <input type="hidden" name="id" value="<%= @mentees.id %>" />
+              <%= erb :"common/mentee_edit_form" %>
+          </form>
 
-    <% unless @mentees.errors.size.zero? %>
-        <p><strong class="error">Please correct the errors below:</strong></p>
-    <% end %>
+          <div class="warning">
+              <p><strong>WARNING! Deleting a record cannot be undone.</strong></p>
 
-    <form method="post">
-        <input type="hidden" name="id" value="<%= @mentees.id %>" />
-        <%= erb :"common/mentee_edit_form" %>
-    </form>
+              <form method="post" action="/deleteMentee">
+                  <input type="hidden" name="id" value="<%= @mentees.id %>" />
+                  <input type="submit" value="Delete" onclick="return confirm('Are you sure?')" />
+              </form>
+          </div>
 
-    <div class="warning">
-        <p><strong>WARNING! Deleting a record cannot be undone.</strong></p>
-
-        <form method="post" action="/deleteMentee">
-            <input type="hidden" name="id" value="<%= @mentees.id %>" />
-            <input type="submit" value="Delete" onclick="return confirm('Are you sure?')" />
-        </form>
-    </div>
-
-<% end %>
-
-<p class="navigation">Return to <a href="/MenteeDashboard">Mentee Dashboard</a>.</p>
+        <p class="navigation">Return to <a href="/MenteeDashboard">Mentee Dashboard</a>.</p>
       </div>
 </div>
 

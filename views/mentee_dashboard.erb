@@ -5,6 +5,7 @@
         <h2>My Dashboard</h2>
         <div id="dashboardBody">
           <aside class="lSide">
+            <!-- Displays the details of the mentee logged in -->
             <div class="user_info">
               <h3>My Info</h3>
               <p><b>Name: </b> <i><%= h $mentees.name %></i></p>
@@ -20,7 +21,7 @@
             <div class="full" id="searchOptions">
               <h3>Options</h3>
               <p class="search_info"><a href="/search" class="link">Find a mentor</a></p>
-              <p class="search_info">View mentor applications</p> <!--shows applications sent-->
+              <p class="search_info">View mentor applications</p> <!--shows applications sent (ITR.2)-->
               <p><a href="/editMentee?id=<%= h $mentees.id %>">Edit Profile</a></p>
             </div>
             
