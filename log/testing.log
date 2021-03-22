@@ -2461,3 +2461,9 @@ I, [2021-03-22T14:41:53.142575 #1875]  INFO -- : (0.000180s) SELECT * FROM `ment
 I, [2021-03-22T14:41:54.372306 #1875]  INFO -- : (0.000178s) SELECT * FROM `mentors` WHERE (`id` = '2') LIMIT 1
 I, [2021-03-22T14:41:54.372616 #1875]  INFO -- : (0.000091s) SELECT * FROM `requests` WHERE (`menteeID` = 1)
 I, [2021-03-22T14:41:54.472942 #1875]  INFO -- : (0.000161s) SELECT * FROM `mentors` ORDER BY `courseName`
+I, [2021-03-22T15:18:34.043951 #2016]  INFO -- : (0.000187s) PRAGMA foreign_keys = 1
+I, [2021-03-22T15:18:34.044081 #2016]  INFO -- : (0.000021s) PRAGMA case_sensitive_like = 1
+I, [2021-03-22T15:18:34.045025 #2016]  INFO -- : (0.000079s) SELECT sqlite_version()
+I, [2021-03-22T15:18:34.045303 #2016]  INFO -- : (0.000130s) PRAGMA table_info('mentees')
+I, [2021-03-22T15:18:34.046588 #2016]  INFO -- : (0.000142s) PRAGMA table_info('mentors')
+I, [2021-03-22T15:18:34.047690 #2016]  INFO -- : (0.000076s) PRAGMA table_info('requests')
