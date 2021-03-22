@@ -14,6 +14,7 @@ For the databases:
   ".read tables.sql"
   ".schema"
   "ctrl+z" to exit sqlite form
+  "select  * from tableName" where tableName is the table name in tables.sql which can be seen using a ".schema" command
 -To exit the directory use "cd .." to return
 
 Running the webapplication:
