@@ -24,4 +24,4 @@ Running the webapplication:
     and the portNumber is the port number displayed in the terminal once you run app.rb
 
 Running Rspec tests:
--To run the tests make sure you're in the project directory and run "rspec spec/features/test-file" where "test-file" is the test you want to run e.g. "edit_spec.rb"
+-To run the tests make sure you're in the project directory and run "rspec spec/features/test-file" or "rspec spec/unit/test-file" where "test-file" is the test you want to run e.g. "edit_spec.rb"
