@@ -14,7 +14,7 @@ For the databases:
   ".read tables.sql"
   ".schema"
   "ctrl+z" to exit sqlite form
--To exit the directory use "cd .. to return"
+-To exit the directory use "cd .." to return
 
 Running the webapplication:
 -Install gems by typing "bundle install" in the terminal
