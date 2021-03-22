@@ -17,7 +17,7 @@ describe "the search page" do
       fill_in "password", with: "123"
       click_button "Submit"
       visit "/search"
-      expect(page).to have_content "George Test"
+      expect(page).to have_content "Sam Mentor"
       clear_database
     end
 #checks that mentor doesnt appear when wrong course is entered
@@ -43,7 +43,7 @@ describe "the search page" do
       visit "/search"
       fill_in "searchForMentor", with: "Accounting and Financial Management (BA)"
       click_button "Submit"
-      expect(page).to have_content "George Test"
+      expect(page).to have_content "Sam Mentor"
       clear_database
     end
   end
