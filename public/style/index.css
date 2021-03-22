@@ -347,7 +347,7 @@ h6 {
   padding-top: 2%;
 }
 
-#user_info {
+.user_info {
   background-color: rgba(255, 255, 255, 0.7);
   border: 3px solid #000000;
   border-radius: 3px;
@@ -356,11 +356,11 @@ h6 {
   text-align: left;
 }
 
-#user_info p {
+.user_info p {
   margin: 5% 0% 5% 10%;
 }
 
-#user_info a {
+.user_info a {
   font-size: 1.8rem;
 }
 
@@ -402,7 +402,10 @@ h6 {
 }
 
 #SearchError {
-  margin-bottom: 24%;
+  margin: 5% 5% 24% 5%;
+  text-align: center;
+  padding: 5%;
+  font-weight: bold;
 }
 
 /* header */

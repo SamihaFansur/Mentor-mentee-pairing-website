@@ -2,33 +2,38 @@
 <div class="background" id="statement">
   
       <div class="full">
-        <% if @menteeMatchedList.count > 0 %>
-            <table id="MenteeApplications">
-              <tr id="TableHeadings">
-                <th>Name</th>
-                <th>Email</th>
-                <th>Phone Number</th>
-                <th>Course Year</th>
-                <th>Course Name</th>
-                <th>Description</th>
-                <th>Accept application</th>
-              </tr>
-            <% @menteeMatchedList.each do |mentee| %>
-              <tr>
-                <td><%= h mentee.name %></td>
-                <td><%= h mentee.email %></td>
-                <td><%= h mentee.phoneNum %></td>
-                <td><%= h mentee.cyear %></td>
-                <td><%= h mentee.courseName %></td>
-                <td><%= h mentee.description %></td>
-                <td>
-                </td>
-              </tr>
-            <% end %> 
-            </table>
-          <% else %>
-            <p id="SearchError">You do not have a mentee yet!</p>
-          <% end %>
+        <h2>My Mentee</h2>
+        <p>Details of your current mentee will appear here:</p>
+        <div class="user_info">
+          <% if @menteeMatchedList.count > 0 %>
+              <h2>Mentee Infomation:</h2>
+              <table id="MenteeApplications">
+                <tr id="TableHeadings">
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Phone Number</th>
+                  <th>Course Year</th>
+                  <th>Course Name</th>
+                  <th>Description</th>
+                  <th>Accept application</th>
+                </tr>
+              <% @menteeMatchedList.each do |mentee| %>
+                <tr>
+                  <td><%= h mentee.name %></td>
+                  <td><%= h mentee.email %></td>
+                  <td><%= h mentee.phoneNum %></td>
+                  <td><%= h mentee.cyear %></td>
+                  <td><%= h mentee.courseName %></td>
+                  <td><%= h mentee.description %></td>
+                  <td>
+                  </td>
+                </tr>
+              <% end %> 
+              </table>
+            <% else %>
+              <p id="SearchError">You do not have a mentee yet!</p>
+            <% end %>
+          </div> 
      </div>
   
 </div> 
