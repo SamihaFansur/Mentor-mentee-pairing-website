@@ -1013,3 +1013,43 @@ I, [2021-03-22T00:01:41.467792 #3953]  INFO -- : (0.000020s) BEGIN
 I, [2021-03-22T00:01:41.468233 #3953]  INFO -- : (0.000276s) INSERT INTO `requests` (`mentorID`, `menteeID`) VALUES (1, 4)
 I, [2021-03-22T00:01:41.555136 #3953]  INFO -- : (0.086798s) COMMIT
 I, [2021-03-22T00:01:42.022400 #3953]  INFO -- : (0.000157s) SELECT * FROM `mentors` ORDER BY `courseName`
+I, [2021-03-22T00:29:41.498733 #317]  INFO -- : (0.000174s) PRAGMA foreign_keys = 1
+I, [2021-03-22T00:29:41.498829 #317]  INFO -- : (0.000014s) PRAGMA case_sensitive_like = 1
+I, [2021-03-22T00:29:41.499649 #317]  INFO -- : (0.000064s) SELECT sqlite_version()
+I, [2021-03-22T00:29:41.499929 #317]  INFO -- : (0.000145s) PRAGMA table_info('mentees')
+I, [2021-03-22T00:29:41.501125 #317]  INFO -- : (0.000123s) PRAGMA table_info('mentors')
+I, [2021-03-22T00:29:41.502133 #317]  INFO -- : (0.000099s) PRAGMA table_info('requests')
+I, [2021-03-22T00:31:51.166662 #317]  INFO -- : (0.000164s) SELECT * FROM `mentors` WHERE (`username` = 'john3') LIMIT 1
+I, [2021-03-22T00:31:51.167741 #317]  INFO -- : (0.000868s) SELECT * FROM `mentors` WHERE (`email` = 'johnsmith@sheffield.ac.uk') LIMIT 1
+I, [2021-03-22T00:31:51.167870 #317]  INFO -- : (0.000017s) BEGIN
+I, [2021-03-22T00:31:51.168249 #317]  INFO -- : (0.000216s) INSERT INTO `mentors` (`fname`, `lname`, `email`, `phoneNum`, `username`, `password`, `jobTitle`, `courseName`) VALUES ('John', 'Smith', 'johnsmith@sheffield.ac.uk', '01234567890', 'john3', 'password', 'Administrator', 'Accounting and Financial Management (BA)')
+I, [2021-03-22T00:31:51.168459 #317]  INFO -- : (0.000093s) SELECT * FROM `mentors` WHERE `id` = 2
+I, [2021-03-22T00:31:51.257967 #317]  INFO -- : (0.089423s) COMMIT
+I, [2021-03-22T00:32:05.961916 #317]  INFO -- : (0.000925s) SELECT * FROM `mentees` WHERE (`username` = 'john3') LIMIT 1
+I, [2021-03-22T00:32:05.962327 #317]  INFO -- : (0.000122s) SELECT * FROM `mentors` WHERE (`username` = 'john3') LIMIT 1
+I, [2021-03-22T00:32:06.084637 #317]  INFO -- : (0.000160s) SELECT * FROM `mentors` WHERE (`username` = 'john3') LIMIT 1
+I, [2021-03-22T00:33:23.366978 #317]  INFO -- : (0.001000s) SELECT * FROM `mentees` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-22T00:33:23.367347 #317]  INFO -- : (0.000167s) SELECT * FROM `mentors` WHERE (`username` = 'trial1') LIMIT 1
+I, [2021-03-22T00:34:33.251091 #317]  INFO -- : (0.000154s) SELECT * FROM `mentees` WHERE (`username` = 'joe1') LIMIT 1
+I, [2021-03-22T00:34:33.251332 #317]  INFO -- : (0.000091s) SELECT * FROM `mentees` WHERE (`email` = 'joebloggs@sheffield.ac.uk') LIMIT 1
+I, [2021-03-22T00:34:33.251469 #317]  INFO -- : (0.000018s) BEGIN
+I, [2021-03-22T00:34:33.251806 #317]  INFO -- : (0.000184s) INSERT INTO `mentees` (`fname`, `lname`, `email`, `phoneNum`, `courseName`, `cyear`, `username`, `password`) VALUES ('Joe', 'Bloggs', 'joebloggs@sheffield.ac.uk', '09876543210', 'Accounting and Financial Management (BA)', 1, 'joe1', 'password')
+I, [2021-03-22T00:34:33.252009 #317]  INFO -- : (0.000092s) SELECT * FROM `mentees` WHERE `id` = 5
+I, [2021-03-22T00:34:33.346683 #317]  INFO -- : (0.094594s) COMMIT
+I, [2021-03-22T00:34:43.780873 #317]  INFO -- : (0.000173s) SELECT * FROM `mentees` WHERE (`username` = 'joe1') LIMIT 1
+I, [2021-03-22T00:34:43.928208 #317]  INFO -- : (0.000167s) SELECT * FROM `mentees` WHERE (`username` = 'joe1') LIMIT 1
+I, [2021-03-22T00:35:15.445231 #317]  INFO -- : (0.000139s) SELECT * FROM `mentors` WHERE (`id` IS NULL)
+I, [2021-03-22T00:36:04.190825 #317]  INFO -- : (0.000156s) SELECT * FROM `mentees` WHERE (`username` = 'john3') LIMIT 1
+I, [2021-03-22T00:36:04.191133 #317]  INFO -- : (0.000121s) SELECT * FROM `mentors` WHERE (`username` = 'john3') LIMIT 1
+I, [2021-03-22T00:36:04.346575 #317]  INFO -- : (0.000177s) SELECT * FROM `mentors` WHERE (`username` = 'john3') LIMIT 1
+I, [2021-03-22T00:39:58.724366 #317]  INFO -- : (0.000181s) SELECT * FROM `mentors` WHERE (`username` = 'john3') LIMIT 1
+I, [2021-03-22T00:46:57.410442 #317]  INFO -- : (0.000233s) SELECT * FROM `mentors` WHERE (`username` = 'john3') LIMIT 1
+I, [2021-03-22T00:47:06.307462 #317]  INFO -- : (0.000129s) SELECT * FROM `requests` WHERE (`mentorID` = 2)
+I, [2021-03-22T00:47:11.678871 #317]  INFO -- : (0.000145s) SELECT * FROM `mentees` WHERE (`id` IS NULL)
+I, [2021-03-22T00:47:20.532813 #317]  INFO -- : (0.000146s) SELECT * FROM `requests` WHERE (`mentorID` = 2)
+I, [2021-03-22T00:47:23.263474 #317]  INFO -- : (0.000148s) SELECT * FROM `mentees` WHERE (`id` IS NULL)
+I, [2021-03-22T00:47:40.862460 #317]  INFO -- : (0.000192s) SELECT * FROM `mentors` WHERE (`username` = 'john3') LIMIT 1
+I, [2021-03-22T00:47:42.021873 #317]  INFO -- : (0.000121s) SELECT * FROM `requests` WHERE (`mentorID` = 2)
+I, [2021-03-22T00:47:43.668405 #317]  INFO -- : (0.000126s) SELECT * FROM `requests` WHERE (`mentorID` = 2)
+I, [2021-03-22T00:48:00.791964 #317]  INFO -- : (0.000144s) SELECT * FROM `mentees` WHERE (`id` IS NULL)
+I, [2021-03-22T00:48:25.168977 #317]  INFO -- : (0.000126s) SELECT * FROM `requests` WHERE (`mentorID` = 2)
