@@ -32,7 +32,8 @@ post '/login' do
   
   @error = nil #initializing variable
   
-  #If mentee username and password match to the values in the database mentee logged in and redirected to mentee dash
+  #If mentee username and password match to the values in the database mentee logged in and redirected to mentee dashboard
+  #if combination incorrect then displays error
   if @mentees.valid?
     if @mentees.exist_login?
       session[:logged_in] = true
@@ -45,6 +46,8 @@ post '/login' do
     @error = "Please correct the information below"
   end
   
+  #If mentor username and password match to the values in the database mentor logged in and redirected to mentor dashboard
+  #if combination incorrect then displays error
   if @mentors.valid?
     if @mentors.exist_login?
       session[:logged_in] = true
@@ -61,6 +64,6 @@ post '/login' do
 end
 
 get "/logout" do
-  session.clear
+  session.clear #Clears session when user logs out
   erb :logout
 end

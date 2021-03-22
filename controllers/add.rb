@@ -17,6 +17,7 @@ post "/MenteeSignUpForm" do
         @error = "Username/email exists"
       else
         @mentees.save_changes
+        #Sends an email to mentee that the sign up was successful
         send_mail(@mentees.email, 
           "Successful Sign up!", 
           "Hi "+@mentees.fname+" "+@mentees.lname+" !\n"+
@@ -56,6 +57,7 @@ post "/MentorSignUpForm" do
         @error = "Username/email exists"
       else
         @mentors.save_changes
+        #Sends an email to mentor that the sign up was successful
         send_mail(@mentors.email, 
           "Successful Sign up!", 
           "Hi "+@mentors.fname+" "+@mentors.lname+" !\n"+
