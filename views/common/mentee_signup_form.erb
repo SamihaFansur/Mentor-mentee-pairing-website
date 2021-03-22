@@ -1,3 +1,4 @@
+<!--Form called when a user wants to sign up as a mentee-->
 <div class="col">
   <p>Please fill in the information below</p>
   <p>
@@ -20,9 +21,8 @@
     <input type="text" name="phoneNum" id="phoneNum" placeholder="+XX XXXXXXXXXX" maxlength="40" size="30" required value="<%= h @mentees.phoneNum %>"><!--Mandatory field-->
   </p>            
 
-<!--Column 2-->
   <p>
-    <label for="courseName" class="options">Course: </label> <!--Dropdown List-->
+    <label for="courseName" class="options">Course: </label> <!--Dropdown List--><!--Mandatory field-->
     <select name="courseName" id="courseName" required value="<%= h @mentees.courseName %>"> <!--Course List-->
       <option value="">Select</option>
       <option value="Accounting and Financial Management (BA)">Accounting and Financial Management (BA)</option>
@@ -296,7 +296,7 @@
   </p>
 
    <p>
-    <label for="cyear" class="options">Year of study: </label> <!--Dropdown list-->
+    <label for="cyear" class="options">Year of study: </label> <!--Dropdown list--> <!--Mandatory field-->
     <select name="cyear" id="cyear" required value="<%= h @mentees.cyear %>">
       <option value="">Select</option>
       <option value="1">1</option>
@@ -320,8 +320,7 @@
  
 </div>
 
-  <!--Submit/Reset buttons-->
+  <!--Submit button-->
 <p id="buttons">
   <input type="submit" id="submit" value="Submit">
-<!--   <input type="reset" id="reset" value="Reset"> -->
 </p>

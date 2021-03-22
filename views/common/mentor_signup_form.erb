@@ -1,3 +1,4 @@
+<!--Form called when a user wants to sign up as a mentor-->
 <div class="col">
   <p>Please fill in the information below</p>
   <p>
@@ -20,7 +21,7 @@
   </p>
 
   <p>
-    <label for="jobTitle" class="options">Job Title: </label> <!--Dropdown List-->
+    <label for="jobTitle" class="options">Job Title: </label> <!--Dropdown List--> <!--Mandatory field-->
     <select name="jobTitle" id="jobTitle" required value="<%= h @mentors.jobTitle %>"> <!--Job Title List-->
       <option value="">Select</option>
       <option value="Account Collector">Account Collector</option>
@@ -487,7 +488,7 @@
     </select>
   </p>
   <p>  
-    <label for="courseName" class="options">Course: </label> <!--Dropdown List-->
+    <label for="courseName" class="options">Course: </label> <!--Dropdown List--> <!--Mandatory field-->
     <select name="courseName" id="courseName" required value="<%= h @mentors.courseName %>"> <!--Course List-->
       <option value="">Select</option>
       <option value="Accounting and Financial Management (BA)">Accounting and Financial Management (BA)</option>
@@ -770,8 +771,7 @@
   </p>             
 
 </div>
-<!--Submit/Reset buttons-->
+<!--Submit button-->
 <p id="buttons">
   <input type="submit" id="submit" value="Submit">
-<!--   <input type="reset" id="reset" value="Reset"> -->
 </p>
