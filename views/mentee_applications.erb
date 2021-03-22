@@ -4,11 +4,11 @@
       <div class="full">
         <h2>Mentee Applications</h2>
         <p>You can only accept 1 mentee application!</p>
-        <div class="user_info">
+        <div class="user_info" id="application">
           <!-- Displays all the mentee applications the mentor has -->
           <% if @menteeIDList.count > 0 %>
               <h2>Mentee Information:</h2>
-              <table id="MenteeApplications">
+              <table class="display_table">
                 <tr id="TableHeadings">
                   <th>Name</th>
                   <th>Email</th>
