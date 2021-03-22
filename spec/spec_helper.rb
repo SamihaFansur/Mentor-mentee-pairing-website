@@ -32,6 +32,7 @@ def add_test_user
   fill_in "email", with: "samiha.fansur.2002@gmail.com"
   fill_in "phoneNum", with: "+44 7721851137"
   fill_in "username", with: "123"
+  fill_in "password", with: "123"
     
   select "Accounting and Financial Management (BA)", :from => "courseName"
     
