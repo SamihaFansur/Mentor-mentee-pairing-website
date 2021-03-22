@@ -42,7 +42,7 @@ class Mentor < Sequel::Model
     self.jobTitle = params.fetch("jobTitle").strip unless params.fetch("jobTitle").strip == ""
     self.courseName = params.fetch("courseName").strip unless params.fetch("courseName").strip == ""
     #Done the last bit since initially description is empty
-    self.description = params.fetch("description").strip unless params.fetch("description").strip == ""
+    self.description = params.fetch("description").strip unless params.fetch("description").strip == "" || params.fetch("description").nil?
   end
 
   #Validates if username and password is empty
