@@ -18,9 +18,9 @@ end
 
 get "/myMentor" do
   @mentorMatchedList = []
-  MentorIDList = Request.where(menteeID: $mentees.id)
+  MentorIDList = Mentor.where(id: $mentees.mentorMatch)
   MentorIDList.each do |id|
-    @mentorMatchedList.push(Mentor.first(id: id.mentorID))
+    @mentorMatchedList.push(Mentor.first(id: id.id))
   end
   
   erb :myMentor
@@ -28,10 +28,10 @@ end
 
 get "/myMentee" do
  @menteeMatchedList = []
-  MenteeIDList = Request.where(mentorID: $mentors.id)
+  MenteeIDList = Mentee.where(id: $mentors.menteeMatch)
   MenteeIDList.each do |id|
-    @menteeMatchedList.push(Mentee.first(id: id.menteeID))
+    @menteeMatchedList.push(Mentee.first(id: id.id))
   end
-  
+  puts @menteeMatchedList
   erb :myMentee
 end
