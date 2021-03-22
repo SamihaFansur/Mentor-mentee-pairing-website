@@ -10,14 +10,14 @@
         <p><strong class="error"><%= @error %></strong></p>
         <% end %>
 
-        <p>Username: <br /><input type="text" name="username" value="<%= @mentees.username %>"/></p>
+        <p>Username: <br /><input type="text" name="username" id="username" for="username" value="<%= @mentees.username %>"/></p>
         <% if @mentees.errors.include?("username") %>
           <% @mentees.errors["username"].each do |error| %>
             <p class="error"><strong>Username <%= error %></strong></p>
           <% end %>
         <% end %>
 
-        <p>Password: <br /><input type="password" name="password" /></p>
+        <p>Password: <br /><input type="password" name="password" id="password" for="password"/></p>
         <% if @mentees.errors.include?("password") %>
           <% @mentees.errors["password"].each do |error| %>
             <p class="error"><strong>Password <%= error %></strong></p>
