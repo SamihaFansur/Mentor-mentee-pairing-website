@@ -42,7 +42,7 @@ class Mentee < Sequel::Model
     self.username = params.fetch("username", self.username).strip
     self.password = params.fetch("password", self.password).strip
     #Done the last bit since initially description is empty
-    self.description = params.fetch("description", self.description).strip
+    self.description = params.fetch("description").strip unless params.fetch("description").strip == "" || params.fetch("description").nil?
   end
 
   #Validates if username and password is empty
