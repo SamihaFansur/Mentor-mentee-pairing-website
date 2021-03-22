@@ -44,8 +44,8 @@ end
 # add a test mentor
 def add_test_mentor
   visit "/MentorSignUpForm"
-  fill_in "fname", with: "George"
-  fill_in "lname", with: "Test"
+  fill_in "fname", with: "Sam"
+  fill_in "lname", with: "Mentor"
   fill_in "email", with: "samiha.fansur.2002@gmail.com"
   fill_in "phoneNum", with: "+44 7721851137"
   fill_in "username", with: "1234"
