@@ -131,46 +131,6 @@ footer {
   padding: 3% 2% 0 2%;
 }
 
-/* #mentors {
-  display: block;
-  text-align: left;
-  margin: 5% 3% 2% 3%;
-  padding: 2%;
-}
-
-.mentor_pics {
-  height: 213.12px;
-  width: 218.88px;
-  border-radius: 50%;
-}
-
-figure {
-  display: inline-block;
-  position: relative;
-  height: 213.12px;
-  width: 280px;
-}
-  
-figcaption {
-  position: absolute;
-  top: 75px;
-  right: 0;
-  left: 250px;
-  width: 200px;
-  height: 180px;
-  line-height: 24px;
-  font-weight: bold;
-  text-align: center;
-  font-size: 2.3rem;
-  color: #2f219d;;
-}
-
-h6 {
-  margin-top: 15px;
-  color: rgb(0, 0, 0);
-  text-shadow:1px 1px 10px rgb(119, 181, 226), 1px 1px 10px #ccc;
-} */
-
 * {
   box-sizing: border-box;
 }
@@ -264,32 +224,6 @@ h6 {
 }
 
 /*Contact Form*/
-
-.contactBody h2 {
-  font-weight: normal;
-  font-size: 1.4rem;
-}
-
-.contactForm {
-  margin-bottom: 5%;
-  border-radius: 10px;
-  display: flex;
-  background-color:#0066b3;
-  flex-direction: column;
-  align-items: center;
-}
-
-.contactForm h2 {
-  font-weight: bold;
-  font-size: 1.6rem;
-}
-
-.contactForm p {
-  margin: 5% 0;
-  padding: 0%;
-  font-size: 1.4rem;
-}
-
 .myform {
     display: flex;
     flex-direction: column;

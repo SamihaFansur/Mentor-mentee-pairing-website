@@ -319,16 +319,16 @@
   </p> 
   
   <p>
-    <label for="description">Description: </label>
+    <label for="description" class="options">Description: </label>
   </p>
 
   <p>
-    <textarea name="description" id="description" placeholder="Enter a description..." rows="8" cols="48"></textarea>
+    <textarea name="description" id="description" placeholder="Enter a description..." rows="8" cols="48" value="<%= h @mentees.description %>"></textarea>    
   </p>
  
 </div>
 
-  <!--Submit buttons-->
+  <!--Submit button-->
 <p id="buttons">
   <input type="submit" id="submit" value="Submit">
 </p>
