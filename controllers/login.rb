@@ -1,33 +1,38 @@
 get "/MenteeDashboard" do
-  redirect "/login" unless session[:logged_in]
-  username = session[:mentees_username]
-  $mentees = Mentee.first(username: username)
+  redirect "/login" unless session[:logged_in] #If mentee logged in then display mentee dashbard, otherwise redirect to login page
+  username = session[:mentees_username] #Logs user in
+  #Gets the mentee information that corresponds to the username
+  $mentees = Mentee.first(username: username) # '$' used to make it a global variable
   erb :mentee_dashboard
 end
 
 get "/MentorDashboard" do
-  redirect "/login" unless session[:logged_in]
-  username = session[:mentors_username]
-  $mentors = Mentor.first(username: username)
+  redirect "/login" unless session[:logged_in] #If mentee logged in then display mentee dashbard, otherwise redirect to login page
+  username = session[:mentors_username] #Logs user in
+  #Gets the mentor information that corresponds to the username
+  $mentors = Mentor.first(username: username) # '$' used to make it a global variable
   erb :mentor_dashboard
 end
 
 get "/login" do
+  #Creates a new instance of a Mentee when user logs in
   @mentees = Mentee.new
-  
+    
+  #Creates a new instance of a Mentor when user logs in
   @mentors = Mentor.new
   erb :login
 end
 
 post '/login' do
   @mentees = Mentee.new
-  @mentees.load(params)
+  @mentees.load(params) #Loads parameters
   
   @mentors = Mentor.new
-  @mentors.load(params)
+  @mentors.load(params) #Loads parameters
   
-  @error = nil
-
+  @error = nil #initializing variable
+  
+  #If mentee username and password match to the values in the database mentee logged in and redirected to mentee dash
   if @mentees.valid?
     if @mentees.exist_login?
       session[:logged_in] = true

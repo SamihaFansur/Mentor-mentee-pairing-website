@@ -1,6 +1,7 @@
 require "net/http"
 
-#MENTEE
+###############################MENTEE######################################
+
 get "/MenteeSignUpForm" do
   @mentees = Mentee.new
   erb :mentee_signup
@@ -38,7 +39,8 @@ def send_mail(email, subject, body)
   response.is_a? Net::HTTPSuccess
 end
 
-#MENTOR
+###############################MENTOR######################################
+
 get "/MentorSignUpForm" do
   @mentors = Mentor.new
   erb :mentor_signup
