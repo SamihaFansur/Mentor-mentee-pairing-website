@@ -26,7 +26,7 @@ post "/addApplication" do
   @requests.load(params[:menteeID].to_s, params[:mentorID].to_s)
   @mentors = Mentor.first(id: params[:mentorID]) #Creates a new instance based on mentor id of mentor being requested
   
-  #If application exists throws error and redirects to below URL
+  #If application exists throws error and redirects to below URL(line 33)
   #else saves changes by updating the requests table and sending the mentor an email
   if @requests.exist_application?
     @error = "Application already sent"
