@@ -149,6 +149,40 @@ describe "the signup page" do
         expect(page).to have_content "My Dashboard"
     end 
     
+    
+            it "is accessible from the MentorDashboard page" do
+        add_test_mentor
+        visit "/login"
+        fill_in "username", with: "1234"
+        fill_in "password", with: "1234"
+        click_button "Submit"    
+        visit"/MentorDashboard"
+        click_link "View mentee applications"
+        expect(page).to have_content "Mentee Applications"
+    end 
+    
+            it "is accessible from the MentorDashboard page" do
+        add_test_mentor
+        visit "/login"
+        fill_in "username", with: "1234"
+        fill_in "password", with: "1234"
+        click_button "Submit"    
+        visit"/MentorDashboard"
+        click_link "Edit Profile"
+        expect(page).to have_content "Edit your information"
+    end 
+    
+            it "is accessible from the MentorDashboard page" do
+        add_test_mentor
+        visit "/login"
+        fill_in "username", with: "1234"
+        fill_in "password", with: "1234"
+        click_button "Submit"    
+        visit"/MentorDashboard"
+        click_link "My Mentee"
+        expect(page).to have_content "Details of your current mentee"
+    end 
+    
    #page links tests from /MenteeDashboard
     
      it "is accessible from the MenteeDashboard page" do
@@ -185,6 +219,9 @@ describe "the signup page" do
         click_link "Dashboard"
         expect(page).to have_content "My Dashboard"
     end 
+    
+
+    
     
     
     
