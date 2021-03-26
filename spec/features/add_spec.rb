@@ -50,6 +50,29 @@ describe "the signup page" do
         expect(page).to have_content "Sam Mentor"
         clear_database
     end
+  #checks for invalid login for mentor
+        it "adds a mentor into the fields" do
+        add_test_mentor
+        visit "/login"
+        fill_in "username", with: "123"
+        fill_in "password", with: "123"
+        click_button "Submit"
+        expect(page).to have_content "Username/Password combination incorrect"
+
+        clear_database
+    end
     
+    
+   #checks for invalid login for mentee
+            it "adds a mentee into the fields" do
+        add_test_user
+        visit "/login"
+        fill_in "username", with: "1234"
+        fill_in "password", with: "1234"
+        click_button "Submit"
+        expect(page).to have_content "Username/Password combination incorrect"
+
+        clear_database
+ end 
     
 end
