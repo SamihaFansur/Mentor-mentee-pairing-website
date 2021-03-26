@@ -3,10 +3,17 @@ require_relative "../spec_helper"
 describe "the search page" do
   context "with an empty database" do
     it "says the database is empty" do
+      clear_database
+      add_test_user
+      visit "/login"
+      fill_in "username", with: "123"
+      fill_in "password", with: "123"
+      click_button "Submit"
       visit "/search"
       expect(page).to have_content "Your search revealed no mentors"
+      clear_database  
     end
-  end
+ 
 #tests the mentor search when there is only
   context "with one record in the database" do
     it "lists the mentors" do
@@ -114,8 +121,8 @@ describe "the search page" do
       
       clear_database
     end    
-      
-         
+   end    
+  clear_database       
       
   end
 end
