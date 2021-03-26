@@ -149,4 +149,43 @@ describe "the signup page" do
         expect(page).to have_content "My Dashboard"
     end 
     
+   #page links tests from /MenteeDashboard
+    
+     it "is accessible from the MenteeDashboard page" do
+        visit"/MentorDashboard"
+        click_link "Contact Us"
+        expect(page).to have_content "Contact Admin:"
+    end
+           
+
+    it "is accessible from the MenteeDashboard page" do
+        add_test_user
+        visit "/login"
+        fill_in "username", with: "123"
+        fill_in "password", with: "123"
+        click_button "Submit"
+        visit"/MenteeDashboard"
+        click_link "Logout"
+        expect(page).to have_content "Logged out"
+    end
+    
+    it "is accessible from the MenteeDashboard page" do
+        visit"/MentorDashboard"
+        click_link "Our Program"
+        expect(page).to have_content "one-to-one mentoring program"
+    end 
+    
+        it "is accessible from the MenteeDashboard page" do
+        add_test_user
+        visit "/login"
+        fill_in "username", with: "123"
+        fill_in "password", with: "123"
+        click_button "Submit"    
+        visit"/MenteeDashboard"
+        click_link "Dashboard"
+        expect(page).to have_content "My Dashboard"
+    end 
+    
+    
+    
 end
