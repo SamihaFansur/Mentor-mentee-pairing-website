@@ -74,5 +74,5 @@ describe "the signup page" do
 
         clear_database
  end 
-    
+    clear_database
 end

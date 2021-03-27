@@ -350,6 +350,6 @@ it "is accessible from the MentorDashboard page" do
     end 
     
 
-    
+clear_database    
     
 end

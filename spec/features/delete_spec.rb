@@ -26,4 +26,5 @@ describe "the delete page" do
     expect(page).to have_content "Unknown mentor"
     clear_database
   end
+    clear_database
 end

@@ -91,4 +91,5 @@ describe "the edit page" do
     expect(page).to have_content "Mentor"
     clear_database
   end
+    clear_database
 end
