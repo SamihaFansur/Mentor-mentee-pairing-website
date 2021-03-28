@@ -257,6 +257,17 @@ it "is accessible from the MentorDashboard page" do
         click_link "Accessibility"
         expect(page).to have_content "Everyone using this website"
     end 
+
+    #checks if the header is correct for mentor
+ it "is accessible from the MentorDashboard page" do
+        add_test_mentor
+        visit "/login"
+        fill_in "username", with: "1234"
+        fill_in "password", with: "1234"
+        click_button "Submit"    
+        visit"/MentorDashboard"
+        expect(page).to have_content "My Mentee Schedule"
+    end 
     
    #page links tests from /MenteeDashboard
     
@@ -348,7 +359,18 @@ it "is accessible from the MentorDashboard page" do
         click_link "Accessibility"
         expect(page).to have_content "Everyone using this website"
     end 
-    
+    #checks if the header is correct for mentee
+ it "is accessible from the MenteeDashboard page" do
+        add_test_user
+        visit "/login"
+        fill_in "username", with: "123"
+        fill_in "password", with: "123"
+        click_button "Submit"    
+        visit"/MenteeDashboard"
+        expect(page).to have_content "My Mentor Schedule"
+    end 
+
+
 
 clear_database    
     
