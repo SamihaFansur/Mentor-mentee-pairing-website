@@ -60,7 +60,6 @@ post '/login' do
     @error = "Please correct the information below"
   end
 
-  erb :login
 end
 
 get "/logout" do

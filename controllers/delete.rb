@@ -10,7 +10,6 @@ post "/deleteMentee" do
     redirect "/index"
   end
 
-  erb :delete_mentee_account
 end
 
 ###############################MENTOR######################################
@@ -25,5 +24,4 @@ post "/deleteMentor" do
     redirect "/index"
   end
 
-  erb :delete_mentor_account
 end

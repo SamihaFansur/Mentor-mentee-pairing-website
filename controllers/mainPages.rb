@@ -72,7 +72,6 @@ end
 
 post "/index" do
   redirect "/index"
-
 end
 
 get "/MentorSignUpForm" do

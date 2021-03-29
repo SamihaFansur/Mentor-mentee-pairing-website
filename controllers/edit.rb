@@ -21,7 +21,6 @@ post "/editMentee" do
     end
   end
 
-  erb :mentee_edit_info
 end
 
 ###############################MENTOR######################################
@@ -47,5 +46,4 @@ post "/editMentor" do
     end
   end
 
-  erb :mentor_edit_info
 end
