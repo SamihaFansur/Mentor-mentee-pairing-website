@@ -6,7 +6,7 @@ body {
 }
 
 a {
-  color: rgb(255, 255, 255);
+  color: white;
 }
 
 footer {
@@ -233,7 +233,7 @@ footer {
   margin-bottom: 5%;
   border-radius: 10px;
   display: flex;
-  background-color:#0066b3;
+  background-color: #0066b3;
   flex-direction: column;
   align-items: center;
 }
@@ -452,5 +452,11 @@ footer {
   position: relative;
   user-select: none;
   display: none;
+}
+
+/* Accessibility page */
+
+#accessibility a {
+  color: #1c467c;
 }
 
