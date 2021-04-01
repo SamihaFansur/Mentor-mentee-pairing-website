@@ -7411,3 +7411,25 @@ I, [2021-03-26T23:55:05.816646 #783]  INFO -- : (0.000473s) SELECT * FROM `mente
 I, [2021-03-26T23:55:05.935382 #783]  INFO -- : (0.115503s) DELETE FROM `mentees` WHERE (1 = 1)
 I, [2021-03-26T23:55:06.040992 #783]  INFO -- : (0.105282s) DELETE FROM `mentors` WHERE (1 = 1)
 I, [2021-03-26T23:55:06.045177 #783]  INFO -- : (0.000145s) SELECT * FROM `mentors` ORDER BY `courseName`
+I, [2021-04-01T15:15:14.333299 #1239]  INFO -- : (0.000167s) PRAGMA foreign_keys = 1
+I, [2021-04-01T15:15:14.333394 #1239]  INFO -- : (0.000017s) PRAGMA case_sensitive_like = 1
+I, [2021-04-01T15:15:14.334439 #1239]  INFO -- : (0.000076s) SELECT sqlite_version()
+I, [2021-04-01T15:15:14.334787 #1239]  INFO -- : (0.000195s) PRAGMA table_info('mentees')
+I, [2021-04-01T15:15:14.336116 #1239]  INFO -- : (0.000136s) PRAGMA table_info('mentors')
+I, [2021-04-01T15:15:14.337182 #1239]  INFO -- : (0.000072s) PRAGMA table_info('requests')
+I, [2021-04-01T15:15:30.905254 #1239]  INFO -- : (0.000146s) SELECT * FROM `mentees` WHERE (`username` = 's.f') LIMIT 1
+I, [2021-04-01T15:15:30.906175 #1239]  INFO -- : (0.000741s) SELECT * FROM `mentees` WHERE (`email` = 'sfansur154@sheffied.ac.uk') LIMIT 1
+I, [2021-04-01T15:15:30.906402 #1239]  INFO -- : (0.000088s) SELECT * FROM `mentors` WHERE (`username` = 's.f') LIMIT 1
+I, [2021-04-01T15:15:30.906578 #1239]  INFO -- : (0.000076s) SELECT * FROM `mentors` WHERE (`email` = 'sfansur154@sheffied.ac.uk') LIMIT 1
+I, [2021-04-01T15:15:30.906677 #1239]  INFO -- : (0.000014s) BEGIN
+I, [2021-04-01T15:15:30.907046 #1239]  INFO -- : (0.000228s) INSERT INTO `mentees` (`fname`, `lname`, `email`, `phoneNum`, `courseName`, `cyear`, `username`, `password`) VALUES ('Samiha', 'Fansur', 'sfansur154@sheffied.ac.uk', '+971509201172', 'Archaeology and History (BA)', 3, 's.f', 'S.F')
+I, [2021-04-01T15:15:30.907938 #1239]  INFO -- : (0.000103s) SELECT * FROM `mentees` WHERE `id` = 1
+I, [2021-04-01T15:15:31.012194 #1239]  INFO -- : (0.104188s) COMMIT
+I, [2021-04-01T15:15:34.678750 #1239]  INFO -- : (0.000144s) SELECT * FROM `mentees` WHERE (`username` = 'sf') LIMIT 1
+I, [2021-04-01T15:15:34.679896 #1239]  INFO -- : (0.000103s) SELECT * FROM `mentors` WHERE (`username` = 'sf') LIMIT 1
+I, [2021-04-01T15:15:45.900112 #1239]  INFO -- : (0.000141s) SELECT * FROM `mentees` WHERE (`username` = 's.F') LIMIT 1
+I, [2021-04-01T15:15:45.900383 #1239]  INFO -- : (0.000093s) SELECT * FROM `mentors` WHERE (`username` = 's.F') LIMIT 1
+I, [2021-04-01T15:15:50.951212 #1239]  INFO -- : (0.000270s) SELECT * FROM `mentees` WHERE (`username` = 's.f') LIMIT 1
+I, [2021-04-01T15:15:51.097342 #1239]  INFO -- : (0.000159s) SELECT * FROM `mentees` WHERE (`username` = 's.f') LIMIT 1
+I, [2021-04-01T15:15:54.618633 #1239]  INFO -- : (0.000137s) SELECT * FROM `mentors` WHERE (`id` IS NULL)
+I, [2021-04-01T15:15:55.853649 #1239]  INFO -- : (0.000170s) SELECT * FROM `mentees` WHERE (`username` = 's.f') LIMIT 1

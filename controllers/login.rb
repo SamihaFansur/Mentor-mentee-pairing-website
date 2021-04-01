@@ -59,6 +59,7 @@ post '/login' do
   else
     @error = "Please correct the information below"
   end
+  erb :login
 
 end
 
