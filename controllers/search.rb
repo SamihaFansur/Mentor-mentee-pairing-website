@@ -32,6 +32,7 @@ post "/addApplication" do
     @error = "Application already sent"
     redirect "/search?error=1"
   else
+    @requests.timePassed = Time.new
     @requests.save_changes
     #Sends an email to mentor that a mentee sent them an application
     send_mail(@mentors.email, 
@@ -39,10 +40,12 @@ post "/addApplication" do
           "Hi "+@mentors.fname+" "+@mentors.lname+" !\n"+
           "You have a new mentee application. Please login into your mentor account and view your mentee applications \n"+
           "\n\nRegards\nTeam 6")
+   
   end
+  
     redirect "/search"
 end
-  
+
 #A method to send customised email, this is used in the /addApplication route
 def send_mail(email, subject, body)
   response = Net::HTTP.post_form(URI("http://www.dcs.shef.ac.uk/cgi-intranet/public/FormMail.php"),
