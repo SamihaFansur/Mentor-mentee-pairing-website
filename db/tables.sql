@@ -32,3 +32,15 @@ CREATE TABLE requests (
   menteeID INTEGER,
   mentorID INTEGER
 );
+
+CREATE TABLE admins (
+  id INTEGER PRIMARY KEY,
+  username TEXT,
+  password TEXT,
+  fname TEXT,
+  lname TEXT,
+  email TEXT,
+  phoneNum TEXT,
+  description TEXT,
+  activationToken INTEGER
+);

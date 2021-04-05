@@ -1,0 +1,47 @@
+<!--Form called when an admin wants to edit their profile-->
+<div class="col">
+  <p>Please fill in the information below</p>
+  <p>
+    <label for="fname" class="options">First name: </label>
+    <input type="text" name="fname" id="fname" maxlength="40" size="30" placeholder="Enter first name..."  value="<%= h @admins.fname %>">
+  </p>
+
+  <p>
+    <label for="lname" class="options">Last name: </label>
+    <input type="text" name="lname" id="lname" maxlength="40" size="30" placeholder="Enter last name..."  value="<%= h @admins.lname %>">
+  </p>
+
+  <p>
+    <label for="email" class="options">E-mail: </label>
+    <input type="email" name="email" id="email" placeholder="Enter your email..." maxlength="40" size="30" value="<%= h @admins.email %>">
+  </p>
+  
+  <p> 
+    <label for="phoneNum" class="options">Phone Number: </label>
+    <input type="text" name="phoneNum" id="phoneNum" placeholder="+XX XXXXXXXXXX" maxlength="40" size="30" value="<%= h @admins.phoneNum %>">
+  </p>
+
+  <p>
+    <label for="username" class="options">Username: </label>
+    <input disabled type="text" name="username" id="username" placeholder="Enter your username..." maxlength="40" size="30" value="<%= h @admins.username %>">
+  </p>
+  
+  <p>
+    <label for="password" class="options">Password: </label>
+    <input type="password" name="password" id="password" placeholder="Enter your password..." maxlength="40" size="30" value="<%= h @admins.password %>">
+  </p>   
+  
+  <p>
+    <label for="description" class="options">Description: </label>
+  </p>
+
+  <p>
+    <textarea name="description" id="description" placeholder="Enter a description..." rows="8" cols="48"></textarea>
+  </p>
+
+</div>
+
+<!--Submit button-->
+<p id="buttons">
+  <input type="submit" id="submit" value="Submit">
+</p>

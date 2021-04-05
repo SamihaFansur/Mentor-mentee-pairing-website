@@ -1,0 +1,31 @@
+<%= erb :"common/header_adminA" %>
+<div class="background" id="statement">
+  
+      <div class="full" id="dashboard">
+        <h2>Admin Dashboard</h2>
+        <div id="dashboardBody">
+          <aside class="lSide">
+            <!-- Displays the details of the admin logged in -->
+            <div class="user_info">
+              <h3>My Info</h3>
+              <p><b>Name: </b> <i><%= h $admins.name %></i></p>
+              <p><b>Email: </b> <i><%= h $admins.email %></i></p>
+              <p><b>Phone Number: </b> <i><%= h $admins.phoneNum %></i></p>
+              <p><b>Description: </b> <i><%= h $admins.description %></i> </p>
+            </div>
+          </aside>
+
+          <aside class="rSide">
+            <div class="full" id="searchOptions">
+              <h3>Options</h3>
+<!--               <p class="search_info">Option 1</p> -->
+              <p><a href="/editAdmin?id=<%= h $admins.id %>">Edit Profile</a></p>
+            </div>
+          </aside>
+        </div>
+     </div>
+  
+</div> 
+
+<%= erb :"common/footer" %>
+

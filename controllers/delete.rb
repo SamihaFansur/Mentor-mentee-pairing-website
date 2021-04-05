@@ -9,7 +9,6 @@ post "/deleteMentee" do
     session.clear
     redirect "/index"
   end
-
 end
 
 ###############################MENTOR######################################
@@ -23,5 +22,17 @@ post "/deleteMentor" do
     session.clear
     redirect "/index"
   end
+end
 
+###############################ADMIN######################################
+post "/deleteAdmin" do
+  id = params["id"]  #new variable to search the id of corresponding admin to be deleted
+  
+ #If id requested exists then deletes the profile, logs admin out and redirects to index page
+  if Admin.id_exists?(id)
+    admin = Admin[id]
+    admin.delete
+    session.clear
+    redirect "/index"
+  end
 end

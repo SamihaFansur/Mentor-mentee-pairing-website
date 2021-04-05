@@ -1,0 +1,26 @@
+<%= erb :"common/header_adminA" %>
+    <div class="background" id="statement">
+      <div class="full">
+        <div class="title">Edit your information</div> <!--Main page Title-->  
+        <% if @admins.nil? %>
+            <p class="error"><strong>Unknown admin</strong></p>
+        <% else %>    
+        <% unless @admins.errors.size.zero? %>
+            <p><strong class="error">Please correct the errors below:</strong></p>
+        <% end %>
+        <form method="post">
+            <input type="hidden" name="id" value="<%= @admins.id %>" />
+            <%= erb :"common/admin_edit_form" %>
+        </form>
+        <div class="warning">
+            <p><strong>WARNING! Deleting a record cannot be undone.</strong></p>
+            <form method="post" action="/deleteAdmin">
+                <input type="hidden" name="id" value="<%= @admins.id %>" />
+                <input type="submit" value="Delete" onclick="return confirm('Are you sure?')" />
+            </form>
+    </div>
+<% end %>
+<p class="navigation">Return to <a href="/AdminDashboard">Admin Dashboard</a>.</p>
+      </div>
+</div>
+<%= erb :"common/footer" %>

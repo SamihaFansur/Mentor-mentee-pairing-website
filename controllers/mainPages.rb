@@ -8,8 +8,10 @@ get "/index" do
     #displays header for a mentor profile
     if session[:mentees_username] 
       @header = erb:"common/header_menteeA"
-    else
+    elsif session[:mentors_username] 
       @header = erb:"common/header_mentorA"
+    else
+      @header = erb:"common/header_adminA"
     end
   else 
     @header = erb:"common/headerB"
@@ -26,11 +28,11 @@ get "/contact" do
     #If a mentee is logged in it displays the header for a mentee profile else
     #displays header for a mentor profile
     if session[:mentees_username] 
-      puts "mentee logged in"
       @header = erb:"common/header_menteeA"
-    else
-      puts "mentor logged in"
+    elsif session[:mentors_username] 
       @header = erb:"common/header_mentorA"
+    else
+      @header = erb:"common/header_adminA"
     end
   else 
     @header = erb:"common/headerB"
@@ -47,10 +49,11 @@ get "/accessibility" do
     #If a mentee is logged in it displays the header for a mentee profile else
     #displays header for a mentor profile
     if session[:mentees_username] 
-      puts "mentee logged in"
       @header = erb:"common/header_menteeA"
-    else
+    elsif session[:mentors_username] 
       @header = erb:"common/header_mentorA"
+    else
+      @header = erb:"common/header_adminA"
     end
   else 
     @header = erb:"common/headerB"
