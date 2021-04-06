@@ -307,6 +307,19 @@
       <option value="6">6</option>
     </select>
   </p>
+     
+  <p>
+    <label for="faculty" class="options">Faculty: </label> <!--Dropdown list-->
+    <select name="faculty" id="faculty" value="<%= h @mentees.faculty %>">
+      <option value="">Select</option>
+      <option value="Faculty of Arts and Humanities">Faculty of Arts and Humanities</option>
+      <option value="Faculty of Engineering">Faculty of Engineering</option>
+      <option value="Faculty of Medicine, Dentistry and Health">Faculty of Medicine, Dentistry and Health</option>
+      <option value="Faculty of Science">Faculty of Science</option>
+      <option value="Faculty of Social Sciences">Faculty of Social Sciences</option>
+      <option value="International Faculty - CITY College, Thessaloniki">International Faculty - CITY College, Thessaloniki</option>
+    </select>
+  </p>
   
   <p>
     <label for="username" class="options">Username: </label>

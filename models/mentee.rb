@@ -25,6 +25,7 @@ class Mentee < Sequel::Model
     self.email = params.fetch("email", "").strip
     self.phoneNum = params.fetch("phoneNum", "").strip
     self.courseName = params.fetch("courseName", "").strip
+    self.faculty = params.fetch("faculty", "").strip
     self.cyear = params.fetch("cyear", "").strip
     self.username = params.fetch("username", "").strip
     self.password = params.fetch("password", "").strip
@@ -38,6 +39,7 @@ class Mentee < Sequel::Model
     self.email = params.fetch("email", self.email).strip
     self.phoneNum = params.fetch("phoneNum", self.phoneNum).strip
     self.courseName = params.fetch("courseName").strip unless params.fetch("courseName").strip == ""
+    self.faculty = params.fetch("faculty").strip unless params.fetch("faculty").strip == ""
     self.cyear = params.fetch("cyear").strip unless params.fetch("cyear").strip == ""
     self.username = params.fetch("username", self.username).strip
     self.password = params.fetch("password", self.password).strip

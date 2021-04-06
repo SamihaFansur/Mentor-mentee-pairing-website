@@ -7,6 +7,7 @@ CREATE TABLE mentees (
   email TEXT,
   phoneNum TEXT,
   courseName TEXT,
+  faculty TEXT,
   cyear INTEGER,
   description TEXT,
   mentorMatch INTEGER
