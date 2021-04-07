@@ -1,0 +1,39 @@
+<!--PAGE USED BY ADMINS WHO ARE MENTORS TO LOGIN-->
+<%= erb :"common/headerB" %>
+<div class="background" id="statement">
+  <div class="full">
+    <div class="title">Login with your mentor credentials</div> <!--Main page Title-->  
+
+      <form method="post" action="/loginAgain">
+        <!-- Throws errors if any are found, displays error messages which are written in the routes -->
+        <% unless @error.nil? %>
+        <p><strong class="error"><%= @error %></strong></p>
+        <% end %>
+
+        <!--Compares the username in the username column in mentors table to check if it matches/exists, if it doesn't then throws error-->
+        <p>Username: <br /><input type="text" name="username" id="username" for="username" value="<%= @mentors.username %>"/></p>
+        <% if @mentors.errors.include?("username") %>
+          <% @mentors.errors["username"].each do |error| %>
+            <p class="error"><strong>Username <%= error %></strong></p>
+          <% end %>
+        <% end %>
+
+        <!--Compares the password in the password column in mentors table to check if it matches/exists, if it doesn't then throws error-->
+        <p>Password: <br /><input type="password" name="password" id="password" for="password"/></p>
+        <% if @mentors.errors.include?("password") %>
+          <% @mentors.errors["password"].each do |error| %>
+            <p class="error"><strong>Password <%= error %></strong></p>
+          <% end %>
+        <% end %>
+        
+        <p><input type="submit" value="Submit"></p>
+        
+        <p>
+        <a href="/login" class="underline">Go back</a>
+        </p>
+        
+      </form>
+  </div>
+</div>
+
+<%= erb :"common/footer" %>

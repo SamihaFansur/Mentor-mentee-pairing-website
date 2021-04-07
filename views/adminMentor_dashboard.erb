@@ -1,0 +1,38 @@
+<%= erb :"common/header_adminMentorA" %>
+<div class="background" id="statement">
+  
+      <div class="full" id="dashboard">
+        <h2>Admin + Mentor Dashboard</h2>
+        <div id="dashboardBody">
+          <aside class="lSide">
+            <!-- Displays the details of the mentor logged in -->
+            <div class="user_info">
+              <h3>My Info</h3>
+              <p><b>Name: </b> <i><%= h $mentors.name %></i></p>
+              <p><b>Email: </b> <i><%= h $mentors.email %></i></p>
+              <p><b>Phone Number: </b> <i><%= h $mentors.phoneNum %></i></p>
+              <p><b>Job Title: </b> <i><%= h $mentors.jobTitle %></i></p>
+              <p><b>Course Name: </b> <i><%= h $mentors.courseName %></i> </p>
+              <p><b>Description: </b> <i><%= h $mentors.description %></i> </p>
+            </div>
+          </aside>
+
+          <aside class="rSide">
+            <div class="full" id="searchOptions">
+              <h3>Options</h3>
+              <p class="search_info"><a href="/applications">View mentee applications</a></p>
+              <p><a href="/editMentor?id=<%= h $mentors.id %>">Edit Profile</a></p>
+            </div>
+
+             <div class="full" id="searchOptions">
+                <h3>My Mentee</h3>
+                <p class="search_info"><a href="/myMentee" class="link">My Mentee</a></p>
+              </div>
+          </aside>
+        </div>
+     </div>
+  
+</div> 
+
+<%= erb :"common/footer" %>
+

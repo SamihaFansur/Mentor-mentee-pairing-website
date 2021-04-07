@@ -19,7 +19,8 @@ get "/AdminDashboard" do
   username = session[:admins_username] #Logs user in
   #Gets the admin information that corresponds to the username
   $admins = Admin.first(username: username) # '$' used to make it a global variable
-  if $admins.activationToken == 0 #initially set to 0 so account activation email can be sent on the very first login
+  if $admins.activationToken == 0 #initially set to 0 so account activation email can be sent on the very first login only
+    puts "Sends email" #--------------------------------------------------DELETE-----------------------------------------------------------------
     send_mail($admins.email, 
       "Successful Account Activation!", 
       "Hi "+$admins.fname+" "+$admins.lname+" !\n"+
@@ -32,6 +33,27 @@ get "/AdminDashboard" do
     $admins.save_changes
   end
   erb :admin_dashboard
+end
+
+get "/AdminMentorDashboard" do
+  redirect "/login" unless session[:logged_in] #If admin logged in then display dashbard, otherwise redirect to login page
+  username = session[:mentors_username] #Logs user in
+  #Gets the admin information that corresponds to the username
+  $mentors = Mentor.first(username: username) # '$' used to make it a global variable
+  if $mentors.activationToken != 1 #initially empty so account activation email can be sent on the very first login only
+    puts "Sends email" #--------------------------------------------------DELETE-----------------------------------------------------------------
+    send_mail($mentors.email, 
+      "Successful Account Activation!", 
+      "Hi "+$mentors.fname+" "+$mentors.lname+" !\n"+
+      "You have successfully activated your admin account \n"+
+      "Your username is: "+$mentors.username+"\n"+
+      "Your email: "+$mentors.email+"\n"+
+      "Please use these credentials to login into your admin account \n"+
+      "\n\n\nRegards\nTeam 6")
+    $mentors.activationToken = 1 #changes value to 1 so activation email not sent again
+    $mentors.save_changes
+  end
+  erb :adminMentor_dashboard
 end
 
 def send_mail(email, subject, body)
@@ -53,6 +75,13 @@ get "/login" do
   @admins = Admin.new
   
   erb :login
+end
+
+get "/loginAgain" do
+  #Creates a new instance of a Mentor when user logs in
+  @mentors = Mentor.new
+  
+  erb :loginAgain
 end
 
 post '/login' do
@@ -101,7 +130,32 @@ post '/login' do
     if @admins.exist_login?
       session[:logged_in] = true
       session[:admins_username] = @admins.username
-      redirect "/AdminDashboard"
+      redirect "/AdminLoginChoices" #redirects admins to a page incase admins are also mentors
+    else
+      @error = "Username/Password combination incorrect"
+    end
+  else
+    @error = "Please correct the information below"
+  end
+  
+  erb :login
+
+end
+
+
+post '/loginAgain' do
+  @mentors = Mentor.new
+  @mentors.load(params) #Loads parameters
+ 
+  @error = nil #initializing variable
+  
+  #If mentor username and password match to the values in the database mentor logged in and redirected to mentor dashboard
+  #if combination incorrect then displays error
+  if @mentors.valid?
+    if @mentors.exist_login?
+      session[:logged_in] = true
+      session[:mentors_username] = @mentors.username
+      redirect "/AdminMentorDashboard"
     else
       @error = "Username/Password combination incorrect"
     end
@@ -116,4 +170,8 @@ end
 get "/logout" do
   session.clear #Clears session when user logs out
   erb :logout
+end
+
+get "/AdminLoginChoices" do
+  erb :adminLogin_choices
 end

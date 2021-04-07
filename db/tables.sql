@@ -24,7 +24,8 @@ CREATE TABLE mentors (
   jobTitle TEXT,
   courseName TEXT,
   description TEXT,
-  menteeMatch INTEGER
+  menteeMatch INTEGER,
+  activationToken INTEGER
 );
 
 CREATE TABLE requests (
