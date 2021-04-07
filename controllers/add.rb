@@ -20,7 +20,7 @@ post "/MenteeSignUpForm" do
         #Sends an email to mentee that the sign up was successful
         send_mail(@mentees.email, 
           "Successful Sign up!", 
-          "Hi "+@mentees.fname+" "+@mentees.lname+" !\n"+
+          "Hi "+@mentees.fname+" "+@mentees.lname+"!\n"+
           "Your username is: "+@mentees.username+"\n"+
           "Your email: "+@mentees.email+"\n"+
           "Please use these credentials to login into your mentee account \n"+
@@ -33,7 +33,7 @@ end
 
 
 def send_mail(email, subject, body)
-  response = Net::HTTP.post_form(URI("http://www.dcs.shef.ac.uk/cgi-intranet/public/FormMail.php"),
+  response = Net::HTTP.post_form(URI("https://www.dcs.shef.ac.uk/cgi-intranet/public/FormMail.php"),
                                  "recipients" => email,
                                  "subject" => subject,
                                  "body" => body)
@@ -60,7 +60,7 @@ post "/MentorSignUpForm" do
         #Sends an email to mentor that the sign up was successful
         send_mail(@mentors.email, 
           "Successful Sign up!", 
-          "Hi "+@mentors.fname+" "+@mentors.lname+" !\n"+
+          "Hi "+@mentors.fname+" "+@mentors.lname+"!\n"+
           "Your username is: "+@mentors.username+"\n"+
           "Your email: "+@mentors.email+"\n"+
           "Please use these credentials to login into your mentor account \n"+

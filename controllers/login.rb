@@ -20,10 +20,9 @@ get "/AdminDashboard" do
   #Gets the admin information that corresponds to the username
   $admins = Admin.first(username: username) # '$' used to make it a global variable
   if $admins.activationToken == 0 #initially set to 0 so account activation email can be sent on the very first login only
-    puts "Sends email" #--------------------------------------------------DELETE-----------------------------------------------------------------
     send_mail($admins.email, 
       "Successful Account Activation!", 
-      "Hi "+$admins.fname+" "+$admins.lname+" !\n"+
+      "Hi "+$admins.fname+" "+$admins.lname+"!\n"+
       "You have successfully activated your admin account \n"+
       "Your username is: "+$admins.username+"\n"+
       "Your email: "+$admins.email+"\n"+
@@ -41,10 +40,9 @@ get "/AdminMentorDashboard" do
   #Gets the admin information that corresponds to the username
   $mentors = Mentor.first(username: username) # '$' used to make it a global variable
   if $mentors.activationToken != 1 #initially empty so account activation email can be sent on the very first login only
-    puts "Sends email" #--------------------------------------------------DELETE-----------------------------------------------------------------
     send_mail($mentors.email, 
       "Successful Account Activation!", 
-      "Hi "+$mentors.fname+" "+$mentors.lname+" !\n"+
+      "Hi "+$mentors.fname+" "+$mentors.lname+"!\n"+
       "You have successfully activated your admin account \n"+
       "Your username is: "+$mentors.username+"\n"+
       "Your email: "+$mentors.email+"\n"+
@@ -57,7 +55,7 @@ get "/AdminMentorDashboard" do
 end
 
 def send_mail(email, subject, body)
-  response = Net::HTTP.post_form(URI("http://www.dcs.shef.ac.uk/cgi-intranet/public/FormMail.php"),
+  response = Net::HTTP.post_form(URI("https://www.dcs.shef.ac.uk/cgi-intranet/public/FormMail.php"),
                                  "recipients" => email,
                                  "subject" => subject,
                                  "body" => body)
