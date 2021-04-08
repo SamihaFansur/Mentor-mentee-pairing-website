@@ -58,9 +58,7 @@ class Mentor < Sequel::Model
     mentors =  Mentor.first(email: email)
     !other_mentors.nil? ||  !mentors.nil?
     
-    other_mentees = Mentee.first(username: username)
-    mentees =  Mentee.first(email: email)
-    !other_mentees.nil? ||  !mentees.nil?
+   
   end
   
    #Checks if mentor already logged in; being called in login.rb controller

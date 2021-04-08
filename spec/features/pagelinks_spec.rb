@@ -199,7 +199,7 @@ it "is accessible from the SignUpChoices page" do
         click_button "Submit"    
         visit"/MentorDashboard"
         click_link "Dashboard"
-        expect(page).to have_content "My Dashboard"
+        expect(page).to have_content "Mentor Dashboard"
     end 
     
     
@@ -303,7 +303,7 @@ it "is accessible from the MentorDashboard page" do
         click_button "Submit"    
         visit"/MenteeDashboard"
         click_link "Dashboard"
-        expect(page).to have_content "My Dashboard"
+        expect(page).to have_content "Mentee Dashboard"
     end 
     
     it "is accessible from the MentorDashboard page" do
