@@ -80,3 +80,13 @@ end
 get "/MentorSignUpForm" do
   erb :mentor_signup
 end
+
+get "/AdminHelp" do
+  @header = erb:"common/headerB"
+  erb :admin_help
+end
+
+post "/AdminHelp" do
+  @header = erb:"common/headerB"
+  erb :admin_help
+end
