@@ -4,7 +4,11 @@ get "/editMentee" do
   
  #If id requested exists then calls the edit mentee form
   @mentees = Mentee[id] if Mentee.id_exists?(id)
-  erb :mentee_edit_info
+  if session[:mentees_username] 
+    erb :mentee_edit_info
+  elsif session[:admins_username] 
+    erb :admin_mentee_edit_info
+  end
 end
 
 post "/editMentee" do
@@ -20,7 +24,7 @@ post "/editMentee" do
       if session[:mentees_username] 
         redirect "/MenteeDashboard"
       elsif session[:admins_username] 
-        redirect "/searchIDAgain"
+        redirect "/searchForAMentee"
       end
     end
   end
@@ -33,7 +37,11 @@ get "/editMentor" do
   
  #If id requested exists then calls the edit mentor form
   @mentors = Mentor[id] if Mentor.id_exists?(id)
-  erb :mentor_edit_info
+  if session[:mentors_username] 
+    erb :mentor_edit_info
+  elsif session[:admins_username] 
+    erb :admin_mentor_edit_info
+  end
 end
 
 post "/editMentor" do
@@ -49,7 +57,7 @@ post "/editMentor" do
       if session[:mentors_username] 
         redirect "/MentorDashboard"
       elsif session[:admins_username] 
-        redirect "/searchID"
+        redirect "/searchForAMentor"
       end
     end
   end

@@ -59,8 +59,8 @@ end
 
 
 
-########################################################################################
-get "/searchID" do
+##################################SEARCH FOR A MENTOR IN A LIST OF ALL MENTORS###############################################
+get "/searchForAMentor" do
   #New variable to enable mentees to search for mentors based on course name
   @userName_search = params.fetch("userName_search", "").strip
   
@@ -77,12 +77,11 @@ get "/searchID" do
                Mentor.order(:username).where(Sequel.ilike(:username, "%#{@userName_search}%")) #ilike used to make search case insensitive
              end
 
-
   erb :admin_search_mentors
 end
 
-############################################################################################################
-get "/searchIDAgain" do
+##################################SEARCH FOR A MENTEE IN A LIST OF ALL MENTEES#####################################################
+get "/searchForAMentee" do
   #New variable to enable mentees to search for mentors based on course name
   @userName_search = params.fetch("userName_search", "").strip
   
