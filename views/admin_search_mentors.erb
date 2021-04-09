@@ -1,0 +1,54 @@
+<% @subtitle = "SearchID" %>
+<%= erb :"common/header_adminA" %>
+    <div class="background" id="statement">
+      <div class="full">
+        <div class="title">Check the information</div> <!--Main page Title-->      
+          
+<!-- Search mentees         -->
+       
+        <h3>Search for User:</h3>  
+
+            <form>
+              <p>Enter the <strong>Username</strong> to find the user: 
+                <!-- Gets the search value(mentor course name) to be searched -->
+                <input type="text" name="userName_search" id="searchForMentor" placeholder="Enter the username to search..." maxlength="40" size="30" value="<%= h @userName_search %>"/>
+                <input type="submit" value="Submit" />
+              </p>
+            </form>
+          
+          <!--Displays the mentor details-->
+          <% if @mentors.count> 0 %>
+            <table class="display_table">
+              <tr id="TableHeadings">
+                <th>Username</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Job Title</th>
+                <th>Course Name</th>
+              </tr>
+            <% @mentors.each do |mentor| %>
+              <tr>
+                <td><%= h mentor.username %></td>
+                <td><%= h mentor.name %></td>
+                <td><%= h mentor.email %></td>
+                <td><%= h mentor.phoneNum %></td>
+                <td><%= h mentor.jobTitle %></td>
+                <td><%= h mentor.courseName %></td>
+                <td><a href="/editMentor?id=<%= h mentor.id %>">Edit </a></td>
+              </tr>
+            <% end %> 
+             </table>    
+           
+          <% else %>
+          <p class="search_info"><a href="/searchIDAgain" class="link">Mentee List</a></p>
+            <p id="SearchError">Your search revealed no mentor<br>Maybe the user is a mentee</p>
+               
+          <% end %>  
+      </div>
+
+               
+        
+</div>
+
+<%= erb :"common/footer" %>

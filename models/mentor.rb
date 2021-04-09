@@ -37,7 +37,7 @@ class Mentor < Sequel::Model
     self.lname = params.fetch("lname", self.lname).strip
     self.email = params.fetch("email", self.email).strip
     self.phoneNum = params.fetch("phoneNum", self.phoneNum).strip
-    self.username = params.fetch("username", self.username).strip
+    self.username = params.fetch("userName").strip unless params.fetch("userName").strip == ""
     self.password = params.fetch("password", self.password).strip
     self.jobTitle = params.fetch("jobTitle").strip unless params.fetch("jobTitle").strip == ""
     self.courseName = params.fetch("courseName").strip unless params.fetch("courseName").strip == ""

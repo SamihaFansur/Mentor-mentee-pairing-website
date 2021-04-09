@@ -1,0 +1,50 @@
+<%= erb :"common/header_adminA" %>
+    <div class="background" id="statement">
+      <div class="full">
+        <div class="title">Check the information</div> <!--Main page Title-->      
+          
+<!-- Search mentees         -->
+       
+        <h3>Search for User:</h3>  
+
+            <form>
+              <p>Enter the <strong>Username</strong> to find the user: 
+                <!-- Gets the search value(mentor course name) to be searched -->
+                <input type="text" name="userName_search" id="searchForMentee" placeholder="Enter the username to search..." maxlength="40" size="30" value="<%= h @userName_search %>"/>
+                <input type="submit" value="Submit" />
+              </p>
+            </form>
+          
+          <!--Displays the mentor details-->
+          <% if @mentees.count> 0 %>
+            <table class="display_table">
+              <tr id="TableHeadings">
+                <th>Username</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                
+              </tr>
+            <% @mentees.each do |mentee| %>
+              <tr>
+                <td><%= h mentee.username %></td>
+                <td><%= h mentee.name %></td>
+                <td><%= h mentee.email %></td>
+                <td><%= h mentee.phoneNum %></td>
+                <td><a href="/editMentee?id=<%= h mentee.id %>">Edit </a></td>
+              </tr>
+            <% end %> 
+             </table>    
+           
+          <% else %>
+          <p class="search_info"><a href="/searchID" class="link">Mentor List</a></p>
+            <p id="SearchError">Your search revealed no mentee<br>Maybe the user is a mentor</p>
+              
+          <% end %>  
+      </div>
+
+               
+        
+</div>
+
+<%= erb :"common/footer" %>

@@ -54,3 +54,52 @@ def send_mail(email, subject, body)
                                  "body" => body)
   response.is_a? Net::HTTPSuccess
 end
+
+
+
+
+
+########################################################################################
+get "/searchID" do
+  #New variable to enable mentees to search for mentors based on course name
+  @userName_search = params.fetch("userName_search", "").strip
+  
+  #This error corresponds to the /addApplication route, this is to prevent
+  #the error from being discarded when page is redirected to search
+  @error = true if params.fetch("error", "") == "1"
+  
+  #If no course name is being searched, it displays the list of all mentors in alphabetical order 
+  #else it searches through the course name field in the mentors table and displays mentors' whose 
+  #course name contains the course name being searched
+  @mentors = if @userName_search.empty?
+               Mentor.order(:username).all
+             else
+               Mentor.order(:username).where(Sequel.ilike(:username, "%#{@userName_search}%")) #ilike used to make search case insensitive
+             end
+
+
+  erb :admin_search_mentors
+end
+
+############################################################################################################
+get "/searchIDAgain" do
+  #New variable to enable mentees to search for mentors based on course name
+  @userName_search = params.fetch("userName_search", "").strip
+  
+  #This error corresponds to the /addApplication route, this is to prevent
+  #the error from being discarded when page is redirected to search
+  @error = true if params.fetch("error", "") == "1"
+  
+  #If no course name is being searched, it displays the list of all mentors in alphabetical order 
+  #else it searches through the course name field in the mentors table and displays mentors' whose 
+  #course name contains the course name being searched
+  
+
+  @mentees = if @userName_search.empty?
+               Mentee.order(:username).all
+             else
+               Mentee.order(:username).where(Sequel.ilike(:username, "%#{@userName_search}%")) #ilike used to make search case insensitive
+             end
+
+  erb :admin_search_mentees
+end

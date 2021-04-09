@@ -11496,3 +11496,408 @@ I, [2021-04-08T15:30:19.512980 #371]  INFO -- : (0.000590s) SELECT * FROM `mente
 I, [2021-04-08T15:30:19.593889 #371]  INFO -- : (0.076118s) DELETE FROM `mentees` WHERE (1 = 1)
 I, [2021-04-08T15:30:19.680956 #371]  INFO -- : (0.086786s) DELETE FROM `mentors` WHERE (1 = 1)
 I, [2021-04-08T15:30:19.685780 #371]  INFO -- : (0.000138s) SELECT * FROM `mentors` ORDER BY `courseName`
+I, [2021-04-08T18:18:04.024195 #1450]  INFO -- : (0.000196s) PRAGMA foreign_keys = 1
+I, [2021-04-08T18:18:04.024317 #1450]  INFO -- : (0.000017s) PRAGMA case_sensitive_like = 1
+I, [2021-04-08T18:18:04.025010 #1450]  INFO -- : (0.000051s) SELECT sqlite_version()
+I, [2021-04-08T18:18:04.025246 #1450]  INFO -- : (0.000128s) PRAGMA table_info('admins')
+I, [2021-04-08T18:18:04.026501 #1450]  INFO -- : (0.000135s) PRAGMA table_info('mentees')
+I, [2021-04-08T18:18:04.027735 #1450]  INFO -- : (0.000127s) PRAGMA table_info('mentors')
+I, [2021-04-08T18:18:04.028824 #1450]  INFO -- : (0.000085s) PRAGMA table_info('requests')
+I, [2021-04-08T18:18:15.346356 #1452]  INFO -- : (0.000173s) PRAGMA foreign_keys = 1
+I, [2021-04-08T18:18:15.346439 #1452]  INFO -- : (0.000013s) PRAGMA case_sensitive_like = 1
+I, [2021-04-08T18:18:15.347197 #1452]  INFO -- : (0.000053s) SELECT sqlite_version()
+I, [2021-04-08T18:18:15.347451 #1452]  INFO -- : (0.000123s) PRAGMA table_info('admins')
+I, [2021-04-08T18:18:15.348639 #1452]  INFO -- : (0.000126s) PRAGMA table_info('mentees')
+I, [2021-04-08T18:18:15.350070 #1452]  INFO -- : (0.000127s) PRAGMA table_info('mentors')
+I, [2021-04-08T18:18:15.351221 #1452]  INFO -- : (0.000104s) PRAGMA table_info('requests')
+I, [2021-04-08T18:19:35.561533 #1452]  INFO -- : (0.000225s) SELECT * FROM `mentees` WHERE (`username` = 'admin1') LIMIT 1
+I, [2021-04-08T18:19:35.561980 #1452]  INFO -- : (0.000144s) SELECT * FROM `mentors` WHERE (`username` = 'admin1') LIMIT 1
+I, [2021-04-08T18:19:35.563530 #1452]  INFO -- : (0.000173s) SELECT * FROM `admins` WHERE (`username` = 'admin1') LIMIT 1
+I, [2021-04-08T18:19:39.954192 #1452]  INFO -- : (0.000193s) SELECT * FROM `admins` WHERE (`username` = 'admin1') LIMIT 1
+I, [2021-04-08T18:19:42.970198 #1452]  INFO -- : (0.000186s) SELECT * FROM `admins` WHERE `id` = '1'
+I, [2021-04-08T18:19:42.970425 #1452]  INFO -- : (0.000101s) SELECT * FROM `admins` WHERE `id` = '1'
+I, [2021-04-08T18:23:13.771356 #1477]  INFO -- : (0.000188s) PRAGMA foreign_keys = 1
+I, [2021-04-08T18:23:13.771449 #1477]  INFO -- : (0.000015s) PRAGMA case_sensitive_like = 1
+I, [2021-04-08T18:23:13.772189 #1477]  INFO -- : (0.000054s) SELECT sqlite_version()
+I, [2021-04-08T18:23:13.772470 #1477]  INFO -- : (0.000137s) PRAGMA table_info('admins')
+I, [2021-04-08T18:23:13.773690 #1477]  INFO -- : (0.000127s) PRAGMA table_info('mentees')
+I, [2021-04-08T18:23:13.774882 #1477]  INFO -- : (0.000125s) PRAGMA table_info('mentors')
+I, [2021-04-08T18:23:13.775902 #1477]  INFO -- : (0.000085s) PRAGMA table_info('requests')
+I, [2021-04-08T18:23:17.240466 #1477]  INFO -- : (0.000216s) SELECT * FROM `admins` WHERE (`username` = 'admin1') LIMIT 1
+I, [2021-04-08T18:23:30.622488 #1477]  INFO -- : (0.000248s) SELECT * FROM `admins` WHERE (`username` = 'admin1') LIMIT 1
+I, [2021-04-08T18:24:39.090861 #1499]  INFO -- : (0.000257s) PRAGMA foreign_keys = 1
+I, [2021-04-08T18:24:39.091118 #1499]  INFO -- : (0.000028s) PRAGMA case_sensitive_like = 1
+I, [2021-04-08T18:24:39.092461 #1499]  INFO -- : (0.000084s) SELECT sqlite_version()
+I, [2021-04-08T18:24:39.092982 #1499]  INFO -- : (0.000225s) PRAGMA table_info('admins')
+I, [2021-04-08T18:24:39.095142 #1499]  INFO -- : (0.000205s) PRAGMA table_info('mentees')
+I, [2021-04-08T18:24:39.097267 #1499]  INFO -- : (0.000235s) PRAGMA table_info('mentors')
+I, [2021-04-08T18:24:39.099004 #1499]  INFO -- : (0.000130s) PRAGMA table_info('requests')
+I, [2021-04-08T18:24:44.033451 #1499]  INFO -- : (0.000218s) SELECT * FROM `admins` WHERE (`username` = 'admin1') LIMIT 1
+I, [2021-04-08T18:24:51.221641 #1499]  INFO -- : (0.000224s) SELECT * FROM `mentors` ORDER BY `courseName`
+I, [2021-04-08T18:25:42.358932 #1499]  INFO -- : (0.000161s) SELECT count(*) AS 'count' FROM `mentors` WHERE (UPPER(`courseName`) LIKE UPPER('%BA%') ESCAPE '\') LIMIT 1
+I, [2021-04-08T18:26:40.714226 #1499]  INFO -- : (0.000215s) SELECT * FROM `admins` WHERE (`username` = 'admin1') LIMIT 1
+I, [2021-04-08T18:26:43.621497 #1499]  INFO -- : (0.000209s) SELECT * FROM `mentors` ORDER BY `courseName`
+I, [2021-04-08T18:29:06.693674 #1499]  INFO -- : (0.000195s) SELECT * FROM `admins` WHERE (`username` = 'admin1') LIMIT 1
+I, [2021-04-08T18:37:07.962257 #1499]  INFO -- : (0.000216s) SELECT * FROM `admins` WHERE (`username` = 'admin1') LIMIT 1
+I, [2021-04-08T18:43:23.555707 #1499]  INFO -- : (0.000198s) SELECT * FROM `mentors` ORDER BY `courseName`
+I, [2021-04-08T18:51:17.703512 #1523]  INFO -- : (0.000198s) PRAGMA foreign_keys = 1
+I, [2021-04-08T18:51:17.703613 #1523]  INFO -- : (0.000017s) PRAGMA case_sensitive_like = 1
+I, [2021-04-08T18:51:17.708500 #1523]  INFO -- : (0.000063s) SELECT sqlite_version()
+I, [2021-04-08T18:51:17.708803 #1523]  INFO -- : (0.000155s) PRAGMA table_info('admins')
+I, [2021-04-08T18:51:17.710172 #1523]  INFO -- : (0.000152s) PRAGMA table_info('mentees')
+I, [2021-04-08T18:51:17.711652 #1523]  INFO -- : (0.000158s) PRAGMA table_info('mentors')
+I, [2021-04-08T18:51:17.712974 #1523]  INFO -- : (0.000097s) PRAGMA table_info('requests')
+I, [2021-04-08T18:51:24.493071 #1523]  INFO -- : (0.000302s) SELECT * FROM `admins` WHERE (`username` = 'admin1') LIMIT 1
+I, [2021-04-08T18:51:26.213145 #1523]  INFO -- : (0.000232s) SELECT * FROM `mentors` ORDER BY `courseName`
+I, [2021-04-08T18:51:32.981981 #1523]  INFO -- : (0.000192s) SELECT * FROM `admins` WHERE `id` = '1'
+I, [2021-04-08T18:51:32.982352 #1523]  INFO -- : (0.000130s) SELECT * FROM `admins` WHERE `id` = '1'
+I, [2021-04-08T18:52:16.692458 #1523]  INFO -- : (0.000687s) SELECT * FROM `mentors` ORDER BY `courseName`
+I, [2021-04-08T18:57:30.494345 #1523]  INFO -- : (0.000149s) SELECT * FROM `mentors` ORDER BY `courseName`
+I, [2021-04-08T18:58:06.949716 #1523]  INFO -- : (0.000202s) SELECT * FROM `mentors` ORDER BY `courseName`
+I, [2021-04-08T18:58:08.205444 #1523]  INFO -- : (0.000148s) SELECT * FROM `mentors` ORDER BY `courseName`
+I, [2021-04-08T19:00:06.704988 #1523]  INFO -- : (0.000229s) SELECT * FROM `mentors` ORDER BY `courseName`
+I, [2021-04-08T19:00:59.094061 #1523]  INFO -- : (0.000963s) SELECT * FROM `mentors` ORDER BY `courseName`
+I, [2021-04-08T19:04:24.399300 #1523]  INFO -- : (0.000198s) SELECT * FROM `mentors` ORDER BY `courseName`
+I, [2021-04-08T19:04:25.888785 #1523]  INFO -- : (0.000193s) SELECT * FROM `mentors` ORDER BY `courseName`
+I, [2021-04-08T19:04:34.126721 #1546]  INFO -- : (0.000241s) PRAGMA foreign_keys = 1
+I, [2021-04-08T19:04:34.126845 #1546]  INFO -- : (0.000024s) PRAGMA case_sensitive_like = 1
+I, [2021-04-08T19:04:34.127826 #1546]  INFO -- : (0.000076s) SELECT sqlite_version()
+I, [2021-04-08T19:04:34.128141 #1546]  INFO -- : (0.000130s) PRAGMA table_info('admins')
+I, [2021-04-08T19:04:34.129567 #1546]  INFO -- : (0.000153s) PRAGMA table_info('mentees')
+I, [2021-04-08T19:04:34.131056 #1546]  INFO -- : (0.000124s) PRAGMA table_info('mentors')
+I, [2021-04-08T19:04:34.132126 #1546]  INFO -- : (0.000087s) PRAGMA table_info('requests')
+I, [2021-04-08T19:04:39.060067 #1546]  INFO -- : (0.000154s) SELECT * FROM `mentors` ORDER BY `courseName`
+I, [2021-04-08T19:07:17.424455 #1546]  INFO -- : (0.000150s) SELECT * FROM `mentors` ORDER BY `courseName`
+I, [2021-04-08T19:07:52.866125 #1546]  INFO -- : (0.000140s) SELECT * FROM `mentors` ORDER BY `courseName`
+I, [2021-04-08T19:09:46.432126 #1546]  INFO -- : (0.000247s) SELECT * FROM `mentors` ORDER BY `courseName`
+I, [2021-04-08T19:10:31.077382 #1546]  INFO -- : (0.000154s) SELECT * FROM `mentors` ORDER BY `courseName`
+I, [2021-04-08T19:11:52.108648 #1546]  INFO -- : (0.003023s) SELECT * FROM `mentees` WHERE (`username` = '2') LIMIT 1
+I, [2021-04-08T19:11:52.109089 #1546]  INFO -- : (0.000153s) SELECT * FROM `mentors` WHERE (`username` = '2') LIMIT 1
+I, [2021-04-08T19:11:52.109378 #1546]  INFO -- : (0.000107s) SELECT * FROM `admins` WHERE (`username` = '2') LIMIT 1
+I, [2021-04-08T19:11:57.105323 #1546]  INFO -- : (0.000148s) SELECT * FROM `mentees` WHERE (`username` = '2') LIMIT 1
+I, [2021-04-08T19:11:57.105610 #1546]  INFO -- : (0.000092s) SELECT * FROM `mentors` WHERE (`username` = '2') LIMIT 1
+I, [2021-04-08T19:11:57.105830 #1546]  INFO -- : (0.000077s) SELECT * FROM `admins` WHERE (`username` = '2') LIMIT 1
+I, [2021-04-08T19:12:20.074491 #1546]  INFO -- : (0.000238s) SELECT * FROM `mentors` WHERE (`username` = '2') LIMIT 1
+I, [2021-04-08T19:12:20.074859 #1546]  INFO -- : (0.000138s) SELECT * FROM `mentors` WHERE (`email` = '2764268543@qq.com') LIMIT 1
+I, [2021-04-08T19:12:20.075032 #1546]  INFO -- : (0.000032s) BEGIN
+I, [2021-04-08T19:12:20.075541 #1546]  INFO -- : (0.000280s) INSERT INTO `mentors` (`fname`, `lname`, `email`, `phoneNum`, `username`, `password`, `jobTitle`, `courseName`) VALUES ('mmm', 'du', '2764268543@qq.com', '4632', '2', '222', 'Administrative Specialist', 'Architectural Engineering (MEng)')
+I, [2021-04-08T19:12:20.075911 #1546]  INFO -- : (0.000159s) SELECT * FROM `mentors` WHERE `id` = 1
+I, [2021-04-08T19:12:20.210455 #1546]  INFO -- : (0.134449s) COMMIT
+I, [2021-04-08T19:12:26.392897 #1546]  INFO -- : (0.000177s) SELECT * FROM `mentees` WHERE (`username` = '2') LIMIT 1
+I, [2021-04-08T19:12:26.393181 #1546]  INFO -- : (0.000126s) SELECT * FROM `mentors` WHERE (`username` = '2') LIMIT 1
+I, [2021-04-08T19:12:26.485098 #1546]  INFO -- : (0.000158s) SELECT * FROM `mentors` WHERE (`username` = '2') LIMIT 1
+I, [2021-04-08T19:12:40.858107 #1546]  INFO -- : (0.000234s) SELECT * FROM `mentees` WHERE (`username` = 'admin1') LIMIT 1
+I, [2021-04-08T19:12:40.858525 #1546]  INFO -- : (0.000177s) SELECT * FROM `mentors` WHERE (`username` = 'admin1') LIMIT 1
+I, [2021-04-08T19:12:40.858963 #1546]  INFO -- : (0.000156s) SELECT * FROM `admins` WHERE (`username` = 'admin1') LIMIT 1
+I, [2021-04-08T19:12:42.228940 #1546]  INFO -- : (0.000289s) SELECT * FROM `admins` WHERE (`username` = 'admin1') LIMIT 1
+I, [2021-04-08T19:12:43.885498 #1546]  INFO -- : (0.000240s) SELECT * FROM `mentors` ORDER BY `courseName`
+I, [2021-04-08T19:14:20.662556 #1546]  INFO -- : (0.000254s) SELECT * FROM `mentors` ORDER BY `courseName`
+I, [2021-04-08T19:15:10.538905 #1546]  INFO -- : (0.000201s) SELECT * FROM `mentors` ORDER BY `courseName`
+I, [2021-04-08T19:15:50.377518 #1546]  INFO -- : (0.000170s) SELECT * FROM `mentors` ORDER BY `courseName`
+I, [2021-04-08T19:16:15.313455 #1546]  INFO -- : (0.000202s) SELECT * FROM `mentors` ORDER BY `courseName`
+I, [2021-04-08T19:16:36.649489 #1546]  INFO -- : (0.000206s) SELECT * FROM `mentors` ORDER BY `courseName`
+E, [2021-04-08T19:18:27.353382 #1546] ERROR -- : SQLite3::SQLException: no such column: name: SELECT * FROM `mentors` ORDER BY `name`
+I, [2021-04-08T19:21:07.869617 #1546]  INFO -- : (0.000169s) SELECT * FROM `admins` WHERE (`username` = 'admin1') LIMIT 1
+I, [2021-04-08T19:21:09.374125 #1546]  INFO -- : (0.000164s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-08T19:21:15.208023 #1546]  INFO -- : (0.000213s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-08T19:21:22.868081 #1546]  INFO -- : (0.000169s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-08T19:21:38.118053 #1546]  INFO -- : (0.000158s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-08T19:21:41.169381 #1546]  INFO -- : (0.000163s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-08T19:21:58.445436 #1546]  INFO -- : (0.000143s) SELECT * FROM `mentees` WHERE (`username` = '2') LIMIT 1
+I, [2021-04-08T19:21:58.445721 #1546]  INFO -- : (0.000121s) SELECT * FROM `mentors` WHERE (`username` = '2') LIMIT 1
+I, [2021-04-08T19:21:58.549264 #1546]  INFO -- : (0.000119s) SELECT * FROM `mentors` WHERE (`username` = '2') LIMIT 1
+I, [2021-04-08T19:22:21.567378 #1546]  INFO -- : (0.000179s) SELECT * FROM `mentors` WHERE (`username` = '1') LIMIT 1
+I, [2021-04-08T19:22:21.567632 #1546]  INFO -- : (0.000099s) SELECT * FROM `mentors` WHERE (`email` = 'YDu54@sheffield.ac.uk') LIMIT 1
+I, [2021-04-08T19:22:21.567758 #1546]  INFO -- : (0.000018s) BEGIN
+I, [2021-04-08T19:22:21.568105 #1546]  INFO -- : (0.000190s) INSERT INTO `mentors` (`fname`, `lname`, `email`, `phoneNum`, `username`, `password`, `jobTitle`, `courseName`) VALUES ('q', 'a', 'YDu54@sheffield.ac.uk', '4632', '1', '111', 'Administrator', 'Artificial Intelligence and Computer Science with a Year in Industry (MComp)')
+I, [2021-04-08T19:22:21.568375 #1546]  INFO -- : (0.000140s) SELECT * FROM `mentors` WHERE `id` = 2
+I, [2021-04-08T19:22:21.663039 #1546]  INFO -- : (0.094579s) COMMIT
+I, [2021-04-08T19:22:31.955242 #1546]  INFO -- : (0.000135s) SELECT * FROM `mentees` WHERE (`username` = 'admin1') LIMIT 1
+I, [2021-04-08T19:22:31.955482 #1546]  INFO -- : (0.000087s) SELECT * FROM `mentors` WHERE (`username` = 'admin1') LIMIT 1
+I, [2021-04-08T19:22:31.955668 #1546]  INFO -- : (0.000097s) SELECT * FROM `admins` WHERE (`username` = 'admin1') LIMIT 1
+I, [2021-04-08T19:22:33.374738 #1546]  INFO -- : (0.000207s) SELECT * FROM `admins` WHERE (`username` = 'admin1') LIMIT 1
+I, [2021-04-08T19:22:35.102061 #1546]  INFO -- : (0.000301s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-08T19:22:39.337957 #1546]  INFO -- : (0.000167s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-08T19:22:43.138410 #1546]  INFO -- : (0.000171s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-08T19:24:37.188332 #1546]  INFO -- : (0.000241s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-08T19:24:42.170362 #1546]  INFO -- : (0.000235s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-08T19:24:46.659771 #1546]  INFO -- : (0.000184s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-08T19:24:47.737289 #1546]  INFO -- : (0.000173s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-08T19:24:50.660481 #1546]  INFO -- : (0.000344s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-08T19:25:38.307232 #1546]  INFO -- : (0.000181s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-08T19:26:20.576700 #1546]  INFO -- : (0.000177s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-08T19:27:04.500057 #1546]  INFO -- : (0.000215s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-08T19:27:10.504052 #1546]  INFO -- : (0.000173s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-08T19:27:51.079966 #1546]  INFO -- : (0.000228s) SELECT * FROM `mentors` ORDER BY `username`
+E, [2021-04-08T19:27:55.311967 #1546] ERROR -- : SQLite3::SQLException: no such column: name: SELECT count(*) AS 'count' FROM `mentors` WHERE (UPPER(`name`) LIKE UPPER('%1%') ESCAPE '\') LIMIT 1
+I, [2021-04-08T19:29:53.723771 #1546]  INFO -- : (0.000185s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-08T19:29:58.057520 #1546]  INFO -- : (0.000183s) SELECT count(*) AS 'count' FROM `mentors` WHERE (UPPER(`username`) LIKE UPPER('%1%') ESCAPE '\') LIMIT 1
+I, [2021-04-08T19:29:58.057968 #1546]  INFO -- : (0.000222s) SELECT * FROM `mentors` WHERE (UPPER(`username`) LIKE UPPER('%1%') ESCAPE '\') ORDER BY `username`
+I, [2021-04-08T19:30:35.247347 #1546]  INFO -- : (0.000186s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-08T19:31:03.270388 #1546]  INFO -- : (0.000172s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-08T19:31:23.890360 #1546]  INFO -- : (0.000200s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-08T19:33:02.333919 #1546]  INFO -- : (0.000152s) SELECT * FROM `admins` WHERE `id` = '1'
+I, [2021-04-08T19:33:02.334098 #1546]  INFO -- : (0.000082s) SELECT * FROM `admins` WHERE `id` = '1'
+I, [2021-04-08T19:33:35.432741 #1546]  INFO -- : (0.000192s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-08T20:24:28.419077 #236]  INFO -- : (0.001732s) PRAGMA foreign_keys = 1
+I, [2021-04-08T20:24:28.419284 #236]  INFO -- : (0.000030s) PRAGMA case_sensitive_like = 1
+I, [2021-04-08T20:24:28.422558 #236]  INFO -- : (0.000072s) SELECT sqlite_version()
+I, [2021-04-08T20:24:28.422846 #236]  INFO -- : (0.000138s) PRAGMA table_info('admins')
+I, [2021-04-08T20:24:28.427798 #236]  INFO -- : (0.000245s) PRAGMA table_info('mentees')
+I, [2021-04-08T20:24:28.431339 #236]  INFO -- : (0.000194s) PRAGMA table_info('mentors')
+I, [2021-04-08T20:24:28.432991 #236]  INFO -- : (0.000151s) PRAGMA table_info('requests')
+I, [2021-04-08T20:24:44.979301 #236]  INFO -- : (0.000620s) SELECT * FROM `admins` WHERE (`username` = 'admin1') LIMIT 1
+I, [2021-04-08T20:24:46.585831 #236]  INFO -- : (0.000185s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-08T20:24:46.586718 #236]  INFO -- : (0.000718s) SELECT * FROM `mentees` ORDER BY `username`
+I, [2021-04-08T20:25:12.606578 #236]  INFO -- : (0.000276s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-08T20:25:12.606924 #236]  INFO -- : (0.000145s) SELECT * FROM `mentees` ORDER BY `username`
+I, [2021-04-08T20:25:30.115648 #236]  INFO -- : (0.000199s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-08T20:25:30.115900 #236]  INFO -- : (0.000093s) SELECT * FROM `mentees` ORDER BY `username`
+I, [2021-04-08T20:28:13.947211 #236]  INFO -- : (0.000167s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-08T20:28:13.947485 #236]  INFO -- : (0.000116s) SELECT * FROM `mentees` ORDER BY `username`
+I, [2021-04-08T20:29:48.270268 #260]  INFO -- : (0.000283s) PRAGMA foreign_keys = 1
+I, [2021-04-08T20:29:48.270397 #260]  INFO -- : (0.000021s) PRAGMA case_sensitive_like = 1
+I, [2021-04-08T20:29:48.271561 #260]  INFO -- : (0.000081s) SELECT sqlite_version()
+I, [2021-04-08T20:29:48.271950 #260]  INFO -- : (0.000218s) PRAGMA table_info('admins')
+I, [2021-04-08T20:29:48.274052 #260]  INFO -- : (0.000234s) PRAGMA table_info('mentees')
+I, [2021-04-08T20:29:48.276261 #260]  INFO -- : (0.000235s) PRAGMA table_info('mentors')
+I, [2021-04-08T20:29:48.278044 #260]  INFO -- : (0.000164s) PRAGMA table_info('requests')
+I, [2021-04-08T20:29:55.306065 #260]  INFO -- : (0.000250s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-08T20:29:55.306355 #260]  INFO -- : (0.000124s) SELECT * FROM `mentees` ORDER BY `username`
+I, [2021-04-08T20:31:29.679492 #260]  INFO -- : (0.000226s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-08T20:31:29.679798 #260]  INFO -- : (0.000120s) SELECT * FROM `mentees` ORDER BY `username`
+I, [2021-04-08T20:35:38.383330 #260]  INFO -- : (0.000293s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-08T20:35:38.383710 #260]  INFO -- : (0.000147s) SELECT * FROM `mentees` ORDER BY `username`
+I, [2021-04-08T20:36:10.600644 #260]  INFO -- : (0.000170s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-08T20:36:10.600906 #260]  INFO -- : (0.000102s) SELECT * FROM `mentees` ORDER BY `username`
+I, [2021-04-08T20:39:19.397295 #283]  INFO -- : (0.000174s) PRAGMA foreign_keys = 1
+I, [2021-04-08T20:39:19.397385 #283]  INFO -- : (0.000014s) PRAGMA case_sensitive_like = 1
+I, [2021-04-08T20:39:19.398101 #283]  INFO -- : (0.000053s) SELECT sqlite_version()
+I, [2021-04-08T20:39:19.398364 #283]  INFO -- : (0.000131s) PRAGMA table_info('admins')
+I, [2021-04-08T20:39:19.399549 #283]  INFO -- : (0.000125s) PRAGMA table_info('mentees')
+I, [2021-04-08T20:39:19.400820 #283]  INFO -- : (0.000125s) PRAGMA table_info('mentors')
+I, [2021-04-08T20:39:19.401870 #283]  INFO -- : (0.000104s) PRAGMA table_info('requests')
+I, [2021-04-08T20:39:24.596686 #283]  INFO -- : (0.000193s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-08T20:39:24.596954 #283]  INFO -- : (0.000104s) SELECT * FROM `mentees` ORDER BY `username`
+I, [2021-04-08T20:45:03.889872 #306]  INFO -- : (0.000229s) PRAGMA foreign_keys = 1
+I, [2021-04-08T20:45:03.889972 #306]  INFO -- : (0.000017s) PRAGMA case_sensitive_like = 1
+I, [2021-04-08T20:45:03.890946 #306]  INFO -- : (0.000066s) SELECT sqlite_version()
+I, [2021-04-08T20:45:03.891260 #306]  INFO -- : (0.000176s) PRAGMA table_info('admins')
+I, [2021-04-08T20:45:03.894678 #306]  INFO -- : (0.000199s) PRAGMA table_info('mentees')
+I, [2021-04-08T20:45:03.896604 #306]  INFO -- : (0.000201s) PRAGMA table_info('mentors')
+I, [2021-04-08T20:45:03.898135 #306]  INFO -- : (0.000143s) PRAGMA table_info('requests')
+I, [2021-04-08T20:45:12.894154 #306]  INFO -- : (0.000226s) SELECT * FROM `admins` WHERE (`username` = 'admin1') LIMIT 1
+I, [2021-04-08T20:45:14.755447 #306]  INFO -- : (0.000237s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-08T20:45:18.482217 #306]  INFO -- : (0.000177s) SELECT * FROM `mentees` ORDER BY `username`
+I, [2021-04-08T20:47:33.542143 #306]  INFO -- : (0.000161s) SELECT * FROM `admins` WHERE (`username` = 'admin1') LIMIT 1
+I, [2021-04-08T20:47:34.935726 #306]  INFO -- : (0.000135s) SELECT * FROM `mentees` ORDER BY `username`
+I, [2021-04-08T20:47:57.712581 #306]  INFO -- : (0.000231s) SELECT * FROM `mentees` ORDER BY `username`
+I, [2021-04-08T20:50:25.065180 #306]  INFO -- : (0.000140s) SELECT * FROM `mentees` ORDER BY `username`
+I, [2021-04-08T20:59:17.514044 #306]  INFO -- : (0.000188s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-08T20:59:22.764148 #306]  INFO -- : (0.000143s) SELECT * FROM `mentees` ORDER BY `username`
+I, [2021-04-08T20:59:30.158508 #306]  INFO -- : (0.000132s) SELECT count(*) AS 'count' FROM `mentees` WHERE (UPPER(`username`) LIKE UPPER('%1%') ESCAPE '\') LIMIT 1
+I, [2021-04-08T21:00:17.593563 #306]  INFO -- : (0.000147s) SELECT * FROM `mentees` WHERE (`username` = '4') LIMIT 1
+I, [2021-04-08T21:00:17.593868 #306]  INFO -- : (0.000102s) SELECT * FROM `mentees` WHERE (`email` = 'YDu54@sheffield.ac.uk') LIMIT 1
+I, [2021-04-08T21:00:17.594002 #306]  INFO -- : (0.000019s) BEGIN
+I, [2021-04-08T21:00:17.594491 #306]  INFO -- : (0.000318s) INSERT INTO `mentees` (`fname`, `lname`, `email`, `phoneNum`, `courseName`, `faculty`, `cyear`, `username`, `password`) VALUES ('mmm', 'du', 'YDu54@sheffield.ac.uk', '4632', 'Artificial Intelligence and Computer Science (MComp)', 'Faculty of Social Sciences', 6, '4', '444')
+I, [2021-04-08T21:00:17.594697 #306]  INFO -- : (0.000090s) SELECT * FROM `mentees` WHERE `id` = 1
+I, [2021-04-08T21:00:17.699966 #306]  INFO -- : (0.105190s) COMMIT
+I, [2021-04-08T21:00:23.885246 #306]  INFO -- : (0.000221s) SELECT * FROM `mentees` WHERE (`username` = '4') LIMIT 1
+I, [2021-04-08T21:00:23.981362 #306]  INFO -- : (0.000196s) SELECT * FROM `mentees` WHERE (`username` = '4') LIMIT 1
+I, [2021-04-08T21:00:38.820745 #306]  INFO -- : (0.000150s) SELECT * FROM `mentees` WHERE (`username` = 'admin1') LIMIT 1
+I, [2021-04-08T21:00:38.821093 #306]  INFO -- : (0.000105s) SELECT * FROM `mentors` WHERE (`username` = 'admin1') LIMIT 1
+I, [2021-04-08T21:00:38.821387 #306]  INFO -- : (0.000100s) SELECT * FROM `admins` WHERE (`username` = 'admin1') LIMIT 1
+I, [2021-04-08T21:00:40.159063 #306]  INFO -- : (0.000153s) SELECT * FROM `admins` WHERE (`username` = 'admin1') LIMIT 1
+I, [2021-04-08T21:00:42.194526 #306]  INFO -- : (0.000195s) SELECT * FROM `mentees` ORDER BY `username`
+I, [2021-04-08T21:00:55.807019 #306]  INFO -- : (0.000208s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-08T21:01:24.415287 #306]  INFO -- : (0.000153s) SELECT * FROM `admins` WHERE `id` = '1'
+I, [2021-04-08T21:01:24.415479 #306]  INFO -- : (0.000095s) SELECT * FROM `admins` WHERE `id` = '1'
+I, [2021-04-08T21:02:31.369416 #306]  INFO -- : (0.000179s) SELECT * FROM `admins` WHERE (`username` = 'admin1') LIMIT 1
+I, [2021-04-08T21:02:44.316067 #306]  INFO -- : (0.000175s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-08T21:02:48.582971 #306]  INFO -- : (0.000217s) SELECT * FROM `mentees` ORDER BY `username`
+I, [2021-04-08T21:04:05.875050 #306]  INFO -- : (0.000157s) SELECT * FROM `admins` WHERE (`username` = 'admin1') LIMIT 1
+I, [2021-04-08T21:04:44.437055 #306]  INFO -- : (0.000216s) SELECT * FROM `admins` WHERE (`username` = 'admin1') LIMIT 1
+I, [2021-04-08T21:04:46.721502 #306]  INFO -- : (0.000299s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-08T21:04:51.451766 #306]  INFO -- : (0.000161s) SELECT * FROM `mentees` ORDER BY `username`
+I, [2021-04-08T21:05:00.849784 #306]  INFO -- : (0.000237s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-08T21:05:07.644010 #306]  INFO -- : (0.000225s) SELECT * FROM `mentees` ORDER BY `username`
+I, [2021-04-08T21:05:16.248226 #306]  INFO -- : (0.000254s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-08T21:05:34.977654 #306]  INFO -- : (0.000248s) SELECT * FROM `mentees` ORDER BY `username`
+I, [2021-04-08T21:06:00.572837 #306]  INFO -- : (0.000265s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-08T21:06:13.490165 #306]  INFO -- : (0.000211s) SELECT * FROM `mentees` ORDER BY `username`
+I, [2021-04-08T21:06:18.012817 #306]  INFO -- : (0.000201s) SELECT * FROM `admins` WHERE `id` = '1'
+I, [2021-04-08T21:06:18.013083 #306]  INFO -- : (0.000133s) SELECT * FROM `admins` WHERE `id` = '1'
+I, [2021-04-09T11:35:48.392173 #378]  INFO -- : (0.000205s) PRAGMA foreign_keys = 1
+I, [2021-04-09T11:35:48.392318 #378]  INFO -- : (0.000016s) PRAGMA case_sensitive_like = 1
+I, [2021-04-09T11:35:48.395121 #378]  INFO -- : (0.000052s) SELECT sqlite_version()
+I, [2021-04-09T11:35:48.395352 #378]  INFO -- : (0.000120s) PRAGMA table_info('admins')
+I, [2021-04-09T11:35:48.398781 #378]  INFO -- : (0.000126s) PRAGMA table_info('mentees')
+I, [2021-04-09T11:35:48.402190 #378]  INFO -- : (0.000124s) PRAGMA table_info('mentors')
+I, [2021-04-09T11:35:48.403291 #378]  INFO -- : (0.000104s) PRAGMA table_info('requests')
+I, [2021-04-09T11:35:51.945390 #378]  INFO -- : (0.000168s) SELECT * FROM `admins` WHERE (`username` = 'admin1') LIMIT 1
+I, [2021-04-09T11:36:55.721747 #378]  INFO -- : (0.000177s) SELECT * FROM `admins` WHERE (`username` = 'admin1') LIMIT 1
+I, [2021-04-09T11:36:57.774771 #378]  INFO -- : (0.000178s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-09T11:37:39.030249 #378]  INFO -- : (0.000194s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-09T11:51:51.733241 #403]  INFO -- : (0.000170s) PRAGMA foreign_keys = 1
+I, [2021-04-09T11:51:51.733320 #403]  INFO -- : (0.000013s) PRAGMA case_sensitive_like = 1
+I, [2021-04-09T11:51:51.733982 #403]  INFO -- : (0.000051s) SELECT sqlite_version()
+I, [2021-04-09T11:51:51.734203 #403]  INFO -- : (0.000116s) PRAGMA table_info('admins')
+I, [2021-04-09T11:51:51.735303 #403]  INFO -- : (0.000124s) PRAGMA table_info('mentees')
+I, [2021-04-09T11:51:51.736500 #403]  INFO -- : (0.000130s) PRAGMA table_info('mentors')
+I, [2021-04-09T11:51:51.737501 #403]  INFO -- : (0.000099s) PRAGMA table_info('requests')
+I, [2021-04-09T11:51:57.002097 #403]  INFO -- : (0.000183s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-09T11:52:49.120864 #456]  INFO -- : (0.000175s) PRAGMA foreign_keys = 1
+I, [2021-04-09T11:52:49.120955 #456]  INFO -- : (0.000025s) PRAGMA case_sensitive_like = 1
+I, [2021-04-09T11:52:49.121605 #456]  INFO -- : (0.000050s) SELECT sqlite_version()
+I, [2021-04-09T11:52:49.121830 #456]  INFO -- : (0.000122s) PRAGMA table_info('admins')
+I, [2021-04-09T11:52:49.122928 #456]  INFO -- : (0.000125s) PRAGMA table_info('mentees')
+I, [2021-04-09T11:52:49.124089 #456]  INFO -- : (0.000123s) PRAGMA table_info('mentors')
+I, [2021-04-09T11:52:49.125111 #456]  INFO -- : (0.000102s) PRAGMA table_info('requests')
+I, [2021-04-09T11:52:58.526486 #458]  INFO -- : (0.000178s) PRAGMA foreign_keys = 1
+I, [2021-04-09T11:52:58.526565 #458]  INFO -- : (0.000013s) PRAGMA case_sensitive_like = 1
+I, [2021-04-09T11:52:58.527222 #458]  INFO -- : (0.000049s) SELECT sqlite_version()
+I, [2021-04-09T11:52:58.527442 #458]  INFO -- : (0.000116s) PRAGMA table_info('admins')
+I, [2021-04-09T11:52:58.528613 #458]  INFO -- : (0.000131s) PRAGMA table_info('mentees')
+I, [2021-04-09T11:52:58.529807 #458]  INFO -- : (0.000154s) PRAGMA table_info('mentors')
+I, [2021-04-09T11:52:58.530833 #458]  INFO -- : (0.000111s) PRAGMA table_info('requests')
+I, [2021-04-09T11:53:34.356543 #458]  INFO -- : (0.000197s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-09T11:54:22.162021 #458]  INFO -- : (0.000170s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-09T11:54:55.367962 #482]  INFO -- : (0.000174s) PRAGMA foreign_keys = 1
+I, [2021-04-09T11:54:55.368048 #482]  INFO -- : (0.000017s) PRAGMA case_sensitive_like = 1
+I, [2021-04-09T11:54:55.368766 #482]  INFO -- : (0.000052s) SELECT sqlite_version()
+I, [2021-04-09T11:54:55.369008 #482]  INFO -- : (0.000121s) PRAGMA table_info('admins')
+I, [2021-04-09T11:54:55.370195 #482]  INFO -- : (0.000131s) PRAGMA table_info('mentees')
+I, [2021-04-09T11:54:55.371417 #482]  INFO -- : (0.000125s) PRAGMA table_info('mentors')
+I, [2021-04-09T11:54:55.372464 #482]  INFO -- : (0.000106s) PRAGMA table_info('requests')
+I, [2021-04-09T11:55:00.421352 #482]  INFO -- : (0.000184s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-09T12:00:44.480333 #537]  INFO -- : (0.000195s) PRAGMA foreign_keys = 1
+I, [2021-04-09T12:00:44.480411 #537]  INFO -- : (0.000014s) PRAGMA case_sensitive_like = 1
+I, [2021-04-09T12:00:44.481105 #537]  INFO -- : (0.000051s) SELECT sqlite_version()
+I, [2021-04-09T12:00:44.481330 #537]  INFO -- : (0.000118s) PRAGMA table_info('admins')
+I, [2021-04-09T12:00:44.482446 #537]  INFO -- : (0.000127s) PRAGMA table_info('mentees')
+I, [2021-04-09T12:00:44.483661 #537]  INFO -- : (0.000125s) PRAGMA table_info('mentors')
+I, [2021-04-09T12:00:44.484726 #537]  INFO -- : (0.000106s) PRAGMA table_info('requests')
+I, [2021-04-09T12:03:21.128113 #537]  INFO -- : (0.000148s) SELECT * FROM `mentors` WHERE (`username` IS NULL) LIMIT 1
+I, [2021-04-09T12:03:36.909850 #537]  INFO -- : (0.000201s) SELECT * FROM `mentees` WHERE (`username` = 'admin1') LIMIT 1
+I, [2021-04-09T12:03:36.910162 #537]  INFO -- : (0.000115s) SELECT * FROM `mentors` WHERE (`username` = 'admin1') LIMIT 1
+I, [2021-04-09T12:03:36.910386 #537]  INFO -- : (0.000101s) SELECT * FROM `admins` WHERE (`username` = 'admin1') LIMIT 1
+I, [2021-04-09T12:03:38.105507 #537]  INFO -- : (0.000156s) SELECT * FROM `admins` WHERE (`username` = 'admin1') LIMIT 1
+I, [2021-04-09T12:03:39.824351 #537]  INFO -- : (0.000263s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-09T12:05:33.430254 #537]  INFO -- : (0.000331s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-09T12:05:35.765080 #537]  INFO -- : (0.000167s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-09T12:08:46.052162 #537]  INFO -- : (0.000171s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-09T12:08:57.191751 #590]  INFO -- : (0.000171s) PRAGMA foreign_keys = 1
+I, [2021-04-09T12:08:57.191833 #590]  INFO -- : (0.000013s) PRAGMA case_sensitive_like = 1
+I, [2021-04-09T12:08:57.192526 #590]  INFO -- : (0.000051s) SELECT sqlite_version()
+I, [2021-04-09T12:08:57.192747 #590]  INFO -- : (0.000117s) PRAGMA table_info('admins')
+I, [2021-04-09T12:08:57.193873 #590]  INFO -- : (0.000127s) PRAGMA table_info('mentees')
+I, [2021-04-09T12:08:57.195134 #590]  INFO -- : (0.000126s) PRAGMA table_info('mentors')
+I, [2021-04-09T12:08:57.196304 #590]  INFO -- : (0.000144s) PRAGMA table_info('requests')
+I, [2021-04-09T12:09:00.275040 #590]  INFO -- : (0.000182s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-09T12:09:04.417227 #590]  INFO -- : (0.000180s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-09T12:09:06.351853 #590]  INFO -- : (0.000170s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-09T12:09:07.478727 #590]  INFO -- : (0.000182s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-09T12:11:22.165086 #590]  INFO -- : (0.000172s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-09T12:12:32.983696 #590]  INFO -- : (0.000190s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-09T12:12:35.989930 #590]  INFO -- : (0.000195s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-09T12:40:16.497062 #590]  INFO -- : (0.000311s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-09T12:40:40.208200 #590]  INFO -- : (0.000178s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-09T12:40:43.053247 #590]  INFO -- : (0.000175s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-09T12:41:54.536545 #590]  INFO -- : (0.000201s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-09T12:42:58.710013 #590]  INFO -- : (0.000143s) SELECT count(*) AS 'count' FROM `mentors` WHERE (UPPER(`username`) LIKE UPPER('%1%') ESCAPE '\') LIMIT 1
+I, [2021-04-09T12:42:58.710313 #590]  INFO -- : (0.000157s) SELECT * FROM `mentors` WHERE (UPPER(`username`) LIKE UPPER('%1%') ESCAPE '\') ORDER BY `username`
+I, [2021-04-09T12:43:00.988960 #590]  INFO -- : (0.000157s) SELECT * FROM `mentors` WHERE `id` = '2'
+I, [2021-04-09T12:43:00.989156 #590]  INFO -- : (0.000094s) SELECT * FROM `mentors` WHERE `id` = '2'
+I, [2021-04-09T12:45:07.127578 #590]  INFO -- : (0.000167s) SELECT * FROM `admins` WHERE (`username` = 'admin1') LIMIT 1
+I, [2021-04-09T12:45:09.555748 #590]  INFO -- : (0.000179s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-09T12:45:44.027045 #590]  INFO -- : (0.000171s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-09T12:45:47.192729 #590]  INFO -- : (0.000168s) SELECT * FROM `admins` WHERE (`username` = 'admin1') LIMIT 1
+I, [2021-04-09T12:47:13.507509 #590]  INFO -- : (0.000171s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-09T12:47:16.756116 #590]  INFO -- : (0.000141s) SELECT count(*) AS 'count' FROM `mentors` WHERE (UPPER(`username`) LIKE UPPER('%1%') ESCAPE '\') LIMIT 1
+I, [2021-04-09T12:47:16.756442 #590]  INFO -- : (0.000160s) SELECT * FROM `mentors` WHERE (UPPER(`username`) LIKE UPPER('%1%') ESCAPE '\') ORDER BY `username`
+I, [2021-04-09T12:47:18.596492 #590]  INFO -- : (0.000163s) SELECT * FROM `mentors` WHERE `id` = '2'
+I, [2021-04-09T12:47:18.596692 #590]  INFO -- : (0.000095s) SELECT * FROM `mentors` WHERE `id` = '2'
+I, [2021-04-09T12:48:46.853322 #590]  INFO -- : (0.000146s) SELECT count(*) AS 'count' FROM `mentors` WHERE (UPPER(`username`) LIKE UPPER('%2%') ESCAPE '\') LIMIT 1
+I, [2021-04-09T12:48:46.853663 #590]  INFO -- : (0.000168s) SELECT * FROM `mentors` WHERE (UPPER(`username`) LIKE UPPER('%2%') ESCAPE '\') ORDER BY `username`
+I, [2021-04-09T12:48:48.750586 #590]  INFO -- : (0.000158s) SELECT * FROM `mentors` WHERE `id` = '1'
+I, [2021-04-09T12:48:48.750792 #590]  INFO -- : (0.000100s) SELECT * FROM `mentors` WHERE `id` = '1'
+I, [2021-04-09T12:49:06.887774 #590]  INFO -- : (0.002785s) SELECT * FROM `mentees` ORDER BY `username`
+I, [2021-04-09T12:49:11.242368 #590]  INFO -- : (0.000133s) SELECT count(*) AS 'count' FROM `mentees` WHERE (UPPER(`username`) LIKE UPPER('%4%') ESCAPE '\') LIMIT 1
+I, [2021-04-09T12:49:11.242670 #590]  INFO -- : (0.000137s) SELECT * FROM `mentees` WHERE (UPPER(`username`) LIKE UPPER('%4%') ESCAPE '\') ORDER BY `username`
+I, [2021-04-09T12:54:57.915277 #590]  INFO -- : (0.000139s) SELECT count(*) AS 'count' FROM `mentees` WHERE (UPPER(`username`) LIKE UPPER('%4%') ESCAPE '\') LIMIT 1
+E, [2021-04-09T12:54:57.915607 #590] ERROR -- : NoMethodError: undefined method `courseName' for nil:NilClass: SELECT * FROM `mentees` WHERE (UPPER(`username`) LIKE UPPER('%4%') ESCAPE '\') ORDER BY `username`
+I, [2021-04-09T12:56:53.367975 #684]  INFO -- : (0.000171s) PRAGMA foreign_keys = 1
+I, [2021-04-09T12:56:53.368057 #684]  INFO -- : (0.000013s) PRAGMA case_sensitive_like = 1
+I, [2021-04-09T12:56:53.368795 #684]  INFO -- : (0.000055s) SELECT sqlite_version()
+I, [2021-04-09T12:56:53.369044 #684]  INFO -- : (0.000137s) PRAGMA table_info('admins')
+I, [2021-04-09T12:56:53.370192 #684]  INFO -- : (0.000126s) PRAGMA table_info('mentees')
+I, [2021-04-09T12:56:53.371389 #684]  INFO -- : (0.000125s) PRAGMA table_info('mentors')
+I, [2021-04-09T12:56:53.372451 #684]  INFO -- : (0.000089s) PRAGMA table_info('requests')
+I, [2021-04-09T12:57:02.874827 #684]  INFO -- : (0.000175s) SELECT * FROM `mentees` ORDER BY `username`
+I, [2021-04-09T12:57:46.456915 #684]  INFO -- : (0.000163s) SELECT * FROM `mentees` ORDER BY `username`
+I, [2021-04-09T12:57:51.453588 #684]  INFO -- : (0.000173s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-09T12:58:58.611310 #684]  INFO -- : (0.000182s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-09T12:59:02.380613 #684]  INFO -- : (0.000163s) SELECT * FROM `mentees` ORDER BY `username`
+I, [2021-04-09T12:59:04.096538 #684]  INFO -- : (0.000180s) SELECT * FROM `mentees` WHERE `id` = '1'
+I, [2021-04-09T12:59:04.096729 #684]  INFO -- : (0.000089s) SELECT * FROM `mentees` WHERE `id` = '1'
+I, [2021-04-09T12:59:10.354540 #684]  INFO -- : (0.000136s) SELECT count(*) AS 'count' FROM `mentees` WHERE (UPPER(`username`) LIKE UPPER('%4%') ESCAPE '\') LIMIT 1
+I, [2021-04-09T12:59:10.354866 #684]  INFO -- : (0.000156s) SELECT * FROM `mentees` WHERE (UPPER(`username`) LIKE UPPER('%4%') ESCAPE '\') ORDER BY `username`
+I, [2021-04-09T12:59:13.650728 #684]  INFO -- : (0.000152s) SELECT count(*) AS 'count' FROM `mentees` WHERE (UPPER(`username`) LIKE UPPER('%2%') ESCAPE '\') LIMIT 1
+I, [2021-04-09T13:00:37.883895 #684]  INFO -- : (0.000135s) SELECT count(*) AS 'count' FROM `mentees` WHERE (UPPER(`username`) LIKE UPPER('%4%') ESCAPE '\') LIMIT 1
+I, [2021-04-09T13:00:37.884219 #684]  INFO -- : (0.000161s) SELECT * FROM `mentees` WHERE (UPPER(`username`) LIKE UPPER('%4%') ESCAPE '\') ORDER BY `username`
+I, [2021-04-09T13:00:41.737409 #684]  INFO -- : (0.000150s) SELECT count(*) AS 'count' FROM `mentees` WHERE (UPPER(`username`) LIKE UPPER('%2%') ESCAPE '\') LIMIT 1
+I, [2021-04-09T13:01:11.874849 #684]  INFO -- : (0.000137s) SELECT count(*) AS 'count' FROM `mentees` WHERE (UPPER(`username`) LIKE UPPER('%2%') ESCAPE '\') LIMIT 1
+I, [2021-04-09T13:01:19.284933 #684]  INFO -- : (0.000156s) SELECT * FROM `admins` WHERE (`username` = 'admin1') LIMIT 1
+I, [2021-04-09T13:01:20.708058 #684]  INFO -- : (0.000185s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-09T13:01:24.640835 #684]  INFO -- : (0.000139s) SELECT count(*) AS 'count' FROM `mentors` WHERE (UPPER(`username`) LIKE UPPER('%4%') ESCAPE '\') LIMIT 1
+I, [2021-04-09T13:05:59.437231 #684]  INFO -- : (0.000144s) SELECT count(*) AS 'count' FROM `mentors` WHERE (UPPER(`username`) LIKE UPPER('%4%') ESCAPE '\') LIMIT 1
+I, [2021-04-09T13:06:01.160228 #684]  INFO -- : (0.000132s) SELECT count(*) AS 'count' FROM `mentors` WHERE (UPPER(`username`) LIKE UPPER('%4%') ESCAPE '\') LIMIT 1
+I, [2021-04-09T13:06:09.261782 #684]  INFO -- : (0.000262s) SELECT * FROM `mentees` ORDER BY `username`
+I, [2021-04-09T13:06:30.884628 #684]  INFO -- : (0.000192s) SELECT * FROM `mentees` ORDER BY `username`
+I, [2021-04-09T13:06:52.305082 #684]  INFO -- : (0.000139s) SELECT count(*) AS 'count' FROM `mentees` WHERE (UPPER(`username`) LIKE UPPER('%1%') ESCAPE '\') LIMIT 1
+I, [2021-04-09T13:07:24.724739 #684]  INFO -- : (0.000175s) SELECT * FROM `admins` WHERE (`username` = 'admin1') LIMIT 1
+I, [2021-04-09T13:07:26.245211 #684]  INFO -- : (0.000184s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-09T13:07:29.205815 #684]  INFO -- : (0.000137s) SELECT count(*) AS 'count' FROM `mentors` WHERE (UPPER(`username`) LIKE UPPER('%4%') ESCAPE '\') LIMIT 1
+I, [2021-04-09T13:08:37.341688 #684]  INFO -- : (0.000183s) SELECT * FROM `admins` WHERE (`username` = 'admin1') LIMIT 1
+I, [2021-04-09T13:08:47.321215 #684]  INFO -- : (0.000180s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-09T13:08:53.929756 #684]  INFO -- : (0.000140s) SELECT count(*) AS 'count' FROM `mentors` WHERE (UPPER(`username`) LIKE UPPER('%1%') ESCAPE '\') LIMIT 1
+I, [2021-04-09T13:08:53.930065 #684]  INFO -- : (0.000157s) SELECT * FROM `mentors` WHERE (UPPER(`username`) LIKE UPPER('%1%') ESCAPE '\') ORDER BY `username`
+I, [2021-04-09T13:08:55.866752 #684]  INFO -- : (0.000162s) SELECT * FROM `mentors` WHERE `id` = '2'
+I, [2021-04-09T13:08:55.867067 #684]  INFO -- : (0.000167s) SELECT * FROM `mentors` WHERE `id` = '2'
+I, [2021-04-09T13:09:19.940292 #684]  INFO -- : (0.000176s) SELECT * FROM `mentors` WHERE (`username` IS NULL) LIMIT 1
+I, [2021-04-09T13:09:35.192467 #684]  INFO -- : (0.000223s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-09T13:09:42.870668 #684]  INFO -- : (0.000177s) SELECT count(*) AS 'count' FROM `mentors` WHERE (UPPER(`username`) LIKE UPPER('%1%') ESCAPE '\') LIMIT 1
+I, [2021-04-09T13:09:42.871133 #684]  INFO -- : (0.000234s) SELECT * FROM `mentors` WHERE (UPPER(`username`) LIKE UPPER('%1%') ESCAPE '\') ORDER BY `username`
+I, [2021-04-09T13:09:48.840119 #684]  INFO -- : (0.000156s) SELECT * FROM `mentors` WHERE `id` = '2'
+I, [2021-04-09T13:09:48.840352 #684]  INFO -- : (0.000127s) SELECT * FROM `mentors` WHERE `id` = '2'
+I, [2021-04-09T13:10:13.124062 #684]  INFO -- : (0.000133s) SELECT count(*) AS 'count' FROM `mentors` WHERE (UPPER(`username`) LIKE UPPER('%2%') ESCAPE '\') LIMIT 1
+I, [2021-04-09T13:10:13.124389 #684]  INFO -- : (0.000181s) SELECT * FROM `mentors` WHERE (UPPER(`username`) LIKE UPPER('%2%') ESCAPE '\') ORDER BY `username`
+I, [2021-04-09T13:10:16.787676 #684]  INFO -- : (0.000157s) SELECT * FROM `mentors` WHERE `id` = '1'
+I, [2021-04-09T13:10:16.787890 #684]  INFO -- : (0.000109s) SELECT * FROM `mentors` WHERE `id` = '1'
+I, [2021-04-09T13:10:29.807566 #684]  INFO -- : (0.000313s) SELECT * FROM `mentees` ORDER BY `username`
+I, [2021-04-09T13:10:36.327217 #684]  INFO -- : (0.000176s) SELECT count(*) AS 'count' FROM `mentees` WHERE (UPPER(`username`) LIKE UPPER('%4%') ESCAPE '\') LIMIT 1
+I, [2021-04-09T13:10:36.327627 #684]  INFO -- : (0.000207s) SELECT * FROM `mentees` WHERE (UPPER(`username`) LIKE UPPER('%4%') ESCAPE '\') ORDER BY `username`
+I, [2021-04-09T13:10:37.723793 #684]  INFO -- : (0.000157s) SELECT * FROM `mentees` WHERE `id` = '1'
+I, [2021-04-09T13:10:37.724055 #684]  INFO -- : (0.000150s) SELECT * FROM `mentees` WHERE `id` = '1'
+I, [2021-04-09T13:10:48.246493 #684]  INFO -- : (0.000157s) SELECT count(*) AS 'count' FROM `mentees` WHERE (UPPER(`username`) LIKE UPPER('%1%') ESCAPE '\') LIMIT 1
+I, [2021-04-09T13:10:52.351313 #684]  INFO -- : (0.000260s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-09T13:10:57.365888 #684]  INFO -- : (0.000214s) SELECT count(*) AS 'count' FROM `mentors` WHERE (UPPER(`username`) LIKE UPPER('%4%') ESCAPE '\') LIMIT 1
+I, [2021-04-09T13:14:55.087868 #709]  INFO -- : (0.000185s) PRAGMA foreign_keys = 1
+I, [2021-04-09T13:14:55.087962 #709]  INFO -- : (0.000014s) PRAGMA case_sensitive_like = 1
+I, [2021-04-09T13:14:55.088757 #709]  INFO -- : (0.000056s) SELECT sqlite_version()
+I, [2021-04-09T13:14:55.089003 #709]  INFO -- : (0.000123s) PRAGMA table_info('admins')
+I, [2021-04-09T13:14:55.090225 #709]  INFO -- : (0.000180s) PRAGMA table_info('mentees')
+I, [2021-04-09T13:14:55.091533 #709]  INFO -- : (0.000172s) PRAGMA table_info('mentors')
+I, [2021-04-09T13:14:55.092679 #709]  INFO -- : (0.000108s) PRAGMA table_info('requests')
+I, [2021-04-09T13:15:15.577732 #709]  INFO -- : (0.000214s) SELECT * FROM `mentees` WHERE (`username` = '2') LIMIT 1
+I, [2021-04-09T13:15:15.579153 #709]  INFO -- : (0.001155s) SELECT * FROM `mentors` WHERE (`username` = '2') LIMIT 1
+I, [2021-04-09T13:15:15.676308 #709]  INFO -- : (0.000246s) SELECT * FROM `mentors` WHERE (`username` = '2') LIMIT 1
+I, [2021-04-09T13:15:22.965408 #709]  INFO -- : (0.000156s) SELECT * FROM `mentors` WHERE `id` = '1'
+I, [2021-04-09T13:15:22.965601 #709]  INFO -- : (0.000092s) SELECT * FROM `mentors` WHERE `id` = '1'
+I, [2021-04-09T13:18:20.157250 #709]  INFO -- : (0.000173s) SELECT * FROM `mentors` WHERE (`username` = '2') LIMIT 1
+I, [2021-04-09T13:18:32.723065 #709]  INFO -- : (0.000153s) SELECT * FROM `mentees` WHERE (`username` = 'admin1') LIMIT 1
+I, [2021-04-09T13:18:32.723310 #709]  INFO -- : (0.000091s) SELECT * FROM `mentors` WHERE (`username` = 'admin1') LIMIT 1
+I, [2021-04-09T13:18:32.723541 #709]  INFO -- : (0.000096s) SELECT * FROM `admins` WHERE (`username` = 'admin1') LIMIT 1
+I, [2021-04-09T13:18:34.711713 #709]  INFO -- : (0.000190s) SELECT * FROM `admins` WHERE (`username` = 'admin1') LIMIT 1
+I, [2021-04-09T13:18:36.418857 #709]  INFO -- : (0.000200s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-09T13:19:07.961252 #709]  INFO -- : (0.001250s) SELECT * FROM `mentors` WHERE (`username` = '2') LIMIT 1
