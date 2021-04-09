@@ -1,14 +1,12 @@
 <%= erb :"common/header_adminA" %>
     <div class="background" id="statement">
       <div class="full">
-        <div class="title">Check the information</div> <!--Main page Title-->      
+        <div class="title">Mentee List</div> <!--Main page Title-->      
           
-<!-- Search mentees         -->
+<!-- Search mentees -->
        
-        <h3>Search for User:</h3>  
-
             <form>
-              <p>Enter the <strong>Username</strong> to find the user: 
+              <p>Enter the <strong>Username</strong> to find a Mentee: 
                 <!-- Gets the search value(mentor course name) to be searched -->
                 <input type="text" name="userName_search" id="searchForMentee" placeholder="Enter the username to search..." maxlength="40" size="30" value="<%= h @userName_search %>"/>
                 <input type="submit" value="Submit" />
@@ -23,6 +21,7 @@
                 <th>Name</th>
                 <th>Email</th>
                 <th>Phone Number</th>
+                <th>Edit Profile</th>
                 
               </tr>
             <% @mentees.each do |mentee| %>
@@ -37,9 +36,8 @@
              </table>    
            
           <% else %>
-          <p class="search_info"><a href="/searchID" class="link">Mentor List</a></p>
-            <p id="SearchError">Your search revealed no mentee<br>Maybe the user is a mentor</p>
-              
+            <p id="SearchError">Your search revealed no mentees<br>Maybe the user is a mentor</p>
+            <p class="search_info"><a href="/searchID" class="link">Mentor List</a></p>
           <% end %>  
       </div>
 

@@ -2,14 +2,12 @@
 <%= erb :"common/header_adminA" %>
     <div class="background" id="statement">
       <div class="full">
-        <div class="title">Check the information</div> <!--Main page Title-->      
+        <div class="title">Mentor List</div> <!--Main page Title-->      
           
-<!-- Search mentees         -->
+<!-- Search mentees -->
        
-        <h3>Search for User:</h3>  
-
             <form>
-              <p>Enter the <strong>Username</strong> to find the user: 
+              <p>Enter the <strong>Username</strong> to find a Mentor: 
                 <!-- Gets the search value(mentor course name) to be searched -->
                 <input type="text" name="userName_search" id="searchForMentor" placeholder="Enter the username to search..." maxlength="40" size="30" value="<%= h @userName_search %>"/>
                 <input type="submit" value="Submit" />
@@ -24,8 +22,7 @@
                 <th>Name</th>
                 <th>Email</th>
                 <th>Phone Number</th>
-                <th>Job Title</th>
-                <th>Course Name</th>
+                <th>Edit Profile</th>
               </tr>
             <% @mentors.each do |mentor| %>
               <tr>
@@ -33,17 +30,14 @@
                 <td><%= h mentor.name %></td>
                 <td><%= h mentor.email %></td>
                 <td><%= h mentor.phoneNum %></td>
-                <td><%= h mentor.jobTitle %></td>
-                <td><%= h mentor.courseName %></td>
                 <td><a href="/editMentor?id=<%= h mentor.id %>">Edit </a></td>
               </tr>
             <% end %> 
              </table>    
            
           <% else %>
-          <p class="search_info"><a href="/searchIDAgain" class="link">Mentee List</a></p>
-            <p id="SearchError">Your search revealed no mentor<br>Maybe the user is a mentee</p>
-               
+            <p id="SearchError">Your search revealed no mentors<br>Maybe the user is a mentee</p>
+            <p class="search_info"><a href="/searchIDAgain" class="link">Mentee List</a></p>
           <% end %>  
       </div>
 

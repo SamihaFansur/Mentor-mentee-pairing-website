@@ -17,7 +17,11 @@ post "/editMentee" do
 
     if @mentees.valid?
       @mentees.save_changes
-      redirect "/MenteeDashboard"
+      if session[:mentees_username] 
+        redirect "/MenteeDashboard"
+      elsif session[:admins_username] 
+        redirect "/searchIDAgain"
+      end
     end
   end
 
@@ -42,7 +46,11 @@ post "/editMentor" do
 
     if @mentors.valid?
       @mentors.save_changes
-      redirect "/MentorDashboard"
+      if session[:mentors_username] 
+        redirect "/MentorDashboard"
+      elsif session[:admins_username] 
+        redirect "/searchID"
+      end
     end
   end
 

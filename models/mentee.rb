@@ -41,7 +41,7 @@ class Mentee < Sequel::Model
     self.courseName = params.fetch("courseName").strip unless params.fetch("courseName").strip == ""
     self.faculty = params.fetch("faculty").strip unless params.fetch("faculty").strip == ""
     self.cyear = params.fetch("cyear").strip unless params.fetch("cyear").strip == ""
-    self.username = params.fetch("userName").strip unless params.fetch("userName").strip == ""
+    self.username = params.fetch("username", self.username).strip
     self.password = params.fetch("password", self.password).strip
     #Done the last bit since initially description is empty
     self.description = params.fetch("description").strip unless params.fetch("description").strip == "" || params.fetch("description").nil?
