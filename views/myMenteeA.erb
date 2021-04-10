@@ -1,0 +1,34 @@
+<%= erb :"common/header_mentorA" %>
+<div class="background" id="statement">
+  
+      <div class="full">
+        <h2>Comments</h2>
+        <p>Details of mentees' comments will appear here:</p>
+        <div class="user_info" id="application">
+          <!-- Displays the details of the mentee the mentor is matched to -->
+          <% if @menteeMatchedList.count > 0 %>
+              <h2>Comments Infomation:</h2>
+              <table class="display_table">
+                <tr id="TableHeadings">
+                  <th>My Mentee Name</th>
+                  <th>Comments</th>
+                  
+                </tr>
+              <% @menteeMatchedList.each do |mentee| %>
+                <tr>
+                  <td><%= h mentee.name %></td>
+                  <td><%= h mentee.description %></td>
+                  <td>
+                  </td>
+                </tr>
+              <% end %> 
+              </table>
+            <% else %>
+              <p id="SearchError">You do not have a mentee yet!</p>
+            <% end %>
+          </div> 
+     </div>
+  
+</div> 
+
+<%= erb :"common/footer" %>

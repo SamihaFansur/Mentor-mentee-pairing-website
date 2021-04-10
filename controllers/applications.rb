@@ -44,3 +44,16 @@ get "/myMentee" do
   
   erb :myMentee
 end
+
+
+get "/myMenteeA" do
+  #List to store the mentee matched to a mentor
+ @menteeMatchedList = []
+  #Finds the ID of the mentee that is equal to the value stored in the menteeMatch column in the mentors table
+  MenteeIDList = Mentee.where(id: $mentors.menteeMatch)
+  MenteeIDList.each do |id|
+    @menteeMatchedList.push(Mentee.first(id: id.id)) #Stores the mentor record found in the list to be displayed
+  end
+  
+  erb :myMenteeA
+end

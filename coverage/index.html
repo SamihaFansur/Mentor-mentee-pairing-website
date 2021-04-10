@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2021-04-09T16:12:27+00:00">2021-04-09T16:12:27+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2021-04-10T08:46:00+00:00">2021-04-10T08:46:00+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="red">
-  76.85%
+  76.72%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         9.64
+         9.54
        </span>
     </span> hits/line
     )
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>445</b> relevant lines,
-    <span class="green"><b>342</b> lines covered</span> and
-    <span class="red"><b>103</b> lines missed. </span>
+    <b>451</b> relevant lines,
+    <span class="green"><b>346</b> lines covered</span> and
+    <span class="red"><b>105</b> lines missed. </span>
     (<span class="red">
-  76.85%
+  76.72%
 </span>
 )
   </div>
@@ -117,10 +117,10 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#7c96d2449ca46c80f77fd6be086f70c84241959a" class="src_link" title="controllers/edit.rb">controllers/edit.rb</a></td>
             <td class="red strong cell--number t-file__coverage">66.67 %</td>
-            <td class="cell--number">83</td>
-            <td class="cell--number">42</td>
-            <td class="cell--number">28</td>
-            <td class="cell--number">14</td>
+            <td class="cell--number">91</td>
+            <td class="cell--number">48</td>
+            <td class="cell--number">32</td>
+            <td class="cell--number">16</td>
             <td class="cell--number">2.21</td>
             
           </tr>
@@ -150,7 +150,7 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#2cbbbf3ba56d7dfd70ffa2aa4b59bd816831990c" class="src_link" title="controllers/search.rb">controllers/search.rb</a></td>
             <td class="red strong cell--number t-file__coverage">66.67 %</td>
-            <td class="cell--number">105</td>
+            <td class="cell--number">104</td>
             <td class="cell--number">36</td>
             <td class="cell--number">24</td>
             <td class="cell--number">12</td>
@@ -2315,9 +2315,9 @@
     
 
     <div class="t-line-summary">
-      <b>42</b> relevant lines.
-      <span class="green"><b>28</b> lines covered</span> and
-      <span class="red"><b>14</b> lines missed.</span>
+      <b>48</b> relevant lines.
+      <span class="green"><b>32</b> lines covered</span> and
+      <span class="red"><b>16</b> lines missed.</span>
     </div>
 
     
@@ -2400,210 +2400,45 @@
 
             
 
-            <code class="ruby">  erb :mentee_edit_info</code>
+            <code class="ruby">  if session[:mentees_username] </code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="8">
-            
-            
-
+          <li class="covered" data-hits="5" data-linenumber="8">
+            <span class="hits">5</span>
             
 
-            <code class="ruby">end</code>
+            
+
+            <code class="ruby">    erb :mentee_edit_info</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="9">
-            
-            
-
+          <li class="covered" data-hits="2" data-linenumber="9">
+            <span class="hits">2</span>
             
 
-            <code class="ruby"></code>
+            
+
+            <code class="ruby">  elsif session[:admins_username] </code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="10">
-            <span class="hits">1</span>
+          <li class="missed" data-hits="0" data-linenumber="10">
+            
             
 
             
 
-            <code class="ruby">post &quot;/editMentee&quot; do</code>
+            <code class="ruby">    erb :admin_mentee_edit_info</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="11">
-            <span class="hits">3</span>
-            
-
-            
-
-            <code class="ruby">  id = params[&quot;id&quot;] #variable to search the id of corresponding mentee profile being edited</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="12">
-            
-            
-
-            
-
-            <code class="ruby">  </code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="13">
-            
-            
-
-            
-
-            <code class="ruby">  #If mentee id exists and field values are valid then saves changes and redirects to mentee dashboard</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="3" data-linenumber="14">
-            <span class="hits">3</span>
-            
-
-            
-
-            <code class="ruby">  if Mentee.id_exists?(id)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="3" data-linenumber="15">
-            <span class="hits">3</span>
-            
-
-            
-
-            <code class="ruby">    @mentees = Mentee[id]</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="3" data-linenumber="16">
-            <span class="hits">3</span>
-            
-
-            
-
-            <code class="ruby">    @mentees.loadEdit(params)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="17">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="3" data-linenumber="18">
-            <span class="hits">3</span>
-            
-
-            
-
-            <code class="ruby">    if @mentees.valid?</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="3" data-linenumber="19">
-            <span class="hits">3</span>
-            
-
-            
-
-            <code class="ruby">      @mentees.save_changes</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="3" data-linenumber="20">
-            <span class="hits">3</span>
-            
-
-            
-
-            <code class="ruby">      if session[:mentees_username] </code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="3" data-linenumber="21">
-            <span class="hits">3</span>
-            
-
-            
-
-            <code class="ruby">        redirect &quot;/MenteeDashboard&quot;</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="22">
-            
-            
-
-            
-
-            <code class="ruby">      elsif session[:admins_username] </code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="23">
-            
-            
-
-            
-
-            <code class="ruby">        redirect &quot;/searchIDAgain&quot;</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="24">
-            
-            
-
-            
-
-            <code class="ruby">      end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="25">
-            
-            
-
-            
-
-            <code class="ruby">    end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="26">
+          <li class="never" data-hits="" data-linenumber="11">
             
             
 
@@ -2614,13 +2449,178 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="27">
+          <li class="never" data-hits="" data-linenumber="12">
+            
+            
+
+            
+
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="13">
             
             
 
             
 
             <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="14">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">post &quot;/editMentee&quot; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="15">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">  id = params[&quot;id&quot;] #variable to search the id of corresponding mentee profile being edited</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="16">
+            
+            
+
+            
+
+            <code class="ruby">  </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="17">
+            
+            
+
+            
+
+            <code class="ruby">  #If mentee id exists and field values are valid then saves changes and redirects to mentee dashboard</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="18">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">  if Mentee.id_exists?(id)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="19">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">    @mentees = Mentee[id]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="20">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">    @mentees.loadEdit(params)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="21">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="22">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">    if @mentees.valid?</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="23">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">      @mentees.save_changes</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="24">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">      if session[:mentees_username] </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="25">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">        redirect &quot;/MenteeDashboard&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="26">
+            
+            
+
+            
+
+            <code class="ruby">      elsif session[:admins_username] </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="27">
+            
+            
+
+            
+
+            <code class="ruby">        redirect &quot;/searchForAMentee&quot;</code>
           </li>
         </div>
       
@@ -2631,7 +2631,7 @@
 
             
 
-            <code class="ruby">end</code>
+            <code class="ruby">      end</code>
           </li>
         </div>
       
@@ -2642,7 +2642,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -2653,89 +2653,12 @@
 
             
 
-            <code class="ruby">###############################MENTOR######################################</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="31">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">get &quot;/editMentor&quot; do</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="6" data-linenumber="32">
-            <span class="hits">6</span>
-            
-
-            
-
-            <code class="ruby">  id = params[&quot;id&quot;] #new variable to search the id of corresponding mentor profile to be edited</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="33">
-            
-            
-
-            
-
-            <code class="ruby">  </code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="34">
-            
-            
-
-            
-
-            <code class="ruby"> #If id requested exists then calls the edit mentor form</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="6" data-linenumber="35">
-            <span class="hits">6</span>
-            
-
-            
-
-            <code class="ruby">  @mentors = Mentor[id] if Mentor.id_exists?(id)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="6" data-linenumber="36">
-            <span class="hits">6</span>
-            
-
-            
-
-            <code class="ruby">  erb :mentor_edit_info</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="37">
-            
-            
-
-            
-
-            <code class="ruby">end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="38">
+          <li class="never" data-hits="" data-linenumber="31">
             
             
 
@@ -2746,29 +2669,62 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="39">
+          <li class="never" data-hits="" data-linenumber="32">
+            
+            
+
+            
+
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="33">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="34">
+            
+            
+
+            
+
+            <code class="ruby">###############################MENTOR######################################</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="35">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">post &quot;/editMentor&quot; do</code>
+            <code class="ruby">get &quot;/editMentor&quot; do</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="40">
-            <span class="hits">3</span>
+          <li class="covered" data-hits="6" data-linenumber="36">
+            <span class="hits">6</span>
             
 
             
 
-            <code class="ruby">  id = params[&quot;id&quot;] #variable to search the id of corresponding mentor profile being edited</code>
+            <code class="ruby">  id = params[&quot;id&quot;] #new variable to search the id of corresponding mentor profile to be edited</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="41">
+          <li class="never" data-hits="" data-linenumber="37">
             
             
 
@@ -2779,46 +2735,90 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="42">
+          <li class="never" data-hits="" data-linenumber="38">
             
             
 
             
 
-            <code class="ruby">  #If mentor id exists and field values are valid then saves changes and redirects to mentor dashboard</code>
+            <code class="ruby"> #If id requested exists then calls the edit mentor form</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="43">
-            <span class="hits">3</span>
+          <li class="covered" data-hits="6" data-linenumber="39">
+            <span class="hits">6</span>
             
 
             
 
-            <code class="ruby">  if Mentor.id_exists?(id)</code>
+            <code class="ruby">  @mentors = Mentor[id] if Mentor.id_exists?(id)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="44">
-            <span class="hits">3</span>
+          <li class="covered" data-hits="6" data-linenumber="40">
+            <span class="hits">6</span>
             
 
             
 
-            <code class="ruby">    @mentors = Mentor[id]</code>
+            <code class="ruby">  if session[:mentors_username] </code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="45">
-            <span class="hits">3</span>
+          <li class="covered" data-hits="5" data-linenumber="41">
+            <span class="hits">5</span>
             
 
             
 
-            <code class="ruby">    @mentors.loadEdit(params)</code>
+            <code class="ruby">    erb :mentor_edit_info</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="42">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  elsif session[:admins_username] </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="43">
+            
+            
+
+            
+
+            <code class="ruby">    erb :admin_mentor_edit_info</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="44">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="45">
+            
+            
+
+            
+
+            <code class="ruby">end</code>
           </li>
         </div>
       
@@ -2834,13 +2834,13 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="47">
-            <span class="hits">3</span>
+          <li class="covered" data-hits="1" data-linenumber="47">
+            <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    if @mentors.valid?</code>
+            <code class="ruby">post &quot;/editMentor&quot; do</code>
           </li>
         </div>
       
@@ -2851,155 +2851,12 @@
 
             
 
-            <code class="ruby">      @mentors.save_changes</code>
+            <code class="ruby">  id = params[&quot;id&quot;] #variable to search the id of corresponding mentor profile being edited</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="3" data-linenumber="49">
-            <span class="hits">3</span>
-            
-
-            
-
-            <code class="ruby">      if session[:mentors_username] </code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="3" data-linenumber="50">
-            <span class="hits">3</span>
-            
-
-            
-
-            <code class="ruby">        redirect &quot;/MentorDashboard&quot;</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="51">
-            
-            
-
-            
-
-            <code class="ruby">      elsif session[:admins_username] </code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="52">
-            
-            
-
-            
-
-            <code class="ruby">        redirect &quot;/searchID&quot;</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="53">
-            
-            
-
-            
-
-            <code class="ruby">      end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="54">
-            
-            
-
-            
-
-            <code class="ruby">    end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="55">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="56">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="57">
-            
-            
-
-            
-
-            <code class="ruby">end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="58">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="59">
-            
-            
-
-            
-
-            <code class="ruby">###############################ADMIN######################################</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="60">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">get &quot;/editAdmin&quot; do</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="61">
-            
-            
-
-            
-
-            <code class="ruby">  id = params[&quot;id&quot;] #new variable to search the id of corresponding admin profile to be edited</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="62">
+          <li class="never" data-hits="" data-linenumber="49">
             
             
 
@@ -3010,51 +2867,51 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="63">
+          <li class="never" data-hits="" data-linenumber="50">
             
             
 
             
 
-            <code class="ruby"> #If id requested exists then calls the edit mentor form</code>
+            <code class="ruby">  #If mentor id exists and field values are valid then saves changes and redirects to mentor dashboard</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="64">
-            
-            
-
+          <li class="covered" data-hits="3" data-linenumber="51">
+            <span class="hits">3</span>
             
 
-            <code class="ruby">  @admins = Admin[id] if Admin.id_exists?(id)</code>
+            
+
+            <code class="ruby">  if Mentor.id_exists?(id)</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="65">
-            
-            
-
+          <li class="covered" data-hits="3" data-linenumber="52">
+            <span class="hits">3</span>
             
 
-            <code class="ruby">  erb :admin_edit_info</code>
+            
+
+            <code class="ruby">    @mentors = Mentor[id]</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="66">
-            
-            
-
+          <li class="covered" data-hits="3" data-linenumber="53">
+            <span class="hits">3</span>
             
 
-            <code class="ruby">end</code>
+            
+
+            <code class="ruby">    @mentors.loadEdit(params)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="67">
+          <li class="never" data-hits="" data-linenumber="54">
             
             
 
@@ -3065,13 +2922,156 @@
         </div>
       
         <div>
+          <li class="covered" data-hits="3" data-linenumber="55">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">    if @mentors.valid?</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="56">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">      @mentors.save_changes</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="57">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">      if session[:mentors_username] </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="58">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">        redirect &quot;/MentorDashboard&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="59">
+            
+            
+
+            
+
+            <code class="ruby">      elsif session[:admins_username] </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="60">
+            
+            
+
+            
+
+            <code class="ruby">        redirect &quot;/searchForAMentor&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="61">
+            
+            
+
+            
+
+            <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="62">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="63">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="64">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="65">
+            
+            
+
+            
+
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="66">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="67">
+            
+            
+
+            
+
+            <code class="ruby">###############################ADMIN######################################</code>
+          </li>
+        </div>
+      
+        <div>
           <li class="covered" data-hits="1" data-linenumber="68">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">post &quot;/editAdmin&quot; do</code>
+            <code class="ruby">get &quot;/editAdmin&quot; do</code>
           </li>
         </div>
       
@@ -3082,7 +3082,7 @@
 
             
 
-            <code class="ruby">  id = params[&quot;id&quot;] #variable to search the id of corresponding admin profile being edited</code>
+            <code class="ruby">  id = params[&quot;id&quot;] #new variable to search the id of corresponding admin profile to be edited</code>
           </li>
         </div>
       
@@ -3104,7 +3104,7 @@
 
             
 
-            <code class="ruby">  #If admin id exists and field values are valid then saves changes and redirects to admin dashboard</code>
+            <code class="ruby"> #If id requested exists then calls the edit mentor form</code>
           </li>
         </div>
       
@@ -3115,7 +3115,7 @@
 
             
 
-            <code class="ruby">  if Admin.id_exists?(id)</code>
+            <code class="ruby">  @admins = Admin[id] if Admin.id_exists?(id)</code>
           </li>
         </div>
       
@@ -3126,18 +3126,18 @@
 
             
 
-            <code class="ruby">    @admins = Admin[id]</code>
+            <code class="ruby">  erb :admin_edit_info</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="74">
+          <li class="never" data-hits="" data-linenumber="74">
             
             
 
             
 
-            <code class="ruby">    @admins.loadEdit(params)</code>
+            <code class="ruby">end</code>
           </li>
         </div>
       
@@ -3153,13 +3153,13 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="76">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="76">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">    if @admins.valid?</code>
+            
+
+            <code class="ruby">post &quot;/editAdmin&quot; do</code>
           </li>
         </div>
       
@@ -3170,18 +3170,18 @@
 
             
 
-            <code class="ruby">      @admins.save_changes</code>
+            <code class="ruby">  id = params[&quot;id&quot;] #variable to search the id of corresponding admin profile being edited</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="78">
+          <li class="never" data-hits="" data-linenumber="78">
             
             
 
             
 
-            <code class="ruby">      redirect &quot;/AdminDashboard&quot;</code>
+            <code class="ruby">  </code>
           </li>
         </div>
       
@@ -3192,23 +3192,45 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">  #If admin id exists and field values are valid then saves changes and redirects to admin dashboard</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="80">
+          <li class="missed" data-hits="0" data-linenumber="80">
             
             
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">  if Admin.id_exists?(id)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="81">
+          <li class="missed" data-hits="0" data-linenumber="81">
+            
+            
+
+            
+
+            <code class="ruby">    @admins = Admin[id]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="82">
+            
+            
+
+            
+
+            <code class="ruby">    @admins.loadEdit(params)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="83">
             
             
 
@@ -3219,7 +3241,73 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="82">
+          <li class="missed" data-hits="0" data-linenumber="84">
+            
+            
+
+            
+
+            <code class="ruby">    if @admins.valid?</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="85">
+            
+            
+
+            
+
+            <code class="ruby">      @admins.save_changes</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="86">
+            
+            
+
+            
+
+            <code class="ruby">      redirect &quot;/AdminDashboard&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="87">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="88">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="89">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="90">
             
             
 
@@ -3230,7 +3318,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="83">
+          <li class="never" data-hits="" data-linenumber="91">
             
             
 
@@ -6948,7 +7036,7 @@
 
             
 
-            <code class="ruby">########################################################################################</code>
+            <code class="ruby">##################################SEARCH FOR A MENTOR IN A LIST OF ALL MENTORS###############################################</code>
           </li>
         </div>
       
@@ -6959,7 +7047,7 @@
 
             
 
-            <code class="ruby">get &quot;/searchID&quot; do</code>
+            <code class="ruby">get &quot;/searchForAMentor&quot; do</code>
           </li>
         </div>
       
@@ -7140,18 +7228,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="80">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="81">
+          <li class="missed" data-hits="0" data-linenumber="80">
             
             
 
@@ -7162,7 +7239,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="82">
+          <li class="never" data-hits="" data-linenumber="81">
             
             
 
@@ -7173,7 +7250,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="83">
+          <li class="never" data-hits="" data-linenumber="82">
             
             
 
@@ -7184,29 +7261,29 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="84">
+          <li class="never" data-hits="" data-linenumber="83">
             
             
 
             
 
-            <code class="ruby">############################################################################################################</code>
+            <code class="ruby">##################################SEARCH FOR A MENTEE IN A LIST OF ALL MENTEES#####################################################</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="85">
+          <li class="covered" data-hits="1" data-linenumber="84">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">get &quot;/searchIDAgain&quot; do</code>
+            <code class="ruby">get &quot;/searchForAMentee&quot; do</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="86">
+          <li class="never" data-hits="" data-linenumber="85">
             
             
 
@@ -7217,7 +7294,7 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="87">
+          <li class="missed" data-hits="0" data-linenumber="86">
             
             
 
@@ -7228,7 +7305,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="88">
+          <li class="never" data-hits="" data-linenumber="87">
             
             
 
@@ -7239,7 +7316,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="89">
+          <li class="never" data-hits="" data-linenumber="88">
             
             
 
@@ -7250,7 +7327,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="90">
+          <li class="never" data-hits="" data-linenumber="89">
             
             
 
@@ -7261,7 +7338,7 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="91">
+          <li class="missed" data-hits="0" data-linenumber="90">
             
             
 
@@ -7272,7 +7349,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="92">
+          <li class="never" data-hits="" data-linenumber="91">
             
             
 
@@ -7283,7 +7360,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="93">
+          <li class="never" data-hits="" data-linenumber="92">
             
             
 
@@ -7294,7 +7371,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="94">
+          <li class="never" data-hits="" data-linenumber="93">
             
             
 
@@ -7305,7 +7382,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="95">
+          <li class="never" data-hits="" data-linenumber="94">
             
             
 
@@ -7316,7 +7393,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="96">
+          <li class="never" data-hits="" data-linenumber="95">
             
             
 
@@ -7327,7 +7404,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="97">
+          <li class="never" data-hits="" data-linenumber="96">
             
             
 
@@ -7338,7 +7415,7 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="98">
+          <li class="missed" data-hits="0" data-linenumber="97">
             
             
 
@@ -7349,7 +7426,7 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="99">
+          <li class="missed" data-hits="0" data-linenumber="98">
             
             
 
@@ -7360,7 +7437,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="100">
+          <li class="never" data-hits="" data-linenumber="99">
             
             
 
@@ -7371,7 +7448,7 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="101">
+          <li class="missed" data-hits="0" data-linenumber="100">
             
             
 
@@ -7382,7 +7459,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="102">
+          <li class="never" data-hits="" data-linenumber="101">
             
             
 
@@ -7393,7 +7470,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="103">
+          <li class="never" data-hits="" data-linenumber="102">
             
             
 
@@ -7404,7 +7481,7 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="104">
+          <li class="missed" data-hits="0" data-linenumber="103">
             
             
 
@@ -7415,7 +7492,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="105">
+          <li class="never" data-hits="" data-linenumber="104">
             
             
 
