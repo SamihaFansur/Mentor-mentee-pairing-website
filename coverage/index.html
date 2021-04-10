@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2021-04-10T08:46:00+00:00">2021-04-10T08:46:00+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2021-04-10T09:13:54+00:00">2021-04-10T09:13:54+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="red">
-  76.72%
+  75.93%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         9.54
+         9.42
        </span>
     </span> hits/line
     )
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>451</b> relevant lines,
-    <span class="green"><b>346</b> lines covered</span> and
-    <span class="red"><b>105</b> lines missed. </span>
+    <b>457</b> relevant lines,
+    <span class="green"><b>347</b> lines covered</span> and
+    <span class="red"><b>110</b> lines missed. </span>
     (<span class="red">
-  76.72%
+  75.93%
 </span>
 )
   </div>
@@ -94,12 +94,12 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#56f2f87d2ac83442ec13b7c59dad336ad87d2963" class="src_link" title="controllers/applications.rb">controllers/applications.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">95.83 %</td>
-            <td class="cell--number">46</td>
+            <td class="red strong cell--number t-file__coverage">80.00 %</td>
+            <td class="cell--number">59</td>
+            <td class="cell--number">30</td>
             <td class="cell--number">24</td>
-            <td class="cell--number">23</td>
-            <td class="cell--number">1</td>
-            <td class="cell--number">1.54</td>
+            <td class="cell--number">6</td>
+            <td class="cell--number">1.27</td>
             
           </tr>
         
@@ -1319,8 +1319,8 @@
   <div class="header">
     <h3>controllers/applications.rb</h3>
     <h4>
-      <span class="green">
-  95.83%
+      <span class="red">
+  80.0%
 </span>
 
       lines covered
@@ -1329,9 +1329,9 @@
     
 
     <div class="t-line-summary">
-      <b>24</b> relevant lines.
-      <span class="green"><b>23</b> lines covered</span> and
-      <span class="red"><b>1</b> lines missed.</span>
+      <b>30</b> relevant lines.
+      <span class="green"><b>24</b> lines covered</span> and
+      <span class="red"><b>6</b> lines missed.</span>
     </div>
 
     
@@ -1838,6 +1838,149 @@
       
         <div>
           <li class="never" data-hits="" data-linenumber="46">
+            
+            
+
+            
+
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="47">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="48">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="49">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">get &quot;/myMenteeA&quot; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="50">
+            
+            
+
+            
+
+            <code class="ruby">  #List to store the mentee matched to a mentor</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="51">
+            
+            
+
+            
+
+            <code class="ruby"> @menteeMatchedList = []</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="52">
+            
+            
+
+            
+
+            <code class="ruby">  #Finds the ID of the mentee that is equal to the value stored in the menteeMatch column in the mentors table</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="53">
+            
+            
+
+            
+
+            <code class="ruby">  MenteeIDList = Mentee.where(id: $mentors.menteeMatch)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="54">
+            
+            
+
+            
+
+            <code class="ruby">  MenteeIDList.each do |id|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="55">
+            
+            
+
+            
+
+            <code class="ruby">    @menteeMatchedList.push(Mentee.first(id: id.id)) #Stores the mentor record found in the list to be displayed</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="56">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="57">
+            
+            
+
+            
+
+            <code class="ruby">  </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="58">
+            
+            
+
+            
+
+            <code class="ruby">  erb :myMenteeA</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="59">
             
             
 

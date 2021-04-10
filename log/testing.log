@@ -13186,3 +13186,498 @@ I, [2021-04-10T08:59:38.344888 #612]  INFO -- : (0.000087s) SELECT * FROM `mente
 I, [2021-04-10T08:59:38.344975 #612]  INFO -- : (0.000466s) SELECT * FROM `mentees` WHERE (`id` = 1)
 I, [2021-04-10T08:59:42.657118 #612]  INFO -- : (0.000100s) SELECT * FROM `mentees` WHERE (`id` = 1) LIMIT 1
 I, [2021-04-10T08:59:42.657201 #612]  INFO -- : (0.001474s) SELECT * FROM `mentees` WHERE (`id` = 1)
+I, [2021-04-10T09:11:14.250722 #683]  INFO -- : (0.000166s) PRAGMA foreign_keys = 1
+I, [2021-04-10T09:11:14.250803 #683]  INFO -- : (0.000013s) PRAGMA case_sensitive_like = 1
+I, [2021-04-10T09:11:14.251508 #683]  INFO -- : (0.000052s) SELECT sqlite_version()
+I, [2021-04-10T09:11:14.251740 #683]  INFO -- : (0.000120s) PRAGMA table_info('admins')
+I, [2021-04-10T09:11:14.252913 #683]  INFO -- : (0.000123s) PRAGMA table_info('mentees')
+I, [2021-04-10T09:11:14.254080 #683]  INFO -- : (0.000123s) PRAGMA table_info('mentors')
+I, [2021-04-10T09:11:14.255083 #683]  INFO -- : (0.000099s) PRAGMA table_info('requests')
+I, [2021-04-10T09:11:26.385936 #683]  INFO -- : (0.000296s) SELECT * FROM `mentors` WHERE (`username` = '2') LIMIT 1
+I, [2021-04-10T09:11:46.696238 #705]  INFO -- : (0.000290s) PRAGMA foreign_keys = 1
+I, [2021-04-10T09:11:46.696456 #705]  INFO -- : (0.000024s) PRAGMA case_sensitive_like = 1
+I, [2021-04-10T09:11:46.697600 #705]  INFO -- : (0.000084s) SELECT sqlite_version()
+I, [2021-04-10T09:11:46.697995 #705]  INFO -- : (0.000223s) PRAGMA table_info('admins')
+I, [2021-04-10T09:11:46.699998 #705]  INFO -- : (0.000230s) PRAGMA table_info('mentees')
+I, [2021-04-10T09:11:46.702188 #705]  INFO -- : (0.000241s) PRAGMA table_info('mentors')
+I, [2021-04-10T09:11:46.704018 #705]  INFO -- : (0.000171s) PRAGMA table_info('requests')
+I, [2021-04-10T09:11:49.660345 #705]  INFO -- : (0.000203s) SELECT * FROM `mentors` WHERE (`username` = '2') LIMIT 1
+I, [2021-04-10T09:11:51.615156 #705]  INFO -- : (0.000077s) SELECT * FROM `mentees` WHERE (`id` = 1) LIMIT 1
+I, [2021-04-10T09:11:51.615242 #705]  INFO -- : (0.000412s) SELECT * FROM `mentees` WHERE (`id` = 1)
+I, [2021-04-10T09:11:56.135404 #705]  INFO -- : (0.000074s) SELECT * FROM `mentees` WHERE (`id` = 1) LIMIT 1
+I, [2021-04-10T09:11:56.135490 #705]  INFO -- : (0.000410s) SELECT * FROM `mentees` WHERE (`id` = 1)
+I, [2021-04-10T09:12:08.040878 #705]  INFO -- : (0.000172s) SELECT * FROM `mentees` WHERE (`username` = '1') LIMIT 1
+I, [2021-04-10T09:12:08.145521 #705]  INFO -- : (0.000150s) SELECT * FROM `mentees` WHERE (`username` = '1') LIMIT 1
+I, [2021-04-10T09:12:46.489150 #705]  INFO -- : (0.000202s) SELECT * FROM `mentees` WHERE (`username` = '1') LIMIT 1
+I, [2021-04-10T09:12:48.389245 #705]  INFO -- : (0.000082s) SELECT * FROM `mentees` WHERE (`id` = 1) LIMIT 1
+I, [2021-04-10T09:12:48.389332 #705]  INFO -- : (0.000388s) SELECT * FROM `mentees` WHERE (`id` = 1)
+I, [2021-04-10T09:13:39.210136 #726]  INFO -- : (0.000178s) PRAGMA foreign_keys = 1
+I, [2021-04-10T09:13:39.210227 #726]  INFO -- : (0.000015s) PRAGMA case_sensitive_like = 1
+I, [2021-04-10T09:13:39.210983 #726]  INFO -- : (0.000058s) SELECT sqlite_version()
+I, [2021-04-10T09:13:39.211272 #726]  INFO -- : (0.000162s) PRAGMA table_info('admins')
+I, [2021-04-10T09:13:39.214437 #726]  INFO -- : (0.000184s) PRAGMA table_info('mentees')
+I, [2021-04-10T09:13:39.215716 #726]  INFO -- : (0.000180s) PRAGMA table_info('mentors')
+I, [2021-04-10T09:13:39.216905 #726]  INFO -- : (0.000109s) PRAGMA table_info('requests')
+I, [2021-04-10T09:13:39.703861 #726]  INFO -- : (0.098637s) DELETE FROM `mentees` WHERE (1 = 1)
+I, [2021-04-10T09:13:39.796610 #726]  INFO -- : (0.092526s) DELETE FROM `mentors` WHERE (1 = 1)
+I, [2021-04-10T09:13:39.839837 #726]  INFO -- : (0.000084s) DELETE FROM `mentees` WHERE (1 = 1)
+I, [2021-04-10T09:13:39.840029 #726]  INFO -- : (0.000046s) DELETE FROM `mentors` WHERE (1 = 1)
+I, [2021-04-10T09:13:39.840599 #726]  INFO -- : (0.000056s) DELETE FROM `mentees` WHERE (1 = 1)
+I, [2021-04-10T09:13:39.840743 #726]  INFO -- : (0.000042s) DELETE FROM `mentors` WHERE (1 = 1)
+I, [2021-04-10T09:13:39.841497 #726]  INFO -- : (0.000055s) DELETE FROM `mentees` WHERE (1 = 1)
+I, [2021-04-10T09:13:39.841639 #726]  INFO -- : (0.000043s) DELETE FROM `mentors` WHERE (1 = 1)
+I, [2021-04-10T09:13:39.843497 #726]  INFO -- : (0.000054s) DELETE FROM `mentees` WHERE (1 = 1)
+I, [2021-04-10T09:13:39.843637 #726]  INFO -- : (0.000041s) DELETE FROM `mentors` WHERE (1 = 1)
+I, [2021-04-10T09:13:39.844612 #726]  INFO -- : (0.000054s) DELETE FROM `mentees` WHERE (1 = 1)
+I, [2021-04-10T09:13:39.844752 #726]  INFO -- : (0.000041s) DELETE FROM `mentors` WHERE (1 = 1)
+I, [2021-04-10T09:13:39.927255 #726]  INFO -- : (0.000124s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:39.927524 #726]  INFO -- : (0.000091s) SELECT * FROM `mentees` WHERE (`email` = 'samiha.fansur.2002@gmail.com') LIMIT 1
+I, [2021-04-10T09:13:39.927656 #726]  INFO -- : (0.000018s) BEGIN
+I, [2021-04-10T09:13:39.928005 #726]  INFO -- : (0.000144s) INSERT INTO `mentees` (`fname`, `lname`, `email`, `phoneNum`, `courseName`, `faculty`, `cyear`, `username`, `password`) VALUES ('George', 'Test', 'samiha.fansur.2002@gmail.com', '+44 7721851137', 'Accounting and Financial Management (BA)', '', 1, '123', '123')
+I, [2021-04-10T09:13:39.928220 #726]  INFO -- : (0.000102s) SELECT * FROM `mentees` WHERE `id` = 1
+I, [2021-04-10T09:13:40.015226 #726]  INFO -- : (0.086920s) COMMIT
+I, [2021-04-10T09:13:40.332634 #726]  INFO -- : (0.000166s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:40.333529 #726]  INFO -- : (0.000127s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:40.334923 #726]  INFO -- : (0.000116s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:40.428773 #726]  INFO -- : (0.091333s) DELETE FROM `mentees` WHERE (1 = 1)
+I, [2021-04-10T09:13:40.428953 #726]  INFO -- : (0.000056s) DELETE FROM `mentors` WHERE (1 = 1)
+I, [2021-04-10T09:13:40.489761 #726]  INFO -- : (0.000103s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:40.489981 #726]  INFO -- : (0.000083s) SELECT * FROM `mentors` WHERE (`email` = 'samiha.fansur.2002@gmail.com') LIMIT 1
+I, [2021-04-10T09:13:40.490093 #726]  INFO -- : (0.000016s) BEGIN
+I, [2021-04-10T09:13:40.490359 #726]  INFO -- : (0.000119s) INSERT INTO `mentors` (`fname`, `lname`, `email`, `phoneNum`, `username`, `password`, `jobTitle`, `courseName`) VALUES ('Sam', 'Mentor', 'samiha.fansur.2002@gmail.com', '+44 7721851137', '1234', '1234', 'Actor', 'Accounting and Financial Management (BA)')
+I, [2021-04-10T09:13:40.490544 #726]  INFO -- : (0.000086s) SELECT * FROM `mentors` WHERE `id` = 1
+I, [2021-04-10T09:13:40.582998 #726]  INFO -- : (0.092395s) COMMIT
+I, [2021-04-10T09:13:40.798189 #726]  INFO -- : (0.000099s) SELECT * FROM `mentees` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:40.798495 #726]  INFO -- : (0.000109s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:40.799307 #726]  INFO -- : (0.000110s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:40.800752 #726]  INFO -- : (0.000131s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:40.806900 #726]  INFO -- : (0.000070s) DELETE FROM `mentees` WHERE (1 = 1)
+I, [2021-04-10T09:13:40.903411 #726]  INFO -- : (0.096389s) DELETE FROM `mentors` WHERE (1 = 1)
+I, [2021-04-10T09:13:40.930264 #726]  INFO -- : (0.000171s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:40.930555 #726]  INFO -- : (0.000138s) SELECT * FROM `mentors` WHERE (`email` = 'samiha.fansur.2002@gmail.com') LIMIT 1
+I, [2021-04-10T09:13:40.930720 #726]  INFO -- : (0.000024s) BEGIN
+I, [2021-04-10T09:13:40.931167 #726]  INFO -- : (0.000197s) INSERT INTO `mentors` (`fname`, `lname`, `email`, `phoneNum`, `username`, `password`, `jobTitle`, `courseName`) VALUES ('Sam', 'Mentor', 'samiha.fansur.2002@gmail.com', '+44 7721851137', '1234', '1234', 'Actor', 'Accounting and Financial Management (BA)')
+I, [2021-04-10T09:13:40.931510 #726]  INFO -- : (0.000157s) SELECT * FROM `mentors` WHERE `id` = 1
+I, [2021-04-10T09:13:41.023148 #726]  INFO -- : (0.091550s) COMMIT
+I, [2021-04-10T09:13:41.231418 #726]  INFO -- : (0.000110s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:41.231617 #726]  INFO -- : (0.000086s) SELECT * FROM `mentors` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:41.231856 #726]  INFO -- : (0.000082s) SELECT * FROM `admins` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:41.233801 #726]  INFO -- : (0.000059s) DELETE FROM `mentees` WHERE (1 = 1)
+I, [2021-04-10T09:13:41.326811 #726]  INFO -- : (0.092894s) DELETE FROM `mentors` WHERE (1 = 1)
+I, [2021-04-10T09:13:41.342254 #726]  INFO -- : (0.000106s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:41.342433 #726]  INFO -- : (0.000082s) SELECT * FROM `mentees` WHERE (`email` = 'samiha.fansur.2002@gmail.com') LIMIT 1
+I, [2021-04-10T09:13:41.342561 #726]  INFO -- : (0.000015s) BEGIN
+I, [2021-04-10T09:13:41.342818 #726]  INFO -- : (0.000112s) INSERT INTO `mentees` (`fname`, `lname`, `email`, `phoneNum`, `courseName`, `faculty`, `cyear`, `username`, `password`) VALUES ('George', 'Test', 'samiha.fansur.2002@gmail.com', '+44 7721851137', 'Accounting and Financial Management (BA)', '', 1, '123', '123')
+I, [2021-04-10T09:13:41.343010 #726]  INFO -- : (0.000088s) SELECT * FROM `mentees` WHERE `id` = 1
+I, [2021-04-10T09:13:41.426849 #726]  INFO -- : (0.083783s) COMMIT
+I, [2021-04-10T09:13:41.645818 #726]  INFO -- : (0.000106s) SELECT * FROM `mentees` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:41.646015 #726]  INFO -- : (0.000087s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:41.646229 #726]  INFO -- : (0.000078s) SELECT * FROM `admins` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:41.738070 #726]  INFO -- : (0.089983s) DELETE FROM `mentees` WHERE (1 = 1)
+I, [2021-04-10T09:13:41.738253 #726]  INFO -- : (0.000057s) DELETE FROM `mentors` WHERE (1 = 1)
+I, [2021-04-10T09:13:41.753623 #726]  INFO -- : (0.000099s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:41.753824 #726]  INFO -- : (0.000088s) SELECT * FROM `mentees` WHERE (`email` = 'samiha.fansur.2002@gmail.com') LIMIT 1
+I, [2021-04-10T09:13:41.753935 #726]  INFO -- : (0.000016s) BEGIN
+I, [2021-04-10T09:13:41.754221 #726]  INFO -- : (0.000136s) INSERT INTO `mentees` (`fname`, `lname`, `email`, `phoneNum`, `courseName`, `faculty`, `cyear`, `username`, `password`) VALUES ('George', 'Test', 'samiha.fansur.2002@gmail.com', '+44 7721851137', 'Accounting and Financial Management (BA)', '', 1, '123', '123')
+I, [2021-04-10T09:13:41.754423 #726]  INFO -- : (0.000091s) SELECT * FROM `mentees` WHERE `id` = 1
+I, [2021-04-10T09:13:41.845614 #726]  INFO -- : (0.091127s) COMMIT
+I, [2021-04-10T09:13:42.086367 #726]  INFO -- : (0.000228s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:42.089368 #726]  INFO -- : (0.000208s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:42.093161 #726]  INFO -- : (0.000200s) SELECT * FROM `mentees` WHERE `id` = '1'
+I, [2021-04-10T09:13:42.093444 #726]  INFO -- : (0.000171s) SELECT * FROM `mentees` WHERE `id` = '1'
+I, [2021-04-10T09:13:42.106607 #726]  INFO -- : (0.000826s) SELECT * FROM `mentees` WHERE `id` = '1'
+I, [2021-04-10T09:13:42.106779 #726]  INFO -- : (0.000098s) SELECT * FROM `mentees` WHERE `id` = '1'
+I, [2021-04-10T09:13:42.200564 #726]  INFO -- : (0.093713s) DELETE FROM `mentees` WHERE `id` = 1
+I, [2021-04-10T09:13:42.203757 #726]  INFO -- : (0.000090s) SELECT * FROM `mentees` WHERE `id` = '1'
+I, [2021-04-10T09:13:42.237758 #726]  INFO -- : (0.000102s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:42.237971 #726]  INFO -- : (0.000092s) SELECT * FROM `mentors` WHERE (`email` = 'samiha.fansur.2002@gmail.com') LIMIT 1
+I, [2021-04-10T09:13:42.238088 #726]  INFO -- : (0.000016s) BEGIN
+I, [2021-04-10T09:13:42.238377 #726]  INFO -- : (0.000135s) INSERT INTO `mentors` (`fname`, `lname`, `email`, `phoneNum`, `username`, `password`, `jobTitle`, `courseName`) VALUES ('Sam', 'Mentor', 'samiha.fansur.2002@gmail.com', '+44 7721851137', '1234', '1234', 'Actor', 'Accounting and Financial Management (BA)')
+I, [2021-04-10T09:13:42.238580 #726]  INFO -- : (0.000093s) SELECT * FROM `mentors` WHERE `id` = 1
+I, [2021-04-10T09:13:42.338091 #726]  INFO -- : (0.099443s) COMMIT
+I, [2021-04-10T09:13:42.543096 #726]  INFO -- : (0.000104s) SELECT * FROM `mentees` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:42.543332 #726]  INFO -- : (0.000112s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:42.544159 #726]  INFO -- : (0.000112s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:42.545090 #726]  INFO -- : (0.000110s) SELECT * FROM `mentors` WHERE `id` = '1'
+I, [2021-04-10T09:13:42.545265 #726]  INFO -- : (0.000099s) SELECT * FROM `mentors` WHERE `id` = '1'
+I, [2021-04-10T09:13:42.553185 #726]  INFO -- : (0.000109s) SELECT * FROM `mentors` WHERE `id` = '1'
+I, [2021-04-10T09:13:42.553359 #726]  INFO -- : (0.000096s) SELECT * FROM `mentors` WHERE `id` = '1'
+I, [2021-04-10T09:13:42.652090 #726]  INFO -- : (0.098653s) DELETE FROM `mentors` WHERE `id` = 1
+I, [2021-04-10T09:13:42.653752 #726]  INFO -- : (0.000094s) SELECT * FROM `mentors` WHERE `id` = '1'
+I, [2021-04-10T09:13:42.655177 #726]  INFO -- : (0.000093s) SELECT * FROM `mentees` WHERE `id` = '1000000'
+I, [2021-04-10T09:13:42.670552 #726]  INFO -- : (0.000099s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:42.670729 #726]  INFO -- : (0.000080s) SELECT * FROM `mentees` WHERE (`email` = 'samiha.fansur.2002@gmail.com') LIMIT 1
+I, [2021-04-10T09:13:42.670834 #726]  INFO -- : (0.000014s) BEGIN
+I, [2021-04-10T09:13:42.671091 #726]  INFO -- : (0.000118s) INSERT INTO `mentees` (`fname`, `lname`, `email`, `phoneNum`, `courseName`, `faculty`, `cyear`, `username`, `password`) VALUES ('George', 'Test', 'samiha.fansur.2002@gmail.com', '+44 7721851137', 'Accounting and Financial Management (BA)', '', 1, '123', '123')
+I, [2021-04-10T09:13:42.671306 #726]  INFO -- : (0.000112s) SELECT * FROM `mentees` WHERE `id` = 1
+I, [2021-04-10T09:13:42.765376 #726]  INFO -- : (0.094011s) COMMIT
+I, [2021-04-10T09:13:42.987234 #726]  INFO -- : (0.000142s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:42.992979 #726]  INFO -- : (0.000121s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:42.993896 #726]  INFO -- : (0.000112s) SELECT * FROM `mentees` WHERE `id` = '1'
+I, [2021-04-10T09:13:42.994056 #726]  INFO -- : (0.000096s) SELECT * FROM `mentees` WHERE `id` = '1'
+I, [2021-04-10T09:13:42.999313 #726]  INFO -- : (0.000112s) SELECT * FROM `mentees` WHERE `id` = '1'
+I, [2021-04-10T09:13:42.999476 #726]  INFO -- : (0.000096s) SELECT * FROM `mentees` WHERE `id` = '1'
+I, [2021-04-10T09:13:43.000288 #726]  INFO -- : (0.000143s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:43.001182 #726]  INFO -- : (0.000112s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:43.092549 #726]  INFO -- : (0.088818s) DELETE FROM `mentees` WHERE (1 = 1)
+I, [2021-04-10T09:13:43.092728 #726]  INFO -- : (0.000054s) DELETE FROM `mentors` WHERE (1 = 1)
+I, [2021-04-10T09:13:43.107721 #726]  INFO -- : (0.000094s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:43.107889 #726]  INFO -- : (0.000077s) SELECT * FROM `mentees` WHERE (`email` = 'samiha.fansur.2002@gmail.com') LIMIT 1
+I, [2021-04-10T09:13:43.107989 #726]  INFO -- : (0.000014s) BEGIN
+I, [2021-04-10T09:13:43.108239 #726]  INFO -- : (0.000113s) INSERT INTO `mentees` (`fname`, `lname`, `email`, `phoneNum`, `courseName`, `faculty`, `cyear`, `username`, `password`) VALUES ('George', 'Test', 'samiha.fansur.2002@gmail.com', '+44 7721851137', 'Accounting and Financial Management (BA)', '', 1, '123', '123')
+I, [2021-04-10T09:13:43.108446 #726]  INFO -- : (0.000085s) SELECT * FROM `mentees` WHERE `id` = 1
+I, [2021-04-10T09:13:43.199663 #726]  INFO -- : (0.091158s) COMMIT
+I, [2021-04-10T09:13:43.422594 #726]  INFO -- : (0.000227s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:43.424052 #726]  INFO -- : (0.000200s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:43.425680 #726]  INFO -- : (0.000196s) SELECT * FROM `mentees` WHERE `id` = '1'
+I, [2021-04-10T09:13:43.425949 #726]  INFO -- : (0.000163s) SELECT * FROM `mentees` WHERE `id` = '1'
+I, [2021-04-10T09:13:43.438581 #726]  INFO -- : (0.000193s) SELECT * FROM `mentees` WHERE `id` = '1'
+I, [2021-04-10T09:13:43.438855 #726]  INFO -- : (0.000165s) SELECT * FROM `mentees` WHERE `id` = '1'
+I, [2021-04-10T09:13:43.439142 #726]  INFO -- : (0.000024s) BEGIN
+I, [2021-04-10T09:13:43.439592 #726]  INFO -- : (0.000201s) UPDATE `mentees` SET `fname` = 'New' WHERE (`id` = 1)
+I, [2021-04-10T09:13:43.533222 #726]  INFO -- : (0.093543s) COMMIT
+I, [2021-04-10T09:13:43.534004 #726]  INFO -- : (0.000118s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:43.534907 #726]  INFO -- : (0.000110s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:43.626816 #726]  INFO -- : (0.089468s) DELETE FROM `mentees` WHERE (1 = 1)
+I, [2021-04-10T09:13:43.626992 #726]  INFO -- : (0.000054s) DELETE FROM `mentors` WHERE (1 = 1)
+I, [2021-04-10T09:13:43.646964 #726]  INFO -- : (0.000102s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:43.647140 #726]  INFO -- : (0.000083s) SELECT * FROM `mentees` WHERE (`email` = 'samiha.fansur.2002@gmail.com') LIMIT 1
+I, [2021-04-10T09:13:43.647239 #726]  INFO -- : (0.000015s) BEGIN
+I, [2021-04-10T09:13:43.647489 #726]  INFO -- : (0.000113s) INSERT INTO `mentees` (`fname`, `lname`, `email`, `phoneNum`, `courseName`, `faculty`, `cyear`, `username`, `password`) VALUES ('George', 'Test', 'samiha.fansur.2002@gmail.com', '+44 7721851137', 'Accounting and Financial Management (BA)', '', 1, '123', '123')
+I, [2021-04-10T09:13:43.647672 #726]  INFO -- : (0.000086s) SELECT * FROM `mentees` WHERE `id` = 1
+I, [2021-04-10T09:13:43.740505 #726]  INFO -- : (0.092778s) COMMIT
+I, [2021-04-10T09:13:43.967364 #726]  INFO -- : (0.000117s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:43.968161 #726]  INFO -- : (0.000110s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:43.969055 #726]  INFO -- : (0.000110s) SELECT * FROM `mentees` WHERE `id` = '1'
+I, [2021-04-10T09:13:43.969213 #726]  INFO -- : (0.000091s) SELECT * FROM `mentees` WHERE `id` = '1'
+I, [2021-04-10T09:13:43.975409 #726]  INFO -- : (0.000107s) SELECT * FROM `mentees` WHERE `id` = '1'
+I, [2021-04-10T09:13:43.975565 #726]  INFO -- : (0.000091s) SELECT * FROM `mentees` WHERE `id` = '1'
+I, [2021-04-10T09:13:43.975728 #726]  INFO -- : (0.000014s) BEGIN
+I, [2021-04-10T09:13:43.975976 #726]  INFO -- : (0.000113s) UPDATE `mentees` SET `fname` = '' WHERE (`id` = 1)
+I, [2021-04-10T09:13:44.067798 #726]  INFO -- : (0.091769s) COMMIT
+I, [2021-04-10T09:13:44.068558 #726]  INFO -- : (0.000113s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:44.069439 #726]  INFO -- : (0.000109s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:44.166442 #726]  INFO -- : (0.094583s) DELETE FROM `mentees` WHERE (1 = 1)
+I, [2021-04-10T09:13:44.166616 #726]  INFO -- : (0.000053s) DELETE FROM `mentors` WHERE (1 = 1)
+I, [2021-04-10T09:13:44.188153 #726]  INFO -- : (0.000105s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:44.188361 #726]  INFO -- : (0.000089s) SELECT * FROM `mentors` WHERE (`email` = 'samiha.fansur.2002@gmail.com') LIMIT 1
+I, [2021-04-10T09:13:44.188485 #726]  INFO -- : (0.000016s) BEGIN
+I, [2021-04-10T09:13:44.188760 #726]  INFO -- : (0.000124s) INSERT INTO `mentors` (`fname`, `lname`, `email`, `phoneNum`, `username`, `password`, `jobTitle`, `courseName`) VALUES ('Sam', 'Mentor', 'samiha.fansur.2002@gmail.com', '+44 7721851137', '1234', '1234', 'Actor', 'Accounting and Financial Management (BA)')
+I, [2021-04-10T09:13:44.188958 #726]  INFO -- : (0.000089s) SELECT * FROM `mentors` WHERE `id` = 1
+I, [2021-04-10T09:13:44.286908 #726]  INFO -- : (0.097885s) COMMIT
+I, [2021-04-10T09:13:44.513433 #726]  INFO -- : (0.000111s) SELECT * FROM `mentees` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:44.513695 #726]  INFO -- : (0.000117s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:44.514533 #726]  INFO -- : (0.000114s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:44.515446 #726]  INFO -- : (0.000110s) SELECT * FROM `mentors` WHERE `id` = '1'
+I, [2021-04-10T09:13:44.515623 #726]  INFO -- : (0.000104s) SELECT * FROM `mentors` WHERE `id` = '1'
+I, [2021-04-10T09:13:44.523616 #726]  INFO -- : (0.000108s) SELECT * FROM `mentors` WHERE `id` = '1'
+I, [2021-04-10T09:13:44.523791 #726]  INFO -- : (0.000104s) SELECT * FROM `mentors` WHERE `id` = '1'
+I, [2021-04-10T09:13:44.524597 #726]  INFO -- : (0.000110s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:44.525479 #726]  INFO -- : (0.000109s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:44.527824 #726]  INFO -- : (0.000058s) DELETE FROM `mentees` WHERE (1 = 1)
+I, [2021-04-10T09:13:44.626385 #726]  INFO -- : (0.098436s) DELETE FROM `mentors` WHERE (1 = 1)
+I, [2021-04-10T09:13:44.648161 #726]  INFO -- : (0.000096s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:44.648351 #726]  INFO -- : (0.000083s) SELECT * FROM `mentors` WHERE (`email` = 'samiha.fansur.2002@gmail.com') LIMIT 1
+I, [2021-04-10T09:13:44.648449 #726]  INFO -- : (0.000014s) BEGIN
+I, [2021-04-10T09:13:44.648698 #726]  INFO -- : (0.000115s) INSERT INTO `mentors` (`fname`, `lname`, `email`, `phoneNum`, `username`, `password`, `jobTitle`, `courseName`) VALUES ('Sam', 'Mentor', 'samiha.fansur.2002@gmail.com', '+44 7721851137', '1234', '1234', 'Actor', 'Accounting and Financial Management (BA)')
+I, [2021-04-10T09:13:44.648875 #726]  INFO -- : (0.000083s) SELECT * FROM `mentors` WHERE `id` = 1
+I, [2021-04-10T09:13:44.750520 #726]  INFO -- : (0.101590s) COMMIT
+I, [2021-04-10T09:13:44.981270 #726]  INFO -- : (0.000105s) SELECT * FROM `mentees` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:44.981506 #726]  INFO -- : (0.000107s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:44.982325 #726]  INFO -- : (0.000112s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:44.983218 #726]  INFO -- : (0.000107s) SELECT * FROM `mentors` WHERE `id` = '1'
+I, [2021-04-10T09:13:44.983384 #726]  INFO -- : (0.000102s) SELECT * FROM `mentors` WHERE `id` = '1'
+I, [2021-04-10T09:13:44.996946 #726]  INFO -- : (0.000110s) SELECT * FROM `mentors` WHERE `id` = '1'
+I, [2021-04-10T09:13:44.997106 #726]  INFO -- : (0.000093s) SELECT * FROM `mentors` WHERE `id` = '1'
+I, [2021-04-10T09:13:44.997265 #726]  INFO -- : (0.000014s) BEGIN
+I, [2021-04-10T09:13:44.997518 #726]  INFO -- : (0.000115s) UPDATE `mentors` SET `fname` = 'New' WHERE (`id` = 1)
+I, [2021-04-10T09:13:45.095646 #726]  INFO -- : (0.098066s) COMMIT
+I, [2021-04-10T09:13:45.096430 #726]  INFO -- : (0.000117s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:45.097341 #726]  INFO -- : (0.000113s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:45.099783 #726]  INFO -- : (0.000062s) DELETE FROM `mentees` WHERE (1 = 1)
+I, [2021-04-10T09:13:45.190450 #726]  INFO -- : (0.090552s) DELETE FROM `mentors` WHERE (1 = 1)
+I, [2021-04-10T09:13:45.213370 #726]  INFO -- : (0.000100s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:45.213562 #726]  INFO -- : (0.000084s) SELECT * FROM `mentors` WHERE (`email` = 'samiha.fansur.2002@gmail.com') LIMIT 1
+I, [2021-04-10T09:13:45.213659 #726]  INFO -- : (0.000014s) BEGIN
+I, [2021-04-10T09:13:45.213905 #726]  INFO -- : (0.000112s) INSERT INTO `mentors` (`fname`, `lname`, `email`, `phoneNum`, `username`, `password`, `jobTitle`, `courseName`) VALUES ('Sam', 'Mentor', 'samiha.fansur.2002@gmail.com', '+44 7721851137', '1234', '1234', 'Actor', 'Accounting and Financial Management (BA)')
+I, [2021-04-10T09:13:45.214087 #726]  INFO -- : (0.000086s) SELECT * FROM `mentors` WHERE `id` = 1
+I, [2021-04-10T09:13:45.303386 #726]  INFO -- : (0.089245s) COMMIT
+I, [2021-04-10T09:13:45.520404 #726]  INFO -- : (0.000117s) SELECT * FROM `mentees` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:45.520660 #726]  INFO -- : (0.000114s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:45.521538 #726]  INFO -- : (0.000115s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:45.522497 #726]  INFO -- : (0.000124s) SELECT * FROM `mentors` WHERE `id` = '1'
+I, [2021-04-10T09:13:45.522669 #726]  INFO -- : (0.000097s) SELECT * FROM `mentors` WHERE `id` = '1'
+I, [2021-04-10T09:13:45.535200 #726]  INFO -- : (0.000134s) SELECT * FROM `mentors` WHERE `id` = '1'
+I, [2021-04-10T09:13:45.535415 #726]  INFO -- : (0.000119s) SELECT * FROM `mentors` WHERE `id` = '1'
+I, [2021-04-10T09:13:45.535648 #726]  INFO -- : (0.000020s) BEGIN
+I, [2021-04-10T09:13:45.535956 #726]  INFO -- : (0.000140s) UPDATE `mentors` SET `fname` = '' WHERE (`id` = 1)
+I, [2021-04-10T09:13:45.637423 #726]  INFO -- : (0.101402s) COMMIT
+I, [2021-04-10T09:13:45.638286 #726]  INFO -- : (0.000123s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:45.639332 #726]  INFO -- : (0.000127s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:45.641982 #726]  INFO -- : (0.000062s) DELETE FROM `mentees` WHERE (1 = 1)
+I, [2021-04-10T09:13:45.740743 #726]  INFO -- : (0.098638s) DELETE FROM `mentors` WHERE (1 = 1)
+I, [2021-04-10T09:13:45.869465 #726]  INFO -- : (0.000124s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:45.869674 #726]  INFO -- : (0.000095s) SELECT * FROM `mentors` WHERE (`email` = 'samiha.fansur.2002@gmail.com') LIMIT 1
+I, [2021-04-10T09:13:45.869782 #726]  INFO -- : (0.000015s) BEGIN
+I, [2021-04-10T09:13:45.870043 #726]  INFO -- : (0.000120s) INSERT INTO `mentors` (`fname`, `lname`, `email`, `phoneNum`, `username`, `password`, `jobTitle`, `courseName`) VALUES ('Sam', 'Mentor', 'samiha.fansur.2002@gmail.com', '+44 7721851137', '1234', '1234', 'Actor', 'Accounting and Financial Management (BA)')
+I, [2021-04-10T09:13:45.870236 #726]  INFO -- : (0.000091s) SELECT * FROM `mentors` WHERE `id` = 1
+I, [2021-04-10T09:13:45.979767 #726]  INFO -- : (0.109472s) COMMIT
+I, [2021-04-10T09:13:46.286491 #726]  INFO -- : (0.000121s) SELECT * FROM `mentees` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:46.286737 #726]  INFO -- : (0.000114s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:46.287572 #726]  INFO -- : (0.000115s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:46.288493 #726]  INFO -- : (0.000111s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:46.321804 #726]  INFO -- : (0.000123s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:46.322009 #726]  INFO -- : (0.000104s) SELECT * FROM `mentors` WHERE (`email` = 'samiha.fansur.2002@gmail.com') LIMIT 1
+I, [2021-04-10T09:13:46.326820 #726]  INFO -- : (0.000098s) SELECT * FROM `mentees` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:46.327027 #726]  INFO -- : (0.000100s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:46.327827 #726]  INFO -- : (0.000112s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:46.328746 #726]  INFO -- : (0.000111s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:46.330490 #726]  INFO -- : (0.000110s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:46.354506 #726]  INFO -- : (0.000113s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:46.354697 #726]  INFO -- : (0.000096s) SELECT * FROM `mentors` WHERE (`email` = 'samiha.fansur.2002@gmail.com') LIMIT 1
+I, [2021-04-10T09:13:46.359316 #726]  INFO -- : (0.000094s) SELECT * FROM `mentees` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:46.359519 #726]  INFO -- : (0.000099s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:46.360327 #726]  INFO -- : (0.000136s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:46.361196 #726]  INFO -- : (0.000108s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:46.362993 #726]  INFO -- : (0.000075s) SELECT * FROM `requests` WHERE (`mentorID` = 1)
+I, [2021-04-10T09:13:46.390275 #726]  INFO -- : (0.000114s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:46.390471 #726]  INFO -- : (0.000098s) SELECT * FROM `mentors` WHERE (`email` = 'samiha.fansur.2002@gmail.com') LIMIT 1
+I, [2021-04-10T09:13:46.395131 #726]  INFO -- : (0.000094s) SELECT * FROM `mentees` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:46.395334 #726]  INFO -- : (0.000099s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:46.396131 #726]  INFO -- : (0.000109s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:46.397022 #726]  INFO -- : (0.000109s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:46.399765 #726]  INFO -- : (0.000650s) SELECT * FROM `mentors` WHERE `id` = '1'
+I, [2021-04-10T09:13:46.399941 #726]  INFO -- : (0.000103s) SELECT * FROM `mentors` WHERE `id` = '1'
+I, [2021-04-10T09:13:46.466610 #726]  INFO -- : (0.000120s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:46.466802 #726]  INFO -- : (0.000095s) SELECT * FROM `mentors` WHERE (`email` = 'samiha.fansur.2002@gmail.com') LIMIT 1
+I, [2021-04-10T09:13:46.471424 #726]  INFO -- : (0.000098s) SELECT * FROM `mentees` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:46.471631 #726]  INFO -- : (0.000102s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:46.475557 #726]  INFO -- : (0.000225s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:46.476503 #726]  INFO -- : (0.000112s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:46.478249 #726]  INFO -- : (0.000093s) SELECT * FROM `mentees` WHERE (`id` IS NULL)
+I, [2021-04-10T09:13:46.502696 #726]  INFO -- : (0.000114s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:46.502887 #726]  INFO -- : (0.000096s) SELECT * FROM `mentors` WHERE (`email` = 'samiha.fansur.2002@gmail.com') LIMIT 1
+I, [2021-04-10T09:13:46.507472 #726]  INFO -- : (0.000094s) SELECT * FROM `mentees` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:46.507677 #726]  INFO -- : (0.000100s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:46.508474 #726]  INFO -- : (0.000108s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:46.509339 #726]  INFO -- : (0.000107s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:46.537786 #726]  INFO -- : (0.000115s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:46.537980 #726]  INFO -- : (0.000100s) SELECT * FROM `mentors` WHERE (`email` = 'samiha.fansur.2002@gmail.com') LIMIT 1
+I, [2021-04-10T09:13:46.542694 #726]  INFO -- : (0.000095s) SELECT * FROM `mentees` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:46.542902 #726]  INFO -- : (0.000101s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:46.543702 #726]  INFO -- : (0.000109s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:46.544590 #726]  INFO -- : (0.000109s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:46.575026 #726]  INFO -- : (0.000124s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:46.575228 #726]  INFO -- : (0.000098s) SELECT * FROM `mentors` WHERE (`email` = 'samiha.fansur.2002@gmail.com') LIMIT 1
+I, [2021-04-10T09:13:46.586357 #726]  INFO -- : (0.000098s) SELECT * FROM `mentees` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:46.586562 #726]  INFO -- : (0.000099s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:46.587591 #726]  INFO -- : (0.000108s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:46.589025 #726]  INFO -- : (0.000112s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:46.621050 #726]  INFO -- : (0.000097s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:46.621223 #726]  INFO -- : (0.000078s) SELECT * FROM `mentees` WHERE (`email` = 'samiha.fansur.2002@gmail.com') LIMIT 1
+I, [2021-04-10T09:13:46.621353 #726]  INFO -- : (0.000016s) BEGIN
+I, [2021-04-10T09:13:46.621624 #726]  INFO -- : (0.000130s) INSERT INTO `mentees` (`fname`, `lname`, `email`, `phoneNum`, `courseName`, `faculty`, `cyear`, `username`, `password`) VALUES ('George', 'Test', 'samiha.fansur.2002@gmail.com', '+44 7721851137', 'Accounting and Financial Management (BA)', '', 1, '123', '123')
+I, [2021-04-10T09:13:46.621811 #726]  INFO -- : (0.000086s) SELECT * FROM `mentees` WHERE `id` = 1
+I, [2021-04-10T09:13:46.707226 #726]  INFO -- : (0.085356s) COMMIT
+I, [2021-04-10T09:13:47.156803 #726]  INFO -- : (0.000132s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:47.157608 #726]  INFO -- : (0.000112s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:47.158503 #726]  INFO -- : (0.000110s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:47.184450 #726]  INFO -- : (0.000119s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:47.184645 #726]  INFO -- : (0.000102s) SELECT * FROM `mentees` WHERE (`email` = 'samiha.fansur.2002@gmail.com') LIMIT 1
+I, [2021-04-10T09:13:47.189376 #726]  INFO -- : (0.000112s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:47.190159 #726]  INFO -- : (0.000110s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:47.191029 #726]  INFO -- : (0.000110s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:47.192860 #726]  INFO -- : (0.000110s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:47.209699 #726]  INFO -- : (0.000111s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:47.209887 #726]  INFO -- : (0.000095s) SELECT * FROM `mentees` WHERE (`email` = 'samiha.fansur.2002@gmail.com') LIMIT 1
+I, [2021-04-10T09:13:47.214496 #726]  INFO -- : (0.000110s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:47.215268 #726]  INFO -- : (0.000108s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:47.216119 #726]  INFO -- : (0.000107s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:47.217917 #726]  INFO -- : (0.000114s) SELECT * FROM `mentors` ORDER BY `courseName`
+I, [2021-04-10T09:13:47.237779 #726]  INFO -- : (0.000116s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:47.237971 #726]  INFO -- : (0.000099s) SELECT * FROM `mentees` WHERE (`email` = 'samiha.fansur.2002@gmail.com') LIMIT 1
+I, [2021-04-10T09:13:47.242653 #726]  INFO -- : (0.000111s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:47.243429 #726]  INFO -- : (0.000109s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:47.244319 #726]  INFO -- : (0.000124s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:47.246050 #726]  INFO -- : (0.000108s) SELECT * FROM `mentees` WHERE `id` = '1'
+I, [2021-04-10T09:13:47.246208 #726]  INFO -- : (0.000090s) SELECT * FROM `mentees` WHERE `id` = '1'
+I, [2021-04-10T09:13:47.274100 #726]  INFO -- : (0.000134s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:47.274312 #726]  INFO -- : (0.000101s) SELECT * FROM `mentees` WHERE (`email` = 'samiha.fansur.2002@gmail.com') LIMIT 1
+I, [2021-04-10T09:13:47.279006 #726]  INFO -- : (0.000113s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:47.279793 #726]  INFO -- : (0.000110s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:47.280689 #726]  INFO -- : (0.000109s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:47.282526 #726]  INFO -- : (0.000107s) SELECT * FROM `mentors` WHERE (`id` IS NULL)
+I, [2021-04-10T09:13:47.298804 #726]  INFO -- : (0.000112s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:47.298993 #726]  INFO -- : (0.000096s) SELECT * FROM `mentees` WHERE (`email` = 'samiha.fansur.2002@gmail.com') LIMIT 1
+I, [2021-04-10T09:13:47.303654 #726]  INFO -- : (0.000109s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:47.304447 #726]  INFO -- : (0.000108s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:47.305304 #726]  INFO -- : (0.000106s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:47.326398 #726]  INFO -- : (0.000112s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:47.326586 #726]  INFO -- : (0.000095s) SELECT * FROM `mentees` WHERE (`email` = 'samiha.fansur.2002@gmail.com') LIMIT 1
+I, [2021-04-10T09:13:47.331105 #726]  INFO -- : (0.000109s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:47.331916 #726]  INFO -- : (0.000109s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:47.332807 #726]  INFO -- : (0.000106s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:47.350061 #726]  INFO -- : (0.000110s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:47.350248 #726]  INFO -- : (0.000095s) SELECT * FROM `mentees` WHERE (`email` = 'samiha.fansur.2002@gmail.com') LIMIT 1
+I, [2021-04-10T09:13:47.358053 #726]  INFO -- : (0.000112s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:47.358852 #726]  INFO -- : (0.000111s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:47.359719 #726]  INFO -- : (0.000111s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:47.471533 #726]  INFO -- : (0.109154s) DELETE FROM `mentees` WHERE (1 = 1)
+I, [2021-04-10T09:13:47.576183 #726]  INFO -- : (0.104496s) DELETE FROM `mentors` WHERE (1 = 1)
+I, [2021-04-10T09:13:47.593056 #726]  INFO -- : (0.000103s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:47.593235 #726]  INFO -- : (0.000082s) SELECT * FROM `mentees` WHERE (`email` = 'samiha.fansur.2002@gmail.com') LIMIT 1
+I, [2021-04-10T09:13:47.593345 #726]  INFO -- : (0.000016s) BEGIN
+I, [2021-04-10T09:13:47.594266 #726]  INFO -- : (0.000128s) INSERT INTO `mentees` (`fname`, `lname`, `email`, `phoneNum`, `courseName`, `faculty`, `cyear`, `username`, `password`) VALUES ('George', 'Test', 'samiha.fansur.2002@gmail.com', '+44 7721851137', 'Accounting and Financial Management (BA)', '', 1, '123', '123')
+I, [2021-04-10T09:13:47.594455 #726]  INFO -- : (0.000090s) SELECT * FROM `mentees` WHERE `id` = 1
+I, [2021-04-10T09:13:47.682744 #726]  INFO -- : (0.088231s) COMMIT
+I, [2021-04-10T09:13:47.913705 #726]  INFO -- : (0.000138s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:47.915529 #726]  INFO -- : (0.000123s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:47.917108 #726]  INFO -- : (0.000098s) SELECT * FROM `mentors` ORDER BY `courseName`
+I, [2021-04-10T09:13:48.026552 #726]  INFO -- : (0.104627s) DELETE FROM `mentees` WHERE (1 = 1)
+I, [2021-04-10T09:13:48.026727 #726]  INFO -- : (0.000054s) DELETE FROM `mentors` WHERE (1 = 1)
+I, [2021-04-10T09:13:48.061570 #726]  INFO -- : (0.000105s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:48.061754 #726]  INFO -- : (0.000085s) SELECT * FROM `mentors` WHERE (`email` = 'samiha.fansur.2002@gmail.com') LIMIT 1
+I, [2021-04-10T09:13:48.061861 #726]  INFO -- : (0.000015s) BEGIN
+I, [2021-04-10T09:13:48.062120 #726]  INFO -- : (0.000119s) INSERT INTO `mentors` (`fname`, `lname`, `email`, `phoneNum`, `username`, `password`, `jobTitle`, `courseName`) VALUES ('Sam', 'Mentor', 'samiha.fansur.2002@gmail.com', '+44 7721851137', '1234', '1234', 'Actor', 'Accounting and Financial Management (BA)')
+I, [2021-04-10T09:13:48.062315 #726]  INFO -- : (0.000091s) SELECT * FROM `mentors` WHERE `id` = 1
+I, [2021-04-10T09:13:48.155728 #726]  INFO -- : (0.093351s) COMMIT
+I, [2021-04-10T09:13:48.390609 #726]  INFO -- : (0.000140s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:48.390823 #726]  INFO -- : (0.000088s) SELECT * FROM `mentees` WHERE (`email` = 'samiha.fansur.2002@gmail.com') LIMIT 1
+I, [2021-04-10T09:13:48.390933 #726]  INFO -- : (0.000015s) BEGIN
+I, [2021-04-10T09:13:48.391216 #726]  INFO -- : (0.000135s) INSERT INTO `mentees` (`fname`, `lname`, `email`, `phoneNum`, `courseName`, `faculty`, `cyear`, `username`, `password`) VALUES ('George', 'Test', 'samiha.fansur.2002@gmail.com', '+44 7721851137', 'Accounting and Financial Management (BA)', '', 1, '123', '123')
+I, [2021-04-10T09:13:48.391452 #726]  INFO -- : (0.000098s) SELECT * FROM `mentees` WHERE `id` = 1
+I, [2021-04-10T09:13:48.482547 #726]  INFO -- : (0.091029s) COMMIT
+I, [2021-04-10T09:13:48.717203 #726]  INFO -- : (0.000274s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:48.718772 #726]  INFO -- : (0.000222s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:48.720601 #726]  INFO -- : (0.000217s) SELECT * FROM `mentors` ORDER BY `courseName`
+I, [2021-04-10T09:13:48.817430 #726]  INFO -- : (0.092233s) DELETE FROM `mentees` WHERE (1 = 1)
+I, [2021-04-10T09:13:48.913947 #726]  INFO -- : (0.096381s) DELETE FROM `mentors` WHERE (1 = 1)
+I, [2021-04-10T09:13:48.936007 #726]  INFO -- : (0.000102s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:48.936185 #726]  INFO -- : (0.000080s) SELECT * FROM `mentors` WHERE (`email` = 'samiha.fansur.2002@gmail.com') LIMIT 1
+I, [2021-04-10T09:13:48.936315 #726]  INFO -- : (0.000017s) BEGIN
+I, [2021-04-10T09:13:48.936585 #726]  INFO -- : (0.000122s) INSERT INTO `mentors` (`fname`, `lname`, `email`, `phoneNum`, `username`, `password`, `jobTitle`, `courseName`) VALUES ('Sam', 'Mentor', 'samiha.fansur.2002@gmail.com', '+44 7721851137', '1234', '1234', 'Actor', 'Accounting and Financial Management (BA)')
+I, [2021-04-10T09:13:48.936776 #726]  INFO -- : (0.000086s) SELECT * FROM `mentors` WHERE `id` = 1
+I, [2021-04-10T09:13:49.034113 #726]  INFO -- : (0.097275s) COMMIT
+I, [2021-04-10T09:13:49.270078 #726]  INFO -- : (0.000150s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:49.270299 #726]  INFO -- : (0.000090s) SELECT * FROM `mentees` WHERE (`email` = 'samiha.fansur.2002@gmail.com') LIMIT 1
+I, [2021-04-10T09:13:49.270418 #726]  INFO -- : (0.000016s) BEGIN
+I, [2021-04-10T09:13:49.270707 #726]  INFO -- : (0.000137s) INSERT INTO `mentees` (`fname`, `lname`, `email`, `phoneNum`, `courseName`, `faculty`, `cyear`, `username`, `password`) VALUES ('George', 'Test', 'samiha.fansur.2002@gmail.com', '+44 7721851137', 'Accounting and Financial Management (BA)', '', 1, '123', '123')
+I, [2021-04-10T09:13:49.270914 #726]  INFO -- : (0.000097s) SELECT * FROM `mentees` WHERE `id` = 1
+I, [2021-04-10T09:13:49.361662 #726]  INFO -- : (0.090670s) COMMIT
+I, [2021-04-10T09:13:49.604712 #726]  INFO -- : (0.000310s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:49.606361 #726]  INFO -- : (0.000221s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:49.608230 #726]  INFO -- : (0.000219s) SELECT * FROM `mentors` ORDER BY `courseName`
+I, [2021-04-10T09:13:49.615681 #726]  INFO -- : (0.000145s) SELECT count(*) AS 'count' FROM `mentors` WHERE (UPPER(`courseName`) LIKE UPPER('%Architecture (BA)%') ESCAPE '\') LIMIT 1
+I, [2021-04-10T09:13:49.713583 #726]  INFO -- : (0.094455s) DELETE FROM `mentees` WHERE (1 = 1)
+I, [2021-04-10T09:13:49.811025 #726]  INFO -- : (0.097300s) DELETE FROM `mentors` WHERE (1 = 1)
+I, [2021-04-10T09:13:49.833371 #726]  INFO -- : (0.000102s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:49.833570 #726]  INFO -- : (0.000085s) SELECT * FROM `mentors` WHERE (`email` = 'samiha.fansur.2002@gmail.com') LIMIT 1
+I, [2021-04-10T09:13:49.833698 #726]  INFO -- : (0.000017s) BEGIN
+I, [2021-04-10T09:13:49.833990 #726]  INFO -- : (0.000131s) INSERT INTO `mentors` (`fname`, `lname`, `email`, `phoneNum`, `username`, `password`, `jobTitle`, `courseName`) VALUES ('Sam', 'Mentor', 'samiha.fansur.2002@gmail.com', '+44 7721851137', '1234', '1234', 'Actor', 'Accounting and Financial Management (BA)')
+I, [2021-04-10T09:13:49.834191 #726]  INFO -- : (0.000088s) SELECT * FROM `mentors` WHERE `id` = 1
+I, [2021-04-10T09:13:49.935403 #726]  INFO -- : (0.101144s) COMMIT
+I, [2021-04-10T09:13:50.208492 #726]  INFO -- : (0.000216s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:50.208831 #726]  INFO -- : (0.000152s) SELECT * FROM `mentees` WHERE (`email` = 'samiha.fansur.2002@gmail.com') LIMIT 1
+I, [2021-04-10T09:13:50.209018 #726]  INFO -- : (0.000026s) BEGIN
+I, [2021-04-10T09:13:50.209510 #726]  INFO -- : (0.000209s) INSERT INTO `mentees` (`fname`, `lname`, `email`, `phoneNum`, `courseName`, `faculty`, `cyear`, `username`, `password`) VALUES ('George', 'Test', 'samiha.fansur.2002@gmail.com', '+44 7721851137', 'Accounting and Financial Management (BA)', '', 1, '123', '123')
+I, [2021-04-10T09:13:50.209861 #726]  INFO -- : (0.000173s) SELECT * FROM `mentees` WHERE `id` = 1
+I, [2021-04-10T09:13:50.304602 #726]  INFO -- : (0.094647s) COMMIT
+I, [2021-04-10T09:13:50.559180 #726]  INFO -- : (0.000252s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:50.560749 #726]  INFO -- : (0.000208s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:50.562672 #726]  INFO -- : (0.000234s) SELECT * FROM `mentors` ORDER BY `courseName`
+I, [2021-04-10T09:13:50.569967 #726]  INFO -- : (0.000144s) SELECT count(*) AS 'count' FROM `mentors` WHERE (UPPER(`courseName`) LIKE UPPER('%Accounting and Financial Management (BA)%') ESCAPE '\') LIMIT 1
+I, [2021-04-10T09:13:50.570406 #726]  INFO -- : (0.000233s) SELECT * FROM `mentors` WHERE (UPPER(`courseName`) LIKE UPPER('%Accounting and Financial Management (BA)%') ESCAPE '\') ORDER BY `courseName`
+I, [2021-04-10T09:13:50.670502 #726]  INFO -- : (0.095599s) DELETE FROM `mentees` WHERE (1 = 1)
+I, [2021-04-10T09:13:50.768469 #726]  INFO -- : (0.097823s) DELETE FROM `mentors` WHERE (1 = 1)
+I, [2021-04-10T09:13:50.790957 #726]  INFO -- : (0.000100s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:50.791137 #726]  INFO -- : (0.000080s) SELECT * FROM `mentors` WHERE (`email` = 'samiha.fansur.2002@gmail.com') LIMIT 1
+I, [2021-04-10T09:13:50.791256 #726]  INFO -- : (0.000022s) BEGIN
+I, [2021-04-10T09:13:50.791547 #726]  INFO -- : (0.000120s) INSERT INTO `mentors` (`fname`, `lname`, `email`, `phoneNum`, `username`, `password`, `jobTitle`, `courseName`) VALUES ('Sam', 'Mentor', 'samiha.fansur.2002@gmail.com', '+44 7721851137', '1234', '1234', 'Actor', 'Accounting and Financial Management (BA)')
+I, [2021-04-10T09:13:50.791743 #726]  INFO -- : (0.000089s) SELECT * FROM `mentors` WHERE `id` = 1
+I, [2021-04-10T09:13:50.889518 #726]  INFO -- : (0.097705s) COMMIT
+I, [2021-04-10T09:13:51.193908 #726]  INFO -- : (0.000116s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:51.194097 #726]  INFO -- : (0.000084s) SELECT * FROM `mentees` WHERE (`email` = 'samiha.fansur.2002@gmail.com') LIMIT 1
+I, [2021-04-10T09:13:51.194205 #726]  INFO -- : (0.000014s) BEGIN
+I, [2021-04-10T09:13:51.194467 #726]  INFO -- : (0.000121s) INSERT INTO `mentees` (`fname`, `lname`, `email`, `phoneNum`, `courseName`, `faculty`, `cyear`, `username`, `password`) VALUES ('George', 'Test', 'samiha.fansur.2002@gmail.com', '+44 7721851137', 'Accounting and Financial Management (BA)', '', 1, '123', '123')
+I, [2021-04-10T09:13:51.194659 #726]  INFO -- : (0.000093s) SELECT * FROM `mentees` WHERE `id` = 1
+I, [2021-04-10T09:13:51.305986 #726]  INFO -- : (0.111264s) COMMIT
+I, [2021-04-10T09:13:51.523386 #726]  INFO -- : (0.000133s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:51.524282 #726]  INFO -- : (0.000141s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:51.525301 #726]  INFO -- : (0.000123s) SELECT * FROM `mentors` ORDER BY `courseName`
+I, [2021-04-10T09:13:51.529092 #726]  INFO -- : (0.000089s) SELECT count(*) AS 'count' FROM `mentors` WHERE (UPPER(`courseName`) LIKE UPPER('%Accounting and Financial Management (BA)%') ESCAPE '\') LIMIT 1
+I, [2021-04-10T09:13:51.529384 #726]  INFO -- : (0.000150s) SELECT * FROM `mentors` WHERE (UPPER(`courseName`) LIKE UPPER('%Accounting and Financial Management (BA)%') ESCAPE '\') ORDER BY `courseName`
+I, [2021-04-10T09:13:51.532363 #726]  INFO -- : (0.000143s) SELECT * FROM `mentors` WHERE (`id` = '1') LIMIT 1
+I, [2021-04-10T09:13:51.532610 #726]  INFO -- : (0.000073s) SELECT * FROM `requests` WHERE (`menteeID` = 1)
+I, [2021-04-10T09:13:51.532750 #726]  INFO -- : (0.000016s) BEGIN
+I, [2021-04-10T09:13:51.533017 #726]  INFO -- : (0.000125s) INSERT INTO `requests` (`mentorID`, `menteeID`, `timePassed`) VALUES (1, 1, '2021-04-10 09:13:51 +0000')
+I, [2021-04-10T09:13:51.533193 #726]  INFO -- : (0.000063s) SELECT * FROM `requests` WHERE `id` = 1
+I, [2021-04-10T09:13:51.629101 #726]  INFO -- : (0.095841s) COMMIT
+I, [2021-04-10T09:13:51.864758 #726]  INFO -- : (0.000119s) SELECT * FROM `mentors` ORDER BY `courseName`
+I, [2021-04-10T09:13:51.865659 #726]  INFO -- : (0.000095s) SELECT * FROM `mentors` WHERE (`username` IS NULL) LIMIT 1
+I, [2021-04-10T09:13:51.870491 #726]  INFO -- : (0.000096s) SELECT * FROM `mentees` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:51.870718 #726]  INFO -- : (0.000106s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:51.871574 #726]  INFO -- : (0.000112s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:51.872666 #726]  INFO -- : (0.000076s) SELECT * FROM `mentees` WHERE (`id` = 1) LIMIT 1
+I, [2021-04-10T09:13:51.872728 #726]  INFO -- : (0.000284s) SELECT * FROM `requests` WHERE (`mentorID` = 1)
+I, [2021-04-10T09:13:51.975423 #726]  INFO -- : (0.100455s) DELETE FROM `mentees` WHERE (1 = 1)
+I, [2021-04-10T09:13:52.068718 #726]  INFO -- : (0.093169s) DELETE FROM `mentors` WHERE (1 = 1)
+I, [2021-04-10T09:13:52.095630 #726]  INFO -- : (0.000103s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:52.095827 #726]  INFO -- : (0.000086s) SELECT * FROM `mentors` WHERE (`email` = 'samiha.fansur.2002@gmail.com') LIMIT 1
+I, [2021-04-10T09:13:52.095945 #726]  INFO -- : (0.000016s) BEGIN
+I, [2021-04-10T09:13:52.096231 #726]  INFO -- : (0.000136s) INSERT INTO `mentors` (`fname`, `lname`, `email`, `phoneNum`, `username`, `password`, `jobTitle`, `courseName`) VALUES ('Sam', 'Mentor', 'samiha.fansur.2002@gmail.com', '+44 7721851137', '1234', '1234', 'Actor', 'Accounting and Financial Management (BA)')
+I, [2021-04-10T09:13:52.096448 #726]  INFO -- : (0.000092s) SELECT * FROM `mentors` WHERE `id` = 1
+I, [2021-04-10T09:13:52.199445 #726]  INFO -- : (0.102928s) COMMIT
+I, [2021-04-10T09:13:52.436737 #726]  INFO -- : (0.000104s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:52.436931 #726]  INFO -- : (0.000083s) SELECT * FROM `mentees` WHERE (`email` = 'samiha.fansur.2002@gmail.com') LIMIT 1
+I, [2021-04-10T09:13:52.437033 #726]  INFO -- : (0.000014s) BEGIN
+I, [2021-04-10T09:13:52.437282 #726]  INFO -- : (0.000114s) INSERT INTO `mentees` (`fname`, `lname`, `email`, `phoneNum`, `courseName`, `faculty`, `cyear`, `username`, `password`) VALUES ('George', 'Test', 'samiha.fansur.2002@gmail.com', '+44 7721851137', 'Accounting and Financial Management (BA)', '', 1, '123', '123')
+I, [2021-04-10T09:13:52.437462 #726]  INFO -- : (0.000086s) SELECT * FROM `mentees` WHERE `id` = 1
+I, [2021-04-10T09:13:52.538462 #726]  INFO -- : (0.100945s) COMMIT
+I, [2021-04-10T09:13:52.783129 #726]  INFO -- : (0.000132s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:52.783970 #726]  INFO -- : (0.000113s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:52.784972 #726]  INFO -- : (0.000117s) SELECT * FROM `mentors` ORDER BY `courseName`
+I, [2021-04-10T09:13:52.788631 #726]  INFO -- : (0.000087s) SELECT count(*) AS 'count' FROM `mentors` WHERE (UPPER(`courseName`) LIKE UPPER('%Accounting and Financial Management (BA)%') ESCAPE '\') LIMIT 1
+I, [2021-04-10T09:13:52.788878 #726]  INFO -- : (0.000127s) SELECT * FROM `mentors` WHERE (UPPER(`courseName`) LIKE UPPER('%Accounting and Financial Management (BA)%') ESCAPE '\') ORDER BY `courseName`
+I, [2021-04-10T09:13:52.791704 #726]  INFO -- : (0.000113s) SELECT * FROM `mentors` WHERE (`id` = '1') LIMIT 1
+I, [2021-04-10T09:13:52.792138 #726]  INFO -- : (0.000309s) SELECT * FROM `requests` WHERE (`menteeID` = 1)
+I, [2021-04-10T09:13:52.792955 #726]  INFO -- : (0.000114s) SELECT * FROM `mentors` ORDER BY `courseName`
+I, [2021-04-10T09:13:52.800439 #726]  INFO -- : (0.000117s) SELECT * FROM `mentors` WHERE (`id` = '1') LIMIT 1
+I, [2021-04-10T09:13:52.800706 #726]  INFO -- : (0.000148s) SELECT * FROM `requests` WHERE (`menteeID` = 1)
+I, [2021-04-10T09:13:52.801516 #726]  INFO -- : (0.000120s) SELECT * FROM `mentors` ORDER BY `courseName`
+I, [2021-04-10T09:13:52.909709 #726]  INFO -- : (0.105835s) DELETE FROM `mentees` WHERE (1 = 1)
+I, [2021-04-10T09:13:53.006874 #726]  INFO -- : (0.097033s) DELETE FROM `mentors` WHERE (1 = 1)
+I, [2021-04-10T09:13:53.031177 #726]  INFO -- : (0.000119s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:53.031394 #726]  INFO -- : (0.000104s) SELECT * FROM `mentors` WHERE (`email` = 'samiha.fansur.2002@gmail.com') LIMIT 1
+I, [2021-04-10T09:13:53.031514 #726]  INFO -- : (0.000017s) BEGIN
+I, [2021-04-10T09:13:53.031783 #726]  INFO -- : (0.000120s) INSERT INTO `mentors` (`fname`, `lname`, `email`, `phoneNum`, `username`, `password`, `jobTitle`, `courseName`) VALUES ('Sam', 'Mentor', 'samiha.fansur.2002@gmail.com', '+44 7721851137', '1234', '1234', 'Actor', 'Accounting and Financial Management (BA)')
+I, [2021-04-10T09:13:53.031983 #726]  INFO -- : (0.000094s) SELECT * FROM `mentors` WHERE `id` = 1
+I, [2021-04-10T09:13:53.136539 #726]  INFO -- : (0.104491s) COMMIT
+I, [2021-04-10T09:13:53.376963 #726]  INFO -- : (0.000115s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:53.377171 #726]  INFO -- : (0.000087s) SELECT * FROM `mentees` WHERE (`email` = 'samiha.fansur.2002@gmail.com') LIMIT 1
+I, [2021-04-10T09:13:53.377292 #726]  INFO -- : (0.000015s) BEGIN
+I, [2021-04-10T09:13:53.377590 #726]  INFO -- : (0.000139s) INSERT INTO `mentees` (`fname`, `lname`, `email`, `phoneNum`, `courseName`, `faculty`, `cyear`, `username`, `password`) VALUES ('George', 'Test', 'samiha.fansur.2002@gmail.com', '+44 7721851137', 'Accounting and Financial Management (BA)', '', 1, '123', '123')
+I, [2021-04-10T09:13:53.377795 #726]  INFO -- : (0.000092s) SELECT * FROM `mentees` WHERE `id` = 1
+I, [2021-04-10T09:13:53.479271 #726]  INFO -- : (0.101407s) COMMIT
+I, [2021-04-10T09:13:53.712983 #726]  INFO -- : (0.000280s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:53.714583 #726]  INFO -- : (0.000223s) SELECT * FROM `mentees` WHERE (`username` = '123') LIMIT 1
+I, [2021-04-10T09:13:53.725561 #726]  INFO -- : (0.000224s) SELECT * FROM `mentors` ORDER BY `courseName`
+I, [2021-04-10T09:13:53.730784 #726]  INFO -- : (0.000093s) SELECT count(*) AS 'count' FROM `mentors` WHERE (UPPER(`courseName`) LIKE UPPER('%Accounting and Financial Management (BA)%') ESCAPE '\') LIMIT 1
+I, [2021-04-10T09:13:53.731064 #726]  INFO -- : (0.000141s) SELECT * FROM `mentors` WHERE (UPPER(`courseName`) LIKE UPPER('%Accounting and Financial Management (BA)%') ESCAPE '\') ORDER BY `courseName`
+I, [2021-04-10T09:13:53.734094 #726]  INFO -- : (0.000129s) SELECT * FROM `mentors` WHERE (`id` = '1') LIMIT 1
+I, [2021-04-10T09:13:53.734405 #726]  INFO -- : (0.000168s) SELECT * FROM `requests` WHERE (`menteeID` = 1)
+I, [2021-04-10T09:13:53.735243 #726]  INFO -- : (0.000119s) SELECT * FROM `mentors` ORDER BY `courseName`
+I, [2021-04-10T09:13:53.736142 #726]  INFO -- : (0.000097s) SELECT * FROM `mentors` WHERE (`username` IS NULL) LIMIT 1
+I, [2021-04-10T09:13:53.741023 #726]  INFO -- : (0.000100s) SELECT * FROM `mentees` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:53.741248 #726]  INFO -- : (0.000111s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:53.742118 #726]  INFO -- : (0.000117s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:53.743220 #726]  INFO -- : (0.000079s) SELECT * FROM `mentees` WHERE (`id` = 1) LIMIT 1
+I, [2021-04-10T09:13:53.743277 #726]  INFO -- : (0.000279s) SELECT * FROM `requests` WHERE (`mentorID` = 1)
+I, [2021-04-10T09:13:53.840565 #726]  INFO -- : (0.094428s) UPDATE `mentees` SET `mentorMatch` = 1 WHERE (`id` = '1')
+I, [2021-04-10T09:13:53.935662 #726]  INFO -- : (0.094903s) UPDATE `mentors` SET `menteeMatch` = '1' WHERE (`id` = 1)
+I, [2021-04-10T09:13:54.031163 #726]  INFO -- : (0.095350s) DELETE FROM `requests` WHERE (`mentorID` = 1)
+I, [2021-04-10T09:13:54.032169 #726]  INFO -- : (0.000141s) SELECT * FROM `mentors` WHERE (`username` = '1234') LIMIT 1
+I, [2021-04-10T09:13:54.033415 #726]  INFO -- : (0.000076s) SELECT * FROM `mentees` WHERE (`id` = 1) LIMIT 1
+I, [2021-04-10T09:13:54.033472 #726]  INFO -- : (0.000295s) SELECT * FROM `mentees` WHERE (`id` = 1)
+I, [2021-04-10T09:13:54.124319 #726]  INFO -- : (0.088535s) DELETE FROM `mentees` WHERE (1 = 1)
+I, [2021-04-10T09:13:54.226001 #726]  INFO -- : (0.101554s) DELETE FROM `mentors` WHERE (1 = 1)
+I, [2021-04-10T09:13:54.229364 #726]  INFO -- : (0.000108s) SELECT * FROM `mentors` ORDER BY `courseName`
