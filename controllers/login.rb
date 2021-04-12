@@ -11,6 +11,13 @@ get "/MentorDashboard" do
   username = session[:mentors_username] #Logs user in
   #Gets the mentor information that corresponds to the username
   $mentors = Mentor.first(username: username) # '$' used to make it a global variable
+  
+  #initializing the profileStatus field to 0
+  if $mentors.profileStatus != "1"
+    $mentors.profileStatus = "0"
+    $mentors.save_changes
+  end
+  
   erb :mentor_dashboard
 end
 

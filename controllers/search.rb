@@ -9,8 +9,8 @@ get "/search" do
   #If no course name is being searched, it displays the list of all mentors in alphabetical order 
   #else it searches through the course name field in the mentors table and displays mentors' whose 
   #course name contains the course name being searched
-  @mentors = if @courseName_search.empty?
-               Mentor.order(:courseName).all
+    @mentors = if @courseName_search.empty?
+               Mentor.order(:courseName).where(Sequel.like(:profileStatus, "0"))
              else
                Mentor.order(:courseName).where(Sequel.ilike(:courseName, "%#{@courseName_search}%")) #ilike used to make search case insensitive
              end

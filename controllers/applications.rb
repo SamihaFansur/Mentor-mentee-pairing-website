@@ -9,7 +9,7 @@ get "/applications" do
   erb :mentee_applications
 end
 
-post "/match" do    
+post "/match" do   
   #When mentor accepts mentee request, mentorMatch field updated to value of mentor ID in the mentees table
   Mentee.where(id: params[:menteeID]).update(:mentorMatch => $mentors.id)
   
@@ -18,6 +18,11 @@ post "/match" do
   
   #Deletes the all requests a mentor has from the table after mentor accepts a mentee request
   Request.where(mentorID: $mentors.id).delete
+  
+  #Make mentor profile invisible/private
+  $mentors.profileStatus = "1"
+  $mentors.save_changes
+  
   redirect "/MentorDashboard"
 end
 
