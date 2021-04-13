@@ -47,6 +47,5 @@ CREATE TABLE admins (
   email TEXT,
   phoneNum TEXT,
   description TEXT,
-  activationToken INTEGER,
-  suspendAdmin INTEGER
+  activationToken INTEGER
 );

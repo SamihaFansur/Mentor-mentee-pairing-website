@@ -55,16 +55,4 @@ class Admin < Sequel::Model
     !other_admins.nil? && other_admins.password == password
   end
   
-  #Checks if mentor account is suspended
-  def account_suspended?
-    other_admins = Admin.first(username: username)
-    if !other_admins.nil? && other_admins.password == password
-      if other_admins.suspendAdmin == 1
-        return true
-      else
-        return false
-      end
-    end
-  end
-  
 end

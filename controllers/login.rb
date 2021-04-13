@@ -100,6 +100,7 @@ post '/login' do
   @admins.load(params) #Loads parameters
   
   @error = nil #initializing variable
+  @suspend_check = false
   
   #If mentee username and password match to the values in the database mentee logged in and redirected to mentee dashboard
   #if combination incorrect then displays error
@@ -110,7 +111,7 @@ post '/login' do
       redirect "/MenteeDashboard"
     else
       if @mentees.account_suspended?.to_s == "true"
-        @error = "Your account is suspended"
+        @suspend_check = true
       else
         @error = "Username/Password combination incorrect"
       end
@@ -128,7 +129,7 @@ post '/login' do
       redirect "/MentorDashboard"
     else
       if @mentors.account_suspended?.to_s == "true"
-        @error = "Your account is suspended"
+        @suspend_check = true
       else
         @error = "Username/Password combination incorrect"
       end
@@ -140,21 +141,16 @@ post '/login' do
   #If admin username and password match to the values in the database admin logged in and redirected to admin dashboard
   #if combination incorrect then displays error
   if @admins.valid?
-    if @admins.exist_login? && @admins.account_suspended?.to_s == "false"
+    if @admins.exist_login?
       session[:logged_in] = true
       session[:admins_username] = @admins.username
       redirect "/AdminLoginChoices"
-    else
-      if @admins.account_suspended?.to_s == "true"
-        @error = "Your account is suspended"
-      else
-        @error = "Username/Password combination incorrect"
-      end
     end
   else
     @error = "Please correct the information below"
   end
   
+  @error = "Your account is suspended" if @suspend_check
   erb :login
 
 end
