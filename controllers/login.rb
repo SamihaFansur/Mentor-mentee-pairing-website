@@ -161,25 +161,28 @@ post '/loginAgain' do
   @mentors.load(params) #Loads parameters
  
   @error = nil #initializing variable
+  @suspend_check = false
   
   #If mentor username and password match to the values in the database mentor logged in and redirected to mentor dashboard
   #if combination incorrect then displays error
-  if @mentors.valid?
+   if @mentors.valid?
     if @mentors.exist_login? && @mentors.account_suspended?.to_s == "false"
       session[:logged_in] = true
       session[:mentors_username] = @mentors.username
-      redirect "/MentorDashboard"
+      redirect "/AdminMentorDashboard"
     else
       if @mentors.account_suspended?.to_s == "true"
-        @error = "Your account is suspended"
+        @suspend_check = true
       else
         @error = "Username/Password combination incorrect"
       end
     end
+  else
     @error = "Please correct the information below"
   end
   
-  erb :login
+  @error = "Your account is suspended" if @suspend_check
+  erb :loginAgain
 
 end
 

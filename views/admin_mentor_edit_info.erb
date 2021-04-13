@@ -8,6 +8,9 @@
         <% unless @mentors.errors.size.zero? %>
             <p><strong class="error">Please correct the errors below:</strong></p>
         <% end %>
+        <% if @error %>
+          <p class="error"><strong>Email exists</strong></p>
+        <% end %>
         <form method="post">
             <input type="hidden" name="id" value="<%= @mentors.id %>" />
             <%= erb :"common/mentor_edit_form" %>

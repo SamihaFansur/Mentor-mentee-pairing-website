@@ -4,18 +4,21 @@ get "/index" do
   #If user already logged in then displays a header for profiles which are logged 
   #in else displays headers for non-logged in users
   if session[:logged_in]
-    #If a mentee is logged in it displays the header for a mentee profile else
-    #displays header for a mentor profile
-    if session[:mentees_username] 
+    if session[:admins_username]
+      if session[:mentors_username]
+        @header = erb:"common/header_adminMentorA"
+      else
+        @header = erb:"common/header_adminA"
+      end
+    elsif session[:mentees_username] 
       @header = erb:"common/header_menteeA"
     elsif session[:mentors_username] 
       @header = erb:"common/header_mentorA"
-    else
-      @header = erb:"common/header_adminA"
     end
   else 
     @header = erb:"common/headerB"
   end
+  
   erb :index
 end
 
@@ -23,20 +26,22 @@ get "/contact" do
    @header = nil #initializing header
   
   #If user already logged in then displays a header for profiles which are logged 
-  #in else displays headers for non-logged in users
   if session[:logged_in]
-    #If a mentee is logged in it displays the header for a mentee profile else
-    #displays header for a mentor profile
-    if session[:mentees_username] 
+    if session[:admins_username]
+      if session[:mentors_username]
+        @header = erb:"common/header_adminMentorA"
+      else
+        @header = erb:"common/header_adminA"
+      end
+    elsif session[:mentees_username] 
       @header = erb:"common/header_menteeA"
     elsif session[:mentors_username] 
       @header = erb:"common/header_mentorA"
-    else
-      @header = erb:"common/header_adminA"
     end
   else 
     @header = erb:"common/headerB"
   end
+  
   erb :contact
 end
 
@@ -46,18 +51,21 @@ get "/accessibility" do
   #If user already logged in then displays a header for profiles which are logged 
   #in else displays headers for non-logged in users
   if session[:logged_in]
-    #If a mentee is logged in it displays the header for a mentee profile else
-    #displays header for a mentor profile
-    if session[:mentees_username] 
+    if session[:admins_username]
+      if session[:mentors_username]
+        @header = erb:"common/header_adminMentorA"
+      else
+        @header = erb:"common/header_adminA"
+      end
+    elsif session[:mentees_username] 
       @header = erb:"common/header_menteeA"
     elsif session[:mentors_username] 
       @header = erb:"common/header_mentorA"
-    else
-      @header = erb:"common/header_adminA"
     end
   else 
     @header = erb:"common/headerB"
   end
+  
   erb :accessibility
 end
 
