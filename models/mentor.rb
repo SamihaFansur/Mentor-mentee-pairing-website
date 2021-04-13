@@ -56,7 +56,13 @@ class Mentor < Sequel::Model
   def exist_signup?
     other_mentors = Mentor.first(username: username)
     mentors =  Mentor.first(email: email)
-    !other_mentors.nil? ||  !mentors.nil?   
+    mentor_exist = !other_mentors.nil? ||  !mentors.nil?
+    
+    other_mentees = Mentee.first(username: username)
+    mentees =  Mentee.first(email: email)
+    mentee_exist = !other_mentees.nil? ||  !mentees.nil?
+    
+    mentor_exist || mentee_exist
   end
   
   #Checks if mentor already logged in; being called in login.rb controller
