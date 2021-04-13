@@ -10,7 +10,8 @@ CREATE TABLE mentees (
   faculty TEXT,
   cyear INTEGER,
   description TEXT,
-  mentorMatch INTEGER
+  mentorMatch INTEGER,
+  suspendMentee INTEGER
 );
 
 CREATE TABLE mentors (
@@ -26,7 +27,8 @@ CREATE TABLE mentors (
   description TEXT,
   menteeMatch INTEGER,
   activationToken INTEGER,
-  profileStatus TEXT
+  profileStatus TEXT,
+  suspendMentor INTEGER
 );
 
 CREATE TABLE requests (
@@ -45,5 +47,6 @@ CREATE TABLE admins (
   email TEXT,
   phoneNum TEXT,
   description TEXT,
-  activationToken INTEGER
+  activationToken INTEGER,
+  suspendAdmin INTEGER
 );

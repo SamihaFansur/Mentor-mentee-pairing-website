@@ -22,6 +22,8 @@
                 <th>Email</th>
                 <th>Phone Number</th>
                 <th>Edit Profile</th>
+                <th>Suspend Mentor</th>
+                <th>Unsuspend Mentor</th>
               </tr>
             <% @mentors.each do |mentor| %>
               <tr>
@@ -29,7 +31,23 @@
                 <td><%= h mentor.name %></td>
                 <td><%= h mentor.email %></td>
                 <td><%= h mentor.phoneNum %></td>
-                <td><a href="/editMentor?id=<%= h mentor.id %>">Edit </a></td>
+                <td><a href="/editMentor?id=<%= h mentor.id %>"><button>Edit Profile</button></a></td>
+                <td>
+                  <form method="post" action="suspendMentor">
+                    <input type="hidden" name="mentorID" value="<%= mentor.id %>">
+                    <button type="submit">
+                      Suspend Mentor
+                    </button>
+                  </form>
+                </td>
+                <td>
+                  <form method="post" action="unsuspendMentor">
+                    <input type="hidden" name="mentorID" value="<%= mentor.id %>">
+                    <button type="submit">
+                      Unsuspend Mentor
+                    </button>
+                  </form>
+                </td>
               </tr>
             <% end %> 
              </table>    

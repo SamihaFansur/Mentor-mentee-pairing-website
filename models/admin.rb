@@ -49,10 +49,22 @@ class Admin < Sequel::Model
     errors.add("password", "cannot be empty") if password.empty?
   end
     
-   #Checks if admin already logged in; being called in login.rb controller
+  #Checks if admin already logged in; being called in login.rb controller
   def exist_login?
-    other_user = Admin.first(username: username)
-    !other_user.nil? && other_user.password == password
+    other_admins = Admin.first(username: username)
+    !other_admins.nil? && other_admins.password == password
+  end
+  
+  #Checks if mentor account is suspended
+  def account_suspended?
+    other_admins = Admin.first(username: username)
+    if !other_admins.nil? && other_admins.password == password
+      if other_admins.suspendAdmin == 1
+        return true
+      else
+        return false
+      end
+    end
   end
   
 end

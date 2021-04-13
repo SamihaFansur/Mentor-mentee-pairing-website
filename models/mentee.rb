@@ -59,12 +59,24 @@ class Mentee < Sequel::Model
     other_mentees = Mentee.first(username: username)
     mentees =  Mentee.first(email: email)
     !other_mentees.nil? ||  !mentees.nil?
-   
   end
   
   #Checks if mentee already logged in; being called in login.rb controller
   def exist_login?
-    other_user = Mentee.first(username: username)
-    !other_user.nil? && other_user.password == password
+    other_mentees = Mentee.first(username: username)
+    !other_mentees.nil? && other_mentees.password == password
   end
+  
+  #Checks if mentee account is suspended
+  def account_suspended?
+    other_mentees = Mentee.first(username: username)
+    if !other_mentees.nil? && other_mentees.password == password
+      if other_mentees.suspendMentee == 1
+        return true
+      else
+        return false
+      end
+    end
+  end
+  
 end

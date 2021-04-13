@@ -52,19 +52,29 @@ class Mentor < Sequel::Model
     errors.add("password", "cannot be empty") if password.empty?
   end
   
-   #Checks if username/email already in the mentors database to prevent multiple sign ups
+  #Checks if username/email already in the mentors database to prevent multiple sign ups
   def exist_signup?
     other_mentors = Mentor.first(username: username)
     mentors =  Mentor.first(email: email)
-    !other_mentors.nil? ||  !mentors.nil?
-    
-   
+    !other_mentors.nil? ||  !mentors.nil?   
   end
   
-   #Checks if mentor already logged in; being called in login.rb controller
+  #Checks if mentor already logged in; being called in login.rb controller
   def exist_login?
-    other_user = Mentor.first(username: username)
-    !other_user.nil? && other_user.password == password
+    other_mentors = Mentor.first(username: username)
+    !other_mentors.nil? && other_mentors.password == password
+  end
+  
+  #Checks if mentor account is suspended
+  def account_suspended?
+    other_mentors = Mentor.first(username: username)
+    if !other_mentors.nil? && other_mentors.password == password
+      if other_mentors.suspendMentor == 1
+        return true
+      else
+        return false
+      end
+    end
   end
   
 end
