@@ -14,10 +14,45 @@ describe "the search page" do
       clear_database  
     end
  
+      
+ #checks if applciaitons are empty        
+   it "checks the mentor has been sent an application" do
+ clear_database
+      add_test_mentor
+      add_test_user
+      visit "/login" 
+      fill_in "username", with: "1234"
+      fill_in "password", with: "1234"
+      click_button "Submit"      
+      visit "/login" 
+      fill_in "username", with: "123"
+      fill_in "password", with: "123"
+      click_button "Submit"
+      visit "/search"
+      fill_in "searchForMentor", with: "Accounting and Financial Management (BA)"
+      click_button "Submit"
+      click_button "Send application"      
+      visit "/login" 
+      fill_in "username", with: "1234"
+      fill_in "password", with: "1234"
+      click_button "Submit"
+      visit "/MentorDashboard"
+      visit "/applications"
+      expect(page).to have_content "There are no mentee applications"
+      
+      clear_database
+    end   
+      
 #tests the mentor search when there is only
   context "with one record in the database" do
-    it "lists the mentors" do
+    it "lists the mentors" do     
+      clear_database
       add_test_mentor
+      visit "/login"
+      fill_in "username", with: "1234"
+      fill_in "password", with: "1234"
+      click_button "Submit"
+      visit "/index"
       add_test_user
       visit "/login"
       fill_in "username", with: "123"
@@ -29,8 +64,14 @@ describe "the search page" do
     end
 #checks that mentor doesnt appear when wrong course is entered
     it "does not list the mentor when a different courseName is searched for" do
+      clear_database 
       add_test_mentor
       add_test_user
+      visit "/login" 
+      fill_in "username", with: "1234"
+      fill_in "password", with: "1234"
+      click_button "Submit"   
+      visit "/login"
       fill_in "username", with: "123"
       fill_in "password", with: "123"
       click_button "Submit"
@@ -42,8 +83,14 @@ describe "the search page" do
     end
 #checks that mentor appears when wrong course is entered
     it "lists the mentor when their courseName is searched for" do
+      clear_database
       add_test_mentor
       add_test_user
+      visit "/login" 
+      fill_in "username", with: "1234"
+      fill_in "password", with: "1234"
+      click_button "Submit"   
+      visit "/login"
       fill_in "username", with: "123"
       fill_in "password", with: "123"
       click_button "Submit"
@@ -54,75 +101,37 @@ describe "the search page" do
       clear_database
     end
       
- #checks if an application can be  sent         
-   it "checks the mentor has been sent an application" do
-      add_test_mentor
-      add_test_user
-      visit "/login" 
-      fill_in "username", with: "123"
-      fill_in "password", with: "123"
-      click_button "Submit"
-      visit "/search"
-      fill_in "searchForMentor", with: "Accounting and Financial Management (BA)"
-      click_button "Submit"
-      click_button "Send application"
-      visit "/MentorDashboard"
-      visit "/login" 
-      fill_in "username", with: "1234"
-      fill_in "password", with: "1234"
-      click_button "Submit"
-      visit "/applications"
-      expect(page).to have_content "George Test"
-      
-      clear_database
-    end    
+
       
       
       
 #checks if an application has already been sent   
          it "checks the mentor has been sent an application before" do
-      add_test_mentor
-      add_test_user
-      visit "/login" 
-      fill_in "username", with: "123"
-      fill_in "password", with: "123"
-      click_button "Submit"
-      visit "/search"
-      fill_in "searchForMentor", with: "Accounting and Financial Management (BA)"
-      click_button "Submit"
-      click_button "Send application"
-      click_button "Send application"
-      expect(page).to have_content "Application already sent"
-      
       clear_database
-    end    
-      
-#checks if an application can be accepted by mentor   
-    it "checks the mentor has been sent an application" do
       add_test_mentor
       add_test_user
-      visit "/login" 
-      fill_in "username", with: "123"
-      fill_in "password", with: "123"
-      click_button "Submit"
-      visit "/search"
-      fill_in "searchForMentor", with: "Accounting and Financial Management (BA)"
-      click_button "Submit"
-      click_button "Send application"
-      visit "/MentorDashboard"
       visit "/login" 
       fill_in "username", with: "1234"
       fill_in "password", with: "1234"
+      click_button "Submit"       
+      visit "/login" 
+      fill_in "username", with: "123"
+      fill_in "password", with: "123"
       click_button "Submit"
-      visit "/applications"
-      click_button "Accept application"
-      visit "myMentee"
-      expect(page).to have_content "George Test"
+      visit "/search"
+      click_button "Send application"
+      visit "/search"
+      click_button "Send application" 
+      expect(page).to have_content("already")
       
       clear_database
     end    
+      
+
+      clear_database
    end    
   clear_database       
       
   end
+clear_database    
 end
