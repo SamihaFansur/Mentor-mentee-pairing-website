@@ -63,7 +63,7 @@ post "/MentorSignUpForm" do
           "Hi "+@mentors.fname+" "+@mentors.lname+"!\n"+
           "Your username is: "+@mentors.username+"\n"+
           "Your email: "+@mentors.email+"\n"+
-          "Please use these credentials to login into your mentor account \n"+
+          "Please use these credentials to login into your mentor account and activate your mentor account \n"+
           "\n\n\nRegards\nTeam 6")
         redirect "/login"
       end

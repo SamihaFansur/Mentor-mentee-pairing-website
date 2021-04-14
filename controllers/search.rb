@@ -25,22 +25,32 @@ post "/addApplication" do
   #and the mentor being requested
   @requests.load(params[:menteeID].to_s, params[:mentorID].to_s)
   @mentors = Mentor.first(id: params[:mentorID]) #Creates a new instance based on mentor id of mentor being requested
+  @mentees = Mentee.first(id: params[:menteeID]) #Creates a new instance based on mentee id of mentee
   
-  #If application exists throws error and redirects to below URL(line 33)
+  #If application exists throws error and redirects to below URL(line 34)
   #else saves changes by updating the requests table and sending the mentor an email
   if @requests.exist_application?
     @error = "Application already sent"
     redirect "/search?error=1"
-  else
-    @requests.timePassed = Time.new
-    @requests.save_changes
-    #Sends an email to mentor that a mentee sent them an application
-    send_mail(@mentors.email, 
-          "You have a new mentee application!", 
-          "Hi "+@mentors.fname+" "+@mentors.lname+" !\n"+
-          "You have a new mentee application. Please login into your mentor account and view your mentee applications \n"+
-          "\n\nRegards\nTeam 6")
-   
+    else
+      if @mentees.applicationNumber == "1"
+        @requests.timePassed = Time.new
+        @requests.save_changes
+        
+        #Mentee used up 1 application for time being, so sets to 0
+        @mentees.applicationNumber = "0"
+        @mentees.save_changes
+
+        #Sends an email to mentor that a mentee sent them an application
+        send_mail(@mentors.email, 
+              "You have a new mentee application!", 
+              "Hi "+@mentors.fname+" "+@mentors.lname+" !\n"+
+              "You have a new mentee application. Please login into your mentor account and view your mentee applications \n"+
+              "\n\nRegards\nTeam 6")
+      else
+        @error = "Application already sent"
+        redirect "/search?error=1"
+      end   
   end
   
     redirect "/search"

@@ -52,7 +52,7 @@ class Mentor < Sequel::Model
     errors.add("password", "cannot be empty") if password.empty?
   end
   
-  #Checks if username/email already in the any database to prevent multiple sign ups
+  #Checks if username/email already in any database to prevent multiple sign ups
   def exist_signup?
     other_mentors = Mentor.first(username: username)
     mentors =  Mentor.first(email: email)

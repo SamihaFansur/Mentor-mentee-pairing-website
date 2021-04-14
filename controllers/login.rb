@@ -3,6 +3,14 @@ get "/MenteeDashboard" do
   username = session[:mentees_username] #Logs user in
   #Gets the mentee information that corresponds to the username
   $mentees = Mentee.first(username: username) # '$' used to make it a global variable
+  
+  #Initializing the field value for applicationNumber 
+  #So that mentee can only request 1 mentor at a time (1 request for every 2 weeks)
+  if $mentees.applicationNumber  != "0" || $mentees.applicationNumber  != "1" #means value is nil
+    $mentees.applicationNumber  = "1"
+    $mentees.save_changes
+  end
+  
   erb :mentee_dashboard
 end
 

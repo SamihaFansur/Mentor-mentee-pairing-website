@@ -1,4 +1,4 @@
-#Mentee uses this route to send mentor applications
+#Mentor uses this route to accept 1 mentee application
 get "/applications" do
   @menteeIDList = [] #List to store mentee
   IDList = Request.where(mentorID: $mentors.id) #Finds the request where it finds the specified mentor ID

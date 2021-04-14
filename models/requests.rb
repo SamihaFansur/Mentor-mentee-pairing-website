@@ -18,7 +18,7 @@ class Request < Sequel::Model
     other_request.each do |requestVar|
      if requestVar.mentorID == mentorID
        time_sent = Time.parse(requestVar.timePassed)
-       puts time_now - time_sent >= TIME_IN_TWO_WEEKS
+#        puts time_now - time_sent >= TIME_IN_TWO_WEEKS
        if time_now - time_sent >= TIME_IN_TWO_WEEKS
          requestVar.delete
          return false
