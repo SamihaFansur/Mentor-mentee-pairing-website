@@ -37,7 +37,9 @@ def add_test_user
   select "Accounting and Financial Management (BA)", :from => "courseName"
     
   select "1", :from => "cyear"
-      
+    
+  select "Faculty of Science", :from => "faculty"
+    
   click_button "Submit"
 end
 
