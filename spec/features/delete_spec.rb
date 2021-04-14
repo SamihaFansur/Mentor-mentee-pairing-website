@@ -8,9 +8,8 @@ describe "the delete page" do
     fill_in "password", with: "123"
     click_button "Submit"
     visit "/editMentee?id=1"
-    click_button "Delete"
-    visit "/editMentee?id=1"
-    expect(page).to have_content "Unknown mentee"
+    click_button "Delete" 
+    expect(page).to have_content "one-to-one mentoring program"
     clear_database
   end
     #tests for deleting mentor
@@ -22,8 +21,7 @@ describe "the delete page" do
     click_button "Submit"
     visit "/editMentor?id=1"
     click_button "Delete"
-    visit "/editMentor?id=1"
-    expect(page).to have_content "Unknown mentor"
+    expect(page).to have_content "one-to-one mentoring program"
     clear_database
   end
     clear_database
