@@ -1,8 +1,8 @@
 require_relative "../spec_helper"
 
 #page links tests from /index
-describe "the signup page" do
-    it "is accessible from the index page" do
+describe "the page links" do
+    it "sign up is accessible from the index page" do
         visit"/index"
         click_link "Sign Up"
         expect(page).to have_content "Mentee"
@@ -267,14 +267,16 @@ it "is accessible from the MentorDashboard page" do
         click_button "Submit"    
         visit"/MentorDashboard"
         expect(page).to have_content "My Mentee Schedule"
+     clear_database   
     end 
     
    #page links tests from /MenteeDashboard
     
      it "is accessible from the MenteeDashboard page" do
-        visit"/MentorDashboard"
+        visit"/MenteeDashboard"
         click_link "Contact Us"
         expect(page).to have_content "Contact Admin:"
+         clear_database   
     end
            
 
@@ -287,12 +289,14 @@ it "is accessible from the MentorDashboard page" do
         visit"/MenteeDashboard"
         click_link "Logout"
         expect(page).to have_content "Logged out"
+        clear_database   
     end
     
     it "is accessible from the MenteeDashboard page" do
-        visit"/MentorDashboard"
+        visit"/MenteeDashboard"
         click_link "Our Program"
         expect(page).to have_content "one-to-one mentoring program"
+        clear_database   
     end 
     
         it "is accessible from the MenteeDashboard page" do
@@ -304,9 +308,10 @@ it "is accessible from the MentorDashboard page" do
         visit"/MenteeDashboard"
         click_link "Dashboard"
         expect(page).to have_content "Mentee Dashboard"
+        clear_database   
     end 
     
-    it "is accessible from the MentorDashboard page" do
+    it "is accessible from the MenteeDashboard page" do
         add_test_user
         visit "/login"
         fill_in "username", with: "123"
@@ -315,6 +320,7 @@ it "is accessible from the MentorDashboard page" do
         visit"/MenteeDashboard"
         click_link "Find a mentor"
         expect(page).to have_content "Search for a Mentor"
+        clear_database   
     end 
     
             it "is accessible from the MenteeDashboard page" do
@@ -326,6 +332,7 @@ it "is accessible from the MentorDashboard page" do
         visit"/MenteeDashboard"
         click_link "Edit Profile"
         expect(page).to have_content "Edit your information"
+        clear_database   
     end 
     
             it "is accessible from the MenteeDashboard page" do
@@ -337,6 +344,7 @@ it "is accessible from the MentorDashboard page" do
         visit"/MenteeDashboard"
         click_link "My Mentor"
         expect(page).to have_content "Details of your current mentor"
+        clear_database   
     end 
        
             it "is accessible from the MenteeDashboard page" do
@@ -348,6 +356,7 @@ it "is accessible from the MentorDashboard page" do
         visit"/MenteeDashboard"
         click_link "Contact"
         expect(page).to have_content "Contact Admin:"
+        clear_database   
     end
             it "is accessible from the MenteeDashboard page" do
         add_test_user
@@ -358,6 +367,7 @@ it "is accessible from the MentorDashboard page" do
         visit"/MenteeDashboard"
         click_link "Accessibility"
         expect(page).to have_content "Everyone using this website"
+        clear_database   
     end 
     #checks if the header is correct for mentee
  it "is accessible from the MenteeDashboard page" do
@@ -368,6 +378,7 @@ it "is accessible from the MentorDashboard page" do
         click_button "Submit"    
         visit"/MenteeDashboard"
         expect(page).to have_content "My Mentor Schedule"
+        clear_database   
     end 
 
 
