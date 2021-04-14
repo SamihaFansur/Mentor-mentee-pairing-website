@@ -3,7 +3,7 @@ require_relative "../spec_helper"
 describe "the edit page" do
   it "shows an error when trying to load an invalid mentee" do
     visit "/editMentee?id=1000000"
-    expect(page).to have_content "Unknown mentee"
+    expect(page).to have_no_xpath('a')
   end
 #checks that a mentee can be edited
   it "allows editing of a valid mentee" do
