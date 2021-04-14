@@ -26,7 +26,6 @@
                 <th>Job Title</th>
                 <th>Course Name</th>
                 <th>Send application</th>
-                <th>Status</th>
               </tr>
             <% @mentors.each do |mentor| %>
               <tr>
@@ -44,12 +43,11 @@
                     </button>
                   </form>
                 </td>
-                <td>Vacancy</td>
               </tr>
             <% end %> 
             </table>
           <% else %>
-            <p id="SearchError">search revealed no mentors</p>
+            <p id="SearchError">Your search revealed no mentors</p>
           <% end %>
       </div>
 </div>
