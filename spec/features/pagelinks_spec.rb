@@ -381,6 +381,110 @@ it "is accessible from the MentorDashboard page" do
         clear_database   
     end 
 
+   #page links tests from /AdminDashboard
+    
+     it "is accessible from the AdminDashboard page" do
+        visit"/AdminDashboard"
+        click_link "Contact Us"
+        expect(page).to have_content "Contact Admin:"
+        clear_database   
+    end
+           
+
+    it "is accessible from the AdminDashboard page" do
+        
+        visit "/login"
+        fill_in "username", with: "admin1"
+        fill_in "password", with: "S.F"
+        click_button "Submit"
+        visit"/AdminDashboard"
+        click_link "Logout"
+        expect(page).to have_content "Logged out"
+        clear_database   
+    end
+    
+    it "is accessible from the AdminDashboard page" do
+        visit"/AdminDashboard"
+        click_link "Our Program"
+        expect(page).to have_content "one-to-one mentoring program"
+        clear_database   
+    end 
+    
+        it "is accessible from the AdminDashboard page" do
+
+        visit "/login"
+        fill_in "username", with: "admin1"
+        fill_in "password", with: "S.F"
+        click_button "Submit"   
+        visit"/AdminDashboard"
+        click_link "Dashboard"
+        expect(page).to have_content "Admin Dashboard"
+        clear_database   
+    end 
+    
+    it "is accessible from the AdminDashboard page" do
+        visit "/login"
+        fill_in "username", with: "admin1"
+        fill_in "password", with: "S.F"
+        click_button "Submit"    
+        visit"/AdminDashboard"
+        click_link "Mentor List"
+        expect(page).to have_content "Your search revealed no mentors"
+        clear_database   
+    end 
+    
+            it "is accessible from the AdminDashboard page" do
+        visit "/login"
+        fill_in "username", with: "admin1"
+        fill_in "password", with: "S.F"
+        click_button "Submit"  
+        visit"/AdminDashboard"
+        click_link "Edit Profile"
+        expect(page).to have_content "Edit your information"
+        clear_database   
+    end 
+    
+            it "is accessible from the AdminDashboard page" do
+        visit "/login"
+        fill_in "username", with: "admin1"
+        fill_in "password", with: "S.F"
+        click_button "Submit"
+        visit"/AdminDashboard"
+        click_link "Mentee List"
+        expect(page).to have_content "Your search revealed no mentees"
+        clear_database   
+    end 
+       
+            it "is accessible from the AdminDashboard page" do
+        visit "/login"
+        fill_in "username", with: "admin1"
+        fill_in "password", with: "S.F"
+        click_button "Submit" 
+        visit"/AdminDashboard"
+        click_link "Contact"
+        expect(page).to have_content "Contact Admin:"
+        clear_database   
+    end
+            it "is accessible from the AdminDashboard page" do
+        visit "/login"
+        fill_in "username", with: "admin1"
+        fill_in "password", with: "S.F"
+        click_button "Submit"  
+        visit"/AdminDashboard"
+        click_link "Accessibility"
+        expect(page).to have_content "Everyone using this website"
+        clear_database   
+    end 
+    #checks if the header is correct for admin
+ it "is accessible from the AdminDashboard page" do
+       visit "/login"
+        fill_in "username", with: "admin1"
+        fill_in "password", with: "S.F"
+        click_button "Submit"   
+        visit"/AdminDashboard"
+        expect(page).not_to have_content "My Mentor Schedule"
+        clear_database   
+    end 
 
 
 clear_database    
