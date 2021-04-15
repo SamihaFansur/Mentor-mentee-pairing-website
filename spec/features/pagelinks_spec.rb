@@ -487,6 +487,167 @@ it "is accessible from the MentorDashboard page" do
     end 
 
 
+   #page links tests from /AdminMentorDashboard
+    
+     it "is accessible from the AdminMentorDashboard page" do
+        visit"/AdminMentorDashboard"
+        click_link "Contact Us"
+        expect(page).to have_content "Contact Admin:"
+        clear_database   
+    end
+           
+
+    it "is accessible from the AdminMentorDashboard page" do
+        add_test_mentor
+        visit "/login"
+        fill_in "username", with: "admin1"
+        fill_in "password", with: "S.F"
+        click_button "Submit"
+        visit "/loginAgain"
+        fill_in "username", with: "1234"
+        fill_in "password", with: "1234"
+        click_button "Submit"
+        visit"/AdminMentorDashboard"
+        click_link "Logout"
+        expect(page).to have_content "Logged out"
+        clear_database   
+    end
+    
+    it "is accessible from the AdminMentorDashboard page" do
+        visit"/AdminMentorDashboard"
+        click_link "Our Program"
+        expect(page).to have_content "one-to-one mentoring program"
+        clear_database   
+    end 
+    
+        it "is accessible from the AdminMentorDashboard page" do
+        add_test_mentor
+        visit "/login"
+        fill_in "username", with: "admin1"
+        fill_in "password", with: "S.F"
+        click_button "Submit"
+        visit "/loginAgain"
+        fill_in "username", with: "1234"
+        fill_in "password", with: "1234"
+        click_button "Submit"  
+        visit"/AdminMentorDashboard"
+        click_link "Dashboard"
+        expect(page).to have_content "Admin + Mentor Dashboard"
+        clear_database   
+    end 
+    
+    it "is accessible from the AdminMentorDashboard page" do
+        clear_database 
+        add_test_mentor
+        visit "/login"
+        fill_in "username", with: "admin1"
+        fill_in "password", with: "S.F"
+        click_button "Submit"
+        visit "/loginAgain"
+        fill_in "username", with: "1234"
+        fill_in "password", with: "1234"
+        click_button "Submit"    
+        visit"/AdminMentorDashboard"
+        click_link "Mentor List"
+        expect(page).to have_content "Mentor List"
+        clear_database   
+    end 
+    
+            it "is accessible from the AdminMentorDashboard page" do
+        add_test_mentor
+        visit "/login"
+        fill_in "username", with: "admin1"
+        fill_in "password", with: "S.F"
+        click_button "Submit"
+        visit "/loginAgain"
+        fill_in "username", with: "1234"
+        fill_in "password", with: "1234"
+        click_button "Submit"
+        visit"/AdminMentorDashboard"
+        click_link "Edit Profile"
+        expect(page).to have_content "Edit mentor information"
+        clear_database   
+    end 
+    
+            it "is accessible from the AdminMentorDashboard page" do
+        clear_database         
+        add_test_mentor
+        visit "/login"
+        fill_in "username", with: "admin1"
+        fill_in "password", with: "S.F"
+        click_button "Submit"
+        visit "/loginAgain"
+        fill_in "username", with: "1234"
+        fill_in "password", with: "1234"
+        click_button "Submit"
+        visit"/AdminMentorDashboard"
+        click_link "Mentee List"
+        expect(page).to have_content "Mentee List"
+        clear_database   
+    end 
+       
+            it "is accessible from the AdminMentorDashboard page" do
+        add_test_mentor
+        visit "/login"
+        fill_in "username", with: "admin1"
+        fill_in "password", with: "S.F"
+        click_button "Submit"
+        visit "/loginAgain"
+        fill_in "username", with: "1234"
+        fill_in "password", with: "1234"
+        click_button "Submit"
+        visit"/AdminMentorDashboard"
+        click_link "Contact"
+        expect(page).to have_content "Contact Admin:"
+        clear_database   
+    end
+            it "is accessible from the AdminMentorDashboard page" do
+        add_test_mentor
+        visit "/login"
+        fill_in "username", with: "admin1"
+        fill_in "password", with: "S.F"
+        click_button "Submit"
+        visit "/loginAgain"
+        fill_in "username", with: "1234"
+        fill_in "password", with: "1234"
+        click_button "Submit" 
+        visit"/AdminMentorDashboard"
+        click_link "Accessibility"
+        expect(page).to have_content "Everyone using this website"
+        clear_database   
+    end 
+    #checks if the header is correct for admin
+ it "is accessible from the AdminMentorDashboard page" do
+       add_test_mentor
+        visit "/login"
+        fill_in "username", with: "admin1"
+        fill_in "password", with: "S.F"
+        click_button "Submit"
+        visit "/loginAgain"
+        fill_in "username", with: "1234"
+        fill_in "password", with: "1234"
+        click_button "Submit"   
+        visit"/AdminMentorDashboard"
+        expect(page).not_to have_content "My Mentor Schedule"
+        clear_database   
+    end 
+            it "is accessible from the AdminMentorDashboard page" do
+        add_test_mentor
+        visit "/login"
+        fill_in "username", with: "admin1"
+        fill_in "password", with: "S.F"
+        click_button "Submit"
+        visit "/loginAgain"
+        fill_in "username", with: "1234"
+        fill_in "password", with: "1234"
+        click_button "Submit"  
+        visit"/AdminMentorDashboard"
+        click_link "My Mentee"
+        expect(page).to have_content "Details of your current mentee"
+        clear_database   
+    end 
+
+
 clear_database    
     
 end
