@@ -24,7 +24,7 @@ post "/deleteMentee" do
           "Sorry to see you go!", 
           "Hi "+@mentees.fname+" "+@mentees.lname+"!\n"+
           "Your mentee account has been successfully deleted by an admin.\n"+
-          "If you think there has been a mistake please contact an admin using our contact form."
+          "If you think there has been a mistake please contact an admin using our contact form."+
           "\n\n\nRegards\nTeam 6")
       redirect "searchForAMentee"
     end
@@ -47,7 +47,7 @@ post "/deleteMentor" do
           "Sorry to see you go!", 
           "Hi "+@mentors.fname+" "+@mentors.lname+"!\n"+
           "Your mentor account has been successfully deleted by an admin.\n"+
-          "If you think there has been a mistake please contact an admin using our contact form."
+          "If you think there has been a mistake please contact an admin using our contact form."+
           "\n\n\nRegards\nTeam 6")
       redirect "/searchForAMentor"
     elsif session[:mentors_username] #if mentor deletes their profile themselves
