@@ -18,7 +18,7 @@
 
   <p>
     <label for="phoneNum" class="options">Phone Number: </label>
-    <input type="text" name="phoneNum" id="phoneNum" placeholder="+XX XXXXXXXXXX" maxlength="40" size="30" value="<%= h @mentees.phoneNum %>">
+    <input type="text" name="phoneNum" pattern="^\+(?:[0-9] ?){1,3}\s+[0-9]{6,14}$" title="E.g +12 34567890" id="phoneNum" placeholder="+XX XXXXXXXXXX" maxlength="40" size="30" value="<%= h @mentees.phoneNum %>">
   </p>            
 
   <p>
