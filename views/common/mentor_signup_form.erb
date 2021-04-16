@@ -15,6 +15,7 @@
     <label for="email" class="options">UoS E-mail:</label>
     <input type="email" name="email" pattern="[A-Za-z0-9._%+-]+@sheffield.ac.uk$" title="Enter your UoS email in the format xyz@sheffield.ac.uk" id="email" placeholder="Enter your UoS email..." maxlength="40" size="30" required value="<%= h @mentors.email %>"><!--Mandatory field-->
   </p>
+  
   <p> 
     <label for="phoneNum" class="options">Phone Number:</label>
     <input type="text" name="phoneNum" id="phoneNum" placeholder="+XX XXXXXXXXXX" maxlength="40" size="30" required value="<%= h @mentors.phoneNum %>"><!--Mandatory field-->
@@ -487,6 +488,7 @@
       <option value="Zoologist">Zoologist</option>
     </select>
   </p>
+  
   <p>  
     <label for="courseName" class="options">Course: </label> <!--Dropdown List--> <!--Mandatory field-->
     <select name="courseName" id="courseName" required value="<%= h @mentors.courseName %>"> <!--Course List-->
@@ -765,9 +767,10 @@
     <label for="username" class="options">Username:</label>
     <input type="text" name="username" id="username" placeholder="Enter your username..." maxlength="40" size="30" required value="<%= h @mentors.username %>"><!--Mandatory field-->
   </p>
+  
   <p>
     <label for="password" class="options">Password:</label>
-    <input type="password" name="password" id="password" placeholder="Enter your password..." maxlength="40" size="30" required value="<%= h @mentors.password %>"><!--Mandatory field-->
+    <input type="password" name="password"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" id="password" placeholder="Enter your password..." maxlength="40" size="30" required value="<%= h @mentors.password %>"><!--Mandatory field-->
   </p>             
 
 </div>
