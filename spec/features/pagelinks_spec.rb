@@ -394,7 +394,7 @@ it "is accessible from the MentorDashboard page" do
     it "is accessible from the AdminDashboard page" do
         
         visit "/login"
-        fill_in "username", with: "admin1"
+        fill_in "username", with: "admin2"
         fill_in "password", with: "S.F"
         click_button "Submit"
         visit"/AdminDashboard"
@@ -413,7 +413,7 @@ it "is accessible from the MentorDashboard page" do
         it "is accessible from the AdminDashboard page" do
 
         visit "/login"
-        fill_in "username", with: "admin1"
+        fill_in "username", with: "admin2"
         fill_in "password", with: "S.F"
         click_button "Submit"   
         visit"/AdminDashboard"
@@ -424,7 +424,7 @@ it "is accessible from the MentorDashboard page" do
     
     it "is accessible from the AdminDashboard page" do
         visit "/login"
-        fill_in "username", with: "admin1"
+        fill_in "username", with: "admin2"
         fill_in "password", with: "S.F"
         click_button "Submit"    
         visit"/AdminDashboard"
@@ -435,7 +435,7 @@ it "is accessible from the MentorDashboard page" do
     
             it "is accessible from the AdminDashboard page" do
         visit "/login"
-        fill_in "username", with: "admin1"
+        fill_in "username", with: "admin2"
         fill_in "password", with: "S.F"
         click_button "Submit"  
         visit"/AdminDashboard"
@@ -446,7 +446,7 @@ it "is accessible from the MentorDashboard page" do
     
             it "is accessible from the AdminDashboard page" do
         visit "/login"
-        fill_in "username", with: "admin1"
+        fill_in "username", with: "admin2"
         fill_in "password", with: "S.F"
         click_button "Submit"
         visit"/AdminDashboard"
@@ -457,7 +457,7 @@ it "is accessible from the MentorDashboard page" do
        
             it "is accessible from the AdminDashboard page" do
         visit "/login"
-        fill_in "username", with: "admin1"
+        fill_in "username", with: "admin2"
         fill_in "password", with: "S.F"
         click_button "Submit" 
         visit"/AdminDashboard"
@@ -467,7 +467,7 @@ it "is accessible from the MentorDashboard page" do
     end
             it "is accessible from the AdminDashboard page" do
         visit "/login"
-        fill_in "username", with: "admin1"
+        fill_in "username", with: "admin2"
         fill_in "password", with: "S.F"
         click_button "Submit"  
         visit"/AdminDashboard"
@@ -478,7 +478,7 @@ it "is accessible from the MentorDashboard page" do
     #checks if the header is correct for admin
  it "is accessible from the AdminDashboard page" do
        visit "/login"
-        fill_in "username", with: "admin1"
+        fill_in "username", with: "admin2"
         fill_in "password", with: "S.F"
         click_button "Submit"   
         visit"/AdminDashboard"
@@ -500,7 +500,7 @@ it "is accessible from the MentorDashboard page" do
     it "is accessible from the AdminMentorDashboard page" do
         add_test_mentor
         visit "/login"
-        fill_in "username", with: "admin1"
+        fill_in "username", with: "admin2"
         fill_in "password", with: "S.F"
         click_button "Submit"
         visit "/loginAgain"
@@ -523,7 +523,7 @@ it "is accessible from the MentorDashboard page" do
         it "is accessible from the AdminMentorDashboard page" do
         add_test_mentor
         visit "/login"
-        fill_in "username", with: "admin1"
+        fill_in "username", with: "admin2"
         fill_in "password", with: "S.F"
         click_button "Submit"
         visit "/loginAgain"
@@ -540,7 +540,7 @@ it "is accessible from the MentorDashboard page" do
         clear_database 
         add_test_mentor
         visit "/login"
-        fill_in "username", with: "admin1"
+        fill_in "username", with: "admin2"
         fill_in "password", with: "S.F"
         click_button "Submit"
         visit "/loginAgain"
@@ -556,7 +556,7 @@ it "is accessible from the MentorDashboard page" do
             it "is accessible from the AdminMentorDashboard page" do
         add_test_mentor
         visit "/login"
-        fill_in "username", with: "admin1"
+        fill_in "username", with: "admin2"
         fill_in "password", with: "S.F"
         click_button "Submit"
         visit "/loginAgain"
@@ -573,7 +573,7 @@ it "is accessible from the MentorDashboard page" do
         clear_database         
         add_test_mentor
         visit "/login"
-        fill_in "username", with: "admin1"
+        fill_in "username", with: "admin2"
         fill_in "password", with: "S.F"
         click_button "Submit"
         visit "/loginAgain"
@@ -589,7 +589,7 @@ it "is accessible from the MentorDashboard page" do
             it "is accessible from the AdminMentorDashboard page" do
         add_test_mentor
         visit "/login"
-        fill_in "username", with: "admin1"
+        fill_in "username", with: "admin2"
         fill_in "password", with: "S.F"
         click_button "Submit"
         visit "/loginAgain"
@@ -604,7 +604,7 @@ it "is accessible from the MentorDashboard page" do
             it "is accessible from the AdminMentorDashboard page" do
         add_test_mentor
         visit "/login"
-        fill_in "username", with: "admin1"
+        fill_in "username", with: "admin2"
         fill_in "password", with: "S.F"
         click_button "Submit"
         visit "/loginAgain"
@@ -620,7 +620,7 @@ it "is accessible from the MentorDashboard page" do
  it "is accessible from the AdminMentorDashboard page" do
        add_test_mentor
         visit "/login"
-        fill_in "username", with: "admin1"
+        fill_in "username", with: "admin2"
         fill_in "password", with: "S.F"
         click_button "Submit"
         visit "/loginAgain"
@@ -634,7 +634,7 @@ it "is accessible from the MentorDashboard page" do
             it "is accessible from the AdminMentorDashboard page" do
         add_test_mentor
         visit "/login"
-        fill_in "username", with: "admin1"
+        fill_in "username", with: "admin2"
         fill_in "password", with: "S.F"
         click_button "Submit"
         visit "/loginAgain"
