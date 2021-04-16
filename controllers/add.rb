@@ -22,6 +22,7 @@ post "/MenteeSignUpForm" do
           "Successful Sign up!", 
           "Hi "+@mentees.fname+" "+@mentees.lname+"!\n"+
           "Your username is: "+@mentees.username+"\n"+
+          "You password: "+ @mentees.password+"\n"+
           "Your email: "+@mentees.email+"\n"+
           "Please use these credentials to login into your mentee account \n"+
           "\n\n\nRegards\nTeam 6")
@@ -62,6 +63,7 @@ post "/MentorSignUpForm" do
           "Successful Sign up!", 
           "Hi "+@mentors.fname+" "+@mentors.lname+"!\n"+
           "Your username is: "+@mentors.username+"\n"+
+          "You password: "+ @mentors.password+"\n"+
           "Your email: "+@mentors.email+"\n"+
           "Please use these credentials to login into your mentor account and activate your mentor account \n"+
           "\n\n\nRegards\nTeam 6")

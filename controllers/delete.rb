@@ -1,11 +1,12 @@
 ###############################MENTEE######################################
 post "/deleteMentee" do
   id = params["id"]  #new variable to search the id of corresponding mentee to be deleted
-  
+  request = Request.where(menteeID: id)
  #If id requested exists then deletes the profile, logs mentee out and redirects to index page
   if Mentee.id_exists?(id)
     mentee = Mentee[id]
     mentee.delete
+    request.delete
     if session[:mentees_username] 
       session.clear
       redirect "/index"
