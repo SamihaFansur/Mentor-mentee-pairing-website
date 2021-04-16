@@ -6,8 +6,12 @@ post "/deleteMentee" do
   if Mentee.id_exists?(id)
     mentee = Mentee[id]
     mentee.delete
-    session.clear
-    redirect "/index"
+    if session[:mentees_username] 
+      session.clear
+      redirect "/index"
+    elsif session[:admins_username] 
+      redirect "searchForAMentee"
+    end
   end
 end
 
@@ -20,7 +24,12 @@ post "/deleteMentor" do
     mentor = Mentor[id]
     mentor.delete
     session.clear
-    redirect "/index"
+    if session[:admins_username] 
+      redirect "/searchForAMentor"
+    elsif session[:mentors_username] 
+      session.clear
+      redirect "/index"
+    end
   end
 end
 

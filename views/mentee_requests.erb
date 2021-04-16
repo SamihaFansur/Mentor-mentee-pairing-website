@@ -1,0 +1,34 @@
+<!-- Admin views the pending mentee applications mentees sent to potential mentors -->
+<%= erb :"common/header_adminA" %>
+<div class="background" id="statement">
+  
+      <div class="full">
+        <h2>Pending Mentee Requests</h2>
+        <div class="user_info" id="application">
+          <!-- Displays all the mentee applications that are pending -->
+          <% if @requests.count > 0 %>
+            <table class="display_table">
+              <tr id="TableHeadings">
+                <th>mentee Name</th>
+                <th>mentee Email</th>
+                <th>mentor Name</th>
+                <th>mentor Email</th>
+              </tr>
+            <% (0...@requests.count).each do |request| %>
+              <tr>
+                <td><%= @menteesInfo[request][0] %></td>
+                <td><%= @menteesInfo[request][1] %></td>
+                <td><%= @mentorsInfo[request][0] %></td>
+                <td><%= @mentorsInfo[request][1] %></td>
+              </tr>
+            <% end %> 
+            </table>
+          <% else %>
+            <p id="SearchError">There are no pending mentee requests at this moment!</p>
+          <% end %>
+         </div>
+     </div>
+  
+</div> 
+
+<%= erb :"common/footer" %>

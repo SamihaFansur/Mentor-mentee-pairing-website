@@ -50,7 +50,6 @@ get "/myMentee" do
   erb :myMentee
 end
 
-
 get "/myMenteeA" do
   #List to store the mentee matched to a mentor
  @menteeMatchedList = []
@@ -61,4 +60,25 @@ get "/myMenteeA" do
   end
   
   erb :myMenteeA
+end
+
+#Route for the admin to view pending mentee applications
+get "/PendingMenteeApplications" do
+  @requests = Request.all
+#   @requests = @requests.order(:menteeID)
+  @menteesInfo = []
+  @mentorsInfo = []
+  puts @requests
+  @requests.each do |request|
+    mentee = Mentee.first(id: request.menteeID)
+    mentor = Mentor.first(id: request.mentorID)
+    
+    @menteesInfo.push([mentee.name, mentee.email])
+    @mentorsInfo.push([mentor.name, mentor.email])
+  end
+   
+
+  erb :mentee_requests
+  
+  
 end
