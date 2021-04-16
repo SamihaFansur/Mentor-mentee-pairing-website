@@ -12,8 +12,8 @@
   </p>
 
   <p>
-    <label for="email" class="options">E-mail:</label>
-    <input type="email" name="email" id="email" placeholder="Enter your email..." maxlength="40" size="30" required value="<%= h @mentors.email %>"><!--Mandatory field-->
+    <label for="email" class="options">UoS E-mail:</label>
+    <input type="email" name="email" pattern="[A-Za-z0-9._%+-]+@sheffield.ac.uk$" title="Enter your UoS email in the format xyz@sheffield.ac.uk" id="email" placeholder="Enter your UoS email..." maxlength="40" size="30" required value="<%= h @mentors.email %>"><!--Mandatory field-->
   </p>
   <p> 
     <label for="phoneNum" class="options">Phone Number:</label>

@@ -12,8 +12,8 @@
   </p>
   
   <p>
-    <label for="email" class="options">UoS E-mail:</label>
-    <input type="email" name="email" id="email" placeholder="Enter your UoS email..." maxlength="40" size="30" required value="<%= h @mentees.email %>"><!--Mandatory field-->
+    <label for="email" class="options">University E-mail:</label>
+    <input type="email" name="email" pattern="[A-Za-z0-9._%+-]+@+[A-Za-z0-9._%+-]+.ac.uk$" title="Enter your University email in the format xyz@uniName.ac.uk" id="email" placeholder="xyz@uniName.ac.uk" maxlength="40" size="30" required value="<%= h @mentees.email %>"><!--Mandatory field-->
   </p>
 
   <p>
