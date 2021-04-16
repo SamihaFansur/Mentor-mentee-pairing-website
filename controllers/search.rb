@@ -32,25 +32,25 @@ post "/addApplication" do
   if @requests.exist_application?
     @error = "Application already sent"
     redirect "/search?error=1"
-    else
-      if @mentees.applicationNumber == "1"
-        @requests.timePassed = Time.new
-        @requests.save_changes
-        
-        #Mentee used up 1 application for time being, so sets to 0
-        @mentees.applicationNumber = "0"
-        @mentees.save_changes
+  else
+    if @mentees.applicationNumber == "1"
+      @requests.timePassed = Time.new
+      @requests.save_changes
 
-        #Sends an email to mentor that a mentee sent them an application
-        send_mail(@mentors.email, 
-              "You have a new mentee application!", 
-              "Hi "+@mentors.fname+" "+@mentors.lname+" !\n"+
-              "You have a new mentee application. Please login into your mentor account and view your mentee applications \n"+
-              "\n\nRegards\nTeam 6")
-      else
-        @error = "Application already sent"
-        redirect "/search?error=1"
-      end   
+      #Mentee used up 1 application for time being, so sets to 0
+      @mentees.applicationNumber = "0"
+      @mentees.save_changes
+
+      #Sends an email to mentor that a mentee sent them an application
+      send_mail(@mentors.email, 
+            "You have a new mentee application!", 
+            "Hi "+@mentors.fname+" "+@mentors.lname+" !\n"+
+            "You have a new mentee application. Please login into your mentor account and view your mentee applications \n"+
+            "\n\nRegards\nTeam 6")
+    else
+      @error = "Application already sent"
+      redirect "/search?error=1"
+    end   
   end
   
     redirect "/search"
