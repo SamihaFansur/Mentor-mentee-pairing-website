@@ -11,6 +11,12 @@ get "/MenteeDashboard" do
     $mentees.save_changes
   end
   
+  #Initializing mentorMatch field in mentees table
+  if $mentees.mentorMatch == nil
+    $mentees.mentorMatch = 0
+    $mentees.save_changes
+  end
+  
   erb :mentee_dashboard
 end
 

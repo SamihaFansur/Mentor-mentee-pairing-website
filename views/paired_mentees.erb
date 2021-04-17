@@ -1,0 +1,40 @@
+<%= erb :"common/header_adminA" %>
+    <div class="background" id="statement">
+      <div class="full">
+        <div class="title"><h3>Search for a <strong>Paired</strong> Mentee</h3></div> <!--Main page Title-->  
+
+          <form>
+            <p>Enter a <strong>FACULTY</strong> to search in: 
+              <!-- Gets the search value(mentee faculty) to be searched -->
+              <input type="text" name="faculty_search" id="searchForMentee" placeholder="Enter a faculty to search..." maxlength="40" size="30" value="<%= h @faculty_search %>"/>
+              <input type="submit" value="Submit" />
+            </p>
+          </form>
+          
+          <p>Paired Mentees: <%= @mentees.count %></p>
+        
+          <!--Displays mentee details-->
+          <% if @mentees.count > 0 %>
+            <table class="display_table">
+              <tr id="TableHeadings">
+                <th>Name</th>
+                <th>Email</th>
+                <th>Faculty</th>
+                <th>Mentor matched to</th>
+              </tr>
+            <% @mentees.each do |mentee| %>
+              <tr>
+                <td><%= h mentee.name %></td>
+                <td><%= h mentee.email %></td>
+                <td><%= h mentee.faculty %></td>
+                <td><%= h mentee.mentorMatch %></td>
+              </tr>
+            <% end %> 
+            </table>
+          <% else %>
+            <p id="SearchError">No mentees appear to be paired with a mentor.</p>
+          <% end %>
+      </div>
+</div>
+
+<%= erb :"common/footer" %>

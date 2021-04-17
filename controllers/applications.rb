@@ -64,21 +64,35 @@ end
 
 #Route for the admin to view pending mentee applications
 get "/PendingMenteeApplications" do
-  @requests = Request.all
-#   @requests = @requests.order(:menteeID)
+  @requests = Request.all #All records in Requests table
   @menteesInfo = []
   @mentorsInfo = []
-  puts @requests
   @requests.each do |request|
     mentee = Mentee.first(id: request.menteeID)
     mentor = Mentor.first(id: request.mentorID)
     
-    @menteesInfo.push([mentee.name, mentee.email])
-    @mentorsInfo.push([mentor.name, mentor.email])
+    @menteesInfo.push([mentee.id, mentee.name, mentee.email]) #Mentee information
+    @mentorsInfo.push([mentor.id, mentor.name, mentor.email]) #Mentor information
   end
-   
 
-  erb :mentee_requests
+  erb :pending_mentee_requests
   
+end
+
+#Lists all paired mentees, so an admin can search for paired mentees within a faculty
+get "/PairedMentees" do
+  #New variable to enable admins to search for mentees based on faculty
+  @faculty_search = params.fetch("faculty_search", "").strip
+#   unpaired_Mentee = Mentee.where(Sequel.like(:mentorMatch, "0"))
   
+  #If no faculty is being searched, it displays the list of all paired mentees in alphabetical order 
+  #else it searches through the faculty field in the mentees table and displays paired mentees' whose 
+  #faculty is being searched
+    @mentees = if @faculty_search.empty? 
+                Mentee.order(:faculty).where(~Sequel.like(:mentorMatch, 0))
+             else
+               Mentee.order(:faculty).where(Sequel.ilike(:faculty, "%#{@faculty_search}%")) #ilike used to make search case insensitive
+             end
+
+  erb :paired_mentees
 end
