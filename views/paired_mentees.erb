@@ -20,14 +20,16 @@
                 <th>Name</th>
                 <th>Email</th>
                 <th>Faculty</th>
-                <th>Mentor matched to</th>
+                <th>Matched Mentor Name</th>
+                <th>Matched Mentor Email</th>
               </tr>
-            <% @mentees.each do |mentee| %>
+            <% (0...@mentees.count).each do |menteeMentor| %>
               <tr>
-                <td><%= h mentee.name %></td>
-                <td><%= h mentee.email %></td>
-                <td><%= h mentee.faculty %></td>
-                <td><%= h mentee.mentorMatch %></td>
+                <td><%= @menteesList[menteeMentor][0] %></td>
+                <td><%= @menteesList[menteeMentor][1] %></td>
+                <td><%= @menteesList[menteeMentor][2] %></td>
+                <td><%= @mentors[menteeMentor][0] %></td>
+                <td><%= @mentors[menteeMentor][1] %></td>
               </tr>
             <% end %> 
             </table>
