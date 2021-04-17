@@ -4,14 +4,22 @@
         <div class="title"><h3>Search for a <strong>Paired</strong> Mentee</h3></div> <!--Main page Title-->  
 
           <form>
-            <p>Enter a <strong>FACULTY</strong> to search in: 
+            <p>Choose a <strong>FACULTY</strong> to search in: 
               <!-- Gets the search value(mentee faculty) to be searched -->
-              <input type="text" name="faculty_search" id="searchForMentee" placeholder="Enter a faculty to search..." maxlength="40" size="30" value="<%= h @faculty_search %>"/>
+              <select name="faculty_search" id="searchForMentee" value="<%= h @faculty_search %>">
+                <option value="">Select</option>
+                <option value="Faculty of Arts and Humanities">Faculty of Arts and Humanities</option>
+                <option value="Faculty of Engineering">Faculty of Engineering</option>
+                <option value="Faculty of Medicine, Dentistry and Health">Faculty of Medicine, Dentistry and Health</option>
+                <option value="Faculty of Science">Faculty of Science</option>
+                <option value="Faculty of Social Sciences">Faculty of Social Sciences</option>
+                <option value="International Faculty - CITY College, Thessaloniki">International Faculty - CITY College, Thessaloniki</option>
+              </select>              
               <input type="submit" value="Submit" />
             </p>
           </form>
           
-          <p>Paired Mentees: <%= @mentees.count %></p>
+          <p>Number of Paired Mentees: <%= @mentees.count %></p>
         
           <!--Displays mentee details-->
           <% if @mentees.count > 0 %>
