@@ -3,7 +3,7 @@ require_relative "../spec_helper"
 describe "the signup page" do
     it "is accessible from the search page" do
         visit"/index"
-        click_link "Sign Up"
+        click_link "Sign Up:"
         expect(page).to have_content "Mentee"
     end
     #tests that an empty signup form wont submit for mentee
@@ -30,7 +30,7 @@ describe "the signup page" do
     #checks that signup is accessible from /index and that mentor signup is inside
         it "is accessible from the search page" do
         visit"/index"
-        click_link "Sign Up"
+        click_link "Sign Up:"
         expect(page).to have_content "Mentor"
     end
     #tests that an empty signup form wont submit for mentor
