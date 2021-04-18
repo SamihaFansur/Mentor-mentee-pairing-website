@@ -41,6 +41,22 @@ post "/matchMentee" do
   mentee.applicationNumber = "0"
   mentee.save_changes
   
+  #Sends an email to mentee that they have been paired
+  send_mail(mentee.email, 
+    "You have been paired with a mentor!", 
+    "Hi "+mentee.fname+" "+mentee.lname+"!\n"+
+    "Your new mentor is: "+$mentors.fname+" "+$mentors.lname+".\n"+
+    "Please login into your account for more details.\n"+
+    "\n\n\nRegards\nTeam 6")
+  
+  #Sends an email to mentor that they have been paired
+  send_mail($mentors.email, 
+    "You have been paired with a mentee!", 
+    "Hi "+$mentors.fname+" "+$mentors.lname+"!\n"+
+    "Your new mentee is: "+mentee.fname+" "+mentee.lname+".\n"+
+    "Please login into your account for more details.\n"+
+    "\n\n\nRegards\nTeam 6")
+  
   redirect "/MentorDashboard"
 end
 
@@ -55,6 +71,13 @@ post "/rejectMentee" do
   mentee.applicationNumber = "1"
   mentee.save_changes
   
+  #Sends an email to mentee that their application was rejected
+  send_mail(mentee.email, 
+    "Rejected application!", 
+    "Hi "+mentee.fname+" "+mentee.lname+"!\n"+
+    "Your mentor application has been rejected. To send another application login into your account.\n"+
+    "\n\n\nRegards\nTeam 6")
+  
   redirect "/MentorDashboard"
 end
 
@@ -66,6 +89,13 @@ post "/unsend" do
   #Mentee can now send a mentor an application
   $mentees.applicationNumber = "0"
   $mentees.save_changes
+  
+  #Sends an email to mentor that the mentee unsent their application
+   send_mail($mentors.email, 
+    "Withdrawn mentee application!", 
+    "Hi "+$mentors.fname+" "+$mentors.lname+"!\n"+
+    "A mentee has withdrawn their application.\n"+
+    "\n\n\nRegards\nTeam 6")
   
   redirect "/MenteeDashboard"
 end
@@ -149,4 +179,13 @@ get "/PairedMentees" do
     end
 
   erb :paired_mentees
+end
+
+
+def send_mail(email, subject, body)
+  response = Net::HTTP.post_form(URI("https://www.dcs.shef.ac.uk/cgi-intranet/public/FormMail.php"),
+                                 "recipients" => email,
+                                 "subject" => subject,
+                                 "body" => body)
+  response.is_a? Net::HTTPSuccess
 end
