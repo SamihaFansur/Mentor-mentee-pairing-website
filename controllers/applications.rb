@@ -35,6 +35,12 @@ post "/matchMentee" do
   $mentors.profileStatus = "1"
   $mentors.save_changes
   
+  mentee = Mentee.first(id: params[:menteeID]) #Gets the existing mentee based on id
+  
+  #Mentee can no longer send a mentor an application
+  mentee.applicationNumber = "0"
+  mentee.save_changes
+  
   redirect "/MentorDashboard"
 end
 
