@@ -4,7 +4,7 @@ require_relative "../spec_helper"
 describe "the page links" do
     it "sign up is accessible from the index page" do
         visit"/index"
-        click_link "Sign Up"
+        click_link "Sign Up:"
         expect(page).to have_content "Mentee"
     end
         
@@ -69,7 +69,7 @@ describe "the page links" do
 
         it "is accessible from the login page" do
          visit"/login"
-        click_link "Sign Up"
+        click_link "Sign Up:"
         expect(page).to have_content "Mentee"
         end
     
@@ -91,7 +91,7 @@ describe "the page links" do
 
     it "is accessible from the contact page" do
         visit"/contact"
-        click_link "Sign Up"
+        click_link "Sign Up:"
         expect(page).to have_content "Mentee"
     end
         
@@ -132,7 +132,7 @@ it "is accessible from the contact page" do
 
     it "is accessible from the SignUpChoices page" do
         visit"/SignUpChoices"
-        click_link "Sign Up"
+        click_link "Sign Up:"
         expect(page).to have_content "Mentee"
     end
         
