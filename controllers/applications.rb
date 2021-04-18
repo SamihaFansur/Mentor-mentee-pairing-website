@@ -21,7 +21,7 @@ get "/sentMentorApplications" do
 end
 
 #Matches mentor and mentee if mentor accepts mentee application
-post "/match" do   
+post "/matchMentee" do   
   #When mentor accepts mentee request, mentorMatch field updated to value of mentor ID in the mentees table
   Mentee.where(id: params[:menteeID]).update(:mentorMatch => $mentors.id)
   
@@ -34,6 +34,19 @@ post "/match" do
   #Make mentor profile invisible/private
   $mentors.profileStatus = "1"
   $mentors.save_changes
+  
+  redirect "/MentorDashboard"
+end
+
+#Mentor rejects a mentee application
+post "/rejectMentee" do   
+  #Deletes the corresponding request the mentee has made from the table
+  Request.where(mentorID: $mentors.id, menteeID: params[:menteeID]).delete
+  
+  mentee = Mentee.first(id: params[:menteeID])
+  #Mentee can now send a mentor an application
+  mentee.applicationNumber = "1"
+  mentee.save_changes
   
   redirect "/MentorDashboard"
 end

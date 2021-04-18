@@ -16,12 +16,12 @@
             <%= erb :"common/mentor_edit_form" %>
         </form>
         <div class="warning">
-            <p><strong>WARNING! Deleting a profile cannot be undone.</strong></p>
-            <form method="post" action="/deleteMentor">
-                <input type="hidden" name="id" value="<%= @mentors.id %>" />
-                <input type="submit" value="Delete" onclick="return confirm('Are you sure?')" />
-            </form>
-    </div>
+          <p><strong>WARNING! Deleting a profile cannot be undone.</strong></p>
+          <form method="post" action="/deleteMentor">
+              <input type="hidden" name="id" value="<%= @mentors.id %>" />
+              <input type="submit" value="Delete" onclick="return confirm('Are you sure?')" />
+          </form>
+        </div>
 <% end %>
 <p class="navigation">Return to <a href="/AdminDashboard">Admin Dashboard</a>.</p>
       </div>

@@ -16,11 +16,11 @@
             <%= erb :"common/mentee_edit_form" %>
         </form>
         <div class="warning">
-            <p><strong>WARNING! Deleting a profile cannot be undone.</strong></p>
-            <form method="post" action="/deleteMentee">
-                <input type="hidden" name="id" value="<%= @mentees.id %>" />
-                <input type="submit" value="Delete" for="Delete" onclick="return confirm('Are you sure?')" />
-            </form>
+          <p><strong>WARNING! Deleting a profile cannot be undone.</strong></p>
+          <form method="post" action="/deleteMentee">
+              <input type="hidden" name="id" value="<%= @mentees.id %>" />
+              <input type="submit" value="Delete" for="Delete" onclick="return confirm('Are you sure?')" />
+          </form>
         </div>
 <% end %>
          <p class="navigation">Return to <a href="/AdminDashboard">Admin Dashboard</a>.</p>
