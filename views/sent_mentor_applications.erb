@@ -1,0 +1,38 @@
+<%= erb :"common/header_menteeA" %>
+<div class="background" id="statement">
+  
+      <div class="full">
+        <h2>Mentor Applications still pending</h2>
+        <div class="user_info" id="application">
+          <!-- Displays all the applications a mentee has sent which are pending -->
+          <% if @mentorIDList.count > 0 %>
+              <table class="display_table">
+                <tr id="TableHeadings">
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Phone Number</th>
+                  <th>Job Title</th>
+                  <th>Course Name</th>
+                  <th>Description</th>
+                </tr>
+               <!-- Details of each mentee displayed -->
+              <% @mentorIDList.each do |mentor| %>
+                <tr>
+                  <td><%= h mentor.name %></td>
+                  <td><%= h mentor.email %></td>
+                  <td><%= h mentor.phoneNum %></td>
+                  <td><%= h mentor.jobTitle %></td>
+                  <td><%= h mentor.courseName %></td>
+                  <td><%= h mentor.description %></td>
+                </tr>
+              <% end %> 
+              </table>
+            <% else %>
+              <p id="SearchError">There are no pending applications</p>
+            <% end %>
+         </div>
+     </div>
+  
+</div> 
+
+<%= erb :"common/footer" %>

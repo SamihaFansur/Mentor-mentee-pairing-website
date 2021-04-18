@@ -1,5 +1,5 @@
 #Mentor uses this route to accept 1 mentee application
-get "/applications" do
+get "/menteeApplications" do
   @menteeIDList = [] #List to store mentee
   IDList = Request.where(mentorID: $mentors.id) #Finds the request where it finds the specified mentor ID
   IDList.each do |id|
@@ -7,6 +7,17 @@ get "/applications" do
     @menteeIDList.push(mentee) unless mentee.nil?
   end
   erb :mentee_applications
+end
+
+#Mentee uses this route to view sent mentor applications
+get "/sentMentorApplications" do
+  @mentorIDList = [] #List to store mentors
+  IDList = Request.where(menteeID: $mentees.id) #Finds the request where it finds the specified mentee ID
+  IDList.each do |id|
+    mentor = Mentor.first(id: id.mentorID)
+    @mentorIDList.push(mentor) unless mentor.nil?
+  end
+  erb :sent_mentor_applications
 end
 
 post "/match" do   
