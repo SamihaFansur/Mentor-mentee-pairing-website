@@ -19391,3 +19391,10 @@ I, [2021-04-18T16:07:11.253994 #1217]  INFO -- : (0.124139s) COMMIT
 I, [2021-04-18T16:07:11.378370 #1217]  INFO -- : (0.000326s) SELECT * FROM `mentees` WHERE (`username` = 'mentee4') LIMIT 1
 I, [2021-04-18T16:07:12.737432 #1217]  INFO -- : (0.000227s) SELECT * FROM `mentees` WHERE `id` = 6
 I, [2021-04-18T16:07:12.737720 #1217]  INFO -- : (0.000144s) SELECT * FROM `mentees` WHERE `id` = 6
+I, [2021-04-18T16:56:43.259466 #1417]  INFO -- : (0.000243s) PRAGMA foreign_keys = 1
+I, [2021-04-18T16:56:43.259662 #1417]  INFO -- : (0.000021s) PRAGMA case_sensitive_like = 1
+I, [2021-04-18T16:56:43.261040 #1417]  INFO -- : (0.000108s) SELECT sqlite_version()
+I, [2021-04-18T16:56:43.261424 #1417]  INFO -- : (0.000174s) PRAGMA table_info('admins')
+I, [2021-04-18T16:56:43.263339 #1417]  INFO -- : (0.000221s) PRAGMA table_info('mentees')
+I, [2021-04-18T16:56:43.265587 #1417]  INFO -- : (0.000271s) PRAGMA table_info('mentors')
+I, [2021-04-18T16:56:43.267701 #1417]  INFO -- : (0.000184s) PRAGMA table_info('requests')
