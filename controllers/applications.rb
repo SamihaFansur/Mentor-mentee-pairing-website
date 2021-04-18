@@ -20,6 +20,7 @@ get "/sentMentorApplications" do
   erb :sent_mentor_applications
 end
 
+#Matches mentor and mentee if mentor accepts mentee application
 post "/match" do   
   #When mentor accepts mentee request, mentorMatch field updated to value of mentor ID in the mentees table
   Mentee.where(id: params[:menteeID]).update(:mentorMatch => $mentors.id)
@@ -35,6 +36,18 @@ post "/match" do
   $mentors.save_changes
   
   redirect "/MentorDashboard"
+end
+
+#Mentee unsends their mentor application
+post "/unsend" do     
+  #Deletes the corresponding request a mentee has made from the table
+  Request.where(menteeID: $mentees.id, mentorID: params[:mentorID]).delete
+  
+  #Mentee can now send a mentor an application
+  $mentees.applicationNumber = "0"
+  $mentees.save_changes
+  
+  redirect "/MenteeDashboard"
 end
 
 get "/myMentor" do

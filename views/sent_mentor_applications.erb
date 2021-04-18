@@ -14,6 +14,7 @@
                   <th>Job Title</th>
                   <th>Course Name</th>
                   <th>Description</th>
+                  <th>Unsend application</th>
                 </tr>
                <!-- Details of each mentee displayed -->
               <% @mentorIDList.each do |mentor| %>
@@ -24,6 +25,13 @@
                   <td><%= h mentor.jobTitle %></td>
                   <td><%= h mentor.courseName %></td>
                   <td><%= h mentor.description %></td>
+                  <td>
+                    <form method="post" action="unsend">
+                      <input type="hidden" name="mentorID" value="<%= mentor.id %>">
+                      <input type="hidden" name="menteeID" value="<%= $mentees %>">
+                      <button type="submit">Unsend Application</button>
+                    </form>
+                  </td>
                 </tr>
               <% end %> 
               </table>
