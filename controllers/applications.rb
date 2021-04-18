@@ -43,7 +43,8 @@ post "/rejectMentee" do
   #Deletes the corresponding request the mentee has made from the table
   Request.where(mentorID: $mentors.id, menteeID: params[:menteeID]).delete
   
-  mentee = Mentee.first(id: params[:menteeID])
+  mentee = Mentee.first(id: params[:menteeID]) #Gets the existing mentee based on id
+  
   #Mentee can now send a mentor an application
   mentee.applicationNumber = "1"
   mentee.save_changes
