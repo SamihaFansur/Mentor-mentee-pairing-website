@@ -1,6 +1,6 @@
 ###############################MENTEE######################################
 get "/editMentee" do
-  id = params["id"] #new variable to search the id of corresponding mentee profile to be edited
+  id = $mentees.id #new variable to search the id of corresponding mentee profile to be edited
   
   #If error displayed in the post editMentee route next line called
   @error = true if params.fetch("error", "") == "1"
