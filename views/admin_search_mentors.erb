@@ -18,6 +18,10 @@
         <% if @error1 %>
         <h2><strong class="error">Account has already been suspended</strong></h2>
         <% end %>
+
+        <% if @error2 %>
+        <h2><strong class="error">Account has already been unsuspended</strong></h2>
+        <% end %>
           
           <!--Displays the mentor details-->
           <% if @mentors.count> 0 %>
