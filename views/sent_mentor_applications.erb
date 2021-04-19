@@ -15,6 +15,7 @@
                   <th>Course Name</th>
                   <th>Description</th>
                   <th>Unsend application</th>
+                  <th>Match with mentor</th>
                 </tr>
                <!-- Details of each mentee displayed -->
               <% @mentorIDList.each do |mentor| %>
@@ -30,6 +31,13 @@
                       <input type="hidden" name="mentorID" value="<%= mentor.id %>">
                       <input type="hidden" name="menteeID" value="<%= $mentees %>">
                       <button type="submit">Unsend Application</button>
+                    </form>
+                  </td>
+                  <td>
+                    <form method="post" action="matchWithMentor">
+                      <input type="hidden" name="mentorID" value="<%= mentor.id %>">
+                      <input type="hidden" name="menteeID" value="<%= $mentees %>">
+                      <button type="submit">Match</button>
                     </form>
                   </td>
                 </tr>

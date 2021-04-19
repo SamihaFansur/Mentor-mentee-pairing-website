@@ -8,14 +8,19 @@ get "/MenteeDashboard" do
   #So that mentee can only request 1 mentor every 2 weeks
   if $mentees.applicationNumber == nil 
     $mentees.applicationNumber  = "1"
-    $mentees.save_changes
   end
   
   #Initializing mentorMatch field in mentees table
   if $mentees.mentorMatch == nil
     $mentees.mentorMatch = 0
-    $mentees.save_changes
   end
+  
+  #Initializing mentorAccept field in mentees table
+  if $mentees.mentorAccept == nil
+    $mentees.mentorAccept = 0
+  end
+  
+  $mentees.save_changes
   
   erb :mentee_dashboard
 end
@@ -29,14 +34,19 @@ get "/MentorDashboard" do
   #initializing the profileStatus field to 0
   if $mentors.profileStatus != "1"
     $mentors.profileStatus = "0"
-    $mentors.save_changes
   end
   
   #Initializing menteeMatch field in mentors table
   if $mentors.menteeMatch == nil
     $mentors.menteeMatch = 0
-    $mentors.save_changes
   end
+  
+  #Initializing menteeAccept field in mentors table
+  if $mentors.menteeAccept == nil
+    $mentors.menteeAccept = 0
+  end
+  
+  $mentors.save_changes
   
   erb :mentor_dashboard
 end

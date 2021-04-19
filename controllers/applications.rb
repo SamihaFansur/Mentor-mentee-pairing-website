@@ -20,43 +20,104 @@ get "/sentMentorApplications" do
   erb :sent_mentor_applications
 end
 
-#Matches mentor and mentee if mentor accepts mentee application
-post "/matchMentee" do   
-  #When mentor accepts mentee request, mentorMatch field updated to value of mentor ID in the mentees table
-  Mentee.where(id: params[:menteeID]).update(:mentorMatch => $mentors.id)
+#Mentee accepts mentor
+post "/matchWithMentor" do
+  #When mentee accepts application, sets mentorAccept to 1
+  $mentees = Mentee.first(id: $mentees.id)
+  $mentees.mentorAccept = 1
+  $mentees.save_changes
   
-  #When mentor accepts mentee request, menteeMatch field updated to value of mentee ID in the mentors table
-  Mentor.where(id: $mentors.id).update(:menteeMatch => params[:menteeID])
+  mentor = Mentor.first(id: params[:mentorID])
+  #If both mentor and mentee have accepted the request both will be matched and both users notified of match but
+  #if the mentee only has accepted the application then the mentor is notified
+  if mentor.menteeAccept == 1 && $mentees.mentorAccept == 1
+    Mentor.where(id: params[:mentorID]).update(:menteeMatch => $mentees.id)
+
+    Mentee.where(id: $mentees.id).update(:mentorMatch => params[:mentorID])
+
+    Request.where(menteeID: $mentees.id).delete #Deletes record from requests table
+
+    mentor.profileStatus = "1" #mentor profile made private
+    mentor.save_changes
+
+    $mentees.applicationNumber = "0" #mentee can't send more applications
+    $mentees.save_changes
+
+    send_mail($mentees.email, 
+      "You have been paired with a mentor!", 
+      "Hi "+$mentees.fname+" "+$mentees.lname+"!\n"+
+      "Your new mentor is: "+mentor.fname+" "+mentor.lname+".\n"+
+      "Please login into your account for more details.\n"+
+      "\n\n\nRegards\nTeam 6")
+
+    send_mail(mentor.email, 
+      "You have been paired with a mentee!", 
+      "Hi "+mentor.fname+" "+mentor.lname+"!\n"+
+      "Your new mentee is: "+$mentees.fname+" "+$mentees.lname+".\n"+
+      "Please login into your account for more details.\n"+
+      "\n\n\nRegards\nTeam 6")
+
+    redirect "/myMentor"
+  else
+    send_mail(mentor.email, 
+      "A mentee wants you to be their mentor!", 
+      "Hi "+mentor.fname+" "+mentor.lname+"!\n"+
+      $mentees.fname+" "+$mentees.lname+" has accepted the application for you to be their mentor.\n"+
+      "To accept "+$mentees.fname+" "+$mentees.lname+"as your mentee. Please login into your account an accept the application.\n"+
+      "\n\n\nRegards\nTeam 6")
+  end
+    
+  redirect "/MenteeDashboard"
+
+end
+
+#Mentor accepts mentee
+post "/matchWithMentee" do   
+  #When mentoraccepts application, sets menteeAccept to 1
+  $mentors = Mentor.first(id: $mentors.id)
+  $mentors.menteeAccept = 1
+  $mentors.save_changes  
   
-  #Deletes the all requests a mentor has from the table after mentor accepts a mentee request
-  Request.where(mentorID: $mentors.id).delete
-  
-  #Make mentor profile invisible/private
-  $mentors.profileStatus = "1"
-  $mentors.save_changes
-  
-  mentee = Mentee.first(id: params[:menteeID]) #Gets the existing mentee based on id
-  
-  #Mentee can no longer send a mentor an application
-  mentee.applicationNumber = "0"
-  mentee.save_changes
-  
-  #Sends an email to mentee that they have been paired
-  send_mail(mentee.email, 
-    "You have been paired with a mentor!", 
-    "Hi "+mentee.fname+" "+mentee.lname+"!\n"+
-    "Your new mentor is: "+$mentors.fname+" "+$mentors.lname+".\n"+
-    "Please login into your account for more details.\n"+
-    "\n\n\nRegards\nTeam 6")
-  
-  #Sends an email to mentor that they have been paired
-  send_mail($mentors.email, 
-    "You have been paired with a mentee!", 
-    "Hi "+$mentors.fname+" "+$mentors.lname+"!\n"+
-    "Your new mentee is: "+mentee.fname+" "+mentee.lname+".\n"+
-    "Please login into your account for more details.\n"+
-    "\n\n\nRegards\nTeam 6")
-  
+  mentee = Mentee.first(id: params[:menteeID])
+  #If both mentor and mentee have accepted the request both will be matched and both users notified of match but
+  #if the mentor only has accepted the application then the mentee is notified
+  if $mentors.menteeAccept == 1 && mentee.mentorAccept == 1
+    Mentee.where(id: params[:menteeID]).update(:mentorMatch => $mentors.id)
+
+    Mentor.where(id: $mentors.id).update(:menteeMatch => params[:menteeID])
+
+    Request.where(mentorID: $mentors.id).delete #Deletes record from requests table
+
+    $mentors.profileStatus = "1" #mentor profile made private
+    $mentors.save_changes
+
+    mentee.applicationNumber = "0" #mentee can't send more applications
+    mentee.save_changes
+    
+    send_mail($mentors.email, 
+      "You have been paired with a mentee!", 
+      "Hi "+$mentors.fname+" "+$mentors.lname+"!\n"+
+      "Your new mentee is: "+mentee.fname+" "+mentee.lname+".\n"+
+      "Please login into your account for more details.\n"+
+      "\n\n\nRegards\nTeam 6")
+
+    send_mail(mentee.email, 
+      "You have been paired with a mentor!", 
+      "Hi "+mentee.fname+" "+mentee.lname+"!\n"+
+      "Your new mentor is: "+$mentors.fname+" "+$mentors.lname+".\n"+
+      "Please login into your account for more details.\n"+
+      "\n\n\nRegards\nTeam 6")
+
+    redirect "/myMentee"
+  else
+    send_mail(mentee.email, 
+      "A mentor has accepted your application for you to be their mentee!", 
+      "Hi "+mentee.fname+" "+mentee.lname+"!\n"+
+      $mentors.fname+" "+$mentors.lname+" has accepted the application for you to be their mentee.\n"+
+      "To accept "+$mentors.fname+" "+$mentors.lname+"as your mentor. Please login into your account an accept the application.\n"+
+      "\n\n\nRegards\nTeam 6")
+  end
+    
   redirect "/MentorDashboard"
 end
 
@@ -179,13 +240,4 @@ get "/PairedMentees" do
     end
 
   erb :paired_mentees
-end
-
-
-def send_mail(email, subject, body)
-  response = Net::HTTP.post_form(URI("https://www.dcs.shef.ac.uk/cgi-intranet/public/FormMail.php"),
-                                 "recipients" => email,
-                                 "subject" => subject,
-                                 "body" => body)
-  response.is_a? Net::HTTPSuccess
 end

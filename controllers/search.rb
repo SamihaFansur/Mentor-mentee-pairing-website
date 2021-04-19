@@ -43,7 +43,7 @@ post "/addApplication" do
       #Email sent to mentee that the mentor didn't respond
       Thread.new{
 #         sleep(14*24*60*60) #14 days in seconds
-        sleep(30) #-------------------------------DELETE LATER -S -------------------------------
+        sleep(120) #-------------------------------DELETE LATER -S -------------------------------
         @requests.delete
         @requests.save_changes
         

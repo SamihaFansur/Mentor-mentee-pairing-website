@@ -30,7 +30,7 @@
                   <td><%= h mentee.courseName %></td>
                   <td><%= h mentee.description %></td>
                   <td>
-                    <form method="post" action="matchMentee">
+                    <form method="post" action="matchWithMentee">
                       <input type="hidden" name="menteeID" value="<%= mentee.id %>">
                       <input type="hidden" name="mentorID" value="<%= $mentors %>">
                       <button type="submit">Accept application</button>

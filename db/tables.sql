@@ -11,6 +11,7 @@ CREATE TABLE mentees (
   cyear INTEGER,
   description TEXT,
   applicationNumber TEXT,
+  mentorAccept INTEGER,
   mentorMatch INTEGER,
   suspendMentee INTEGER
 );
@@ -26,6 +27,7 @@ CREATE TABLE mentors (
   jobTitle TEXT,
   courseName TEXT,
   description TEXT,
+  menteeAccept INTEGER,
   menteeMatch INTEGER,
   activationToken INTEGER,
   profileStatus TEXT,
