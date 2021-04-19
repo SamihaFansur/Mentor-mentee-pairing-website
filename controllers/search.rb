@@ -89,10 +89,9 @@ end
 get "/searchForAMentor" do
   #New variable to enable mentees to search for mentors based on course name
   @userName_search = params.fetch("userName_search", "").strip
+  #notice
+  @error1 = true if params.fetch("error", "") == "1"
   
-  #This error corresponds to the /addApplication route, this is to prevent
-  #the error from being discarded when page is redirected to search
-  @error = true if params.fetch("error", "") == "1"
   
   #If no course name is being searched, it displays the list of all mentors in alphabetical order 
   #else it searches through the course name field in the mentors table and displays mentors' whose 
@@ -111,9 +110,9 @@ get "/searchForAMentee" do
   #New variable to enable mentees to search for mentors based on course name
   @userName_search = params.fetch("userName_search", "").strip
   
-  #This error corresponds to the /addApplication route, this is to prevent
-  #the error from being discarded when page is redirected to search
-  @error = true if params.fetch("error", "") == "1"
+  #notice
+  @error1 = true if params.fetch("error", "") == "1"
+  
   
   #If no course name is being searched, it displays the list of all mentors in alphabetical order 
   #else it searches through the course name field in the mentors table and displays mentors' whose 
@@ -132,8 +131,10 @@ end
 ##########################################################SUSPEND MENTOR############################################################
 post "/suspendMentor" do
   @mentors = Mentor.first(id: params[:mentorID]) #creates a new instance of mentor
+  @error1 = nil #initializes variable-application sent error
   
   #Sets suspendMentor field to 1 to indicate account suspended if not already 1
+    
   if @mentors.suspendMentor != 1
     @mentors.suspendMentor = 1
     @mentors.save_changes
@@ -144,6 +145,9 @@ post "/suspendMentor" do
         "Your mentor account has been suspended due to violation of website guidelines.\n"+
         "If you think we have made a mistake, please contact our admins using our contact form!"+
         "\n\nRegards\nTeam 6")
+  else
+      @error1 ="Account has already been suspended"
+      redirect "/searchForAMentor?error=1"
   end
     
     redirect "/searchForAMentor"
@@ -152,7 +156,7 @@ end
 ##########################################################UNSUSPEND MENTOR############################################################
 post "/unsuspendMentor" do
   @mentors = Mentor.first(id: params[:mentorID]) #creates a new instance of mentor
-  
+
   #Sets suspendMentor field to 0 to indicate account unsuspended if its already 1
   if @mentors.suspendMentor == 1
     @mentors.suspendMentor = 0
@@ -172,6 +176,7 @@ end
 ##########################################################SUSPEND MENTEE############################################################
 post "/suspendMentee" do
   @mentees = Mentee.first(id: params[:menteeID]) #creates a new instance of mentee
+  @error1 = nil #initializes variable-application sent error
   
   #Sets suspendMentee field to 1 to indicate account suspended if not already 1
   if @mentees.suspendMentee != 1
@@ -184,6 +189,9 @@ post "/suspendMentee" do
         "Your mentee account has been suspended due to violation of website guidelines.\n"+
         "If you think we have made a mistake, please contact our admins using our contact form!"+
         "\n\nRegards\nTeam 6")
+   else
+      @error1 ="Account has already been suspended"
+      redirect "/searchForAMentee?error=1"
   end
     
     redirect "/searchForAMentee"
@@ -192,6 +200,7 @@ end
 ##########################################################UNSUSPEND MENTEE############################################################
 post "/unsuspendMentee" do
   @mentees = Mentee.first(id: params[:menteeID]) #creates a new instance of mentee
+  
   
   #Sets suspendMentee field to 0 to indicate account unsuspended if its already 1
   if @mentees.suspendMentee == 1
