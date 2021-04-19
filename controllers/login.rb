@@ -5,8 +5,8 @@ get "/MenteeDashboard" do
   $mentees = Mentee.first(username: username) # '$' used to make it a global variable
   
   #Initializing the field value for applicationNumber 
-  #So that mentee can only request 1 mentor at a time (1 request for every 2 weeks)
-  if $mentees.applicationNumber  != "0" || $mentees.applicationNumber  != "1" #means value is nil
+  #So that mentee can only request 1 mentor every 2 weeks
+  if $mentees.applicationNumber == nil 
     $mentees.applicationNumber  = "1"
     $mentees.save_changes
   end

@@ -44,6 +44,7 @@ post "/addApplication" do
       Thread.new{
 #         sleep(14*24*60*60) #14 days in seconds
         sleep(30) #-------------------------------DELETE LATER -S -------------------------------
+        puts "deleted req"
         @requests.delete
         @requests.save_changes
         
