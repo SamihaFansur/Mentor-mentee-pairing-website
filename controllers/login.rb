@@ -32,6 +32,12 @@ get "/MentorDashboard" do
     $mentors.save_changes
   end
   
+  #Initializing menteeMatch field in mentors table
+  if $mentors.menteeMatch == nil
+    $mentors.menteeMatch = 0
+    $mentors.save_changes
+  end
+  
   erb :mentor_dashboard
 end
 

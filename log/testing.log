@@ -20481,3 +20481,600 @@ I, [2021-04-19T14:37:26.359201 #1481]  INFO -- : (0.099228s) DELETE FROM `reques
 I, [2021-04-19T14:37:26.359461 #1481]  INFO -- : (0.000035s) BEGIN
 I, [2021-04-19T14:37:26.359825 #1481]  INFO -- : (0.000155s) UPDATE `mentees` SET `applicationNumber` = '1' WHERE (`id` = 6)
 I, [2021-04-19T14:37:26.457298 #1481]  INFO -- : (0.097387s) COMMIT
+I, [2021-04-19T14:41:59.745121 #1668]  INFO -- : (0.000193s) PRAGMA foreign_keys = 1
+I, [2021-04-19T14:41:59.745237 #1668]  INFO -- : (0.000014s) PRAGMA case_sensitive_like = 1
+I, [2021-04-19T14:41:59.746180 #1668]  INFO -- : (0.000072s) SELECT sqlite_version()
+I, [2021-04-19T14:41:59.746475 #1668]  INFO -- : (0.000132s) PRAGMA table_info('admins')
+I, [2021-04-19T14:41:59.747838 #1668]  INFO -- : (0.000154s) PRAGMA table_info('mentees')
+I, [2021-04-19T14:41:59.749290 #1668]  INFO -- : (0.000142s) PRAGMA table_info('mentors')
+I, [2021-04-19T14:41:59.750439 #1668]  INFO -- : (0.000106s) PRAGMA table_info('requests')
+I, [2021-04-19T14:42:29.977946 #1668]  INFO -- : (0.000179s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2021-04-19T14:42:29.978850 #1668]  INFO -- : (0.000676s) SELECT * FROM `mentees` WHERE (`email` = 'sfansur1@sheffied.ac.uk') LIMIT 1
+I, [2021-04-19T14:42:29.979136 #1668]  INFO -- : (0.000108s) SELECT * FROM `mentors` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2021-04-19T14:42:29.979346 #1668]  INFO -- : (0.000093s) SELECT * FROM `mentors` WHERE (`email` = 'sfansur1@sheffied.ac.uk') LIMIT 1
+I, [2021-04-19T14:42:29.979564 #1668]  INFO -- : (0.000089s) SELECT * FROM `admins` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2021-04-19T14:42:29.980076 #1668]  INFO -- : (0.000402s) SELECT * FROM `admins` WHERE (`email` = 'sfansur1@sheffied.ac.uk') LIMIT 1
+I, [2021-04-19T14:42:29.980226 #1668]  INFO -- : (0.000025s) BEGIN
+I, [2021-04-19T14:42:29.980688 #1668]  INFO -- : (0.000248s) INSERT INTO `mentees` (`fname`, `lname`, `email`, `phoneNum`, `courseName`, `faculty`, `cyear`, `username`, `password`) VALUES ('Samiha', 'Fansur', 'sfansur1@sheffied.ac.uk', '+44 7721951137', 'Architecture (BA)', 'Faculty of Arts and Humanities', 2, 'mentee1', 'S.F')
+I, [2021-04-19T14:42:29.981103 #1668]  INFO -- : (0.000171s) SELECT * FROM `mentees` WHERE `id` = 1
+I, [2021-04-19T14:42:30.068060 #1668]  INFO -- : (0.086817s) COMMIT
+I, [2021-04-19T14:43:01.604076 #1668]  INFO -- : (0.000169s) SELECT * FROM `mentees` WHERE (`username` = 'mentee2') LIMIT 1
+I, [2021-04-19T14:43:01.604479 #1668]  INFO -- : (0.000162s) SELECT * FROM `mentees` WHERE (`email` = 'sfansur2@sheffied.ac.uk') LIMIT 1
+I, [2021-04-19T14:43:01.604867 #1668]  INFO -- : (0.000143s) SELECT * FROM `mentors` WHERE (`username` = 'mentee2') LIMIT 1
+I, [2021-04-19T14:43:01.605108 #1668]  INFO -- : (0.000126s) SELECT * FROM `mentors` WHERE (`email` = 'sfansur2@sheffied.ac.uk') LIMIT 1
+I, [2021-04-19T14:43:01.605450 #1668]  INFO -- : (0.000120s) SELECT * FROM `admins` WHERE (`username` = 'mentee2') LIMIT 1
+I, [2021-04-19T14:43:01.605686 #1668]  INFO -- : (0.000115s) SELECT * FROM `admins` WHERE (`email` = 'sfansur2@sheffied.ac.uk') LIMIT 1
+I, [2021-04-19T14:43:01.605836 #1668]  INFO -- : (0.000023s) BEGIN
+I, [2021-04-19T14:43:01.606321 #1668]  INFO -- : (0.000309s) INSERT INTO `mentees` (`fname`, `lname`, `email`, `phoneNum`, `courseName`, `faculty`, `cyear`, `username`, `password`) VALUES ('Samiha', 'Fansur', 'sfansur2@sheffied.ac.uk', '+97 1509201172', 'Architectural Engineering with a Year in Industry (MEng)', 'Faculty of Medicine, Dentistry and Health', 2, 'mentee2', 'S.F')
+I, [2021-04-19T14:43:01.606603 #1668]  INFO -- : (0.000146s) SELECT * FROM `mentees` WHERE `id` = 2
+I, [2021-04-19T14:43:01.737692 #1668]  INFO -- : (0.130984s) COMMIT
+I, [2021-04-19T14:43:16.218778 #1668]  INFO -- : (0.000154s) SELECT * FROM `mentees` WHERE (`username` = 'mentee3') LIMIT 1
+I, [2021-04-19T14:43:16.220035 #1668]  INFO -- : (0.001078s) SELECT * FROM `mentees` WHERE (`email` = 'sfansur3@sheffied.ac.uk') LIMIT 1
+I, [2021-04-19T14:43:16.220346 #1668]  INFO -- : (0.000165s) SELECT * FROM `mentors` WHERE (`username` = 'mentee3') LIMIT 1
+I, [2021-04-19T14:43:16.220597 #1668]  INFO -- : (0.000130s) SELECT * FROM `mentors` WHERE (`email` = 'sfansur3@sheffied.ac.uk') LIMIT 1
+I, [2021-04-19T14:43:16.220863 #1668]  INFO -- : (0.000121s) SELECT * FROM `admins` WHERE (`username` = 'mentee3') LIMIT 1
+I, [2021-04-19T14:43:16.221095 #1668]  INFO -- : (0.000118s) SELECT * FROM `admins` WHERE (`email` = 'sfansur3@sheffied.ac.uk') LIMIT 1
+I, [2021-04-19T14:43:16.221241 #1668]  INFO -- : (0.000027s) BEGIN
+I, [2021-04-19T14:43:16.221642 #1668]  INFO -- : (0.000209s) INSERT INTO `mentees` (`fname`, `lname`, `email`, `phoneNum`, `courseName`, `faculty`, `cyear`, `username`, `password`) VALUES ('Samiha', 'Fansur', 'sfansur3@sheffied.ac.uk', '+97 1509201172', 'Architectural Engineering (MEng)', 'Faculty of Engineering', 2, 'mentee3', 'S.F')
+I, [2021-04-19T14:43:16.222959 #1668]  INFO -- : (0.000102s) SELECT * FROM `mentees` WHERE `id` = 3
+I, [2021-04-19T14:43:16.318751 #1668]  INFO -- : (0.095691s) COMMIT
+I, [2021-04-19T14:43:36.898898 #1668]  INFO -- : (0.000221s) SELECT * FROM `mentors` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-19T14:43:36.899178 #1668]  INFO -- : (0.000112s) SELECT * FROM `mentors` WHERE (`email` = 'sfansur1@sheffield.ac.uk') LIMIT 1
+I, [2021-04-19T14:43:36.899384 #1668]  INFO -- : (0.000095s) SELECT * FROM `mentees` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-19T14:43:36.899570 #1668]  INFO -- : (0.000098s) SELECT * FROM `mentees` WHERE (`email` = 'sfansur1@sheffield.ac.uk') LIMIT 1
+I, [2021-04-19T14:43:36.899816 #1668]  INFO -- : (0.000078s) SELECT * FROM `admins` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-19T14:43:36.899976 #1668]  INFO -- : (0.000073s) SELECT * FROM `admins` WHERE (`email` = 'sfansur1@sheffield.ac.uk') LIMIT 1
+I, [2021-04-19T14:43:36.900089 #1668]  INFO -- : (0.000015s) BEGIN
+I, [2021-04-19T14:43:36.900456 #1668]  INFO -- : (0.000217s) INSERT INTO `mentors` (`fname`, `lname`, `email`, `phoneNum`, `username`, `password`, `jobTitle`, `courseName`) VALUES ('Samiha', 'Fansur', 'sfansur1@sheffield.ac.uk', '+97 1509201172', 'mentor1', 'S.F', 'Administrative Manager', 'Artificial Intelligence and Computer Science (BSc)')
+I, [2021-04-19T14:43:36.900747 #1668]  INFO -- : (0.000172s) SELECT * FROM `mentors` WHERE `id` = 1
+I, [2021-04-19T14:43:37.000647 #1668]  INFO -- : (0.099818s) COMMIT
+I, [2021-04-19T14:44:04.954311 #1668]  INFO -- : (0.000154s) SELECT * FROM `mentors` WHERE (`username` = 'mentor2') LIMIT 1
+I, [2021-04-19T14:44:04.954593 #1668]  INFO -- : (0.000106s) SELECT * FROM `mentors` WHERE (`email` = 'sfansur2@sheffield.ac.uk') LIMIT 1
+I, [2021-04-19T14:44:04.954774 #1668]  INFO -- : (0.000087s) SELECT * FROM `mentees` WHERE (`username` = 'mentor2') LIMIT 1
+I, [2021-04-19T14:44:04.954953 #1668]  INFO -- : (0.000106s) SELECT * FROM `mentees` WHERE (`email` = 'sfansur2@sheffield.ac.uk') LIMIT 1
+I, [2021-04-19T14:44:04.955114 #1668]  INFO -- : (0.000072s) SELECT * FROM `admins` WHERE (`username` = 'mentor2') LIMIT 1
+I, [2021-04-19T14:44:04.955267 #1668]  INFO -- : (0.000074s) SELECT * FROM `admins` WHERE (`email` = 'sfansur2@sheffield.ac.uk') LIMIT 1
+I, [2021-04-19T14:44:04.955371 #1668]  INFO -- : (0.000014s) BEGIN
+I, [2021-04-19T14:44:04.955631 #1668]  INFO -- : (0.000136s) INSERT INTO `mentors` (`fname`, `lname`, `email`, `phoneNum`, `username`, `password`, `jobTitle`, `courseName`) VALUES ('Samiha', 'Fansur', 'sfansur2@sheffield.ac.uk', '+97 1509201172', 'mentor2', 'S.F', 'Administrator', 'Archaeology (BSc)')
+I, [2021-04-19T14:44:04.955841 #1668]  INFO -- : (0.000108s) SELECT * FROM `mentors` WHERE `id` = 2
+I, [2021-04-19T14:44:05.058849 #1668]  INFO -- : (0.102920s) COMMIT
+I, [2021-04-19T14:44:22.100440 #1668]  INFO -- : (0.000161s) SELECT * FROM `mentors` WHERE (`username` = 'mentor3') LIMIT 1
+I, [2021-04-19T14:44:22.100684 #1668]  INFO -- : (0.000091s) SELECT * FROM `mentors` WHERE (`email` = 'sfansur3@sheffield.ac.uk') LIMIT 1
+I, [2021-04-19T14:44:22.100850 #1668]  INFO -- : (0.000084s) SELECT * FROM `mentees` WHERE (`username` = 'mentor3') LIMIT 1
+I, [2021-04-19T14:44:22.100992 #1668]  INFO -- : (0.000074s) SELECT * FROM `mentees` WHERE (`email` = 'sfansur3@sheffield.ac.uk') LIMIT 1
+I, [2021-04-19T14:44:22.101148 #1668]  INFO -- : (0.000067s) SELECT * FROM `admins` WHERE (`username` = 'mentor3') LIMIT 1
+I, [2021-04-19T14:44:22.101272 #1668]  INFO -- : (0.000061s) SELECT * FROM `admins` WHERE (`email` = 'sfansur3@sheffield.ac.uk') LIMIT 1
+I, [2021-04-19T14:44:22.101360 #1668]  INFO -- : (0.000013s) BEGIN
+I, [2021-04-19T14:44:22.101692 #1668]  INFO -- : (0.000211s) INSERT INTO `mentors` (`fname`, `lname`, `email`, `phoneNum`, `username`, `password`, `jobTitle`, `courseName`) VALUES ('Samiha', 'Fansur', 'sfansur3@sheffield.ac.uk', '+97 1509201172', 'mentor3', 'S.F', 'Administrative Manager', 'Architecture and Landscape (BA)')
+I, [2021-04-19T14:44:22.101882 #1668]  INFO -- : (0.000091s) SELECT * FROM `mentors` WHERE `id` = 3
+I, [2021-04-19T14:44:22.198474 #1668]  INFO -- : (0.096511s) COMMIT
+I, [2021-04-19T14:44:26.681427 #1668]  INFO -- : (0.000159s) SELECT * FROM `mentees` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-19T14:44:26.681676 #1668]  INFO -- : (0.000092s) SELECT * FROM `mentees` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-19T14:44:26.681894 #1668]  INFO -- : (0.000117s) SELECT * FROM `mentors` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-19T14:44:26.682075 #1668]  INFO -- : (0.000095s) SELECT * FROM `mentors` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-19T14:44:26.798119 #1668]  INFO -- : (0.000180s) SELECT * FROM `mentors` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-19T14:44:26.798343 #1668]  INFO -- : (0.000023s) BEGIN
+I, [2021-04-19T14:44:26.798794 #1668]  INFO -- : (0.000244s) UPDATE `mentors` SET `profileStatus` = '0' WHERE (`id` = 1)
+I, [2021-04-19T14:44:26.911584 #1668]  INFO -- : (0.112689s) COMMIT
+I, [2021-04-19T14:44:33.824197 #1668]  INFO -- : (0.000162s) SELECT * FROM `mentees` WHERE (`username` = 'mentor2') LIMIT 1
+I, [2021-04-19T14:44:33.824521 #1668]  INFO -- : (0.000107s) SELECT * FROM `mentees` WHERE (`username` = 'mentor2') LIMIT 1
+I, [2021-04-19T14:44:33.824753 #1668]  INFO -- : (0.000108s) SELECT * FROM `mentors` WHERE (`username` = 'mentor2') LIMIT 1
+I, [2021-04-19T14:44:33.824934 #1668]  INFO -- : (0.000102s) SELECT * FROM `mentors` WHERE (`username` = 'mentor2') LIMIT 1
+I, [2021-04-19T14:44:33.966324 #1668]  INFO -- : (0.000183s) SELECT * FROM `mentors` WHERE (`username` = 'mentor2') LIMIT 1
+I, [2021-04-19T14:44:33.966539 #1668]  INFO -- : (0.000023s) BEGIN
+I, [2021-04-19T14:44:33.966968 #1668]  INFO -- : (0.000247s) UPDATE `mentors` SET `profileStatus` = '0' WHERE (`id` = 2)
+I, [2021-04-19T14:44:34.066176 #1668]  INFO -- : (0.099119s) COMMIT
+I, [2021-04-19T14:44:48.379877 #1668]  INFO -- : (0.000209s) SELECT * FROM `mentees` WHERE (`username` = 'mentor4') LIMIT 1
+I, [2021-04-19T14:44:48.380190 #1668]  INFO -- : (0.000129s) SELECT * FROM `mentees` WHERE (`username` = 'mentor4') LIMIT 1
+I, [2021-04-19T14:44:48.380494 #1668]  INFO -- : (0.000157s) SELECT * FROM `mentors` WHERE (`username` = 'mentor4') LIMIT 1
+I, [2021-04-19T14:44:48.380715 #1668]  INFO -- : (0.000116s) SELECT * FROM `mentors` WHERE (`username` = 'mentor4') LIMIT 1
+I, [2021-04-19T14:44:48.380930 #1668]  INFO -- : (0.000100s) SELECT * FROM `admins` WHERE (`username` = 'mentor4') LIMIT 1
+I, [2021-04-19T14:44:52.896439 #1668]  INFO -- : (0.000255s) SELECT * FROM `mentees` WHERE (`username` = 'mentor3') LIMIT 1
+I, [2021-04-19T14:44:52.896791 #1668]  INFO -- : (0.000151s) SELECT * FROM `mentees` WHERE (`username` = 'mentor3') LIMIT 1
+I, [2021-04-19T14:44:52.897097 #1668]  INFO -- : (0.000164s) SELECT * FROM `mentors` WHERE (`username` = 'mentor3') LIMIT 1
+I, [2021-04-19T14:44:52.897384 #1668]  INFO -- : (0.000170s) SELECT * FROM `mentors` WHERE (`username` = 'mentor3') LIMIT 1
+I, [2021-04-19T14:44:52.897637 #1668]  INFO -- : (0.000111s) SELECT * FROM `admins` WHERE (`username` = 'mentor3') LIMIT 1
+I, [2021-04-19T14:44:55.525398 #1668]  INFO -- : (0.000172s) SELECT * FROM `mentees` WHERE (`username` = 'mentor3') LIMIT 1
+I, [2021-04-19T14:44:55.525665 #1668]  INFO -- : (0.000095s) SELECT * FROM `mentees` WHERE (`username` = 'mentor3') LIMIT 1
+I, [2021-04-19T14:44:55.525911 #1668]  INFO -- : (0.000108s) SELECT * FROM `mentors` WHERE (`username` = 'mentor3') LIMIT 1
+I, [2021-04-19T14:44:55.526128 #1668]  INFO -- : (0.000123s) SELECT * FROM `mentors` WHERE (`username` = 'mentor3') LIMIT 1
+I, [2021-04-19T14:44:55.629799 #1668]  INFO -- : (0.000206s) SELECT * FROM `mentors` WHERE (`username` = 'mentor3') LIMIT 1
+I, [2021-04-19T14:44:55.630039 #1668]  INFO -- : (0.000023s) BEGIN
+I, [2021-04-19T14:44:55.630421 #1668]  INFO -- : (0.000176s) UPDATE `mentors` SET `profileStatus` = '0' WHERE (`id` = 3)
+I, [2021-04-19T14:44:55.744476 #1668]  INFO -- : (0.113963s) COMMIT
+I, [2021-04-19T14:45:31.203671 #1668]  INFO -- : (0.000193s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2021-04-19T14:45:31.204123 #1668]  INFO -- : (0.000149s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2021-04-19T14:45:31.303703 #1668]  INFO -- : (0.000186s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2021-04-19T14:45:31.303945 #1668]  INFO -- : (0.000025s) BEGIN
+I, [2021-04-19T14:45:31.304486 #1668]  INFO -- : (0.000308s) UPDATE `mentees` SET `applicationNumber` = '1' WHERE (`id` = 1)
+I, [2021-04-19T14:45:31.405224 #1668]  INFO -- : (0.100631s) COMMIT
+I, [2021-04-19T14:45:31.405476 #1668]  INFO -- : (0.000034s) BEGIN
+I, [2021-04-19T14:45:31.405831 #1668]  INFO -- : (0.000161s) UPDATE `mentees` SET `mentorMatch` = 0 WHERE (`id` = 1)
+I, [2021-04-19T14:45:31.493945 #1668]  INFO -- : (0.088026s) COMMIT
+I, [2021-04-19T14:45:37.445164 #1668]  INFO -- : (0.000132s) SELECT count(*) AS 'count' FROM `mentors` WHERE (`profileStatus` LIKE '0' ESCAPE '\') LIMIT 1
+I, [2021-04-19T14:45:37.445509 #1668]  INFO -- : (0.000185s) SELECT * FROM `mentors` WHERE (`profileStatus` LIKE '0' ESCAPE '\') ORDER BY `courseName`
+I, [2021-04-19T14:45:42.815641 #1668]  INFO -- : (0.000190s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2021-04-19T14:45:44.093108 #1668]  INFO -- : (0.000161s) SELECT * FROM `mentees` WHERE `id` = 1
+I, [2021-04-19T14:45:44.093341 #1668]  INFO -- : (0.000118s) SELECT * FROM `mentees` WHERE `id` = 1
+I, [2021-04-19T14:45:46.833676 #1668]  INFO -- : (0.000296s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2021-04-19T14:45:47.765562 #1668]  INFO -- : (0.000125s) SELECT count(*) AS 'count' FROM `mentors` WHERE (`profileStatus` LIKE '0' ESCAPE '\') LIMIT 1
+I, [2021-04-19T14:45:47.765916 #1668]  INFO -- : (0.000192s) SELECT * FROM `mentors` WHERE (`profileStatus` LIKE '0' ESCAPE '\') ORDER BY `courseName`
+I, [2021-04-19T14:45:54.418821 #1668]  INFO -- : (0.000138s) SELECT count(*) AS 'count' FROM `mentors` WHERE (UPPER(`courseName`) LIKE UPPER('%COM%') ESCAPE '\') LIMIT 1
+I, [2021-04-19T14:45:54.419184 #1668]  INFO -- : (0.000159s) SELECT * FROM `mentors` WHERE (UPPER(`courseName`) LIKE UPPER('%COM%') ESCAPE '\') ORDER BY `courseName`
+I, [2021-04-19T14:45:57.067157 #1668]  INFO -- : (0.000221s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2021-04-19T14:45:57.961423 #1668]  INFO -- : (0.000131s) SELECT count(*) AS 'count' FROM `mentors` WHERE (`profileStatus` LIKE '0' ESCAPE '\') LIMIT 1
+I, [2021-04-19T14:45:57.961766 #1668]  INFO -- : (0.000183s) SELECT * FROM `mentors` WHERE (`profileStatus` LIKE '0' ESCAPE '\') ORDER BY `courseName`
+I, [2021-04-19T14:46:02.341684 #1668]  INFO -- : (0.000172s) SELECT * FROM `mentors` WHERE (`id` = '1') LIMIT 1
+I, [2021-04-19T14:46:02.341968 #1668]  INFO -- : (0.000113s) SELECT * FROM `mentees` WHERE (`id` = '1') LIMIT 1
+I, [2021-04-19T14:46:02.342219 #1668]  INFO -- : (0.000071s) SELECT * FROM `requests` WHERE (`menteeID` = 1) LIMIT 1
+I, [2021-04-19T14:46:02.342370 #1668]  INFO -- : (0.000015s) BEGIN
+I, [2021-04-19T14:46:02.342671 #1668]  INFO -- : (0.000160s) INSERT INTO `requests` (`mentorID`, `menteeID`, `timeApplicationSent`) VALUES (1, 1, '2021-04-19 14:46:02 +0000')
+I, [2021-04-19T14:46:02.342845 #1668]  INFO -- : (0.000068s) SELECT * FROM `requests` WHERE `id` = 1
+I, [2021-04-19T14:46:02.459921 #1668]  INFO -- : (0.116982s) COMMIT
+I, [2021-04-19T14:46:02.460393 #1668]  INFO -- : (0.000050s) BEGIN
+I, [2021-04-19T14:46:02.460964 #1668]  INFO -- : (0.000264s) UPDATE `mentees` SET `applicationNumber` = '0' WHERE (`id` = 1)
+I, [2021-04-19T14:46:02.561196 #1668]  INFO -- : (0.100125s) COMMIT
+I, [2021-04-19T14:46:02.841265 #1668]  INFO -- : (0.000136s) SELECT count(*) AS 'count' FROM `mentors` WHERE (`profileStatus` LIKE '0' ESCAPE '\') LIMIT 1
+I, [2021-04-19T14:46:02.841613 #1668]  INFO -- : (0.000192s) SELECT * FROM `mentors` WHERE (`profileStatus` LIKE '0' ESCAPE '\') ORDER BY `courseName`
+I, [2021-04-19T14:46:04.714750 #1668]  INFO -- : (0.000222s) SELECT * FROM `mentors` WHERE (`id` = '1') LIMIT 1
+I, [2021-04-19T14:46:04.715115 #1668]  INFO -- : (0.000170s) SELECT * FROM `mentees` WHERE (`id` = '1') LIMIT 1
+I, [2021-04-19T14:46:04.715450 #1668]  INFO -- : (0.000131s) SELECT * FROM `requests` WHERE (`menteeID` = 1) LIMIT 1
+I, [2021-04-19T14:46:04.826766 #1668]  INFO -- : (0.000085s) SELECT count(*) AS 'count' FROM `mentors` WHERE (`profileStatus` LIKE '0' ESCAPE '\') LIMIT 1
+I, [2021-04-19T14:46:04.827056 #1668]  INFO -- : (0.000178s) SELECT * FROM `mentors` WHERE (`profileStatus` LIKE '0' ESCAPE '\') ORDER BY `courseName`
+I, [2021-04-19T14:46:10.795259 #1668]  INFO -- : (0.000153s) SELECT * FROM `mentees` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-19T14:46:10.795532 #1668]  INFO -- : (0.000095s) SELECT * FROM `mentees` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-19T14:46:10.795741 #1668]  INFO -- : (0.000103s) SELECT * FROM `mentors` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-19T14:46:10.795935 #1668]  INFO -- : (0.000100s) SELECT * FROM `mentors` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-19T14:46:10.909556 #1668]  INFO -- : (0.000266s) SELECT * FROM `mentors` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-19T14:46:13.672543 #1668]  INFO -- : (0.000085s) SELECT * FROM `mentees` WHERE (`id` = 1) LIMIT 1
+I, [2021-04-19T14:46:13.672640 #1668]  INFO -- : (0.000432s) SELECT * FROM `requests` WHERE (`mentorID` = 1)
+I, [2021-04-19T14:46:15.228375 #1668]  INFO -- : (0.148759s) DELETE FROM `requests` WHERE ((`mentorID` = 1) AND (`menteeID` = '1'))
+I, [2021-04-19T14:46:15.228795 #1668]  INFO -- : (0.000181s) SELECT * FROM `mentees` WHERE (`id` = '1') LIMIT 1
+I, [2021-04-19T14:46:15.228979 #1668]  INFO -- : (0.000020s) BEGIN
+I, [2021-04-19T14:46:15.229645 #1668]  INFO -- : (0.000244s) UPDATE `mentees` SET `applicationNumber` = '1' WHERE (`id` = 1)
+I, [2021-04-19T14:46:15.389020 #1668]  INFO -- : (0.159272s) COMMIT
+I, [2021-04-19T14:46:15.686205 #1668]  INFO -- : (0.000168s) SELECT * FROM `mentors` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-19T14:46:25.605326 #1668]  INFO -- : (0.000171s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2021-04-19T14:46:25.605600 #1668]  INFO -- : (0.000107s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2021-04-19T14:46:25.705966 #1668]  INFO -- : (0.000187s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2021-04-19T14:46:27.326426 #1668]  INFO -- : (0.000132s) SELECT count(*) AS 'count' FROM `mentors` WHERE (`profileStatus` LIKE '0' ESCAPE '\') LIMIT 1
+I, [2021-04-19T14:46:27.326740 #1668]  INFO -- : (0.000166s) SELECT * FROM `mentors` WHERE (`profileStatus` LIKE '0' ESCAPE '\') ORDER BY `courseName`
+I, [2021-04-19T14:46:29.040690 #1668]  INFO -- : (0.000166s) SELECT * FROM `mentors` WHERE (`id` = '1') LIMIT 1
+I, [2021-04-19T14:46:29.040968 #1668]  INFO -- : (0.000123s) SELECT * FROM `mentees` WHERE (`id` = '1') LIMIT 1
+I, [2021-04-19T14:46:29.041249 #1668]  INFO -- : (0.000071s) SELECT * FROM `requests` WHERE (`menteeID` = 1) LIMIT 1
+I, [2021-04-19T14:46:29.041401 #1668]  INFO -- : (0.000017s) BEGIN
+I, [2021-04-19T14:46:29.041721 #1668]  INFO -- : (0.000181s) INSERT INTO `requests` (`mentorID`, `menteeID`, `timeApplicationSent`) VALUES (1, 1, '2021-04-19 14:46:29 +0000')
+I, [2021-04-19T14:46:29.041884 #1668]  INFO -- : (0.000057s) SELECT * FROM `requests` WHERE `id` = 1
+I, [2021-04-19T14:46:29.174524 #1668]  INFO -- : (0.132566s) COMMIT
+I, [2021-04-19T14:46:29.174796 #1668]  INFO -- : (0.000029s) BEGIN
+I, [2021-04-19T14:46:29.175181 #1668]  INFO -- : (0.000174s) UPDATE `mentees` SET `applicationNumber` = '0' WHERE (`id` = 1)
+I, [2021-04-19T14:46:29.277652 #1668]  INFO -- : (0.102389s) COMMIT
+I, [2021-04-19T14:46:29.553798 #1668]  INFO -- : (0.000148s) SELECT count(*) AS 'count' FROM `mentors` WHERE (`profileStatus` LIKE '0' ESCAPE '\') LIMIT 1
+I, [2021-04-19T14:46:29.554223 #1668]  INFO -- : (0.000256s) SELECT * FROM `mentors` WHERE (`profileStatus` LIKE '0' ESCAPE '\') ORDER BY `courseName`
+I, [2021-04-19T14:46:30.630436 #1668]  INFO -- : (0.000164s) SELECT * FROM `mentors` WHERE (`id` = '1') LIMIT 1
+I, [2021-04-19T14:46:30.630748 #1668]  INFO -- : (0.000132s) SELECT * FROM `mentees` WHERE (`id` = '1') LIMIT 1
+I, [2021-04-19T14:46:30.630932 #1668]  INFO -- : (0.000080s) SELECT * FROM `requests` WHERE (`menteeID` = 1) LIMIT 1
+I, [2021-04-19T14:46:30.732049 #1668]  INFO -- : (0.000123s) SELECT count(*) AS 'count' FROM `mentors` WHERE (`profileStatus` LIKE '0' ESCAPE '\') LIMIT 1
+I, [2021-04-19T14:46:30.732431 #1668]  INFO -- : (0.000212s) SELECT * FROM `mentors` WHERE (`profileStatus` LIKE '0' ESCAPE '\') ORDER BY `courseName`
+I, [2021-04-19T14:46:32.585773 #1668]  INFO -- : (0.125097s) DELETE FROM `requests` WHERE `id` = 1
+I, [2021-04-19T14:46:32.586140 #1668]  INFO -- : (0.000049s) BEGIN
+I, [2021-04-19T14:46:32.586685 #1668]  INFO -- : (0.000267s) UPDATE `mentees` SET `applicationNumber` = '1' WHERE (`id` = 1)
+I, [2021-04-19T14:46:32.692316 #1668]  INFO -- : (0.105522s) COMMIT
+I, [2021-04-19T14:46:59.175127 #1668]  INFO -- : (0.000109s) DELETE FROM `requests` WHERE `id` = 1
+I, [2021-04-19T14:47:00.353876 #1668]  INFO -- : (0.000232s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2021-04-19T14:47:00.354225 #1668]  INFO -- : (0.000175s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2021-04-19T14:47:00.457700 #1668]  INFO -- : (0.000172s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2021-04-19T14:47:02.046374 #1668]  INFO -- : (0.000126s) SELECT count(*) AS 'count' FROM `mentors` WHERE (`profileStatus` LIKE '0' ESCAPE '\') LIMIT 1
+I, [2021-04-19T14:47:02.046695 #1668]  INFO -- : (0.000168s) SELECT * FROM `mentors` WHERE (`profileStatus` LIKE '0' ESCAPE '\') ORDER BY `courseName`
+I, [2021-04-19T14:47:05.081445 #1668]  INFO -- : (0.000185s) SELECT * FROM `mentors` WHERE (`id` = '1') LIMIT 1
+I, [2021-04-19T14:47:05.081781 #1668]  INFO -- : (0.000159s) SELECT * FROM `mentees` WHERE (`id` = '1') LIMIT 1
+I, [2021-04-19T14:47:05.082010 #1668]  INFO -- : (0.000103s) SELECT * FROM `requests` WHERE (`menteeID` = 1) LIMIT 1
+I, [2021-04-19T14:47:05.082191 #1668]  INFO -- : (0.000023s) BEGIN
+I, [2021-04-19T14:47:05.082609 #1668]  INFO -- : (0.000244s) INSERT INTO `requests` (`mentorID`, `menteeID`, `timeApplicationSent`) VALUES (1, 1, '2021-04-19 14:47:05 +0000')
+I, [2021-04-19T14:47:05.082832 #1668]  INFO -- : (0.000078s) SELECT * FROM `requests` WHERE `id` = 1
+I, [2021-04-19T14:47:05.193967 #1668]  INFO -- : (0.111045s) COMMIT
+I, [2021-04-19T14:47:05.194265 #1668]  INFO -- : (0.000029s) BEGIN
+I, [2021-04-19T14:47:05.194619 #1668]  INFO -- : (0.000152s) UPDATE `mentees` SET `applicationNumber` = '0' WHERE (`id` = 1)
+I, [2021-04-19T14:47:05.301702 #1668]  INFO -- : (0.107007s) COMMIT
+I, [2021-04-19T14:47:05.585519 #1668]  INFO -- : (0.000202s) SELECT count(*) AS 'count' FROM `mentors` WHERE (`profileStatus` LIKE '0' ESCAPE '\') LIMIT 1
+I, [2021-04-19T14:47:05.586066 #1668]  INFO -- : (0.000320s) SELECT * FROM `mentors` WHERE (`profileStatus` LIKE '0' ESCAPE '\') ORDER BY `courseName`
+I, [2021-04-19T14:47:06.622925 #1668]  INFO -- : (0.000164s) SELECT * FROM `mentors` WHERE (`id` = '1') LIMIT 1
+I, [2021-04-19T14:47:06.623179 #1668]  INFO -- : (0.000103s) SELECT * FROM `mentees` WHERE (`id` = '1') LIMIT 1
+I, [2021-04-19T14:47:06.623338 #1668]  INFO -- : (0.000079s) SELECT * FROM `requests` WHERE (`menteeID` = 1) LIMIT 1
+I, [2021-04-19T14:47:06.735719 #1668]  INFO -- : (0.000099s) SELECT count(*) AS 'count' FROM `mentors` WHERE (`profileStatus` LIKE '0' ESCAPE '\') LIMIT 1
+I, [2021-04-19T14:47:06.736050 #1668]  INFO -- : (0.000191s) SELECT * FROM `mentors` WHERE (`profileStatus` LIKE '0' ESCAPE '\') ORDER BY `courseName`
+I, [2021-04-19T14:47:15.162921 #1668]  INFO -- : (0.000249s) SELECT * FROM `mentees` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-19T14:47:15.163301 #1668]  INFO -- : (0.000146s) SELECT * FROM `mentees` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-19T14:47:15.163643 #1668]  INFO -- : (0.000172s) SELECT * FROM `mentors` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-19T14:47:15.163905 #1668]  INFO -- : (0.000147s) SELECT * FROM `mentors` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-19T14:47:15.268038 #1668]  INFO -- : (0.000146s) SELECT * FROM `mentors` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-19T14:47:16.461841 #1668]  INFO -- : (0.000164s) SELECT * FROM `mentees` WHERE (`id` = 1) LIMIT 1
+I, [2021-04-19T14:47:16.461986 #1668]  INFO -- : (0.000650s) SELECT * FROM `requests` WHERE (`mentorID` = 1)
+I, [2021-04-19T14:47:17.770915 #1668]  INFO -- : (0.100558s) UPDATE `mentees` SET `mentorMatch` = 1 WHERE (`id` = '1')
+I, [2021-04-19T14:47:17.872047 #1668]  INFO -- : (0.100830s) UPDATE `mentors` SET `menteeMatch` = '1' WHERE (`id` = 1)
+I, [2021-04-19T14:47:17.972662 #1668]  INFO -- : (0.100340s) DELETE FROM `requests` WHERE (`mentorID` = 1)
+I, [2021-04-19T14:47:17.972949 #1668]  INFO -- : (0.000033s) BEGIN
+I, [2021-04-19T14:47:17.973315 #1668]  INFO -- : (0.000157s) UPDATE `mentors` SET `profileStatus` = '1' WHERE (`id` = 1)
+I, [2021-04-19T14:47:18.079679 #1668]  INFO -- : (0.106268s) COMMIT
+I, [2021-04-19T14:47:18.080106 #1668]  INFO -- : (0.000188s) SELECT * FROM `mentees` WHERE (`id` = '1') LIMIT 1
+I, [2021-04-19T14:47:18.533320 #1668]  INFO -- : (0.000170s) SELECT * FROM `mentors` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-19T14:47:26.439275 #1668]  INFO -- : (0.000174s) SELECT * FROM `mentees` WHERE (`username` = 'mentee2') LIMIT 1
+I, [2021-04-19T14:47:26.439572 #1668]  INFO -- : (0.000127s) SELECT * FROM `mentees` WHERE (`username` = 'mentee2') LIMIT 1
+I, [2021-04-19T14:47:26.543495 #1668]  INFO -- : (0.000245s) SELECT * FROM `mentees` WHERE (`username` = 'mentee2') LIMIT 1
+I, [2021-04-19T14:47:26.543770 #1668]  INFO -- : (0.000028s) BEGIN
+I, [2021-04-19T14:47:26.544321 #1668]  INFO -- : (0.000299s) UPDATE `mentees` SET `applicationNumber` = '1' WHERE (`id` = 2)
+I, [2021-04-19T14:47:26.654760 #1668]  INFO -- : (0.110333s) COMMIT
+I, [2021-04-19T14:47:26.654973 #1668]  INFO -- : (0.000029s) BEGIN
+I, [2021-04-19T14:47:26.655312 #1668]  INFO -- : (0.000164s) UPDATE `mentees` SET `mentorMatch` = 0 WHERE (`id` = 2)
+I, [2021-04-19T14:47:26.754814 #1668]  INFO -- : (0.099420s) COMMIT
+I, [2021-04-19T14:47:35.198948 #1668]  INFO -- : (0.003923s) DELETE FROM `requests` WHERE `id` = 1
+I, [2021-04-19T14:47:40.257267 #1668]  INFO -- : (0.000144s) SELECT count(*) AS 'count' FROM `mentors` WHERE (`profileStatus` LIKE '0' ESCAPE '\') LIMIT 1
+I, [2021-04-19T14:47:40.257633 #1668]  INFO -- : (0.000187s) SELECT * FROM `mentors` WHERE (`profileStatus` LIKE '0' ESCAPE '\') ORDER BY `courseName`
+I, [2021-04-19T14:47:43.928454 #1668]  INFO -- : (0.000209s) SELECT * FROM `mentors` WHERE (`id` = '2') LIMIT 1
+I, [2021-04-19T14:47:43.928713 #1668]  INFO -- : (0.000104s) SELECT * FROM `mentees` WHERE (`id` = '2') LIMIT 1
+I, [2021-04-19T14:47:43.928858 #1668]  INFO -- : (0.000062s) SELECT * FROM `requests` WHERE (`menteeID` = 2) LIMIT 1
+I, [2021-04-19T14:47:43.928981 #1668]  INFO -- : (0.000013s) BEGIN
+I, [2021-04-19T14:47:43.929275 #1668]  INFO -- : (0.000174s) INSERT INTO `requests` (`mentorID`, `menteeID`, `timeApplicationSent`) VALUES (2, 2, '2021-04-19 14:47:43 +0000')
+I, [2021-04-19T14:47:43.929436 #1668]  INFO -- : (0.000055s) SELECT * FROM `requests` WHERE `id` = 1
+I, [2021-04-19T14:47:44.030475 #1668]  INFO -- : (0.100968s) COMMIT
+I, [2021-04-19T14:47:44.030737 #1668]  INFO -- : (0.000029s) BEGIN
+I, [2021-04-19T14:47:44.031105 #1668]  INFO -- : (0.000150s) UPDATE `mentees` SET `applicationNumber` = '0' WHERE (`id` = 2)
+I, [2021-04-19T14:47:44.134684 #1668]  INFO -- : (0.103497s) COMMIT
+I, [2021-04-19T14:47:44.402531 #1668]  INFO -- : (0.000128s) SELECT count(*) AS 'count' FROM `mentors` WHERE (`profileStatus` LIKE '0' ESCAPE '\') LIMIT 1
+I, [2021-04-19T14:47:44.402865 #1668]  INFO -- : (0.000183s) SELECT * FROM `mentors` WHERE (`profileStatus` LIKE '0' ESCAPE '\') ORDER BY `courseName`
+I, [2021-04-19T14:47:49.843844 #1668]  INFO -- : (0.000223s) SELECT * FROM `mentees` WHERE (`username` = 'mentor2') LIMIT 1
+I, [2021-04-19T14:47:49.844197 #1668]  INFO -- : (0.000141s) SELECT * FROM `mentees` WHERE (`username` = 'mentor2') LIMIT 1
+I, [2021-04-19T14:47:49.844522 #1668]  INFO -- : (0.000164s) SELECT * FROM `mentors` WHERE (`username` = 'mentor2') LIMIT 1
+I, [2021-04-19T14:47:49.844786 #1668]  INFO -- : (0.000141s) SELECT * FROM `mentors` WHERE (`username` = 'mentor2') LIMIT 1
+I, [2021-04-19T14:47:49.949001 #1668]  INFO -- : (0.000173s) SELECT * FROM `mentors` WHERE (`username` = 'mentor2') LIMIT 1
+I, [2021-04-19T14:47:52.166253 #1668]  INFO -- : (0.000128s) SELECT * FROM `mentees` WHERE (`id` = 2) LIMIT 1
+I, [2021-04-19T14:47:52.166485 #1668]  INFO -- : (0.000634s) SELECT * FROM `requests` WHERE (`mentorID` = 2)
+I, [2021-04-19T14:47:53.741734 #1668]  INFO -- : (0.104190s) UPDATE `mentees` SET `mentorMatch` = 2 WHERE (`id` = '2')
+I, [2021-04-19T14:47:53.839593 #1668]  INFO -- : (0.097582s) UPDATE `mentors` SET `menteeMatch` = '2' WHERE (`id` = 2)
+I, [2021-04-19T14:47:53.943544 #1668]  INFO -- : (0.103728s) DELETE FROM `requests` WHERE (`mentorID` = 2)
+I, [2021-04-19T14:47:53.943772 #1668]  INFO -- : (0.000036s) BEGIN
+I, [2021-04-19T14:47:53.944152 #1668]  INFO -- : (0.000169s) UPDATE `mentors` SET `profileStatus` = '1' WHERE (`id` = 2)
+I, [2021-04-19T14:47:54.061346 #1668]  INFO -- : (0.117048s) COMMIT
+I, [2021-04-19T14:47:54.061807 #1668]  INFO -- : (0.000217s) SELECT * FROM `mentees` WHERE (`id` = '2') LIMIT 1
+I, [2021-04-19T14:47:54.514027 #1668]  INFO -- : (0.000239s) SELECT * FROM `mentors` WHERE (`username` = 'mentor2') LIMIT 1
+I, [2021-04-19T14:47:59.730414 #1668]  INFO -- : (0.000174s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2021-04-19T14:47:59.730748 #1668]  INFO -- : (0.000157s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2021-04-19T14:47:59.831797 #1668]  INFO -- : (0.000161s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2021-04-19T14:48:14.031116 #1668]  INFO -- : (0.000121s) DELETE FROM `requests` WHERE `id` = 1
+I, [2021-04-19T14:48:15.510218 #1668]  INFO -- : (0.000177s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2021-04-19T14:48:15.510555 #1668]  INFO -- : (0.000161s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2021-04-19T14:48:15.611511 #1668]  INFO -- : (0.000183s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2021-04-19T14:52:46.104082 #1806]  INFO -- : (0.000187s) PRAGMA foreign_keys = 1
+I, [2021-04-19T14:52:46.104219 #1806]  INFO -- : (0.000019s) PRAGMA case_sensitive_like = 1
+I, [2021-04-19T14:52:46.105370 #1806]  INFO -- : (0.000062s) SELECT sqlite_version()
+I, [2021-04-19T14:52:46.105731 #1806]  INFO -- : (0.000186s) PRAGMA table_info('admins')
+I, [2021-04-19T14:52:46.107117 #1806]  INFO -- : (0.000152s) PRAGMA table_info('mentees')
+I, [2021-04-19T14:52:46.108601 #1806]  INFO -- : (0.000141s) PRAGMA table_info('mentors')
+I, [2021-04-19T14:52:46.109774 #1806]  INFO -- : (0.000102s) PRAGMA table_info('requests')
+I, [2021-04-19T14:53:04.133264 #1807]  INFO -- : (0.000177s) PRAGMA foreign_keys = 1
+I, [2021-04-19T14:53:04.133375 #1807]  INFO -- : (0.000018s) PRAGMA case_sensitive_like = 1
+I, [2021-04-19T14:53:04.134487 #1807]  INFO -- : (0.000086s) SELECT sqlite_version()
+I, [2021-04-19T14:53:04.134851 #1807]  INFO -- : (0.000182s) PRAGMA table_info('admins')
+I, [2021-04-19T14:53:04.136225 #1807]  INFO -- : (0.000152s) PRAGMA table_info('mentees')
+I, [2021-04-19T14:53:04.137674 #1807]  INFO -- : (0.000137s) PRAGMA table_info('mentors')
+I, [2021-04-19T14:53:04.138883 #1807]  INFO -- : (0.000104s) PRAGMA table_info('requests')
+I, [2021-04-19T14:53:11.494887 #1807]  INFO -- : (0.000205s) SELECT * FROM `mentees` WHERE (`username` = 'mentee3') LIMIT 1
+I, [2021-04-19T14:53:11.495210 #1807]  INFO -- : (0.000117s) SELECT * FROM `mentees` WHERE (`username` = 'mentee3') LIMIT 1
+I, [2021-04-19T14:53:11.610689 #1807]  INFO -- : (0.000230s) SELECT * FROM `mentees` WHERE (`username` = 'mentee3') LIMIT 1
+I, [2021-04-19T14:53:11.610950 #1807]  INFO -- : (0.000026s) BEGIN
+I, [2021-04-19T14:53:11.612701 #1807]  INFO -- : (0.000276s) UPDATE `mentees` SET `applicationNumber` = '1' WHERE (`id` = 3)
+I, [2021-04-19T14:53:11.717836 #1807]  INFO -- : (0.105023s) COMMIT
+I, [2021-04-19T14:53:11.718160 #1807]  INFO -- : (0.000038s) BEGIN
+I, [2021-04-19T14:53:11.719607 #1807]  INFO -- : (0.000803s) UPDATE `mentees` SET `mentorMatch` = 0 WHERE (`id` = 3)
+I, [2021-04-19T14:53:11.823254 #1807]  INFO -- : (0.103107s) COMMIT
+I, [2021-04-19T14:58:06.525167 #1807]  INFO -- : (0.000187s) SELECT * FROM `mentees` WHERE (`username` = 'mentee3') LIMIT 1
+I, [2021-04-19T14:58:13.582077 #1807]  INFO -- : (0.000163s) SELECT * FROM `mentees` WHERE (`username` = 'mentor3') LIMIT 1
+I, [2021-04-19T14:58:13.582362 #1807]  INFO -- : (0.000107s) SELECT * FROM `mentees` WHERE (`username` = 'mentor3') LIMIT 1
+I, [2021-04-19T14:58:13.582685 #1807]  INFO -- : (0.000124s) SELECT * FROM `mentors` WHERE (`username` = 'mentor3') LIMIT 1
+I, [2021-04-19T14:58:13.582951 #1807]  INFO -- : (0.000126s) SELECT * FROM `mentors` WHERE (`username` = 'mentor3') LIMIT 1
+I, [2021-04-19T14:58:13.697799 #1807]  INFO -- : (0.000302s) SELECT * FROM `mentors` WHERE (`username` = 'mentor3') LIMIT 1
+I, [2021-04-19T14:59:07.646270 #1807]  INFO -- : (0.001043s) SELECT * FROM `mentees` WHERE (`username` = 'mentor3') LIMIT 1
+I, [2021-04-19T14:59:07.646561 #1807]  INFO -- : (0.000111s) SELECT * FROM `mentees` WHERE (`username` = 'mentor3') LIMIT 1
+I, [2021-04-19T14:59:07.646814 #1807]  INFO -- : (0.000121s) SELECT * FROM `mentors` WHERE (`username` = 'mentor3') LIMIT 1
+I, [2021-04-19T14:59:07.647817 #1807]  INFO -- : (0.000911s) SELECT * FROM `mentors` WHERE (`username` = 'mentor3') LIMIT 1
+I, [2021-04-19T14:59:07.767868 #1807]  INFO -- : (0.000171s) SELECT * FROM `mentors` WHERE (`username` = 'mentor3') LIMIT 1
+I, [2021-04-19T14:59:07.768092 #1807]  INFO -- : (0.000025s) BEGIN
+I, [2021-04-19T14:59:07.768535 #1807]  INFO -- : (0.000212s) UPDATE `mentors` SET `menteeMatch` = 0 WHERE (`id` = 3)
+I, [2021-04-19T14:59:07.899193 #1807]  INFO -- : (0.130580s) COMMIT
+I, [2021-04-19T15:01:58.397523 #1881]  INFO -- : (0.000193s) PRAGMA foreign_keys = 1
+I, [2021-04-19T15:01:58.397657 #1881]  INFO -- : (0.000021s) PRAGMA case_sensitive_like = 1
+I, [2021-04-19T15:01:58.398898 #1881]  INFO -- : (0.000115s) SELECT sqlite_version()
+I, [2021-04-19T15:01:58.399207 #1881]  INFO -- : (0.000136s) PRAGMA table_info('admins')
+I, [2021-04-19T15:01:58.400810 #1881]  INFO -- : (0.000156s) PRAGMA table_info('mentees')
+I, [2021-04-19T15:01:58.403262 #1881]  INFO -- : (0.000269s) PRAGMA table_info('mentors')
+I, [2021-04-19T15:01:58.405325 #1881]  INFO -- : (0.000182s) PRAGMA table_info('requests')
+I, [2021-04-19T15:02:07.303678 #1881]  INFO -- : (0.001531s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2021-04-19T15:02:07.304110 #1881]  INFO -- : (0.000180s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2021-04-19T15:02:07.423687 #1881]  INFO -- : (0.000986s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2021-04-19T15:02:12.486033 #1881]  INFO -- : (0.000085s) SELECT * FROM `mentors` WHERE (`id` = 1) LIMIT 1
+I, [2021-04-19T15:02:12.486151 #1881]  INFO -- : (0.000503s) SELECT * FROM `mentors` WHERE (`id` = 1)
+I, [2021-04-19T15:02:14.230057 #1881]  INFO -- : (0.000179s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2021-04-19T15:02:16.453794 #1881]  INFO -- : (0.001037s) SELECT * FROM `mentees` WHERE `id` = 1
+I, [2021-04-19T15:02:16.454045 #1881]  INFO -- : (0.000117s) SELECT * FROM `mentees` WHERE `id` = 1
+I, [2021-04-19T15:02:20.498870 #1881]  INFO -- : (0.000163s) SELECT * FROM `mentees` WHERE `id` = '1'
+I, [2021-04-19T15:02:20.602213 #1881]  INFO -- : (0.103173s) DELETE FROM `mentees` WHERE `id` = 1
+I, [2021-04-19T15:02:20.602536 #1881]  INFO -- : (0.000095s) DELETE FROM `requests` WHERE (`menteeID` = '1')
+I, [2021-04-19T15:03:50.482550 #1924]  INFO -- : (0.000192s) PRAGMA foreign_keys = 1
+I, [2021-04-19T15:03:50.482664 #1924]  INFO -- : (0.000019s) PRAGMA case_sensitive_like = 1
+I, [2021-04-19T15:03:50.483724 #1924]  INFO -- : (0.000074s) SELECT sqlite_version()
+I, [2021-04-19T15:03:50.484076 #1924]  INFO -- : (0.000191s) PRAGMA table_info('admins')
+I, [2021-04-19T15:03:50.485468 #1924]  INFO -- : (0.000151s) PRAGMA table_info('mentees')
+I, [2021-04-19T15:03:50.486949 #1924]  INFO -- : (0.000140s) PRAGMA table_info('mentors')
+I, [2021-04-19T15:03:50.488148 #1924]  INFO -- : (0.000107s) PRAGMA table_info('requests')
+I, [2021-04-19T15:04:14.914470 #1924]  INFO -- : (0.000163s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2021-04-19T15:04:14.914789 #1924]  INFO -- : (0.000105s) SELECT * FROM `mentees` WHERE (`email` = 'sfansur1@sheffied.ac.uk') LIMIT 1
+I, [2021-04-19T15:04:14.915020 #1924]  INFO -- : (0.000092s) SELECT * FROM `mentors` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2021-04-19T15:04:14.916120 #1924]  INFO -- : (0.000980s) SELECT * FROM `mentors` WHERE (`email` = 'sfansur1@sheffied.ac.uk') LIMIT 1
+I, [2021-04-19T15:04:14.916361 #1924]  INFO -- : (0.000085s) SELECT * FROM `admins` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2021-04-19T15:04:14.916569 #1924]  INFO -- : (0.000090s) SELECT * FROM `admins` WHERE (`email` = 'sfansur1@sheffied.ac.uk') LIMIT 1
+I, [2021-04-19T15:04:14.916688 #1924]  INFO -- : (0.000017s) BEGIN
+I, [2021-04-19T15:04:14.917097 #1924]  INFO -- : (0.000249s) INSERT INTO `mentees` (`fname`, `lname`, `email`, `phoneNum`, `courseName`, `faculty`, `cyear`, `username`, `password`) VALUES ('Samiha', 'Fansur', 'sfansur1@sheffied.ac.uk', '+44 7721951137', 'Architecture (BA)', 'Faculty of Arts and Humanities', 1, 'mentee1', 'S.F')
+I, [2021-04-19T15:04:14.918066 #1924]  INFO -- : (0.000106s) SELECT * FROM `mentees` WHERE `id` = 1
+I, [2021-04-19T15:04:15.007041 #1924]  INFO -- : (0.088898s) COMMIT
+I, [2021-04-19T15:04:29.577832 #1924]  INFO -- : (0.000155s) SELECT * FROM `mentors` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-19T15:04:29.578077 #1924]  INFO -- : (0.000093s) SELECT * FROM `mentors` WHERE (`email` = 'sfansur1@sheffield.ac.uk') LIMIT 1
+I, [2021-04-19T15:04:29.578337 #1924]  INFO -- : (0.000093s) SELECT * FROM `mentees` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-19T15:04:29.578510 #1924]  INFO -- : (0.000087s) SELECT * FROM `mentees` WHERE (`email` = 'sfansur1@sheffield.ac.uk') LIMIT 1
+I, [2021-04-19T15:04:29.578731 #1924]  INFO -- : (0.000074s) SELECT * FROM `admins` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-19T15:04:29.578886 #1924]  INFO -- : (0.000072s) SELECT * FROM `admins` WHERE (`email` = 'sfansur1@sheffield.ac.uk') LIMIT 1
+I, [2021-04-19T15:04:29.579002 #1924]  INFO -- : (0.000016s) BEGIN
+I, [2021-04-19T15:04:29.579296 #1924]  INFO -- : (0.000147s) INSERT INTO `mentors` (`fname`, `lname`, `email`, `phoneNum`, `username`, `password`, `jobTitle`, `courseName`) VALUES ('Samiha', 'Fansur', 'sfansur1@sheffield.ac.uk', '+44 7721951137', 'mentor1', 'S.F', 'Administrator', 'Archaeology and Modern Languages & Cultures (BA)')
+I, [2021-04-19T15:04:29.579518 #1924]  INFO -- : (0.000097s) SELECT * FROM `mentors` WHERE `id` = 1
+I, [2021-04-19T15:04:29.685343 #1924]  INFO -- : (0.105732s) COMMIT
+I, [2021-04-19T15:04:33.431043 #1924]  INFO -- : (0.000196s) SELECT * FROM `mentees` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-19T15:04:33.431341 #1924]  INFO -- : (0.000110s) SELECT * FROM `mentees` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-19T15:04:33.431575 #1924]  INFO -- : (0.000116s) SELECT * FROM `mentors` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-19T15:04:33.432632 #1924]  INFO -- : (0.000970s) SELECT * FROM `mentors` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-19T15:04:33.534805 #1924]  INFO -- : (0.000180s) SELECT * FROM `mentors` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-19T15:04:33.535017 #1924]  INFO -- : (0.000020s) BEGIN
+I, [2021-04-19T15:04:33.535369 #1924]  INFO -- : (0.000163s) UPDATE `mentors` SET `profileStatus` = '0' WHERE (`id` = 1)
+I, [2021-04-19T15:04:33.648311 #1924]  INFO -- : (0.111884s) COMMIT
+I, [2021-04-19T15:04:33.648553 #1924]  INFO -- : (0.000033s) BEGIN
+I, [2021-04-19T15:04:33.648905 #1924]  INFO -- : (0.000158s) UPDATE `mentors` SET `menteeMatch` = 0 WHERE (`id` = 1)
+I, [2021-04-19T15:04:33.760043 #1924]  INFO -- : (0.111055s) COMMIT
+I, [2021-04-19T15:04:39.116892 #1924]  INFO -- : (0.001009s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2021-04-19T15:04:39.117179 #1924]  INFO -- : (0.000120s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2021-04-19T15:04:39.218260 #1924]  INFO -- : (0.000164s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2021-04-19T15:04:39.218450 #1924]  INFO -- : (0.000017s) BEGIN
+I, [2021-04-19T15:04:39.218790 #1924]  INFO -- : (0.000162s) UPDATE `mentees` SET `applicationNumber` = '1' WHERE (`id` = 1)
+I, [2021-04-19T15:04:39.341001 #1924]  INFO -- : (0.122127s) COMMIT
+I, [2021-04-19T15:04:39.341217 #1924]  INFO -- : (0.000030s) BEGIN
+I, [2021-04-19T15:04:39.341546 #1924]  INFO -- : (0.000151s) UPDATE `mentees` SET `mentorMatch` = 0 WHERE (`id` = 1)
+I, [2021-04-19T15:04:39.441042 #1924]  INFO -- : (0.099412s) COMMIT
+I, [2021-04-19T15:04:41.243276 #1924]  INFO -- : (0.000177s) SELECT count(*) AS 'count' FROM `mentors` WHERE (`profileStatus` LIKE '0' ESCAPE '\') LIMIT 1
+I, [2021-04-19T15:04:41.243733 #1924]  INFO -- : (0.000230s) SELECT * FROM `mentors` WHERE (`profileStatus` LIKE '0' ESCAPE '\') ORDER BY `courseName`
+I, [2021-04-19T15:04:42.966792 #1924]  INFO -- : (0.000162s) SELECT * FROM `mentors` WHERE (`id` = '1') LIMIT 1
+I, [2021-04-19T15:04:42.967059 #1924]  INFO -- : (0.000108s) SELECT * FROM `mentees` WHERE (`id` = '1') LIMIT 1
+I, [2021-04-19T15:04:42.967391 #1924]  INFO -- : (0.000074s) SELECT * FROM `requests` WHERE (`menteeID` = 1) LIMIT 1
+I, [2021-04-19T15:04:42.967528 #1924]  INFO -- : (0.000014s) BEGIN
+I, [2021-04-19T15:04:42.967789 #1924]  INFO -- : (0.000139s) INSERT INTO `requests` (`mentorID`, `menteeID`, `timeApplicationSent`) VALUES (1, 1, '2021-04-19 15:04:42 +0000')
+I, [2021-04-19T15:04:42.967954 #1924]  INFO -- : (0.000056s) SELECT * FROM `requests` WHERE `id` = 1
+I, [2021-04-19T15:04:43.062058 #1924]  INFO -- : (0.094023s) COMMIT
+I, [2021-04-19T15:04:43.062293 #1924]  INFO -- : (0.000022s) BEGIN
+I, [2021-04-19T15:04:43.062704 #1924]  INFO -- : (0.000221s) UPDATE `mentees` SET `applicationNumber` = '0' WHERE (`id` = 1)
+I, [2021-04-19T15:04:43.151061 #1924]  INFO -- : (0.088273s) COMMIT
+I, [2021-04-19T15:04:43.423320 #1924]  INFO -- : (0.000121s) SELECT count(*) AS 'count' FROM `mentors` WHERE (`profileStatus` LIKE '0' ESCAPE '\') LIMIT 1
+I, [2021-04-19T15:04:43.423645 #1924]  INFO -- : (0.000174s) SELECT * FROM `mentors` WHERE (`profileStatus` LIKE '0' ESCAPE '\') ORDER BY `courseName`
+I, [2021-04-19T15:04:44.048590 #1924]  INFO -- : (0.000402s) SELECT * FROM `mentors` WHERE (`id` = '1') LIMIT 1
+I, [2021-04-19T15:04:44.048995 #1924]  INFO -- : (0.000177s) SELECT * FROM `mentees` WHERE (`id` = '1') LIMIT 1
+I, [2021-04-19T15:04:44.049348 #1924]  INFO -- : (0.000124s) SELECT * FROM `requests` WHERE (`menteeID` = 1) LIMIT 1
+I, [2021-04-19T15:04:44.167165 #1924]  INFO -- : (0.000145s) SELECT count(*) AS 'count' FROM `mentors` WHERE (`profileStatus` LIKE '0' ESCAPE '\') LIMIT 1
+I, [2021-04-19T15:04:44.167485 #1924]  INFO -- : (0.000154s) SELECT * FROM `mentors` WHERE (`profileStatus` LIKE '0' ESCAPE '\') ORDER BY `courseName`
+I, [2021-04-19T15:04:49.796401 #1924]  INFO -- : (0.000208s) SELECT * FROM `mentees` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-19T15:04:49.796719 #1924]  INFO -- : (0.000159s) SELECT * FROM `mentees` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-19T15:04:49.796958 #1924]  INFO -- : (0.000107s) SELECT * FROM `mentors` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-19T15:04:49.797137 #1924]  INFO -- : (0.000096s) SELECT * FROM `mentors` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-19T15:04:49.933436 #1924]  INFO -- : (0.000134s) SELECT * FROM `mentors` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-19T15:04:52.438522 #1924]  INFO -- : (0.000091s) SELECT * FROM `mentees` WHERE (`id` = 1) LIMIT 1
+I, [2021-04-19T15:04:52.438629 #1924]  INFO -- : (0.000438s) SELECT * FROM `requests` WHERE (`mentorID` = 1)
+I, [2021-04-19T15:04:53.709566 #1924]  INFO -- : (0.093984s) UPDATE `mentees` SET `mentorMatch` = 1 WHERE (`id` = '1')
+I, [2021-04-19T15:04:53.809402 #1924]  INFO -- : (0.099580s) UPDATE `mentors` SET `menteeMatch` = '1' WHERE (`id` = 1)
+I, [2021-04-19T15:04:53.911041 #1924]  INFO -- : (0.101412s) DELETE FROM `requests` WHERE (`mentorID` = 1)
+I, [2021-04-19T15:04:53.911325 #1924]  INFO -- : (0.000032s) BEGIN
+I, [2021-04-19T15:04:53.911651 #1924]  INFO -- : (0.000145s) UPDATE `mentors` SET `profileStatus` = '1' WHERE (`id` = 1)
+I, [2021-04-19T15:04:54.020724 #1924]  INFO -- : (0.108990s) COMMIT
+I, [2021-04-19T15:04:54.021106 #1924]  INFO -- : (0.000165s) SELECT * FROM `mentees` WHERE (`id` = '1') LIMIT 1
+I, [2021-04-19T15:04:54.489513 #1924]  INFO -- : (0.000177s) SELECT * FROM `mentors` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-19T15:05:08.531894 #1924]  INFO -- : (0.000305s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2021-04-19T15:05:08.532336 #1924]  INFO -- : (0.000204s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2021-04-19T15:05:08.651494 #1924]  INFO -- : (0.000190s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2021-04-19T15:05:13.062599 #1924]  INFO -- : (0.000097s) DELETE FROM `requests` WHERE `id` = 1
+I, [2021-04-19T15:05:18.032093 #1924]  INFO -- : (0.000169s) SELECT * FROM `mentees` WHERE `id` = 1
+I, [2021-04-19T15:05:18.032367 #1924]  INFO -- : (0.000149s) SELECT * FROM `mentees` WHERE `id` = 1
+I, [2021-04-19T15:05:22.424950 #1924]  INFO -- : (0.000169s) SELECT * FROM `mentees` WHERE `id` = '1'
+I, [2021-04-19T15:05:22.611854 #1924]  INFO -- : (0.186741s) DELETE FROM `mentees` WHERE `id` = 1
+I, [2021-04-19T15:05:22.612159 #1924]  INFO -- : (0.000090s) DELETE FROM `requests` WHERE (`menteeID` = '1')
+I, [2021-04-19T15:06:04.941397 #1976]  INFO -- : (0.000175s) PRAGMA foreign_keys = 1
+I, [2021-04-19T15:06:04.941503 #1976]  INFO -- : (0.000019s) PRAGMA case_sensitive_like = 1
+I, [2021-04-19T15:06:04.942507 #1976]  INFO -- : (0.000055s) SELECT sqlite_version()
+I, [2021-04-19T15:06:04.942872 #1976]  INFO -- : (0.000183s) PRAGMA table_info('admins')
+I, [2021-04-19T15:06:04.944227 #1976]  INFO -- : (0.000148s) PRAGMA table_info('mentees')
+I, [2021-04-19T15:06:04.945710 #1976]  INFO -- : (0.000156s) PRAGMA table_info('mentors')
+I, [2021-04-19T15:06:04.946876 #1976]  INFO -- : (0.000088s) PRAGMA table_info('requests')
+I, [2021-04-19T15:06:42.141630 #1976]  INFO -- : (0.000273s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2021-04-19T15:06:42.142090 #1976]  INFO -- : (0.000160s) SELECT * FROM `mentees` WHERE (`email` = 'sfansur1@sheffied.ac.uk') LIMIT 1
+I, [2021-04-19T15:06:42.144027 #1976]  INFO -- : (0.001747s) SELECT * FROM `mentors` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2021-04-19T15:06:42.144400 #1976]  INFO -- : (0.000170s) SELECT * FROM `mentors` WHERE (`email` = 'sfansur1@sheffied.ac.uk') LIMIT 1
+I, [2021-04-19T15:06:42.144728 #1976]  INFO -- : (0.000136s) SELECT * FROM `admins` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2021-04-19T15:06:42.145002 #1976]  INFO -- : (0.000115s) SELECT * FROM `admins` WHERE (`email` = 'sfansur1@sheffied.ac.uk') LIMIT 1
+I, [2021-04-19T15:06:42.145168 #1976]  INFO -- : (0.000024s) BEGIN
+I, [2021-04-19T15:06:42.147257 #1976]  INFO -- : (0.000400s) INSERT INTO `mentees` (`fname`, `lname`, `email`, `phoneNum`, `courseName`, `faculty`, `cyear`, `username`, `password`) VALUES ('Samiha', 'Fansur', 'sfansur1@sheffied.ac.uk', '+44 7721951137', 'Applied Social Sciences (BA)', 'Faculty of Engineering', 1, 'mentee1', 'S.F')
+I, [2021-04-19T15:06:42.147621 #1976]  INFO -- : (0.000173s) SELECT * FROM `mentees` WHERE `id` = 1
+I, [2021-04-19T15:06:42.244152 #1976]  INFO -- : (0.096432s) COMMIT
+I, [2021-04-19T15:06:56.172524 #1976]  INFO -- : (0.000283s) SELECT * FROM `mentors` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-19T15:06:56.172877 #1976]  INFO -- : (0.000161s) SELECT * FROM `mentors` WHERE (`email` = 'sfansur1@sheffield.ac.uk') LIMIT 1
+I, [2021-04-19T15:06:56.173242 #1976]  INFO -- : (0.000143s) SELECT * FROM `mentees` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-19T15:06:56.173480 #1976]  INFO -- : (0.000126s) SELECT * FROM `mentees` WHERE (`email` = 'sfansur1@sheffield.ac.uk') LIMIT 1
+I, [2021-04-19T15:06:56.173785 #1976]  INFO -- : (0.000112s) SELECT * FROM `admins` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-19T15:06:56.173996 #1976]  INFO -- : (0.000107s) SELECT * FROM `admins` WHERE (`email` = 'sfansur1@sheffield.ac.uk') LIMIT 1
+I, [2021-04-19T15:07:18.585162 #1976]  INFO -- : (0.000306s) SELECT * FROM `mentors` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-19T15:07:18.585579 #1976]  INFO -- : (0.000168s) SELECT * FROM `mentors` WHERE (`email` = 'sfansur2@sheffield.ac.uk') LIMIT 1
+I, [2021-04-19T15:07:18.585866 #1976]  INFO -- : (0.000155s) SELECT * FROM `mentees` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-19T15:07:18.587511 #1976]  INFO -- : (0.001519s) SELECT * FROM `mentees` WHERE (`email` = 'sfansur2@sheffield.ac.uk') LIMIT 1
+I, [2021-04-19T15:07:18.587824 #1976]  INFO -- : (0.000134s) SELECT * FROM `admins` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-19T15:07:18.588047 #1976]  INFO -- : (0.000113s) SELECT * FROM `admins` WHERE (`email` = 'sfansur2@sheffield.ac.uk') LIMIT 1
+I, [2021-04-19T15:07:27.274767 #1976]  INFO -- : (0.000159s) SELECT * FROM `mentors` WHERE (`username` = 'mentor2') LIMIT 1
+I, [2021-04-19T15:07:27.275030 #1976]  INFO -- : (0.000104s) SELECT * FROM `mentors` WHERE (`email` = 'sfansur2@sheffield.ac.uk') LIMIT 1
+I, [2021-04-19T15:07:27.275241 #1976]  INFO -- : (0.000105s) SELECT * FROM `mentees` WHERE (`username` = 'mentor2') LIMIT 1
+I, [2021-04-19T15:07:27.275401 #1976]  INFO -- : (0.000082s) SELECT * FROM `mentees` WHERE (`email` = 'sfansur2@sheffield.ac.uk') LIMIT 1
+I, [2021-04-19T15:07:27.275558 #1976]  INFO -- : (0.000069s) SELECT * FROM `admins` WHERE (`username` = 'mentor2') LIMIT 1
+I, [2021-04-19T15:07:27.276329 #1976]  INFO -- : (0.000693s) SELECT * FROM `admins` WHERE (`email` = 'sfansur2@sheffield.ac.uk') LIMIT 1
+I, [2021-04-19T15:07:27.276456 #1976]  INFO -- : (0.000019s) BEGIN
+I, [2021-04-19T15:07:27.276794 #1976]  INFO -- : (0.000186s) INSERT INTO `mentors` (`fname`, `lname`, `email`, `phoneNum`, `username`, `password`, `jobTitle`, `courseName`) VALUES ('Samiha', 'Fansur', 'sfansur2@sheffield.ac.uk', '+44 7721951137', 'mentor2', 'S.F', 'Account Executive', 'Architecture (BA)')
+I, [2021-04-19T15:07:27.277054 #1976]  INFO -- : (0.000128s) SELECT * FROM `mentors` WHERE `id` = 2
+I, [2021-04-19T15:07:27.370257 #1976]  INFO -- : (0.093122s) COMMIT
+I, [2021-04-19T15:07:32.179634 #1976]  INFO -- : (0.000158s) SELECT * FROM `mentees` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-19T15:07:32.179944 #1976]  INFO -- : (0.000133s) SELECT * FROM `mentees` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-19T15:07:32.180767 #1976]  INFO -- : (0.000173s) SELECT * FROM `mentors` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-19T15:07:32.181049 #1976]  INFO -- : (0.000147s) SELECT * FROM `mentors` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-19T15:07:32.294194 #1976]  INFO -- : (0.000171s) SELECT * FROM `mentors` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-19T15:07:38.420372 #1976]  INFO -- : (0.000200s) SELECT * FROM `mentees` WHERE (`username` = 'mentor2') LIMIT 1
+I, [2021-04-19T15:07:38.420705 #1976]  INFO -- : (0.000165s) SELECT * FROM `mentees` WHERE (`username` = 'mentor2') LIMIT 1
+I, [2021-04-19T15:07:38.420933 #1976]  INFO -- : (0.000115s) SELECT * FROM `mentors` WHERE (`username` = 'mentor2') LIMIT 1
+I, [2021-04-19T15:07:38.421146 #1976]  INFO -- : (0.000111s) SELECT * FROM `mentors` WHERE (`username` = 'mentor2') LIMIT 1
+I, [2021-04-19T15:07:38.539809 #1976]  INFO -- : (0.000183s) SELECT * FROM `mentors` WHERE (`username` = 'mentor2') LIMIT 1
+I, [2021-04-19T15:07:38.540028 #1976]  INFO -- : (0.000020s) BEGIN
+I, [2021-04-19T15:07:38.540438 #1976]  INFO -- : (0.000196s) UPDATE `mentors` SET `profileStatus` = '0' WHERE (`id` = 2)
+I, [2021-04-19T15:07:38.641091 #1976]  INFO -- : (0.100552s) COMMIT
+I, [2021-04-19T15:07:38.641329 #1976]  INFO -- : (0.000032s) BEGIN
+I, [2021-04-19T15:07:38.641681 #1976]  INFO -- : (0.000155s) UPDATE `mentors` SET `menteeMatch` = 0 WHERE (`id` = 2)
+I, [2021-04-19T15:07:38.736739 #1976]  INFO -- : (0.094978s) COMMIT
+I, [2021-04-19T15:07:43.839733 #1976]  INFO -- : (0.000186s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2021-04-19T15:07:43.840045 #1976]  INFO -- : (0.000125s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2021-04-19T15:07:43.967318 #1976]  INFO -- : (0.000182s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2021-04-19T15:07:43.967581 #1976]  INFO -- : (0.000030s) BEGIN
+I, [2021-04-19T15:07:43.968071 #1976]  INFO -- : (0.000220s) UPDATE `mentees` SET `applicationNumber` = '1' WHERE (`id` = 1)
+I, [2021-04-19T15:07:44.062998 #1976]  INFO -- : (0.094811s) COMMIT
+I, [2021-04-19T15:07:44.063249 #1976]  INFO -- : (0.000035s) BEGIN
+I, [2021-04-19T15:07:44.063624 #1976]  INFO -- : (0.000166s) UPDATE `mentees` SET `mentorMatch` = 0 WHERE (`id` = 1)
+I, [2021-04-19T15:07:44.151813 #1976]  INFO -- : (0.088097s) COMMIT
+I, [2021-04-19T15:07:45.465337 #1976]  INFO -- : (0.000140s) SELECT count(*) AS 'count' FROM `mentors` WHERE (`profileStatus` LIKE '0' ESCAPE '\') LIMIT 1
+I, [2021-04-19T15:07:45.465682 #1976]  INFO -- : (0.000170s) SELECT * FROM `mentors` WHERE (`profileStatus` LIKE '0' ESCAPE '\') ORDER BY `courseName`
+I, [2021-04-19T15:07:47.339288 #1976]  INFO -- : (0.000196s) SELECT * FROM `mentors` WHERE (`id` = '2') LIMIT 1
+I, [2021-04-19T15:07:47.339620 #1976]  INFO -- : (0.000127s) SELECT * FROM `mentees` WHERE (`id` = '1') LIMIT 1
+I, [2021-04-19T15:07:47.339881 #1976]  INFO -- : (0.000074s) SELECT * FROM `requests` WHERE (`menteeID` = 1) LIMIT 1
+I, [2021-04-19T15:07:47.340027 #1976]  INFO -- : (0.000015s) BEGIN
+I, [2021-04-19T15:07:47.340448 #1976]  INFO -- : (0.000269s) INSERT INTO `requests` (`mentorID`, `menteeID`, `timeApplicationSent`) VALUES (2, 1, '2021-04-19 15:07:47 +0000')
+I, [2021-04-19T15:07:47.340643 #1976]  INFO -- : (0.000060s) SELECT * FROM `requests` WHERE `id` = 1
+I, [2021-04-19T15:07:47.434452 #1976]  INFO -- : (0.093721s) COMMIT
+I, [2021-04-19T15:07:47.434830 #1976]  INFO -- : (0.000040s) BEGIN
+I, [2021-04-19T15:07:47.435279 #1976]  INFO -- : (0.000203s) UPDATE `mentees` SET `applicationNumber` = '0' WHERE (`id` = 1)
+I, [2021-04-19T15:07:47.537414 #1976]  INFO -- : (0.102039s) COMMIT
+I, [2021-04-19T15:07:47.935561 #1976]  INFO -- : (0.000133s) SELECT count(*) AS 'count' FROM `mentors` WHERE (`profileStatus` LIKE '0' ESCAPE '\') LIMIT 1
+I, [2021-04-19T15:07:47.935982 #1976]  INFO -- : (0.000223s) SELECT * FROM `mentors` WHERE (`profileStatus` LIKE '0' ESCAPE '\') ORDER BY `courseName`
+I, [2021-04-19T15:07:55.913484 #1976]  INFO -- : (0.000219s) SELECT * FROM `mentees` WHERE (`username` = 'mentor2') LIMIT 1
+I, [2021-04-19T15:07:55.913798 #1976]  INFO -- : (0.000125s) SELECT * FROM `mentees` WHERE (`username` = 'mentor2') LIMIT 1
+I, [2021-04-19T15:07:55.914073 #1976]  INFO -- : (0.000160s) SELECT * FROM `mentors` WHERE (`username` = 'mentor2') LIMIT 1
+I, [2021-04-19T15:07:55.914305 #1976]  INFO -- : (0.000130s) SELECT * FROM `mentors` WHERE (`username` = 'mentor2') LIMIT 1
+I, [2021-04-19T15:07:56.027346 #1976]  INFO -- : (0.000199s) SELECT * FROM `mentors` WHERE (`username` = 'mentor2') LIMIT 1
+I, [2021-04-19T15:07:57.258233 #1976]  INFO -- : (0.000084s) SELECT * FROM `mentees` WHERE (`id` = 1) LIMIT 1
+I, [2021-04-19T15:07:57.258352 #1976]  INFO -- : (0.000439s) SELECT * FROM `requests` WHERE (`mentorID` = 2)
+I, [2021-04-19T15:07:58.330635 #1976]  INFO -- : (0.099131s) UPDATE `mentees` SET `mentorMatch` = 2 WHERE (`id` = '1')
+I, [2021-04-19T15:07:58.421288 #1976]  INFO -- : (0.090368s) UPDATE `mentors` SET `menteeMatch` = '1' WHERE (`id` = 2)
+I, [2021-04-19T15:07:58.519609 #1976]  INFO -- : (0.098055s) DELETE FROM `requests` WHERE (`mentorID` = 2)
+I, [2021-04-19T15:07:58.519894 #1976]  INFO -- : (0.000040s) BEGIN
+I, [2021-04-19T15:07:58.520354 #1976]  INFO -- : (0.000235s) UPDATE `mentors` SET `profileStatus` = '1' WHERE (`id` = 2)
+I, [2021-04-19T15:07:58.633512 #1976]  INFO -- : (0.113051s) COMMIT
+I, [2021-04-19T15:07:58.634043 #1976]  INFO -- : (0.000226s) SELECT * FROM `mentees` WHERE (`id` = '1') LIMIT 1
+I, [2021-04-19T15:07:59.287294 #1976]  INFO -- : (0.000247s) SELECT * FROM `mentors` WHERE (`username` = 'mentor2') LIMIT 1
+I, [2021-04-19T15:08:17.435193 #1976]  INFO -- : (0.000120s) DELETE FROM `requests` WHERE `id` = 1
+I, [2021-04-19T15:08:21.016845 #1976]  INFO -- : (0.000272s) SELECT * FROM `mentees` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-19T15:08:21.017235 #1976]  INFO -- : (0.000152s) SELECT * FROM `mentees` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-19T15:08:21.017573 #1976]  INFO -- : (0.000179s) SELECT * FROM `mentors` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-19T15:08:21.017857 #1976]  INFO -- : (0.000161s) SELECT * FROM `mentors` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-19T15:08:21.133983 #1976]  INFO -- : (0.000337s) SELECT * FROM `mentors` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-19T15:08:22.794267 #1976]  INFO -- : (0.000228s) SELECT * FROM `mentors` WHERE `id` = '1'
+I, [2021-04-19T15:08:22.794552 #1976]  INFO -- : (0.000139s) SELECT * FROM `mentors` WHERE `id` = '1'
+I, [2021-04-19T15:08:34.786532 #1976]  INFO -- : (0.000164s) SELECT * FROM `mentors` WHERE `id` = '1'
+I, [2021-04-19T15:08:34.899891 #1976]  INFO -- : (0.113191s) DELETE FROM `mentors` WHERE `id` = 1
+I, [2021-04-19T15:08:34.900234 #1976]  INFO -- : (0.000112s) DELETE FROM `requests` WHERE (`mentorID` = '1')
+I, [2021-04-19T15:08:46.971433 #1976]  INFO -- : (0.000171s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2021-04-19T15:08:46.971700 #1976]  INFO -- : (0.000106s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2021-04-19T15:08:47.106494 #1976]  INFO -- : (0.000171s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2021-04-19T15:08:48.722088 #1976]  INFO -- : (0.000182s) SELECT * FROM `mentees` WHERE `id` = 1
+I, [2021-04-19T15:08:48.722307 #1976]  INFO -- : (0.000101s) SELECT * FROM `mentees` WHERE `id` = 1
+I, [2021-04-19T15:09:02.879846 #1976]  INFO -- : (0.000168s) SELECT * FROM `mentees` WHERE `id` = '1'
+I, [2021-04-19T15:09:02.982849 #1976]  INFO -- : (0.102809s) DELETE FROM `mentees` WHERE `id` = 1
+I, [2021-04-19T15:09:02.983280 #1976]  INFO -- : (0.000137s) DELETE FROM `requests` WHERE (`menteeID` = '1')
+I, [2021-04-19T15:09:03.252311 #1976]  INFO -- : (0.000220s) SELECT * FROM `mentors` WHERE (`id` = 2) LIMIT 1
+I, [2021-04-19T15:09:03.516922 #1976]  INFO -- : (0.000042s) BEGIN
+I, [2021-04-19T15:09:03.517372 #1976]  INFO -- : (0.000194s) UPDATE `mentors` SET `menteeMatch` = 0, `profileStatus` = '0' WHERE (`id` = 2)
+I, [2021-04-19T15:09:03.624417 #1976]  INFO -- : (0.106937s) COMMIT
+I, [2021-04-19T15:09:53.675063 #1976]  INFO -- : (0.000153s) SELECT * FROM `mentees` WHERE (`username` = 'mentee2') LIMIT 1
+I, [2021-04-19T15:09:53.675323 #1976]  INFO -- : (0.000095s) SELECT * FROM `mentees` WHERE (`email` = 'sfansur1@sheffied.ac.uk') LIMIT 1
+I, [2021-04-19T15:09:53.675489 #1976]  INFO -- : (0.000084s) SELECT * FROM `mentors` WHERE (`username` = 'mentee2') LIMIT 1
+I, [2021-04-19T15:09:53.675635 #1976]  INFO -- : (0.000079s) SELECT * FROM `mentors` WHERE (`email` = 'sfansur1@sheffied.ac.uk') LIMIT 1
+I, [2021-04-19T15:09:53.675777 #1976]  INFO -- : (0.000069s) SELECT * FROM `admins` WHERE (`username` = 'mentee2') LIMIT 1
+I, [2021-04-19T15:09:53.675906 #1976]  INFO -- : (0.000064s) SELECT * FROM `admins` WHERE (`email` = 'sfansur1@sheffied.ac.uk') LIMIT 1
+I, [2021-04-19T15:09:53.676045 #1976]  INFO -- : (0.000018s) BEGIN
+I, [2021-04-19T15:09:53.676428 #1976]  INFO -- : (0.000226s) INSERT INTO `mentees` (`fname`, `lname`, `email`, `phoneNum`, `courseName`, `faculty`, `cyear`, `username`, `password`) VALUES ('Samiha', 'Fansur', 'sfansur1@sheffied.ac.uk', '+44 7721951137', 'Architectural Engineering with a Year in Industry (MEng)', 'Faculty of Engineering', 1, 'mentee2', 'S.F')
+I, [2021-04-19T15:09:53.676667 #1976]  INFO -- : (0.000120s) SELECT * FROM `mentees` WHERE `id` = 1
+I, [2021-04-19T15:09:53.806631 #1976]  INFO -- : (0.129876s) COMMIT
+I, [2021-04-19T15:09:57.332018 #1976]  INFO -- : (0.000278s) SELECT * FROM `mentees` WHERE (`username` = 'mentee2') LIMIT 1
+I, [2021-04-19T15:09:57.332484 #1976]  INFO -- : (0.000240s) SELECT * FROM `mentees` WHERE (`username` = 'mentee2') LIMIT 1
+I, [2021-04-19T15:09:57.451447 #1976]  INFO -- : (0.000186s) SELECT * FROM `mentees` WHERE (`username` = 'mentee2') LIMIT 1
+I, [2021-04-19T15:09:57.451656 #1976]  INFO -- : (0.000022s) BEGIN
+I, [2021-04-19T15:09:57.452032 #1976]  INFO -- : (0.000182s) UPDATE `mentees` SET `applicationNumber` = '1' WHERE (`id` = 1)
+I, [2021-04-19T15:09:57.547214 #1976]  INFO -- : (0.095087s) COMMIT
+I, [2021-04-19T15:09:57.547440 #1976]  INFO -- : (0.000032s) BEGIN
+I, [2021-04-19T15:09:57.547758 #1976]  INFO -- : (0.000154s) UPDATE `mentees` SET `mentorMatch` = 0 WHERE (`id` = 1)
+I, [2021-04-19T15:09:57.644574 #1976]  INFO -- : (0.096724s) COMMIT
+I, [2021-04-19T15:09:58.825101 #1976]  INFO -- : (0.000133s) SELECT count(*) AS 'count' FROM `mentors` WHERE (`profileStatus` LIKE '0' ESCAPE '\') LIMIT 1
+I, [2021-04-19T15:09:58.825445 #1976]  INFO -- : (0.000167s) SELECT * FROM `mentors` WHERE (`profileStatus` LIKE '0' ESCAPE '\') ORDER BY `courseName`
+I, [2021-04-19T15:18:07.969793 #2114]  INFO -- : (0.000192s) PRAGMA foreign_keys = 1
+I, [2021-04-19T15:18:07.969909 #2114]  INFO -- : (0.000015s) PRAGMA case_sensitive_like = 1
+I, [2021-04-19T15:18:07.970834 #2114]  INFO -- : (0.000067s) SELECT sqlite_version()
+I, [2021-04-19T15:18:07.971118 #2114]  INFO -- : (0.000131s) PRAGMA table_info('admins')
+I, [2021-04-19T15:18:07.972492 #2114]  INFO -- : (0.000165s) PRAGMA table_info('mentees')
+I, [2021-04-19T15:18:07.973902 #2114]  INFO -- : (0.000162s) PRAGMA table_info('mentors')
+I, [2021-04-19T15:18:07.975062 #2114]  INFO -- : (0.000107s) PRAGMA table_info('requests')
+I, [2021-04-19T15:18:29.832365 #2114]  INFO -- : (0.000214s) SELECT * FROM `mentees` WHERE (`username` = 'mentee2') LIMIT 1
+I, [2021-04-19T15:18:30.877082 #2114]  INFO -- : (0.000143s) SELECT count(*) AS 'count' FROM `mentors` WHERE (`profileStatus` LIKE '0' ESCAPE '\') LIMIT 1
+I, [2021-04-19T15:18:30.877546 #2114]  INFO -- : (0.000253s) SELECT * FROM `mentors` WHERE (`profileStatus` LIKE '0' ESCAPE '\') ORDER BY `courseName`
+I, [2021-04-19T15:18:32.308976 #2114]  INFO -- : (0.000226s) SELECT * FROM `mentors` WHERE (`id` = '2') LIMIT 1
+I, [2021-04-19T15:18:32.310496 #2114]  INFO -- : (0.001283s) SELECT * FROM `mentees` WHERE (`id` = '1') LIMIT 1
+I, [2021-04-19T15:18:32.310807 #2114]  INFO -- : (0.000100s) SELECT * FROM `requests` WHERE (`menteeID` = 1) LIMIT 1
+I, [2021-04-19T15:18:32.310981 #2114]  INFO -- : (0.000022s) BEGIN
+I, [2021-04-19T15:18:32.311409 #2114]  INFO -- : (0.000270s) INSERT INTO `requests` (`mentorID`, `menteeID`, `timeApplicationSent`) VALUES (2, 1, '2021-04-19 15:18:32 +0000')
+I, [2021-04-19T15:18:32.311612 #2114]  INFO -- : (0.000077s) SELECT * FROM `requests` WHERE `id` = 1
+I, [2021-04-19T15:18:32.486033 #2114]  INFO -- : (0.174335s) COMMIT
+I, [2021-04-19T15:18:32.486393 #2114]  INFO -- : (0.000035s) BEGIN
+I, [2021-04-19T15:18:32.486826 #2114]  INFO -- : (0.000183s) UPDATE `mentees` SET `applicationNumber` = '0' WHERE (`id` = 1)
+I, [2021-04-19T15:18:32.608282 #2114]  INFO -- : (0.120304s) COMMIT
+I, [2021-04-19T15:18:32.974341 #2114]  INFO -- : (0.000135s) SELECT count(*) AS 'count' FROM `mentors` WHERE (`profileStatus` LIKE '0' ESCAPE '\') LIMIT 1
+I, [2021-04-19T15:18:32.974706 #2114]  INFO -- : (0.000173s) SELECT * FROM `mentors` WHERE (`profileStatus` LIKE '0' ESCAPE '\') ORDER BY `courseName`
+I, [2021-04-19T15:18:34.538624 #2114]  INFO -- : (0.000992s) SELECT * FROM `mentors` WHERE (`id` = '2') LIMIT 1
+I, [2021-04-19T15:18:34.539033 #2114]  INFO -- : (0.000129s) SELECT * FROM `mentees` WHERE (`id` = '1') LIMIT 1
+I, [2021-04-19T15:18:34.539246 #2114]  INFO -- : (0.000080s) SELECT * FROM `requests` WHERE (`menteeID` = 1) LIMIT 1
+I, [2021-04-19T15:18:34.677847 #2114]  INFO -- : (0.000168s) SELECT count(*) AS 'count' FROM `mentors` WHERE (`profileStatus` LIKE '0' ESCAPE '\') LIMIT 1
+I, [2021-04-19T15:18:34.678331 #2114]  INFO -- : (0.000256s) SELECT * FROM `mentors` WHERE (`profileStatus` LIKE '0' ESCAPE '\') ORDER BY `courseName`
+I, [2021-04-19T15:18:40.976613 #2114]  INFO -- : (0.000220s) SELECT * FROM `mentees` WHERE (`username` = 'mentor2') LIMIT 1
+I, [2021-04-19T15:18:40.976926 #2114]  INFO -- : (0.000129s) SELECT * FROM `mentees` WHERE (`username` = 'mentor2') LIMIT 1
+I, [2021-04-19T15:18:40.977320 #2114]  INFO -- : (0.000156s) SELECT * FROM `mentors` WHERE (`username` = 'mentor2') LIMIT 1
+I, [2021-04-19T15:18:40.977557 #2114]  INFO -- : (0.000139s) SELECT * FROM `mentors` WHERE (`username` = 'mentor2') LIMIT 1
+I, [2021-04-19T15:18:41.082617 #2114]  INFO -- : (0.000175s) SELECT * FROM `mentors` WHERE (`username` = 'mentor2') LIMIT 1
+I, [2021-04-19T15:18:42.787481 #2114]  INFO -- : (0.000085s) SELECT * FROM `mentees` WHERE (`id` = 1) LIMIT 1
+I, [2021-04-19T15:18:42.787595 #2114]  INFO -- : (0.000421s) SELECT * FROM `requests` WHERE (`mentorID` = 2)
+I, [2021-04-19T15:18:44.287681 #2114]  INFO -- : (0.119734s) UPDATE `mentees` SET `mentorMatch` = 2 WHERE (`id` = '1')
+I, [2021-04-19T15:18:44.386655 #2114]  INFO -- : (0.098639s) UPDATE `mentors` SET `menteeMatch` = '1' WHERE (`id` = 2)
+I, [2021-04-19T15:18:44.484436 #2114]  INFO -- : (0.097510s) DELETE FROM `requests` WHERE (`mentorID` = 2)
+I, [2021-04-19T15:18:44.484691 #2114]  INFO -- : (0.000037s) BEGIN
+I, [2021-04-19T15:18:44.485089 #2114]  INFO -- : (0.000178s) UPDATE `mentors` SET `profileStatus` = '1' WHERE (`id` = 2)
+I, [2021-04-19T15:18:44.582109 #2114]  INFO -- : (0.096918s) COMMIT
+I, [2021-04-19T15:18:44.583516 #2114]  INFO -- : (0.001180s) SELECT * FROM `mentees` WHERE (`id` = '1') LIMIT 1
+I, [2021-04-19T15:18:45.060905 #2114]  INFO -- : (0.000180s) SELECT * FROM `mentors` WHERE (`username` = 'mentor2') LIMIT 1
+I, [2021-04-19T15:18:47.972595 #2114]  INFO -- : (0.000175s) SELECT * FROM `mentors` WHERE `id` = '2'
+I, [2021-04-19T15:18:47.973384 #2114]  INFO -- : (0.000664s) SELECT * FROM `mentors` WHERE `id` = '2'
+I, [2021-04-19T15:19:02.486992 #2114]  INFO -- : (0.000176s) DELETE FROM `requests` WHERE `id` = 1
+I, [2021-04-19T15:19:20.801575 #2114]  INFO -- : (0.000165s) SELECT * FROM `mentors` WHERE `id` = '2'
+I, [2021-04-19T15:19:20.909960 #2114]  INFO -- : (0.108202s) DELETE FROM `mentors` WHERE `id` = 2
+I, [2021-04-19T15:19:20.910294 #2114]  INFO -- : (0.000105s) DELETE FROM `requests` WHERE (`mentorID` = '2')
+I, [2021-04-19T15:19:21.085285 #2114]  INFO -- : (0.000252s) SELECT * FROM `mentees` WHERE (`id` = 1) LIMIT 1
+I, [2021-04-19T15:19:21.259031 #2114]  INFO -- : (0.000046s) BEGIN
+I, [2021-04-19T15:19:21.259543 #2114]  INFO -- : (0.000219s) UPDATE `mentees` SET `applicationNumber` = '1', `mentorMatch` = 0 WHERE (`id` = 1)
+I, [2021-04-19T15:19:21.362521 #2114]  INFO -- : (0.102866s) COMMIT
