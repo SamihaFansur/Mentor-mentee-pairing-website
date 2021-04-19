@@ -89,8 +89,9 @@ end
 get "/searchForAMentor" do
   #New variable to enable mentees to search for mentors based on course name
   @userName_search = params.fetch("userName_search", "").strip
-  #notice
+  #notice after press the button
   @error1 = true if params.fetch("error", "") == "1"
+  @error2 = true if params.fetch("error", "") == "2"
   
   
   #If no course name is being searched, it displays the list of all mentors in alphabetical order 
@@ -110,9 +111,9 @@ get "/searchForAMentee" do
   #New variable to enable mentees to search for mentors based on course name
   @userName_search = params.fetch("userName_search", "").strip
   
-  #notice
+  #notice after press the button
   @error1 = true if params.fetch("error", "") == "1"
-  
+  @error2 = true if params.fetch("error", "") == "2"
   
   #If no course name is being searched, it displays the list of all mentors in alphabetical order 
   #else it searches through the course name field in the mentors table and displays mentors' whose 
@@ -168,6 +169,9 @@ post "/unsuspendMentor" do
         "Your mentor account has now been unsuspended.\n"+
         "You can now login using your mentor credentials"+
         "\n\nRegards\nTeam 6")
+   else
+      @error1 ="Account has already been unsuspended"
+      redirect "/searchForAMentor?error=2"
   end
     
     redirect "/searchForAMentor"
@@ -213,6 +217,9 @@ post "/unsuspendMentee" do
         "Your mentee account has now been unsuspended.\n"+
         "You can now login using your mentee credentials"+
         "\n\nRegards\nTeam 6")
+   else
+      @error1 ="Account has already been unsuspended"
+      redirect "/searchForAMentee?error=2"
   end
     
     redirect "/searchForAMentee"
