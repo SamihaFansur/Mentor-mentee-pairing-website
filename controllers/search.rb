@@ -36,7 +36,7 @@ post "/addApplication" do
     redirect "/search?error=1"
   else
     if @mentees.applicationNumber == "1" && @mentees.mentorMatch == 0
-      @requests.timePassed = Time.new
+      @requests.timeApplicationSent = Time.new
       @requests.save_changes
       
       #Parallel thread deletes mentee application and sets applicationNumber to 1 after 14 days.

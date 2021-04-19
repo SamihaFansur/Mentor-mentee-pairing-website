@@ -34,7 +34,7 @@ CREATE TABLE mentors (
 
 CREATE TABLE requests (
   id INTEGER PRIMARY KEY,
-  timePassed TEXT,
+  timeApplicationSent TEXT,
   menteeID INTEGER,
   mentorID INTEGER
 );
