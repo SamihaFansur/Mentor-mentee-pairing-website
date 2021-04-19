@@ -5,8 +5,12 @@
         <h3>You can only send 1 mentor an application within 2 weeks!</h3>
         
         <!-- Displays error if there is any -->
-        <% if @error %>
+        <% if @error1 %>
         <h2><strong class="error">Application already sent!</strong></h2>
+        <% end %> 
+        
+        <% if @error2 %>
+        <h2><strong class="error">You already have a mentor!</strong></h2>
         <% end %> 
 
             <form>

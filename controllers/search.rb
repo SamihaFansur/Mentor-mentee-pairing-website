@@ -4,7 +4,8 @@ get "/search" do
   
   #This error corresponds to the /addApplication route, this is to prevent
   #the error from being discarded when page is redirected to search
-  @error = true if params.fetch("error", "") == "1"
+  @error1 = true if params.fetch("error", "") == "1"
+  @error2 = true if params.fetch("error", "") == "2"
   
   #If no course name is being searched, it displays the list of all mentors in alphabetical order 
   #else it searches through the course name field in the mentors table and displays mentors' whose 
@@ -19,7 +20,8 @@ get "/search" do
 end
 
 post "/addApplication" do
-  @error = nil #initializes variable
+  @error1 = nil #initializes variable-application sent error
+  @error2 = nil #initializes variable-mentor matched error
   @requests = Request.new #creates a new instance of requests
   #The params are from buttons in the mentor_search.erb, they correspond to the mentee sending the request
   #and the mentor being requested
@@ -30,12 +32,30 @@ post "/addApplication" do
   #If application exists throws error and redirects to below URL(line 34)
   #else saves changes by updating the requests table and sending the mentor an email
   if @requests.exist_application?
-    @error = "Application already sent"
+    @error1 = "Application already sent"
     redirect "/search?error=1"
   else
-    if @mentees.applicationNumber == "1"
+    if @mentees.applicationNumber == "1" && @mentees.mentorMatch == 0
       @requests.timePassed = Time.new
       @requests.save_changes
+      
+      #Parallel thread deletes mentee application and sets applicationNumber to 1 after 14 days.
+      #Email sent to mentee that the mentor didn't respond
+      Thread.new{
+#         sleep(14*24*60*60) #14 days in seconds
+        sleep(30) #-------------------------------DELETE LATER -S -------------------------------
+        @requests.delete
+        @requests.save_changes
+        
+        @mentees.applicationNumber = "1"
+        @mentees.save_changes
+        send_mail(@mentees.email, 
+            "No response from mentor", 
+            "Hi "+@mentees.fname+" "+@mentees.lname+" !\n"+
+            "The mentor you had requested hasn't responded to your application.\n"+
+            "Please login into your mentee account to send another application to a mentor.\n"+
+            "\n\nRegards\nTeam 6")
+      }
 
       #Mentee used up 1 application for time being, so sets to 0
       @mentees.applicationNumber = "0"
@@ -48,8 +68,8 @@ post "/addApplication" do
             "You have a new mentee application. Please login into your mentor account and view your mentee applications \n"+
             "\n\nRegards\nTeam 6")
     else
-      @error = "Application already sent"
-      redirect "/search?error=1"
+      @error2 = "You already have a mentor"
+      redirect "/search?error=2"
     end   
   end
   
