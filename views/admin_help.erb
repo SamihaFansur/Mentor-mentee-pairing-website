@@ -1,8 +1,8 @@
 <%= @header %>
 <div class="background" id="statement">
-    <div class="full">
+    <div class="full" id="">
         <div class="title">
-              <h2>Contact Admin</h2>
+              <h2>Password Reset</h2>
         </div>
           <div class="helpBody">
             <h3 class="description">If you forgot your password please contact an admin.</h3>
@@ -12,24 +12,19 @@
                 <input type="hidden" name="recipients" value="egoodbrand1@sheffield.ac.uk">
                    <div class="user">   
                     <p>
-                      <label for="realname">Your name:</label>
-                      <input type="text" name="realname" id="name" maxlength="40" size="30" placeholder="Enter your name..."  required><!--Mandatory field-->
-                    </p>
-
-                    <p>
-                      <label for="email">E-mail:</label>
+                      <label for="email" class="options">E-mail:</label>
                       <input type="email" name="email" id="email" placeholder="Enter your email..." maxlength="40" size="30" required><!--Mandatory field-->
                     </p>
 
                      <p>
-                        <label for="username" class="options">Username: </label>
-                        <input type="text" name="username" id="username" placeholder="Enter your username..." maxlength="40" size="30" value="">
-                      </p>
+                       <label for="username" class="options">Username: </label>
+                       <input type="text" name="username" id="username" placeholder="Enter your username..." maxlength="40" size="30" value="">
+                     </p>
 
-                      <p>
-                        <label for="password" class="options">Password: </label>
-                        <input type="password" name="password" id="password" placeholder="Enter your password..." maxlength="40" size="30" value="">
-                      </p>   
+                     <p>
+                       <label for="password" class="options">New Password: </label>
+                       <input type="password" name="password" id="password" placeholder="Enter your password..." maxlength="40" size="30" value="">
+                     </p>   
 
                     <!--Submit/Reset buttons-->
                     <p>

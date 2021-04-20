@@ -9,6 +9,10 @@ a {
   color: white;
 }
 
+.full a {
+  color: #1c467c;
+}
+
 footer {
   padding-bottom: 3px;
   width: 100%;
