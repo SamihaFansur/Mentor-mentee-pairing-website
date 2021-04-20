@@ -17,7 +17,11 @@
                 <p><b>Description: </b> <i><%= h mentor.description %></i> </p>
                 <form method="post" action="requestMentorMeeting">
                   <input type="hidden" name="menteeID" value="<%= $mentees.id %>">
-                  <input type="submit" value="Request Mentor Meeting" onclick="alert('Your mentor has been notified!')" />
+                  <% if $mentee_req == 1 %> <!--If mentee has requested a meeting within past 24hrs-->
+                    <input type="submit" value="Request Mentor Meeting" disabled />
+                  <% else %>
+                    <input type="submit" value="Request Mentor Meeting" onclick="alert('Your mentor has been notified!\nIf you do not reveive a response from your mentor in 24 hours you can request them again.')"/>
+                  <% end %>
                 </form>
               <% end %>
             <% else %>

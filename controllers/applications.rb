@@ -214,7 +214,7 @@ post "/unsend" do
   redirect "/sentMentorApplications"
 end
 
-get "/myMentor" do
+get "/myMentor" do  
   #List to store the mentor matched to a mentee
   @mentorMatchedList = []
   #Finds the ID of the mentor that is equal to the value stored in the mentorMatch column in the mentees table
@@ -304,8 +304,20 @@ post "/requestMentorMeeting" do
             "Please email your mentee to schedule a mentor meeting.\n"+
             "\n\n\nRegards\nTeam 6")
   
+  $mentee_req = mentee_requesting.requestMentorMeeting
+  $mentee_req = 1 #already sent
+  mentee_requesting.requestMentorMeeting = $mentee_req #so field is updated in the t
+  mentee_requesting.save_changes
+  
+  Thread.new{
+#             sleep(24*60*60) #Button enabled after a day
+            sleep(15) #----------------delete later -S----------------
+            $mentee_req = 0 #resets so mentee can request mentor for a meeting again
+            mentee_requesting.requestMentorMeeting = $mentee_req
+            mentee_requesting.save_changes
+      }
+  
   redirect "/myMentor"
-
 end
 
 

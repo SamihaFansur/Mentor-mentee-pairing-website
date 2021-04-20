@@ -20,6 +20,11 @@ get "/MenteeDashboard" do
     $mentees.mentorAccept = 0
   end
   
+  #Initializing requestMentorMeeting field in mentees table
+  if $mentees.requestMentorMeeting == nil
+    $mentees.requestMentorMeeting = 0
+  end
+  
   $mentees.save_changes
   
   erb :mentee_dashboard

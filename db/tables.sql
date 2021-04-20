@@ -13,6 +13,7 @@ CREATE TABLE mentees (
   applicationNumber TEXT,
   mentorAccept INTEGER,
   mentorMatch INTEGER,
+  requestMentorMeeting INTEGER,
   suspendMentee INTEGER
 );
 
