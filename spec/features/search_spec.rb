@@ -10,6 +10,7 @@ describe "the search page" do
       fill_in "password", with: "123"
       click_button "Submit"
       visit "/search"
+      fill_in "searchForMentor", with: "123"
       expect(page).to have_content "Your search revealed no mentors"
       clear_database  
     end
@@ -120,7 +121,6 @@ describe "the search page" do
       click_button "Submit"
       visit "/search"
       click_button "Send application"
-      visit "/search"
       click_button "Send application" 
       expect(page).to have_content("already")
       
