@@ -24,18 +24,34 @@ end
 post "/matchWithMentor" do
   #When mentee accepts application, sets mentorAccept to 1
   $mentees = Mentee.first(id: $mentees.id)
-  $mentees.mentorAccept = 1
+  mentor = Mentor.first(id: params[:mentorID])
+  
+  $mentees.mentorAccept = mentor.id
   $mentees.save_changes
   
-  mentor = Mentor.first(id: params[:mentorID])
+  reqS = Request.where(mentorID: params[:mentorID]).all
+  
   #If both mentor and mentee have accepted the request both will be matched and both users notified of match but
   #if the mentee only has accepted the application then the mentor is notified
-  if mentor.menteeAccept == 1 && $mentees.mentorAccept == 1
+  if mentor.menteeAccept == $mentees.id && $mentees.mentorAccept == mentor.id
+    
+    
     Mentor.where(id: params[:mentorID]).update(:menteeMatch => $mentees.id)
 
     Mentee.where(id: $mentees.id).update(:mentorMatch => params[:mentorID])
 
-    Request.where(menteeID: $mentees.id).delete #Deletes record from requests table
+    
+    reqS = Request.where(mentorID: params[:mentorID]).all
+    reqS.each do |req|
+      other_mentees = Mentee.first(id: req.menteeID)
+      if other_mentees.id != $mentees.id
+        other_mentees.applicationNumber = "1"
+        other_mentees.mentorAccept = 0
+        other_mentees.save_changes
+      end
+    end
+        
+    Request.where(mentorID: mentor.id).delete #Deletes record from requests table
 
     mentor.profileStatus = "1" #mentor profile made private
     mentor.save_changes
@@ -75,17 +91,29 @@ end
 post "/matchWithMentee" do   
   #When mentoraccepts application, sets menteeAccept to 1
   $mentors = Mentor.first(id: $mentors.id)
-  $mentors.menteeAccept = 1
+  mentee = Mentee.first(id: params[:menteeID])
+  
+  $mentors.menteeAccept = mentee.id
   $mentors.save_changes  
   
-  mentee = Mentee.first(id: params[:menteeID])
   #If both mentor and mentee have accepted the request both will be matched and both users notified of match but
   #if the mentor only has accepted the application then the mentee is notified
-  if $mentors.menteeAccept == 1 && mentee.mentorAccept == 1
+  if $mentors.menteeAccept == mentee.id && mentee.mentorAccept == $mentors.id
     Mentee.where(id: params[:menteeID]).update(:mentorMatch => $mentors.id)
 
     Mentor.where(id: $mentors.id).update(:menteeMatch => params[:menteeID])
-
+    
+    
+    reqS = Request.where(mentorID: $mentors.id).all
+    reqS.each do |req|
+      other_mentees = Mentee.first(id: req.menteeID)
+      if other_mentees.id != mentee.id
+        other_mentees.applicationNumber = "1"
+        other_mentees.mentorAccept = 0
+        other_mentees.save_changes
+      end
+    end
+    
     Request.where(mentorID: $mentors.id).delete #Deletes record from requests table
 
     $mentors.profileStatus = "1" #mentor profile made private
