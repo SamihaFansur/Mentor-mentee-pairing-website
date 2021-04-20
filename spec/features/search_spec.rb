@@ -37,7 +37,7 @@ describe "the search page" do
       fill_in "password", with: "1234"
       click_button "Submit"
       visit "/MentorDashboard"
-      visit "/applications"
+      visit "/menteeApplications"
       expect(page).to have_content "There are no mentee applications"
       
       clear_database
