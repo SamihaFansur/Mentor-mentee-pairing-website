@@ -17,7 +17,7 @@
                 <p><b>Description: </b> <i><%= h mentor.description %></i> </p>
                 <form method="post" action="requestMentorMeeting">
                   <input type="hidden" name="menteeID" value="<%= $mentees.id %>">
-                  <button type="submit">Request Mentor Meeting</button>
+                  <input type="submit" value="Request Mentor Meeting" onclick="alert('Your mentor has been notified!')" />
                 </form>
               <% end %>
             <% else %>
