@@ -22,7 +22,7 @@ end
 
 #Mentee accepts mentor
 post "/matchWithMentor" do
-  #When mentee accepts application, sets mentorAccept to 1
+  #When mentee accepts application, sets mentorAccept to the id of the mentor they are accepting
   $mentees = Mentee.first(id: $mentees.id)
   mentor = Mentor.first(id: params[:mentorID])
   
@@ -31,7 +31,7 @@ post "/matchWithMentor" do
   
   reqS = Request.where(mentorID: params[:mentorID]).all
   
-  #If both mentor and mentee have accepted the request both will be matched and both users notified of match but
+  #If both mentor and mentee have accepted the each others request both will be matched and both users notified of match but
   #if the mentee only has accepted the application then the mentor is notified
   if mentor.menteeAccept == $mentees.id && $mentees.mentorAccept == mentor.id
     
@@ -40,9 +40,10 @@ post "/matchWithMentor" do
 
     Mentee.where(id: $mentees.id).update(:mentorMatch => params[:mentorID])
 
-    
-    reqS = Request.where(mentorID: params[:mentorID]).all
-    reqS.each do |req|
+    #Gets all the requests sent to the mentor being matched, and resets field values for mentees with
+    #whom the mentor isn't being matched
+    req_all = Request.where(mentorID: params[:mentorID]).all
+    req_all.each do |req|
       other_mentees = Mentee.first(id: req.menteeID)
       if other_mentees.id != $mentees.id
         other_mentees.applicationNumber = "1"
@@ -51,7 +52,7 @@ post "/matchWithMentor" do
       end
     end
         
-    Request.where(mentorID: mentor.id).delete #Deletes record from requests table
+    Request.where(mentorID: mentor.id).delete #Deletes all records from requests table based on the id of the mentor being matched
 
     mentor.profileStatus = "1" #mentor profile made private
     mentor.save_changes
@@ -73,13 +74,18 @@ post "/matchWithMentor" do
       "Please login into your account for more details.\n"+
       "\n\n\nRegards\nTeam 6")
 
-    redirect "/myMentor"
   else
     send_mail(mentor.email, 
       "A mentee wants you to be their mentor!", 
       "Hi "+mentor.fname+" "+mentor.lname+"!\n"+
       $mentees.fname+" "+$mentees.lname+" has accepted the application for you to be their mentor.\n"+
       "To accept "+$mentees.fname+" "+$mentees.lname+"as your mentee. Please login into your account an accept the application.\n"+
+      "\n\n\nRegards\nTeam 6")
+    
+    send_mail($mentees.email, 
+      "You have successfully accepted the mentor application", 
+      "Hi "+$mentees.fname+" "+$mentees.lname+"!\n"+
+      "You have successfully accepted"+mentor.fname+" "+mentor.lname+" to be your mentor.\n"+
       "\n\n\nRegards\nTeam 6")
   end
     
@@ -89,21 +95,22 @@ end
 
 #Mentor accepts mentee
 post "/matchWithMentee" do   
-  #When mentoraccepts application, sets menteeAccept to 1
+  #When mentor accepts application, sets menteeAccept to the id of the mentee they are accepting
   $mentors = Mentor.first(id: $mentors.id)
   mentee = Mentee.first(id: params[:menteeID])
   
   $mentors.menteeAccept = mentee.id
   $mentors.save_changes  
   
-  #If both mentor and mentee have accepted the request both will be matched and both users notified of match but
-  #if the mentor only has accepted the application then the mentee is notified
+  #If both mentor and mentee have accepted the each others request both will be matched and both users notified of match but
+  #if the mentee only has accepted the application then the mentor is notified
   if $mentors.menteeAccept == mentee.id && mentee.mentorAccept == $mentors.id
     Mentee.where(id: params[:menteeID]).update(:mentorMatch => $mentors.id)
 
     Mentor.where(id: $mentors.id).update(:menteeMatch => params[:menteeID])
     
-    
+    #Gets all the requests sent to the mentor being matched, and resets field values for mentees with
+    #whom the mentor isn't being matched
     reqS = Request.where(mentorID: $mentors.id).all
     reqS.each do |req|
       other_mentees = Mentee.first(id: req.menteeID)
@@ -114,7 +121,7 @@ post "/matchWithMentee" do
       end
     end
     
-    Request.where(mentorID: $mentors.id).delete #Deletes record from requests table
+    Request.where(mentorID: $mentors.id).delete #Deletes all records from requests table based on the id of the mentor being matched
 
     $mentors.profileStatus = "1" #mentor profile made private
     $mentors.save_changes
@@ -136,13 +143,18 @@ post "/matchWithMentee" do
       "Please login into your account for more details.\n"+
       "\n\n\nRegards\nTeam 6")
 
-    redirect "/myMentee"
   else
     send_mail(mentee.email, 
       "A mentor has accepted your application for you to be their mentee!", 
       "Hi "+mentee.fname+" "+mentee.lname+"!\n"+
       $mentors.fname+" "+$mentors.lname+" has accepted the application for you to be their mentee.\n"+
       "To accept "+$mentors.fname+" "+$mentors.lname+"as your mentor. Please login into your account an accept the application.\n"+
+      "\n\n\nRegards\nTeam 6")
+    
+    send_mail($mentors.email, 
+      "You have successfully accepted the mentee application", 
+      "Hi "+$mentors.fname+" "+$mentors.lname+"!\n"+
+      "You have successfully accepted"+mentee.fname+" "+mentee.lname+"'s application to be your mentee.\n"+
       "\n\n\nRegards\nTeam 6")
   end
     
@@ -155,9 +167,15 @@ post "/rejectMentee" do
   Request.where(mentorID: $mentors.id, menteeID: params[:menteeID]).delete
   
   mentee = Mentee.first(id: params[:menteeID]) #Gets the existing mentee based on id
+  mentor = Mentor.first(id: $mentors.id) #Gets the existing mentor based on id
   
-  #Mentee can now send a mentor an application
-  mentee.applicationNumber = "1"
+  if mentor.menteeAccept == mentee.id || mentee.mentorAccept == mentor.id
+    mentor.menteeAccept = 0
+    mentor.save_changes
+  end
+  
+  mentee.applicationNumber = "1" #Mentee can now send a mentor an application
+  mentee.mentorAccept = 0 #Resets field if mentee has already accepted the request
   mentee.save_changes
   
   #Sends an email to mentee that their application was rejected
@@ -167,7 +185,7 @@ post "/rejectMentee" do
     "Your mentor application has been rejected. To send another application login into your account.\n"+
     "\n\n\nRegards\nTeam 6")
   
-  redirect "/MentorDashboard"
+  redirect "/menteeApplications"
 end
 
 #Mentee unsends their mentor application
@@ -175,18 +193,25 @@ post "/unsend" do
   #Deletes the corresponding request a mentee has made from the table
   Request.where(menteeID: $mentees.id, mentorID: params[:mentorID]).delete
   
-  #Mentee can now send a mentor an application
-  $mentees.applicationNumber = "0"
+  mentor = Mentor.first(id: params[:mentorID]) #Gets the existing mentor based on id
+  
+  if mentor.menteeAccept == $mentees.id || $mentees.mentorAccept == mentor.id
+    mentor.menteeAccept = 0
+    mentor.save_changes
+  end
+  
+  $mentees.applicationNumber = "1" #Mentee can now send a mentor an application
+  $mentees.mentorAccept = 0 #Resets field if mentee has already accepted the request
   $mentees.save_changes
   
   #Sends an email to mentor that the mentee unsent their application
-   send_mail($mentors.email, 
+   send_mail(mentor.email, 
     "Withdrawn mentee application!", 
-    "Hi "+$mentors.fname+" "+$mentors.lname+"!\n"+
+    "Hi "+mentor.fname+" "+mentor.lname+"!\n"+
     "A mentee has withdrawn their application.\n"+
     "\n\n\nRegards\nTeam 6")
   
-  redirect "/MenteeDashboard"
+  redirect "/sentMentorApplications"
 end
 
 get "/myMentor" do
