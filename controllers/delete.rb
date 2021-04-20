@@ -30,7 +30,7 @@ post "/deleteMentee" do
       mentor.save_changes      
     end
     session.clear
-    redirect "/index"
+    redirect "/"
   elsif session[:admins_username]  #if admin deletes mentee profile
     #Sends mentee email
     send_mail(mentee.email, 
@@ -110,7 +110,7 @@ post "/deleteMentor" do
       mentee.save_changes      
     end
     session.clear
-    redirect "/index"
+    redirect "/"
   end
     
 end
@@ -128,7 +128,7 @@ post "/deleteAdmin" do
         "Your admin account has been successfully deleted.\n"+
         "\n\n\nRegards\nTeam 6")
   session.clear
-  redirect "/index"
+  redirect "/"
   
 end
 

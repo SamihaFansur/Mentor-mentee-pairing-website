@@ -1,4 +1,4 @@
-get "/index" do
+get "/" do
   @header = nil #initializing header 
   
   #If user already logged in then displays a header for profiles which are logged 
@@ -81,8 +81,8 @@ get "/MenteeSignUpForm" do
   erb :mentee_signup
 end
 
-post "/index" do
-  redirect "/index"
+post "/" do
+  redirect "/"
 end
 
 get "/MentorSignUpForm" do

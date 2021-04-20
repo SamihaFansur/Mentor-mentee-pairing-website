@@ -24873,3 +24873,24 @@ I, [2021-04-20T15:49:39.252000 #1687]  INFO -- : (0.000049s) BEGIN
 I, [2021-04-20T15:49:39.252594 #1687]  INFO -- : (0.000269s) UPDATE `mentors` SET `activationToken` = 1 WHERE (`id` = 1)
 I, [2021-04-20T15:49:39.356760 #1687]  INFO -- : (0.104050s) COMMIT
 I, [2021-04-20T15:50:28.918098 #1687]  INFO -- : (0.000161s) DELETE FROM `requests` WHERE `id` = 1
+I, [2021-04-20T16:01:52.577072 #1829]  INFO -- : (0.000238s) PRAGMA foreign_keys = 1
+I, [2021-04-20T16:01:52.577209 #1829]  INFO -- : (0.000019s) PRAGMA case_sensitive_like = 1
+I, [2021-04-20T16:01:52.578373 #1829]  INFO -- : (0.000084s) SELECT sqlite_version()
+I, [2021-04-20T16:01:52.578722 #1829]  INFO -- : (0.000163s) PRAGMA table_info('admins')
+I, [2021-04-20T16:01:52.580539 #1829]  INFO -- : (0.000223s) PRAGMA table_info('mentees')
+I, [2021-04-20T16:01:52.582489 #1829]  INFO -- : (0.000205s) PRAGMA table_info('mentors')
+I, [2021-04-20T16:01:52.583998 #1829]  INFO -- : (0.000116s) PRAGMA table_info('requests')
+I, [2021-04-20T16:04:12.154174 #1831]  INFO -- : (0.000188s) PRAGMA foreign_keys = 1
+I, [2021-04-20T16:04:12.154295 #1831]  INFO -- : (0.000016s) PRAGMA case_sensitive_like = 1
+I, [2021-04-20T16:04:12.155205 #1831]  INFO -- : (0.000079s) SELECT sqlite_version()
+I, [2021-04-20T16:04:12.155481 #1831]  INFO -- : (0.000130s) PRAGMA table_info('admins')
+I, [2021-04-20T16:04:12.156800 #1831]  INFO -- : (0.000156s) PRAGMA table_info('mentees')
+I, [2021-04-20T16:04:12.158221 #1831]  INFO -- : (0.000149s) PRAGMA table_info('mentors')
+I, [2021-04-20T16:04:12.159358 #1831]  INFO -- : (0.000093s) PRAGMA table_info('requests')
+I, [2021-04-20T16:04:41.732228 #1852]  INFO -- : (0.000203s) PRAGMA foreign_keys = 1
+I, [2021-04-20T16:04:41.732359 #1852]  INFO -- : (0.000017s) PRAGMA case_sensitive_like = 1
+I, [2021-04-20T16:04:41.733335 #1852]  INFO -- : (0.000077s) SELECT sqlite_version()
+I, [2021-04-20T16:04:41.733613 #1852]  INFO -- : (0.000123s) PRAGMA table_info('admins')
+I, [2021-04-20T16:04:41.734908 #1852]  INFO -- : (0.000154s) PRAGMA table_info('mentees')
+I, [2021-04-20T16:04:41.736368 #1852]  INFO -- : (0.000183s) PRAGMA table_info('mentors')
+I, [2021-04-20T16:04:41.737500 #1852]  INFO -- : (0.000100s) PRAGMA table_info('requests')
