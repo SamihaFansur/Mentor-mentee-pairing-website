@@ -15,7 +15,10 @@
                 <p><b>Job Title: </b> <i><%= h mentor.jobTitle %></i></p>
                 <p><b>Course Name: </b> <i><%= h mentor.courseName %></i> </p>
                 <p><b>Description: </b> <i><%= h mentor.description %></i> </p>
-                <form method="post" action="addApplication"><button type="submit">Request Mentor Meeting</button></form>
+                <form method="post" action="requestMentorMeeting">
+                  <input type="hidden" name="menteeID" value="<%= $mentees.id %>">
+                  <button type="submit">Request Mentor Meeting</button>
+                </form>
               <% end %>
             <% else %>
               <p id="SearchError">You do not have a mentor yet!</p>

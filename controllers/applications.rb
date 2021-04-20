@@ -294,3 +294,24 @@ get "/PairedMentees" do
 
   erb :paired_mentees
 end
+
+post "/requestMentorMeeting" do
+  mentee_requesting = Mentee.first(id: $mentees.id)
+  mentor_requested = Mentor.first(id: mentee_requesting.mentorMatch)
+  
+  send_mail(mentor_requested.email,
+            "Your mentee "+mentee_requesting.fname+" "+mentee_requesting.lname+" is requesting a meeting",
+            "Please email your mentee to schedule a mentor meeting.\n"+
+            "\n\n\nRegards\nTeam 6")
+  
+  redirect "/myMentor"
+
+end
+
+
+
+
+
+
+
+
