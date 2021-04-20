@@ -8,28 +8,15 @@
           <!-- Displays the details of the mentor the mentee is matched to -->
           <% if @mentorMatchedList.count > 0 %>
               <h2>Mentor Infomation:</h2>
-              <table class="display_table">
-                <tr id="TableHeadings">
-                  <th>Name</th>
-                  <th>Email</th>
-                  <th>Phone Number</th>
-                  <th>Job Title</th>
-                  <th>Course Name</th>
-                  <th>Description</th>
-                </tr>
               <% @mentorMatchedList.each do |mentor| %>
-                <tr>
-                  <td><%= h mentor.name %></td>
-                  <td><%= h mentor.email %></td>
-                  <td><%= h mentor.phoneNum %></td>
-                  <td><%= h mentor.jobTitle %></td>
-                  <td><%= h mentor.courseName %></td>
-                  <td><%= h mentor.description %></td>
-                  <td>
-                  </td>
-                </tr>
-              <% end %> 
-              </table>
+                <p><b>Name: </b> <i><%= h mentor.name %></i></p>
+                <p><b>Email: </b> <i><%= h mentor.email %></i></p>
+                <p><b>Phone Number: </b> <i><%= h mentor.phoneNum %></i></p>
+                <p><b>Job Title: </b> <i><%= h mentor.jobTitle %></i></p>
+                <p><b>Course Name: </b> <i><%= h mentor.courseName %></i> </p>
+                <p><b>Description: </b> <i><%= h mentor.description %></i> </p>
+                <form method="post" action="addApplication"><button type="submit">Request Mentor Meeting</button></form>
+              <% end %>
             <% else %>
               <p id="SearchError">You do not have a mentor yet!</p>
             <% end %>

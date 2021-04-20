@@ -8,30 +8,15 @@
           <!-- Displays the details of the mentee the mentor is matched to -->
           <% if @menteeMatchedList.count > 0 %>
               <h2>Mentee Infomation:</h2>
-              <table class="display_table">
-                <tr id="TableHeadings">
-                  <th>Name</th>
-                  <th>Email</th>
-                  <th>Phone Number</th>
-                  <th>Course Year</th>
-                  <th>Faculty</th>
-                  <th>Course Name</th>
-                  <th>Description</th>
-                </tr>
-              <% @menteeMatchedList.each do |mentee| %>
-                <tr>
-                  <td><%= h mentee.name %></td>
-                  <td><%= h mentee.email %></td>
-                  <td><%= h mentee.phoneNum %></td>
-                  <td><%= h mentee.cyear %></td>
-                  <td><%= h mentee.faculty %></td>
-                  <td><%= h mentee.courseName %></td>
-                  <td><%= h mentee.description %></td>
-                  <td>
-                  </td>
-                </tr>
-              <% end %> 
-              </table>
+               <% @menteeMatchedList.each do |mentee| %>
+                <p><b>Name: </b> <i><%= h mentee.name %></i></p>
+                <p><b>Email: </b> <i><%= h mentee.email %></i></p>
+                <p><b>Phone Number: </b> <i><%= h mentee.phoneNum %></i></p>
+                <p><b>Course Name: </b> <i><%= h mentee.courseName %></i> </p>
+                <p><b>Faculty: </b> <i><%= h mentee.faculty %></i> </p>
+                <p><b>Course Year: </b> <i><%= h mentee.cyear %></i> </p>
+                <p><b>Description: </b> <i><%= h mentee.description %></i> </p>
+              <% end %>
             <% else %>
               <p id="SearchError">You do not have a mentee yet!</p>
             <% end %>
