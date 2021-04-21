@@ -142,9 +142,24 @@ post "/suspendMentor" do
     send_mail(@mentors.email, 
         "Mentor account suspended!", 
         "Hi "+@mentors.fname+" "+@mentors.lname+" !\n"+
-        "Your mentor account has been suspended due to violation of website guidelines.\n"+
+        "Your mentor account has been suspended due to violation of website guidelines."+
+        "You will be able to use your account after 48 hours starting now.\n"+
         "If you think we have made a mistake, please contact our admins using our contact form!"+
         "\n\nRegards\nTeam 6")
+    Thread.new{
+#         sleep(2*24*60*60) #2 days in seconds
+        sleep(20) #-------------------------------DELETE LATER -S -------------------------------
+        @mentors.suspendMentor = 0
+        @mentors.save_changes
+        #Sends mentor an email that their account has been unsuspended
+        send_mail(@mentors.email, 
+            "Mentor account Unsuspended!", 
+            "Hi "+@mentors.fname+" "+@mentors.lname+" !\n"+
+            "Your mentor account has now been unsuspended.\n"+
+            "You can now login using your mentor credentials"+
+            "\n\nRegards\nTeam 6")
+      puts "mentor unsus"
+      }  
   else
       @error1 ="Account has already been suspended"
       redirect "/searchForAMentor?error=1"
@@ -188,7 +203,7 @@ post "/suspendMentee" do
         "Mentee account suspended!", 
         "Hi "+@mentees.fname+" "+@mentees.lname+" !\n"+
         "Your mentee account has been suspended due to violation of website guidelines."+
-        "You will be able to use your account after 48hours starting now.\n"+
+        "You will be able to use your account after 48 hours starting now.\n"+
         "If you think we have made a mistake, please contact our admins using our contact form!"+
         "\n\nRegards\nTeam 6")
     
@@ -204,6 +219,7 @@ post "/suspendMentee" do
             "Your mentee account has now been unsuspended.\n"+
             "You can now login using your mentee credentials"+
             "\n\nRegards\nTeam 6")
+      puts "mentee unsus"
       }   
    else
       @error1 ="Account has already been suspended"

@@ -32,8 +32,8 @@
                 <th>Email</th>
                 <th>Phone Number</th>
                 <th>Edit Profile</th>
-                <th>Suspend Mentor</th>
-                <th>Unsuspend Mentor</th>
+                <th>Suspend/Unsuspend Mentor</th>
+                <th>Block/Unblock Mentor</th>
               </tr>
             <% @mentors.each do |mentor| %>
               <tr>
@@ -45,17 +45,21 @@
                 <td>
                   <form method="post" action="suspendMentor">
                     <input type="hidden" name="mentorID" value="<%= mentor.id %>">
-                    <button type="submit">
-                      Suspend Mentor
-                    </button>
+                    <button type="submit">Suspend</button>
+                  </form>
+                  <form method="post" action="unsuspendMentor">
+                    <input type="hidden" name="mentorID" value="<%= mentor.id %>">
+                    <button type="submit">Unsuspend</button>
                   </form>
                 </td>
                 <td>
+                  <form method="post" action="suspendMentor">
+                    <input type="hidden" name="mentorID" value="<%= mentor.id %>">
+                    <button type="submit">Block</button>
+                  </form>
                   <form method="post" action="unsuspendMentor">
                     <input type="hidden" name="mentorID" value="<%= mentor.id %>">
-                    <button type="submit">
-                      Unsuspend Mentor
-                    </button>
+                    <button type="submit">Unblock</button>
                   </form>
                 </td>
               </tr>
