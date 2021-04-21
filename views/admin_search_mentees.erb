@@ -22,6 +22,14 @@
         <% if @error2 %>
         <h2><strong class="error">Account has already been unsuspended</strong></h2>
         <% end %>
+        
+        <% if @error3 %>
+        <h2><strong class="error">Account has already been blocked</strong></h2>
+        <% end %>
+
+        <% if @error4 %>
+        <h2><strong class="error">Account has already been unblocked</strong></h2>
+        <% end %>
           
           <!--Displays the mentor details-->
           <% if @mentees.count> 0 %>
@@ -45,29 +53,21 @@
                 <td>
                   <form method="post" action="suspendMentee">
                     <input type="hidden" name="menteeID" value="<%= mentee.id %>">
-                    <button type="submit">
-                      Suspend
-                    </button>
+                    <button type="submit">Suspend</button>
                   </form>
                   <form method="post" action="unsuspendMentee">
                     <input type="hidden" name="menteeID" value="<%= mentee.id %>">
-                    <button type="submit">
-                      Unsuspend
-                    </button>
+                    <button type="submit">Unsuspend</button>
                   </form>
                 </td>
                 <td>
-                  <form method="post" action="suspendMentee">
+                  <form method="post" action="blockMentee">
                     <input type="hidden" name="menteeID" value="<%= mentee.id %>">
-                    <button type="submit">
-                      Block
-                    </button>
+                    <button type="submit">Block</button>
                   </form>
-                  <form method="post" action="unsuspendMentee">
+                  <form method="post" action="unblockMentee">
                     <input type="hidden" name="menteeID" value="<%= mentee.id %>">
-                    <button type="submit">
-                      Unblock
-                    </button>
+                    <button type="submit">Unblock</button>
                   </form>
                 </td>
               </tr>

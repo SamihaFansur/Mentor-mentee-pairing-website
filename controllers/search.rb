@@ -114,6 +114,8 @@ get "/searchForAMentee" do
   #notice after press the button
   @error1 = true if params.fetch("error", "") == "1"
   @error2 = true if params.fetch("error", "") == "2"
+  @error3 = true if params.fetch("error", "") == "3"
+  @error4 = true if params.fetch("error", "") == "4"
   
   #If no course name is being searched, it displays the list of all mentors in alphabetical order 
   #else it searches through the course name field in the mentors table and displays mentors' whose 
@@ -133,8 +135,7 @@ post "/suspendMentor" do
   @mentors = Mentor.first(id: params[:mentorID]) #creates a new instance of mentor
   @error1 = nil #initializes variable-application sent error
   
-  #Sets suspendMentor field to 1 to indicate account suspended if not already 1
-    
+  #Sets suspendMentor field to 1 to indicate account suspended if its not already suspended    
   if @mentors.suspendMentor != 1
     @mentors.suspendMentor = 1
     @mentors.save_changes
@@ -171,7 +172,7 @@ end
 post "/unsuspendMentor" do
   @mentors = Mentor.first(id: params[:mentorID]) #creates a new instance of mentor
 
-  #Sets suspendMentor field to 0 to indicate account unsuspended if its already 1
+  #Sets suspendMentor field to 0 to indicate account unsuspended if its already suspended
   if @mentors.suspendMentor == 1
     @mentors.suspendMentor = 0
     @mentors.save_changes
@@ -194,7 +195,7 @@ post "/suspendMentee" do
   @mentees = Mentee.first(id: params[:menteeID]) #creates a new instance of mentee
   @error1 = nil #initializes variable-application sent error
   
-  #Sets suspendMentee field to 1 to indicate account suspended if not already 1
+  #Sets suspendMentee field to 1 to indicate account suspended if its not already suspended
   if @mentees.suspendMentee != 1
     @mentees.suspendMentee = 1
     @mentees.save_changes
@@ -232,8 +233,7 @@ end
 post "/unsuspendMentee" do
   @mentees = Mentee.first(id: params[:menteeID]) #creates a new instance of mentee
   
-  
-  #Sets suspendMentee field to 0 to indicate account unsuspended if its already 1
+  #Sets suspendMentee field to 0 to indicate account unsuspended if its suspended
   if @mentees.suspendMentee == 1
     @mentees.suspendMentee = 0
     @mentees.save_changes
@@ -247,6 +247,51 @@ post "/unsuspendMentee" do
    else
       @error1 ="Account has already been unsuspended"
       redirect "/searchForAMentee?error=2"
+  end
+    
+    redirect "/searchForAMentee"
+end
+
+post "/blockMentee" do
+  @mentees = Mentee.first(id: params[:menteeID]) #creates a new instance of mentee
+  @error1 = nil #initializes variable-application sent error
+  
+  #Sets suspendMentee field to 1 to indicate account permanently suspended/blocked
+  if @mentees.suspendMentee != 1
+    @mentees.suspendMentee = 1
+    @mentees.save_changes
+    #Sends mentee an email that their account has been blocked
+    send_mail(@mentees.email, 
+        "Mentee account blocked!", 
+        "Hi "+@mentees.fname+" "+@mentees.lname+" !\n"+
+        "Your mentee account has been blocked due to repeated violation of website guidelines.\n"+
+        "If you think we have made a mistake, please contact our admins using our contact form!"+
+        "\n\nRegards\nTeam 6")
+   else
+      @error3 ="Account has already been blocked"
+      redirect "/searchForAMentee?error=3"
+  end
+    
+    redirect "/searchForAMentee"
+end
+
+post "/unblockMentee" do
+  @mentees = Mentee.first(id: params[:menteeID]) #creates a new instance of mentee
+  
+  #Sets suspendMentee field to 0 to indicate account is unblocked
+  if @mentees.suspendMentee == 1
+    @mentees.suspendMentee = 0
+    @mentees.save_changes
+    #Sends mentee an email that their account has been unsuspended
+    send_mail(@mentees.email, 
+        "Mentee account Unblocked!", 
+        "Hi "+@mentees.fname+" "+@mentees.lname+" !\n"+
+        "Your mentee account has now been unblocked.\n"+
+        "You can now login using your mentee credentials"+
+        "\n\nRegards\nTeam 6")
+   else
+      @error1 ="Account has already been unblocked"
+      redirect "/searchForAMentee?error=4"
   end
     
     redirect "/searchForAMentee"
