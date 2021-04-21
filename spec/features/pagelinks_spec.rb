@@ -3,14 +3,14 @@ require_relative "../spec_helper"
 #page links tests from /index
 describe "the page links" do
     it "sign up is accessible from the index page" do
-        visit"/index"
+        visit"/"
         click_link "Sign-Up"
         expect(page).to have_content "Mentee"
     end
         
 
     it "is accessible from the index page" do
-        visit"/index"
+        visit"/"
         click_link "Login"
         expect(page).to have_content "Dont have an account?"
     end
@@ -18,26 +18,26 @@ describe "the page links" do
     
 
     it "is accessible from the index page" do
-        visit"/index"
+        visit"/"
         click_link "Contact Us"
         expect(page).to have_content "Contact Admin:"
     end
     
 
     it "is accessible from the index page" do
-        visit"/index"
+        visit"/"
         click_link "Our Program"
         expect(page).to have_content "one-to-one mentoring program"
     end
 
     it "is accessible from the index page" do
-        visit"/index"
+        visit"/"
         click_link "Contact"
         expect(page).to have_content "Contact Admin:"
     end 
     
     it "is accessible from the index page" do   
-        visit"/index"
+        visit"/"
         click_link "Accessibility"
         expect(page).to have_content "Everyone using this website"
     end  
