@@ -12,7 +12,7 @@ describe "the page links" do
     it "is accessible from the index page" do
         visit"/"
         click_link "Login"
-        expect(page).to have_content "Dont have an account?"
+        expect(page).to have_content "Don't have an account?"
     end
     
     
@@ -64,7 +64,7 @@ describe "the page links" do
     it "is accessible from the login page" do
         visit"/login"
         click_link "Login"
-        expect(page).to have_content "Dont have an account?"
+        expect(page).to have_content "Don't have an account?"
     end    
 
         it "is accessible from the login page" do
@@ -113,7 +113,7 @@ describe "the page links" do
     it "is accessible from the contact page" do
         visit"/contact"
         click_link "Login"
-        expect(page).to have_content "Dont have an account?"
+        expect(page).to have_content "Don't have an account?"
     end  
 
 it "is accessible from the contact page" do
