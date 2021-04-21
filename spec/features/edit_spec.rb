@@ -1,11 +1,17 @@
 require_relative "../spec_helper"
+
+
+    
+#checks that a mentee can be edited
+#
+#
 #tests that error message shows up when a nil mentee is attempted to be edited
 describe "the edit page" do
   it "shows an error when trying to load an invalid mentee" do
     visit "/editMentee?id=1000000"
     expect(page).to have_no_xpath('a')
   end
-#checks that a mentee can be edited
+       
   it "allows editing of a valid mentee" do
     add_test_user
     visit "/login"
@@ -46,11 +52,18 @@ describe "the edit page" do
     expect(page).to have_content "Test"
     clear_database
   end
+end  
     
     
     
+#checks that a mentor can be edited
+describe "the mentor edit page" do
     
-    #checks that a mentor can be edited
+  it "shows an error when trying to load an invalid mentee" do
+    visit "/editMentor?id=1000000"
+    expect(page).to have_no_xpath('a')
+  end    
+    
     it "allows editing of a valid mentor" do
     add_test_mentor
     visit "/login"
