@@ -252,7 +252,7 @@ end
 
 #Route for the admin to view pending mentee applications
 get "/PendingMenteeApplications" do
-  @requests = Request.all #All records in Requests table
+  @requests = Request.order(:timeApplicationSent).all.reverse! #All records in Requests table
   @menteesInfo = []
   @mentorsInfo = []
   @requests.each do |request|
