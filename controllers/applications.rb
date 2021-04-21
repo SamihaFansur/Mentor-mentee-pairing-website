@@ -1,7 +1,7 @@
 #Mentor uses this route to accept 1 mentee application
 get "/menteeApplications" do
   @menteeIDList = [] #List to store mentee
-  IDList = Request.where(mentorID: $mentors.id) #Finds the request where it finds the specified mentor ID
+  IDList = Request.where(mentorID: $mentors.id).order(:timeApplicationSent).reverse #Finds the request where it finds the specified mentor ID with most recent on top
   IDList.each do |id|
     mentee = Mentee.first(id: id.menteeID)
     @menteeIDList.push(mentee) unless mentee.nil?
@@ -252,7 +252,7 @@ end
 
 #Route for the admin to view pending mentee applications
 get "/PendingMenteeApplications" do
-  @requests = Request.order(:timeApplicationSent).all.reverse! #All records in Requests table
+  @requests = Request.order(:timeApplicationSent).all.reverse #All records in Requests table with most recent on top
   @menteesInfo = []
   @mentorsInfo = []
   @requests.each do |request|
