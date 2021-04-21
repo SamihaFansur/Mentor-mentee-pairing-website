@@ -129,7 +129,6 @@ get "/searchForAMentee" do
   erb :admin_search_mentees
 end
 
-##########################################################SUSPEND MENTOR############################################################
 post "/suspendMentor" do
   @mentors = Mentor.first(id: params[:mentorID]) #creates a new instance of mentor
   @error1 = nil #initializes variable-application sent error
@@ -154,7 +153,6 @@ post "/suspendMentor" do
     redirect "/searchForAMentor"
 end
 
-##########################################################UNSUSPEND MENTOR############################################################
 post "/unsuspendMentor" do
   @mentors = Mentor.first(id: params[:mentorID]) #creates a new instance of mentor
 
@@ -177,7 +175,6 @@ post "/unsuspendMentor" do
     redirect "/searchForAMentor"
 end
 
-##########################################################SUSPEND MENTEE############################################################
 post "/suspendMentee" do
   @mentees = Mentee.first(id: params[:menteeID]) #creates a new instance of mentee
   @error1 = nil #initializes variable-application sent error
@@ -190,9 +187,24 @@ post "/suspendMentee" do
     send_mail(@mentees.email, 
         "Mentee account suspended!", 
         "Hi "+@mentees.fname+" "+@mentees.lname+" !\n"+
-        "Your mentee account has been suspended due to violation of website guidelines.\n"+
+        "Your mentee account has been suspended due to violation of website guidelines."+
+        "You will be able to use your account after 48hours starting now.\n"+
         "If you think we have made a mistake, please contact our admins using our contact form!"+
         "\n\nRegards\nTeam 6")
+    
+    Thread.new{
+#         sleep(2*24*60*60) #2 days in seconds
+        sleep(20) #-------------------------------DELETE LATER -S -------------------------------
+        @mentees.suspendMentee = 0
+        @mentees.save_changes
+        #Sends mentee an email that their account has been unsuspended
+        send_mail(@mentees.email, 
+            "Mentee account Unsuspended!", 
+            "Hi "+@mentees.fname+" "+@mentees.lname+" !\n"+
+            "Your mentee account has now been unsuspended.\n"+
+            "You can now login using your mentee credentials"+
+            "\n\nRegards\nTeam 6")
+      }   
    else
       @error1 ="Account has already been suspended"
       redirect "/searchForAMentee?error=1"
@@ -201,7 +213,6 @@ post "/suspendMentee" do
     redirect "/searchForAMentee"
 end
 
-##########################################################UNSUSPEND MENTEE############################################################
 post "/unsuspendMentee" do
   @mentees = Mentee.first(id: params[:menteeID]) #creates a new instance of mentee
   

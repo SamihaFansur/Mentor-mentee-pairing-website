@@ -32,8 +32,8 @@
                 <th>Email</th>
                 <th>Phone Number</th>
                 <th>Edit Profile</th>
-                <th>Suspend Mentee</th> 
-                <th>Unsuspend Mentee</th>                
+                <th>Suspend/Unsuspend Mentee</th> 
+                <th>Block/Unblock Mentee</th> 
               </tr>
             <% @mentees.each do |mentee| %>
               <tr>
@@ -46,14 +46,27 @@
                   <form method="post" action="suspendMentee">
                     <input type="hidden" name="menteeID" value="<%= mentee.id %>">
                     <button type="submit">
-                      Suspend Mentee
+                      Suspend
                     </button>
                   </form>
-                </td><td>
                   <form method="post" action="unsuspendMentee">
                     <input type="hidden" name="menteeID" value="<%= mentee.id %>">
                     <button type="submit">
-                      Unsuspend Mentee
+                      Unsuspend
+                    </button>
+                  </form>
+                </td>
+                <td>
+                  <form method="post" action="suspendMentee">
+                    <input type="hidden" name="menteeID" value="<%= mentee.id %>">
+                    <button type="submit">
+                      Block
+                    </button>
+                  </form>
+                  <form method="post" action="unsuspendMentee">
+                    <input type="hidden" name="menteeID" value="<%= mentee.id %>">
+                    <button type="submit">
+                      Unblock
                     </button>
                   </form>
                 </td>

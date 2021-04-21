@@ -27888,3 +27888,97 @@ I, [2021-04-21T22:03:28.396481 #419]  INFO -- : (0.000023s) BEGIN
 I, [2021-04-21T22:03:28.397069 #419]  INFO -- : (0.000379s) INSERT INTO `mentees` (`fname`, `lname`, `email`, `phoneNum`, `courseName`, `faculty`, `cyear`, `username`, `password`) VALUES ('Samiha', 'Fansur', 'sfansurasdf1@sheffied.ac.uk', '+44 7721951137', 'Financial Mathematics (BSc)', 'Faculty of Arts and Humanities', 4, 's fg', 'S.F')
 I, [2021-04-21T22:03:28.397403 #419]  INFO -- : (0.000178s) SELECT * FROM `mentees` WHERE `id` = 10
 I, [2021-04-21T22:03:28.497133 #419]  INFO -- : (0.099631s) COMMIT
+I, [2021-04-21T22:06:16.177483 #602]  INFO -- : (0.000183s) PRAGMA foreign_keys = 1
+I, [2021-04-21T22:06:16.177584 #602]  INFO -- : (0.000014s) PRAGMA case_sensitive_like = 1
+I, [2021-04-21T22:06:16.178432 #602]  INFO -- : (0.000056s) SELECT sqlite_version()
+I, [2021-04-21T22:06:16.178686 #602]  INFO -- : (0.000128s) PRAGMA table_info('admins')
+I, [2021-04-21T22:06:16.180132 #602]  INFO -- : (0.000260s) PRAGMA table_info('mentees')
+I, [2021-04-21T22:06:16.182370 #602]  INFO -- : (0.000236s) PRAGMA table_info('mentors')
+I, [2021-04-21T22:06:16.184074 #602]  INFO -- : (0.000134s) PRAGMA table_info('requests')
+I, [2021-04-21T22:06:25.680449 #602]  INFO -- : (0.000225s) SELECT * FROM `mentees` WHERE (`username` = 'admin2') LIMIT 1
+I, [2021-04-21T22:06:25.680796 #602]  INFO -- : (0.000115s) SELECT * FROM `mentees` WHERE (`username` = 'admin2') LIMIT 1
+I, [2021-04-21T22:06:25.681139 #602]  INFO -- : (0.000150s) SELECT * FROM `mentors` WHERE (`username` = 'admin2') LIMIT 1
+I, [2021-04-21T22:06:25.681448 #602]  INFO -- : (0.000143s) SELECT * FROM `mentors` WHERE (`username` = 'admin2') LIMIT 1
+I, [2021-04-21T22:06:25.682696 #602]  INFO -- : (0.001065s) SELECT * FROM `admins` WHERE (`username` = 'admin2') LIMIT 1
+I, [2021-04-21T22:06:27.208702 #602]  INFO -- : (0.000163s) SELECT * FROM `admins` WHERE (`username` = 'admin2') LIMIT 1
+I, [2021-04-21T22:06:30.287787 #602]  INFO -- : (0.001114s) SELECT * FROM `mentors` ORDER BY `username`
+I, [2021-04-21T22:06:32.442281 #602]  INFO -- : (0.000164s) SELECT * FROM `admins` WHERE (`username` = 'admin2') LIMIT 1
+I, [2021-04-21T22:06:33.672048 #602]  INFO -- : (0.000271s) SELECT * FROM `mentees` ORDER BY `username`
+I, [2021-04-21T22:07:30.623847 #602]  INFO -- : (0.000271s) SELECT * FROM `mentees` ORDER BY `username`
+I, [2021-04-21T22:07:49.243716 #602]  INFO -- : (0.000445s) SELECT * FROM `mentees` ORDER BY `username`
+I, [2021-04-21T22:07:56.888533 #602]  INFO -- : (0.000316s) SELECT * FROM `mentees` ORDER BY `username`
+I, [2021-04-21T22:08:04.583351 #602]  INFO -- : (0.001237s) SELECT * FROM `mentees` ORDER BY `username`
+I, [2021-04-21T22:09:03.045422 #602]  INFO -- : (0.000282s) SELECT * FROM `mentees` ORDER BY `username`
+I, [2021-04-21T22:09:27.430433 #602]  INFO -- : (0.000269s) SELECT * FROM `mentees` ORDER BY `username`
+I, [2021-04-21T22:09:35.651497 #602]  INFO -- : (0.000828s) SELECT * FROM `mentees` WHERE (`id` = '8') LIMIT 1
+I, [2021-04-21T22:09:35.651785 #602]  INFO -- : (0.000035s) BEGIN
+I, [2021-04-21T22:09:35.652280 #602]  INFO -- : (0.000223s) UPDATE `mentees` SET `suspendMentee` = 1 WHERE (`id` = 8)
+I, [2021-04-21T22:09:35.756206 #602]  INFO -- : (0.103819s) COMMIT
+I, [2021-04-21T22:09:36.028061 #602]  INFO -- : (0.000325s) SELECT * FROM `mentees` ORDER BY `username`
+I, [2021-04-21T22:09:37.838397 #602]  INFO -- : (0.000358s) SELECT * FROM `mentees` WHERE (`id` = '8') LIMIT 1
+I, [2021-04-21T22:09:37.945272 #602]  INFO -- : (0.000251s) SELECT * FROM `mentees` ORDER BY `username`
+I, [2021-04-21T22:09:39.755741 #602]  INFO -- : (0.000172s) SELECT * FROM `mentees` WHERE (`id` = '8') LIMIT 1
+I, [2021-04-21T22:09:39.755942 #602]  INFO -- : (0.000020s) BEGIN
+I, [2021-04-21T22:09:39.756318 #602]  INFO -- : (0.000190s) UPDATE `mentees` SET `suspendMentee` = 0 WHERE (`id` = 8)
+I, [2021-04-21T22:09:39.842393 #602]  INFO -- : (0.085987s) COMMIT
+I, [2021-04-21T22:09:40.140154 #602]  INFO -- : (0.000259s) SELECT * FROM `mentees` ORDER BY `username`
+I, [2021-04-21T22:09:42.154092 #602]  INFO -- : (0.000173s) SELECT * FROM `mentees` WHERE (`id` = '8') LIMIT 1
+I, [2021-04-21T22:09:42.252520 #602]  INFO -- : (0.000291s) SELECT * FROM `mentees` ORDER BY `username`
+I, [2021-04-21T22:10:39.880057 #602]  INFO -- : (0.000582s) SELECT * FROM `mentees` ORDER BY `username`
+I, [2021-04-21T22:10:43.643455 #602]  INFO -- : (0.000174s) SELECT * FROM `admins` WHERE (`username` = 'admin2') LIMIT 1
+I, [2021-04-21T22:10:46.048113 #602]  INFO -- : (0.000372s) SELECT * FROM `mentees` ORDER BY `username`
+I, [2021-04-21T22:24:06.677536 #602]  INFO -- : (0.000379s) SELECT * FROM `mentees` ORDER BY `username`
+I, [2021-04-21T22:24:09.300222 #602]  INFO -- : (0.000381s) SELECT * FROM `mentees` WHERE (`id` = '8') LIMIT 1
+I, [2021-04-21T22:24:09.300487 #602]  INFO -- : (0.000023s) BEGIN
+I, [2021-04-21T22:24:09.300872 #602]  INFO -- : (0.000197s) UPDATE `mentees` SET `suspendMentee` = 1 WHERE (`id` = 8)
+I, [2021-04-21T22:24:09.404085 #602]  INFO -- : (0.103112s) COMMIT
+I, [2021-04-21T22:24:09.751304 #602]  INFO -- : (0.000367s) SELECT * FROM `mentees` ORDER BY `username`
+I, [2021-04-21T22:24:11.609953 #602]  INFO -- : (0.000171s) SELECT * FROM `mentees` WHERE (`id` = '8') LIMIT 1
+I, [2021-04-21T22:24:11.702452 #602]  INFO -- : (0.000250s) SELECT * FROM `mentees` ORDER BY `username`
+I, [2021-04-21T22:24:29.658902 #602]  INFO -- : (0.000046s) BEGIN
+I, [2021-04-21T22:24:29.659425 #602]  INFO -- : (0.000283s) UPDATE `mentees` SET `suspendMentee` = 0 WHERE (`id` = 8)
+I, [2021-04-21T22:24:29.769191 #602]  INFO -- : (0.109672s) COMMIT
+I, [2021-04-21T22:24:42.194412 #602]  INFO -- : (0.000171s) SELECT * FROM `mentees` WHERE (`id` = '8') LIMIT 1
+I, [2021-04-21T22:24:42.194608 #602]  INFO -- : (0.000019s) BEGIN
+I, [2021-04-21T22:24:42.195002 #602]  INFO -- : (0.000230s) UPDATE `mentees` SET `suspendMentee` = 1 WHERE (`id` = 8)
+I, [2021-04-21T22:24:42.284236 #602]  INFO -- : (0.089134s) COMMIT
+I, [2021-04-21T22:24:42.549772 #602]  INFO -- : (0.000252s) SELECT * FROM `mentees` ORDER BY `username`
+I, [2021-04-21T22:24:49.614826 #602]  INFO -- : (0.000186s) SELECT * FROM `mentees` WHERE (`username` = 'M2') LIMIT 1
+I, [2021-04-21T22:24:49.615098 #602]  INFO -- : (0.000110s) SELECT * FROM `mentees` WHERE (`username` = 'M2') LIMIT 1
+I, [2021-04-21T22:24:49.615278 #602]  INFO -- : (0.000098s) SELECT * FROM `mentees` WHERE (`username` = 'M2') LIMIT 1
+I, [2021-04-21T22:24:49.615586 #602]  INFO -- : (0.000097s) SELECT * FROM `mentors` WHERE (`username` = 'M2') LIMIT 1
+I, [2021-04-21T22:24:49.615800 #602]  INFO -- : (0.000110s) SELECT * FROM `mentors` WHERE (`username` = 'M2') LIMIT 1
+I, [2021-04-21T22:24:49.616002 #602]  INFO -- : (0.000080s) SELECT * FROM `admins` WHERE (`username` = 'M2') LIMIT 1
+I, [2021-04-21T22:25:02.455100 #602]  INFO -- : (0.000053s) BEGIN
+I, [2021-04-21T22:25:02.455568 #602]  INFO -- : (0.000203s) UPDATE `mentees` SET `suspendMentee` = 0 WHERE (`id` = 8)
+I, [2021-04-21T22:25:02.559028 #602]  INFO -- : (0.103353s) COMMIT
+I, [2021-04-21T22:25:08.317090 #602]  INFO -- : (0.000255s) SELECT * FROM `mentees` WHERE (`username` = 'M2') LIMIT 1
+I, [2021-04-21T22:25:08.317427 #602]  INFO -- : (0.000155s) SELECT * FROM `mentees` WHERE (`username` = 'M2') LIMIT 1
+I, [2021-04-21T22:25:08.412099 #602]  INFO -- : (0.000170s) SELECT * FROM `mentees` WHERE (`username` = 'M2') LIMIT 1
+I, [2021-04-21T22:25:08.412355 #602]  INFO -- : (0.000020s) BEGIN
+I, [2021-04-21T22:25:08.412804 #602]  INFO -- : (0.000234s) UPDATE `mentees` SET `applicationNumber` = 1, `mentorAccept` = 0, `mentorMatch` = 0, `requestMentorMeeting` = 0 WHERE (`id` = 8)
+I, [2021-04-21T22:25:08.510481 #602]  INFO -- : (0.097579s) COMMIT
+I, [2021-04-21T22:25:16.070127 #602]  INFO -- : (0.000197s) SELECT * FROM `mentees` WHERE (`username` = 'admin2') LIMIT 1
+I, [2021-04-21T22:25:16.070398 #602]  INFO -- : (0.000105s) SELECT * FROM `mentees` WHERE (`username` = 'admin2') LIMIT 1
+I, [2021-04-21T22:25:16.070586 #602]  INFO -- : (0.000085s) SELECT * FROM `mentors` WHERE (`username` = 'admin2') LIMIT 1
+I, [2021-04-21T22:25:16.070729 #602]  INFO -- : (0.000076s) SELECT * FROM `mentors` WHERE (`username` = 'admin2') LIMIT 1
+I, [2021-04-21T22:25:16.070897 #602]  INFO -- : (0.000087s) SELECT * FROM `admins` WHERE (`username` = 'admin2') LIMIT 1
+I, [2021-04-21T22:25:17.264517 #602]  INFO -- : (0.000162s) SELECT * FROM `admins` WHERE (`username` = 'admin2') LIMIT 1
+I, [2021-04-21T22:25:18.564835 #602]  INFO -- : (0.000488s) SELECT * FROM `mentees` ORDER BY `username`
+I, [2021-04-21T22:25:26.995196 #602]  INFO -- : (0.000261s) SELECT * FROM `mentees` WHERE (`id` = '8') LIMIT 1
+I, [2021-04-21T22:25:26.995441 #602]  INFO -- : (0.000022s) BEGIN
+I, [2021-04-21T22:25:26.995801 #602]  INFO -- : (0.000184s) UPDATE `mentees` SET `suspendMentee` = 1 WHERE (`id` = 8)
+I, [2021-04-21T22:25:27.103962 #602]  INFO -- : (0.108065s) COMMIT
+I, [2021-04-21T22:25:27.367258 #602]  INFO -- : (0.000455s) SELECT * FROM `mentees` ORDER BY `username`
+I, [2021-04-21T22:25:29.133097 #602]  INFO -- : (0.000179s) SELECT * FROM `mentees` WHERE (`id` = '8') LIMIT 1
+I, [2021-04-21T22:25:29.133279 #602]  INFO -- : (0.000016s) BEGIN
+I, [2021-04-21T22:25:29.133571 #602]  INFO -- : (0.000137s) UPDATE `mentees` SET `suspendMentee` = 0 WHERE (`id` = 8)
+I, [2021-04-21T22:25:29.227727 #602]  INFO -- : (0.094084s) COMMIT
+I, [2021-04-21T22:25:29.506261 #602]  INFO -- : (0.000259s) SELECT * FROM `mentees` ORDER BY `username`
+I, [2021-04-21T22:25:30.235466 #602]  INFO -- : (0.000173s) SELECT * FROM `mentees` WHERE (`id` = '8') LIMIT 1
+I, [2021-04-21T22:25:30.331103 #602]  INFO -- : (0.000381s) SELECT * FROM `mentees` ORDER BY `username`
+I, [2021-04-21T22:25:41.630916 #602]  INFO -- : (0.000162s) SELECT * FROM `admins` WHERE (`username` = 'admin2') LIMIT 1
+I, [2021-04-21T22:25:42.927298 #602]  INFO -- : (0.000254s) SELECT * FROM `mentees` ORDER BY `username`
+I, [2021-04-21T22:25:47.272685 #602]  INFO -- : (0.000059s) BEGIN
+I, [2021-04-21T22:25:47.273179 #602]  INFO -- : (0.000254s) UPDATE `mentees` SET `suspendMentee` = 0 WHERE (`id` = 8)
+I, [2021-04-21T22:25:47.374832 #602]  INFO -- : (0.101560s) COMMIT
