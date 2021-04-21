@@ -52,6 +52,21 @@ describe "the mentee edit page" do
     expect(page).to have_content "Test"
     clear_database
   end
+    
+    #checks that an description for mentee can be edited
+  it "description can be edited" do
+    add_test_user
+    visit "/login"
+    fill_in "username", with: "123"
+    fill_in "password", with: "123"
+    click_button "Submit"
+    visit "/editMentee?id=1"
+    fill_in "description", with: "hello"
+    click_button "Submit"
+    visit"/MenteeDashboard"
+    expect(page).to have_content "hello"
+    clear_database
+  end
 end  
     
     
@@ -102,6 +117,21 @@ describe "the mentor edit page" do
     click_button "Submit"
     visit"/MentorDashboard"
     expect(page).to have_content "Mentor"
+    clear_database
+  end
+
+#checks that the description for mentor can be changed
+  it "description for mentor can be changed" do
+    add_test_mentor
+    visit "/login"
+    fill_in "username", with: "1234"
+    fill_in "password", with: "1234"
+    click_button "Submit"
+    visit "/editMentor?id=1"
+    fill_in "description", with: "hello"
+    click_button "Submit"
+    visit"/MentorDashboard"
+    expect(page).to have_content "hello"
     clear_database
   end
     
@@ -158,7 +188,24 @@ describe "the admin edit page" do
     fill_in "fname", with: "admin2"
     click_button "Submit"
     clear_database
-  end    
+  end
+    
+    #description for admin can be changed
+  it "description can be changed for Admin" do
+    visit "/login"
+    fill_in "username", with: "admin2"
+    fill_in "password", with: "S.F"
+    click_button "Submit"
+    visit "/editAdmin?id=2"
+    fill_in "description", with: "hello"
+    click_button "Submit"
+    visit "/AdminDashboard"
+    expect(page).to have_content "hello"
+    visit "/editAdmin?id=2"
+    fill_in "description", with: ""
+    click_button "Submit"
+    clear_database
+  end   
 end
     
  #checks that a admin+mentor can be edited
@@ -224,7 +271,29 @@ describe "the admin edit page" do
     fill_in "fname", with: "Sam"
     click_button "Submit"
     clear_database
-  end    
+  end
+    
+#checks that description for adminMentor can be changed
+  it "description can be changed for adminMentor" do
+    add_test_mentor
+    visit "/login"
+    fill_in "username", with: "1234"
+    fill_in "password", with: "1234"    
+    click_button "Submit" 
+    visit "/login"
+    fill_in "username", with: "admin2"
+    fill_in "password", with: "S.F"    
+    click_button "Submit"
+    visit "/editMentor?id=1"
+    fill_in "description", with: "hello"
+    click_button "Submit"
+    visit "/AdminMentorDashboard"
+    expect(page).to have_content "hello"
+    visit "/editAdmin?id=2"
+    fill_in "description", with: ""
+    click_button "Submit"
+    clear_database
+  end  
 end   
 
     
