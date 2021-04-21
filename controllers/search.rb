@@ -35,7 +35,7 @@ post "/addApplication" do
     @error1 = "Application already sent"
     redirect "/search?error=1"
   else
-    if @mentees.applicationNumber == "1" && @mentees.mentorMatch == 0
+    if @mentees.applicationNumber == 1 && @mentees.mentorMatch == 0
       @requests.timeApplicationSent = Time.new
       @requests.save_changes
       
@@ -47,7 +47,7 @@ post "/addApplication" do
         @requests.delete
         @requests.save_changes
         
-        @mentees.applicationNumber = "1"
+        @mentees.applicationNumber = 1
         @mentees.save_changes
         send_mail(@mentees.email, 
             "No response from mentor", 
@@ -58,7 +58,7 @@ post "/addApplication" do
       }
 
       #Mentee used up 1 application for time being, so sets to 0
-      @mentees.applicationNumber = "0"
+      @mentees.applicationNumber = 0
       @mentees.save_changes
 
       #Sends an email to mentor that a mentee sent them an application

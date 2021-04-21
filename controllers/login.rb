@@ -7,7 +7,7 @@ get "/MenteeDashboard" do
   #Initializing the field value for applicationNumber 
   #So that mentee can only request 1 mentor every 2 weeks
   if $mentees.applicationNumber == nil 
-    $mentees.applicationNumber  = "1"
+    $mentees.applicationNumber  = 1
   end
   
   #Initializing mentorMatch field in mentees table

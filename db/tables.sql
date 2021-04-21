@@ -10,7 +10,7 @@ CREATE TABLE mentees (
   faculty TEXT,
   cyear INTEGER,
   description TEXT,
-  applicationNumber TEXT,
+  applicationNumber INTEGER,
   mentorAccept INTEGER,
   mentorMatch INTEGER,
   requestMentorMeeting INTEGER,

@@ -46,7 +46,7 @@ post "/matchWithMentor" do
     req_all.each do |req|
       other_mentees = Mentee.first(id: req.menteeID)
       if other_mentees.id != $mentees.id
-        other_mentees.applicationNumber = "1"
+        other_mentees.applicationNumber = 1
         other_mentees.mentorAccept = 0
         other_mentees.save_changes
       end
@@ -57,7 +57,7 @@ post "/matchWithMentor" do
     mentor.profileStatus = "1" #mentor profile made private
     mentor.save_changes
 
-    $mentees.applicationNumber = "0" #mentee can't send more applications
+    $mentees.applicationNumber = 0 #mentee can't send more applications
     $mentees.save_changes
 
     send_mail($mentees.email, 
@@ -115,7 +115,7 @@ post "/matchWithMentee" do
     reqS.each do |req|
       other_mentees = Mentee.first(id: req.menteeID)
       if other_mentees.id != mentee.id
-        other_mentees.applicationNumber = "1"
+        other_mentees.applicationNumber = 1
         other_mentees.mentorAccept = 0
         other_mentees.save_changes
       end
@@ -126,7 +126,7 @@ post "/matchWithMentee" do
     $mentors.profileStatus = "1" #mentor profile made private
     $mentors.save_changes
 
-    mentee.applicationNumber = "0" #mentee can't send more applications
+    mentee.applicationNumber = 0 #mentee can't send more applications
     mentee.save_changes
     
     send_mail($mentors.email, 
@@ -174,7 +174,7 @@ post "/rejectMentee" do
     mentor.save_changes
   end
   
-  mentee.applicationNumber = "1" #Mentee can now send a mentor an application
+  mentee.applicationNumber = 1 #Mentee can now send a mentor an application
   mentee.mentorAccept = 0 #Resets field if mentee has already accepted the request
   mentee.save_changes
   
@@ -200,7 +200,7 @@ post "/unsend" do
     mentor.save_changes
   end
   
-  $mentees.applicationNumber = "1" #Mentee can now send a mentor an application
+  $mentees.applicationNumber = 1 #Mentee can now send a mentor an application
   $mentees.mentorAccept = 0 #Resets field if mentee has already accepted the request
   $mentees.save_changes
   
