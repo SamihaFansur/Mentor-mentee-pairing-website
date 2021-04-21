@@ -475,6 +475,33 @@ it "is accessible from the MentorDashboard page" do
         expect(page).to have_content "Everyone using this website"
         clear_database   
     end 
+
+            it "is accessible from the AdminDashboard page" do
+        visit "/login"
+        fill_in "username", with: "admin2"
+        fill_in "password", with: "S.F"
+        click_button "Submit" 
+        visit"/AdminDashboard"
+        click_link "Pending Mentee Applications"
+        expect(page).to have_content "Pending Mentee Requests"
+        clear_database   
+    end
+            it "is accessible from the AdminDashboard page" do
+        visit "/login"
+        fill_in "username", with: "admin2"
+        fill_in "password", with: "S.F"
+        click_button "Submit"  
+        visit"/AdminDashboard"
+        click_link "Paired Mentees"
+        expect(page).to have_content "Search for a Paired Mentee"
+        clear_database   
+    end 
+
+
+
+
+
+
     #checks if the header is correct for admin
  it "is accessible from the AdminDashboard page" do
        visit "/login"
@@ -631,6 +658,22 @@ it "is accessible from the MentorDashboard page" do
         expect(page).not_to have_content "My Mentor Schedule"
         clear_database   
     end 
+            it "is accessible from the AdminMentorDashboard page" do
+        add_test_mentor
+        visit "/login"
+        fill_in "username", with: "admin2"
+        fill_in "password", with: "S.F"
+        click_button "Submit"
+        visit "/loginAgain"
+        fill_in "username", with: "1234"
+        fill_in "password", with: "1234"
+        click_button "Submit"  
+        visit"/AdminMentorDashboard"
+        click_link "My Mentee"
+        expect(page).to have_content "Details of your current mentee"
+        clear_database   
+    end 
+
             it "is accessible from the AdminMentorDashboard page" do
         add_test_mentor
         visit "/login"
