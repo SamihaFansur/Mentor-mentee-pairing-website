@@ -67,8 +67,8 @@ RSpec.describe Mentee do
 #checks that applicationNumber returns correctly from database
       describe "#applicationNumber" do
     it "returns the mentee's applicationNumber" do
-      mentee = described_class.new(applicationNumber: "1234")
-      expect(mentee.applicationNumber).to eq("1234")
+      mentee = described_class.new(applicationNumber: 1234)
+      expect(mentee.applicationNumber).to eq(1234)
     end
   end
 #checks that mentorAccept returns correctly from database
