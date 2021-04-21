@@ -2,7 +2,7 @@ require_relative "../spec_helper"
 #checks that signup is accessible from /index and that mentee signup is inside
 describe "the signup page" do
     it "is accessible from the search page" do
-        visit"/index"
+        visit"/"
         click_link "Sign-Up"
         expect(page).to have_content "Mentee"
     end
@@ -29,7 +29,7 @@ describe "the signup page" do
     
     #checks that signup is accessible from /index and that mentor signup is inside
         it "is accessible from the search page" do
-        visit"/index"
+        visit"/"
         click_link "Sign-Up"
         expect(page).to have_content "Mentor"
     end
