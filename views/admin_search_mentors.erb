@@ -22,6 +22,14 @@
         <% if @error2 %>
         <h2><strong class="error">Account has already been unsuspended</strong></h2>
         <% end %>
+        
+        <% if @error3 %>
+        <h2><strong class="error">Account has already been blocked</strong></h2>
+        <% end %>
+
+        <% if @error4 %>
+        <h2><strong class="error">Account has already been unblocked</strong></h2>
+        <% end %>
           
           <!--Displays the mentor details-->
           <% if @mentors.count> 0 %>
@@ -53,11 +61,11 @@
                   </form>
                 </td>
                 <td>
-                  <form method="post" action="suspendMentor">
+                  <form method="post" action="blockMentor">
                     <input type="hidden" name="mentorID" value="<%= mentor.id %>">
                     <button type="submit">Block</button>
                   </form>
-                  <form method="post" action="unsuspendMentor">
+                  <form method="post" action="unblockMentor">
                     <input type="hidden" name="mentorID" value="<%= mentor.id %>">
                     <button type="submit">Unblock</button>
                   </form>

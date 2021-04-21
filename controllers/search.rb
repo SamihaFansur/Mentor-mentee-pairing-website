@@ -92,7 +92,8 @@ get "/searchForAMentor" do
   #notice after press the button
   @error1 = true if params.fetch("error", "") == "1"
   @error2 = true if params.fetch("error", "") == "2"
-  
+  @error3 = true if params.fetch("error", "") == "3"
+  @error4 = true if params.fetch("error", "") == "4"  
   
   #If no course name is being searched, it displays the list of all mentors in alphabetical order 
   #else it searches through the course name field in the mentors table and displays mentors' whose 
@@ -149,7 +150,7 @@ post "/suspendMentor" do
         "\n\nRegards\nTeam 6")
     Thread.new{
 #         sleep(2*24*60*60) #2 days in seconds
-        sleep(20) #-------------------------------DELETE LATER -S -------------------------------
+        sleep(30) #-------------------------------DELETE LATER -S -------------------------------
         @mentors.suspendMentor = 0
         @mentors.save_changes
         #Sends mentor an email that their account has been unsuspended
@@ -159,7 +160,6 @@ post "/suspendMentor" do
             "Your mentor account has now been unsuspended.\n"+
             "You can now login using your mentor credentials"+
             "\n\nRegards\nTeam 6")
-      puts "mentor unsus"
       }  
   else
       @error1 ="Account has already been suspended"
@@ -207,10 +207,9 @@ post "/suspendMentee" do
         "You will be able to use your account after 48 hours starting now.\n"+
         "If you think we have made a mistake, please contact our admins using our contact form!"+
         "\n\nRegards\nTeam 6")
-    
     Thread.new{
 #         sleep(2*24*60*60) #2 days in seconds
-        sleep(20) #-------------------------------DELETE LATER -S -------------------------------
+        sleep(30) #-------------------------------DELETE LATER -S -------------------------------
         @mentees.suspendMentee = 0
         @mentees.save_changes
         #Sends mentee an email that their account has been unsuspended
@@ -220,7 +219,6 @@ post "/suspendMentee" do
             "Your mentee account has now been unsuspended.\n"+
             "You can now login using your mentee credentials"+
             "\n\nRegards\nTeam 6")
-      puts "mentee unsus"
       }   
    else
       @error1 ="Account has already been suspended"
@@ -295,4 +293,49 @@ post "/unblockMentee" do
   end
     
     redirect "/searchForAMentee"
+end
+
+post "/blockMentor" do
+  @mentors = Mentor.first(id: params[:mentorID]) #creates a new instance of mentor
+  @error1 = nil #initializes variable-application sent error
+  
+  #Sets suspendMentor field to 1 to indicate account permanently suspended/blocked   
+  if @mentors.suspendMentor != 1
+    @mentors.suspendMentor = 1
+    @mentors.save_changes
+    #Sends mentor an email that their account has been suspended
+    send_mail(@mentors.email, 
+        "Mentor account suspended!", 
+        "Hi "+@mentors.fname+" "+@mentors.lname+" !\n"+
+        "Your mentor account has been blocked due to repeated violation of website guidelines.\n"+
+        "If you think we have made a mistake, please contact our admins using our contact form!"+
+        "\n\nRegards\nTeam 6")
+  else
+      @error1 ="Account has already been blocked"
+      redirect "/searchForAMentor?error=3"
+  end
+    
+    redirect "/searchForAMentor"
+end
+
+post "/unblockMentor" do
+  @mentors = Mentor.first(id: params[:mentorID]) #creates a new instance of mentor
+
+  #Sets suspendMentor field to 0 to indicate account unsuspended if its already suspended
+  if @mentors.suspendMentor == 1
+    @mentors.suspendMentor = 0
+    @mentors.save_changes
+    #Sends mentor an email that their account has been unsuspended
+    send_mail(@mentors.email, 
+        "Mentor account Unblocked!", 
+        "Hi "+@mentors.fname+" "+@mentors.lname+" !\n"+
+        "Your mentor account has now been unblocked.\n"+
+        "You can now login using your mentor credentials"+
+        "\n\nRegards\nTeam 6")
+   else
+      @error1 ="Account has already been unblocked"
+      redirect "/searchForAMentor?error=4"
+  end
+    
+    redirect "/searchForAMentor"
 end
