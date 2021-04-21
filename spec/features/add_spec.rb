@@ -74,5 +74,54 @@ describe "the signup page" do
 
         clear_database
  end 
+    
+   #checks for correct information error message
+ it "adds empty username field" do
+        add_test_user
+        visit "/login"
+        fill_in "username", with: ""
+        fill_in "password", with: ""
+        click_button "Submit"
+        expect(page).to have_content "Please correct the information below"
+
+        clear_database
+ end 
+    
+      #checks that adminMentor can login
+        it "checks adminMentor Login" do
+        add_test_mentor
+        visit "/loginAgain"
+        fill_in "username", with: "1234"
+        fill_in "password", with: "1234"
+        click_button "Submit"
+        expect(page).to have_content "Sam"
+
+        clear_database
+    end
+          #checks that adminMentor has error message
+        it "checks loginAGain errors" do
+        add_test_mentor
+        visit "/loginAgain"
+        fill_in "username", with: ""
+        fill_in "password", with: ""
+        click_button "Submit"
+        expect(page).to have_content "Please correct the information below"
+
+        clear_database
+    end
+    
+              #checks that adminMentor has error message
+        it "checks loginAGain errors for username/password" do
+        add_test_mentor
+        visit "/loginAgain"
+        fill_in "username", with: "1234"
+        fill_in "password", with: "123"
+        click_button "Submit"
+        expect(page).to have_content "Username/Password combination incorrect"
+
+        clear_database
+    end
+    
+    
     clear_database
 end
