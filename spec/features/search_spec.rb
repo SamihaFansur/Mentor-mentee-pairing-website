@@ -101,32 +101,7 @@ describe "the search page" do
       expect(page).to have_content "Sam Mentor"
       clear_database
     end
-      
 
-      
-      
-      
-#checks if an application has already been sent   
-         it "checks the mentor has been sent an application before" do
-      clear_database
-      add_test_mentor
-      add_test_user
-      visit "/login" 
-      fill_in "username", with: "1234"
-      fill_in "password", with: "1234"
-      click_button "Submit"       
-      visit "/login" 
-      fill_in "username", with: "123"
-      fill_in "password", with: "123"
-      click_button "Submit"
-      visit "/search"
-      click_button "Send application"
-      click_button "Send application" 
-      expect(page).to have_content("already")
-      
-      clear_database
-    end    
-      
 
       clear_database
    end    
