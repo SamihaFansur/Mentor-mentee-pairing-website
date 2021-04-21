@@ -6,7 +6,7 @@ require_relative "../spec_helper"
 #
 #
 #tests that error message shows up when a nil mentee is attempted to be edited
-describe "the edit page" do
+describe "the mentee edit page" do
   it "shows an error when trying to load an invalid mentee" do
     visit "/editMentee?id=1000000"
     expect(page).to have_no_xpath('a')
@@ -104,5 +104,64 @@ describe "the mentor edit page" do
     expect(page).to have_content "Mentor"
     clear_database
   end
+    
+    
+#checks that a admin can be edited
+describe "the admin edit page" do
+    
+  it "shows an error when trying to load an invalid mentee" do
+    visit "/editAdmin?id=1000000"
+    expect(page).to have_no_xpath('a')
+  end    
+    
+    it "allows editing of a valid mentor" do
+    
+    visit "/login"
+    fill_in "username", with: "admin2"
+    fill_in "password", with: "S.F"
+    click_button "Submit"
+    visit "/editAdmin?id=2"
+    click_button "Submit"
+    visit "/AdminDashboard"
+    expect(page).to have_content "ad3245fg"
+    clear_database
+  end
+#checks that mentor edit is submitted and displayed
+  it "allows a mentor record to be changed" do
+    visit "/login"
+    fill_in "username", with: "admin2"
+    fill_in "password", with: "S.F"
+    click_button "Submit"
+    visit "/editAdmin?id=2"
+    fill_in "fname", with: "New"
+    click_button "Submit"
+    visit "/AdminDashboard"
+    expect(page).to have_content "New"
+    visit "/editAdmin?id=2"
+    fill_in "fname", with: "admin2"
+    click_button "Submit"
+    clear_database
+  end
+    
+#checks that an empty data field can be submitted for mentor
+  it "will save empty data field" do
+    visit "/login"
+    fill_in "username", with: "admin2"
+    fill_in "password", with: "S.F"
+    click_button "Submit"
+    visit "/editAdmin?id=2"
+    fill_in "fname", with: ""
+    click_button "Submit"
+    visit "/AdminDashboard"
+    expect(page).to have_content "admin2"
+    visit "/editAdmin?id=2"
+    fill_in "fname", with: "admin2"
+    click_button "Submit"
+    clear_database
+  end    
+end
+    
+    
+    
     clear_database
 end
