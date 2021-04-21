@@ -36,4 +36,56 @@ RSpec.describe Mentor do
       expect(mentor.password).to eq("1234")
     end
   end
+#checks that coursename returns correctly from database
+      describe "#courseName" do
+    it "returns the mentee's courseName" do
+      mentee = described_class.new(courseName: "Architecture")
+      expect(mentee.courseName).to eq("Architecture")
+    end
+  end
+#checks that faculty returns correctly from database
+      describe "#jobTitle" do
+    it "returns the mentor's jobTitle" do
+      mentor = described_class.new(jobTitle: "Engineer")
+      expect(mentor.jobTitle).to eq("Engineer")
+    end
+  end
+
+#checks that description returns correctly from database
+      describe "#description" do
+    it "returns the mentee's description" do
+      mentor = described_class.new(description: "hello")
+      expect(mentor.description).to eq("hello")
+    end
+  end
+
+#checks that menteeAccept returns correctly from database
+      describe "#menteeAccept" do
+    it "returns the mentor's menteeAccept" do
+      mentor = described_class.new(menteeAccept: 1)
+      expect(mentor.menteeAccept).to eq(1)
+    end
+  end
+#checks that menteeMatch returns correctly from database
+      describe "#menteeMatch" do
+    it "returns the mentor's menteeMatch" do
+      mentor = described_class.new(menteeMatch: 1)
+      expect(mentor.menteeMatch).to eq(1)
+    end
+  end
+#checks that profileStatus returns correctly from database
+      describe "#profileStatus" do
+    it "returns the mentor's profileStatus" do
+      mentor = described_class.new(profileStatus: "1")
+      expect(mentor.profileStatus).to eq("1")
+    end
+  end
+#checks that suspendMentor returns correctly from database
+      describe "#suspendMentor" do
+    it "returns the mentor's suspendMentor" do
+      mentor = described_class.new(suspendMentor: 1)
+      expect(mentor.suspendMentor).to eq(1)
+    end
+  end
 end
+
