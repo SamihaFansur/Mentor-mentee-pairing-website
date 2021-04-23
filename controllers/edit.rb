@@ -3,10 +3,30 @@ get "/editMentee" do
     
   #Checks if the request has come directly from a mentee or admin dashboard to stop users from manually changing the link and accessing other users edit pages
   if request.referer.nil?
-      redirect "/"
+      if session[:mentees_username]
+          redirect "MenteeDashboard"
+      elsif session[:admins_username] 
+          if session[:mentors_username] 
+              redirect "AdminMentorDashboard"
+          else
+              redirect "AdminDashboard"
+          end
+      elsif session[:mentors_username]
+          redirect "MentorDashboard"
+      end
   elsif request.referer.include? "/MenteeDashboard" or request.referer.include? "searchForAMentee"
   else 
-      redirect "/"
+     if session[:mentees_username]
+          redirect "MenteeDashboard"
+      elsif session[:admins_username] 
+          if session[:mentors_username] 
+              redirect "AdminMentorDashboard"
+          else
+              redirect "AdminDashboard"
+          end
+      elsif session[:mentors_username]
+          redirect "MentorDashboard"
+      end
   end
       
   id = params["id"] #new variable to search the id of corresponding mentee profile to be edited ######
@@ -55,10 +75,30 @@ get "/editMentor" do
     
   #Checks if the request has come directly from a mentor dashboard to stop users from manually changing the link and accessing other users edit pages
   if request.referer.nil?
-      redirect "/"
+      if session[:mentees_username]
+          redirect "MenteeDashboard"
+      elsif session[:admins_username] 
+          if session[:mentors_username] 
+              redirect "AdminMentorDashboard"
+          else
+              redirect "AdminDashboard"
+          end
+      elsif session[:mentors_username]
+          redirect "MentorDashboard"
+      end
   elsif request.referer.include? "/MentorDashboard" or request.referer.include? "searchForAMentor" or request.referer.include? "/AdminMentorDashboard" 
   else 
-      redirect "/"
+      if session[:mentees_username]
+          redirect "MenteeDashboard"
+      elsif session[:admins_username] 
+          if session[:mentors_username] 
+              redirect "AdminMentorDashboard"
+          else
+              redirect "AdminDashboard"
+          end
+      elsif session[:mentors_username]
+          redirect "MentorDashboard"
+      end
   end
  
   id = params["id"] #new variable to search the id of corresponding mentor profile to be edited
@@ -107,10 +147,30 @@ get "/editAdmin" do
     
   #Checks if the request has come directly from a admin dashboard to stop users from manually changing the link and accessing other users edit pages
   if request.referer.nil?
-      redirect "/"
+      if session[:mentees_username]
+          redirect "MenteeDashboard"
+      elsif session[:admins_username] 
+          if session[:mentors_username] 
+              redirect "AdminMentorDashboard"
+          else
+              redirect "AdminDashboard"
+          end
+      elsif session[:mentors_username]
+          redirect "MentorDashboard"
+      end
   elsif request.referer.include? "/AdminDashboard" or request.referer.include? "/AdminMentorDashboard" 
   else 
-      redirect "/"
+      if session[:mentees_username]
+          redirect "MenteeDashboard"
+      elsif session[:admins_username] 
+          if session[:mentors_username] 
+              redirect "AdminMentorDashboard"
+          else
+              redirect "AdminDashboard"
+          end
+      elsif session[:mentors_username]
+          redirect "MentorDashboard"
+      end
   end
     
   id = params["id"] #new variable to search the id of corresponding admin profile to be edited
