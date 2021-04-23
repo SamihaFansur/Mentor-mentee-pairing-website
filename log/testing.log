@@ -28445,3 +28445,36 @@ I, [2021-04-23T13:02:03.783219 #200]  INFO -- : (0.000160s) SELECT * FROM `admin
 I, [2021-04-23T13:02:06.093466 #200]  INFO -- : (0.000262s) SELECT * FROM `mentees` ORDER BY `username`
 I, [2021-04-23T13:02:07.366904 #200]  INFO -- : (0.000251s) SELECT * FROM `mentees` WHERE `id` = '8'
 I, [2021-04-23T13:02:07.367224 #200]  INFO -- : (0.000170s) SELECT * FROM `mentees` WHERE `id` = '8'
+I, [2021-04-23T15:13:35.306729 #522]  INFO -- : (0.000196s) PRAGMA foreign_keys = 1
+I, [2021-04-23T15:13:35.306833 #522]  INFO -- : (0.000019s) PRAGMA case_sensitive_like = 1
+I, [2021-04-23T15:13:35.307670 #522]  INFO -- : (0.000056s) SELECT sqlite_version()
+I, [2021-04-23T15:13:35.307998 #522]  INFO -- : (0.000160s) PRAGMA table_info('admins')
+I, [2021-04-23T15:13:35.309363 #522]  INFO -- : (0.000155s) PRAGMA table_info('mentees')
+I, [2021-04-23T15:13:35.310880 #522]  INFO -- : (0.000147s) PRAGMA table_info('mentors')
+I, [2021-04-23T15:13:35.312156 #522]  INFO -- : (0.000093s) PRAGMA table_info('requests')
+I, [2021-04-23T15:13:42.625680 #522]  INFO -- : (0.000226s) SELECT * FROM `mentees` WHERE (`username` = 'admin2') LIMIT 1
+I, [2021-04-23T15:13:42.626014 #522]  INFO -- : (0.000129s) SELECT * FROM `mentees` WHERE (`username` = 'admin2') LIMIT 1
+I, [2021-04-23T15:13:42.627643 #522]  INFO -- : (0.001468s) SELECT * FROM `mentors` WHERE (`username` = 'admin2') LIMIT 1
+I, [2021-04-23T15:13:42.627943 #522]  INFO -- : (0.000123s) SELECT * FROM `mentors` WHERE (`username` = 'admin2') LIMIT 1
+I, [2021-04-23T15:13:42.628229 #522]  INFO -- : (0.000133s) SELECT * FROM `admins` WHERE (`username` = 'admin2') LIMIT 1
+I, [2021-04-23T15:13:49.756324 #522]  INFO -- : (0.000241s) SELECT * FROM `mentors` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-23T15:13:49.756626 #522]  INFO -- : (0.000139s) SELECT * FROM `mentors` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-23T15:13:49.853446 #522]  INFO -- : (0.000247s) SELECT * FROM `mentors` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-23T15:13:50.031891 #522]  INFO -- : (0.000049s) BEGIN
+I, [2021-04-23T15:13:50.033363 #522]  INFO -- : (0.000334s) UPDATE `mentors` SET `activationToken` = 1 WHERE (`id` = 1)
+I, [2021-04-23T15:13:50.143562 #522]  INFO -- : (0.110081s) COMMIT
+I, [2021-04-23T15:13:55.212248 #522]  INFO -- : (0.000244s) SELECT * FROM `mentors` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-23T15:14:31.505081 #522]  INFO -- : (0.000178s) SELECT * FROM `mentors` WHERE `id` = '1'
+I, [2021-04-23T15:14:31.505319 #522]  INFO -- : (0.000128s) SELECT * FROM `mentors` WHERE `id` = '1'
+I, [2021-04-23T15:14:34.100358 #522]  INFO -- : (0.000216s) SELECT * FROM `mentors` WHERE `id` = '1'
+I, [2021-04-23T15:14:34.100745 #522]  INFO -- : (0.000153s) SELECT * FROM `mentors` WHERE `id` = '1'
+I, [2021-04-23T15:14:42.093251 #522]  INFO -- : (0.000232s) SELECT * FROM `mentees` WHERE (`username` = 'admin2') LIMIT 1
+I, [2021-04-23T15:14:42.093539 #522]  INFO -- : (0.000129s) SELECT * FROM `mentees` WHERE (`username` = 'admin2') LIMIT 1
+I, [2021-04-23T15:14:42.093858 #522]  INFO -- : (0.000209s) SELECT * FROM `mentors` WHERE (`username` = 'admin2') LIMIT 1
+I, [2021-04-23T15:14:42.094056 #522]  INFO -- : (0.000109s) SELECT * FROM `mentors` WHERE (`username` = 'admin2') LIMIT 1
+I, [2021-04-23T15:14:42.094347 #522]  INFO -- : (0.000133s) SELECT * FROM `admins` WHERE (`username` = 'admin2') LIMIT 1
+I, [2021-04-23T15:14:45.839197 #522]  INFO -- : (0.000186s) SELECT * FROM `mentors` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-23T15:14:45.839445 #522]  INFO -- : (0.000108s) SELECT * FROM `mentors` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-23T15:14:45.939786 #522]  INFO -- : (0.000218s) SELECT * FROM `mentors` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-04-23T15:14:46.927270 #522]  INFO -- : (0.000220s) SELECT * FROM `mentors` WHERE `id` = '1'
+I, [2021-04-23T15:14:46.927622 #522]  INFO -- : (0.000227s) SELECT * FROM `mentors` WHERE `id` = '1'

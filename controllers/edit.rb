@@ -56,7 +56,7 @@ get "/editMentor" do
   #Checks if the request has come directly from a mentor dashboard to stop users from manually changing the link and accessing other users edit pages
   if request.referer.nil?
       redirect "/"
-  elsif request.referer.include? "/MentorDashboard" or request.referer.include? "searchForAMentor"
+  elsif request.referer.include? "/MentorDashboard" or request.referer.include? "searchForAMentor" or request.referer.include? "/AdminMentorDashboard" 
   else 
       redirect "/"
   end
@@ -108,7 +108,7 @@ get "/editAdmin" do
   #Checks if the request has come directly from a admin dashboard to stop users from manually changing the link and accessing other users edit pages
   if request.referer.nil?
       redirect "/"
-  elsif request.referer.include? "/AdminDashboard" 
+  elsif request.referer.include? "/AdminDashboard" or request.referer.include? "/AdminMentorDashboard" 
   else 
       redirect "/"
   end
