@@ -101,22 +101,22 @@ end
 
 
 get "/MentorSchedule" do
-  @header = erb:"common/headerB"
+  @header = erb:"common/header_mentorA"
   erb :mentor_schedule
 end
 
 post "/MentorSchedule" do
-  @header = erb:"common/headerB"
+  @header = erb:"common/header_mentorA"
   erb :mentor_schedule
 end
 
 
 get "/MenteeSchedule" do
-  @header = erb:"common/headerB"
+ @header = erb:"common/header_menteeA"
   erb :mentee_schedule
 end
 
 post "/MenteeSchedule" do
-  @header = erb:"common/headerB"
+ @header = erb:"common/header_mentorA"
   erb :mentee_schedule
 end

@@ -20,6 +20,19 @@ get "/sentMentorApplications" do
   erb :sent_mentor_applications
 end
 
+
+post "/match" do    
+  #When mentor accepts mentee request, mentorMatch field updated to value of mentor ID in the mentees table
+  Mentee.where(id: params[:menteeID]).update(:mentorMatch => $mentors.id)
+  
+  #When mentor accepts mentee request, menteeMatch field updated to value of mentee ID in the mentors table
+  Mentor.where(id: $mentors.id).update(:menteeMatch => params[:menteeID])
+  
+  #Deletes the all requests a mentor has from the table after mentor accepts a mentee request
+  Request.where(mentorID: $mentors.id).delete
+  redirect "/MentorDashboard"
+end
+
 #Mentee accepts mentor
 post "/matchWithMentor" do
   #When mentee accepts application, sets mentorAccept to the id of the mentor they are accepting
@@ -238,17 +251,7 @@ get "/myMentee" do
   erb :myMentee
 end
 
-get "/myMenteeA" do
-  #List to store the mentee matched to a mentor
- @menteeMatchedList = []
-  #Finds the ID of the mentee that is equal to the value stored in the menteeMatch column in the mentors table
-  MenteeIDList = Mentee.where(id: $mentors.menteeMatch)
-  MenteeIDList.each do |id|
-    @menteeMatchedList.push(Mentee.first(id: id.id)) #Stores the mentor record found in the list to be displayed
-  end
-  
-  erb :myMenteeA
-end
+
 
 #Route for the admin to view pending mentee applications
 get "/PendingMenteeApplications" do
