@@ -91,7 +91,7 @@ end
 
 
 
-###############################MENTOR######################################
+###############################TIMAABLE######################################
 get "/editMentorA" do
   id = params["id"] #new variable to search the id of corresponding mentor profile to be edited
   
@@ -135,7 +135,47 @@ post "/editMentorA" do
 end
 
 
+get "/editMenteeA" do
+  id = $mentees.id #new variable to search the id of corresponding mentee profile to be edited
+  
+  #If error displayed in the post editMentee route next line called
+  @error = true if params.fetch("error", "") == "1"
+  
+  #If id requested exists then calls the edit mentee form
+  @mentees = Mentee[id] if Mentee.id_exists?(id)
+  if session[:mentees_username] 
+    erb :mentee_task
+  elsif session[:admins_username] 
+    erb :mentee_task
+  end
+end
 
+post "/editMenteeA" do
+  id = params["id"] #variable to search the id of corresponding mentee profile being edited
+  
+  #If mentee id exists and field values are valid then saves changes and redirects to mentee dashboard
+  if Mentee.id_exists?(id)
+    @mentees = Mentee[id]
+    old_email = @mentees.email #original email
+    @mentees.loadEdit(params) #potentially new params
+    mentee_check = Mentee.new #New instance of Mentee
+    mentee_check.email = params[:email] #New mentee is given a potentially new email
+
+    #Checks if the potentially new email already exists and checks if original email and the potentially new email are the same or not
+    #If potentially new email exists and there is a new email entered show an error
+    if mentee_check.exist_signup? && old_email != mentee_check.email
+      redirect "/editMentee?id=#{id}&error=1"
+    else
+      @mentees.save_changes
+      if session[:mentees_username] 
+        redirect "/MenteeDashboard"
+      elsif session[:admins_username] 
+        redirect "/searchForAMentee"
+      end
+    end
+  end
+
+end
 
 
 

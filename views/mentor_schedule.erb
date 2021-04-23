@@ -5,26 +5,24 @@
           
 
           
-          
-          
         <h2> 
             <button type="submit">Previous Week</button>       
                   My timeable
             <button type="submit">Next Week</button><br> 
-            <p><a href="/time">Today's Date:</a> <%= @last_visited %></h2>
-          
+            <p><a href="/timeAgain">Today's Date:</a><%= @last_visited %></h2>
+
         
               <table class="display_table">
                 <tr id="TableHeadings">
                   <th></th>
-                  <th>Monday：</th>
+                  <th>Monday:</th>
                   <th>Tuesday:</th>
                   <th>Wendesday:</th>
                   <th>Thursday:</th>
-                  <th>Friday:<%= @last_visited %></th>  
+                  <th>Friday:</th>  
                 </tr>
               
-                <tr>
+               <tr>
                   <th>Morning</th>
                 <td>
                  <button type="submit"><a href="/editMentorA?id=<%= h $mentors.id %>">Edit </a></button>    
