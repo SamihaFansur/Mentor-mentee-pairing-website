@@ -7,7 +7,8 @@ describe "the delete page" do
     fill_in "username", with: "123"
     fill_in "password", with: "123"
     click_button "Submit"
-    visit "/editMentee?id=1"
+    visit"/MenteeDashboard"
+    click_link "Edit Profile"
     click_button "Delete" 
     expect(page).to have_content "one-to-one mentoring program"
     clear_database
@@ -19,7 +20,8 @@ describe "the delete page" do
     fill_in "username", with: "1234"
     fill_in "password", with: "1234"
     click_button "Submit"
-    visit "/editMentor?id=1"
+    visit"/MentorDashboard"
+    click_link "Edit Profile"
     click_button "Delete"
     expect(page).to have_content "one-to-one mentoring program"
     clear_database
