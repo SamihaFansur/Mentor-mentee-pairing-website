@@ -98,3 +98,25 @@ post "/AdminHelp" do
   @header = erb:"common/headerB"
   erb :admin_help
 end
+
+
+get "/MentorSchedule" do
+  @header = erb:"common/headerB"
+  erb :mentor_schedule
+end
+
+post "/MentorSchedule" do
+  @header = erb:"common/headerB"
+  erb :mentor_schedule
+end
+
+
+get "/MenteeSchedule" do
+  @header = erb:"common/headerB"
+  erb :mentee_schedule
+end
+
+post "/MenteeSchedule" do
+  @header = erb:"common/headerB"
+  erb :mentee_schedule
+end

@@ -84,6 +84,68 @@ post "/editMentor" do
 
 end
 
+
+
+
+
+
+
+
+###############################MENTOR######################################
+get "/editMentorA" do
+  id = params["id"] #new variable to search the id of corresponding mentor profile to be edited
+  
+  #If error displayed in the post editMentor route next line called
+  @error = true if params.fetch("error", "") == "1"
+  
+  #If id requested exists then calls the edit mentor form
+  @mentors = Mentor[id] if Mentor.id_exists?(id)
+  if session[:admins_username] 
+    erb :mentor_task
+  elsif session[:mentors_username] 
+    erb :mentor_task
+  end
+end
+
+post "/editMentorA" do
+  id = params["id"] #variable to search the id of corresponding mentor profile being edited
+  
+  #If mentor id exists and field values are valid then saves changes and redirects to mentor dashboard
+  if Mentor.id_exists?(id)
+    @mentors = Mentor[id]
+    old_email = @mentors.email #original email
+    @mentors.loadEdit(params) #potentially new params
+    mentor_check = Mentor.new #New instance of Mentor
+    mentor_check.email = params[:email] #New mentor is given a potentially new email
+
+    #Checks if the potentially new email already exists and checks if original email and the potentially new email are the same or not
+    #If potentially new email exists and there is a new email entered show an error
+    if mentor_check.exist_signup? && old_email != mentor_check.email
+      redirect "/editMentorA?id=#{id}&error=1"
+    else
+      @mentors.save_changes
+      if session[:admins_username] 
+        redirect "/searchForAMentor"
+      elsif session[:mentors_username] 
+        redirect "/MentorDashboard"
+      end
+    end
+  end
+
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
 ###############################ADMIN######################################
 get "/editAdmin" do
   id = params["id"] #new variable to search the id of corresponding admin profile to be edited

@@ -1,0 +1,55 @@
+<%= erb :"common/header_mentorS" %>
+<div class="background" id="statement">
+  
+      <div class="full">
+          
+
+          
+        <h2> 
+            <button type="submit">Previous Week</button>       
+                  My timeable
+            <button type="submit">Next Week</button><br> 
+            <p><a href="/timeAgain">Today's Date:</a><%= @last_visited %></h2>
+
+        
+              <table class="display_table">
+                <tr id="TableHeadings">
+                  <th></th>
+                  <th>Monday:</th>
+                  <th>Tuesday:</th>
+                  <th>Wendesday:</th>
+                  <th>Thursday:</th>
+                  <th>Friday:<%= @last_visited %></th>  
+                </tr>
+              
+                <tr>
+                  <th>Morning</th>
+                 <td>
+                  <form method="post" action="suspendMentee">
+                    <input type="hidden" name="menteeID" value="<%= mentee.id %>">
+                    <button type="submit">Suspend</button>
+                  </form>
+                </td>
+                 </tr>
+                  
+                 <tr>
+                   <td>
+                  <form method="post" action="suspendMentee">
+                    <input type="hidden" name="menteeID" value="<%= mentee.id %>">
+                    <button type="submit">Suspend</button>
+                  </form>
+                </td>
+                  
+                 </tr>
+             </table>
+     
+                  
+                   
+ 
+                
+     </div>
+   </div>
+  
+
+
+<%= erb :"common/footer" %>
