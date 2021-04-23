@@ -1,5 +1,15 @@
 #Mentor uses this route to accept 1 mentee application
 get "/menteeApplications" do
+  @header = nil
+  
+  if session[:admins_username]
+    if session[:mentors_username]
+      @header = erb:"common/header_adminMentorA"
+    end
+  elsif session[:mentors_username] 
+    @header = erb:"common/header_mentorA"
+  end
+  
   @menteeIDList = [] #List to store mentee
   IDList = Request.where(mentorID: $mentors.id).order(:timeApplicationSent).reverse #Finds the request where it finds the specified mentor ID with most recent on top
   IDList.each do |id|
