@@ -1,31 +1,30 @@
-###############################MENTEE######################################
 get "/editMentee" do
     
   #Checks if the request has come directly from a mentee or admin dashboard to stop users from manually changing the link and accessing other users edit pages
   if request.referer.nil?
       if session[:mentees_username]
-          redirect "MenteeDashboard"
+          redirect "/MenteeDashboard"
       elsif session[:admins_username] 
           if session[:mentors_username] 
-              redirect "AdminMentorDashboard"
+              redirect "/AdminMentorDashboard"
           else
-              redirect "AdminDashboard"
+              redirect "/AdminDashboard"
           end
       elsif session[:mentors_username]
-          redirect "MentorDashboard"
+          redirect "/MentorDashboard"
       end
   elsif request.referer.include? "/MenteeDashboard" or request.referer.include? "searchForAMentee"
   else 
      if session[:mentees_username]
-          redirect "MenteeDashboard"
+          redirect "/MenteeDashboard"
       elsif session[:admins_username] 
           if session[:mentors_username] 
-              redirect "AdminMentorDashboard"
+              redirect "/AdminMentorDashboard"
           else
-              redirect "AdminDashboard"
+              redirect "/AdminDashboard"
           end
       elsif session[:mentors_username]
-          redirect "MentorDashboard"
+          redirect "/MentorDashboard"
       end
   end
       
@@ -70,34 +69,33 @@ post "/editMentee" do
 
 end
 
-###############################MENTOR######################################
 get "/editMentor" do
     
   #Checks if the request has come directly from a mentor dashboard to stop users from manually changing the link and accessing other users edit pages
   if request.referer.nil?
       if session[:mentees_username]
-          redirect "MenteeDashboard"
+          redirect "/MenteeDashboard"
       elsif session[:admins_username] 
           if session[:mentors_username] 
-              redirect "AdminMentorDashboard"
+              redirect "/AdminMentorDashboard"
           else
-              redirect "AdminDashboard"
+              redirect "/AdminDashboard"
           end
       elsif session[:mentors_username]
-          redirect "MentorDashboard"
+          redirect "/MentorDashboard"
       end
   elsif request.referer.include? "/MentorDashboard" or request.referer.include? "searchForAMentor" or request.referer.include? "/AdminMentorDashboard" 
   else 
       if session[:mentees_username]
-          redirect "MenteeDashboard"
+          redirect "/MenteeDashboard"
       elsif session[:admins_username] 
           if session[:mentors_username] 
-              redirect "AdminMentorDashboard"
+              redirect "/AdminMentorDashboard"
           else
-              redirect "AdminDashboard"
+              redirect "/AdminDashboard"
           end
       elsif session[:mentors_username]
-          redirect "MentorDashboard"
+          redirect "/MentorDashboard"
       end
   end
  
@@ -132,8 +130,12 @@ post "/editMentor" do
       redirect "/editMentor?id=#{id}&error=1"
     else
       @mentors.save_changes
-      if session[:admins_username] 
-        redirect "/searchForAMentor"
+      if session[:admins_username]
+        if session[:mentors_username] 
+          redirect "/AdminMentorDashboard"
+        else
+          redirect "/searchForAMentor"
+        end
       elsif session[:mentors_username] 
         redirect "/MentorDashboard"
       end
@@ -142,42 +144,32 @@ post "/editMentor" do
 
 end
 
-
-
-
-
-
-
-
-
-###############################ADMIN######################################
-get "/editAdmin" do
-    
+get "/editAdmin" do    
   #Checks if the request has come directly from a admin dashboard to stop users from manually changing the link and accessing other users edit pages
   if request.referer.nil?
       if session[:mentees_username]
-          redirect "MenteeDashboard"
+          redirect "/MenteeDashboard"
       elsif session[:admins_username] 
           if session[:mentors_username] 
-              redirect "AdminMentorDashboard"
+              redirect "/AdminMentorDashboard"
           else
-              redirect "AdminDashboard"
+              redirect "/AdminDashboard"
           end
       elsif session[:mentors_username]
-          redirect "MentorDashboard"
+          redirect "/MentorDashboard"
       end
   elsif request.referer.include? "/AdminDashboard" or request.referer.include? "/AdminMentorDashboard" 
   else 
       if session[:mentees_username]
-          redirect "MenteeDashboard"
+          redirect "/MenteeDashboard"
       elsif session[:admins_username] 
           if session[:mentors_username] 
-              redirect "AdminMentorDashboard"
+              redirect "/AdminMentorDashboard"
           else
-              redirect "AdminDashboard"
+              redirect "/AdminDashboard"
           end
       elsif session[:mentors_username]
-          redirect "MentorDashboard"
+          redirect "/MentorDashboard"
       end
   end
     
