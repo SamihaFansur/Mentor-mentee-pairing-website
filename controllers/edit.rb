@@ -75,6 +75,8 @@ get "/editMentor" do
   if session[:admins_username]
     if session[:mentors_username]
       @header = erb:"common/header_adminMentorA"
+    else
+      @header = erb:"common/header_adminA"
     end
   elsif session[:mentors_username] 
     @header = erb:"common/header_mentorA"
