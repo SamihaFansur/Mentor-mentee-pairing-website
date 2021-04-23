@@ -87,6 +87,8 @@ end
 
 ##################################SEARCH FOR A MENTOR IN A LIST OF ALL MENTORS###############################################
 get "/searchForAMentor" do
+  @header = nil
+  
   if session[:admins_username]
     if session[:mentors_username]
       @header = erb:"common/header_adminMentorA"
@@ -117,6 +119,16 @@ end
 
 ##################################SEARCH FOR A MENTEE IN A LIST OF ALL MENTEES#####################################################
 get "/searchForAMentee" do
+   @header = nil
+  
+  if session[:admins_username]
+    if session[:mentors_username]
+      @header = erb:"common/header_adminMentorA"
+    else
+      @header = erb:"common/header_adminA"
+    end
+  end
+  
   #New variable to enable mentees to search for mentors based on course name
   @userName_search = params.fetch("userName_search", "").strip
   
