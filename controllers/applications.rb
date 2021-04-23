@@ -170,8 +170,15 @@ post "/matchWithMentee" do
       "You have successfully accepted"+mentee.fname+" "+mentee.lname+"'s application to be your mentee.\n"+
       "\n\n\nRegards\nTeam 6")
   end
-    
-  redirect "/MentorDashboard"
+  
+  if session[:admins_username]
+    if session[:mentors_username]
+      redirect "/AdminMentorDashboard"
+    end
+  elsif session[:mentors_username]
+    redirect "/MentorDashboard"
+  end
+  
 end
 
 #Mentor rejects a mentee application
