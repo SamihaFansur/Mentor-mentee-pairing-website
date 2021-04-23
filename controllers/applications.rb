@@ -257,6 +257,16 @@ get "/myMentor" do
 end
 
 get "/myMentee" do
+   @header = nil
+  
+  if session[:admins_username]
+    if session[:mentors_username]
+      @header = erb:"common/header_adminMentorA"
+    end
+  elsif session[:mentors_username] 
+    @header = erb:"common/header_mentorA"
+  end
+  
   #List to store the mentee matched to a mentor
  @menteeMatchedList = []
   #Finds the ID of the mentee that is equal to the value stored in the menteeMatch column in the mentors table
