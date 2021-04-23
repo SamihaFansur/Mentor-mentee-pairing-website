@@ -70,7 +70,16 @@ post "/editMentee" do
 end
 
 get "/editMentor" do
-    
+  @header = nil
+  
+  if session[:admins_username]
+    if session[:mentors_username]
+      @header = erb:"common/header_adminMentorA"
+    end
+  elsif session[:mentors_username] 
+    @header = erb:"common/header_mentorA"
+  end
+  
   #Checks if the request has come directly from a mentor dashboard to stop users from manually changing the link and accessing other users edit pages
   if request.referer.nil?
       if session[:mentees_username]
@@ -107,7 +116,11 @@ get "/editMentor" do
   #If id requested exists then calls the edit mentor form
   @mentors = Mentor[id] if Mentor.id_exists?(id)
   if session[:admins_username] 
-    erb :admin_mentor_edit_info
+    if session[:mentors_username]
+      erb :mentor_edit_info
+    else
+      erb :admin_mentor_edit_info
+    end
   elsif session[:mentors_username] 
     erb :mentor_edit_info
   end
