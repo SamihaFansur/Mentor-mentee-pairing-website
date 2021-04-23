@@ -1,6 +1,35 @@
 ###############################MENTEE######################################
 get "/editMentee" do
-  id = $mentees.id #new variable to search the id of corresponding mentee profile to be edited
+    
+  #Checks if the request has come directly from a mentee or admin dashboard to stop users from manually changing the link and accessing other users edit pages
+  if request.referer.nil?
+      if session[:mentees_username]
+          redirect "MenteeDashboard"
+      elsif session[:admins_username] 
+          if session[:mentors_username] 
+              redirect "AdminMentorDashboard"
+          else
+              redirect "AdminDashboard"
+          end
+      elsif session[:mentors_username]
+          redirect "MentorDashboard"
+      end
+  elsif request.referer.include? "/MenteeDashboard" or request.referer.include? "searchForAMentee"
+  else 
+     if session[:mentees_username]
+          redirect "MenteeDashboard"
+      elsif session[:admins_username] 
+          if session[:mentors_username] 
+              redirect "AdminMentorDashboard"
+          else
+              redirect "AdminDashboard"
+          end
+      elsif session[:mentors_username]
+          redirect "MentorDashboard"
+      end
+  end
+      
+  id = params["id"] #new variable to search the id of corresponding mentee profile to be edited ######
   
   #If error displayed in the post editMentee route next line called
   @error = true if params.fetch("error", "") == "1"
@@ -15,7 +44,7 @@ get "/editMentee" do
 end
 
 post "/editMentee" do
-  id = params["id"] #variable to search the id of corresponding mentee profile being edited
+  id = params["id"] #variable to search the id of corresponding mentee profile being edited ######
   
   #If mentee id exists and field values are valid then saves changes and redirects to mentee dashboard
   if Mentee.id_exists?(id)
@@ -43,6 +72,35 @@ end
 
 ###############################MENTOR######################################
 get "/editMentor" do
+    
+  #Checks if the request has come directly from a mentor dashboard to stop users from manually changing the link and accessing other users edit pages
+  if request.referer.nil?
+      if session[:mentees_username]
+          redirect "MenteeDashboard"
+      elsif session[:admins_username] 
+          if session[:mentors_username] 
+              redirect "AdminMentorDashboard"
+          else
+              redirect "AdminDashboard"
+          end
+      elsif session[:mentors_username]
+          redirect "MentorDashboard"
+      end
+  elsif request.referer.include? "/MentorDashboard" or request.referer.include? "searchForAMentor" or request.referer.include? "/AdminMentorDashboard" 
+  else 
+      if session[:mentees_username]
+          redirect "MenteeDashboard"
+      elsif session[:admins_username] 
+          if session[:mentors_username] 
+              redirect "AdminMentorDashboard"
+          else
+              redirect "AdminDashboard"
+          end
+      elsif session[:mentors_username]
+          redirect "MentorDashboard"
+      end
+  end
+ 
   id = params["id"] #new variable to search the id of corresponding mentor profile to be edited
   
   #If error displayed in the post editMentor route next line called
@@ -188,6 +246,35 @@ end
 
 ###############################ADMIN######################################
 get "/editAdmin" do
+    
+  #Checks if the request has come directly from a admin dashboard to stop users from manually changing the link and accessing other users edit pages
+  if request.referer.nil?
+      if session[:mentees_username]
+          redirect "MenteeDashboard"
+      elsif session[:admins_username] 
+          if session[:mentors_username] 
+              redirect "AdminMentorDashboard"
+          else
+              redirect "AdminDashboard"
+          end
+      elsif session[:mentors_username]
+          redirect "MentorDashboard"
+      end
+  elsif request.referer.include? "/AdminDashboard" or request.referer.include? "/AdminMentorDashboard" 
+  else 
+      if session[:mentees_username]
+          redirect "MenteeDashboard"
+      elsif session[:admins_username] 
+          if session[:mentors_username] 
+              redirect "AdminMentorDashboard"
+          else
+              redirect "AdminDashboard"
+          end
+      elsif session[:mentors_username]
+          redirect "MentorDashboard"
+      end
+  end
+    
   id = params["id"] #new variable to search the id of corresponding admin profile to be edited
   
   #If error displayed in the post editAdmin route next line called

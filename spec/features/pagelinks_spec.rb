@@ -180,7 +180,7 @@ it "is accessible from the SignUpChoices page" do
         fill_in "username", with: "1234"
         fill_in "password", with: "1234"
         click_button "Submit"
-        visit"/MentorDashboard"
+        click_link "Dashboard" 
         click_link "Logout"
         expect(page).to have_content "Logged out"
     end
