@@ -162,7 +162,7 @@ describe "the admin edit page" do
     click_link "Edit Profile"
     click_button "Submit"
     visit "/AdminDashboard"
-    expect(page).to have_content "ad3245fg"
+    expect(page).to have_content "admin2"
     clear_database
   end
 #checks that mentor edit is submitted and displayed
