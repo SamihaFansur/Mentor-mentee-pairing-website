@@ -29,7 +29,7 @@ def add_test_user
   visit "/MenteeSignUpForm"
   fill_in "fname", with: "George"
   fill_in "lname", with: "Test"
-  fill_in "email", with: "samiha.fansur.2002@gmail.com"
+  fill_in "email", with: "arb20eg@sheffield.ac.uk"
   fill_in "phoneNum", with: "+44 7721851137"
   fill_in "username", with: "123"
   fill_in "password", with: "123"
@@ -48,7 +48,7 @@ def add_test_mentor
   visit "/MentorSignUpForm"
   fill_in "fname", with: "Sam"
   fill_in "lname", with: "Mentor"
-  fill_in "email", with: "samiha.fansur.2002@gmail.com"
+  fill_in "email", with: "arb21eg@sheffield.ac.uk"
   fill_in "phoneNum", with: "+44 7721851137"
   fill_in "username", with: "1234"
   fill_in "password", with: "1234"
@@ -69,6 +69,7 @@ end
 def clear_database
   DB.from("mentees").delete
   DB.from("mentors").delete
+  DB.from("requests").delete
 end
 
 # ensure we're always starting from a clean database
