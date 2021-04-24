@@ -664,7 +664,7 @@ it "is accessible from the MentorDashboard page" do
         click_button "Submit"
         visit"/AdminMentorDashboard"
         click_link "Edit Profile"
-        expect(page).to have_content "Edit mentor information"
+        expect(page).to have_content "Edit your information"
         clear_database   
     end 
     
