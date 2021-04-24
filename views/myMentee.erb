@@ -16,6 +16,9 @@
                 <p><b>Faculty: </b> <i><%= h mentee.faculty %></i> </p>
                 <p><b>Course Year: </b> <i><%= h mentee.cyear %></i> </p>
                 <p><b>Description: </b> <i><%= h mentee.description %></i> </p>
+                <form method="get" action="reportMenteeForm">
+                    <input type="submit" value="Report Mentee" />
+                </form>
               <% end %>
             <% else %>
               <p id="SearchError">You do not have a mentee yet!</p>

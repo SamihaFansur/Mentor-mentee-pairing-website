@@ -51,6 +51,11 @@ get "/MentorDashboard" do
     $mentors.menteeAccept = 0
   end
   
+  #Initializing reportMentee field in mentors table
+  if $mentors.reportMentee == nil
+    $mentors.reportMentee = 0
+  end
+  
   $mentors.save_changes
   
   erb :mentor_dashboard

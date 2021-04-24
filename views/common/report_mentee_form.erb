@@ -1,0 +1,35 @@
+<!--Form called when a mentor wants to report their mentee-->
+<div class="col">
+   <p>
+    <label for="caption" class="caption">Reason of report: </label> <!--Dropdown list-->
+    <select name="caption" id="caption" required value="<%= h @reports.caption %>">
+      <option value="">Select</option>
+      <option value="Uncivil, unneighborly or offensive">Uncivil, unneighborly or offensive</option>
+      <option value="Commercial or spam">Commercial or spam</option>
+      <option value="Irrelevant or annoying">Irrelevant or annoying</option>
+      <option value="Safety issue, fraud or illegal">Safety issue, fraud or illegal</option>
+      <option value="Political Campaigning">Political Campaigning</option>
+      <option value="Public Shaming">Public Shaming</option>
+      <option value="Goes against a Personal Point of View">Goes against a Personal Point of View</option>
+      <option value="Spreading misinformation">Spreading misinformation</option>
+      <option value="Organizing or promoting violence">Organizing or promoting violence</option>
+      <option value="Hate group or contains hate speech">Hate group or contains hate speech</option>
+      <option value="Illegal goods or services">Illegal goods or services</option>
+      <option value="Impersonation">Impersonation</option>
+    </select>
+  </p>
+     
+  <p>
+    <label for="description" class="options">Description: </label>
+  </p>
+
+  <p>
+    <textarea name="description" id="description" placeholder="Enter a description..." rows="10" cols="48" required value="<%= h @reports.description %>"></textarea>    
+  </p>
+ 
+</div>
+
+  <!--Submit button-->
+<p id="buttons">
+  <input type="submit" id="submit" value="Submit">
+</p>

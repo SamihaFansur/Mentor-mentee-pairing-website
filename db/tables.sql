@@ -32,14 +32,8 @@ CREATE TABLE mentors (
   menteeMatch INTEGER,
   activationToken INTEGER,
   profileStatus TEXT,
+  reportMentee INTEGER,
   suspendMentor INTEGER
-);
-
-CREATE TABLE requests (
-  id INTEGER PRIMARY KEY,
-  timeApplicationSent TEXT,
-  menteeID INTEGER,
-  mentorID INTEGER
 );
 
 CREATE TABLE admins (
@@ -52,4 +46,19 @@ CREATE TABLE admins (
   phoneNum TEXT,
   description TEXT,
   activationToken INTEGER
+);
+
+CREATE TABLE requests (
+  id INTEGER PRIMARY KEY,
+  timeApplicationSent TEXT,
+  menteeID INTEGER,
+  mentorID INTEGER
+);
+
+CREATE TABLE reports (
+  id INTEGER PRIMARY KEY,
+  timeReportSent TEXT,
+  caption TEXT,
+  description TEXT,
+  mentorID INTEGER
 );
