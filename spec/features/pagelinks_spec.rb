@@ -762,7 +762,147 @@ it "is accessible from the MentorDashboard page" do
         clear_database   
     end 
 
+#test buttons and links 
+describe "the page links" do
+    
+   
+    
+ #page links tests from /login  
 
+
+    it "is accessible from the login page" do
+        visit "/"
+        click_link "Login"
+        click_link "Our Program"
+        expect(page).to have_content "one-to-one mentoring program"
+    end
+    
+    
+
+    it "is accessible from the login page" do
+         visit "/"
+        click_link "Login"
+        click_link "Contact Us"
+        expect(page).to have_content "Contact Admin:"
+    end
+    
+
+    it "is accessible from the login page" do
+         visit "/"
+        click_link "Login"
+        click_link "Login"
+        expect(page).to have_content "Don't have an account?"
+    end    
+
+        it "is accessible from the login page" do
+         visit "/"
+        click_link "Login"
+        click_link "Sign-Up"
+        expect(page).to have_content "Mentee"
+        end
+    
+    it "is accessible from the login page" do
+         visit "/"
+        click_link "Login"
+        click_link "Contact"
+        expect(page).to have_content "Contact Admin:"
+    end 
+    
+    it "is accessible from the login page" do   
+         visit "/"
+        click_link "Login"
+        click_link "Accessibility"
+        expect(page).to have_content "Everyone using this website"
+    end 
+
+
+    
+ #page links tests from /contact  
+
+    it "is accessible from the contact page" do
+        visit "/"
+        click_link "Contact Us"
+        click_link "Sign-Up"
+        expect(page).to have_content "Mentee"
+    end
+        
+
+    it "is accessible from the contact page" do
+        visit "/"
+        click_link "Contact Us"
+        click_link "Our Program"
+        expect(page).to have_content "one-to-one mentoring program"
+    end
+    
+    
+
+    it "is accessible from the contact page" do
+        visit "/"
+        click_link "Contact Us"
+        expect(page).to have_content "Contact Admin:"
+    end
+
+    it "is accessible from the contact page" do
+        visit "/"
+        click_link "Contact Us"
+        click_link "Login"
+        expect(page).to have_content "Don't have an account?"
+    end  
+
+it "is accessible from the contact page" do
+        visit "/"
+        click_link "Contact Us"
+        click_link "Contact"
+        expect(page).to have_content "Contact Admin:"
+    end 
+    
+it "is accessible from the contact page" do   
+        visit "/"
+        click_link "Contact Us"
+        click_link "Accessibility"
+        expect(page).to have_content "Everyone using this website"
+    end 
+    
+ #page links tests from /SignUpChoices 
+
+    it "is accessible from the SignUpChoices page" do
+        visit "/"  
+        click_link "Sign-Up"
+        expect(page).to have_content "Mentee"
+    end
+        
+
+    it "is accessible from the SignUpChoices page" do
+        visit "/"  
+        click_link "Sign-Up"
+        click_link "Our Program"
+        expect(page).to have_content "one-to-one mentoring program"
+    end
+    
+    
+
+    it "is accessible from the SignUpChoices page" do
+        visit "/"  
+        click_link "Sign-Up"
+        click_link "Contact Us"
+        expect(page).to have_content "Contact Admin:"
+    end
+       
+     
+it "is accessible from the SignUpChoices page" do
+        visit "/"  
+        click_link "Sign-Up"
+        click_link "Contact"
+        expect(page).to have_content "Contact Admin:"
+    end 
+    
+it "is accessible from the SignUpChoices page" do   
+        visit "/"  
+        click_link "Sign-Up"
+        click_link "Accessibility"
+        expect(page).to have_content "Everyone using this website"
+    end 
+end
 clear_database    
     
 end
