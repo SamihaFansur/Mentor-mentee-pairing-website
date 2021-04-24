@@ -22,14 +22,20 @@
               <h3>Options</h3>
               <p class="search_info"><a href="/menteeApplications">View mentee applications</a></p>
               <p><a href="/editMentor?id=<%= h $mentors.id %>">Edit Profile</a></p>
+            </div>
+            
+            <div class="full" id="searchOptions">
+              <h3>My Mentee</h3>
+              <p class="search_info"><a href="/myMentee" class="link">My Mentee</a></p>
+            </div>
+            
+            <div class="full" id="searchOptions">
+              <h3>Options</h3>    <!--RENAME-->        
               <p class="search_info"><a href="/searchForAMentor" class="link">Mentor List</a></p>   
               <p class="search_info"><a href="/searchForAMentee" class="link">Mentee List</a></p>
+              <p class="search_info"><a href="/PendingMenteeApplications" class="link">Pending Mentee Applications</a></p>
+              <p class="search_info"><a href="/PairedMentees" class="link">Paired Mentees</a></p> 
             </div>
-
-             <div class="full" id="searchOptions">
-                <h3>My Mentee</h3>
-                <p class="search_info"><a href="/myMentee" class="link">My Mentee</a></p>
-              </div>
           </aside>
         </div>
      </div>

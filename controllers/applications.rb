@@ -282,6 +282,16 @@ end
 
 #Route for the admin to view pending mentee applications
 get "/PendingMenteeApplications" do
+ @header = nil
+  
+  if session[:admins_username]
+    if session[:mentors_username]
+      @header = erb:"common/header_adminMentorA"
+    else
+      @header = erb:"common/header_adminA"
+    end
+  end
+  
   @requests = Request.order(:timeApplicationSent).all.reverse #All records in Requests table with most recent on top
   @menteesInfo = []
   @mentorsInfo = []
@@ -299,6 +309,16 @@ end
 
 #Lists all paired mentees, so an admin can search for paired mentees within a faculty
 get "/PairedMentees" do
+ @header = nil
+  
+  if session[:admins_username]
+    if session[:mentors_username]
+      @header = erb:"common/header_adminMentorA"
+    else
+      @header = erb:"common/header_adminA"
+    end
+  end
+  
   #New variable to enable admins to search for mentees based on faculty
   @faculty_search = params.fetch("faculty_search", "").strip
   
