@@ -105,4 +105,5 @@ describe "admin suspend page" do
     expect(page).to have_content "Sam Mentor"
     clear_database
   end 
+        clear_database
 end

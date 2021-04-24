@@ -501,6 +501,10 @@ it "is accessible from the MentorDashboard page" do
  #page links tests from /PendingMenteeApplications
     
      it "is accessible from the AdminDashboard page" do
+        visit "/login"
+        fill_in "username", with: "admin2"
+        fill_in "password", with: "S.F"
+        click_button "Submit"
         visit"/PendingMenteeApplications"
         click_link "Contact Us"
         expect(page).to have_content "Contact Admin:"
@@ -521,6 +525,10 @@ it "is accessible from the MentorDashboard page" do
     end
     
     it "is accessible from the AdminDashboard page" do
+        visit "/login"
+        fill_in "username", with: "admin2"
+        fill_in "password", with: "S.F"
+        click_button "Submit"
         visit"/PendingMenteeApplications"
         click_link "Our Program"
         expect(page).to have_content "one-to-one mentoring program"
@@ -595,6 +603,10 @@ it "is accessible from the MentorDashboard page" do
     end
     
     it "is accessible from the AdminDashboard page" do
+        visit "/login"
+        fill_in "username", with: "admin2"
+        fill_in "password", with: "S.F"
+        click_button "Submit"
         visit"/PairedMentees"
         click_link "Our Program"
         expect(page).to have_content "one-to-one mentoring program"
