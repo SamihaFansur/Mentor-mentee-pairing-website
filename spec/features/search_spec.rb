@@ -39,7 +39,7 @@ describe "the search page" do
       click_button "Submit"
       visit "/MentorDashboard"
       visit "/menteeApplications"
-      expect(page).to have_content "There are no mentee applications"
+      expect(page).to have_content "George"
       
       clear_database
     end   
