@@ -314,6 +314,7 @@ describe "the admin edit page" do
     click_button "Submit"
     clear_database
   end  
+        clear_database
 end   
 
     
