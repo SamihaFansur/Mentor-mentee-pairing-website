@@ -18,13 +18,26 @@
                 <th>Mentor ID</th>
                 <th>Mentor username</th>
                 <th>Report caption</th>
+                <th>View Report</th>
+                <th>Dismiss Report</th>
               </tr>
-            <% (0...@reportsInfo.count).each do |request| %>
+            <% (0...@reportsInfo.count).each do |report| %>
                 
               <tr>
-                <td><%= @reportsInfo[request][0] %></td>
-                <td><%= @reportsInfo[request][1] %></td>
-                <td><%= @reportsInfo[request][2] %></td>
+                <td><%= @reportsInfo[report][0] %></td>
+                <td><%= @reportsInfo[report][1] %></td>
+                <td><%= @reportsInfo[report][2] %></td>
+                <td>
+                  <form method="post" action="addApplication">
+                    <button type="submit">View</button>
+                  </form>
+                </td>
+                <td>
+                  <form method="post" action="dismissReport">
+                    <input type="hidden" name="reportID" value="<%= @reportsInfo[report][3] %>">
+                    <button type="submit" onclick="alert('Report dismissed successfully.')">Dismiss</button>
+                  </form>
+                </td>
               </tr>
             <% end %> 
             </table>

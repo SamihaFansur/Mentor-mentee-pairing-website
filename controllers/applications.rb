@@ -444,22 +444,19 @@ get "/reports" do
   
   @reports.each do |report|
     mentor = Mentor.first(id: report.mentorID)
-    @reportsInfo.push([mentor.id, mentor.username, report.caption]) #Report and Mentor information
+    @reportsInfo.push([mentor.id, mentor.username, report.caption, report.id]) #Report and Mentor information
   end
 
   erb :mentor_reports
   
 end
 
-# get "/reports" do
-#   @mentorReportList = [] #List to store reports
-#   IDList = Report.order(:timeReportSent).reverse #Finds the request where it finds the specified mentor ID with most recent on top
-#   IDList.each do |report|
-#     @mentorReportList.push(report) unless mentee.nil?
-#   end
-  
-#   erb :mentor_reports
-# end
+post "/dismissReport" do     
+  report = Report.where(id: params[:reportID]).delete
+  puts report
+      
+  redirect "/reports"
+end
 
 
 
