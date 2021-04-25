@@ -179,5 +179,50 @@ it "tests for a mentee/mentor match" do
     expect(page).to have_content "Your account is suspended"
     clear_database
   end
+  it "allows suspend of a valid mentor but not twice" do
+    add_test_mentor
+    visit "/login"
+    fill_in "username", with: "1234"
+    fill_in "password", with: "1234"
+    click_button "Submit"
+    add_test_mentor
+    visit "/login"
+    fill_in "username", with: "admin2"
+    fill_in "password", with: "S.F"
+    click_button "Submit"
+    click_link "Yes"
+    fill_in "username", with: "1234"
+    fill_in "password", with: "1234"
+    click_button "Submit"
+    click_link "Mentor List"
+    click_button "Suspend"
+    click_button "Suspend"
+
+    expect(page).to have_content "Account has already been suspended"
+    clear_database
+  end
+it "allows suspend of a valid mentee but not twice" do
+    add_test_user
+    add_test_mentor
+    visit "/login"
+    fill_in "username", with: "1234"
+    fill_in "password", with: "1234"
+    click_button "Submit"
+    add_test_mentor
+    visit "/login"
+    fill_in "username", with: "admin2"
+    fill_in "password", with: "S.F"
+    click_button "Submit"
+    click_link "Yes"
+    fill_in "username", with: "1234"
+    fill_in "password", with: "1234"
+    click_button "Submit"
+    click_link "Mentee List"
+    click_button "Suspend"
+    click_button "Suspend"
+
+    expect(page).to have_content "Account has already been suspended"
+    clear_database
+  end
         clear_database
 end
