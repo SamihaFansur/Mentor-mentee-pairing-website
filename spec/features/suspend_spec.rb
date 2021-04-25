@@ -142,7 +142,7 @@ describe "admin suspend page" do
     expect(page).to have_content "Your account is suspended"
     clear_database
   end
- it "tests for a mentee/mentor match" do
+it "tests for a mentee/mentor match" do
   clear_database
     add_test_mentor
     add_test_user
@@ -165,22 +165,19 @@ describe "admin suspend page" do
     visit "/menteeApplications"
 
     click_button "Accept application"
-   visit "/login"
+    visit "/login"
     fill_in "username", with: "admin2"
     fill_in "password", with: "S.F"
     click_button "Submit"
-    click_link "Yes"
+    click_link "No"
+    click_link "Mentor List"
+    click_button "Suspend"
+    visit "/login"
     fill_in "username", with: "1234"
     fill_in "password", with: "1234"
     click_button "Submit"
-    click_link "Mentee List"
-    click_button "Suspend"
-    visit "/login"
-    fill_in "username", with: "123"
-    fill_in "password", with: "123"
-    click_button "Submit"
     expect(page).to have_content "Your account is suspended"
     clear_database
- end
+  end
         clear_database
 end
