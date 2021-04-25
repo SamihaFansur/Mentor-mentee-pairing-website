@@ -467,5 +467,51 @@ it "shows empty list message when no mentors" do
     clear_database
   end
 
+  it "allows block of a valid mentor" do
+    add_test_mentor
+    visit "/login"
+    fill_in "username", with: "1234"
+    fill_in "password", with: "1234"
+    click_button "Submit"
+    add_test_mentor
+    visit "/login"
+    fill_in "username", with: "admin2"
+    fill_in "password", with: "S.F"
+    click_button "Submit"
+    click_link "Yes"
+    fill_in "username", with: "1234"
+    fill_in "password", with: "1234"
+    click_button "Submit"
+    click_link "Mentor List"
+    click_button "Block"
+    click_button "Block"
+
+    expect(page).to have_content "Account has already been blocked"
+    clear_database
+  end
+it "allows block of a valid mentee" do
+    add_test_user
+    add_test_mentor
+    visit "/login"
+    fill_in "username", with: "1234"
+    fill_in "password", with: "1234"
+    click_button "Submit"
+    add_test_mentor
+    visit "/login"
+    fill_in "username", with: "admin2"
+    fill_in "password", with: "S.F"
+    click_button "Submit"
+    click_link "Yes"
+    fill_in "username", with: "1234"
+    fill_in "password", with: "1234"
+    click_button "Submit"
+    click_link "Mentee List"
+    click_button "Block"
+    click_button "Block"
+
+    expect(page).to have_content "Account has already been blocked"
+    clear_database
+  end
+
         clear_database
 end
