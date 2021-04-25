@@ -391,6 +391,16 @@ end
 # end
 
 get "/reportMenteeForm" do
+  @header = nil
+  
+  if session[:admins_username]
+    if session[:mentors_username]
+      @header = erb:"common/header_adminMentorA"
+    else
+      @header = erb:"common/header_adminA"
+    end
+  end
+  
   @reports = Report.new
   @mentors = Mentor.first(id: params[:mentorID])
   
