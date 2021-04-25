@@ -1,6 +1,3 @@
-require "net/http"
-
-###############################MENTEE######################################
 post "/deleteMentee" do
   id = params["id"]  #new variable to search the id of corresponding mentee to be deleted
   request = Request.where(menteeID: id) #To delete mentor applications corresponding to mentees' id
@@ -12,52 +9,17 @@ post "/deleteMentee" do
   request.delete #removes mentor application from databse
   if session[:mentees_username]  #if mentee deletes their profile themselves
     #Sends mentee email
-    send_mail(mentee.email, 
-        "Sorry to see you go!", 
-        "Hi "+mentee.fname+" "+mentee.lname+"!\n"+
-        "Your mentee account has been successfully deleted.\n"+
-        "\n\n\nRegards\nTeam 6")
-    if mentee.mentorMatch != 0
-      mentor = Mentor.first(id: mentee.mentorMatch)
-      #Sends matched mentor an email
-      send_mail(mentor.email, 
-          "Your mentee has deleted their account!", 
-          "Hi "+mentor.fname+" "+mentor.lname+"!\n"+
-          "Your mentee has deleted their account. You can now accept other mentee requests.\n"+
-          "\n\n\nRegards\nTeam 6")
-      mentor.profileStatus = 0
-      mentor.menteeMatch = 0
-      mentor.save_changes      
-    end
+    delete_account_email(mentee, mentee)
+    mentee_deleted_reset_all_users_fields(mentee, mentee.mentorMatch)
     session.clear
     redirect "/"
   elsif session[:admins_username]  #if admin deletes mentee profile
-    #Sends mentee email
-    send_mail(mentee.email, 
-        "Sorry to see you go!", 
-        "Hi "+mentee.fname+" "+mentee.lname+"!\n"+
-        "Your mentee account has been successfully deleted by an admin.\n"+
-        "If you think there has been a mistake please contact an admin using our contact form."+
-        "\n\n\nRegards\nTeam 6")
-    #If mentee has a matched mentor, sends mentor an email about mentee account deletion, 
-    #sets profile to public, and resets menteeMatch field to 0
-    if mentee.mentorMatch != 0
-      mentor = Mentor.first(id: mentee.mentorMatch)
-      #Sends matched mentor an email
-      send_mail(mentor.email, 
-          "Your mentee has deleted their account!", 
-          "Hi "+mentor.fname+" "+mentor.lname+"!\n"+
-          "Your mentee has deleted their account. You can now accept other mentee requests.\n"+
-          "\n\n\nRegards\nTeam 6")
-      mentor.profileStatus = 0
-      mentor.menteeMatch = 0
-      mentor.save_changes      
-    end
+    admin_delete_account_email(mentee, mentee)
+    mentee_deleted_reset_all_users_fields(mentee, mentee.mentorMatch)
     redirect "searchForAMentee"
   end
 end
 
-###############################MENTOR######################################
 post "/deleteMentor" do
   id = params["id"]  #new variable to search the id of corresponding mentor to be deleted
   request = Request.where(mentorID: id) #To delete mentor applications corresponding to mentors' id
@@ -68,75 +30,81 @@ post "/deleteMentor" do
   mentor.delete
   request.delete #removes mentee application from databse
   if session[:admins_username] #if admin deletes mentor profile
-    send_mail(mentor.email, 
-          "Sorry to see you go!", 
-          "Hi "+mentor.fname+" "+mentor.lname+"!\n"+
-          "Your mentor account has been successfully deleted by an admin.\n"+
-          "If you think there has been a mistake please contact an admin using our contact form."+
-          "\n\n\nRegards\nTeam 6")
-    #If mentor has a matched mentee, sends mentee an email about mentor account deletion, 
-    #sets applicationNumber to 1, and resets mentorMatch field to 0
-    if mentor.menteeMatch != 0
-      mentee = Mentee.first(id: mentor.menteeMatch)
-      #Sends matched mentee an email
-      send_mail(mentee.email, 
-          "Your mentor has deleted their account!", 
-          "Hi "+mentee.fname+" "+mentee.lname+"!\n"+
-          "Your mentor has deleted their account. You can now send other mentor requests.\n"+
-          "\n\n\nRegards\nTeam 6")
-      mentee.applicationNumber = 1
-      mentee.mentorMatch = 0
-      mentee.save_changes      
-    end
+    admin_delete_account_email(mentor, mentor)
+    mentor_deleted_reset_all_users_fields(mentor, mentor.menteeMatch)
     redirect "/searchForAMentor"
   elsif session[:mentors_username] #if mentor deletes their profile themselves
-    send_mail(mentor.email, 
-          "Sorry to see you go!", 
-          "Hi "+mentor.fname+" "+mentor.lname+"!\n"+
-          "Your mentor account has been successfully deleted.\n"+
-          "\n\n\nRegards\nTeam 6")
-    #If mentor has a matched mentee, sends mentee an email about mentor account deletion, 
-    #sets applicationNumber to 1, and resets mentorMatch field to 0
-    if mentor.menteeMatch != 0
-      mentee = Mentee.first(id: mentor.menteeMatch)
-      #Sends matched mentee an email
-      send_mail(mentee.email, 
-          "Your mentor has deleted their account!", 
-          "Hi "+mentee.fname+" "+mentee.lname+"!\n"+
-          "Your mentor has deleted their account. You can now send other mentor requests.\n"+
-          "\n\n\nRegards\nTeam 6")
-      mentee.applicationNumber = 1
-      mentee.mentorMatch = 0
-      mentee.save_changes      
-    end
+    delete_account_email(mentor, mentor)
+    mentor_deleted_reset_all_users_fields(mentor, mentor.menteeMatch)
     session.clear
     redirect "/"
   end
     
 end
 
-###############################ADMIN######################################
 post "/deleteAdmin" do
   id = params["id"]  #new variable to search the id of corresponding admin to be deleted
   
   #If admin deletes own profile then profile deleted, admin sent email, logged out and redirected to index page
   admin = Admin[id]
   admin.delete
-  send_mail(admin.email, 
-        "Sorry to see you go!", 
-        "Hi "+admin.fname+" "+admin.lname+"!\n"+
-        "Your admin account has been successfully deleted.\n"+
-        "\n\n\nRegards\nTeam 6")
+  delete_account_email(admin, admin)
   session.clear
   redirect "/"
   
 end
 
+def delete_account_email(user, type)
+  type = type.to_s
+  send_mail(user.email, 
+        "Sorry to see you go!", 
+        "Hi "+user.fname+" "+user.lname+"!\n"+
+        "Your "+type+" account has been successfully deleted.\n"+
+        "\n\n\nRegards\nTeam 6")
+end
 
-def send_mail(email, subject, body)
-  response = Net::HTTP.post_form(URI("https://www.dcs.shef.ac.uk/cgi-intranet/public/FormMail.php"),
-                                 "recipients" => email,
-                                 "subject" => subject,
-                                 "body" => body)
-  response.is_a? Net::HTTPSuccess
+def admin_delete_account_email(user, type)
+  type = type.to_s
+  send_mail(user.email, 
+          "Sorry to see you go!", 
+          "Hi "+user.fname+" "+user.lname+"!\n"+
+          "Your "+type+" account has been successfully deleted by an admin.\n"+
+          "If you think there has been a mistake please contact an admin using our contact form."+
+          "\n\n\nRegards\nTeam 6")
+end
+
+def matched_user_deleted(userDeleting, matchedUser, action) 
+  send_mail(matchedUser.email, 
+          "Your "+userDeleting+" has deleted their account!", 
+          "Hi "+matchedUser.fname+" "+matchedUser.lname+"!\n"+
+          "Your "+userDeleting+" has deleted their account. You can now "+action+" other "+userDeleting+" requests.\n"+
+          "\n\n\nRegards\nTeam 6")
+end
+
+#If mentee has a matched mentor, sends mentor an email about mentee account deletion, 
+#sets profile to public, and resets menteeMatch field to 0
+def mentee_deleted_reset_all_users_fields(user, matchedUserID)
+  if matchedUserID != 0
+    mentor = Mentor.first(id: matchedUserID)
+    #Sends matched mentor an email
+    matched_user_deleted("mentee", mentor, "accept")
+    mentor.profileStatus = 0
+    mentor.menteeAccept = 0
+    mentor.menteeMatch = 0
+    mentor.save_changes      
+  end
+end
+
+#If mentor has a matched mentee, sends mentee an email about mentor account deletion, 
+#sets applicationNumber to 1, and resets mentorMatch field to 0
+def mentor_deleted_reset_all_users_fields(user, matchedUserID)
+  if matchedUserID != 0
+    mentee = Mentee.first(id: matchedUserID)
+    #Sends matched mentee an email
+    matched_user_deleted("mentor", mentee, "send")
+    mentee.applicationNumber = 1
+    mentee.mentorAccept = 0
+    mentee.mentorMatch = 0
+    mentee.save_changes      
+  end
 end
