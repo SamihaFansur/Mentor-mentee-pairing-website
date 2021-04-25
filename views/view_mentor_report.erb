@@ -1,0 +1,40 @@
+<!-- Admin views the pending mentee applications mentees sent to potential mentors -->
+<%= @header %>
+<div class="background" id="statement">
+  
+      <div class="full">
+        <h2>Report</h2>
+        <div class="user_info" id="application">
+          <!-- Displays all the mentee applications that are pending -->
+            <table class="display_table">
+              <tr id="TableHeadings">
+                <th></th>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Email</th>
+              </tr>
+             <% (0...@reportsInfo.count).each do |report| %>
+              <td><strong>Mentor</strong></td>
+              <td><%= @reportsInfo[report][0] %></td>
+              <td><%= @reportsInfo[report][1] %></td>
+              <td><%= @reportsInfo[report][2] %></td>
+          </table>
+          
+          <table class="display_table">
+              <td><strong>Mentee</strong></td>
+              <td><%= @reportsInfo[report][3] %></td>
+              <td><%= @reportsInfo[report][4] %></td>
+              <td><%= @reportsInfo[report][5] %></td>
+          </table>
+              
+              <h2>Report details:</h2>
+              <p><b>Type of report: </b> <i><%= @reportsInfo[report][6] %></i> </p>
+              <p><b>Description: </b> <i><%= @reportsInfo[report][7] %></i> </p>
+            <% end %>
+         </div>
+        <p class="navigation"><a href="/reports">Go back</a></p>
+     </div>
+  
+</div> 
+
+<%= erb :"common/footer" %>

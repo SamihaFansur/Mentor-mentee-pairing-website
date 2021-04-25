@@ -453,11 +453,33 @@ end
 
 post "/dismissReport" do     
   report = Report.where(id: params[:reportID]).delete
-  puts report
       
   redirect "/reports"
 end
 
+get "/viewReport" do
+  @header = nil
+  
+  if session[:admins_username]
+    if session[:mentors_username]
+      @header = erb:"common/header_adminMentorA"
+    else
+      @header = erb:"common/header_adminA"
+    end
+  end
+  
+  @reports = Report.where(id: params[:reportID])
+  @reportsInfo = []
+  
+  @reports.each do |report|
+    mentor = Mentor.first(id: report.mentorID)
+    mentee = Mentee.first(id: mentor.menteeMatch)
+    
+    @reportsInfo.push([mentor.id, mentor.username, mentor.email, mentee.id, mentee.username, mentee.email, report.caption, report.description]) #Report and Mentor information
+  end
+  
+  erb :view_mentor_report
+end
 
 
 

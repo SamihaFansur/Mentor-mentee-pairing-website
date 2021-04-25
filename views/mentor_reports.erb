@@ -28,7 +28,8 @@
                 <td><%= @reportsInfo[report][1] %></td>
                 <td><%= @reportsInfo[report][2] %></td>
                 <td>
-                  <form method="post" action="addApplication">
+                  <form method="get" action="/viewReport">
+                    <input type="hidden" name="reportID" value="<%= @reportsInfo[report][3] %>">
                     <button type="submit">View</button>
                   </form>
                 </td>
