@@ -17,9 +17,13 @@
                 <p><b>Course Year: </b> <i><%= h mentee.cyear %></i> </p>
                 <p><b>Description: </b> <i><%= h mentee.description %></i> </p>
                 <form method="get" action="reportMenteeForm">
-                    <input type="hidden" name="mentorID" value="<%= $mentors.id %>">
+                  <input type="hidden" name="mentorID" value="<%= $mentors.id %>">
+                  <% if $mentor_report == 1 %> <!--If mentor has reported their mentee within past 48hrs-->
+                    <input type="submit" value="Report Mentee" disabled />
+                  <% else %>
                     <input type="submit" value="Report Mentee" />
-                </form>
+                  <% end %>
+                </form>             
               <% end %>
             <% else %>
               <p id="SearchError">You do not have a mentee yet!</p>

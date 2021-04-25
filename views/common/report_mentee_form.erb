@@ -31,5 +31,6 @@
 
   <!--Submit button-->
 <p id="buttons">
-  <input type="submit" id="submit" value="Submit">
+  <input type="hidden" name="mentorID" value="<%= $mentors.id %>">
+  <input type="submit" id="submit" value="Submit" onclick="alert('Report sent!\nIf you want to report your mentee again, you can do so after 48 hours.')">
 </p>

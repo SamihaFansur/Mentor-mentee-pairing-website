@@ -398,10 +398,31 @@ get "/reportMenteeForm" do
 end
 
 post "/reportMenteeForm" do
+#   @mentees = Mentee.first(id: @mentors.menteeMatch)
+  
   @reports = Report.new
   @reports.load(params)
   @reports.timeReportSent = Time.new
   @reports.save_changes
+  
+  mentor_reporting = Mentor.first(id: params[:mentorID])
+  puts "initially before anth"
+  puts mentor_reporting.reportMentee
+    
+  $mentor_report = mentor_reporting.reportMentee
+  $mentor_report = 1 #already sent
+  
+  mentor_reporting.reportMentee = $mentor_report #so field is updated in the the mentors table
+  mentor_reporting.save_changes
+  
+  Thread.new{
+#             sleep(48*60*60) #Button enabled after 2 days
+            sleep(15) #----------------delete later -S----------------
+            $mentor_report = 0 #resets so mentee can request mentor for a meeting again
+            mentor_reporting.reportMentee = $mentor_report
+            mentor_reporting.save_changes
+      }
+  
   redirect "/myMentee"
   
   erb :report_mentee
