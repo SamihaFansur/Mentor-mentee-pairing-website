@@ -512,6 +512,39 @@ it "allows block of a valid mentee" do
     expect(page).to have_content "Account has already been blocked"
     clear_database
   end
+   it "shows empty list message when no mentors" do
+    add_test_user
+    visit "/login"
+    fill_in "username", with: "admin2"
+    fill_in "password", with: "S.F"
+    click_button "Submit"
+    click_link "No"
+    click_link "Mentee List"
+    click_button "Block"
+    click_button "Unblock"
+    click_button "Unblock"
+    expect(page).to have_content "Account has already been unblocked"
+    clear_database
+  end
+       
+  it "allows editing of a valid mentee" do
+    add_test_mentor
+    visit "/login"
+    fill_in "username", with: "1234"
+    fill_in "password", with: "1234"
+    click_button "Submit"
+    visit "/login"
+    fill_in "username", with: "admin2"
+    fill_in "password", with: "S.F"
+    click_button "Submit"
+    click_link "No"
+    click_link "Mentor List"
+    click_button "Block"
+    click_button "Unblock"
+    click_button "Unblock"
+    expect(page).to have_content "Account has already been unblocked"
+    clear_database
+  end 
 
         clear_database
 end
