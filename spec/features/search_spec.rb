@@ -130,6 +130,33 @@ describe "the search page" do
       expect(page).to have_content "There are no pending applications"
       
       clear_database
+    end 
+       it "checks the mentor has been sent an application" do
+ clear_database
+      add_test_mentor
+      add_test_user
+      visit "/login" 
+      fill_in "username", with: "1234"
+      fill_in "password", with: "1234"
+      click_button "Submit"      
+      visit "/login" 
+      fill_in "username", with: "123"
+      fill_in "password", with: "123"
+      click_button "Submit"
+      visit "/search"
+      fill_in "searchForMentor", with: "Accounting and Financial Management (BA)"
+      click_button "Submit"
+      click_button "Send application" 
+      sleep(31)
+      visit "/login" 
+      fill_in "username", with: "1234"
+      fill_in "password", with: "1234"
+      click_button "Submit"
+      visit "/MentorDashboard"
+      visit "/menteeApplications"
+      expect(page).to have_content "Application"
+      
+      clear_database
     end   
   clear_database       
       
