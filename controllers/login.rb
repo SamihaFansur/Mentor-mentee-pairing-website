@@ -225,12 +225,3 @@ post '/loginAgain' do
   erb :loginAgain
 
 end
-
-get "/logout" do
-  session.clear #Clears session when user logs out
-  erb :logout
-end
-
-get "/AdminLoginChoices" do
-  erb :adminLogin_choices
-end

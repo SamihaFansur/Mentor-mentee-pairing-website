@@ -65,6 +65,15 @@ post "/MenteeSchedule" do
   erb :mentee_schedule
 end
 
+get "/logout" do
+  session.clear #Clears session when user logs out
+  erb :logout
+end
+
+get "/AdminLoginChoices" do
+  erb :adminLogin_choices
+end
+
 def headers_common_pages
   #If user already logged in then displays a header for profiles which are logged 
   #in else displays headers for non-logged in users
