@@ -1,7 +1,5 @@
 require "net/http"
 
-###############################MENTEE######################################
-
 get "/MenteeSignUpForm" do
   @mentees = Mentee.new
   erb :mentee_signup
@@ -9,39 +7,10 @@ end
 
 post "/MenteeSignUpForm" do
   @mentees = Mentee.new
-  @mentees.load(params)
-  @error = nil
-
-  if @mentees.valid?
-      if @mentees.exist_signup?
-        @error = "Username/email exists"
-      else
-        @mentees.save_changes
-        #Sends an email to mentee that the sign up was successful
-        send_mail(@mentees.email, 
-          "Successful Sign up!", 
-          "Hi "+@mentees.fname+" "+@mentees.lname+"!\n"+
-          "Your username is: "+@mentees.username+"\n"+
-          "You password: "+ @mentees.password+"\n"+
-          "Your email: "+@mentees.email+"\n"+
-          "Please use these credentials to login into your mentee account \n"+
-          "\n\n\nRegards\nTeam 6")
-        redirect "/login"
-      end
-  end
+  sign_up(@mentees)
+  
   erb :mentee_signup
 end
-
-
-def send_mail(email, subject, body)
-  response = Net::HTTP.post_form(URI("https://www.dcs.shef.ac.uk/cgi-intranet/public/FormMail.php"),
-                                 "recipients" => email,
-                                 "subject" => subject,
-                                 "body" => body)
-  response.is_a? Net::HTTPSuccess
-end
-
-###############################MENTOR######################################
 
 get "/MentorSignUpForm" do
   @mentors = Mentor.new
@@ -50,26 +19,38 @@ end
 
 post "/MentorSignUpForm" do
   @mentors = Mentor.new
-  @mentors.load(params)
+  sign_up(@mentors)
+  
+  erb :mentor_signup
+end
+
+def sign_up(user)
+  user.load(params)
   @error = nil
 
-  if @mentors.valid?
-      if @mentors.exist_signup?
+  if user.valid?
+      if user.exist_signup?
         @error = "Username/email exists"
       else
-        @mentors.save_changes
+        user.save_changes
         #Sends an email to mentor that the sign up was successful
-        send_mail(@mentors.email, 
+        send_mail(user.email, 
           "Successful Sign up!", 
-          "Hi "+@mentors.fname+" "+@mentors.lname+"!\n"+
-          "Your username is: "+@mentors.username+"\n"+
-          "You password: "+ @mentors.password+"\n"+
-          "Your email: "+@mentors.email+"\n"+
-          "Please use these credentials to login into your mentor account and activate your mentor account \n"+
+          "Hi "+user.fname+" "+user.lname+"!\n"+
+          "Your username is: "+user.username+"\n"+
+          "You password: "+ user.password+"\n"+
+          "Your email: "+user.email+"\n"+
+          "Please use these credentials to login into your account and activate your account \n"+
           "\n\n\nRegards\nTeam 6")
         redirect "/login"
       end
   end
-  erb :mentor_signup
 end
 
+def send_mail(email, subject, body)
+  response = Net::HTTP.post_form(URI("https://www.dcs.shef.ac.uk/cgi-intranet/public/FormMail.php"),
+                                 "recipients" => email,
+                                 "subject" => subject,
+                                 "body" => body)
+  response.is_a? Net::HTTPSuccess
+end
