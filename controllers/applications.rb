@@ -428,8 +428,38 @@ post "/reportMenteeForm" do
   erb :report_mentee
 end
 
+get "/reports" do
+ @header = nil
+  
+  if session[:admins_username]
+    if session[:mentors_username]
+      @header = erb:"common/header_adminMentorA"
+    else
+      @header = erb:"common/header_adminA"
+    end
+  end
+  
+  @reports = Report.order(:timeReportSent).all.reverse #All records in Reports table with most recent on top
+  @reportsInfo = []
+  
+  @reports.each do |report|
+    mentor = Mentor.first(id: report.mentorID)
+    @reportsInfo.push([mentor.id, mentor.username, report.caption]) #Report and Mentor information
+  end
 
+  erb :mentor_reports
+  
+end
 
+# get "/reports" do
+#   @mentorReportList = [] #List to store reports
+#   IDList = Report.order(:timeReportSent).reverse #Finds the request where it finds the specified mentor ID with most recent on top
+#   IDList.each do |report|
+#     @mentorReportList.push(report) unless mentee.nil?
+#   end
+  
+#   erb :mentor_reports
+# end
 
 
 
