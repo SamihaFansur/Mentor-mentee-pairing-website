@@ -391,7 +391,8 @@ end
 # end
 
 get "/reportMenteeForm" do
-   @reports = Report.new
+  @reports = Report.new
+  @mentors = Mentor.first(id: params[:mentorID])
   
   erb :report_mentee
 end

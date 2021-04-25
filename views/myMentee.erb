@@ -17,6 +17,7 @@
                 <p><b>Course Year: </b> <i><%= h mentee.cyear %></i> </p>
                 <p><b>Description: </b> <i><%= h mentee.description %></i> </p>
                 <form method="get" action="reportMenteeForm">
+                    <input type="hidden" name="mentorID" value="<%= $mentors.id %>">
                     <input type="submit" value="Report Mentee" />
                 </form>
               <% end %>
