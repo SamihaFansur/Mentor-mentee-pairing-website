@@ -1147,6 +1147,18 @@ it "is accessible from the SignUpChoices page" do
         click_link "Accessibility"
         expect(page).to have_content "Everyone using this website"
     end 
+it "is accessible from the SignUpChoices page" do   
+        visit "/"  
+        click_link "Sign-Up"
+        click_link "Mentee"
+        expect(page).to have_content "Mentee Sign Up"
+    end 
+it "is accessible from the SignUpChoices page" do   
+        visit "/"  
+        click_link "Sign-Up"
+        click_link "Mentor"
+        expect(page).to have_content "Mentor Sign Up"
+    end 
 end
 clear_database    
     
