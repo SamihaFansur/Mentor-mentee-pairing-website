@@ -76,15 +76,6 @@ post "/addApplication" do
     redirect "/search"
 end
 
-#A method to send customised email, this is used in the /addApplication route
-def send_mail(email, subject, body)
-  response = Net::HTTP.post_form(URI("http://www.dcs.shef.ac.uk/cgi-intranet/public/FormMail.php"),
-                                 "recipients" => email,
-                                 "subject" => subject,
-                                 "body" => body)
-  response.is_a? Net::HTTPSuccess
-end
-
 ##################################SEARCH FOR A MENTOR IN A LIST OF ALL MENTORS###############################################
 get "/searchForAMentor" do
   @header = nil

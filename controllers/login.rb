@@ -101,14 +101,6 @@ get "/AdminMentorDashboard" do
   erb :adminMentor_dashboard
 end
 
-def send_mail(email, subject, body)
-  response = Net::HTTP.post_form(URI("https://www.dcs.shef.ac.uk/cgi-intranet/public/FormMail.php"),
-                                 "recipients" => email,
-                                 "subject" => subject,
-                                 "body" => body)
-  response.is_a? Net::HTTPSuccess
-end
-
 get "/login" do
   #Creates a new instance of a Mentee when user logs in
   @mentees = Mentee.new

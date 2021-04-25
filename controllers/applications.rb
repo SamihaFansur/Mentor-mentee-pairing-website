@@ -370,26 +370,6 @@ post "/requestMentorMeeting" do
   redirect "/myMentor"
 end
 
-# post "/reportMentee" do
-#   mentor_reporting = Mentor.first(id: $mentors.id)
-#   mentee_reporting = Mentee.first(id: mentor_reporting.menteeMatch)
-    
-#   $mentor_report = mentor_reporting.reportMentee
-#   $mentor_report = 1 #already sent
-#   mentor_reporting.reportMentee = $mentor_report #so field is updated in the the mentors table
-#   mentor_reporting.save_changes
-  
-#   Thread.new{
-# #             sleep(48*60*60) #Button enabled after 2 days
-#             sleep(15) #----------------delete later -S----------------
-#             $mentor_req = 0 #resets so mentee can request mentor for a meeting again
-#             mentor_requesting.requestMentorMeeting = $mentee_req
-#             mentee_requesting.save_changes
-#       }
-  
-#   redirect "/myMentor"
-# end
-
 get "/reportMenteeForm" do
   @header = nil
   
@@ -407,9 +387,7 @@ get "/reportMenteeForm" do
   erb :report_mentee
 end
 
-post "/reportMenteeForm" do
-#   @mentees = Mentee.first(id: @mentors.menteeMatch)
-  
+post "/reportMenteeForm" do  
   @reports = Report.new
   @reports.load(params)
   @reports.timeReportSent = Time.new
@@ -490,6 +468,3 @@ get "/viewReport" do
   
   erb :view_mentor_report
 end
-
-
-
