@@ -221,6 +221,7 @@ describe "the admin edit page" do
     click_button "Submit"
     clear_database
   end   
+    
 end
     
  #checks that a admin+mentor can be edited
@@ -294,6 +295,7 @@ describe "the admin edit page" do
     
 #checks that description for adminMentor can be changed
   it "description can be changed for adminMentor" do
+    clear_database
     add_test_mentor
     visit "/login"
     fill_in "username", with: "1234"
@@ -314,6 +316,106 @@ describe "the admin edit page" do
     click_button "Submit"
     clear_database
   end  
+      it "allows editing of a valid mentee" do
+    clear_database
+    add_test_mentor
+    visit "/login"
+    fill_in "username", with: "1234"
+    fill_in "password", with: "1234"
+    click_button "Submit"
+    visit "/login"
+    fill_in "username", with: "admin2"
+    fill_in "password", with: "S.F"
+    click_button "Submit"
+    click_link "No"
+    click_link "Mentor List"
+    click_link "Edit Profile"
+    fill_in "Description:", with: "hello"
+    click_button "Submit"
+    visit "/login"
+    fill_in "username", with: "1234"
+    fill_in "password", with: "1234"
+    click_button "Submit"
+    expect(page).to have_content "hello"
+    clear_database
+  end
+          it "allows editing of a valid mentee" do
+    clear_database
+    add_test_user
+    visit "/login"
+    fill_in "username", with: "123"
+    fill_in "password", with: "123"
+    click_button "Submit"
+    visit "/login"
+    fill_in "username", with: "admin2"
+    fill_in "password", with: "S.F"
+    click_button "Submit"
+    click_link "No"
+    click_link "Mentee List"
+    click_link "Edit Profile"
+    fill_in "Description:", with: "hello"
+    click_button "Submit"
+    visit "/login"
+    fill_in "username", with: "123"
+    fill_in "password", with: "123"
+    click_button "Submit"
+    expect(page).to have_content "hello"
+    clear_database
+  end
+      it "allows editing of a valid mentee" do
+    clear_database
+    add_test_mentor
+    visit "/login"
+    fill_in "username", with: "1234"
+    fill_in "password", with: "1234"
+    click_button "Submit"
+    visit "/login"
+    fill_in "username", with: "admin2"
+    fill_in "password", with: "S.F"
+    click_button "Submit"
+    click_link "Yes"
+    fill_in "username", with: "1234"
+    fill_in "password", with: "1234"
+    click_button "Submit"
+    click_link "Mentor List"
+    click_link "Edit Profile"
+    fill_in "Description:", with: "hello"
+    click_button "Submit"
+    visit "/login"
+    fill_in "username", with: "1234"
+    fill_in "password", with: "1234"
+    click_button "Submit"
+    expect(page).to have_content "hello"
+    clear_database
+  end
+          it "allows editing of a valid mentee" do
+    clear_database
+    add_test_user
+    add_test_mentor
+    visit "/login"
+    fill_in "username", with: "123"
+    fill_in "password", with: "123"
+    click_button "Submit"
+    visit "/login"
+    fill_in "username", with: "admin2"
+    fill_in "password", with: "S.F"
+    click_button "Submit"
+    click_link "Yes"
+    fill_in "username", with: "1234"
+    fill_in "password", with: "1234"
+    click_button "Submit"
+    click_link "Mentee List"
+    click_link "Edit Profile"
+    fill_in "Description:", with: "hello"
+    click_button "Submit"
+    visit "/login"
+    fill_in "username", with: "123"
+    fill_in "password", with: "123"
+    click_button "Submit"
+    expect(page).to have_content "hello"
+    clear_database
+  end
+
         clear_database
 end   
 
