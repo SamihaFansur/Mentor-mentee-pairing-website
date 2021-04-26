@@ -415,7 +415,117 @@ describe "the admin edit page" do
     expect(page).to have_content "hello"
     clear_database
   end
+it "allows editing of a valid mentee" do
+    clear_database
+    add_test_user
+    add_test_mentor
+    visit "/login"
+    fill_in "username", with: "123"
+    fill_in "password", with: "123"
+    click_button "Submit"
+    visit "/editMentee"
+    expect(page).to have_content "Mentee Dashboard"
+    clear_database
+  end
 
+it "allows editing of a valid mentee" do
+    clear_database
+    add_test_user
+    add_test_mentor
+    visit "/login"
+    fill_in "username", with: "1234"
+    fill_in "password", with: "1234"
+    click_button "Submit"
+    visit "/editMentee"
+    expect(page).to have_content "Mentor Dashboard"
+    clear_database
+  end
+it "allows editing of a valid mentee" do
+    clear_database
+    add_test_user
+    add_test_mentor
+    visit "/login"
+    fill_in "username", with: "admin2"
+    fill_in "password", with: "S.F"
+    click_button "Submit"
+    click_link "No"
+    visit "/editMentee"
+    expect(page).to have_content "Admin Dashboard"
+    clear_database
+  end
+it "allows editing of a valid mentee" do
+    clear_database
+    add_test_user
+    add_test_mentor
+    visit "/login"
+    fill_in "username", with: "admin2"
+    fill_in "password", with: "S.F"
+    click_button "Submit"
+    click_link "Yes"
+    fill_in "username", with: "1234"
+    fill_in "password", with: "1234"
+    click_button "Submit"
+    visit "/editMentee"
+    expect(page).to have_content "Admin + Mentor Dashboard"
+    clear_database
+  end
+
+#editMentor
+
+it "allows editing of a valid mentee" do
+    clear_database
+    add_test_user
+    add_test_mentor
+    visit "/login"
+    fill_in "username", with: "123"
+    fill_in "password", with: "123"
+    click_button "Submit"
+    visit "/editMentor"
+    expect(page).to have_content "Mentee Dashboard"
+    clear_database
+  end
+
+it "allows editing of a valid mentee" do
+    clear_database
+    add_test_user
+    add_test_mentor
+    visit "/login"
+    fill_in "username", with: "1234"
+    fill_in "password", with: "1234"
+    click_button "Submit"
+    visit "/editMentor"
+    expect(page).to have_content "Mentor Dashboard"
+    clear_database
+  end
+it "allows editing of a valid mentee" do
+    clear_database
+    add_test_user
+    add_test_mentor
+    visit "/login"
+    fill_in "username", with: "admin2"
+    fill_in "password", with: "S.F"
+    click_button "Submit"
+    click_link "No"
+    visit "/editMentor"
+    expect(page).to have_content "Admin Dashboard"
+    clear_database
+  end
+it "allows editing of a valid mentee" do
+    clear_database
+    add_test_user
+    add_test_mentor
+    visit "/login"
+    fill_in "username", with: "admin2"
+    fill_in "password", with: "S.F"
+    click_button "Submit"
+    click_link "Yes"
+    fill_in "username", with: "1234"
+    fill_in "password", with: "1234"
+    click_button "Submit"
+    visit "/editMentor"
+    expect(page).to have_content "Admin + Mentor Dashboard"
+    clear_database
+  end
         clear_database
 end   
 
