@@ -278,6 +278,30 @@ get "/myMentee" do
   erb :myMentee
 end
 
+get "/myMenteeSchedule" do
+  #List to store the mentee matched to a mentor
+ @menteeMatchedList = []
+  #Finds the ID of the mentee that is equal to the value stored in the menteeMatch column in the mentors table
+  MenteeIDList = Mentee.where(id: $mentors.menteeMatch)
+  MenteeIDList.each do |id|
+    @menteeMatchedList.push(Mentee.first(id: id.id)) #Stores the mentor record found in the list to be displayed
+  end
+  
+  erb :mentee_schedule
+end
+
+
+get "/myMentorSchedule" do
+  #List to store the mentee matched to a mentor
+ @mentorMatchedList = []
+  #Finds the ID of the mentor that is equal to the value stored in the mentorMatch column in the mentees table
+  MentorIDList = Mentor.where(id: $mentees.mentorMatch)
+  MentorIDList.each do |id|
+    @mentorMatchedList.push(Mentor.first(id: id.id)) #Stores the mentee record found in the list to be displayed
+  end
+  
+  erb :mentor_schedule
+end
 
 
 #Route for the admin to view pending mentee applications

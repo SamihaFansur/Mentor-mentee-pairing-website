@@ -1,4 +1,4 @@
-<%= erb :"common/header_mentorA" %>
+<%= erb :"common/header_menteeA" %>
 <div class="background" id="statement">
   
       <div class="full">
@@ -7,37 +7,50 @@
           
         <h2> 
             <button type="submit">Previous Week</button>       
-                  My timeable
+                  My Mentor timeable
             <button type="submit">Next Week</button><br> 
-            <p><a href="/timeAgain">Today's Date:</a><%= @last_visited %></h2>
-
+            <p><a href="/timeAgain">Today's Date:</a><%= @last_visited %><br><br>
+            <a href="/MenteeDashboard" class="underline">Return to Dashboard</a></h2>
+            
         
+              <div class="user_info" id="application">
+       
+          <!-- Displays the details of the mentee the mentor is matched to -->
+          <% if @mentorMatchedList.count > 0 %>
+    
               <table class="display_table">
                 <tr id="TableHeadings">
                   <th></th>
-                  <th>Monday:</th>
+                  <th>Monday：</th>
                   <th>Tuesday:</th>
                   <th>Wendesday:</th>
                   <th>Thursday:</th>
                   <th>Friday:</th>  
+                  
                 </tr>
-              
-               <tr>
+              <% @mentorMatchedList.each do |mentor| %>
+                
+                
+                 <tr>
                   <th>Morning</th>
                 <td>
-                    
-                </td>
-                    
-                    
+<!-- WRITE THE TASK THAT MENTEE WILL DO    -->
+                </td>   
                  </tr>
                   
                  <tr>
                   <th>Afternoon</th>
                 <td>
-                   
+<!-- WRITE THE TASK THAT MENTEE WILL DO    -->
                 </td>
-                 </tr>
-             </table>
+                
+                
+              <% end %> 
+              </table>
+            <% else %>
+              <p id="SearchError">You do not have a mentor yet!</p>
+            <% end %>
+          </div> 
      
                   
                    
