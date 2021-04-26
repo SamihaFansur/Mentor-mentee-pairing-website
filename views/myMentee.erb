@@ -18,7 +18,7 @@
                 <p><b>Description: </b> <i><%= h mentee.description %></i> </p>
                 <form method="get" action="reportMenteeForm">
                   <input type="hidden" name="mentorID" value="<%= $mentors.id %>">
-                  <% if $mentor_report == 1 %> <!--If mentor has reported their mentee within past 48hrs-->
+                  <% if @mentor_report == 1 %> <!--If mentor has reported their mentee within past 48hrs-->
                     <input type="submit" value="Report Mentee" disabled />
                   <% else %>
                     <input type="submit" value="Report Mentee" />
