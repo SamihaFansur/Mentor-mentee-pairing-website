@@ -260,9 +260,6 @@ get "/myMentee" do
   @header = nil
   mentor = Mentor.first(id: $mentors.id)
   @mentor_report = mentor.reportMentee
-  puts "myMentee report number"
-  puts @mentor_report
-  puts mentor.id
   
   if session[:admins_username]
     if session[:mentors_username]
@@ -425,16 +422,12 @@ post "/reportMenteeForm" do
   @reports.save_changes
   
   mentor_reporting = Mentor.first(id: params[:mentorID])
-  puts mentor_reporting.reportMentee
     
   @mentor_report = mentor_reporting.reportMentee
   @mentor_report = 1 #already sent
   
   mentor_reporting.reportMentee = 1 #so field is updated in the the mentors table
   mentor_reporting.save_changes
-  puts " post report mentee form report no."
-  puts mentor_reporting.reportMentee
-  puts mentor_reporting.id
   
   Thread.new{
 #             sleep(48*60*60) #Button enabled after 2 days
