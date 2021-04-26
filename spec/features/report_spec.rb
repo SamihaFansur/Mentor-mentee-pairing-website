@@ -49,7 +49,7 @@ context "with an empty database" do
     click_button "Submit"
     click_link "My Mentee"
     click_button "Report Mentee"
-    visit "/reportMenteeForm?mentorID=2"
+
     select "Public Shaming", :from => "caption"
     fill_in "Description:", with: "spam"
     click_button "Submit"
@@ -64,6 +64,7 @@ context "with an empty database" do
     
     clear_database
   end
+
 
     
 end
