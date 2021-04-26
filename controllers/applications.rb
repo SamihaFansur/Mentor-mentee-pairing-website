@@ -403,6 +403,8 @@ get "/reportMenteeForm" do
     else
       @header = erb:"common/header_adminA"
     end
+  elsif session[:mentors_username]
+    @header = erb:"common/header_mentorA"
   end
   
   @reports = Report.new
