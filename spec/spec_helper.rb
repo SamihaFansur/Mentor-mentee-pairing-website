@@ -70,6 +70,7 @@ def clear_database
   DB.from("mentees").delete
   DB.from("mentors").delete
   DB.from("requests").delete
+  DB.from("reports").delete
 end
 
 # ensure we're always starting from a clean database
