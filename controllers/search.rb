@@ -126,7 +126,8 @@ get "/searchForAMentee" do
              Mentee.order(:username).all
             else
              Mentee.order(:username).where(Sequel.ilike(:username, "%#{@userName_search}%"))
-
+            end
+ 
 
   erb :admin_search_mentees
 end
