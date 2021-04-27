@@ -18,11 +18,17 @@
           <aside class="rSide">
             <div class="full" id="searchOptions">
               <h3>Options</h3>
+              <!--Link to edit personal information   -->
               <p><a href="/editAdmin?id=<%= h $admins.id %>">Edit Profile</a></p>
+              <!--Link to view all of the mentors             -->
               <p class="search_info"><a href="/searchForAMentor" class="link">Mentor List</a></p>
+              <!--Link to view all of the mentees              -->
               <p class="search_info"><a href="/searchForAMentee" class="link">Mentee List</a></p>
+              <!--Link to view all of the mentees that have sent applications but have not matched with mentors             -->
               <p class="search_info"><a href="/PendingMenteeApplications" class="link">Pending Mentee Applications</a></p>
-              <p class="search_info"><a href="/PairedMentees" class="link">Paired Mentees</a></p>    
+              <!--Link to view all of the mentees that have matched with mentors              -->
+              <p class="search_info"><a href="/PairedMentees" class="link">Paired Mentees</a></p>
+              <!--Link to view mentors' reports         -->
               <p class="search_info"><a href="/reports" class="link">Reports</a></p>           
             </div>
           </aside>
