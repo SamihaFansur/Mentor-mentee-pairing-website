@@ -86,6 +86,12 @@ end
 def mentee_deleted_reset_all_users_fields(user, matchedUserID)
   if matchedUserID != 0
     mentor = Mentor.first(id: matchedUserID)
+    
+    report_all = Report.where(mentorID: mentor.id)
+    report_all.each do |report|
+      report.delete
+    end
+    
     #Sends matched mentor an email
     matched_user_deleted("mentee", mentor, "accept")
     mentor.profileStatus = 0
@@ -100,6 +106,12 @@ end
 def mentor_deleted_reset_all_users_fields(user, matchedUserID)
   if matchedUserID != 0
     mentee = Mentee.first(id: matchedUserID)
+    
+    report_all = Report.where(mentorID: mentee.mentorMatch)
+    report_all.each do |report|
+      report.delete
+    end
+    
     #Sends matched mentee an email
     matched_user_deleted("mentor", mentee, "send")
     mentee.applicationNumber = 1
