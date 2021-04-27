@@ -76,9 +76,9 @@ post "/addApplication" do
     redirect "/search"
 end
 
-#Admin can search for a mentor is a list of all mentors
+##################################SEARCH FOR A MENTOR IN A LIST OF ALL MENTORS###############################################
 get "/searchForAMentor" do
-   @header = nil
+  @header = nil
   
   if session[:admins_username]
     if session[:mentors_username]
@@ -87,7 +87,6 @@ get "/searchForAMentor" do
       @header = erb:"common/header_adminA"
     end
   end
-
   
   #New variable to enable mentees to search for mentors based on course name
   @userName_search = params.fetch("userName_search", "").strip
@@ -109,7 +108,7 @@ get "/searchForAMentor" do
   erb :admin_search_mentors
 end
 
-#Admin can search for a mentee is a list of all mentees
+##################################SEARCH FOR A MENTEE IN A LIST OF ALL MENTEES#####################################################
 get "/searchForAMentee" do
    @header = nil
   
@@ -121,49 +120,233 @@ get "/searchForAMentee" do
     end
   end
   
+  #New variable to enable mentees to search for mentors based on course name
   @userName_search = params.fetch("userName_search", "").strip
+  
+  #notice after press the button
+  @error1 = true if params.fetch("error", "") == "1"
+  @error2 = true if params.fetch("error", "") == "2"
+  @error3 = true if params.fetch("error", "") == "3"
+  @error4 = true if params.fetch("error", "") == "4"
+  
+  #If no course name is being searched, it displays the list of all mentors in alphabetical order 
+  #else it searches through the course name field in the mentors table and displays mentors' whose 
+  #course name contains the course name being searched
+  
+
   @mentees = if @userName_search.empty?
-             Mentee.order(:username).all
-            else
-             Mentee.order(:username).where(Sequel.ilike(:username, "%#{@userName_search}%"))
-            end
- 
+               Mentee.order(:username).all
+             else
+               Mentee.order(:username).where(Sequel.ilike(:username, "%#{@userName_search}%")) #ilike used to make search case insensitive
+             end
 
   erb :admin_search_mentees
 end
 
-# def search_based_on_specific_field(varName, fieldName, user)
-#   #New variable to enable mentees to search for mentors based on course name
-#   varName = params.fetch(fieldName, "").strip
+post "/suspendMentor" do
+  @mentors = Mentor.first(id: params[:mentorID]) #creates a new instance of mentor
+  @error1 = nil #initializes variable-application sent error
   
-#   @error1 = true if params.fetch("error", "") == "1"
-#   @error2 = true if params.fetch("error", "") == "2"
-#   @error3 = true if params.fetch("error", "") == "3"
-#   @error4 = true if params.fetch("error", "") == "4"
-  
-#   if user == "mentee"
-#     userClass = Mentee
-#   elsif user == "mentor"
-#     userClass = Mentor
-#   end
-#   puts userClass
-  
-#   if user == "mentee"
-#     puts "1"
-#     new_mentee_instance
-#     puts "-----"
-#   elsif user == "mentor"
-#     new_mentor_instance
-#   end
-  
-#   #If no course name is being searched, it displays the list of all mentors in alphabetical order 
-#   #else it searches through the course name field in the mentors table and displays mentors' whose 
-#   #course name contains the course name being searched
-#   user = if varName.empty?
-#                userClass.order(:username).all
-#              else
-#                userClass.order(:username).where(Sequel.ilike(:username, "%#{varName}%")) #ilike used to make search case insensitive
-#              end
-# puts user
+  #Sets suspendMentor field to 1 to indicate account suspended if its not already suspended    
+  if @mentors.suspendMentor != 1
+    @mentors.suspendMentor = 1
+    @mentors.save_changes
+    #Sends mentor an email that their account has been suspended
+    send_mail(@mentors.email, 
+        "Mentor account suspended!", 
+        "Hi "+@mentors.fname+" "+@mentors.lname+" !\n"+
+        "Your mentor account has been suspended due to violation of website guidelines."+
+        "You will be able to use your account after 48 hours starting now.\n"+
+        "If you think we have made a mistake, please contact our admins using our contact form!"+
+        "\n\nRegards\nTeam 6")
+    Thread.new{
+#         sleep(2*24*60*60) #2 days in seconds
+        sleep(30) #-------------------------------DELETE LATER -S -------------------------------
+        @mentors.suspendMentor = 0
+        @mentors.save_changes
+        #Sends mentor an email that their account has been unsuspended
+        send_mail(@mentors.email, 
+            "Mentor account Unsuspended!", 
+            "Hi "+@mentors.fname+" "+@mentors.lname+" !\n"+
+            "Your mentor account has now been unsuspended.\n"+
+            "You can now login using your mentor credentials"+
+            "\n\nRegards\nTeam 6")
+      }  
+  else
+      @error1 ="Account has already been suspended"
+      redirect "/searchForAMentor?error=1"
+  end
+    
+    redirect "/searchForAMentor"
+end
 
-# end
+post "/unsuspendMentor" do
+  @mentors = Mentor.first(id: params[:mentorID]) #creates a new instance of mentor
+
+  #Sets suspendMentor field to 0 to indicate account unsuspended if its already suspended
+  if @mentors.suspendMentor == 1
+    @mentors.suspendMentor = 0
+    @mentors.save_changes
+    #Sends mentor an email that their account has been unsuspended
+    send_mail(@mentors.email, 
+        "Mentor account Unsuspended!", 
+        "Hi "+@mentors.fname+" "+@mentors.lname+" !\n"+
+        "Your mentor account has now been unsuspended.\n"+
+        "You can now login using your mentor credentials"+
+        "\n\nRegards\nTeam 6")
+   else
+      @error1 ="Account has already been unsuspended"
+      redirect "/searchForAMentor?error=2"
+  end
+    
+    redirect "/searchForAMentor"
+end
+
+post "/suspendMentee" do
+  @mentees = Mentee.first(id: params[:menteeID]) #creates a new instance of mentee
+  @error1 = nil #initializes variable-application sent error
+  
+  #Sets suspendMentee field to 1 to indicate account suspended if its not already suspended
+  if @mentees.suspendMentee != 1
+    @mentees.suspendMentee = 1
+    @mentees.save_changes
+    #Sends mentee an email that their account has been suspended
+    send_mail(@mentees.email, 
+        "Mentee account suspended!", 
+        "Hi "+@mentees.fname+" "+@mentees.lname+" !\n"+
+        "Your mentee account has been suspended due to violation of website guidelines."+
+        "You will be able to use your account after 48 hours starting now.\n"+
+        "If you think we have made a mistake, please contact our admins using our contact form!"+
+        "\n\nRegards\nTeam 6")
+    Thread.new{
+#         sleep(2*24*60*60) #2 days in seconds
+        sleep(30) #-------------------------------DELETE LATER -S -------------------------------
+        @mentees.suspendMentee = 0
+        @mentees.save_changes
+        #Sends mentee an email that their account has been unsuspended
+        send_mail(@mentees.email, 
+            "Mentee account Unsuspended!", 
+            "Hi "+@mentees.fname+" "+@mentees.lname+" !\n"+
+            "Your mentee account has now been unsuspended.\n"+
+            "You can now login using your mentee credentials"+
+            "\n\nRegards\nTeam 6")
+      }   
+   else
+      @error1 ="Account has already been suspended"
+      redirect "/searchForAMentee?error=1"
+  end
+    
+    redirect "/searchForAMentee"
+end
+
+post "/unsuspendMentee" do
+  @mentees = Mentee.first(id: params[:menteeID]) #creates a new instance of mentee
+  
+  #Sets suspendMentee field to 0 to indicate account unsuspended if its suspended
+  if @mentees.suspendMentee == 1
+    @mentees.suspendMentee = 0
+    @mentees.save_changes
+    #Sends mentee an email that their account has been unsuspended
+    send_mail(@mentees.email, 
+        "Mentee account Unsuspended!", 
+        "Hi "+@mentees.fname+" "+@mentees.lname+" !\n"+
+        "Your mentee account has now been unsuspended.\n"+
+        "You can now login using your mentee credentials"+
+        "\n\nRegards\nTeam 6")
+   else
+      @error1 ="Account has already been unsuspended"
+      redirect "/searchForAMentee?error=2"
+  end
+    
+    redirect "/searchForAMentee"
+end
+
+post "/blockMentee" do
+  @mentees = Mentee.first(id: params[:menteeID]) #creates a new instance of mentee
+  @error1 = nil #initializes variable-application sent error
+  
+  #Sets suspendMentee field to 1 to indicate account permanently suspended/blocked
+  if @mentees.suspendMentee != 1
+    @mentees.suspendMentee = 1
+    @mentees.save_changes
+    #Sends mentee an email that their account has been blocked
+    send_mail(@mentees.email, 
+        "Mentee account blocked!", 
+        "Hi "+@mentees.fname+" "+@mentees.lname+" !\n"+
+        "Your mentee account has been blocked due to repeated violation of website guidelines.\n"+
+        "If you think we have made a mistake, please contact our admins using our contact form!"+
+        "\n\nRegards\nTeam 6")
+   else
+      @error3 ="Account has already been blocked"
+      redirect "/searchForAMentee?error=3"
+  end
+    
+    redirect "/searchForAMentee"
+end
+
+post "/unblockMentee" do
+  @mentees = Mentee.first(id: params[:menteeID]) #creates a new instance of mentee
+  
+  #Sets suspendMentee field to 0 to indicate account is unblocked
+  if @mentees.suspendMentee == 1
+    @mentees.suspendMentee = 0
+    @mentees.save_changes
+    #Sends mentee an email that their account has been unsuspended
+    send_mail(@mentees.email, 
+        "Mentee account Unblocked!", 
+        "Hi "+@mentees.fname+" "+@mentees.lname+" !\n"+
+        "Your mentee account has now been unblocked.\n"+
+        "You can now login using your mentee credentials"+
+        "\n\nRegards\nTeam 6")
+   else
+      @error1 ="Account has already been unblocked"
+      redirect "/searchForAMentee?error=4"
+  end
+    
+    redirect "/searchForAMentee"
+end
+
+post "/blockMentor" do
+  @mentors = Mentor.first(id: params[:mentorID]) #creates a new instance of mentor
+  @error1 = nil #initializes variable-application sent error
+  
+  #Sets suspendMentor field to 1 to indicate account permanently suspended/blocked   
+  if @mentors.suspendMentor != 1
+    @mentors.suspendMentor = 1
+    @mentors.save_changes
+    #Sends mentor an email that their account has been suspended
+    send_mail(@mentors.email, 
+        "Mentor account suspended!", 
+        "Hi "+@mentors.fname+" "+@mentors.lname+" !\n"+
+        "Your mentor account has been blocked due to repeated violation of website guidelines.\n"+
+        "If you think we have made a mistake, please contact our admins using our contact form!"+
+        "\n\nRegards\nTeam 6")
+  else
+      @error1 ="Account has already been blocked"
+      redirect "/searchForAMentor?error=3"
+  end
+    
+    redirect "/searchForAMentor"
+end
+
+post "/unblockMentor" do
+  @mentors = Mentor.first(id: params[:mentorID]) #creates a new instance of mentor
+
+  #Sets suspendMentor field to 0 to indicate account unsuspended if its already suspended
+  if @mentors.suspendMentor == 1
+    @mentors.suspendMentor = 0
+    @mentors.save_changes
+    #Sends mentor an email that their account has been unsuspended
+    send_mail(@mentors.email, 
+        "Mentor account Unblocked!", 
+        "Hi "+@mentors.fname+" "+@mentors.lname+" !\n"+
+        "Your mentor account has now been unblocked.\n"+
+        "You can now login using your mentor credentials"+
+        "\n\nRegards\nTeam 6")
+   else
+      @error1 ="Account has already been unblocked"
+      redirect "/searchForAMentor?error=4"
+  end
+    
+    redirect "/searchForAMentor"
+end

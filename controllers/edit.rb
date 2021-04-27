@@ -1,8 +1,22 @@
-get "/editMentee" do 
-  headers_common_pages
-  prevent_account_switching
+get "/editMentee" do
+    
+  #Checks if the request has come directly from a mentee or admin dashboard to stop users from manually changing the link and accessing other users edit pages
+  if request.referer.nil?
+      if session[:mentees_username]
+          redirect "/MenteeDashboard"
+      elsif session[:admins_username] 
+          if session[:mentors_username] 
+              redirect "/AdminMentorDashboard"
+          else
+              redirect "/AdminDashboard"
+          end
+      elsif session[:mentors_username]
+          redirect "/MentorDashboard"
+      end
+  
+  end
       
-  id = params["id"] #new variable to search the id of corresponding mentee profile to be edited
+  id = params["id"] #new variable to search the id of corresponding mentee profile to be edited ######
   
   #If error displayed in the post editMentee route next line called
   @error = true if params.fetch("error", "") == "1"
@@ -17,7 +31,7 @@ get "/editMentee" do
 end
 
 post "/editMentee" do
-  id = params["id"] #variable to search the id of corresponding mentee profile being edited
+  id = params["id"] #variable to search the id of corresponding mentee profile being edited ######
   
   #If mentee id exists and field values are valid then saves changes and redirects to mentee dashboard
   if Mentee.id_exists?(id)
@@ -44,9 +58,33 @@ post "/editMentee" do
 end
 
 get "/editMentor" do
-  headers_common_pages
+  @header = nil
   
-  prevent_account_switching
+  if session[:admins_username]
+    if session[:mentors_username]
+      @header = erb:"common/header_adminMentorA"
+    else
+      @header = erb:"common/header_adminA"
+    end
+  elsif session[:mentors_username] 
+    @header = erb:"common/header_mentorA"
+  end
+  
+  #Checks if the request has come directly from a mentor dashboard to stop users from manually changing the link and accessing other users edit pages
+  if request.referer.nil?
+      if session[:mentees_username]
+          redirect "/MenteeDashboard"
+      elsif session[:admins_username] 
+          if session[:mentors_username] 
+              redirect "/AdminMentorDashboard"
+          else
+              redirect "/AdminDashboard"
+          end
+      elsif session[:mentors_username]
+          redirect "/MentorDashboard"
+      end
+  
+  end
  
   id = params["id"] #new variable to search the id of corresponding mentor profile to be edited
   
@@ -98,7 +136,21 @@ post "/editMentor" do
 end
 
 get "/editAdmin" do    
-  prevent_account_switching
+  #Checks if the request has come directly from a admin dashboard to stop users from manually changing the link and accessing other users edit pages
+  if request.referer.nil?
+      if session[:mentees_username]
+          redirect "/MenteeDashboard"
+      elsif session[:admins_username] 
+          if session[:mentors_username] 
+              redirect "/AdminMentorDashboard"
+          else
+              redirect "/AdminDashboard"
+          end
+      elsif session[:mentors_username]
+          redirect "/MentorDashboard"
+      end
+  
+  end
     
   id = params["id"] #new variable to search the id of corresponding admin profile to be edited
   
@@ -133,22 +185,4 @@ post "/editAdmin" do
     end
   end
 
-end
-
-def prevent_account_switching
-  #Checks if the request has come directly from a mentee or admin dashboard to stop users from manually changing the link and accessing other users edit pages
-  if request.referer.nil?
-      if session[:mentees_username]
-          redirect "/MenteeDashboard"
-      elsif session[:admins_username] 
-          if session[:mentors_username] 
-              redirect "/AdminMentorDashboard"
-          else
-              redirect "/AdminDashboard"
-          end
-      elsif session[:mentors_username]
-          redirect "/MentorDashboard"
-      end
-  end
-  
 end
