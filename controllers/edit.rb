@@ -13,19 +13,7 @@ get "/editMentee" do
       elsif session[:mentors_username]
           redirect "/MentorDashboard"
       end
-  elsif request.referer.include? "/MenteeDashboard" or request.referer.include? "searchForAMentee"
-  else 
-     if session[:mentees_username]
-          redirect "/MenteeDashboard"
-      elsif session[:admins_username] 
-          if session[:mentors_username] 
-              redirect "/AdminMentorDashboard"
-          else
-              redirect "/AdminDashboard"
-          end
-      elsif session[:mentors_username]
-          redirect "/MentorDashboard"
-      end
+  
   end
       
   id = params["id"] #new variable to search the id of corresponding mentee profile to be edited ######
@@ -95,19 +83,7 @@ get "/editMentor" do
       elsif session[:mentors_username]
           redirect "/MentorDashboard"
       end
-  elsif request.referer.include? "/MentorDashboard" or request.referer.include? "searchForAMentor" or request.referer.include? "/AdminMentorDashboard" 
-  else 
-      if session[:mentees_username]
-          redirect "/MenteeDashboard"
-      elsif session[:admins_username] 
-          if session[:mentors_username] 
-              redirect "/AdminMentorDashboard"
-          else
-              redirect "/AdminDashboard"
-          end
-      elsif session[:mentors_username]
-          redirect "/MentorDashboard"
-      end
+  
   end
  
   id = params["id"] #new variable to search the id of corresponding mentor profile to be edited
@@ -173,19 +149,7 @@ get "/editAdmin" do
       elsif session[:mentors_username]
           redirect "/MentorDashboard"
       end
-  elsif request.referer.include? "/AdminDashboard" or request.referer.include? "/AdminMentorDashboard" 
-  else 
-      if session[:mentees_username]
-          redirect "/MenteeDashboard"
-      elsif session[:admins_username] 
-          if session[:mentors_username] 
-              redirect "/AdminMentorDashboard"
-          else
-              redirect "/AdminDashboard"
-          end
-      elsif session[:mentors_username]
-          redirect "/MentorDashboard"
-      end
+  
   end
     
   id = params["id"] #new variable to search the id of corresponding admin profile to be edited
