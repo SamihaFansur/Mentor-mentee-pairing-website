@@ -78,7 +78,16 @@ end
 
 #Admin can search for a mentor is a list of all mentors
 get "/searchForAMentor" do
-  headers_common_pages
+   @header = nil
+  
+  if session[:admins_username]
+    if session[:mentors_username]
+      @header = erb:"common/header_adminMentorA"
+    else
+      @header = erb:"common/header_adminA"
+    end
+  end
+
   
   #New variable to enable mentees to search for mentors based on course name
   @userName_search = params.fetch("userName_search", "").strip
@@ -102,45 +111,58 @@ end
 
 #Admin can search for a mentee is a list of all mentees
 get "/searchForAMentee" do
-  headers_common_pages
+   @header = nil
+  
+  if session[:admins_username]
+    if session[:mentors_username]
+      @header = erb:"common/header_adminMentorA"
+    else
+      @header = erb:"common/header_adminA"
+    end
+  end
+  
+  @userName_search = params.fetch("userName_search", "").strip
+  @mentees = if @userName_search.empty?
+             Mentee.order(:username).all
+            else
+             Mentee.order(:username).where(Sequel.ilike(:username, "%#{@userName_search}%"))
 
-  search_based_on_specific_field(@userName_search, "userName_search", "mentee")
-puts @mentees
+
   erb :admin_search_mentees
 end
 
-def search_based_on_specific_field(varName, fieldName, user)
-  #New variable to enable mentees to search for mentors based on course name
-  varName = params.fetch(fieldName, "").strip
+# def search_based_on_specific_field(varName, fieldName, user)
+#   #New variable to enable mentees to search for mentors based on course name
+#   varName = params.fetch(fieldName, "").strip
   
-  @error1 = true if params.fetch("error", "") == "1"
-  @error2 = true if params.fetch("error", "") == "2"
-  @error3 = true if params.fetch("error", "") == "3"
-  @error4 = true if params.fetch("error", "") == "4"
+#   @error1 = true if params.fetch("error", "") == "1"
+#   @error2 = true if params.fetch("error", "") == "2"
+#   @error3 = true if params.fetch("error", "") == "3"
+#   @error4 = true if params.fetch("error", "") == "4"
   
-  if user == "mentee"
-    userClass = Mentee
-  elsif user == "mentor"
-    userClass = Mentor
-  end
-  puts userClass
+#   if user == "mentee"
+#     userClass = Mentee
+#   elsif user == "mentor"
+#     userClass = Mentor
+#   end
+#   puts userClass
   
-  if user == "mentee"
-    puts "1"
-    new_mentee_instance
-    puts "-----"
-  elsif user == "mentor"
-    new_mentor_instance
-  end
+#   if user == "mentee"
+#     puts "1"
+#     new_mentee_instance
+#     puts "-----"
+#   elsif user == "mentor"
+#     new_mentor_instance
+#   end
   
-  #If no course name is being searched, it displays the list of all mentors in alphabetical order 
-  #else it searches through the course name field in the mentors table and displays mentors' whose 
-  #course name contains the course name being searched
-  user = if varName.empty?
-               userClass.order(:username).all
-             else
-               userClass.order(:username).where(Sequel.ilike(:username, "%#{varName}%")) #ilike used to make search case insensitive
-             end
-puts user
+#   #If no course name is being searched, it displays the list of all mentors in alphabetical order 
+#   #else it searches through the course name field in the mentors table and displays mentors' whose 
+#   #course name contains the course name being searched
+#   user = if varName.empty?
+#                userClass.order(:username).all
+#              else
+#                userClass.order(:username).where(Sequel.ilike(:username, "%#{varName}%")) #ilike used to make search case insensitive
+#              end
+# puts user
 
-end
+# end
