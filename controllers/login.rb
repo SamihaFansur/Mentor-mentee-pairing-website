@@ -125,7 +125,7 @@ post '/loginAgain' do
   new_mentor_instance
   @mentors.load(params) #Loads parameters
     
-  login_user(@mentors, session[:mentors_username] = @mentors.username, "/MentorDashboard")
+  login_user(@mentors, session[:mentors_username] = @mentors.username, "/AdminLoginChoices")
   
   @error = "Your account is suspended" if @suspend_check
   erb :loginAgain
