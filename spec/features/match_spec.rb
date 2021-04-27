@@ -11,10 +11,7 @@ context "with an empty database" do
     it "says the database is empty" do
       clear_database
       add_test_user
-      visit "/login"
-      fill_in "username", with: "123"
-      fill_in "password", with: "123"
-      click_button "Submit"
+      login_mentee
       visit "/search"
       fill_in "searchForMentor", with: "123"
       expect(page).to have_content "Your search revealed no mentors"
@@ -23,31 +20,18 @@ context "with an empty database" do
        
   it "tests for a mentee/mentor match" do
 
-      add_test_mentor
-      add_test_user
-      visit "/login" 
-      fill_in "username", with: "1234"
-      fill_in "password", with: "1234"
-      click_button "Submit"      
-      visit "/login" 
-      fill_in "username", with: "123"
-      fill_in "password", with: "123"
-      click_button "Submit"
-      visit "/search"
-      fill_in "searchForMentor", with: "Accounting and Financial Management (BA)"
-      click_button "Submit"
-      click_button "Send application" 
-    visit "/login"
-    fill_in "username", with: "1234"
-    fill_in "password", with: "1234"
+    add_test_mentor
+    add_test_user
+    login_mentor    
+    login_mentee
+    visit "/search"
+    fill_in "searchForMentor", with: "Accounting and Financial Management (BA)"
     click_button "Submit"
+    click_button "Send application" 
+    login_mentor  
     visit "/menteeApplications"
-
     click_button "Accept application"
-    visit "/login"
-    fill_in "username", with: "123"
-    fill_in "password", with: "123"
-    click_button "Submit"
+    login_mentee
     visit "/MenteeDashboard"
     click_link "View mentor applications"
     click_button "Match"
@@ -58,31 +42,18 @@ context "with an empty database" do
   end
       it "tests for a mentee/mentor match" do
 
-      add_test_mentor
-      add_test_user
-      visit "/login" 
-      fill_in "username", with: "1234"
-      fill_in "password", with: "1234"
-      click_button "Submit"      
-      visit "/login" 
-      fill_in "username", with: "123"
-      fill_in "password", with: "123"
-      click_button "Submit"
-      visit "/search"
-      fill_in "searchForMentor", with: "Accounting and Financial Management (BA)"
-      click_button "Submit"
-      click_button "Send application" 
-    visit "/login"
-    fill_in "username", with: "1234"
-    fill_in "password", with: "1234"
+    add_test_mentor
+    add_test_user
+    login_mentor       
+    login_mentee
+    visit "/search"
+    fill_in "searchForMentor", with: "Accounting and Financial Management (BA)"
     click_button "Submit"
+    click_button "Send application" 
+    login_mentor  
     visit "/menteeApplications"
-
     click_button "Accept application"
-    visit "/login"
-    fill_in "username", with: "123"
-    fill_in "password", with: "123"
-    click_button "Submit"
+    login_mentee
     visit "/MenteeDashboard"
     click_link "View mentor applications"
     click_button "Match"
@@ -103,61 +74,38 @@ context "with an empty database" do
     fill_in "username", with: "12345"
     fill_in "password", with: "12345"
     click_button "Submit"      
-    visit "/login" 
-    fill_in "username", with: "123"
-    fill_in "password", with: "123"
-    click_button "Submit"
+    login_mentee
     visit "/search?error=2" 
     expect(page).to have_content "You already have a mentor"
     clear_database
   end
       it "tests for a mentee/mentor match" do
 
-      add_test_mentor
-      add_test_user
-      visit "/login" 
-      fill_in "username", with: "1234"
-      fill_in "password", with: "1234"
-      click_button "Submit"      
-      visit "/login" 
-      fill_in "username", with: "123"
-      fill_in "password", with: "123"
-      click_button "Submit"
-      visit "/search"
-      fill_in "searchForMentor", with: "Accounting and Financial Management (BA)"
-      click_button "Submit"
-      click_button "Send application" 
-    visit "/login"
-    fill_in "username", with: "1234"
-    fill_in "password", with: "1234"
+    add_test_mentor
+    add_test_user
+    login_mentor        
+    login_mentee
+    visit "/search"
+    fill_in "searchForMentor", with: "Accounting and Financial Management (BA)"
     click_button "Submit"
+    click_button "Send application" 
+    login_mentor  
     visit "/menteeApplications"
-
     click_button "Accept application"
-    visit "/login"
-    fill_in "username", with: "123"
-    fill_in "password", with: "123"
-    click_button "Submit"
+    login_mentee
     visit "/MenteeDashboard"
     click_link "View mentor applications"
     click_button "Match"
     visit "/MenteeDashboard"
     click_link "My Mentor"
     expect(page).to have_content "Sam Mentor"
-    visit "/login"
-    fill_in "username", with: "1234"
-    fill_in "password", with: "1234"
-    click_button "Submit"
+    login_mentor  
     click_link "My Mentee"
     click_button "Report Mentee"
     select "Public Shaming", :from => "caption"
     fill_in "Description:", with: "spam"
     click_button "Submit"
-    visit "/login"
-    fill_in "username", with: "admin2"
-    fill_in "password", with: "S.F"
-    click_button "Submit"
-    click_link "No"
+    login_admin
     click_link "Reports"
     click_button "Dismiss"
     expect(page).to have_content "There are no pending mentee requests at this moment!"
@@ -166,31 +114,18 @@ context "with an empty database" do
   end
       it "tests for a mentee/mentor reject application" do
 
-      add_test_mentor
-      add_test_user
-      visit "/login" 
-      fill_in "username", with: "1234"
-      fill_in "password", with: "1234"
-      click_button "Submit"      
-      visit "/login" 
-      fill_in "username", with: "123"
-      fill_in "password", with: "123"
-      click_button "Submit"
-      visit "/search"
-      fill_in "searchForMentor", with: "Accounting and Financial Management (BA)"
-      click_button "Submit"
-      click_button "Send application" 
-    visit "/login"
-    fill_in "username", with: "1234"
-    fill_in "password", with: "1234"
+    add_test_mentor
+    add_test_user
+    login_mentor       
+    login_mentee
+    visit "/search"
+    fill_in "searchForMentor", with: "Accounting and Financial Management (BA)"
     click_button "Submit"
+    click_button "Send application" 
+    login_mentor  
     visit "/menteeApplications"
-
     click_button "Reject application"
-    visit "/login"
-    fill_in "username", with: "123"
-    fill_in "password", with: "123"
-    click_button "Submit"
+    login_mentee
     visit "/MenteeDashboard"
     click_link "View mentor applications"
     expect(page).to have_content "There are no pending applications"
@@ -199,31 +134,19 @@ context "with an empty database" do
 
   it "tests for a mentee/mentor meeting request" do
 
-      add_test_mentor
-      add_test_user
-      visit "/login" 
-      fill_in "username", with: "1234"
-      fill_in "password", with: "1234"
-      click_button "Submit"      
-      visit "/login" 
-      fill_in "username", with: "123"
-      fill_in "password", with: "123"
-      click_button "Submit"
-      visit "/search"
-      fill_in "searchForMentor", with: "Accounting and Financial Management (BA)"
-      click_button "Submit"
-      click_button "Send application" 
-    visit "/login"
-    fill_in "username", with: "1234"
-    fill_in "password", with: "1234"
+    add_test_mentor
+    add_test_user
+    login_mentee
+      login_mentor        
+    login_mentee
+    visit "/search"
+    fill_in "searchForMentor", with: "Accounting and Financial Management (BA)"
     click_button "Submit"
+    click_button "Send application" 
+    login_mentor  
     visit "/menteeApplications"
-
     click_button "Accept application"
-    visit "/login"
-    fill_in "username", with: "123"
-    fill_in "password", with: "123"
-    click_button "Submit"
+    login_mentee
     visit "/MenteeDashboard"
     click_link "View mentor applications"
     click_button "Match"
@@ -231,10 +154,7 @@ context "with an empty database" do
     click_link "My Mentor"
     click_button "Request Mentor Meeting"
     expect(page).to have_content "Sam Mentor"
-    visit "/login" 
-    fill_in "username", with: "1234"
-    fill_in "password", with: "1234"
-    click_button "Submit"
+    login_mentor  
     clear_database
   end
 end
