@@ -1,6 +1,7 @@
 <!--Form called when a user wants to sign up as a mentor-->
 <div class="col">
   <p>Please fill in the information below</p>
+<!-- Write down the name  -->
   <p>
     <label for="fname" class="options">First name:</label>
     <input type="text" name="fname" id="fname" maxlength="40" size="30" placeholder="Enter first name..."  required value="<%= h @mentors.fname %>"><!--Mandatory field-->
@@ -10,17 +11,17 @@
     <label for="lname" class="options">Last name:</label>
     <input type="text" name="lname" id="lname" maxlength="40" size="30" placeholder="Enter last name..."  required value="<%= h @mentors.lname %>"><!--Mandatory field-->
   </p>
-
+<!-- Write down the University E-mail in the correct format  -->
   <p>
     <label for="email" class="options">UoS E-mail:</label>
     <input type="email" name="email" pattern="[A-Za-z0-9._%+-]+@sheffield.ac.uk$" title="Enter your UoS email in the format xyz@sheffield.ac.uk" id="email" placeholder="Enter your UoS email..." maxlength="40" size="30" required value="<%= h @mentors.email %>"><!--Mandatory field-->
   </p>
-  
+<!-- Write down the Phone Number in the correct format -->  
   <p> 
     <label for="phoneNum" class="options">Phone Number:</label>
     <input type="text" name="phoneNum" pattern="^\+(?:[0-9] ?){1,3}\s+[0-9]{6,14}$" title="E.g +12 34567890" id="phoneNum" placeholder="+XX XXXXXXXXXX" maxlength="40" size="30" required value="<%= h @mentors.phoneNum %>"><!--Mandatory field-->
   </p>
-
+<!-- choose jobTitle  -->
   <p>
     <label for="jobTitle" class="options">Job Title: </label> <!--Dropdown List--> <!--Mandatory field-->
     <select name="jobTitle" id="jobTitle" required value="<%= h @mentors.jobTitle %>"> <!--Job Title List-->
@@ -488,7 +489,7 @@
       <option value="Zoologist">Zoologist</option>
     </select>
   </p>
-  
+<!-- choose course   -->
   <p>  
     <label for="courseName" class="options">Course: </label> <!--Dropdown List--> <!--Mandatory field-->
     <select name="courseName" id="courseName" required value="<%= h @mentors.courseName %>"> <!--Course List-->
@@ -762,12 +763,12 @@
 
     </select>
   </p>
-
+<!-- Write down the username  -->
   <p>
     <label for="username" class="options">Username:</label>
     <input type="text" name="username" id="username" placeholder="Enter your username..." maxlength="40" size="30" required value="<%= h @mentors.username %>"><!--Mandatory field-->
   </p>
-  
+ <!-- Write down the password --> 
   <p>
     <label for="password" class="options">Password:</label>
     <input type="password" name="password" id="password" placeholder="Enter your password..." maxlength="40" size="30" required value="<%= h @mentors.password %>"><!--Mandatory field-->
