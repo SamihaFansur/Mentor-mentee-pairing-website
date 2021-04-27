@@ -109,10 +109,7 @@ describe "the search page" do
       click_button "Submit"
       click_button "Send application" 
       sleep(31)
-      visit "/login" 
-      fill_in "username", with: "1234"
-      fill_in "password", with: "1234"
-      click_button "Submit"
+      login_mentor
       visit "/MentorDashboard"
       visit "/menteeApplications"
       expect(page).to have_content "Application"
