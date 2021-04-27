@@ -1,11 +1,14 @@
 <%= erb :"common/headerB" %>
   <div class="background" id="statement">
     <div class="full">
-      <div class="title">Are you also a mentor:</div> <!--Main page Title-->          
-      <p>          
-        <a href="/loginAgain" class="choices">Yes</a> <!--Admin + mentor-->
+        <!--Display the main page title-->
+      <div class="title">Are you also a mentor:</div>           
+      <p> 
+        <!--Clink yes return to the loginAgain as a mentor          -->
+        <a href="/loginAgain" class="choices">Yes</a>    <!--Admin + mentor-->
       </p>
       <p>
+        <!--Clink no return to the AdminDashboard            -->
         <a href="/AdminDashboard" class="choices">No</a>  <!--Admin only-->
       </p>
     </div>

@@ -3,30 +3,29 @@
       <div class="full">
         <div class="title">Mentee List</div> <!--Main page Title-->      
           
-<!-- Search mentees -->
-       
+
+            <!-- Using mentees' username to search the mentee            -->
             <form>
               <p>Enter the <strong>Username</strong> to find a Mentee: 
-                <!-- Gets the search value(mentor course name) to be searched -->
                 <input type="text" name="userName_search" id="searchForMentee" placeholder="Enter the username to search..." maxlength="40" size="30" value="<%= h @userName_search %>"/>
                 <input type="submit" value="Submit" />
               </p>
             </form>
 
 
-<!-- Displays error if there is any -->
+        <!--If account's status is been suspened ,it will display the error        -->
         <% if @error1 %>
         <h2><strong class="error">Account has already been suspended</strong></h2>
         <% end %>
-
+        <!--If account's status is been unsuspended,it will display the error        -->
         <% if @error2 %>
         <h2><strong class="error">Account has already been unsuspended</strong></h2>
         <% end %>
-        
+        <!--If account's status is been blocked ,it will display the error        -->
         <% if @error3 %>
         <h2><strong class="error">Account has already been blocked</strong></h2>
         <% end %>
-
+        <!--If account's status is been unblocked ,it will display the error        -->
         <% if @error4 %>
         <h2><strong class="error">Account has already been unblocked</strong></h2>
         <% end %>
@@ -34,6 +33,7 @@
           <!--Displays the mentor details-->
           <% if @mentees.count> 0 %>
             <table class="display_table">
+            <!-- display the name of each column in the table              -->
               <tr id="TableHeadings">
                 <th>Username</th>
                 <th>Name</th>
@@ -45,26 +45,34 @@
               </tr>
             <% @mentees.each do |mentee| %>
               <tr>
+                <!--display the content from mentee                    -->
                 <td><%= h mentee.username %></td>
                 <td><%= h mentee.name %></td>
                 <td><%= h mentee.email %></td>
                 <td><%= h mentee.phoneNum %></td>
-                <td><a href="/editMentee?id=<%= h mentee.id %>"><button>Edit Profile</button></a></td>
                 <td>
+                    <!-- Press the button to editMentee information especial the password                 -->
+                    <a href="/editMentee?id=<%= h mentee.id %>"><button>Edit Profile</button></a>
+                </td>
+                <td>
+                    <!-- Press the button to suspend the mentee                  -->
                   <form method="post" action="suspendMentee">
                     <input type="hidden" name="menteeID" value="<%= mentee.id %>">
                     <button type="submit">Suspend</button>
                   </form>
+                    <!-- Press the button to unsuspend the mentee                  -->
                   <form method="post" action="unsuspendMentee">
                     <input type="hidden" name="menteeID" value="<%= mentee.id %>">
                     <button type="submit">Unsuspend</button>
                   </form>
                 </td>
                 <td>
+                    <!-- Press the button to block the mentee                  -->
                   <form method="post" action="blockMentee">
                     <input type="hidden" name="menteeID" value="<%= mentee.id %>">
                     <button type="submit">Block</button>
                   </form>
+                    <!-- Press the button to unblock the mentee                  -->
                   <form method="post" action="unblockMentee">
                     <input type="hidden" name="menteeID" value="<%= mentee.id %>">
                     <button type="submit">Unblock</button>
@@ -75,7 +83,10 @@
              </table>    
            
           <% else %>
+            <!-- if there is not exist mentee,it will display the SearchError           -->
+            <!-- if the username is not match the mentee's username,it will display the SearchError             -->
             <p id="SearchError">Your search revealed no mentees.<br>Maybe the user is a mentor.<br>
+            <!--Link to mentor list                -->
             <a href="/searchForAMentor" class="search_info" class="link">Mentor List</a></p>
           <% end %>  
       </div>
