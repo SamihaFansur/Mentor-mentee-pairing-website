@@ -43,28 +43,6 @@ post "/AdminHelp" do
   erb :admin_help
 end
 
-
-get "/MentorSchedule" do
-  @header = erb:"common/header_mentorA"
-  erb :mentor_schedule
-end
-
-post "/MentorSchedule" do
-  @header = erb:"common/header_mentorA"
-  erb :mentor_schedule
-end
-
-
-get "/MenteeSchedule" do
- @header = erb:"common/header_menteeA"
-  erb :mentee_schedule
-end
-
-post "/MenteeSchedule" do
- @header = erb:"common/header_mentorA"
-  erb :mentee_schedule
-end
-
 get "/logout" do
   session.clear #Clears session when user logs out
   erb :logout
