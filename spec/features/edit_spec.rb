@@ -14,10 +14,7 @@ describe "the mentee edit page" do
        
   it "allows editing of a valid mentee" do
     add_test_user
-    visit "/login"
-    fill_in "username", with: "123"
-    fill_in "password", with: "123"
-    click_button "Submit"
+    login_mentee
     visit "/MenteeDashboard"
     click_link "Edit Profile"
     click_button "Submit"
@@ -28,10 +25,7 @@ describe "the mentee edit page" do
 #checks that mentee edit is submitted and displayed
   it "allows a mentee record to be changed" do
     add_test_user
-    visit "/login"
-    fill_in "username", with: "123"
-    fill_in "password", with: "123"
-    click_button "Submit"
+     login_mentee
     visit "/MenteeDashboard"
     click_link "Edit Profile"
     fill_in "fname", with: "New"
@@ -44,9 +38,7 @@ describe "the mentee edit page" do
   it "will save empty data field" do
     add_test_user
     visit "/login"
-    fill_in "username", with: "123"
-    fill_in "password", with: "123"
-    click_button "Submit"
+     login_mentee
     visit "/MenteeDashboard"
     click_link "Edit Profile"
     fill_in "fname", with: ""
@@ -59,10 +51,8 @@ describe "the mentee edit page" do
     #checks that an description for mentee can be edited
   it "description can be edited" do
     add_test_user
-    visit "/login"
-    fill_in "username", with: "123"
-    fill_in "password", with: "123"
-    click_button "Submit"
+    login_mentee
+
     visit "/MenteeDashboard"
     click_link "Edit Profile"
     fill_in "description", with: "hello"
@@ -85,10 +75,7 @@ describe "the mentor edit page" do
     
     it "allows editing of a valid mentor" do
     add_test_mentor
-    visit "/login"
-    fill_in "username", with: "1234"
-    fill_in "password", with: "1234"
-    click_button "Submit"
+    login_mentor
     visit"/MentorDashboard"
     click_link "Edit Profile"
     click_button "Submit"
@@ -99,10 +86,7 @@ describe "the mentor edit page" do
 #checks that mentor edit is submitted and displayed
   it "allows a mentor record to be changed" do
     add_test_mentor
-    visit "/login"
-    fill_in "username", with: "1234"
-    fill_in "password", with: "1234"
-    click_button "Submit"
+    login_mentor
     visit"/MentorDashboard"
     click_link "Edit Profile"
     fill_in "fname", with: "New"
@@ -114,10 +98,7 @@ describe "the mentor edit page" do
 #checks that an empty data field can be submitted for mentor
   it "will save empty data field" do
     add_test_mentor
-    visit "/login"
-    fill_in "username", with: "1234"
-    fill_in "password", with: "1234"
-    click_button "Submit"
+    login_mentor
     visit "/MentorDashboard"
     click_link "Edit Profile"
     fill_in "fname", with: ""
@@ -130,10 +111,7 @@ describe "the mentor edit page" do
 #checks that the description for mentor can be changed
   it "description for mentor can be changed" do
     add_test_mentor
-    visit "/login"
-    fill_in "username", with: "1234"
-    fill_in "password", with: "1234"
-    click_button "Submit"
+    login_mentor
     visit"/MentorDashboard"
     click_link "Edit Profile"
     fill_in "description", with: "hello"
@@ -154,10 +132,7 @@ describe "the admin edit page" do
     
     it "allows editing of a valid mentor" do
     
-    visit "/login"
-    fill_in "username", with: "admin2"
-    fill_in "password", with: "S.F"
-    click_button "Submit"
+    login_admin
     visit "/AdminDashboard"
     click_link "Edit Profile"
     click_button "Submit"
@@ -167,10 +142,7 @@ describe "the admin edit page" do
   end
 #checks that mentor edit is submitted and displayed
   it "allows a mentor record to be changed" do
-    visit "/login"
-    fill_in "username", with: "admin2"
-    fill_in "password", with: "S.F"
-    click_button "Submit"
+    login_admin
     visit "/AdminDashboard"
     click_link "Edit Profile"
     fill_in "fname", with: "New"
@@ -186,10 +158,7 @@ describe "the admin edit page" do
     
 #checks that an empty data field can be submitted for mentor
   it "will save empty data field" do
-    visit "/login"
-    fill_in "username", with: "admin2"
-    fill_in "password", with: "S.F"
-    click_button "Submit"
+    login_admin
     visit "/AdminDashboard"
     click_link "Edit Profile"
     fill_in "fname", with: ""
@@ -205,10 +174,7 @@ describe "the admin edit page" do
     
     #description for admin can be changed
   it "description can be changed for Admin" do
-    visit "/login"
-    fill_in "username", with: "admin2"
-    fill_in "password", with: "S.F"
-    click_button "Submit"
+    login_admin
     visit "/AdminDashboard"
     click_link "Edit Profile"
     fill_in "description", with: "hello"
@@ -234,14 +200,8 @@ describe "the admin edit page" do
     
     it "allows editing of a valid mentor" do
     add_test_mentor
-    visit "/login"
-    fill_in "username", with: "1234"
-    fill_in "password", with: "1234"    
-    click_button "Submit" 
-    visit "/login"
-    fill_in "username", with: "admin2"
-    fill_in "password", with: "S.F"    
-    click_button "Submit"  
+    login_mentor
+    login_admin 
     visit "/AdminMentorDashboard"
     click_link "Edit Profile"
     click_button "Submit"
@@ -252,14 +212,8 @@ describe "the admin edit page" do
 #checks that mentor edit is submitted and displayed
   it "allows a mentor record to be changed" do
     add_test_mentor
-    visit "/login"
-    fill_in "username", with: "1234"
-    fill_in "password", with: "1234"    
-    click_button "Submit" 
-    visit "/login"
-    fill_in "username", with: "admin2"
-    fill_in "password", with: "S.F"    
-    click_button "Submit"
+    login_mentor
+    login_admin 
     visit "/AdminMentorDashboard"
     click_link "Edit Profile"
     fill_in "fname", with: "New"
@@ -272,14 +226,8 @@ describe "the admin edit page" do
 #checks that an empty data field can be submitted for mentor
   it "will save empty data field" do
     add_test_mentor
-    visit "/login"
-    fill_in "username", with: "1234"
-    fill_in "password", with: "1234"    
-    click_button "Submit" 
-    visit "/login"
-    fill_in "username", with: "admin2"
-    fill_in "password", with: "S.F"    
-    click_button "Submit"
+    login_mentor
+    login_admin 
     visit "/AdminMentorDashboard"
     click_link "Edit Profile"
     fill_in "fname", with: ""
@@ -297,14 +245,8 @@ describe "the admin edit page" do
   it "description can be changed for adminMentor" do
     clear_database
     add_test_mentor
-    visit "/login"
-    fill_in "username", with: "1234"
-    fill_in "password", with: "1234"    
-    click_button "Submit" 
-    visit "/login"
-    fill_in "username", with: "admin2"
-    fill_in "password", with: "S.F"    
-    click_button "Submit"
+    login_mentor
+    login_admin 
     visit "/AdminMentorDashboard"
     click_link "Edit Profile"
     fill_in "description", with: "hello"
@@ -319,15 +261,8 @@ describe "the admin edit page" do
       it "allows editing of a valid mentee" do
     clear_database
     add_test_mentor
-    visit "/login"
-    fill_in "username", with: "1234"
-    fill_in "password", with: "1234"
-    click_button "Submit"
-    visit "/login"
-    fill_in "username", with: "admin2"
-    fill_in "password", with: "S.F"
-    click_button "Submit"
-    click_link "No"
+    login_mentor
+    login_admin 
     click_link "Mentor List"
     click_link "Edit Profile"
     fill_in "Description:", with: "hello"
@@ -342,15 +277,8 @@ describe "the admin edit page" do
           it "allows editing of a valid mentee" do
     clear_database
     add_test_user
-    visit "/login"
-    fill_in "username", with: "123"
-    fill_in "password", with: "123"
-    click_button "Submit"
-    visit "/login"
-    fill_in "username", with: "admin2"
-    fill_in "password", with: "S.F"
-    click_button "Submit"
-    click_link "No"
+    login_mentor
+    login_admin 
     click_link "Mentee List"
     click_link "Edit Profile"
     fill_in "Description:", with: "hello"
@@ -365,26 +293,13 @@ describe "the admin edit page" do
       it "allows editing of a valid mentee" do
     clear_database
     add_test_mentor
-    visit "/login"
-    fill_in "username", with: "1234"
-    fill_in "password", with: "1234"
-    click_button "Submit"
-    visit "/login"
-    fill_in "username", with: "admin2"
-    fill_in "password", with: "S.F"
-    click_button "Submit"
-    click_link "Yes"
-    fill_in "username", with: "1234"
-    fill_in "password", with: "1234"
-    click_button "Submit"
+    login_mentor
+    login_admin_mentor
     click_link "Mentor List"
     click_link "Edit Profile"
     fill_in "Description:", with: "hello"
     click_button "Submit"
-    visit "/login"
-    fill_in "username", with: "1234"
-    fill_in "password", with: "1234"
-    click_button "Submit"
+    login_mentor
     expect(page).to have_content "hello"
     clear_database
   end
@@ -392,26 +307,13 @@ describe "the admin edit page" do
     clear_database
     add_test_user
     add_test_mentor
-    visit "/login"
-    fill_in "username", with: "123"
-    fill_in "password", with: "123"
-    click_button "Submit"
-    visit "/login"
-    fill_in "username", with: "admin2"
-    fill_in "password", with: "S.F"
-    click_button "Submit"
-    click_link "Yes"
-    fill_in "username", with: "1234"
-    fill_in "password", with: "1234"
-    click_button "Submit"
+    login_mentor
+    login_admin_mentor
     click_link "Mentee List"
     click_link "Edit Profile"
     fill_in "Description:", with: "hello"
     click_button "Submit"
-    visit "/login"
-    fill_in "username", with: "123"
-    fill_in "password", with: "123"
-    click_button "Submit"
+    login_mentee
     expect(page).to have_content "hello"
     clear_database
   end
@@ -419,10 +321,7 @@ it "allows editing of a valid mentee" do
     clear_database
     add_test_user
     add_test_mentor
-    visit "/login"
-    fill_in "username", with: "123"
-    fill_in "password", with: "123"
-    click_button "Submit"
+    login_mentee
     visit "/editMentee"
     expect(page).to have_content "Mentee Dashboard"
     clear_database
@@ -432,10 +331,7 @@ it "allows editing of a valid mentee" do
     clear_database
     add_test_user
     add_test_mentor
-    visit "/login"
-    fill_in "username", with: "1234"
-    fill_in "password", with: "1234"
-    click_button "Submit"
+    login_mentor
     visit "/editMentee"
     expect(page).to have_content "Mentor Dashboard"
     clear_database
@@ -444,11 +340,7 @@ it "allows editing of a valid mentee" do
     clear_database
     add_test_user
     add_test_mentor
-    visit "/login"
-    fill_in "username", with: "admin2"
-    fill_in "password", with: "S.F"
-    click_button "Submit"
-    click_link "No"
+    login_admin
     visit "/editMentee"
     expect(page).to have_content "Admin Dashboard"
     clear_database
@@ -457,14 +349,7 @@ it "allows editing of a valid mentee" do
     clear_database
     add_test_user
     add_test_mentor
-    visit "/login"
-    fill_in "username", with: "admin2"
-    fill_in "password", with: "S.F"
-    click_button "Submit"
-    click_link "Yes"
-    fill_in "username", with: "1234"
-    fill_in "password", with: "1234"
-    click_button "Submit"
+    login_admin_mentor
     visit "/editMentee"
     expect(page).to have_content "Admin + Mentor Dashboard"
     clear_database
@@ -476,10 +361,7 @@ it "allows editing of a valid mentee" do
     clear_database
     add_test_user
     add_test_mentor
-    visit "/login"
-    fill_in "username", with: "123"
-    fill_in "password", with: "123"
-    click_button "Submit"
+    login_mentee
     visit "/editMentor"
     expect(page).to have_content "Mentee Dashboard"
     clear_database
@@ -489,10 +371,7 @@ it "allows editing of a valid mentee" do
     clear_database
     add_test_user
     add_test_mentor
-    visit "/login"
-    fill_in "username", with: "1234"
-    fill_in "password", with: "1234"
-    click_button "Submit"
+    login_mentor
     visit "/editMentor"
     expect(page).to have_content "Mentor Dashboard"
     clear_database
@@ -501,11 +380,7 @@ it "allows editing of a valid mentee" do
     clear_database
     add_test_user
     add_test_mentor
-    visit "/login"
-    fill_in "username", with: "admin2"
-    fill_in "password", with: "S.F"
-    click_button "Submit"
-    click_link "No"
+    login_admin
     visit "/editMentor"
     expect(page).to have_content "Admin Dashboard"
     clear_database
@@ -514,14 +389,7 @@ it "allows editing of a valid mentee" do
     clear_database
     add_test_user
     add_test_mentor
-    visit "/login"
-    fill_in "username", with: "admin2"
-    fill_in "password", with: "S.F"
-    click_button "Submit"
-    click_link "Yes"
-    fill_in "username", with: "1234"
-    fill_in "password", with: "1234"
-    click_button "Submit"
+    login_admin_mentor
     visit "/editMentor"
     expect(page).to have_content "Admin + Mentor Dashboard"
     clear_database
