@@ -73,5 +73,42 @@ def clear_database
   DB.from("reports").delete
 end
 
+
+#login methods for each test username
+def login_mentee
+visit "/login"
+    fill_in "username", with: "123"
+    fill_in "password", with: "123"
+    click_button "Submit" 
+end
+
+def login_mentor
+ visit "/login"
+    fill_in "username", with: "1234"
+    fill_in "password", with: "1234"
+    click_button "Submit"
+end
+
+def login_admin
+visit "/login"
+    fill_in "username", with: "admin2"
+    fill_in "password", with: "S.F"
+    click_button "Submit"
+    click_link "No"
+end
+
+def login_admin_mentor
+ visit "/login"
+    fill_in "username", with: "admin2"
+    fill_in "password", with: "S.F"
+    click_button "Submit"
+    click_link "Yes"
+    fill_in "username", with: "1234"
+    fill_in "password", with: "1234"
+    click_button "Submit"
+end
+
+
+
 # ensure we're always starting from a clean database
 clear_database
