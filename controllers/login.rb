@@ -159,7 +159,7 @@ end
 
 
 post '/loginAgain' do
-  new_ment_instance
+  new_mentor_instance
   @mentors.load(params) #Loads parameters
  
   @error = nil #initializing variable
