@@ -164,6 +164,38 @@ context "with an empty database" do
     
     clear_database
   end
+      it "tests for a mentee/mentor reject application" do
+  clear_database
+      add_test_mentor
+      add_test_user
+      visit "/login" 
+      fill_in "username", with: "1234"
+      fill_in "password", with: "1234"
+      click_button "Submit"      
+      visit "/login" 
+      fill_in "username", with: "123"
+      fill_in "password", with: "123"
+      click_button "Submit"
+      visit "/search"
+      fill_in "searchForMentor", with: "Accounting and Financial Management (BA)"
+      click_button "Submit"
+      click_button "Send application" 
+    visit "/login"
+    fill_in "username", with: "1234"
+    fill_in "password", with: "1234"
+    click_button "Submit"
+    visit "/menteeApplications"
+
+    click_button "Reject application"
+    visit "/login"
+    fill_in "username", with: "123"
+    fill_in "password", with: "123"
+    click_button "Submit"
+    visit "/MenteeDashboard"
+    click_link "View mentor applications"
+    expect(page).to have_content "There are no pending applications"
+    clear_database
+  end
 end
     clear_database
 end
