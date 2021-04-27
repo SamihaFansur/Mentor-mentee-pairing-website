@@ -66,18 +66,7 @@ get "/AdminDashboard" do
   username = session[:admins_username] #Logs user in
   #Gets the admin information that corresponds to the username
   $admins = Admin.first(username: username) # '$' used to make it a global variable
-  if $admins.activationToken != 1 #initially not 1 so account activation email can be sent on the very first login only
-    send_mail($admins.email, 
-      "Successful Account Activation!", 
-      "Hi "+$admins.fname+" "+$admins.lname+"!\n"+
-      "You have successfully activated your admin account \n"+
-      "Your username is: "+$admins.username+"\n"+
-      "Your email: "+$admins.email+"\n"+
-      "Please use these credentials to login into your admin account \n"+
-      "\n\n\nRegards\nTeam 6")
-    $admins.activationToken = 1 #changes value to 1 so activation email not sent again
-    $admins.save_changes
-  end
+  admin_activation_email($admins)
   erb :admin_dashboard
 end
 
@@ -86,55 +75,36 @@ get "/AdminMentorDashboard" do
   username = session[:mentors_username] #Logs user in
   #Gets the admin information that corresponds to the username
   $mentors = Mentor.first(username: username) # '$' used to make it a global variable
-  if $mentors.activationToken != 1 #initially empty so account activation email can be sent on the very first login only
-    send_mail($mentors.email, 
-      "Successful Account Activation!", 
-      "Hi "+$mentors.fname+" "+$mentors.lname+"!\n"+
-      "You have successfully activated your admin account \n"+
-      "Your username is: "+$mentors.username+"\n"+
-      "Your email: "+$mentors.email+"\n"+
-      "Please use these credentials to login into your admin account \n"+
-      "\n\n\nRegards\nTeam 6")
-    $mentors.activationToken = 1 #changes value to 1 so activation email not sent again
-    $mentors.save_changes
-  end
+  admin_activation_email($mentors)
   erb :adminMentor_dashboard
 end
 
 get "/login" do
-  #Creates a new instance of a Mentee when user logs in
-  @mentees = Mentee.new
-    
-  #Creates a new instance of a Mentor when user logs in
-  @mentors = Mentor.new
-  
-  #Creates a new instance of an Admin when user logs in
-  @admins = Admin.new
+  new_mentee_instance
+  new_mentor_instance
+  new_admin_instance
   
   erb :login
 end
 
 get "/loginAgain" do
-  #Creates a new instance of a Mentor when user logs in
-  @mentors = Mentor.new
-  
+  new_mentor_instance  
   erb :loginAgain
 end
 
 post '/login' do
-  @mentees = Mentee.new
+  new_mentee_instance
   @mentees.load(params) #Loads parameters
   
-  @mentors = Mentor.new
+  new_mentor_instance
   @mentors.load(params) #Loads parameters
   
-  @admins = Admin.new
+  new_admin_instance
   @admins.load(params) #Loads parameters
   
-  @error = nil #initializing variable
   @suspend_check = false
   
-  #If mentee username and password match to the values in the database mentee logged in and redirected to mentee dashboard
+  #If mentor username and password match to the values in the database mentor logged in and redirected to mentor dashboard
   #if combination incorrect then displays error
   if @mentees.valid?
     if @mentees.exist_login? && @mentees.account_suspended?.to_s == "false"
@@ -189,7 +159,7 @@ end
 
 
 post '/loginAgain' do
-  @mentors = Mentor.new
+  new_ment_instance
   @mentors.load(params) #Loads parameters
  
   @error = nil #initializing variable
@@ -216,4 +186,19 @@ post '/loginAgain' do
   @error = "Your account is suspended" if @suspend_check
   erb :loginAgain
 
+end
+
+def admin_activation_email(user)
+  if user.activationToken != 1 #initially not 1 so account activation email can be sent on the very first login only
+    send_mail(user.email, 
+      "Successful Account Activation!", 
+      "Hi "+user.fname+" "+user.lname+"!\n"+
+      "You have successfully activated your admin account \n"+
+      "Your username is: "+user.username+"\n"+
+      "Your email: "+user.email+"\n"+
+      "Please use these credentials to login into your admin account. \n"+
+      "\n\n\nRegards\nTeam 6")
+    user.activationToken = 1 #changes value to 1 so activation email not sent again
+    user.save_changes
+  end
 end

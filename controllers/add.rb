@@ -1,24 +1,24 @@
 require "net/http"
 
 get "/MenteeSignUpForm" do
-  @mentees = Mentee.new
+  new_mentee_instance
   erb :mentee_signup
 end
 
 post "/MenteeSignUpForm" do
-  @mentees = Mentee.new
+  new_mentee_instance
   sign_up(@mentees)
   
   erb :mentee_signup
 end
 
 get "/MentorSignUpForm" do
-  @mentors = Mentor.new
+  new_mentor_instance
   erb :mentor_signup
 end
 
 post "/MentorSignUpForm" do
-  @mentors = Mentor.new
+  new_mentor_instance
   sign_up(@mentors)
   
   erb :mentor_signup
@@ -53,4 +53,16 @@ def send_mail(email, subject, body)
                                  "subject" => subject,
                                  "body" => body)
   response.is_a? Net::HTTPSuccess
+end
+
+def new_mentee_instance
+  @mentees = Mentee.new
+end
+
+def new_mentor_instance
+  @mentors = Mentor.new
+end
+
+def new_admin_instance
+  @admins = Admin.new
 end
