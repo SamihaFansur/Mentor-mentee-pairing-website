@@ -2,10 +2,8 @@ require_relative "../spec_helper"
 
 
     
-#checks that a user can be suspended
-#
-#
-#tests that error message shows up when a nil mentee is attempted to be edited
+#checks that a user can be blocked
+
 
 describe "admin block page" do
     #admin 
@@ -95,7 +93,7 @@ it "shows empty list message when no mentors" do
     clear_database
   end
        
-  it "allows block of a valid mentee" do
+  it "allows block of a valid mentor by admin" do
     add_test_mentor
     login_mentor
     add_test_mentor
@@ -130,7 +128,7 @@ it "shows empty list message when no mentors" do
     expect(page).to have_content "Sam Mentor"
     clear_database
   end 
- it "tests for a mentee/mentor match" do
+ it "tests block of matched user" do
   clear_database
     add_test_mentor
     add_test_user
@@ -151,7 +149,7 @@ it "shows empty list message when no mentors" do
     expect(page).to have_content "Your account is suspended"
     clear_database
   end
- it "tests for a mentee/mentor match" do
+ it "checks block of matched mentor" do
   clear_database
     add_test_mentor
     add_test_user
@@ -196,7 +194,7 @@ it "shows empty list message when no mentors" do
     expect(page).to have_content "Sam Mentor"
     clear_database
   end 
- it "tests for a mentee/mentor match" do
+ it "checks block of mentor by admin thats matched" do
   clear_database
     add_test_mentor
     add_test_user
@@ -216,7 +214,7 @@ it "shows empty list message when no mentors" do
     expect(page).to have_content "Your account is suspended"
     clear_database
   end
- it "tests for a mentee/mentor match" do
+ it "tests admin_mentor can block matched mentor" do
   clear_database
     add_test_mentor
     add_test_user
@@ -236,7 +234,7 @@ it "shows empty list message when no mentors" do
     expect(page).to have_content "Your account is suspended"
     clear_database
  end
- it "tests for a mentee/mentor match" do
+ it "tests admin can block matched mentor" do
   clear_database
     add_test_mentor
     add_test_user
@@ -257,7 +255,7 @@ it "shows empty list message when no mentors" do
     clear_database
   end
 
-  it "allows block of a valid mentor" do
+  it "tests block of mentor that is already blocked" do
     add_test_mentor
     login_mentor
     add_test_mentor
@@ -268,7 +266,7 @@ it "shows empty list message when no mentors" do
     expect(page).to have_content "Account has already been blocked"
     clear_database
   end
-it "allows block of a valid mentee" do
+it "tests block of mentee that is already blocked" do
     add_test_user
     add_test_mentor
     login_mentor
@@ -281,7 +279,7 @@ it "allows block of a valid mentee" do
     expect(page).to have_content "Account has already been blocked"
     clear_database
   end
-   it "shows empty list message when no mentors" do
+   it "tests unblock of mentee that is already unblocked" do
     add_test_user
     login_admin
     click_link "Mentee List"
@@ -292,7 +290,7 @@ it "allows block of a valid mentee" do
     clear_database
   end
        
-  it "allows editing of a valid mentee" do
+  it "tests unblock of mentor that is already unblocked" do
     add_test_mentor
     login_mentor
     login_admin
