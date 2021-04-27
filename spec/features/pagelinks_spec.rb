@@ -176,10 +176,7 @@ it "is accessible from the SignUpChoices page" do
 
     it "is accessible from the MentorDashboard page" do
         add_test_mentor
-        visit "/login"
-        fill_in "username", with: "1234"
-        fill_in "password", with: "1234"
-        click_button "Submit"
+        login_mentor  
         click_link "Dashboard" 
         click_link "Logout"
         expect(page).to have_content "Logged out"
@@ -193,10 +190,7 @@ it "is accessible from the SignUpChoices page" do
     
         it "is accessible from the MentorDashboard page" do
         add_test_mentor
-        visit "/login"
-        fill_in "username", with: "1234"
-        fill_in "password", with: "1234"
-        click_button "Submit"    
+        login_mentor   
         visit"/MentorDashboard"
         click_link "Dashboard"
         expect(page).to have_content "Mentor Dashboard"
@@ -205,10 +199,7 @@ it "is accessible from the SignUpChoices page" do
     
             it "is accessible from the MentorDashboard page" do
         add_test_mentor
-        visit "/login"
-        fill_in "username", with: "1234"
-        fill_in "password", with: "1234"
-        click_button "Submit"    
+        login_mentor   
         visit"/MentorDashboard"
         click_link "View mentee applications"
         expect(page).to have_content "Mentee Applications"
@@ -216,10 +207,7 @@ it "is accessible from the SignUpChoices page" do
     
             it "is accessible from the MentorDashboard page" do
         add_test_mentor
-        visit "/login"
-        fill_in "username", with: "1234"
-        fill_in "password", with: "1234"
-        click_button "Submit"    
+        login_mentor  
         visit"/MentorDashboard"
         click_link "Edit Profile"
         expect(page).to have_content "Edit your information"
@@ -227,10 +215,7 @@ it "is accessible from the SignUpChoices page" do
     
 it "is accessible from the MentorDashboard page" do
         add_test_mentor
-        visit "/login"
-        fill_in "username", with: "1234"
-        fill_in "password", with: "1234"
-        click_button "Submit"    
+        login_mentor   
         visit"/MentorDashboard"
         click_link "My Mentee"
         expect(page).to have_content "Details of your current mentee"
@@ -238,10 +223,7 @@ it "is accessible from the MentorDashboard page" do
     
 it "is accessible from the MentorDashboard page" do
         add_test_mentor
-        visit "/login"
-        fill_in "username", with: "1234"
-        fill_in "password", with: "1234"
-        click_button "Submit"    
+        login_mentor  
         visit"/MentorDashboard"
         click_link "Contact"
         expect(page).to have_content "Contact Admin:"
@@ -249,10 +231,7 @@ it "is accessible from the MentorDashboard page" do
     
             it "is accessible from the MentorDashboard page" do
         add_test_mentor
-        visit "/login"
-        fill_in "username", with: "1234"
-        fill_in "password", with: "1234"
-        click_button "Submit"    
+        login_mentor      
         visit"/MentorDashboard"
         click_link "Accessibility"
         expect(page).to have_content "Everyone using this website"
@@ -261,10 +240,7 @@ it "is accessible from the MentorDashboard page" do
     #checks if the header is correct for mentor
  it "is accessible from the MentorDashboard page" do
         add_test_mentor
-        visit "/login"
-        fill_in "username", with: "1234"
-        fill_in "password", with: "1234"
-        click_button "Submit"    
+        login_mentor  
         visit"/MentorDashboard"
         expect(page).to have_content "My Mentee Schedule"
      clear_database   
@@ -282,10 +258,7 @@ it "is accessible from the MentorDashboard page" do
 
     it "is accessible from the MenteeDashboard page" do
         add_test_user
-        visit "/login"
-        fill_in "username", with: "123"
-        fill_in "password", with: "123"
-        click_button "Submit"
+        login_mentee
         visit"/MenteeDashboard"
         click_link "Logout"
         expect(page).to have_content "Logged out"
@@ -301,10 +274,7 @@ it "is accessible from the MentorDashboard page" do
     
         it "is accessible from the MenteeDashboard page" do
         add_test_user
-        visit "/login"
-        fill_in "username", with: "123"
-        fill_in "password", with: "123"
-        click_button "Submit"    
+        login_mentee 
         visit"/MenteeDashboard"
         click_link "Dashboard"
         expect(page).to have_content "Mentee Dashboard"
@@ -313,10 +283,7 @@ it "is accessible from the MentorDashboard page" do
     
     it "is accessible from the MenteeDashboard page" do
         add_test_user
-        visit "/login"
-        fill_in "username", with: "123"
-        fill_in "password", with: "123"
-        click_button "Submit"    
+         login_mentee
         visit"/MenteeDashboard"
         click_link "Find a mentor"
         expect(page).to have_content "Search for a Mentor"
@@ -326,9 +293,7 @@ it "is accessible from the MentorDashboard page" do
             it "is accessible from the MenteeDashboard page" do
         add_test_user
         visit "/login"
-        fill_in "username", with: "123"
-        fill_in "password", with: "123"
-        click_button "Submit"    
+         login_mentee 
         visit"/MenteeDashboard"
         click_link "Edit Profile"
         expect(page).to have_content "Edit your information"
@@ -337,10 +302,7 @@ it "is accessible from the MentorDashboard page" do
     
             it "is accessible from the MenteeDashboard page" do
         add_test_user
-        visit "/login"
-        fill_in "username", with: "123"
-        fill_in "password", with: "123"
-        click_button "Submit"    
+         login_mentee 
         visit"/MenteeDashboard"
         click_link "My Mentor"
         expect(page).to have_content "Details of your current mentor"
@@ -349,10 +311,7 @@ it "is accessible from the MentorDashboard page" do
        
             it "is accessible from the MenteeDashboard page" do
         add_test_user
-        visit "/login"
-        fill_in "username", with: "123"
-        fill_in "password", with: "123"
-        click_button "Submit"    
+        login_mentee   
         visit"/MenteeDashboard"
         click_link "Contact"
         expect(page).to have_content "Contact Admin:"
@@ -360,10 +319,7 @@ it "is accessible from the MentorDashboard page" do
     end
             it "is accessible from the MenteeDashboard page" do
         add_test_user
-        visit "/login"
-        fill_in "username", with: "123"
-        fill_in "password", with: "123"
-        click_button "Submit"    
+        login_mentee  
         visit"/MenteeDashboard"
         click_link "Accessibility"
         expect(page).to have_content "Everyone using this website"
@@ -372,10 +328,7 @@ it "is accessible from the MentorDashboard page" do
     #checks if the header is correct for mentee
  it "is accessible from the MenteeDashboard page" do
         add_test_user
-        visit "/login"
-        fill_in "username", with: "123"
-        fill_in "password", with: "123"
-        click_button "Submit"    
+        login_mentee
         visit"/MenteeDashboard"
         expect(page).to have_content "My Mentor Schedule"
         clear_database   
@@ -393,10 +346,7 @@ it "is accessible from the MentorDashboard page" do
 
     it "is accessible from the AdminDashboard page" do
         
-        visit "/login"
-        fill_in "username", with: "admin2"
-        fill_in "password", with: "S.F"
-        click_button "Submit"
+        login_admin
         visit"/AdminDashboard"
         click_link "Logout"
         expect(page).to have_content "Logged out"
@@ -412,10 +362,7 @@ it "is accessible from the MentorDashboard page" do
     
         it "is accessible from the AdminDashboard page" do
 
-        visit "/login"
-        fill_in "username", with: "admin2"
-        fill_in "password", with: "S.F"
-        click_button "Submit"   
+        login_admin  
         visit"/AdminDashboard"
         click_link "Dashboard"
         expect(page).to have_content "Admin Dashboard"
@@ -423,10 +370,7 @@ it "is accessible from the MentorDashboard page" do
     end 
     
     it "is accessible from the AdminDashboard page" do
-        visit "/login"
-        fill_in "username", with: "admin2"
-        fill_in "password", with: "S.F"
-        click_button "Submit"    
+        login_admin 
         visit"/AdminDashboard"
         click_link "Mentor List"
         expect(page).to have_content "Your search revealed no mentors"
@@ -434,10 +378,7 @@ it "is accessible from the MentorDashboard page" do
     end 
     
             it "is accessible from the AdminDashboard page" do
-        visit "/login"
-        fill_in "username", with: "admin2"
-        fill_in "password", with: "S.F"
-        click_button "Submit"  
+        login_admin
         visit"/AdminDashboard"
         click_link "Edit Profile"
         expect(page).to have_content "Edit your information"
@@ -445,10 +386,7 @@ it "is accessible from the MentorDashboard page" do
     end 
     
             it "is accessible from the AdminDashboard page" do
-        visit "/login"
-        fill_in "username", with: "admin2"
-        fill_in "password", with: "S.F"
-        click_button "Submit"
+        login_admin
         visit"/AdminDashboard"
         click_link "Mentee List"
         expect(page).to have_content "Your search revealed no mentees"
@@ -456,20 +394,14 @@ it "is accessible from the MentorDashboard page" do
     end 
        
             it "is accessible from the AdminDashboard page" do
-        visit "/login"
-        fill_in "username", with: "admin2"
-        fill_in "password", with: "S.F"
-        click_button "Submit" 
+        login_admin 
         visit"/AdminDashboard"
         click_link "Contact"
         expect(page).to have_content "Contact Admin:"
         clear_database   
     end
             it "is accessible from the AdminDashboard page" do
-        visit "/login"
-        fill_in "username", with: "admin2"
-        fill_in "password", with: "S.F"
-        click_button "Submit"  
+        login_admin
         visit"/AdminDashboard"
         click_link "Accessibility"
         expect(page).to have_content "Everyone using this website"
@@ -477,20 +409,14 @@ it "is accessible from the MentorDashboard page" do
     end 
 
             it "is accessible from the AdminDashboard page" do
-        visit "/login"
-        fill_in "username", with: "admin2"
-        fill_in "password", with: "S.F"
-        click_button "Submit" 
+        login_admin
         visit"/AdminDashboard"
         click_link "Pending Mentee Applications"
         expect(page).to have_content "Pending Mentee Requests"
         clear_database   
     end
             it "is accessible from the AdminDashboard page" do
-        visit "/login"
-        fill_in "username", with: "admin2"
-        fill_in "password", with: "S.F"
-        click_button "Submit"  
+        login_admin
         visit"/AdminDashboard"
         click_link "Paired Mentees"
         expect(page).to have_content "Search for a Paired Mentee"
@@ -501,10 +427,7 @@ it "is accessible from the MentorDashboard page" do
  #page links tests from /PendingMenteeApplications
     
      it "is accessible from the AdminDashboard page" do
-        visit "/login"
-        fill_in "username", with: "admin2"
-        fill_in "password", with: "S.F"
-        click_button "Submit"
+        login_admin
         visit"/PendingMenteeApplications"
         click_link "Contact Us"
         expect(page).to have_content "Contact Admin:"
@@ -514,10 +437,7 @@ it "is accessible from the MentorDashboard page" do
 
     it "is accessible from the AdminDashboard page" do
         
-        visit "/login"
-        fill_in "username", with: "admin2"
-        fill_in "password", with: "S.F"
-        click_button "Submit"
+        login_admin
         visit"/PendingMenteeApplications"
         click_link "Logout"
         expect(page).to have_content "Logged out"
@@ -525,10 +445,7 @@ it "is accessible from the MentorDashboard page" do
     end
     
     it "is accessible from the AdminDashboard page" do
-        visit "/login"
-        fill_in "username", with: "admin2"
-        fill_in "password", with: "S.F"
-        click_button "Submit"
+        login_admin
         visit"/PendingMenteeApplications"
         click_link "Our Program"
         expect(page).to have_content "one-to-one mentoring program"
@@ -537,10 +454,7 @@ it "is accessible from the MentorDashboard page" do
     
         it "is accessible from the AdminDashboard page" do
 
-        visit "/login"
-        fill_in "username", with: "admin2"
-        fill_in "password", with: "S.F"
-        click_button "Submit"   
+        login_admin 
         visit"/PendingMenteeApplications"
         click_link "Dashboard"
         expect(page).to have_content "Admin Dashboard"
@@ -549,10 +463,7 @@ it "is accessible from the MentorDashboard page" do
 
        
             it "is accessible from the AdminDashboard page" do
-        visit "/login"
-        fill_in "username", with: "admin2"
-        fill_in "password", with: "S.F"
-        click_button "Submit" 
+        login_admin
         visit"/PendingMenteeApplications"
         click_link "Contact"
         expect(page).to have_content "Contact Admin:"
@@ -583,7 +494,8 @@ it "is accessible from the MentorDashboard page" do
  #page links tests from /PairedMentees
     
      it "is accessible from the AdminDashboard page" do
-        visit"//PairedMentees"
+        login_admin
+        visit"/PairedMentees"
         click_link "Contact Us"
         expect(page).to have_content "Contact Admin:"
         clear_database   
@@ -592,10 +504,7 @@ it "is accessible from the MentorDashboard page" do
 
     it "is accessible from the AdminDashboard page" do
         
-        visit "/login"
-        fill_in "username", with: "admin2"
-        fill_in "password", with: "S.F"
-        click_button "Submit"
+        login_admin
         visit"/PairedMentees"
         click_link "Logout"
         expect(page).to have_content "Logged out"
@@ -603,10 +512,7 @@ it "is accessible from the MentorDashboard page" do
     end
     
     it "is accessible from the AdminDashboard page" do
-        visit "/login"
-        fill_in "username", with: "admin2"
-        fill_in "password", with: "S.F"
-        click_button "Submit"
+        login_admin
         visit"/PairedMentees"
         click_link "Our Program"
         expect(page).to have_content "one-to-one mentoring program"
@@ -615,10 +521,7 @@ it "is accessible from the MentorDashboard page" do
     
         it "is accessible from the AdminDashboard page" do
 
-        visit "/login"
-        fill_in "username", with: "admin2"
-        fill_in "password", with: "S.F"
-        click_button "Submit"   
+        login_admin 
         visit"/PairedMentees"
         click_link "Dashboard"
         expect(page).to have_content "Admin Dashboard"
@@ -627,20 +530,14 @@ it "is accessible from the MentorDashboard page" do
 
        
             it "is accessible from the AdminDashboard page" do
-        visit "/login"
-        fill_in "username", with: "admin2"
-        fill_in "password", with: "S.F"
-        click_button "Submit" 
+        login_admin
         visit"/PairedMentees"
         click_link "Contact"
         expect(page).to have_content "Contact Admin:"
         clear_database   
     end
             it "is accessible from the AdminDashboard page" do
-        visit "/login"
-        fill_in "username", with: "admin2"
-        fill_in "password", with: "S.F"
-        click_button "Submit"  
+        login_admin
         visit"/PairedMentees"
         click_link "Accessibility"
         expect(page).to have_content "Everyone using this website"
@@ -648,10 +545,7 @@ it "is accessible from the MentorDashboard page" do
     end 
 
             it "is accessible from the AdminDashboard page" do
-        visit "/login"
-        fill_in "username", with: "admin2"
-        fill_in "password", with: "S.F"
-        click_button "Submit" 
+        login_admin
         visit"/PairedMentees"
         click_link "Contact Us"
         expect(page).to have_content "Contact"
@@ -660,10 +554,7 @@ it "is accessible from the MentorDashboard page" do
  #page links tests from /searchForAMentee
     
      it "is accessible from the AdminDashboard page" do
-        visit "/login"
-        fill_in "username", with: "admin2"
-        fill_in "password", with: "S.F"
-        click_button "Submit"
+        login_admin
         visit"/searchForAMentee"
         click_link "Contact Us"
         expect(page).to have_content "Contact Admin:"
@@ -673,10 +564,7 @@ it "is accessible from the MentorDashboard page" do
 
     it "is accessible from the AdminDashboard page" do
         
-        visit "/login"
-        fill_in "username", with: "admin2"
-        fill_in "password", with: "S.F"
-        click_button "Submit"
+        login_admin
         visit"/searchForAMentee"
         click_link "Logout"
         expect(page).to have_content "Logged out"
@@ -684,10 +572,7 @@ it "is accessible from the MentorDashboard page" do
     end
     
     it "is accessible from the AdminDashboard page" do
-        visit "/login"
-        fill_in "username", with: "admin2"
-        fill_in "password", with: "S.F"
-        click_button "Submit"
+        login_admin
         visit"/searchForAMentee"
         click_link "Our Program"
         expect(page).to have_content "one-to-one mentoring program"
@@ -696,10 +581,7 @@ it "is accessible from the MentorDashboard page" do
     
         it "is accessible from the AdminDashboard page" do
 
-        visit "/login"
-        fill_in "username", with: "admin2"
-        fill_in "password", with: "S.F"
-        click_button "Submit"   
+        login_admin  
         visit"/searchForAMentee"
         click_link "Dashboard"
         expect(page).to have_content "Admin Dashboard"
@@ -708,20 +590,14 @@ it "is accessible from the MentorDashboard page" do
 
        
             it "is accessible from the AdminDashboard page" do
-        visit "/login"
-        fill_in "username", with: "admin2"
-        fill_in "password", with: "S.F"
-        click_button "Submit" 
+        login_admin
         visit"/searchForAMentee"
         click_link "Contact"
         expect(page).to have_content "Contact Admin:"
         clear_database   
     end
             it "is accessible from the AdminDashboard page" do
-        visit "/login"
-        fill_in "username", with: "admin2"
-        fill_in "password", with: "S.F"
-        click_button "Submit"  
+        login_admin
         visit"/searchForAMentee"
         click_link "Accessibility"
         expect(page).to have_content "Everyone using this website"
@@ -741,11 +617,8 @@ it "is accessible from the MentorDashboard page" do
 #page links tests from /searchForAMentor
     
      it "is accessible from the AdminDashboard page" do
-        visit "/login"
-        fill_in "username", with: "admin2"
-        fill_in "password", with: "S.F"
-        click_button "Submit"
-        visit"//searchForAMentor"
+        login_admin
+        visit"/searchForAMentor"
         click_link "Contact Us"
         expect(page).to have_content "Contact Admin:"
         clear_database   
@@ -754,10 +627,7 @@ it "is accessible from the MentorDashboard page" do
 
     it "is accessible from the AdminDashboard page" do
         
-        visit "/login"
-        fill_in "username", with: "admin2"
-        fill_in "password", with: "S.F"
-        click_button "Submit"
+        login_admin
         visit"/searchForAMentor"
         click_link "Logout"
         expect(page).to have_content "Logged out"
@@ -765,10 +635,7 @@ it "is accessible from the MentorDashboard page" do
     end
     
     it "is accessible from the AdminDashboard page" do
-        visit "/login"
-        fill_in "username", with: "admin2"
-        fill_in "password", with: "S.F"
-        click_button "Submit"
+        login_admin
         visit"/searchForAMentor"
         click_link "Our Program"
         expect(page).to have_content "one-to-one mentoring program"
@@ -777,10 +644,7 @@ it "is accessible from the MentorDashboard page" do
     
         it "is accessible from the AdminDashboard page" do
 
-        visit "/login"
-        fill_in "username", with: "admin2"
-        fill_in "password", with: "S.F"
-        click_button "Submit"   
+        login_admin
         visit"/searchForAMentor"
         click_link "Dashboard"
         expect(page).to have_content "Admin Dashboard"
@@ -789,20 +653,14 @@ it "is accessible from the MentorDashboard page" do
 
        
             it "is accessible from the AdminDashboard page" do
-        visit "/login"
-        fill_in "username", with: "admin2"
-        fill_in "password", with: "S.F"
-        click_button "Submit" 
+        login_admin 
         visit"/searchForAMentor"
         click_link "Contact"
         expect(page).to have_content "Contact Admin:"
         clear_database   
     end
             it "is accessible from the AdminDashboard page" do
-        visit "/login"
-        fill_in "username", with: "admin2"
-        fill_in "password", with: "S.F"
-        click_button "Submit"  
+        login_admin  
         visit"/searchForAMentor"
         click_link "Accessibility"
         expect(page).to have_content "Everyone using this website"
@@ -810,10 +668,7 @@ it "is accessible from the MentorDashboard page" do
     end 
 
             it "is accessible from the AdminDashboard page" do
-        visit "/login"
-        fill_in "username", with: "admin2"
-        fill_in "password", with: "S.F"
-        click_button "Submit" 
+        login_admin 
         visit"/searchForAMentor"
         click_link "Contact Us"
         expect(page).to have_content "Contact"
@@ -821,10 +676,7 @@ it "is accessible from the MentorDashboard page" do
     end
     #checks if the header is correct for admin
  it "is accessible from the AdminDashboard page" do
-       visit "/login"
-        fill_in "username", with: "admin2"
-        fill_in "password", with: "S.F"
-        click_button "Submit"   
+        login_admin   
         visit"/AdminDashboard"
         expect(page).not_to have_content "My Mentor Schedule"
         clear_database   
@@ -843,14 +695,7 @@ it "is accessible from the MentorDashboard page" do
 
     it "is accessible from the AdminMentorDashboard page" do
         add_test_mentor
-        visit "/login"
-        fill_in "username", with: "admin2"
-        fill_in "password", with: "S.F"
-        click_button "Submit"
-        visit "/loginAgain"
-        fill_in "username", with: "1234"
-        fill_in "password", with: "1234"
-        click_button "Submit"
+        login_admin_mentor
         visit"/AdminMentorDashboard"
         click_link "Logout"
         expect(page).to have_content "Logged out"
@@ -866,14 +711,7 @@ it "is accessible from the MentorDashboard page" do
     
         it "is accessible from the AdminMentorDashboard page" do
         add_test_mentor
-        visit "/login"
-        fill_in "username", with: "admin2"
-        fill_in "password", with: "S.F"
-        click_button "Submit"
-        visit "/loginAgain"
-        fill_in "username", with: "1234"
-        fill_in "password", with: "1234"
-        click_button "Submit"  
+        login_admin_mentor 
         visit"/AdminMentorDashboard"
         click_link "Dashboard"
         expect(page).to have_content "Admin + Mentor Dashboard"
@@ -883,14 +721,7 @@ it "is accessible from the MentorDashboard page" do
     it "is accessible from the AdminMentorDashboard page" do
         clear_database 
         add_test_mentor
-        visit "/login"
-        fill_in "username", with: "admin2"
-        fill_in "password", with: "S.F"
-        click_button "Submit"
-        visit "/loginAgain"
-        fill_in "username", with: "1234"
-        fill_in "password", with: "1234"
-        click_button "Submit"    
+        login_admin_mentor   
         visit"/AdminMentorDashboard"
         click_link "Mentor List"
         expect(page).to have_content "Mentor List"
@@ -900,13 +731,7 @@ it "is accessible from the MentorDashboard page" do
             it "is accessible from the AdminMentorDashboard page" do
         add_test_mentor
         visit "/login"
-        fill_in "username", with: "admin2"
-        fill_in "password", with: "S.F"
-        click_button "Submit"
-        visit "/loginAgain"
-        fill_in "username", with: "1234"
-        fill_in "password", with: "1234"
-        click_button "Submit"
+        login_admin_mentor
         visit"/AdminMentorDashboard"
         click_link "Edit Profile"
         expect(page).to have_content "Edit your information"
@@ -916,14 +741,7 @@ it "is accessible from the MentorDashboard page" do
             it "is accessible from the AdminMentorDashboard page" do
         clear_database         
         add_test_mentor
-        visit "/login"
-        fill_in "username", with: "admin2"
-        fill_in "password", with: "S.F"
-        click_button "Submit"
-        visit "/loginAgain"
-        fill_in "username", with: "1234"
-        fill_in "password", with: "1234"
-        click_button "Submit"
+        login_admin_mentor
         visit"/AdminMentorDashboard"
         click_link "Mentee List"
         expect(page).to have_content "Mentee List"
@@ -932,14 +750,7 @@ it "is accessible from the MentorDashboard page" do
        
             it "is accessible from the AdminMentorDashboard page" do
         add_test_mentor
-        visit "/login"
-        fill_in "username", with: "admin2"
-        fill_in "password", with: "S.F"
-        click_button "Submit"
-        visit "/loginAgain"
-        fill_in "username", with: "1234"
-        fill_in "password", with: "1234"
-        click_button "Submit"
+        login_admin_mentor
         visit"/AdminMentorDashboard"
         click_link "Contact"
         expect(page).to have_content "Contact Admin:"
@@ -947,14 +758,7 @@ it "is accessible from the MentorDashboard page" do
     end
             it "is accessible from the AdminMentorDashboard page" do
         add_test_mentor
-        visit "/login"
-        fill_in "username", with: "admin2"
-        fill_in "password", with: "S.F"
-        click_button "Submit"
-        visit "/loginAgain"
-        fill_in "username", with: "1234"
-        fill_in "password", with: "1234"
-        click_button "Submit" 
+        login_admin_mentor
         visit"/AdminMentorDashboard"
         click_link "Accessibility"
         expect(page).to have_content "Everyone using this website"
@@ -963,28 +767,14 @@ it "is accessible from the MentorDashboard page" do
     #checks if the header is correct for admin
  it "is accessible from the AdminMentorDashboard page" do
        add_test_mentor
-        visit "/login"
-        fill_in "username", with: "admin2"
-        fill_in "password", with: "S.F"
-        click_button "Submit"
-        visit "/loginAgain"
-        fill_in "username", with: "1234"
-        fill_in "password", with: "1234"
-        click_button "Submit"   
+        login_admin_mentor 
         visit"/AdminMentorDashboard"
         expect(page).not_to have_content "My Mentor Schedule"
         clear_database   
     end 
             it "is accessible from the AdminMentorDashboard page" do
         add_test_mentor
-        visit "/login"
-        fill_in "username", with: "admin2"
-        fill_in "password", with: "S.F"
-        click_button "Submit"
-        visit "/loginAgain"
-        fill_in "username", with: "1234"
-        fill_in "password", with: "1234"
-        click_button "Submit"  
+        login_admin_mentor 
         visit"/AdminMentorDashboard"
         click_link "My Mentee"
         expect(page).to have_content "Details of your current mentee"
@@ -993,14 +783,7 @@ it "is accessible from the MentorDashboard page" do
 
             it "is accessible from the AdminMentorDashboard page" do
         add_test_mentor
-        visit "/login"
-        fill_in "username", with: "admin2"
-        fill_in "password", with: "S.F"
-        click_button "Submit"
-        visit "/loginAgain"
-        fill_in "username", with: "1234"
-        fill_in "password", with: "1234"
-        click_button "Submit"  
+        login_admin_mentor
         visit"/AdminMentorDashboard"
         click_link "My Mentee"
         expect(page).to have_content "Details of your current mentee"
