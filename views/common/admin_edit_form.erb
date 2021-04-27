@@ -1,6 +1,7 @@
 <!--Form called when an admin wants to edit their profile-->
 <div class="col">
   <p>Please fill in the information below</p>
+<!--   could edit the content of name   -->
   <p>
     <label for="fname" class="options">First name: </label>
     <input type="text" name="fname" id="fname" maxlength="40" size="30" placeholder="Enter first name..."  value="<%= h @admins.fname %>">
@@ -10,27 +11,27 @@
     <label for="lname" class="options">Last name: </label>
     <input type="text" name="lname" id="lname" maxlength="40" size="30" placeholder="Enter last name..."  value="<%= h @admins.lname %>">
   </p>
-
+<!--   could edit the content of University E-mail  -->
   <p>
     <label for="email" class="options">E-mail: </label>
     <input type="email" name="email" pattern="[A-Za-z0-9._%+-]+@sheffield.ac.uk$" title="Enter your UoS email in the format xyz@sheffield.ac.uk" id="email" placeholder="Enter your UoS email..." maxlength="40" size="30" value="<%= h @admins.email %>">
   </p>
-  
+<!--   could edit the content of phonenumber   --> 
   <p> 
     <label for="phoneNum" class="options">Phone Number: </label>
     <input type="text" name="phoneNum" pattern="^\+(?:[0-9] ?){1,3}\s+[0-9]{6,14}$" title="E.g +12 34567890" id="phoneNum" placeholder="+XX XXXXXXXXXX" maxlength="40" size="30" value="<%= h @admins.phoneNum %>">
   </p>
-
+<!--   load the username    -->
   <p>
     <label for="username" class="options">Username: </label>
     <input disabled type="text" name="username" id="username" placeholder="Enter your username..." maxlength="40" size="30" value="<%= h @admins.username %>">
   </p>
-  
+<!--   could edit the content of password --> 
   <p>
     <label for="password" class="options">Password: </label>
     <input type="password" name="password" id="password" placeholder="Enter your password..." maxlength="40" size="30" value="<%= h @admins.password %>">
   </p>   
-  
+<!--   could edit the content of description   -->
   <p>
     <label for="description" class="options">Description: </label>
   </p>
