@@ -3,10 +3,7 @@ require_relative "../spec_helper"
 describe "the delete page" do
   it "allows deletion of a valid mentee" do
     add_test_user
-    visit "/login"
-    fill_in "username", with: "123"
-    fill_in "password", with: "123"
-    click_button "Submit"
+    login_mentee
     visit"/MenteeDashboard"
     click_link "Edit Profile"
     click_button "Delete" 
@@ -16,10 +13,7 @@ describe "the delete page" do
     #tests for deleting mentor
    it "allows deletion of a valid mentor" do
     add_test_mentor
-    visit "/login"
-    fill_in "username", with: "1234"
-    fill_in "password", with: "1234"
-    click_button "Submit"
+    login_mentor
     visit"/MentorDashboard"
     click_link "Edit Profile"
     click_button "Delete"
@@ -31,22 +25,12 @@ describe "the delete page" do
   clear_database
     add_test_mentor
     add_test_user
-    visit "/login" 
-    fill_in "username", with: "123"
-    fill_in "password", with: "123"
-    click_button "Submit"      
-    visit "/login"
-    fill_in "username", with: "admin2"
-    fill_in "password", with: "S.F"
-    click_button "Submit"
-    click_link "No"
+    login_mentee     
+    login_admin
     click_link "Mentee List"
     click_link "Edit Profile"
     click_button "Delete"
-    visit "/login"
-    fill_in "username", with: "123"
-    fill_in "password", with: "123"
-    click_button "Submit"
+    login_mentee
     expect(page).to have_content "Username/Password combination incorrect"
 
     clear_database
@@ -55,22 +39,12 @@ describe "the delete page" do
  clear_database
     add_test_mentor
     add_test_user
-    visit "/login" 
-    fill_in "username", with: "1234"
-    fill_in "password", with: "1234"
-    click_button "Submit"      
-    visit "/login"
-    fill_in "username", with: "admin2"
-    fill_in "password", with: "S.F"
-    click_button "Submit"
-    click_link "No"
+    login_mentor     
+    login_admin
     click_link "Mentor List"
     click_link "Edit Profile"
     click_button "Delete"
-    visit "/login"
-    fill_in "username", with: "1234"
-    fill_in "password", with: "1234"
-    click_button "Submit"
+    login_mentor
     expect(page).to have_content "Username/Password combination incorrect"
 
     clear_database
@@ -80,25 +54,12 @@ describe "the delete page" do
   clear_database
     add_test_mentor
     add_test_user
-    visit "/login" 
-    fill_in "username", with: "123"
-    fill_in "password", with: "123"
-    click_button "Submit"      
-    visit "/login"
-    fill_in "username", with: "admin2"
-    fill_in "password", with: "S.F"
-    click_button "Submit"
-    click_link "Yes"
-    fill_in "username", with: "1234"
-    fill_in "password", with: "1234"
-    click_button "Submit"   
+    login_mentee      
+    login_admin_mentor
     click_link "Mentee List"
     click_link "Edit Profile"
     click_button "Delete"
-    visit "/login"
-    fill_in "username", with: "123"
-    fill_in "password", with: "123"
-    click_button "Submit"
+    login_mentee
     expect(page).to have_content "Username/Password combination incorrect"
 
     clear_database
@@ -107,25 +68,12 @@ describe "the delete page" do
  clear_database
     add_test_mentor
     add_test_user
-    visit "/login" 
-    fill_in "username", with: "1234"
-    fill_in "password", with: "1234"
-    click_button "Submit"      
-    visit "/login"
-    fill_in "username", with: "admin2"
-    fill_in "password", with: "S.F"
-    click_button "Submit"
-    click_link "Yes"
-    fill_in "username", with: "1234"
-    fill_in "password", with: "1234"
-    click_button "Submit"   
+    login_mentor    
+    login_admin_mentor  
     click_link "Mentor List"
     click_link "Edit Profile"
     click_button "Delete"
-    visit "/login"
-    fill_in "username", with: "1234"
-    fill_in "password", with: "1234"
-    click_button "Submit"
+    login_mentor
     expect(page).to have_content "Username/Password combination incorrect"
 
     clear_database
@@ -133,194 +81,104 @@ describe "the delete page" do
     
     it "tests for a mentee/mentor match" do
   clear_database
-      add_test_mentor
-      add_test_user
-      visit "/login" 
-      fill_in "username", with: "1234"
-      fill_in "password", with: "1234"
-      click_button "Submit"      
-      visit "/login" 
-      fill_in "username", with: "123"
-      fill_in "password", with: "123"
-      click_button "Submit"
-      visit "/search"
-      fill_in "searchForMentor", with: "Accounting and Financial Management (BA)"
-      click_button "Submit"
-      click_button "Send application" 
-    visit "/login"
-    fill_in "username", with: "1234"
-    fill_in "password", with: "1234"
+    add_test_mentor
+    add_test_user
+    login_mentor     
+    login_mentee
+    visit "/search"
+    fill_in "searchForMentor", with: "Accounting and Financial Management (BA)"
     click_button "Submit"
+    click_button "Send application" 
+    login_mentor
     visit "/menteeApplications"
-
     click_button "Accept application"
-    visit "/login"
-    fill_in "username", with: "123"
-    fill_in "password", with: "123"
-    click_button "Submit"
+    login_mentee
     visit "/MenteeDashboard"
     click_link "View mentor applications"
-    click_button "Match"
-   
-    visit "/login"
-    fill_in "username", with: "admin2"
-    fill_in "password", with: "S.F"
-    click_button "Submit"
-    click_link "Yes"
-    fill_in "username", with: "1234"
-    fill_in "password", with: "1234"
-    click_button "Submit"   
+    click_button "Match"  
+    login_admin_mentor  
     click_link "Mentor List"
     click_link "Edit Profile"
     click_button "Delete"
-    visit "/login"
-    fill_in "username", with: "1234"
-    fill_in "password", with: "1234"
-    click_button "Submit"
+    login_mentor
     expect(page).to have_content "Username/Password combination incorrect"
 
     clear_database
   end
         it "tests for a mentee/mentor match" do
   clear_database
-      add_test_mentor
-      add_test_user
-      visit "/login" 
-      fill_in "username", with: "1234"
-      fill_in "password", with: "1234"
-      click_button "Submit"      
-      visit "/login" 
-      fill_in "username", with: "123"
-      fill_in "password", with: "123"
-      click_button "Submit"
-      visit "/search"
-      fill_in "searchForMentor", with: "Accounting and Financial Management (BA)"
-      click_button "Submit"
-      click_button "Send application" 
-    visit "/login"
-    fill_in "username", with: "1234"
-    fill_in "password", with: "1234"
+    add_test_mentor
+    add_test_user
+    login_mentor      
+    login_mentee
+    visit "/search"
+    fill_in "searchForMentor", with: "Accounting and Financial Management (BA)"
     click_button "Submit"
+    click_button "Send application" 
+    login_mentor
     visit "/menteeApplications"
-
     click_button "Accept application"
-    visit "/login"
-    fill_in "username", with: "123"
-    fill_in "password", with: "123"
-    click_button "Submit"
+    login_mentee
     visit "/MenteeDashboard"
     click_link "View mentor applications"
     click_button "Match"
-   
-    visit "/login"
-    fill_in "username", with: "admin2"
-    fill_in "password", with: "S.F"
-    click_button "Submit"
-    click_link "Yes"
-    fill_in "username", with: "1234"
-    fill_in "password", with: "1234"
-    click_button "Submit"   
+    login_admin_mentor
     click_link "Mentee List"
     click_link "Edit Profile"
     click_button "Delete"
-    visit "/login"
-    fill_in "username", with: "123"
-    fill_in "password", with: "123"
-    click_button "Submit"
+    login_mentee
     expect(page).to have_content "Username/Password combination incorrect"
 
     clear_database
   end
         it "tests for a mentee/mentor match" do
   clear_database
-      add_test_mentor
-      add_test_user
-      visit "/login" 
-      fill_in "username", with: "1234"
-      fill_in "password", with: "1234"
-      click_button "Submit"      
-      visit "/login" 
-      fill_in "username", with: "123"
-      fill_in "password", with: "123"
-      click_button "Submit"
-      visit "/search"
-      fill_in "searchForMentor", with: "Accounting and Financial Management (BA)"
-      click_button "Submit"
-      click_button "Send application" 
-    visit "/login"
-    fill_in "username", with: "1234"
-    fill_in "password", with: "1234"
+    add_test_mentor
+    add_test_user
+    login_mentor    
+    login_mentee
+    visit "/search"
+    fill_in "searchForMentor", with: "Accounting and Financial Management (BA)"
     click_button "Submit"
+    click_button "Send application" 
+    login_mentor
     visit "/menteeApplications"
-
     click_button "Accept application"
-    visit "/login"
-    fill_in "username", with: "123"
-    fill_in "password", with: "123"
-    click_button "Submit"
+    login_mentee
     visit "/MenteeDashboard"
     click_link "View mentor applications"
-    click_button "Match"
-   
-    visit "/login"
-    fill_in "username", with: "admin2"
-    fill_in "password", with: "S.F"
-    click_button "Submit"
-    click_link "No"
+    click_button "Match" 
+    login_admin
     click_link "Mentor List"
     click_link "Edit Profile"
     click_button "Delete"
-    visit "/login"
-    fill_in "username", with: "1234"
-    fill_in "password", with: "1234"
-    click_button "Submit"
+    login_mentor
     expect(page).to have_content "Username/Password combination incorrect"
 
     clear_database
   end
         it "tests for a mentee/mentor match" do
   clear_database
-      add_test_mentor
-      add_test_user
-      visit "/login" 
-      fill_in "username", with: "1234"
-      fill_in "password", with: "1234"
-      click_button "Submit"      
-      visit "/login" 
-      fill_in "username", with: "123"
-      fill_in "password", with: "123"
-      click_button "Submit"
-      visit "/search"
-      fill_in "searchForMentor", with: "Accounting and Financial Management (BA)"
-      click_button "Submit"
-      click_button "Send application" 
-    visit "/login"
-    fill_in "username", with: "1234"
-    fill_in "password", with: "1234"
+    add_test_mentor
+    add_test_user
+    login_mentor    
+    login_mentee
+    visit "/search"
+    fill_in "searchForMentor", with: "Accounting and Financial Management (BA)"
     click_button "Submit"
+    click_button "Send application" 
+    login_mentor
     visit "/menteeApplications"
-
     click_button "Accept application"
-    visit "/login"
-    fill_in "username", with: "123"
-    fill_in "password", with: "123"
-    click_button "Submit"
+    login_mentee
     visit "/MenteeDashboard"
     click_link "View mentor applications"
-    click_button "Match"
-   
-    visit "/login"
-    fill_in "username", with: "admin2"
-    fill_in "password", with: "S.F"
-    click_button "Submit"
-    click_link "No"
+    click_button "Match" 
+    login_admin
     click_link "Mentee List"
     click_link "Edit Profile"
     click_button "Delete"
-    visit "/login"
-    fill_in "username", with: "123"
-    fill_in "password", with: "123"
-    click_button "Submit"
+    login_mentee
     expect(page).to have_content "Username/Password combination incorrect"
 
     clear_database
