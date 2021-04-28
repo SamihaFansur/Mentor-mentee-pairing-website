@@ -391,7 +391,45 @@ it "tests editMentor from adminMentor account" do
     expect(page).to have_content "Admin + Mentor Dashboard"
     clear_database
   end
-        clear_database
+#editAdmin
+
+it "tests editAdmin from mentee account" do
+    clear_database
+    add_test_user
+    add_test_mentor
+    login_mentee
+    visit "/editAdmin"
+    expect(page).to have_content "Mentee Dashboard"
+    clear_database
+  end
+
+it "tests editAdmin from mentor account" do
+    clear_database
+    add_test_user
+    add_test_mentor
+    login_mentor
+    visit "/editMentor"
+    expect(page).to have_content "Mentor Dashboard"
+    clear_database
+  end
+it "tests editAdmin from admin account" do
+    clear_database
+    add_test_user
+    add_test_mentor
+    login_admin
+    visit "/editAdmin"
+    expect(page).to have_content "Admin Dashboard"
+    clear_database
+  end
+it "tests editAdmin from adminMentor account" do
+    clear_database
+    add_test_user
+    add_test_mentor
+    login_admin_mentor
+    visit "/editAdmin"
+    expect(page).to have_content "Admin + Mentor Dashboard"
+    clear_database
+  end
 end   
 
     
