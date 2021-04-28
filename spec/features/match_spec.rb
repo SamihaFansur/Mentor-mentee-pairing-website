@@ -2,21 +2,10 @@ require_relative "../spec_helper"
 
 
     
-#checks that a mentee can be edited
-#
-#
-#tests that error message shows up when a nil mentee is attempted to be edited
-describe "applications page" do
+#checks that a mentee can be matched
+
+describe "match page" do
 context "with an empty database" do
-    it "says the database is empty" do
-      clear_database
-      add_test_user
-      login_mentee
-      visit "/search"
-      fill_in "searchForMentor", with: "123"
-      expect(page).to have_content "Your search revealed no mentors"
-      clear_database  
-    end
        
   it "tests for a mentee/mentor match" do
 
@@ -40,7 +29,7 @@ context "with an empty database" do
     expect(page).to have_content "Sam Mentor"
     clear_database
   end
-      it "tests for a mentee/mentor match" do
+      it "tests for a mentee/mentor match when already have mentor" do
 
     add_test_mentor
     add_test_user
@@ -79,7 +68,7 @@ context "with an empty database" do
     expect(page).to have_content "You already have a mentor"
     clear_database
   end
-      it "tests for a mentee/mentor match" do
+      it "checks report of mentee can be dismissed" do
 
     add_test_mentor
     add_test_user
