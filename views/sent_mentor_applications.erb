@@ -3,11 +3,11 @@
   
       <div class="full">
         <h2>Mentor Applications still pending</h2>
-        <div class="user_info" id="application">
+        <div class="userInfo" id="application">
           <!-- Displays all the applications a mentee has sent which are pending -->
           <% if @mentorIDList.count > 0 %>
-              <table class="display_table">
-                <tr id="TableHeadings">
+              <table class="displayTable">
+                <tr>
                   <th>Name</th>
                   <th>Email</th>
                   <th>Phone Number</th>
@@ -44,7 +44,7 @@
               <% end %> 
               </table>
             <% else %>
-              <p id="SearchError">There are no pending applications</p>
+              <p id="searchError">There are no pending applications</p>
             <% end %>
          </div>
      </div>

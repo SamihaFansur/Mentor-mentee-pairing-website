@@ -172,5 +172,20 @@ it "allows suspend of a valid mentee but not twice" do
     expect(page).to have_content "Sam Mentor"
     clear_database
   end 
+
+# final test as deleting admin breaks other tests if it goes before them
+it "tests for deleting admin" do
+ clear_database   
+    login_admin  
+    click_link "Edit Profile"
+    click_button "Delete"
+    visit "/login"
+    fill_in "username", with: "admin2"
+    fill_in "password", with: "S.F"
+    click_button "Submit"
+    expect(page).to have_content "Username/Password combination incorrect"
+
+    clear_database
+ end
         clear_database
 end

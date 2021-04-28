@@ -23,8 +23,8 @@
           
           <!--Displays the mentor details-->
           <% if @mentors.count > 0 %>
-            <table class="display_table">
-              <tr id="TableHeadings">
+            <table class="displayTable">
+              <tr>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Phone Number</th>
@@ -52,7 +52,7 @@
             <% end %> 
             </table>
           <% else %>
-            <p id="SearchError">Your search revealed no mentors</p>
+            <p id="searchError">Your search revealed no mentors</p>
           <% end %>
       </div>
 </div>

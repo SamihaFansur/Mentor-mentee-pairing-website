@@ -32,7 +32,7 @@
           
           <!--Displays the mentor details-->
           <% if @mentees.count> 0 %>
-            <table class="display_table">
+            <table class="displayTable">
             <!-- display the name of each column in the table              -->
               <tr id="TableHeadings">
                 <th>Username</th>
@@ -87,7 +87,7 @@
             <!-- if the username is not match the mentee's username,it will display the SearchError             -->
             <p id="SearchError">Your search revealed no mentees.<br>Maybe the user is a mentor.<br>
             <!--Link to mentor list                -->
-            <a href="/searchForAMentor" class="search_info" class="link">Mentor List</a></p>
+            <a href="/searchForAMentor" class="searchInfo" class="link">Mentor List</a></p>
           <% end %>  
       </div>
 </div>

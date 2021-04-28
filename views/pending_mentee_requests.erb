@@ -4,11 +4,11 @@
   
       <div class="full">
         <h2>Pending Mentee Requests</h2>
-        <div class="user_info" id="application">
+        <div class="userInfo" id="application">
           <!-- Displays all the mentee applications that are pending -->
           <% if @requests.count > 0 %>
-            <table class="display_table">
-              <tr id="TableHeadings">
+            <table class="displayTable">
+              <tr>
                 <th>Mentee ID</th>
                 <th>Mentee Name</th>
                 <th>Mentee Email</th>
@@ -28,7 +28,7 @@
             <% end %> 
             </table>
           <% else %>
-            <p id="SearchError">There are no pending mentee requests at this moment!</p>
+            <p id="searchError">There are no pending mentee requests at this moment!</p>
           <% end %>
          </div>
      </div>

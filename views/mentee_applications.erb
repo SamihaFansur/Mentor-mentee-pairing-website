@@ -7,8 +7,8 @@
         <div class="user_info" id="application">
           <!-- Displays all the mentee applications the mentor has -->
           <% if @menteeIDList.count > 0 %>
-              <table class="display_table">
-                <tr id="TableHeadings">
+              <table class="displayTable">
+                <tr>
                   <th>Name</th>
                   <th>Email</th>
                   <th>Phone Number</th>
@@ -47,7 +47,7 @@
               <% end %> 
               </table>
             <% else %>
-              <p id="SearchError">There are no mentee applications.<br>You may already have a mentee!</p>
+              <p id="searchError">There are no mentee applications.<br>You may already have a mentee!</p>
             <% end %>
          </div>
      </div>

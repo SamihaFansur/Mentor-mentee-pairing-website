@@ -4,7 +4,7 @@
       <div class="full">
         <h2>My Mentee</h2>
         <p>Details of your current mentee will appear here:</p>
-        <div class="user_info" id="application">
+        <div class="userInfo" id="application">
           <!-- Displays the details of the mentee the mentor is matched to -->
           <% if @menteeMatchedList.count > 0 %>
               <h2>Mentee Infomation:</h2>
@@ -26,7 +26,7 @@
                 </form>             
               <% end %>
             <% else %>
-              <p id="SearchError">You do not have a mentee yet!</p>
+              <p id="searchError">You do not have a mentee yet!</p>
             <% end %>
           </div> 
      </div>
