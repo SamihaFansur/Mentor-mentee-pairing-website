@@ -1,13 +1,9 @@
 require_relative "../spec_helper"
-
-
-    
+  
 #checks that a mentor can send reports
 
 describe "mentor report" do
-context "with a mentee" do
-
-       
+context "a mentee" do      
   it "tests the mentors can report their mentee" do
   clear_database
     add_test_mentor
@@ -40,8 +36,7 @@ context "with a mentee" do
     expect(page).to have_content "spam"
     
     clear_database
-  end
-  
+  end  
 end
     clear_database
 end
