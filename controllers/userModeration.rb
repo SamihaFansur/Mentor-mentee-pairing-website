@@ -2,34 +2,7 @@ post "/suspendMentor" do
   @mentors = Mentor.first(id: params[:mentorID]) #creates a new instance of mentor
   
   #Sets suspendMentor field to 1 to indicate account suspended if its not already suspended    
-  if @mentors.suspendMentor != 1
-    @mentors.suspendMentor = 1
-    @mentors.save_changes
-    #Sends mentor an email that their account has been suspended
-    send_mail(@mentors.email, 
-        "Mentor account suspended!", 
-        "Hi "+@mentors.fname+" "+@mentors.lname+" !\n"+
-        "Your mentor account has been suspended due to violation of website guidelines."+
-        "You will be able to use your account after 48 hours starting now.\n"+
-        "If you think we have made a mistake, please contact our admins using our contact form!"+
-        "\n\nRegards\nTeam 6")
-    Thread.new{
-#         sleep(2*24*60*60) #2 days in seconds
-        sleep(30) #-------------------------------DELETE LATER -S -------------------------------
-        @mentors.suspendMentor = 0
-        @mentors.save_changes
-        #Sends mentor an email that their account has been unsuspended
-        send_mail(@mentors.email, 
-            "Mentor account Unsuspended!", 
-            "Hi "+@mentors.fname+" "+@mentors.lname+" !\n"+
-            "Your mentor account has now been unsuspended.\n"+
-            "You can now login using your mentor credentials"+
-            "\n\nRegards\nTeam 6")
-      }  
-  else
-      @error1 ="Account has already been suspended"
-      redirect "/searchForAMentor?error=1"
-  end
+  suspend_user(@mentors, @mentors.suspendMentor)
     
     redirect "/searchForAMentor"
 end
@@ -180,7 +153,7 @@ def suspend_user(user, suspendUserField)
   if suspendUserField != 1
     if user.class == Mentee
       user.suspendMentee = 1
-    elsif user.class = Mentor
+    elsif user.class == Mentor
       user.suspendMentor = 1
     end
     user.save_changes
@@ -192,13 +165,12 @@ def suspend_user(user, suspendUserField)
         "You will be able to use your account after 48 hours starting now.\n"+
         "If you think we have made a mistake, please contact our admins using our contact form!"+
         "\n\nRegards\nTeam 6")
-        puts "USER sus"
     Thread.new{
   #         sleep(2*24*60*60) #2 days in seconds
         sleep(30) #-------------------------------DELETE LATER -S -------------------------------
         if user.class == Mentee
           user.suspendMentee = 0
-        elsif user.class = Mentor
+        elsif user.class == Mentor
           user.suspendMentor = 0
         end
         user.save_changes
@@ -209,13 +181,12 @@ def suspend_user(user, suspendUserField)
             "Your account has now been unsuspended.\n"+
             "You can now login using your credentials"+
             "\n\nRegards\nTeam 6")
-            puts "USER unsus after 30secs"
       } 
    else
       @error1 ="Account has already been suspended"
       if user.class == Mentee
         redirect "/searchForAMentee?error=1"
-      elsif user.class = Mentor
+      elsif user.class == Mentor
         redirect "/searchForAMentor?error=1"
       end
   end
