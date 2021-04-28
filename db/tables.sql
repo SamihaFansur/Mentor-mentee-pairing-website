@@ -11,8 +11,8 @@ CREATE TABLE mentees (
   cyear INTEGER,
   description TEXT,
   applicationNumber INTEGER,
-  mentorAccept INTEGER,
-  mentorMatch INTEGER,
+  FOREIGN KEY (mentorAccept) REFERENCES mentors(id),
+  FOREIGN KEY (mentorMatch) REFERENCES mentors(id),
   requestMentorMeeting INTEGER,
   suspendMentee INTEGER
 );
@@ -28,8 +28,8 @@ CREATE TABLE mentors (
   jobTitle TEXT,
   courseName TEXT,
   description TEXT,
-  menteeAccept INTEGER,
-  menteeMatch INTEGER,
+  FOREIGN KEY (menteeAccept) REFERENCES mentees(id),
+  FOREIGN KEY (menteeMatch) REFERENCES mentees(id),
   activationToken INTEGER,
   profileStatus TEXT,
   reportMentee INTEGER,
