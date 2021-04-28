@@ -2,8 +2,6 @@ get "/search" do
   #New variable to enable mentees to search for mentors based on course name
   @courseName_search = params.fetch("courseName_search", "").strip
   
-  #This error corresponds to the /addApplication route, this is to prevent
-  #the error from being discarded when page is redirected to search
   errors
   
   #If no course name is being searched, it displays the list of all mentors in alphabetical order 
@@ -19,8 +17,6 @@ get "/search" do
 end
 
 post "/addApplication" do
-  @error1 = nil #initializes variable-application sent error
-  @error2 = nil #initializes variable-mentor matched error
   @requests = Request.new #creates a new instance of requests
   #The params are from buttons in the mentor_search.erb, they correspond to the mentee sending the request
   #and the mentor being requested
