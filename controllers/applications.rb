@@ -47,7 +47,6 @@ post "/matchWithMentor" do
   #if the mentee only has accepted the application then the mentor is notified
   if mentor.menteeAccept == $mentees.id && $mentees.mentorAccept == mentor.id
     
-    
     Mentor.where(id: params[:mentorID]).update(:menteeMatch => $mentees.id)
 
     Mentee.where(id: $mentees.id).update(:mentorMatch => params[:mentorID])
