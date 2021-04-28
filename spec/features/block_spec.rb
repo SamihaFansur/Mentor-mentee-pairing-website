@@ -4,8 +4,8 @@ require_relative "../spec_helper"
     
 #checks that a user can be blocked
 
-
 #admin
+
 describe "admin block page" do
   it "shows empty list message when no mentees" do
     login_admin
