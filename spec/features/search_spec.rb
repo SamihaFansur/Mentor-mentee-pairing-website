@@ -107,7 +107,7 @@ describe "the search page" do
       fill_in "searchForMentor", with: "Accounting and Financial Management (BA)"
       click_button "Submit"
       click_button "Send application" 
-      sleep(31)
+      sleep(101)
       login_mentor
       visit "/MentorDashboard"
       visit "/menteeApplications"
