@@ -2,6 +2,7 @@
 <div class="background" id="statement">
   
       <div class="full" id="dashboard">
+        <!--Dashboard title for admin who is also the mentor            -->
         <h2>Admin + Mentor Dashboard</h2>
         <div id="dashboardBody">
           <aside class="lSide">
@@ -20,21 +21,28 @@
           <aside class="rSide">
             <div class="full" id="searchOptions">
               <h3>Options</h3>
+                <!--Link to view mentees that send application to this mentor             -->
               <p class="search_info"><a href="/menteeApplications">View mentee applications</a></p>
+                <!--Link to edit personal information             -->
               <p><a href="/editMentor?id=<%= h $mentors.id %>">Edit Profile</a></p>
             </div>
-            
             <div class="full" id="searchOptions">
               <h3>My Mentee</h3>
+                <!--Link to view the matched mentee -->
               <p class="search_info"><a href="/myMentee" class="link">My Mentee</a></p>
             </div>
             
             <div class="full" id="searchOptions">
-              <h3>Options</h3>    <!--RENAME-->        
-              <p class="search_info"><a href="/searchForAMentor" class="link">Mentor List</a></p>   
+              <h3>Options</h3>
+              <!--Link to view all of the mentors             -->
+              <p class="search_info"><a href="/searchForAMentor" class="link">Mentor List</a></p>
+              <!--Link to view all of the mentees             -->
               <p class="search_info"><a href="/searchForAMentee" class="link">Mentee List</a></p>
+              <!--Link to view all of the mentees that have sent applications but have not matched with mentors             -->
               <p class="search_info"><a href="/PendingMenteeApplications" class="link">Pending Mentee Applications</a></p>
-              <p class="search_info"><a href="/PairedMentees" class="link">Paired Mentees</a></p> 
+              <!--Link to view all of the mentees that have matched with mentors              -->
+              <p class="search_info"><a href="/PairedMentees" class="link">Paired Mentees</a></p>
+              <!--Link to view mentors' reports         -->
               <p class="search_info"><a href="/reports" class="link">Reports</a></p>    
             </div>
           </aside>

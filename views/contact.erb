@@ -3,26 +3,28 @@
     <div class="full">
         <div class="title">
             <h1>Contact</h1>
+            <!-- Mail logo for the contact page            -->
             <img src="images/contact.png" alt="Contact">
         </div>
           <div class="contactBody">
             <h2 class="description">If you need to contact an admin use the section below.</h2>
           <div class="contactForm">  
               <h2>Contact Admin: </h2>
-
+              <!--Press the submit bottom then your comments could be sent to admin  -->
               <form name="myform" action="https://www.dcs.shef.ac.uk/cgi-intranet/public/FormMail.php" method="POST" onsubmit="alert('Email will be sent now...');" >
                 <input type="hidden" name="recipients" value="sfansur1@sheffield.ac.uk">
-                   <div class="user">   
+                   <div class="user">
+                    <!--It is necessary to write down your name                      -->
                     <p>
                       <label for="realname">Your name:</label>
                       <input type="text" name="realname" id="name" maxlength="40" size="30" placeholder="Enter your name..."  required><!--Mandatory field-->
                     </p>
-
+                    <!--It is necessary to write down your E-mail                      -->
                     <p>
                       <label for="email">E-mail:</label>
                       <input type="email" name="email" id="email" placeholder="Enter your email..." maxlength="40" size="30" required><!--Mandatory field-->
                     </p>
-
+                    <!--Write down your comments                      -->
                     <p>
                       <label for="comments">Comments:</label>
                     </p>
