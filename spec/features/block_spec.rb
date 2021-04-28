@@ -7,15 +7,14 @@ require_relative "../spec_helper"
 
 describe "admin block page" do
     #admin 
-  it "shows empty list message when no mentors" do
+describe "admin block page" do
+  it "shows empty list message when no mentees" do
     login_admin
     click_link "Mentee List"
     expect(page).to have_content "Your search revealed no mentees."
     clear_database
   end
-       
-  it "allows block of a valid mentee" do
-    visit "/login"
+  it "shows empty list message when no mentors" do
     login_admin
     click_link "Mentor List"
     expect(page).to have_content "Your search revealed no mentors."
