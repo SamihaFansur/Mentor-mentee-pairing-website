@@ -13,18 +13,20 @@
                 <th>Username</th>
                 <th>Email</th>
               </tr>
+              
              <% (0...@reportsInfo.count).each do |report| %>
-              <td><strong>Mentor</strong></td>
-              <td><%= @reportsInfo[report][0] %></td>
-              <td><%= @reportsInfo[report][1] %></td>
-              <td><%= @reportsInfo[report][2] %></td>
-          </table>
-          
-          <table class="displayTable">
-              <td><strong>Mentee</strong></td>
-              <td><%= @reportsInfo[report][3] %></td>
-              <td><%= @reportsInfo[report][4] %></td>
-              <td><%= @reportsInfo[report][5] %></td>
+              <tr>
+                <td><strong>Mentor</strong></td>
+                <td><%= @reportsInfo[report][0] %></td>
+                <td><%= @reportsInfo[report][1] %></td>
+                <td><%= @reportsInfo[report][2] %></td>
+              </tr>
+              <tr>
+                <td><strong>Mentee</strong></td>
+                <td><%= @reportsInfo[report][3] %></td>
+                <td><%= @reportsInfo[report][4] %></td>
+                <td><%= @reportsInfo[report][5] %></td>
+              </tr>
           </table>
               
               <h2>Report details:</h2>
