@@ -4,10 +4,11 @@
       <div class="full">
         <h2>Mentor Applications still pending</h2>
         <div class="userInfo" id="application">
-          <!-- Displays all the applications a mentee has sent which are pending -->
+          <!-- Displays the reply of accepted mentor -->
           <% if @mentorIDList.count > 0 %>
               <table class="displayTable">
                 <tr>
+                  <!-- The name of each column for accepted mentor table        -->
                   <th>Name</th>
                   <th>Email</th>
                   <th>Phone Number</th>
@@ -27,6 +28,7 @@
                   <td><%= h mentor.courseName %></td>
                   <td><%= h mentor.description %></td>
                   <td>
+                    <!-- Not match with mentor so that the mentor could not be My Mentor                       -->
                     <form method="post" action="unsend">
                       <input type="hidden" name="mentorID" value="<%= mentor.id %>">
                       <input type="hidden" name="menteeID" value="<%= $mentees %>">
@@ -34,6 +36,7 @@
                     </form>
                   </td>
                   <td>
+                    <!-- Match with mentor so that the mentor could be My Mentor                       -->
                     <form method="post" action="matchWithMentor">
                       <input type="hidden" name="mentorID" value="<%= mentor.id %>">
                       <input type="hidden" name="menteeID" value="<%= $mentees %>">
@@ -44,6 +47,7 @@
               <% end %> 
               </table>
             <% else %>
+            <!-- displays errors if mentor not accept the application             -->
               <p id="searchError">There are no pending applications</p>
             <% end %>
          </div>

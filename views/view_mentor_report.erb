@@ -5,9 +5,10 @@
       <div class="full">
         <h2>Report</h2>
         <div class="userInfo" id="application">
-          <!-- Displays all the mentee applications that are pending -->
+          <!-- Displays all reports from different mentors -->
             <table class="displayTable">
               <tr>
+                <!-- The name of each column for report table         -->
                 <th></th>
                 <th>ID</th>
                 <th>Username</th>
@@ -16,21 +17,25 @@
               
              <% (0...@reportsInfo.count).each do |report| %>
               <tr>
+                <!-- Display mentors' reports details                   -->
                 <td><strong>Mentor</strong></td>
                 <td><%= @reportsInfo[report][0] %></td>
                 <td><%= @reportsInfo[report][1] %></td>
                 <td><%= @reportsInfo[report][2] %></td>
               </tr>
               <tr>
+                 <!-- Display the mentor's mentee details                   -->
                 <td><strong>Mentee</strong></td>
                 <td><%= @reportsInfo[report][3] %></td>
                 <td><%= @reportsInfo[report][4] %></td>
                 <td><%= @reportsInfo[report][5] %></td>
               </tr>
           </table>
-              
-              <h2>Report details:</h2>
-              <p><b>Type of report: </b> <i><%= @reportsInfo[report][6] %></i> </p>
+                
+              <h2>Type of details:</h2>
+            <!-- Display the choosen reason of report               -->
+              <p><b>Reason of report: </b> <i><%= @reportsInfo[report][6] %></i> </p>
+            <!-- Display the description written by mentor               -->
               <p><b>Description: </b> <i><%= @reportsInfo[report][7] %></i> </p>
             <% end %>
          </div>
