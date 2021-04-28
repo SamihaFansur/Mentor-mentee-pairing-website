@@ -8,20 +8,20 @@ require_relative "../spec_helper"
 #tests that error message shows up when a nil mentee is attempted to be edited
 
 describe "admin suspend page" do
-  it "shows empty list message when no mentors" do
+  it "tests for an empty mentee list" do
     login_admin
     click_link "Mentee List"
     expect(page).to have_content "Your search revealed no mentees."
     clear_database
   end
        
-  it "allows editing of a valid mentee" do
+  it "tests for an empty mentor list" do
     login_admin
     click_link "Mentor List"
     expect(page).to have_content "Your search revealed no mentors."
     clear_database
   end
-   it "shows empty list message when no mentors" do
+   it "tests that a mentee can be suspended" do
     add_test_user
     login_admin
     click_link "Mentee List"
@@ -31,7 +31,7 @@ describe "admin suspend page" do
     clear_database
   end
        
-  it "allows editing of a valid mentee" do
+  it "tests that a mentor can be suspeded" do
     add_test_mentor
     login_mentor
     login_admin
@@ -41,7 +41,7 @@ describe "admin suspend page" do
     expect(page).to have_content "Your account is suspended"
     clear_database
   end
-   it "shows empty list message when no mentors" do
+   it "tests that a mentee can be unsuspended" do
     add_test_user
     login_admin
     click_link "Mentee List"
@@ -52,7 +52,7 @@ describe "admin suspend page" do
     clear_database
   end
        
-  it "allows editing of a valid mentee" do
+  it "tests that a mentor can be unsuspended" do
     add_test_mentor
     login_mentor
     login_admin
@@ -63,7 +63,7 @@ describe "admin suspend page" do
     expect(page).to have_content "Sam Mentor"
     clear_database
   end 
-   it "tests for a mentee/mentor match" do
+   it "tests that matched mentee can be suspended" do
   clear_database
     add_test_mentor
     add_test_user
@@ -83,7 +83,7 @@ describe "admin suspend page" do
     expect(page).to have_content "Your account is suspended"
     clear_database
   end
-it "tests for a mentee/mentor match" do
+it "test the matched mentor can be suspended" do
   clear_database
     add_test_mentor
     add_test_user
@@ -128,7 +128,7 @@ it "allows suspend of a valid mentee but not twice" do
     expect(page).to have_content "Account has already been suspended"
     clear_database
   end
-   it "shows empty list message when no mentors" do
+   it "tests that mentee cant be unsuspended twice" do
     add_test_user
     login_admin
     click_link "Mentee List"
@@ -139,7 +139,7 @@ it "allows suspend of a valid mentee but not twice" do
     clear_database
   end
        
-  it "allows editing of a valid mentee" do
+  it "tests that mentor cant be unsuspended twice" do
     add_test_mentor
     login_mentor
     login_admin
@@ -150,7 +150,7 @@ it "allows suspend of a valid mentee but not twice" do
     expect(page).to have_content "Account has already been unsuspended"
     clear_database
   end 
-   it "shows empty list message when no mentors" do
+   it "tests that mentee is unsupended after amount of time" do
     add_test_user
     login_admin
     click_link "Mentee List"
@@ -161,7 +161,7 @@ it "allows suspend of a valid mentee but not twice" do
     clear_database
   end
        
-  it "allows editing of a valid mentee" do
+  it "tests that mentor is unsuspended after amount of time" do
     add_test_mentor
     login_mentor
     login_admin
