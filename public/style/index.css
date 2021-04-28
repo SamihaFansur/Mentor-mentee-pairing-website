@@ -379,6 +379,7 @@ form {
   padding-bottom: 20px;
 
 }
+
 .displayTable tr:nth-child(even) {
   background-color: whitesmoke;
   padding-bottom: 20px;
@@ -394,6 +395,11 @@ form {
   text-align: center; 
 }
 
+.break {
+  width: 10px;
+  padding: 0;
+  background-color: #0066b3;
+}
 
 #searchError {
   margin: 5% 5% 24% 5%;
