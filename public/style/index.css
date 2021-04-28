@@ -337,12 +337,13 @@ form {
 }
 
 .searchInfo {
+  
   text-align: center;
 }
 
 
-#searchOptions {
-  margin-top: 50px;
+.searchOptions {
+  margin-top: auto;
   background-color: rgba(255, 255, 255, 0.7);
 }
 
