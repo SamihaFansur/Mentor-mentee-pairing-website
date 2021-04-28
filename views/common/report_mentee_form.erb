@@ -2,6 +2,7 @@
 <div class="col">
    <p>
     <label for="caption" class="caption">Reason of report: </label> <!--Dropdown list-->
+    <!-- choose the reason of report written to admin      -->
     <select name="caption" id="caption" required value="<%= h @reports.caption %>">
       <option value="">Select</option>
       <option value="Uncivil, unneighborly or offensive">Uncivil, unneighborly or offensive</option>
@@ -18,7 +19,7 @@
       <option value="Impersonation">Impersonation</option>
     </select>
   </p>
-     
+    <!-- Write down the description of the report      -->
   <p>
     <label for="description" class="options">Description: </label>
   </p>
