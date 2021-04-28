@@ -128,7 +128,7 @@ footer {
   height: 50%;
 }
 
-#mentoring_sess {
+#mentoringSession {
   height: 237.12px;
   width: 355.2px;
   float: right;
@@ -186,14 +186,14 @@ footer {
   padding-top: 5px;
 }
 
-#submit, #contact_submit {
+#submit, #contactSubmit {
   font-size: 1.3rem;
   font-weight: bold;
   padding: 5px 12px;
   border-radius: 5px;
 }
 
-#reset, #contact_reset {
+#reset, #contactReset {
   font-size: 1.3rem;
   font-weight: bold;
   padding: 5px 20px;
@@ -201,11 +201,11 @@ footer {
   border-radius: 5px;
 }
 
-#contact_submit {
+#contactSubmit {
   margin-left: 0;
 }
 
-#submit:hover, #reset:hover, #contact_submit:hover, #contact_reset:hover {
+#submit:hover, #reset:hover, #contactSubmit:hover, #contactReset:hover {
   transition-duration: 0.6s;
   background-color: rgba(194, 166, 251, 0.778);
   box-shadow: 0 4px 6px 2px rgba(185, 185, 185, 0.354);
@@ -293,24 +293,24 @@ footer {
   color: #000066;
 }
 
-.lSide {
+.leftSide {
   width: 50%;
   margin: 2.5%;
   margin-right: 5%;
   align-self: flex-start;
 }
 
-.rSide {
+.rightSide {
   width: 40%;
   margin: 2.5%;
 }
 
-.rSide p {
+.rightSide p {
   margin: 2%;
   padding-top: 2%;
 }
 
-.user_info {
+.userInfo {
   background-color: rgba(255, 255, 255, 0.7);
   border: 3px solid #000000;
   border-radius: 3px;
@@ -319,15 +319,15 @@ footer {
   text-align: left;
 }
 
-.user_info p {
+.userInfo p {
   margin: 5% 0% 5% 10%;
 }
 
-.user_info a {
+.userInfo a {
   font-size: 1.8rem;
 }
 
-.search_info {
+.searchInfo {
   text-align: center;
 }
 
@@ -354,37 +354,8 @@ footer {
   margin-right: 2.5%;
 }
 
-/*Mentor Search and Mentee Application Tables*/
-.display_table {
-  margin: 5% 0 10%;
-  background-color: #0066b3;
-  padding: 5px;
-  border-spacing: 0;
-  border-radius: 3px;
-  width:100%;
-
-}
-.display_table th {
-  background-color: #0066b3;
-  padding-bottom: 10px;
-}
-.display_table tr:nth-child(even) {
-  background-color: #ade1f8;
-}
-
-.display_table tr:nth-child(odd) {
-  background-color: white;
-}
-
-.display_table td {
-  padding: 10px;
-  text-align: center; 
-}
-
-
-
-/*Schedule Tables*/
-.display_table {
+/*Schedule Tables AND Mentor Search and Mentee Application Tables*/
+.displayTable {
   margin: 5% 0 5%;
   background-color: #0066b3;
   padding: 5px;
@@ -393,25 +364,28 @@ footer {
   width:100%;
 
 }
-.display_table th {
+.displayTable th {
   background-color: #0066b3;
   padding-bottom: 20px;
 
 }
-.display_table tr:nth-child(even) {
+.displayTable tr:nth-child(even) {
   background-color: #ade1f8;
   padding-bottom: 20px;
 }
 
-.display_table tr:nth-child(odd) {
+.displayTable tr:nth-child(odd) {
   background-color: white;
   padding-bottom: 20px;
 }
 
+.displayTable td {
+  padding: 10px;
+  text-align: center; 
+}
 
 
-
-#SearchError {
+#searchError {
   margin: 5% 5% 24% 5%;
   text-align: center;
   padding: 5%;

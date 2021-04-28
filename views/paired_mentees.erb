@@ -23,8 +23,8 @@
         
           <!--Displays mentee details-->
           <% if @mentees.count > 0 %>
-            <table class="display_table">
-              <tr id="TableHeadings">
+            <table class="displayTable">
+              <tr>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Faculty</th>
@@ -42,7 +42,7 @@
             <% end %> 
             </table>
           <% else %>
-            <p id="SearchError">No mentees appear to be paired with a mentor.</p>
+            <p id="searchError">No mentees appear to be paired with a mentor.</p>
           <% end %>
       </div>
 </div>
