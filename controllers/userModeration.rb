@@ -32,25 +32,10 @@ end
 
 post "/blockMentee" do
   @mentees = Mentee.first(id: params[:menteeID]) #creates a new instance of mentee
-  @error1 = nil #initializes variable-application sent error
   
-  #Sets suspendMentee field to 1 to indicate account permanently suspended/blocked
-  if @mentees.suspendMentee != 1
-    @mentees.suspendMentee = 1
-    @mentees.save_changes
-    #Sends mentee an email that their account has been blocked
-    send_mail(@mentees.email, 
-        "Mentee account blocked!", 
-        "Hi "+@mentees.fname+" "+@mentees.lname+" !\n"+
-        "Your mentee account has been blocked due to repeated violation of website guidelines.\n"+
-        "If you think we have made a mistake, please contact our admins using our contact form!"+
-        "\n\nRegards\nTeam 6")
-   else
-      @error3 ="Account has already been blocked"
-      redirect "/searchForAMentee?error=3"
-  end
+  block_user(@mentees, @mentees.suspendMentee)
     
-    redirect "/searchForAMentee"
+  redirect "/searchForAMentee"
 end
 
 post "/unblockMentee" do
@@ -77,25 +62,10 @@ end
 
 post "/blockMentor" do
   @mentors = Mentor.first(id: params[:mentorID]) #creates a new instance of mentor
-  @error1 = nil #initializes variable-application sent error
   
-  #Sets suspendMentor field to 1 to indicate account permanently suspended/blocked   
-  if @mentors.suspendMentor != 1
-    @mentors.suspendMentor = 1
-    @mentors.save_changes
-    #Sends mentor an email that their account has been suspended
-    send_mail(@mentors.email, 
-        "Mentor account suspended!", 
-        "Hi "+@mentors.fname+" "+@mentors.lname+" !\n"+
-        "Your mentor account has been blocked due to repeated violation of website guidelines.\n"+
-        "If you think we have made a mistake, please contact our admins using our contact form!"+
-        "\n\nRegards\nTeam 6")
-  else
-      @error1 ="Account has already been blocked"
-      redirect "/searchForAMentor?error=3"
-  end
+  block_user(@mentors, @mentors.suspendMentor)
     
-    redirect "/searchForAMentor"
+  redirect "/searchForAMentor"
 end
 
 post "/unblockMentor" do
@@ -160,7 +130,6 @@ def suspend_user(user, suspendUserField)
         redirect "/searchForAMentor?error=1"
       end
   end
-  
 end
 
 def unsuspend_user(user, unsuspendUserField)
@@ -185,5 +154,29 @@ def unsuspend_user(user, unsuspendUserField)
         redirect "/searchForAMentor?error=2"
       end
   end
-  
+end
+
+def block_user(user, blockUserField)
+  #Sets blockUserField field to 1 to indicate account permanently suspended/blocked   
+  if blockUserField != 1
+   if user.class == Mentee
+      user.suspendMentee = 1
+    elsif user.class == Mentor
+      user.suspendMentor = 1
+    end
+    user.save_changes
+    #Sends user an email that their account has been suspended permanently
+    send_mail(user.email, 
+        "Account blocked!", 
+        "Hi "+user.fname+" "+user.lname+" !\n"+
+        "Your account has been blocked due to repeated violation of website guidelines.\n"+
+        "If you think we have made a mistake, please contact our admins using our contact form!"+
+        "\n\nRegards\nTeam 6")
+  else
+      if user.class == Mentee
+        redirect "/searchForAMentee?error=3"
+      elsif user.class == Mentor
+        redirect "/searchForAMentor?error=3"
+      end
+  end
 end
