@@ -236,15 +236,6 @@ it "is accessible from the MentorDashboard page" do
         click_link "Accessibility"
         expect(page).to have_content "Everyone using this website"
     end 
-
-    #checks if the header is correct for mentor
- it "is accessible from the MentorDashboard page" do
-        add_test_mentor
-        login_mentor  
-        visit"/MentorDashboard"
-        expect(page).to have_content "My Mentee Schedule"
-     clear_database   
-    end 
     
    #page links tests from /MenteeDashboard
     
@@ -323,14 +314,6 @@ it "is accessible from the MentorDashboard page" do
         visit"/MenteeDashboard"
         click_link "Accessibility"
         expect(page).to have_content "Everyone using this website"
-        clear_database   
-    end 
-    #checks if the header is correct for mentee
- it "is accessible from the MenteeDashboard page" do
-        add_test_user
-        login_mentee
-        visit"/MenteeDashboard"
-        expect(page).to have_content "My Mentor Schedule"
         clear_database   
     end 
 
@@ -426,15 +409,7 @@ it "is accessible from the MentorDashboard page" do
 
  #page links tests from /PendingMenteeApplications
     
-     it "is accessible from the AdminDashboard page" do
-        login_admin
-        visit"/PendingMenteeApplications"
-        click_link "Contact Us"
-        expect(page).to have_content "Contact Admin:"
-        clear_database   
-    end
            
-
     it "is accessible from the AdminDashboard page" do
         
         login_admin
@@ -461,14 +436,7 @@ it "is accessible from the MentorDashboard page" do
         clear_database   
     end 
 
-       
-            it "is accessible from the AdminDashboard page" do
-        login_admin
-        visit"/PendingMenteeApplications"
-        click_link "Contact"
-        expect(page).to have_content "Contact Admin:"
-        clear_database   
-    end
+      
             it "is accessible from the AdminDashboard page" do
         visit "/login"
         fill_in "username", with: "admin2"
@@ -493,15 +461,7 @@ it "is accessible from the MentorDashboard page" do
 
  #page links tests from /PairedMentees
     
-     it "is accessible from the AdminDashboard page" do
-        login_admin
-        visit"/PairedMentees"
-        click_link "Contact Us"
-        expect(page).to have_content "Contact Admin:"
-        clear_database   
-    end
-           
-
+         
     it "is accessible from the AdminDashboard page" do
         
         login_admin
@@ -528,14 +488,6 @@ it "is accessible from the MentorDashboard page" do
         clear_database   
     end 
 
-       
-            it "is accessible from the AdminDashboard page" do
-        login_admin
-        visit"/PairedMentees"
-        click_link "Contact"
-        expect(page).to have_content "Contact Admin:"
-        clear_database   
-    end
             it "is accessible from the AdminDashboard page" do
         login_admin
         visit"/PairedMentees"
@@ -544,23 +496,9 @@ it "is accessible from the MentorDashboard page" do
         clear_database   
     end 
 
-            it "is accessible from the AdminDashboard page" do
-        login_admin
-        visit"/PairedMentees"
-        click_link "Contact Us"
-        expect(page).to have_content "Contact"
-        clear_database   
-    end
  #page links tests from /searchForAMentee
     
-     it "is accessible from the AdminDashboard page" do
-        login_admin
-        visit"/searchForAMentee"
-        click_link "Contact Us"
-        expect(page).to have_content "Contact Admin:"
-        clear_database   
-    end
-           
+
 
     it "is accessible from the AdminDashboard page" do
         
@@ -588,14 +526,6 @@ it "is accessible from the MentorDashboard page" do
         clear_database   
     end 
 
-       
-            it "is accessible from the AdminDashboard page" do
-        login_admin
-        visit"/searchForAMentee"
-        click_link "Contact"
-        expect(page).to have_content "Contact Admin:"
-        clear_database   
-    end
             it "is accessible from the AdminDashboard page" do
         login_admin
         visit"/searchForAMentee"
@@ -604,25 +534,7 @@ it "is accessible from the MentorDashboard page" do
         clear_database   
     end 
 
-            it "is accessible from the AdminDashboard page" do
-        visit "/login"
-        fill_in "username", with: "admin2"
-        fill_in "password", with: "S.F"
-        click_button "Submit" 
-        visit"/searchForAMentee"
-        click_link "Contact Us"
-        expect(page).to have_content "Contact"
-        clear_database   
-    end
 #page links tests from /searchForAMentor
-    
-     it "is accessible from the AdminDashboard page" do
-        login_admin
-        visit"/searchForAMentor"
-        click_link "Contact Us"
-        expect(page).to have_content "Contact Admin:"
-        clear_database   
-    end
            
 
     it "is accessible from the AdminDashboard page" do
@@ -651,14 +563,6 @@ it "is accessible from the MentorDashboard page" do
         clear_database   
     end 
 
-       
-            it "is accessible from the AdminDashboard page" do
-        login_admin 
-        visit"/searchForAMentor"
-        click_link "Contact"
-        expect(page).to have_content "Contact Admin:"
-        clear_database   
-    end
             it "is accessible from the AdminDashboard page" do
         login_admin  
         visit"/searchForAMentor"
@@ -667,13 +571,6 @@ it "is accessible from the MentorDashboard page" do
         clear_database   
     end 
 
-            it "is accessible from the AdminDashboard page" do
-        login_admin 
-        visit"/searchForAMentor"
-        click_link "Contact Us"
-        expect(page).to have_content "Contact"
-        clear_database   
-    end
     #checks if the header is correct for admin
  it "is accessible from the AdminDashboard page" do
         login_admin   
@@ -685,14 +582,7 @@ it "is accessible from the MentorDashboard page" do
 
    #page links tests from /AdminMentorDashboard
     
-     it "is accessible from the AdminMentorDashboard page" do
-        visit"/AdminMentorDashboard"
-        click_link "Contact Us"
-        expect(page).to have_content "Contact Admin:"
-        clear_database   
-    end
            
-
     it "is accessible from the AdminMentorDashboard page" do
         add_test_mentor
         login_admin_mentor
@@ -748,14 +638,6 @@ it "is accessible from the MentorDashboard page" do
         clear_database   
     end 
        
-            it "is accessible from the AdminMentorDashboard page" do
-        add_test_mentor
-        login_admin_mentor
-        visit"/AdminMentorDashboard"
-        click_link "Contact"
-        expect(page).to have_content "Contact Admin:"
-        clear_database   
-    end
             it "is accessible from the AdminMentorDashboard page" do
         add_test_mentor
         login_admin_mentor
