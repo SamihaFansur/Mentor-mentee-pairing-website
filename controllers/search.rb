@@ -87,6 +87,36 @@ get "/searchForAMentee" do
   erb :admin_search_mentees
 end
 
+#Lists all paired mentees, so an admin can search for paired mentees within a faculty
+get "/PairedMentees" do
+  headers_common_pages
+  
+  #New variable to enable admins to search for mentees based on faculty
+  @faculty_search = params.fetch("faculty_search", "").strip
+  
+  #If no faculty is being searched, it displays the list of all paired mentees in alphabetical order 
+  #else it searches through the faculty field in the mentees table and displays paired mentees' whose 
+  #faculty is being searched
+    @mentees = if @faculty_search.empty? 
+                 Mentee.order(:faculty).where(~Sequel.like(:mentorMatch, 0)) #Displays mentees where they have a mentor matched
+               else
+                 Mentee.order(:faculty).where(~Sequel.like(:mentorMatch, 0)).where(Sequel.ilike(:faculty, "%#{@faculty_search}%")) #ilike used to make search case insensitive
+               end
+    
+    @menteesList = []
+    @mentors = []
+
+    @mentees.each do |mentee|
+      mentor = Mentor.first(id: mentee.mentorMatch)
+      
+      @menteesList.push([mentee.name, mentee.email, mentee.faculty]) #Mentee information
+      @mentors.push([mentor.name, mentor.email]) #Mentor information
+      
+    end
+
+  erb :paired_mentees
+end
+
 def admin_user_search(user, varName, searchField)
   #New variable to enable mentees to search for mentors based on course name
   varName = params.fetch(searchField, "").strip
