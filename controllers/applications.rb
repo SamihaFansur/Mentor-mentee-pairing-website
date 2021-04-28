@@ -316,13 +316,13 @@ get "/PairedMentees" do
     @mentees = if @faculty_search.empty? 
                  Mentee.order(:faculty).where(~Sequel.like(:mentorMatch, 0)) #Displays mentees where they have a mentor matched
                else
-                 Mentee.order(:faculty).where(Sequel.ilike(:faculty, "%#{@faculty_search}%")) #ilike used to make search case insensitive
+                 Mentee.order(:faculty).where(~Sequel.like(:mentorMatch, 0)).where(Sequel.ilike(:faculty, "%#{@faculty_search}%")) #ilike used to make search case insensitive
                end
     
     @menteesList = []
     @mentors = []
+
     @mentees.each do |mentee|
-      mentee = Mentee.first(id: mentee.id)
       mentor = Mentor.first(id: mentee.mentorMatch)
       
       @menteesList.push([mentee.name, mentee.email, mentee.faculty]) #Mentee information
