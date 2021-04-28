@@ -4,8 +4,7 @@ get "/search" do
   
   #This error corresponds to the /addApplication route, this is to prevent
   #the error from being discarded when page is redirected to search
-  @error1 = true if params.fetch("error", "") == "1"
-  @error2 = true if params.fetch("error", "") == "2"
+  errors
   
   #If no course name is being searched, it displays the list of all mentors in alphabetical order 
   #else it searches through the course name field in the mentors table and displays mentors' whose 
@@ -76,69 +75,49 @@ post "/addApplication" do
     redirect "/search"
 end
 
-##################################SEARCH FOR A MENTOR IN A LIST OF ALL MENTORS###############################################
+#Search for a mentor in a list of all mentors
 get "/searchForAMentor" do
-  @header = nil
-  
-  if session[:admins_username]
-    if session[:mentors_username]
-      @header = erb:"common/header_adminMentorA"
-    else
-      @header = erb:"common/header_adminA"
-    end
-  end
-  
-  #New variable to enable mentees to search for mentors based on course name
-  @userName_search = params.fetch("userName_search", "").strip
-  #notice after press the button
-  @error1 = true if params.fetch("error", "") == "1"
-  @error2 = true if params.fetch("error", "") == "2"
-  @error3 = true if params.fetch("error", "") == "3"
-  @error4 = true if params.fetch("error", "") == "4"  
-  
-  #If no course name is being searched, it displays the list of all mentors in alphabetical order 
-  #else it searches through the course name field in the mentors table and displays mentors' whose 
-  #course name contains the course name being searched
-  @mentors = if @userName_search.empty?
-               Mentor.order(:username).all
-             else
-               Mentor.order(:username).where(Sequel.ilike(:username, "%#{@userName_search}%")) #ilike used to make search case insensitive
-             end
+  headers_common_pages    
+  admin_user_search("mentor", @userName_search, "userName_search")
 
   erb :admin_search_mentors
 end
 
-##################################SEARCH FOR A MENTEE IN A LIST OF ALL MENTEES#####################################################
+#Search for a mentee in a list of all mentees
 get "/searchForAMentee" do
-   @header = nil
+  headers_common_pages    
+  admin_user_search("mentee", @userName_search, "userName_search")
+
+  erb :admin_search_mentees
+end
+
+def admin_user_search(user, varName, searchField)
+  #New variable to enable mentees to search for mentors based on course name
+  varName = params.fetch(searchField, "").strip
+  errors  
   
-  if session[:admins_username]
-    if session[:mentors_username]
-      @header = erb:"common/header_adminMentorA"
-    else
-      @header = erb:"common/header_adminA"
-    end
+  #If no course name is being searched, it displays the list of all mentors in alphabetical order 
+  #else it searches through the course name field in the mentors table and displays mentors' whose 
+  #course name contains the course name being searched
+  if user == "mentee"
+    @searchedUser = new_mentee_instance
+    userClass = Mentee
+  elsif user == "mentor"
+    @searchedUser = new_mentor_instance
+    userClass = Mentor
   end
   
-  #New variable to enable mentees to search for mentors based on course name
-  @userName_search = params.fetch("userName_search", "").strip
-  
+  @searchedUser = if varName.empty?
+                   userClass.order(:username).all
+                 else
+                   userClass.order(:username).where(Sequel.ilike(:username, "%#{varName}%")) #ilike used to make search case insensitive
+                 end
+end
+
+def errors
   #notice after press the button
   @error1 = true if params.fetch("error", "") == "1"
   @error2 = true if params.fetch("error", "") == "2"
   @error3 = true if params.fetch("error", "") == "3"
   @error4 = true if params.fetch("error", "") == "4"
-  
-  #If no course name is being searched, it displays the list of all mentors in alphabetical order 
-  #else it searches through the course name field in the mentors table and displays mentors' whose 
-  #course name contains the course name being searched
-  
-
-  @mentees = if @userName_search.empty?
-               Mentee.order(:username).all
-             else
-               Mentee.order(:username).where(Sequel.ilike(:username, "%#{@userName_search}%")) #ilike used to make search case insensitive
-             end
-
-  erb :admin_search_mentees
 end

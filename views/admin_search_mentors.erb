@@ -32,7 +32,7 @@
         <% end %>
           
           <!--Displays the mentor details-->
-          <% if @mentors.count> 0 %>
+          <% if @searchedUser.count> 0 %>
             <table class="displayTable">
                 <!-- display the name of each column in the table              -->
               <tr id="TableHeadings">
@@ -44,7 +44,7 @@
                 <th>Suspend/Unsuspend Mentor</th>
                 <th>Block/Unblock Mentor</th>
               </tr>
-            <% @mentors.each do |mentor| %>
+            <% @searchedUser.each do |mentor| %>
               <tr>
                   <!--display the content from mentee                    -->
                 <td><%= h mentor.username %></td>
