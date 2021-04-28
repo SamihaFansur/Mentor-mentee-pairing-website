@@ -14,7 +14,6 @@ describe "the search page" do
       expect(page).to have_content "Your search revealed no mentors"
       clear_database  
     end
- 
       
  #checks if applciaitons are empty        
    it "checks the mentor has been sent an application" do
@@ -78,7 +77,7 @@ describe "the search page" do
 
     
      #checks if applciaitons are empty        
-   it "checks the mentor has been sent an application" do
+   it "checks that unsend applicaiton is working" do
  clear_database
       add_test_mentor
       add_test_user
@@ -115,11 +114,7 @@ describe "the search page" do
       expect(page).to have_content "Application"
       
       clear_database
-    end   
-  clear_database       
-      
-  end
-clear_database    
-end
-clear_database    
+      end         
+    end
+  end   
 end
