@@ -1,15 +1,5 @@
 get "/reportMenteeForm" do
-  @header = nil
-  
-  if session[:admins_username]
-    if session[:mentors_username]
-      @header = erb:"common/header_adminMentorA"
-    else
-      @header = erb:"common/header_adminA"
-    end
-  elsif session[:mentors_username]
-    @header = erb:"common/header_mentorA"
-  end
+  headers_common_pages
   
   @reports = Report.new
   @mentors = Mentor.first(id: params[:mentorID])
@@ -46,15 +36,7 @@ post "/reportMenteeForm" do
 end
 
 get "/reports" do
- @header = nil
-  
-  if session[:admins_username]
-    if session[:mentors_username]
-      @header = erb:"common/header_adminMentorA"
-    else
-      @header = erb:"common/header_adminA"
-    end
-  end
+  headers_common_pages
   
   @reports = Report.order(:timeReportSent).all.reverse #All records in Reports table with most recent on top
   @reportsInfo = []
@@ -75,15 +57,7 @@ post "/dismissReport" do
 end
 
 get "/viewReport" do
-  @header = nil
-  
-  if session[:admins_username]
-    if session[:mentors_username]
-      @header = erb:"common/header_adminMentorA"
-    else
-      @header = erb:"common/header_adminA"
-    end
-  end
+  headers_common_pages
   
   @reports = Report.where(id: params[:reportID])
   @reportsInfo = []
