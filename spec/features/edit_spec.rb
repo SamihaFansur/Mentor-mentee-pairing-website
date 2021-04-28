@@ -408,7 +408,7 @@ it "tests editAdmin from mentor account" do
     add_test_user
     add_test_mentor
     login_mentor
-    visit "/editMentor"
+    visit "/editAdmin"
     expect(page).to have_content "Mentor Dashboard"
     clear_database
   end

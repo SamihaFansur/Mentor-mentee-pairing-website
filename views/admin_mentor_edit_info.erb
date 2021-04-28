@@ -4,7 +4,8 @@
         <div class="title">Edit mentor information</div> <!--Main page Title-->  
         <% if @mentors.nil? %>
             <p class="error"><strong>Unknown mentor</strong></p>
-        <% else %>    
+        <% else %>
+          <!--Checks if erros exist and displays error message if they do.-->
         <% unless @mentors.errors.size.zero? %>
             <p><strong class="error">Please correct the errors below:</strong></p>
         <% end %>

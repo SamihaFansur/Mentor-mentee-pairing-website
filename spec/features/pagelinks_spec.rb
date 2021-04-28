@@ -448,17 +448,6 @@ it "is accessible from the MentorDashboard page" do
         clear_database   
     end 
 
-            it "is accessible from the AdminDashboard page" do
-        visit "/login"
-        fill_in "username", with: "admin2"
-        fill_in "password", with: "S.F"
-        click_button "Submit" 
-        visit"/PendingMenteeApplications"
-        click_link "Contact Us"
-        expect(page).to have_content "Contact"
-        clear_database   
-    end
-
  #page links tests from /PairedMentees
     
          
@@ -490,6 +479,41 @@ it "is accessible from the MentorDashboard page" do
 
             it "is accessible from the AdminDashboard page" do
         login_admin
+        visit"/PairedMentees"
+        click_link "Accessibility"
+        expect(page).to have_content "Everyone using this website"
+        clear_database   
+    end 
+
+#admin/mentor
+    it "is accessible from the AdminDashboard page" do
+        
+        login_admin_mentor
+        visit"/PairedMentees"
+        click_link "Logout"
+        expect(page).to have_content "Logged out"
+        clear_database   
+    end
+    
+    it "is accessible from the AdminDashboard page" do
+        login_admin_mentor
+        visit"/PairedMentees"
+        click_link "Our Program"
+        expect(page).to have_content "one-to-one mentoring program"
+        clear_database   
+    end 
+    
+        it "is accessible from the AdminDashboard page" do
+
+        login_admin_mentor 
+        visit"/PairedMentees"
+        click_link "Dashboard"
+        expect(page).to have_content "Admin Dashboard"
+        clear_database   
+    end 
+
+ it "is accessible from the AdminDashboard page" do
+        login_admin_mentor
         visit"/PairedMentees"
         click_link "Accessibility"
         expect(page).to have_content "Everyone using this website"

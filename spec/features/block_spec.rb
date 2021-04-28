@@ -138,7 +138,6 @@ it "shows empty list message when no mentors" do
     click_button "Send application" 
     login_mentor
     visit "/menteeApplications"
-
     click_button "Accept application"
     login_admin
     click_link "Mentee List"
@@ -159,7 +158,6 @@ it "shows empty list message when no mentors" do
     click_button "Send application" 
     login_mentor
     visit "/menteeApplications"
-
     click_button "Accept application"
     login_admin_mentor
     click_link "Mentee List"
@@ -299,6 +297,26 @@ it "tests block of mentee that is already blocked" do
     expect(page).to have_content "Account has already been unblocked"
     clear_database
   end 
+ it "tests block of matched user from admin mentor" do
+  clear_database
+    add_test_mentor
+    add_test_user
+    login_mentor  
+    login_mentee
+    visit "/search"
+    fill_in "searchForMentor", with: "Accounting and Financial Management (BA)"
+    click_button "Submit"
+    click_button "Send application" 
+    login_admin_mentor
+    visit "/menteeApplications"
+    click_button "Accept application"
+    login_admin
+    click_link "Mentee List"
+    click_button "Block"
+    login_mentee
+    expect(page).to have_content "Your account is suspended"
+    clear_database
+  end
 
         clear_database
 end
