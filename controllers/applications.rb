@@ -1,36 +1,32 @@
 #Mentor uses this route to accept 1 mentee application
 get "/menteeApplications" do
-  @header = nil
+  headers_common_pages
+  application_listings("mentee", mentorID: $mentors.id)
   
-  if session[:admins_username]
-    if session[:mentors_username]
-      @header = erb:"common/header_adminMentorA"
-    end
-  elsif session[:mentors_username] 
-    @header = erb:"common/header_mentorA"
-  end
-  
-  @menteeIDList = [] #List to store mentee
-  IDList = Request.where(mentorID: $mentors.id).order(:timeApplicationSent).reverse #Finds the request where it finds the specified mentor ID with most recent on top
-  IDList.each do |id|
-    mentee = Mentee.first(id: id.menteeID)
-    @menteeIDList.push(mentee) unless mentee.nil?
-  end
   erb :mentee_applications
 end
 
 #Mentee uses this route to view sent mentor applications
 get "/sentMentorApplications" do
-  @mentorIDList = [] #List to store mentors
-  IDList = Request.where(menteeID: $mentees.id) #Finds the request where it finds the specified mentee ID
-  IDList.each do |id|
-    mentor = Mentor.first(id: id.mentorID)
-    @mentorIDList.push(mentor) unless mentor.nil?
-  end
+  application_listings("mentor", menteeID: $mentees.id)
+  
   erb :sent_mentor_applications
 end
 
-
+def application_listings(user, userParamsUsed)
+  @usersIDList = []
+  listOfIDs = Request.where(userParamsUsed) #Finds the request where it finds the specified mentee ID
+  listOfIDs.each do |id|
+    if user == "mentee"
+      allUsers = Mentee.first(id: id.menteeID)
+    elsif user == "mentor"
+      allUsers = Mentor.first(id: id.mentorID)
+    end
+    allUsers
+    @usersIDList.push(allUsers) unless user.nil?
+  end
+  
+end
 
 #Mentee accepts mentor
 post "/matchWithMentor" do

@@ -5,7 +5,7 @@
         <h2>Mentor Applications still pending</h2>
         <div class="userInfo" id="application">
           <!-- Displays the reply of accepted mentor -->
-          <% if @mentorIDList.count > 0 %>
+          <% if @usersIDList.count > 0 %>
               <table class="displayTable">
                 <tr>
                   <!-- The name of each column for accepted mentor table        -->
@@ -19,7 +19,7 @@
                   <th>Match with mentor</th>
                 </tr>
                <!-- Details of each mentee displayed -->
-              <% @mentorIDList.each do |mentor| %>
+              <% @usersIDList.each do |mentor| %>
                 <tr>
                   <td><%= h mentor.name %></td>
                   <td><%= h mentor.email %></td>
