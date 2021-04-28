@@ -108,7 +108,7 @@ context "with an empty database" do
     login_admin
     click_link "Reports"
     click_button "Dismiss"
-    expect(page).to have_content "There are no pending mentee requests at this moment!"
+    expect(page).to have_content "No mentor has reported their mentee yet!"
     
     clear_database
   end
@@ -123,7 +123,7 @@ context "with an empty database" do
     click_button "Submit"
     click_button "Send application" 
     login_mentor  
-    visit "/menteeApplications"
+    click_link "View mentee applications"
     click_button "Reject application"
     login_mentee
     visit "/MenteeDashboard"
@@ -144,7 +144,7 @@ context "with an empty database" do
     click_button "Submit"
     click_button "Send application" 
     login_mentor  
-    visit "/menteeApplications"
+    click_link "View mentee applications"
     click_button "Accept application"
     login_mentee
     visit "/MenteeDashboard"
