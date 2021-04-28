@@ -258,7 +258,7 @@ describe "the admin edit page" do
     click_button "Submit"
     clear_database
   end  
-      it "allows editing of a valid mentee" do
+      it "allows editing of a valid mentor from mentor list" do
     clear_database
     add_test_mentor
     login_mentor
@@ -274,7 +274,7 @@ describe "the admin edit page" do
     expect(page).to have_content "hello"
     clear_database
   end
-          it "allows editing of a valid mentee" do
+          it "allows editing of a valid mentee from mentee list" do
     clear_database
     add_test_user
     login_mentor
@@ -283,14 +283,11 @@ describe "the admin edit page" do
     click_link "Edit Profile"
     fill_in "Description:", with: "hello"
     click_button "Submit"
-    visit "/login"
-    fill_in "username", with: "123"
-    fill_in "password", with: "123"
-    click_button "Submit"
+    login_mentee
     expect(page).to have_content "hello"
     clear_database
   end
-      it "allows editing of a valid mentee" do
+      it "allows editing of a valid mentor from mentor list by admin/mentor" do
     clear_database
     add_test_mentor
     login_mentor
@@ -303,7 +300,7 @@ describe "the admin edit page" do
     expect(page).to have_content "hello"
     clear_database
   end
-          it "allows editing of a valid mentee" do
+          it "allows editing of a valid mentee from mentee list by admin/mentor" do
     clear_database
     add_test_user
     add_test_mentor
@@ -317,7 +314,7 @@ describe "the admin edit page" do
     expect(page).to have_content "hello"
     clear_database
   end
-it "allows editing of a valid mentee" do
+it "tests editMentee from mentee acount" do
     clear_database
     add_test_user
     add_test_mentor
@@ -327,7 +324,7 @@ it "allows editing of a valid mentee" do
     clear_database
   end
 
-it "allows editing of a valid mentee" do
+it "tests editMentee from mentor acount" do
     clear_database
     add_test_user
     add_test_mentor
@@ -336,7 +333,7 @@ it "allows editing of a valid mentee" do
     expect(page).to have_content "Mentor Dashboard"
     clear_database
   end
-it "allows editing of a valid mentee" do
+it "tests editMentee from admin acount" do
     clear_database
     add_test_user
     add_test_mentor
@@ -345,7 +342,7 @@ it "allows editing of a valid mentee" do
     expect(page).to have_content "Admin Dashboard"
     clear_database
   end
-it "allows editing of a valid mentee" do
+it "tests editMentee from adminMentor acount" do
     clear_database
     add_test_user
     add_test_mentor
@@ -357,7 +354,7 @@ it "allows editing of a valid mentee" do
 
 #editMentor
 
-it "allows editing of a valid mentee" do
+it "tests editMentor from mentee account" do
     clear_database
     add_test_user
     add_test_mentor
@@ -367,7 +364,7 @@ it "allows editing of a valid mentee" do
     clear_database
   end
 
-it "allows editing of a valid mentee" do
+it "tests editMentor from mentor account" do
     clear_database
     add_test_user
     add_test_mentor
@@ -376,7 +373,7 @@ it "allows editing of a valid mentee" do
     expect(page).to have_content "Mentor Dashboard"
     clear_database
   end
-it "allows editing of a valid mentee" do
+it "tests editMentor from admin account" do
     clear_database
     add_test_user
     add_test_mentor
@@ -385,7 +382,7 @@ it "allows editing of a valid mentee" do
     expect(page).to have_content "Admin Dashboard"
     clear_database
   end
-it "allows editing of a valid mentee" do
+it "tests editMentor from adminMentor account" do
     clear_database
     add_test_user
     add_test_mentor
