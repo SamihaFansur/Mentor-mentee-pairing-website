@@ -146,5 +146,66 @@ context "with an empty database" do
     login_mentor  
     clear_database
   end
+ it "tests for a mentee/mentor match" do
+
+    add_test_mentor
+    add_test_user
+    login_mentor    
+    login_mentee
+    visit "/search"
+    fill_in "searchForMentor", with: "Accounting and Financial Management (BA)"
+    click_button "Submit"
+    click_button "Send application" 
+    visit "/MenteeDashboard"
+    click_link "View mentor applications"
+    click_button "Match"
+    visit "/MenteeDashboard"
+    expect(page).to have_content "George"
+    clear_database
+  end
+it "tests for a mentee/mentor match" do
+
+    add_test_mentor
+    add_test_user
+    login_mentor    
+    login_mentee
+    visit "/search"
+    fill_in "searchForMentor", with: "Accounting and Financial Management (BA)"
+    click_button "Submit"
+    click_button "Send application" 
+    visit "/MenteeDashboard"
+    click_link "View mentor applications"
+    click_button "Match"
+    login_mentor  
+    visit "/menteeApplications"
+    click_button "Accept application"
+    login_mentee
+    visit "/MenteeDashboard"
+    click_link "My Mentor"
+    expect(page).to have_content "Sam Mentor"
+    clear_database
+  end
+  it "tests for a mentee/mentor match using admin mentor account" do
+
+    add_test_mentor
+    add_test_user
+    login_mentor    
+    login_mentee
+    visit "/search"
+    fill_in "searchForMentor", with: "Accounting and Financial Management (BA)"
+    click_button "Submit"
+    click_button "Send application" 
+    login_admin_mentor  
+    visit "/menteeApplications"
+    click_button "Accept application"
+    login_mentee
+    visit "/MenteeDashboard"
+    click_link "View mentor applications"
+    click_button "Match"
+    visit "/MenteeDashboard"
+    click_link "My Mentor"
+    expect(page).to have_content "Sam Mentor"
+    clear_database
+  end
 end
 end
