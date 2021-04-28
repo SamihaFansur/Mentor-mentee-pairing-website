@@ -59,7 +59,6 @@ end
 post "/suspendMentee" do
   @mentees = Mentee.first(id: params[:menteeID]) #creates a new instance of mentee
   
-  #Sets suspendMentee field to 1 to indicate account suspended if its not already suspended
   suspend_user(@mentees, @mentees.suspendMentee)
     
     redirect "/searchForAMentee"
@@ -177,15 +176,15 @@ post "/unblockMentor" do
     redirect "/searchForAMentor"
 end
 
-def suspend_user(user, userField)
-  if userField != 1
+def suspend_user(user, suspendUserField)
+  if suspendUserField != 1
     if user.class == Mentee
       user.suspendMentee = 1
     elsif user.class = Mentor
       user.suspendMentor = 1
     end
     user.save_changes
-    #Sends mentee an email that their account has been suspended
+    #Sends user an email that their account has been suspended
     send_mail(user.email, 
         "Account suspended!", 
         "Hi "+user.fname+" "+user.lname+" !\n"+
@@ -197,14 +196,18 @@ def suspend_user(user, userField)
     Thread.new{
   #         sleep(2*24*60*60) #2 days in seconds
         sleep(30) #-------------------------------DELETE LATER -S -------------------------------
-        user.suspendMentee = 0
+        if user.class == Mentee
+          user.suspendMentee = 0
+        elsif user.class = Mentor
+          user.suspendMentor = 0
+        end
         user.save_changes
-        #Sends mentee an email that their account has been unsuspended
+        #Sends user an email that their account has been unsuspended
         send_mail(user.email, 
-            "Mentee account Unsuspended!", 
+            "Account Unsuspended!", 
             "Hi "+user.fname+" "+user.lname+" !\n"+
-            "Your mentee account has now been unsuspended.\n"+
-            "You can now login using your mentee credentials"+
+            "Your account has now been unsuspended.\n"+
+            "You can now login using your credentials"+
             "\n\nRegards\nTeam 6")
             puts "USER unsus after 30secs"
       } 
