@@ -1,3 +1,5 @@
+/*General CSS rules*/
+
 body {
   margin: 0; 
   background-color: whitesmoke;
@@ -22,6 +24,10 @@ footer {
   color: white;
 }
 
+form {
+  margin: 5px;
+}
+
 #wrapper {
   width: 100%;
   margin: 0 auto;
@@ -29,6 +35,7 @@ footer {
 
 
 /*background images combined into one class to avoid code repetition*/
+
 .background {
   background-image: url('../images/bg.jpg');
   background-attachment: fixed;
@@ -42,6 +49,7 @@ footer {
 }
 
 /*background properties for the 'main' tag*/
+
 .backgrounds {
   width: 100%;
   display: flex;
@@ -52,6 +60,7 @@ footer {
 }
 
 /*Properties for the main heading of every page*/ 
+
 .titles {
   font-family: "Bodoni MT Condensed";
   text-align: center;
@@ -355,12 +364,13 @@ footer {
 }
 
 /*Schedule Tables AND Mentor Search and Mentee Application Tables*/
+
 .displayTable {
-  margin: 5% 0 5%;
+  margin: 5% 0 10%;
   background-color: #0066b3;
   padding: 5px;
   border-spacing: 0 5;
-  border-radius: 10px;
+  border-radius: 3px;
   width:100%;
 
 }
@@ -370,12 +380,12 @@ footer {
 
 }
 .displayTable tr:nth-child(even) {
-  background-color: #ade1f8;
+  background-color: whitesmoke;
   padding-bottom: 20px;
 }
 
 .displayTable tr:nth-child(odd) {
-  background-color: white;
+  background-color: #ade1f8;
   padding-bottom: 20px;
 }
 
