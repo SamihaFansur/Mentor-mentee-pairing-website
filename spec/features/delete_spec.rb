@@ -79,7 +79,7 @@ describe "the delete page" do
     clear_database
  end
     
-    it "tests for a mentee/mentor match" do
+    it "tests for a mentee/mentor match deletion of mentor" do
   clear_database
     add_test_mentor
     add_test_user
@@ -105,7 +105,7 @@ describe "the delete page" do
 
     clear_database
   end
-        it "tests for a mentee/mentor match" do
+        it "tests for a mentee/mentor match deletion of mentee " do
   clear_database
     add_test_mentor
     add_test_user
@@ -131,7 +131,7 @@ describe "the delete page" do
 
     clear_database
   end
-        it "tests for a mentee/mentor match" do
+        it "tests for a mentee/mentor match deletion of mentor by admin/mentor" do
   clear_database
     add_test_mentor
     add_test_user
@@ -157,7 +157,7 @@ describe "the delete page" do
 
     clear_database
   end
-        it "tests for a mentee/mentor match" do
+        it "tests for a mentee/mentor match deletion of mentee by admin/mentor" do
   clear_database
     add_test_mentor
     add_test_user
@@ -183,5 +183,6 @@ describe "the delete page" do
 
     clear_database
   end
+     
     clear_database
 end
