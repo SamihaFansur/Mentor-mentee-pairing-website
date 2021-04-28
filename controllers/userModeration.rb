@@ -1,32 +1,17 @@
 post "/suspendMentor" do
   @mentors = Mentor.first(id: params[:mentorID]) #creates a new instance of mentor
-  
-  #Sets suspendMentor field to 1 to indicate account suspended if its not already suspended    
+     
   suspend_user(@mentors, @mentors.suspendMentor)
     
-    redirect "/searchForAMentor"
+  redirect "/searchForAMentor"
 end
 
 post "/unsuspendMentor" do
   @mentors = Mentor.first(id: params[:mentorID]) #creates a new instance of mentor
 
-  #Sets suspendMentor field to 0 to indicate account unsuspended if its already suspended
-  if @mentors.suspendMentor == 1
-    @mentors.suspendMentor = 0
-    @mentors.save_changes
-    #Sends mentor an email that their account has been unsuspended
-    send_mail(@mentors.email, 
-        "Mentor account Unsuspended!", 
-        "Hi "+@mentors.fname+" "+@mentors.lname+" !\n"+
-        "Your mentor account has now been unsuspended.\n"+
-        "You can now login using your mentor credentials"+
-        "\n\nRegards\nTeam 6")
-   else
-      @error1 ="Account has already been unsuspended"
-      redirect "/searchForAMentor?error=2"
-  end
+  unsuspend_user(@mentors, @mentors.suspendMentor)
     
-    redirect "/searchForAMentor"
+  redirect "/searchForAMentor"
 end
 
 post "/suspendMentee" do
@@ -34,29 +19,15 @@ post "/suspendMentee" do
   
   suspend_user(@mentees, @mentees.suspendMentee)
     
-    redirect "/searchForAMentee"
+  redirect "/searchForAMentee"
 end
 
 post "/unsuspendMentee" do
   @mentees = Mentee.first(id: params[:menteeID]) #creates a new instance of mentee
   
-  #Sets suspendMentee field to 0 to indicate account unsuspended if its suspended
-  if @mentees.suspendMentee == 1
-    @mentees.suspendMentee = 0
-    @mentees.save_changes
-    #Sends mentee an email that their account has been unsuspended
-    send_mail(@mentees.email, 
-        "Mentee account Unsuspended!", 
-        "Hi "+@mentees.fname+" "+@mentees.lname+" !\n"+
-        "Your mentee account has now been unsuspended.\n"+
-        "You can now login using your mentee credentials"+
-        "\n\nRegards\nTeam 6")
-   else
-      @error1 ="Account has already been unsuspended"
-      redirect "/searchForAMentee?error=2"
-  end
+  unsuspend_user(@mentees, @mentees.suspendMentee)
     
-    redirect "/searchForAMentee"
+  redirect "/searchForAMentee"
 end
 
 post "/blockMentee" do
@@ -183,11 +154,35 @@ def suspend_user(user, suspendUserField)
             "\n\nRegards\nTeam 6")
       } 
    else
-      @error1 ="Account has already been suspended"
       if user.class == Mentee
         redirect "/searchForAMentee?error=1"
       elsif user.class == Mentor
         redirect "/searchForAMentor?error=1"
+      end
+  end
+  
+end
+
+def unsuspend_user(user, unsuspendUserField)
+  if unsuspendUserField == 1
+    if user.class == Mentee
+      user.suspendMentee = 0
+    elsif user.class == Mentor
+      user.suspendMentor = 0
+    end
+    user.save_changes
+    #Sends user an email that their account has been unsuspended
+    send_mail(user.email, 
+        "Account Unsuspended!", 
+        "Hi "+user.fname+" "+user.lname+" !\n"+
+        "Your account has now been unsuspended.\n"+
+        "You can now login using your credentials"+
+        "\n\nRegards\nTeam 6")
+   else
+      if user.class == Mentee
+        redirect "/searchForAMentee?error=2"
+      elsif user.class == Mentor
+        redirect "/searchForAMentor?error=2"
       end
   end
   
