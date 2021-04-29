@@ -6,9 +6,9 @@
         <p>Details of your current mentee will appear here:</p>
         <div class="userInfo" id="application">
           <!-- Displays the details of the mentee the mentor is matched to -->
-          <% if @menteeMatchedList.count > 0 %>
+          <% if @usersIDList.count > 0 %>
               <h2>Mentee Infomation:</h2>
-               <% @menteeMatchedList.each do |mentee| %>
+               <% @usersIDList.each do |mentee| %>
                 <p><b>Name: </b> <i><%= h mentee.name %></i></p>
                 <p><b>Email: </b> <i><%= h mentee.email %></i></p>
                 <p><b>Phone Number: </b> <i><%= h mentee.phoneNum %></i></p>

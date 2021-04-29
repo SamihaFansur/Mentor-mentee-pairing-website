@@ -1,31 +1,16 @@
 #Mentor uses this route to accept 1 mentee application
 get "/menteeApplications" do
   headers_common_pages
-  application_listings("mentee", mentorID: $mentors.id)
+  applications("mentee", Request, mentorID: $mentors.id)
   
   erb :mentee_applications
 end
 
 #Mentee uses this route to view sent mentor applications
 get "/sentMentorApplications" do
-  application_listings("mentor", menteeID: $mentees.id)
+  applications("mentor", Request, menteeID: $mentees.id)
   
   erb :sent_mentor_applications
-end
-
-def application_listings(user, userParamsUsed)
-  @usersIDList = []
-  listOfIDs = Request.where(userParamsUsed) #Finds the request where it finds the specified mentee ID
-  listOfIDs.each do |id|
-    if user == "mentee"
-      allUsers = Mentee.first(id: id.menteeID)
-    elsif user == "mentor"
-      allUsers = Mentor.first(id: id.mentorID)
-    end
-    allUsers
-    @usersIDList.push(allUsers) unless user.nil?
-  end
-  
 end
 
 #Mentee accepts mentor
@@ -241,40 +226,20 @@ get "/myMentor" do
 end
 
 get "/myMentee" do
-  @header = nil
+  headers_common_pages
+  
+  applications("menteeMatched", Mentee, id: $mentors.menteeMatch)
+  
+  #Used for reporting mentees
   mentor = Mentor.first(id: $mentors.id)
   @mentor_report = mentor.reportMentee
-  
-  if session[:admins_username]
-    if session[:mentors_username]
-      @header = erb:"common/header_adminMentorA"
-    end
-  elsif session[:mentors_username] 
-    @header = erb:"common/header_mentorA"
-  end
-  
-  #List to store the mentee matched to a mentor
- @menteeMatchedList = []
-  #Finds the ID of the mentee that is equal to the value stored in the menteeMatch column in the mentors table
-  MenteeIDList = Mentee.where(id: $mentors.menteeMatch)
-  MenteeIDList.each do |id|
-    @menteeMatchedList.push(Mentee.first(id: id.id)) #Stores the mentor record found in the list to be displayed
-  end
   
   erb :myMentee
 end
 
 #Route for the admin to view pending mentee applications
 get "/PendingMenteeApplications" do
- @header = nil
-  
-  if session[:admins_username]
-    if session[:mentors_username]
-      @header = erb:"common/header_adminMentorA"
-    else
-      @header = erb:"common/header_adminA"
-    end
-  end
+  headers_common_pages
   
   @requests = Request.order(:timeApplicationSent).all.reverse #All records in Requests table with most recent on top
   @menteesInfo = []
@@ -314,4 +279,24 @@ post "/requestMentorMeeting" do
       }
   
   redirect "/myMentor"
+end
+
+#   applications("mentee", Request, mentorID: $mentors.id)
+
+def applications(user, classUsed, userParamsUsed)
+  @usersIDList = []
+  listOfIDs = classUsed.where(userParamsUsed) #Finds the request where it finds the specified mentee ID
+  listOfIDs.each do |id|
+    if user == "mentee"
+      allUsers = Mentee.first(id: id.menteeID)
+    elsif user == "menteeMatched"
+      allUsers = Mentee.first(id: id.id)
+    elsif user == "mentor"
+      allUsers = Mentor.first(id: id.mentorID)
+    elsif user == "mentorMatched"
+      allUsers = Mentor.first(id: id.id)
+    end
+    allUsers
+    @usersIDList.push(allUsers) unless user.nil?
+  end
 end
