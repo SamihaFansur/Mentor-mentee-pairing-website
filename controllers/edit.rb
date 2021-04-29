@@ -1,25 +1,11 @@
 get "/editMentee" do
   headers_common_pages
-  #Checks if the request has come directly from a mentee or admin dashboard to stop users from manually changing the link and accessing other users edit pages
-  if request.referer.nil?
-      if session[:mentees_username]
-          redirect "/MenteeDashboard"
-      elsif session[:admins_username] 
-          if session[:mentors_username] 
-              redirect "/AdminMentorDashboard"
-          else
-              redirect "/AdminDashboard"
-          end
-      elsif session[:mentors_username]
-          redirect "/MentorDashboard"
-      end
-  
-  end
+  prevent_url_hopping
       
   id = params["id"] #new variable to search the id of corresponding mentee profile to be edited ######
   
   #If error displayed in the post editMentee route next line called
-  @error = true if params.fetch("error", "") == "1"
+  errors_page
   
   #If id requested exists then calls the edit mentee form
   @mentees = Mentee[id] if Mentee.id_exists?(id)
@@ -58,38 +44,13 @@ post "/editMentee" do
 end
 
 get "/editMentor" do
-  @header = nil
-  
-  if session[:admins_username]
-    if session[:mentors_username]
-      @header = erb:"common/header_adminMentorA"
-    else
-      @header = erb:"common/header_adminA"
-    end
-  elsif session[:mentors_username] 
-    @header = erb:"common/header_mentorA"
-  end
-  
-  #Checks if the request has come directly from a mentor dashboard to stop users from manually changing the link and accessing other users edit pages
-  if request.referer.nil?
-      if session[:mentees_username]
-          redirect "/MenteeDashboard"
-      elsif session[:admins_username] 
-          if session[:mentors_username] 
-              redirect "/AdminMentorDashboard"
-          else
-              redirect "/AdminDashboard"
-          end
-      elsif session[:mentors_username]
-          redirect "/MentorDashboard"
-      end
-  
-  end
+  headers_common_pages
+  prevent_url_hopping
  
   id = params["id"] #new variable to search the id of corresponding mentor profile to be edited
   
   #If error displayed in the post editMentor route next line called
-  @error = true if params.fetch("error", "") == "1"
+  errors_page
   
   #If id requested exists then calls the edit mentor form
   @mentors = Mentor[id] if Mentor.id_exists?(id)
@@ -135,27 +96,14 @@ post "/editMentor" do
 
 end
 
-get "/editAdmin" do    
-  #Checks if the request has come directly from a admin dashboard to stop users from manually changing the link and accessing other users edit pages
-  if request.referer.nil?
-      if session[:mentees_username]
-          redirect "/MenteeDashboard"
-      elsif session[:admins_username] 
-          if session[:mentors_username] 
-              redirect "/AdminMentorDashboard"
-          else
-              redirect "/AdminDashboard"
-          end
-      elsif session[:mentors_username]
-          redirect "/MentorDashboard"
-      end
-  
-  end
+get "/editAdmin" do 
+  headers_common_pages
+  prevent_url_hopping
     
   id = params["id"] #new variable to search the id of corresponding admin profile to be edited
   
   #If error displayed in the post editAdmin route next line called
-  @error = true if params.fetch("error", "") == "1"
+  errors_page
   
   #If id requested exists then calls the edit mentor form
   @admins = Admin[id] if Admin.id_exists?(id)
@@ -185,4 +133,21 @@ post "/editAdmin" do
     end
   end
 
+end
+
+def prevent_url_hopping
+  #Checks if the request has come directly from a mentor dashboard to stop users from manually changing the link and accessing other users edit pages
+  if request.referer.nil?
+      if session[:mentees_username]
+          redirect "/MenteeDashboard"
+      elsif session[:admins_username] 
+          if session[:mentors_username] 
+              redirect "/AdminMentorDashboard"
+          else
+              redirect "/AdminDashboard"
+          end
+      elsif session[:mentors_username]
+          redirect "/MentorDashboard"
+      end
+  end
 end

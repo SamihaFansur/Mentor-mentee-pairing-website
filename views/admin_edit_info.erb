@@ -1,4 +1,4 @@
-<%= erb :"common/header_adminA" %>
+<%= @header %>
     <div class="background" id="statement">
       <div class="full">
         <div class="title">Edit your information</div> <!--Main page Title-->  
@@ -8,7 +8,7 @@
         <% unless @admins.errors.size.zero? %>
             <p><strong class="error">Please correct the errors below:</strong></p>
         <% end %>
-        <% if @error %>
+        <% if @error1 %>
           <p class="error"><strong>Email exists</strong></p>
         <% end %>
         <form method="post">

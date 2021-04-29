@@ -2,7 +2,7 @@ get "/search" do
   #New variable to enable mentees to search for mentors based on course name
   @courseName_search = params.fetch("courseName_search", "").strip
   
-  errors
+  errors_page
   
   #If no course name is being searched, it displays the list of all mentors in alphabetical order 
   #else it searches through the course name field in the mentors table and displays mentors' whose 
@@ -120,7 +120,7 @@ end
 def admin_user_search(user, varName, searchField)
   #New variable to enable mentees to search for mentors based on course name
   varName = params.fetch(searchField, "").strip
-  errors  
+  errors_page
   
   #If no course name is being searched, it displays the list of all mentors in alphabetical order 
   #else it searches through the course name field in the mentors table and displays mentors' whose 
@@ -140,7 +140,7 @@ def admin_user_search(user, varName, searchField)
                  end
 end
 
-def errors
+def errors_page
   #notice after press the button
   @error1 = true if params.fetch("error", "") == "1"
   @error2 = true if params.fetch("error", "") == "2"

@@ -1,6 +1,5 @@
 post "/suspendMentor" do
   @mentors = Mentor.first(id: params[:mentorID]) #creates a new instance of mentor
-     
   suspend_user(@mentors, @mentors.suspendMentor)
     
   redirect "/searchForAMentor"
@@ -8,7 +7,6 @@ end
 
 post "/unsuspendMentor" do
   @mentors = Mentor.first(id: params[:mentorID]) #creates a new instance of mentor
-
   unsuspend_user(@mentors, @mentors.suspendMentor)
     
   redirect "/searchForAMentor"
@@ -16,7 +14,6 @@ end
 
 post "/suspendMentee" do
   @mentees = Mentee.first(id: params[:menteeID]) #creates a new instance of mentee
-  
   suspend_user(@mentees, @mentees.suspendMentee)
     
   redirect "/searchForAMentee"
@@ -24,7 +21,6 @@ end
 
 post "/unsuspendMentee" do
   @mentees = Mentee.first(id: params[:menteeID]) #creates a new instance of mentee
-  
   unsuspend_user(@mentees, @mentees.suspendMentee)
     
   redirect "/searchForAMentee"
@@ -32,7 +28,6 @@ end
 
 post "/blockMentee" do
   @mentees = Mentee.first(id: params[:menteeID]) #creates a new instance of mentee
-  
   block_user(@mentees, @mentees.suspendMentee)
     
   redirect "/searchForAMentee"
@@ -40,7 +35,6 @@ end
 
 post "/unblockMentee" do
   @mentees = Mentee.first(id: params[:menteeID]) #creates a new instance of mentee
-  
   unblock_user(@mentees, @mentees.suspendMentee)
     
   redirect "/searchForAMentee"
@@ -48,7 +42,6 @@ end
 
 post "/blockMentor" do
   @mentors = Mentor.first(id: params[:mentorID]) #creates a new instance of mentor
-  
   block_user(@mentors, @mentors.suspendMentor)
     
   redirect "/searchForAMentor"
@@ -56,7 +49,6 @@ end
 
 post "/unblockMentor" do
   @mentors = Mentor.first(id: params[:mentorID]) #creates a new instance of mentor
-
   unblock_user(@mentors, @mentors.suspendMentor)
     
   redirect "/searchForAMentor"
