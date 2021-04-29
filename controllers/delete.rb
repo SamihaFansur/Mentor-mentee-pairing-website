@@ -9,12 +9,12 @@ post "/deleteMentee" do
   request.delete #removes mentor application from databse
   if session[:mentees_username]  #if mentee deletes their profile themselves
     #Sends mentee email
-    delete_account_email(mentee, mentee)
+    delete_account_email(mentee, "mentee")
     mentee_deleted_reset_all_users_fields(mentee, mentee.mentorMatch)
     session.clear
     redirect "/"
   elsif session[:admins_username]  #if admin deletes mentee profile
-    admin_delete_account_email(mentee, mentee)
+    admin_delete_account_email(mentee, "mentee")
     mentee_deleted_reset_all_users_fields(mentee, mentee.mentorMatch)
     redirect "searchForAMentee"
   end
@@ -30,11 +30,11 @@ post "/deleteMentor" do
   mentor.delete
   request.delete #removes mentee application from databse
   if session[:admins_username] #if admin deletes mentor profile
-    admin_delete_account_email(mentor, mentor)
+    admin_delete_account_email(mentor, "mentor")
     mentor_deleted_reset_all_users_fields(mentor, mentor.menteeMatch)
     redirect "/searchForAMentor"
   elsif session[:mentors_username] #if mentor deletes their profile themselves
-    delete_account_email(mentor, mentor)
+    delete_account_email(mentor, "mentor")
     mentor_deleted_reset_all_users_fields(mentor, mentor.menteeMatch)
     session.clear
     redirect "/"
@@ -48,14 +48,13 @@ post "/deleteAdmin" do
   #If admin deletes own profile then profile deleted, admin sent email, logged out and redirected to index page
   admin = Admin[id]
   admin.delete
-  delete_account_email(admin, admin)
+  delete_account_email(admin, "admin")
   session.clear
   redirect "/"
   
 end
 
 def delete_account_email(user, type)
-  type = type.to_s
   send_mail(user.email, 
         "Sorry to see you go!", 
         "Hi "+user.fname+" "+user.lname+"!\n"+
@@ -64,7 +63,6 @@ def delete_account_email(user, type)
 end
 
 def admin_delete_account_email(user, type)
-  type = type.to_s
   send_mail(user.email, 
           "Sorry to see you go!", 
           "Hi "+user.fname+" "+user.lname+"!\n"+
@@ -94,7 +92,7 @@ def mentee_deleted_reset_all_users_fields(user, matchedUserID)
     
     #Sends matched mentor an email
     matched_user_deleted("mentee", mentor, "accept")
-    mentor.profileStatus = 0
+    mentor.profileStatus = 1
     mentor.menteeAccept = 0
     mentor.menteeMatch = 0
     mentor.save_changes      

@@ -36,11 +36,6 @@ get "/MentorDashboard" do
   #Gets the mentor information that corresponds to the username
   $mentors = Mentor.first(username: username) # '$' used to make it a global variable
   
-  #initializing the profileStatus field to 0
-  if $mentors.profileStatus != "1"
-    $mentors.profileStatus = "0"
-  end
-  
   #Initializing menteeMatch field in mentors table
   if $mentors.menteeMatch == nil
     $mentors.menteeMatch = 0
@@ -55,6 +50,12 @@ get "/MentorDashboard" do
   if $mentors.reportMentee == nil
     $mentors.reportMentee = 0
   end
+  
+  #initializing the profileStatus field to 0 (CAN CHANGE line 55 to ==nil, and swap 0, 1 vars)
+  if $mentors.profileStatus == nil
+    $mentors.profileStatus = 1
+  end
+  
   
   $mentors.save_changes
   

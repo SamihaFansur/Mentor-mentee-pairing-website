@@ -31,7 +31,7 @@ CREATE TABLE mentors (
   menteeAccept INTEGER,
   menteeMatch INTEGER,
   activationToken INTEGER,
-  profileStatus TEXT,
+  profileStatus INTEGER,
   reportMentee INTEGER,
   suspendMentor INTEGER
 );

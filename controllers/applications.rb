@@ -37,7 +37,7 @@ post "/matchWithMentor" do
     send_mail($mentees.email, 
       "You have successfully accepted the mentor application", 
       "Hi "+$mentees.fname+" "+$mentees.lname+"!\n"+
-      "You have successfully accepted"+mentor.fname+" "+mentor.lname+" to be your mentor.\n"+
+      "You have successfully accepted "+mentor.fname+" "+mentor.lname+" to be your mentor.\n"+
       "\n\n\nRegards\nTeam 6")
   end
     
@@ -69,7 +69,7 @@ post "/matchWithMentee" do
     send_mail($mentors.email, 
       "You have successfully accepted the mentee application", 
       "Hi "+$mentors.fname+" "+$mentors.lname+"!\n"+
-      "You have successfully accepted"+mentee.fname+" "+mentee.lname+"'s application to be your mentee.\n"+
+      "You have successfully accepted "+mentee.fname+" "+mentee.lname+"'s application to be your mentee.\n"+
       "\n\n\nRegards\nTeam 6")
   end
   
@@ -229,7 +229,7 @@ def both_users_have_accepted(menteeIDParams, mentorIDParams, menteeUser, mentorU
   
   Request.where(mentorID: mentorUser.id).delete #Deletes all records from requests table based on the id of the mentor being matched
 
-  mentorUser.profileStatus = "1" #mentor profile made private
+  mentorUser.profileStatus = 0 #mentor profile made private
   mentorUser.save_changes
 
   menteeUser.applicationNumber = 0 #mentee can't send more applications
