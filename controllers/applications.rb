@@ -214,13 +214,7 @@ post "/unsend" do
 end
 
 get "/myMentor" do  
-  #List to store the mentor matched to a mentee
-  @mentorMatchedList = []
-  #Finds the ID of the mentor that is equal to the value stored in the mentorMatch column in the mentees table
-  MentorIDList = Mentor.where(id: $mentees.mentorMatch)
-  MentorIDList.each do |id|
-    @mentorMatchedList.push(Mentor.first(id: id.id)) #Stores the mentor record found in the list to be displayed
-  end
+  applications("mentorMatched", Mentor, id: $mentees.mentorMatch)
   
   erb :myMentor
 end
