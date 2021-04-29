@@ -21,51 +21,11 @@ post "/matchWithMentor" do
   
   $mentees.mentorAccept = mentor.id
   $mentees.save_changes
-  
-  reqS = Request.where(mentorID: params[:mentorID]).all
-  
+    
   #If both mentor and mentee have accepted the each others request both will be matched and both users notified of match but
   #if the mentee only has accepted the application then the mentor is notified
   if mentor.menteeAccept == $mentees.id && $mentees.mentorAccept == mentor.id
-    
-    Mentor.where(id: params[:mentorID]).update(:menteeMatch => $mentees.id)
-
-    Mentee.where(id: $mentees.id).update(:mentorMatch => params[:mentorID])
-
-    #Gets all the requests sent to the mentor being matched, and resets field values for mentees with
-    #whom the mentor isn't being matched
-    req_all = Request.where(mentorID: params[:mentorID]).all
-    req_all.each do |req|
-      other_mentees = Mentee.first(id: req.menteeID)
-      if other_mentees.id != $mentees.id
-        other_mentees.applicationNumber = 1
-        other_mentees.mentorAccept = 0
-        other_mentees.save_changes
-      end
-    end
-        
-    Request.where(mentorID: mentor.id).delete #Deletes all records from requests table based on the id of the mentor being matched
-
-    mentor.profileStatus = "1" #mentor profile made private
-    mentor.save_changes
-
-    $mentees.applicationNumber = 0 #mentee can't send more applications
-    $mentees.save_changes
-
-    send_mail($mentees.email, 
-      "You have been paired with a mentor!", 
-      "Hi "+$mentees.fname+" "+$mentees.lname+"!\n"+
-      "Your new mentor is: "+mentor.fname+" "+mentor.lname+".\n"+
-      "Please login into your account for more details.\n"+
-      "\n\n\nRegards\nTeam 6")
-
-    send_mail(mentor.email, 
-      "You have been paired with a mentee!", 
-      "Hi "+mentor.fname+" "+mentor.lname+"!\n"+
-      "Your new mentee is: "+$mentees.fname+" "+$mentees.lname+".\n"+
-      "Please login into your account for more details.\n"+
-      "\n\n\nRegards\nTeam 6")
-
+    both_users_have_accepted($mentees.id, params[:mentorID], $mentees, mentor)
   else
     send_mail(mentor.email, 
       "A mentee wants you to be their mentor!", 
@@ -85,6 +45,46 @@ post "/matchWithMentor" do
 
 end
 
+#both_users_have_accepted($mentees.id, params[:mentorID], $mentees, mentor)
+def both_users_have_accepted(menteeIDParams, mentorIDParams, menteeUser, mentorUser)
+  Mentor.where(id: mentorIDParams).update(:menteeMatch => menteeIDParams)
+  Mentee.where(id: menteeIDParams).update(:mentorMatch =>mentorIDParams)
+  
+  #Gets all the requests sent to the mentor being matched, and resets field values for mentees with
+  #whom the mentor isn't being matched
+  req_all = Request.where(mentorID: mentorIDParams).all
+    req_all.each do |req|
+      other_mentees = Mentee.first(id: req.menteeID)
+      if other_mentees.id != menteeUser.id
+        other_mentees.applicationNumber = 1
+        other_mentees.mentorAccept = 0
+        other_mentees.save_changes
+      end
+    end
+  
+  Request.where(mentorID: mentorUser.id).delete #Deletes all records from requests table based on the id of the mentor being matched
+
+  mentorUser.profileStatus = "1" #mentor profile made private
+  mentorUser.save_changes
+
+  menteeUser.applicationNumber = 0 #mentee can't send more applications
+  menteeUser.save_changes
+  
+  send_mail(menteeUser.email, 
+      "You have been paired with a mentor!", 
+      "Hi "+menteeUser.fname+" "+menteeUser.lname+"!\n"+
+      "Your new mentor is: "+mentorUser.fname+" "+mentorUser.lname+".\n"+
+      "Please login into your account for more details.\n"+
+      "\n\n\nRegards\nTeam 6")
+
+    send_mail(mentorUser.email, 
+      "You have been paired with a mentee!", 
+      "Hi "+mentorUser.fname+" "+mentorUser.lname+"!\n"+
+      "Your new mentee is: "+menteeUser.fname+" "+menteeUser.lname+".\n"+
+      "Please login into your account for more details.\n"+
+      "\n\n\nRegards\nTeam 6")
+end
+
 #Mentor accepts mentee
 post "/matchWithMentee" do   
   #When mentor accepts application, sets menteeAccept to the id of the mentee they are accepting
@@ -97,44 +97,7 @@ post "/matchWithMentee" do
   #If both mentor and mentee have accepted the each others request both will be matched and both users notified of match but
   #if the mentee only has accepted the application then the mentor is notified
   if $mentors.menteeAccept == mentee.id && mentee.mentorAccept == $mentors.id
-    Mentee.where(id: params[:menteeID]).update(:mentorMatch => $mentors.id)
-
-    Mentor.where(id: $mentors.id).update(:menteeMatch => params[:menteeID])
-    
-    #Gets all the requests sent to the mentor being matched, and resets field values for mentees with
-    #whom the mentor isn't being matched
-    reqS = Request.where(mentorID: $mentors.id).all
-    reqS.each do |req|
-      other_mentees = Mentee.first(id: req.menteeID)
-      if other_mentees.id != mentee.id
-        other_mentees.applicationNumber = 1
-        other_mentees.mentorAccept = 0
-        other_mentees.save_changes
-      end
-    end
-    
-    Request.where(mentorID: $mentors.id).delete #Deletes all records from requests table based on the id of the mentor being matched
-
-    $mentors.profileStatus = "1" #mentor profile made private
-    $mentors.save_changes
-
-    mentee.applicationNumber = 0 #mentee can't send more applications
-    mentee.save_changes
-    
-    send_mail($mentors.email, 
-      "You have been paired with a mentee!", 
-      "Hi "+$mentors.fname+" "+$mentors.lname+"!\n"+
-      "Your new mentee is: "+mentee.fname+" "+mentee.lname+".\n"+
-      "Please login into your account for more details.\n"+
-      "\n\n\nRegards\nTeam 6")
-
-    send_mail(mentee.email, 
-      "You have been paired with a mentor!", 
-      "Hi "+mentee.fname+" "+mentee.lname+"!\n"+
-      "Your new mentor is: "+$mentors.fname+" "+$mentors.lname+".\n"+
-      "Please login into your account for more details.\n"+
-      "\n\n\nRegards\nTeam 6")
-
+    both_users_have_accepted(params[:menteeID], $mentors.id, mentee, $mentors)
   else
     send_mail(mentee.email, 
       "A mentor has accepted your application for you to be their mentee!", 
