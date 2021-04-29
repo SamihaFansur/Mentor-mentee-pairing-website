@@ -1,5 +1,5 @@
 get "/editMentee" do
-    
+  headers_common_pages
   #Checks if the request has come directly from a mentee or admin dashboard to stop users from manually changing the link and accessing other users edit pages
   if request.referer.nil?
       if session[:mentees_username]
