@@ -1,11 +1,9 @@
 get "/editMentee" do
   headers_common_pages
   prevent_url_hopping
-      
-  id = params["id"] #new variable to search the id of corresponding mentee profile to be edited ######
-  
-  #If error displayed in the post editMentee route next line called
   errors_page
+  
+  id = params["id"] #new variable to search the id of corresponding mentee profile to be edited ######
   
   #If id requested exists then calls the edit mentee form
   @mentees = Mentee[id] if Mentee.id_exists?(id)
@@ -17,7 +15,7 @@ get "/editMentee" do
 end
 
 post "/editMentee" do
-  id = params["id"] #variable to search the id of corresponding mentee profile being edited ######
+  id = params["id"] #variable to search the id of corresponding mentee profile being edited
   
   #If mentee id exists and field values are valid then saves changes and redirects to mentee dashboard
   if Mentee.id_exists?(id)
@@ -46,11 +44,9 @@ end
 get "/editMentor" do
   headers_common_pages
   prevent_url_hopping
- 
-  id = params["id"] #new variable to search the id of corresponding mentor profile to be edited
-  
-  #If error displayed in the post editMentor route next line called
   errors_page
+  
+  id = params["id"] #new variable to search the id of corresponding mentor profile to be edited
   
   #If id requested exists then calls the edit mentor form
   @mentors = Mentor[id] if Mentor.id_exists?(id)
@@ -99,11 +95,9 @@ end
 get "/editAdmin" do 
   headers_common_pages
   prevent_url_hopping
-    
-  id = params["id"] #new variable to search the id of corresponding admin profile to be edited
-  
-  #If error displayed in the post editAdmin route next line called
   errors_page
+  
+  id = params["id"] #new variable to search the id of corresponding admin profile to be edited
   
   #If id requested exists then calls the edit mentor form
   @admins = Admin[id] if Admin.id_exists?(id)
