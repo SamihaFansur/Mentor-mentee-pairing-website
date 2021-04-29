@@ -91,7 +91,7 @@ end
 
 def login_admin
 visit "/login"
-    fill_in "username", with: "admin2"
+    fill_in "username", with: "admin1"
     fill_in "password", with: "S.F"
     click_button "Submit"
     click_link "No"
@@ -99,7 +99,7 @@ end
 
 def login_admin_mentor
  visit "/login"
-    fill_in "username", with: "admin2"
+    fill_in "username", with: "admin1"
     fill_in "password", with: "S.F"
     click_button "Submit"
     click_link "Yes"
