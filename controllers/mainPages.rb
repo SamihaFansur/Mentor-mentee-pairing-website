@@ -17,15 +17,24 @@ get "/SignUpChoices" do
   erb :signup_choices #Leads to a page which asks user to sign up as either mentee or as a mentor
 end
 
-get "/LoginPage" do
+get "/login" do
+  new_mentee_instance
+  new_mentor_instance
+  new_admin_instance
+  
   erb :login
+end
+
+get "/loginAgain" do
+  new_mentor_instance  
+  erb :loginAgain
 end
 
 get "/MenteeSignUpForm" do
   erb :mentee_signup
 end
 
-post "/" do
+post "/" do #homepage
   redirect "/"
 end
 
@@ -34,12 +43,12 @@ get "/MentorSignUpForm" do
 end
 
 get "/AdminHelp" do
-  @header = erb:"common/headerB"
+  headers_common_pages
   erb :admin_help
 end
 
 post "/AdminHelp" do
-  @header = erb:"common/headerB"
+  headers_common_pages
   erb :admin_help
 end
 

@@ -79,19 +79,6 @@ get "/AdminMentorDashboard" do
   erb :adminMentor_dashboard
 end
 
-get "/login" do
-  new_mentee_instance
-  new_mentor_instance
-  new_admin_instance
-  
-  erb :login
-end
-
-get "/loginAgain" do
-  new_mentor_instance  
-  erb :loginAgain
-end
-
 post '/login' do
   new_mentee_instance
   @mentees.load(params) #Loads parameters
