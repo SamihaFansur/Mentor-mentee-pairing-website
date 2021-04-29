@@ -164,22 +164,14 @@ end
 post "/rejectMentee" do   
   #Deletes the corresponding request the mentee has made from the table
   Request.where(mentorID: $mentors.id, menteeID: params[:menteeID]).delete
-  
   mentee = Mentee.first(id: params[:menteeID]) #Gets the existing mentee based on id
   mentor = Mentor.first(id: $mentors.id) #Gets the existing mentor based on id
   
-  if mentor.menteeAccept == mentee.id || mentee.mentorAccept == mentor.id
-    mentor.menteeAccept = 0
-    mentor.save_changes
-  end
-  
-  mentee.applicationNumber = 1 #Mentee can now send a mentor an application
-  mentee.mentorAccept = 0 #Resets field if mentee has already accepted the request
-  mentee.save_changes
+  reset_mentee_fields_application_unsent_or_rejected(mentee, mentor)
   
   #Sends an email to mentee that their application was rejected
   send_mail(mentee.email, 
-    "Rejected application!", 
+    "Application Rejected!", 
     "Hi "+mentee.fname+" "+mentee.lname+"!\n"+
     "Your mentor application has been rejected. To send another application login into your account.\n"+
     "\n\n\nRegards\nTeam 6")
@@ -191,21 +183,13 @@ end
 post "/unsend" do     
   #Deletes the corresponding request a mentee has made from the table
   Request.where(menteeID: $mentees.id, mentorID: params[:mentorID]).delete
-  
   mentor = Mentor.first(id: params[:mentorID]) #Gets the existing mentor based on id
   
-  if mentor.menteeAccept == $mentees.id || $mentees.mentorAccept == mentor.id
-    mentor.menteeAccept = 0
-    mentor.save_changes
-  end
-  
-  $mentees.applicationNumber = 1 #Mentee can now send a mentor an application
-  $mentees.mentorAccept = 0 #Resets field if mentee has already accepted the request
-  $mentees.save_changes
+  reset_mentee_fields_application_unsent_or_rejected($mentees, mentor)
   
   #Sends an email to mentor that the mentee unsent their application
    send_mail(mentor.email, 
-    "Withdrawn mentee application!", 
+    "Mentee application withdrawn!", 
     "Hi "+mentor.fname+" "+mentor.lname+"!\n"+
     "A mentee has withdrawn their application.\n"+
     "\n\n\nRegards\nTeam 6")
@@ -293,4 +277,15 @@ def applications(user, classUsed, userParamsUsed)
     allUsers
     @usersIDList.push(allUsers) unless user.nil?
   end
+end
+
+def reset_mentee_fields_application_unsent_or_rejected(menteeUser, mentorUser)
+  if mentorUser.menteeAccept == menteeUser.id || menteeUser.mentorAccept == mentorUser.id
+    mentorUser.menteeAccept = 0
+    mentorUser.save_changes
+  end
+  
+  menteeUser.applicationNumber = 1 #Mentee can now send a mentor an application
+  menteeUser.mentorAccept = 0 #Resets field if mentee has already accepted the request
+  menteeUser.save_changes
 end
