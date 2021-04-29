@@ -21,7 +21,7 @@ post "/matchWithMentor" do
   
   $mentees.mentorAccept = mentor.id
   $mentees.save_changes
-    
+
   #If both mentor and mentee have accepted the each others request both will be matched and both users notified of match but
   #if the mentee only has accepted the application then the mentor is notified
   if mentor.menteeAccept == $mentees.id && $mentees.mentorAccept == mentor.id
@@ -43,46 +43,6 @@ post "/matchWithMentor" do
     
   redirect "/MenteeDashboard"
 
-end
-
-#both_users_have_accepted($mentees.id, params[:mentorID], $mentees, mentor)
-def both_users_have_accepted(menteeIDParams, mentorIDParams, menteeUser, mentorUser)
-  Mentor.where(id: mentorIDParams).update(:menteeMatch => menteeIDParams)
-  Mentee.where(id: menteeIDParams).update(:mentorMatch =>mentorIDParams)
-  
-  #Gets all the requests sent to the mentor being matched, and resets field values for mentees with
-  #whom the mentor isn't being matched
-  req_all = Request.where(mentorID: mentorIDParams).all
-    req_all.each do |req|
-      other_mentees = Mentee.first(id: req.menteeID)
-      if other_mentees.id != menteeUser.id
-        other_mentees.applicationNumber = 1
-        other_mentees.mentorAccept = 0
-        other_mentees.save_changes
-      end
-    end
-  
-  Request.where(mentorID: mentorUser.id).delete #Deletes all records from requests table based on the id of the mentor being matched
-
-  mentorUser.profileStatus = "1" #mentor profile made private
-  mentorUser.save_changes
-
-  menteeUser.applicationNumber = 0 #mentee can't send more applications
-  menteeUser.save_changes
-  
-  send_mail(menteeUser.email, 
-      "You have been paired with a mentor!", 
-      "Hi "+menteeUser.fname+" "+menteeUser.lname+"!\n"+
-      "Your new mentor is: "+mentorUser.fname+" "+mentorUser.lname+".\n"+
-      "Please login into your account for more details.\n"+
-      "\n\n\nRegards\nTeam 6")
-
-    send_mail(mentorUser.email, 
-      "You have been paired with a mentee!", 
-      "Hi "+mentorUser.fname+" "+mentorUser.lname+"!\n"+
-      "Your new mentee is: "+menteeUser.fname+" "+menteeUser.lname+".\n"+
-      "Please login into your account for more details.\n"+
-      "\n\n\nRegards\nTeam 6")
 end
 
 #Mentor accepts mentee
@@ -222,8 +182,6 @@ post "/requestMentorMeeting" do
   redirect "/myMentor"
 end
 
-#   applications("mentee", Request, mentorID: $mentors.id)
-
 def applications(user, classUsed, userParamsUsed)
   @usersIDList = []
   listOfIDs = classUsed.where(userParamsUsed) #Finds the request where it finds the specified mentee ID
@@ -251,4 +209,43 @@ def reset_mentee_fields_application_unsent_or_rejected(menteeUser, mentorUser)
   menteeUser.applicationNumber = 1 #Mentee can now send a mentor an application
   menteeUser.mentorAccept = 0 #Resets field if mentee has already accepted the request
   menteeUser.save_changes
+end
+
+def both_users_have_accepted(menteeIDParams, mentorIDParams, menteeUser, mentorUser)
+  Mentor.where(id: mentorIDParams).update(:menteeMatch => menteeIDParams)
+  Mentee.where(id: menteeIDParams).update(:mentorMatch =>mentorIDParams)
+  
+  #Gets all the requests sent to the mentor being matched, and resets field values for mentees with
+  #whom the mentor isn't being matched
+  req_all = Request.where(mentorID: mentorIDParams).all
+    req_all.each do |req|
+      other_mentees = Mentee.first(id: req.menteeID)
+      if other_mentees.id != menteeUser.id
+        other_mentees.applicationNumber = 1
+        other_mentees.mentorAccept = 0
+        other_mentees.save_changes
+      end
+    end
+  
+  Request.where(mentorID: mentorUser.id).delete #Deletes all records from requests table based on the id of the mentor being matched
+
+  mentorUser.profileStatus = "1" #mentor profile made private
+  mentorUser.save_changes
+
+  menteeUser.applicationNumber = 0 #mentee can't send more applications
+  menteeUser.save_changes
+  
+  send_mail(menteeUser.email, 
+      "You have been paired with a mentor!", 
+      "Hi "+menteeUser.fname+" "+menteeUser.lname+"!\n"+
+      "Your new mentor is: "+mentorUser.fname+" "+mentorUser.lname+".\n"+
+      "Please login into your account for more details.\n"+
+      "\n\n\nRegards\nTeam 6")
+
+    send_mail(mentorUser.email, 
+      "You have been paired with a mentee!", 
+      "Hi "+mentorUser.fname+" "+mentorUser.lname+"!\n"+
+      "Your new mentee is: "+menteeUser.fname+" "+menteeUser.lname+".\n"+
+      "Please login into your account for more details.\n"+
+      "\n\n\nRegards\nTeam 6")
 end
