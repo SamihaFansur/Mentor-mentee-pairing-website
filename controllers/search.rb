@@ -4,15 +4,14 @@ get "/search" do
   
   errors_page
   
-  #If no course name is being searched, it displays the list of all mentors in alphabetical order 
-  #else it searches through the course name field in the mentors table and displays mentors' whose 
-  #course name contains the course name being searched
-    @mentors = if @courseName_search.empty?
+  #If search box empty then list all unmatched(public) mentor profile in alphabetical order of course name 
+  #if search box has content, search through the course name field in the mentors table and display mentors matching the
+  #search criteria entered
+  @mentors =  if @courseName_search.empty?
                Mentor.order(:courseName).where(Sequel.like(:profileStatus, 1))
-             else
+              else
                Mentor.order(:courseName).where(Sequel.like(:profileStatus, 1)).where(Sequel.ilike(:courseName, "%#{@courseName_search}%")) #ilike used to make search case insensitive
-             end
-
+              end
   erb :mentor_search
 end
 
