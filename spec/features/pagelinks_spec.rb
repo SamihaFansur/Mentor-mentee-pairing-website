@@ -434,9 +434,8 @@ describe "the page links" do
 ###################################################################################################
  #page links tests from /PendingMenteeApplications
     
-           
-    it "is accessible from the AdminDashboard page" do
-        
+    #through navigation go to logout
+    it "Logout is accessible from the PendingMenteeApplications page" do        
         login_admin
         visit"/PendingMenteeApplications"
         click_link "Logout"
@@ -444,7 +443,8 @@ describe "the page links" do
         clear_database   
     end
     
-    it "is accessible from the AdminDashboard page" do
+    #through navigation go to view our program introduction
+    it "Our Program is accessible from the PendingMenteeApplications page" do
         login_admin
         visit"/PendingMenteeApplications"
         click_link "Our Program"
@@ -452,8 +452,8 @@ describe "the page links" do
         clear_database   
     end 
     
-        it "is accessible from the AdminDashboard page" do
-
+    #through navigation go to admin dashboard
+    it "Dashboard is accessible from the PendingMenteeApplications page" do
         login_admin 
         visit"/PendingMenteeApplications"
         click_link "Dashboard"
@@ -461,12 +461,14 @@ describe "the page links" do
         clear_database   
     end 
 
-      
-            it "is accessible from the AdminDashboard page" do
+    #through footer go to view accessibility
+     it "Accessibility is accessible from the PendingMenteeApplications page" do
         visit "/login"
+         #enter the admin's username and password 
         fill_in "username", with: "admin2"
         fill_in "password", with: "S.F"
-        click_button "Submit"  
+        click_button "Submit"
+         #through dashboard go to PendingMenteeApplications
         visit"/PendingMenteeApplications"
         click_link "Accessibility"
         expect(page).to have_content "Everyone using this website"
@@ -474,10 +476,9 @@ describe "the page links" do
     end 
 
  #page links tests from /PairedMentees
-    
-         
-    it "is accessible from the AdminDashboard page" do
-        
+            
+    #through navigation go to logout 
+    it "Logout is accessible from the PairedMentees page" do    
         login_admin
         visit"/PairedMentees"
         click_link "Logout"
@@ -485,7 +486,8 @@ describe "the page links" do
         clear_database   
     end
     
-    it "is accessible from the AdminDashboard page" do
+    #through navigation go to view our program introduction
+    it "Our Program is accessible from the PairedMentees page" do
         login_admin
         visit"/PairedMentees"
         click_link "Our Program"
@@ -493,8 +495,8 @@ describe "the page links" do
         clear_database   
     end 
     
-        it "is accessible from the AdminDashboard page" do
-
+    #through navigation go to admin dashboard
+    it "Dashboard is accessible from the PairedMentees page" do
         login_admin 
         visit"/PairedMentees"
         click_link "Dashboard"
@@ -502,14 +504,15 @@ describe "the page links" do
         clear_database   
     end 
 
-            it "is accessible from the AdminDashboard page" do
+    #through footer go to view accessibility
+    it "Accessibility is accessible from the PairedMentees page" do
         login_admin
         visit"/PairedMentees"
         click_link "Accessibility"
         expect(page).to have_content "Everyone using this website"
         clear_database   
     end 
-
+########################################################################################
 #admin/mentor
     it "is accessible from the AdminDashboard page" do
         
