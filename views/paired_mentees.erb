@@ -25,6 +25,7 @@
           <% if @mentees.count > 0 %>
             <table class="displayTable">
               <tr>
+                <!-- The name of each column for paired mentee table        -->
                 <th>Mentee Name</th>
                 <th>Mentee Email</th>
                 <th>Faculty</th>
@@ -32,8 +33,10 @@
                 <th>Mentor Name</th>
                 <th>Mentor Email</th>
               </tr>
+               <!--Displays the number of paired mentee                  -->
             <% (0...@mentees.count).each do |menteeMentor| %>
               <tr>
+                <!-- Details of each mentee displayed -->
                 <td><%= @menteesList[menteeMentor][0] %></td>
                 <td><%= @menteesList[menteeMentor][1] %></td>
                 <td><%= @menteesList[menteeMentor][2] %></td>
@@ -44,6 +47,7 @@
             <% end %> 
             </table>
           <% else %>
+           <!-- displays errors if mentor not accept the application             -->
             <p id="searchError">No mentees appear to be paired with a mentor.</p>
           <% end %>
       </div>

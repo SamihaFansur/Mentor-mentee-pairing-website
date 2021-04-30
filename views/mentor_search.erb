@@ -4,11 +4,11 @@
         <div class="title">Search for a Mentor</div> <!--Main page Title-->  
         <h3>You can only send 1 mentor an application within 2 weeks!</h3>
         
-        <!-- Displays error if there is any -->
+        <!-- Displays error if the mentee has sent the apllication -->
         <% if @error1 %>
         <h2><strong class="error">Application already sent!</strong></h2>
         <% end %> 
-        
+        <!-- Displays error if the mentee has a mentor -->
         <% if @error2 %>
         <h2><strong class="error">You already have a mentor!</strong></h2>
         <% end %> 
@@ -25,6 +25,7 @@
           <% if @mentors.count > 0 %>
             <table class="displayTable">
               <tr>
+                <!-- The name of each column for mentor search table         -->
                 <th>Name</th>
                 <th>Email</th>
                 <th>Phone Number</th>
@@ -34,11 +35,13 @@
               </tr>
             <% @mentors.each do |mentor| %>
               <tr>
+                <!-- diplays mentors' details                   -->
                 <td><%= h mentor.name %></td>
                 <td><%= h mentor.email %></td>
                 <td><%= h mentor.phoneNum %></td>
                 <td><%= h mentor.jobTitle %></td>
                 <td><%= h mentor.courseName %></td>
+                <!-- Allow mentee sends an application to one of the mentor                 -->
                 <td>
                   <form method="post" action="addApplication">
                     <input type="hidden" name="menteeID" value="<%= $mentees.id %>">
@@ -52,6 +55,7 @@
             <% end %> 
             </table>
           <% else %>
+          <!-- displays errors if there are no mentors            -->
             <p id="searchError">Your search revealed no mentors</p>
           <% end %>
       </div>

@@ -8,6 +8,7 @@
           <!-- Displays the details of the mentee the mentor is matched to -->
           <% if @usersIDList.count > 0 %>
               <h2>Mentee Infomation:</h2>
+                <!-- Displays my mentee's details             -->
                <% @usersIDList.each do |mentee| %>
                 <p><b>Name: </b> <i><%= h mentee.name %></i></p>
                 <p><b>Email: </b> <i><%= h mentee.email %></i></p>
@@ -16,6 +17,7 @@
                 <p><b>Faculty: </b> <i><%= h mentee.faculty %></i> </p>
                 <p><b>Course Year: </b> <i><%= h mentee.cyear %></i> </p>
                 <p><b>Description: </b> <i><%= h mentee.description %></i> </p>
+            <!-- Action to write a report to my mentee             -->
                 <form method="get" action="reportMenteeForm">
                   <input type="hidden" name="mentorID" value="<%= $mentors.id %>">
                   <% if @mentor_report == 1 %> <!--If mentor has reported their mentee within past 48hrs-->
@@ -26,6 +28,7 @@
                 </form>             
               <% end %>
             <% else %>
+            <!--Displays errors if the mentor does not have a mentee              -->
               <p id="searchError">You do not have a mentee yet!</p>
             <% end %>
           </div> 
