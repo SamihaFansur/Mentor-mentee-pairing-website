@@ -61,6 +61,10 @@ get "/AdminLoginChoices" do
   erb :adminLogin_choices
 end
 
+not_found do
+  erb :wrong_route
+end
+
 def headers_common_pages
   #If user already logged in then displays a header for profiles which are logged 
   #in else displays headers for non-logged in users
