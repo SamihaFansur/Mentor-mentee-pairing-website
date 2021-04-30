@@ -24,26 +24,27 @@ post "/MentorSignUpForm" do
   erb :mentor_signup
 end
 
+#Method takes in type of user as a parameter
 def sign_up(user)
   user.load(params)
-  @error = nil
 
+  #Runs local validations on the user, if no errors then checks if username/email already exists in any of the user tables
+  #if it doesn't exist then saves user in appropriate table and sends confirmation email
   if user.valid?
-      if user.exist_signup?
-        @error = "Username/email exists"
-      else
-        user.save_changes
-        #Sends an email to mentor that the sign up was successful
-        send_mail(user.email, 
-          "Successful Sign up!", 
-          "Hi "+user.fname+" "+user.lname+"!\n"+
-          "Your username is: "+user.username+"\n"+
-          "You password: "+ user.password+"\n"+
-          "Your email: "+user.email+"\n"+
-          "Please use these credentials to login into your account and activate your account \n"+
-          "\n\n\nRegards\nTeam 6")
-        redirect "/login"
-      end
+    if user.exist_signup?
+      @error = "Username/email exists"
+    else
+      user.save_changes
+      send_mail(user.email, 
+        "Successful Sign up!", 
+        "Hi "+user.fname+" "+user.lname+"!\n"+
+        "Your username is: "+user.username+"\n"+
+        "You password: "+ user.password+"\n"+
+        "Your email: "+user.email+"\n"+
+        "Please use these credentials to login into your account and activate your account \n"+
+        "\n\n\nRegards\nTeam 6")
+      redirect "/login"
+    end
   end
 end
 
