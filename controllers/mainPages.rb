@@ -21,7 +21,6 @@ get "/login" do
   new_mentee_instance
   new_mentor_instance
   new_admin_instance
-  
   erb :login
 end
 
@@ -49,7 +48,7 @@ end
 
 post "/AdminHelp" do
   headers_common_pages
-  erb :admin_help
+  erb :admin_help #----------------------should prolly delete, check after server is back up--------------------
 end
 
 get "/logout" do
@@ -57,16 +56,17 @@ get "/logout" do
   erb :logout
 end
 
-get "/AdminLoginChoices" do
+get "/AdminLoginChoices" do #Asks an admin if they are also a mentor
   erb :adminLogin_choices
 end
 
-not_found do
+not_found do #Custom error page, if user type in a wrong URL
   erb :wrong_route
 end
 
+#-------------------------ERB :"/..." SHOULD TRY AND FIX AFTER SERVER WORKS------------------------
 def headers_common_pages
-  #If user already logged in then displays a header for profiles which are logged 
+  #If user already logged in then displays appropriate header for profiles which are logged 
   #in else displays headers for non-logged in users
   if session[:logged_in]
     if session[:admins_username]
@@ -83,5 +83,4 @@ def headers_common_pages
   else 
     @header = erb:"common/headerB"
   end
-  
 end
