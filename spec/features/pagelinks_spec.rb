@@ -2,84 +2,88 @@ require_relative "../spec_helper"
 
 #page links tests from /index
 describe "the page links" do
+    #through navigation go to sign up page
     it "sign up is accessible from the index page" do
         visit"/"
         click_link "Sign-Up"
         expect(page).to have_content "Mentee"
     end
         
-
-    it "is accessible from the index page" do
+    #through navigation go to login page
+    it "Login is accessible from the index page" do
         visit"/"
         click_link "Login"
         expect(page).to have_content "Don't have an account?"
     end
     
-    
-
-    it "is accessible from the index page" do
+    #through navigation go to contact admin
+    it "Contact Us is accessible from the index page" do
         visit"/"
         click_link "Contact Us"
         expect(page).to have_content "Contact Admin:"
     end
     
-
-    it "is accessible from the index page" do
+    #through navigation go to view our program introduction
+    it "Our Program is accessible from the index page" do
         visit"/"
         click_link "Our Program"
         expect(page).to have_content "one-to-one mentoring program"
     end
 
-    it "is accessible from the index page" do
+    #through footer go to contact admin 
+    it "Contact is accessible from the index page" do
         visit"/"
         click_link "Contact"
         expect(page).to have_content "Contact Admin:"
     end 
     
-    it "is accessible from the index page" do   
+    #through footer go to view accessibility 
+    it "Accessibility is accessible from the index page" do   
         visit"/"
         click_link "Accessibility"
         expect(page).to have_content "Everyone using this website"
     end  
     
     
- #page links tests from /login  
+#page links tests from /login  
 
-
-    it "is accessible from the login page" do
+    #through navigation go to view our program introduction
+    it "Our Program is accessible from the login page" do
         visit"/login"
         click_link "Our Program"
         expect(page).to have_content "one-to-one mentoring program"
     end
     
-    
-
-    it "is accessible from the login page" do
+    #through navigation go to contact admin
+    it "Contact Us is accessible from the login page" do
         visit"/login"
         click_link "Contact Us"
         expect(page).to have_content "Contact Admin:"
     end
     
-
-    it "is accessible from the login page" do
+    #through navigation go to login
+    it "Login is accessible from the login page" do
         visit"/login"
         click_link "Login"
         expect(page).to have_content "Don't have an account?"
     end    
 
-        it "is accessible from the login page" do
+    #through navigation go to sign up choosing as a mentor or a mentee
+   it "Sign-Up is accessible from the login page" do
          visit"/login"
         click_link "Sign-Up"
         expect(page).to have_content "Mentee"
         end
     
-    it "is accessible from the login page" do
+    #through footer go to contact admin 
+    it "Contact is accessible from the login page" do
         visit"/login"
         click_link "Contact"
         expect(page).to have_content "Contact Admin:"
     end 
     
-    it "is accessible from the login page" do   
+    #through navigation go to view accessibility
+    it "Accessibility is accessible from the login page" do   
         visit"/login"
         click_link "Accessibility"
         expect(page).to have_content "Everyone using this website"
@@ -87,108 +91,116 @@ describe "the page links" do
 
 
     
- #page links tests from /contact  
+#page links tests from /contact  
 
-    it "is accessible from the contact page" do
+    #through navigation go to sign up choosing as a mentor or a mentee
+    it "Sign-Up is accessible from the contact page" do
         visit"/contact"
         click_link "Sign-Up"
         expect(page).to have_content "Mentee"
     end
         
-
-    it "is accessible from the contact page" do
+    #through navigation go to view our program introduction
+    it "Our Program is accessible from the contact page" do
         visit"/contact"
         click_link "Our Program"
         expect(page).to have_content "one-to-one mentoring program"
     end
     
-    
-
-    it "is accessible from the contact page" do
+    #through navigation go to contact admin
+    it "Contact Us is accessible from the contact page" do
         visit"/contact"
         click_link "Contact Us"
         expect(page).to have_content "Contact Admin:"
     end
 
-    it "is accessible from the contact page" do
+    #through navigation go to login
+    it "Login is accessible from the contact page" do
         visit"/contact"
         click_link "Login"
         expect(page).to have_content "Don't have an account?"
     end  
 
-it "is accessible from the contact page" do
+    #through footer go to contact admin
+    it "Contact is accessible from the contact page" do
         visit"/contact"
         click_link "Contact"
         expect(page).to have_content "Contact Admin:"
     end 
     
-it "is accessible from the contact page" do   
+    #through footer go to view accessibility
+    it "Accessibility is accessible from the contact page" do   
         visit"/contact"
         click_link "Accessibility"
         expect(page).to have_content "Everyone using this website"
     end 
     
- #page links tests from /SignUpChoices 
+#page links tests from /SignUpChoices 
 
-    it "is accessible from the SignUpChoices page" do
+    #through navigation go to sign up choosing as a mentor or a mentee
+    it "Sign-Up is accessible from the SignUpChoices page" do
         visit"/SignUpChoices"
         click_link "Sign-Up"
         expect(page).to have_content "Mentee"
     end
         
-
-    it "is accessible from the SignUpChoices page" do
+    #through navigation go to view our program introduction
+    it "Our Program is accessible from the SignUpChoices page" do
         visit"/SignUpChoices"
         click_link "Our Program"
         expect(page).to have_content "one-to-one mentoring program"
     end
     
     
-
-    it "is accessible from the SignUpChoices page" do
+    #through navigation go to contact admin 
+    it "Contact Us is accessible from the SignUpChoices page" do
         visit"/SignUpChoices"
         click_link "Contact Us"
         expect(page).to have_content "Contact Admin:"
     end
        
-     
-it "is accessible from the SignUpChoices page" do
+     #through footer go to contact admin 
+    it "Contact is accessible from the SignUpChoices page" do
         visit"/SignUpChoices"
         click_link "Contact"
         expect(page).to have_content "Contact Admin:"
     end 
     
-it "is accessible from the SignUpChoices page" do   
+    #through footer go to contact admin  
+    it "Accessibility is accessible from the SignUpChoices page" do   
         visit"/SignUpChoices"
         click_link "Accessibility"
         expect(page).to have_content "Everyone using this website"
     end 
   
        
- #page links tests from /MentorDashboard
+#page links tests from /MentorDashboard
     
-    it "is accessible from the MentorDashboard page" do
+    #through navigation go to contact admin 
+    it "Contact Us is accessible from the MentorDashboard page" do
         visit"/MentorDashboard"
         click_link "Contact Us"
         expect(page).to have_content "Contact Admin:"
     end
            
-
-    it "is accessible from the MentorDashboard page" do
+    #through navigation go to log out 
+    it "Logout is accessible from the MentorDashboard page" do
         add_test_mentor
-        login_mentor  
-        click_link "Dashboard" 
+        login_mentor
+        click_link "Dashboard"
         click_link "Logout"
         expect(page).to have_content "Logged out"
     end
     
-    it "is accessible from the MentorDashboard page" do
+    #through navigation go to view our program introduction
+    it "Our Program is accessible from the MentorDashboard page" do
         visit"/MentorDashboard"
         click_link "Our Program"
         expect(page).to have_content "one-to-one mentoring program"
     end 
     
-        it "is accessible from the MentorDashboard page" do
+    #through navigation go to mentor dashboard
+    it "Dashboard is accessible from the MentorDashboard page" do
         add_test_mentor
         login_mentor   
         visit"/MentorDashboard"
@@ -197,7 +209,7 @@ it "is accessible from the SignUpChoices page" do
     end 
     
     
-            it "is accessible from the MentorDashboard page" do
+   it "View mentee applications is accessible from the MentorDashboard page" do
         add_test_mentor
         login_mentor   
         visit"/MentorDashboard"
@@ -205,7 +217,7 @@ it "is accessible from the SignUpChoices page" do
         expect(page).to have_content "Mentee Applications"
     end 
     
-            it "is accessible from the MentorDashboard page" do
+    it "Edit Profile is accessible from the MentorDashboard page" do
         add_test_mentor
         login_mentor  
         visit"/MentorDashboard"
@@ -213,7 +225,7 @@ it "is accessible from the SignUpChoices page" do
         expect(page).to have_content "Edit your information"
     end 
     
-it "is accessible from the MentorDashboard page" do
+    it "My Mentee is accessible from the MentorDashboard page" do
         add_test_mentor
         login_mentor   
         visit"/MentorDashboard"
@@ -221,7 +233,8 @@ it "is accessible from the MentorDashboard page" do
         expect(page).to have_content "Details of your current mentee"
     end 
     
-it "is accessible from the MentorDashboard page" do
+    #through footer go to contact admin  
+    it "Contact is accessible from the MentorDashboard page" do
         add_test_mentor
         login_mentor  
         visit"/MentorDashboard"
@@ -229,7 +242,8 @@ it "is accessible from the MentorDashboard page" do
         expect(page).to have_content "Contact Admin:"
     end 
     
-            it "is accessible from the MentorDashboard page" do
+    #through footer go to view accessibility  
+    it "Accessibility is accessible from the MentorDashboard page" do
         add_test_mentor
         login_mentor      
         visit"/MentorDashboard"
@@ -237,17 +251,18 @@ it "is accessible from the MentorDashboard page" do
         expect(page).to have_content "Everyone using this website"
     end 
     
-   #page links tests from /MenteeDashboard
+#page links tests from /MenteeDashboard
     
-     it "is accessible from the MenteeDashboard page" do
+    #through navigation go to contact admin 
+     it "Contact Us is accessible from the MenteeDashboard page" do
         visit"/MenteeDashboard"
         click_link "Contact Us"
         expect(page).to have_content "Contact Admin:"
          clear_database   
     end
            
-
-    it "is accessible from the MenteeDashboard page" do
+    #through navigation go to log out 
+    it "Logout is accessible from the MenteeDashboard page" do
         add_test_user
         login_mentee
         visit"/MenteeDashboard"
@@ -256,14 +271,16 @@ it "is accessible from the MentorDashboard page" do
         clear_database   
     end
     
-    it "is accessible from the MenteeDashboard page" do
+    #through navigation go to view our program introduction
+    it "Our Program is accessible from the MenteeDashboard page" do
         visit"/MenteeDashboard"
         click_link "Our Program"
         expect(page).to have_content "one-to-one mentoring program"
         clear_database   
     end 
     
-        it "is accessible from the MenteeDashboard page" do
+    #through navigation go to mentee dashboard
+    it "Dashboard is accessible from the MenteeDashboard page" do
         add_test_user
         login_mentee 
         visit"/MenteeDashboard"
@@ -272,7 +289,7 @@ it "is accessible from the MentorDashboard page" do
         clear_database   
     end 
     
-    it "is accessible from the MenteeDashboard page" do
+    it "Find a mentor is accessible from the MenteeDashboard page" do
         add_test_user
          login_mentee
         visit"/MenteeDashboard"
@@ -281,17 +298,17 @@ it "is accessible from the MentorDashboard page" do
         clear_database   
     end 
     
-            it "is accessible from the MenteeDashboard page" do
+    it "Edit Profile is accessible from the MenteeDashboard page" do
         add_test_user
         visit "/login"
-         login_mentee 
+        login_mentee 
         visit"/MenteeDashboard"
         click_link "Edit Profile"
         expect(page).to have_content "Edit your information"
         clear_database   
     end 
     
-            it "is accessible from the MenteeDashboard page" do
+    it "My Mentor is accessible from the MenteeDashboard page" do
         add_test_user
          login_mentee 
         visit"/MenteeDashboard"
@@ -300,7 +317,8 @@ it "is accessible from the MentorDashboard page" do
         clear_database   
     end 
        
-            it "is accessible from the MenteeDashboard page" do
+    #through footer go to contact admin  
+    it "Contact is accessible from the MenteeDashboard page" do
         add_test_user
         login_mentee   
         visit"/MenteeDashboard"
@@ -308,7 +326,9 @@ it "is accessible from the MentorDashboard page" do
         expect(page).to have_content "Contact Admin:"
         clear_database   
     end
-            it "is accessible from the MenteeDashboard page" do
+    
+    #through footer go to view accessibility 
+    it "Accessibility is accessible from the MenteeDashboard page" do
         add_test_user
         login_mentee  
         visit"/MenteeDashboard"
@@ -317,17 +337,18 @@ it "is accessible from the MentorDashboard page" do
         clear_database   
     end 
 
-   #page links tests from /AdminDashboard
+#page links tests from /AdminDashboard
     
-     it "is accessible from the AdminDashboard page" do
+    #through navigation go to contact admin 
+     it "Contact Us is accessible from the AdminDashboard page" do
         visit"/AdminDashboard"
         click_link "Contact Us"
         expect(page).to have_content "Contact Admin:"
         clear_database   
     end
            
-
-    it "is accessible from the AdminDashboard page" do
+    #through navigation go to log out 
+    it "Logout is accessible from the AdminDashboard page" do
         
         login_admin
         visit"/AdminDashboard"
@@ -336,15 +357,16 @@ it "is accessible from the MentorDashboard page" do
         clear_database   
     end
     
-    it "is accessible from the AdminDashboard page" do
+    #through navigation go to view our program introduction
+    it "Our Program is accessible from the AdminDashboard page" do
         visit"/AdminDashboard"
         click_link "Our Program"
         expect(page).to have_content "one-to-one mentoring program"
         clear_database   
     end 
     
-        it "is accessible from the AdminDashboard page" do
-
+    #through navigation go to admin dashboard
+    it "Dashboard is accessible from the AdminDashboard page" do
         login_admin  
         visit"/AdminDashboard"
         click_link "Dashboard"
@@ -352,7 +374,7 @@ it "is accessible from the MentorDashboard page" do
         clear_database   
     end 
     
-    it "is accessible from the AdminDashboard page" do
+    it "Mentor List is accessible from the AdminDashboard page" do
         login_admin 
         visit"/AdminDashboard"
         click_link "Mentor List"
@@ -360,7 +382,7 @@ it "is accessible from the MentorDashboard page" do
         clear_database   
     end 
     
-            it "is accessible from the AdminDashboard page" do
+    it "Edit Profile is accessible from the AdminDashboard page" do
         login_admin
         visit"/AdminDashboard"
         click_link "Edit Profile"
@@ -368,7 +390,7 @@ it "is accessible from the MentorDashboard page" do
         clear_database   
     end 
     
-            it "is accessible from the AdminDashboard page" do
+    it "Mentee List is accessible from the AdminDashboard page" do
         login_admin
         visit"/AdminDashboard"
         click_link "Mentee List"
@@ -376,14 +398,17 @@ it "is accessible from the MentorDashboard page" do
         clear_database   
     end 
        
-            it "is accessible from the AdminDashboard page" do
+    #through footer go to contact admin  
+    it "Contactis accessible from the AdminDashboard page" do
         login_admin 
         visit"/AdminDashboard"
         click_link "Contact"
         expect(page).to have_content "Contact Admin:"
         clear_database   
     end
-            it "is accessible from the AdminDashboard page" do
+    
+    #through footer go to view accessibility 
+    it "Accessibility is accessible from the AdminDashboard page" do
         login_admin
         visit"/AdminDashboard"
         click_link "Accessibility"
@@ -391,14 +416,14 @@ it "is accessible from the MentorDashboard page" do
         clear_database   
     end 
 
-            it "is accessible from the AdminDashboard page" do
+    it "Pending Mentee Applications is accessible from the AdminDashboard page" do
         login_admin
         visit"/AdminDashboard"
         click_link "Pending Mentee Applications"
         expect(page).to have_content "Pending Mentee Requests"
         clear_database   
     end
-            it "is accessible from the AdminDashboard page" do
+    it "Paired Mentees is accessible from the AdminDashboard page" do
         login_admin
         visit"/AdminDashboard"
         click_link "Paired Mentees"
@@ -406,7 +431,7 @@ it "is accessible from the MentorDashboard page" do
         clear_database   
     end 
 
-
+###################################################################################################
  #page links tests from /PendingMenteeApplications
     
            
