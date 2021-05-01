@@ -137,7 +137,7 @@ describe "the admin edit page" do
     click_link "Edit Profile"
     click_button "Submit"
     visit "/AdminDashboard"
-    expect(page).to have_content "admin2"
+    expect(page).to have_content "admin1"
     clear_database
   end
 #checks that mentor edit is submitted and displayed
@@ -151,7 +151,7 @@ describe "the admin edit page" do
     expect(page).to have_content "New"
     visit "/AdminDashboard"
     click_link "Edit Profile"
-    fill_in "fname", with: "admin2"
+    fill_in "fname", with: "admin1"
     click_button "Submit"
     clear_database
   end
@@ -164,10 +164,10 @@ describe "the admin edit page" do
     fill_in "fname", with: ""
     click_button "Submit"
     visit "/AdminDashboard"
-    expect(page).to have_content "admin2"
+    expect(page).to have_content "admin1"
     visit "/AdminDashboard"
     click_link "Edit Profile"
-    fill_in "fname", with: "admin2"
+    fill_in "fname", with: "admin1"
     click_button "Submit"
     clear_database
   end

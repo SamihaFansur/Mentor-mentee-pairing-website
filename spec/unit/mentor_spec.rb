@@ -76,8 +76,8 @@ RSpec.describe Mentor do
 #checks that profileStatus returns correctly from database
       describe "#profileStatus" do
     it "returns the mentor's profileStatus" do
-      mentor = described_class.new(profileStatus: "1")
-      expect(mentor.profileStatus).to eq("1")
+      mentor = described_class.new(profileStatus: 1)
+      expect(mentor.profileStatus).to eq(1)
     end
   end
 #checks that suspendMentor returns correctly from database
