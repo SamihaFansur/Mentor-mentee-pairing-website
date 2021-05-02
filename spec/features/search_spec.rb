@@ -88,10 +88,10 @@ describe "the search page" do
       click_button "Submit"
       click_button "Send application"      
       click_link "Dashboard"
-      click_link "View mentor applications"
+      click_link "View sent mentor applications"
       click_button "Unsend Application"  
       click_link "Dashboard"
-      click_link "View mentor applications"
+      click_link "View sent mentor applications"
 
       expect(page).to have_content "There are no pending applications"
       

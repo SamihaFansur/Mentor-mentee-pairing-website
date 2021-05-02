@@ -22,7 +22,7 @@ context "with an empty database" do
     click_button "Accept application"
     login_mentee
     visit "/MenteeDashboard"
-    click_link "View mentor applications"
+    click_link "View sent mentor applications"
     click_button "Match"
     visit "/MenteeDashboard"
     click_link "My Mentor"
@@ -44,7 +44,7 @@ context "with an empty database" do
     click_button "Accept application"
     login_mentee
     visit "/MenteeDashboard"
-    click_link "View mentor applications"
+    click_link "View sent mentor applications"
     click_button "Match"
     visit "/MenteeDashboard"
     click_link "My Mentor"
@@ -83,7 +83,7 @@ context "with an empty database" do
     click_button "Accept application"
     login_mentee
     visit "/MenteeDashboard"
-    click_link "View mentor applications"
+    click_link "View sent mentor applications"
     click_button "Match"
     visit "/MenteeDashboard"
     click_link "My Mentor"
@@ -116,7 +116,7 @@ context "with an empty database" do
     click_button "Reject application"
     login_mentee
     visit "/MenteeDashboard"
-    click_link "View mentor applications"
+    click_link "View sent mentor applications"
     expect(page).to have_content "There are no pending applications"
     clear_database
   end
@@ -137,7 +137,7 @@ context "with an empty database" do
     click_button "Accept application"
     login_mentee
     visit "/MenteeDashboard"
-    click_link "View mentor applications"
+    click_link "View sent mentor applications"
     click_button "Match"
     visit "/MenteeDashboard"
     click_link "My Mentor"
@@ -157,7 +157,7 @@ context "with an empty database" do
     click_button "Submit"
     click_button "Send application" 
     visit "/MenteeDashboard"
-    click_link "View mentor applications"
+    click_link "View sent mentor applications"
     click_button "Match"
     visit "/MenteeDashboard"
     expect(page).to have_content "George"
@@ -174,7 +174,7 @@ it "tests for a mentee/mentor match" do
     click_button "Submit"
     click_button "Send application" 
     visit "/MenteeDashboard"
-    click_link "View mentor applications"
+    click_link "View sent mentor applications"
     click_button "Match"
     login_mentor  
     visit "/menteeApplications"
@@ -200,7 +200,7 @@ it "tests for a mentee/mentor match" do
     click_button "Accept application"
     login_mentee
     visit "/MenteeDashboard"
-    click_link "View mentor applications"
+    click_link "View sent mentor applications"
     click_button "Match"
     visit "/MenteeDashboard"
     click_link "My Mentor"

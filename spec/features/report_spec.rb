@@ -19,7 +19,7 @@ context "a mentee" do
     click_button "Accept application"
     login_mentee
     visit "/MenteeDashboard"
-    click_link "View mentor applications"
+    click_link "View sent mentor applications"
     click_button "Match"
     visit "/MenteeDashboard"
     click_link "My Mentor"
@@ -52,7 +52,7 @@ context "a mentee" do
     click_button "Accept application"
     login_mentee
     visit "/MenteeDashboard"
-    click_link "View mentor applications"
+    click_link "View sent mentor applications"
     click_button "Match"
     visit "/MenteeDashboard"
     click_link "My Mentor"

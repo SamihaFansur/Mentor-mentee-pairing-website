@@ -94,7 +94,7 @@ describe "the delete page" do
     click_button "Accept application"
     login_mentee
     visit "/MenteeDashboard"
-    click_link "View mentor applications"
+    click_link "View sent mentor applications"
     click_button "Match"  
     login_admin_mentor  
     click_link "Mentor List"
@@ -120,7 +120,7 @@ describe "the delete page" do
     click_button "Accept application"
     login_mentee
     visit "/MenteeDashboard"
-    click_link "View mentor applications"
+    click_link "View sent mentor applications"
     click_button "Match"
     login_admin_mentor
     click_link "Mentee List"
@@ -146,7 +146,7 @@ describe "the delete page" do
     click_button "Accept application"
     login_mentee
     visit "/MenteeDashboard"
-    click_link "View mentor applications"
+    click_link "View sent mentor applications"
     click_button "Match" 
     login_admin
     click_link "Mentor List"
@@ -172,7 +172,7 @@ describe "the delete page" do
     click_button "Accept application"
     login_mentee
     visit "/MenteeDashboard"
-    click_link "View mentor applications"
+    click_link "View sent mentor applications"
     click_button "Match" 
     login_admin
     click_link "Mentee List"
