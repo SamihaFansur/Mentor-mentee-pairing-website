@@ -27,7 +27,6 @@ post "/reportMenteeForm" do
             @mentor_report = 0 #resets so mentee can request mentor for a meeting again
             mentor_reporting.reportMentee = @mentor_report
             mentor_reporting.save_changes
-            puts mentor_reporting.reportMentee
       }
   
   redirect "/myMentee"
