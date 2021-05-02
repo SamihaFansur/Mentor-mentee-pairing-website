@@ -1,11 +1,11 @@
 get "/editMentee" do
   headers_common_pages
   prevent_url_hopping
-  errors_page
+  errors_page #Error if email already exists in the entire database
   
-  id = params["id"] #new variable to search the id of corresponding mentee profile to be edited ######
+  id = params["id"] #new variable to search the id of corresponding mentee profile to be edited, id gotten from link/button clicked
   
-  #If id requested exists then calls the edit mentee form
+  #If id requested exists then calls the edit mentee form based on user session
   @mentees = Mentee[id] if Mentee.id_exists?(id)
   if session[:mentees_username] 
     erb :mentee_edit_info
@@ -15,9 +15,9 @@ get "/editMentee" do
 end
 
 post "/editMentee" do
-  id = params["id"] #variable to search the id of corresponding mentee profile being edited
+  id = params["id"] #new variable to search the id of corresponding mentee profile to be edited, id gotten from link/button clicked
   
-  #If mentee id exists and field values are valid then saves changes and redirects to mentee dashboard
+  #If mentee id exists and field values are valid then saves changes and redirects apprporiately based on users' session
   if Mentee.id_exists?(id)
     @mentees = Mentee[id]
     old_email = @mentees.email #original email
@@ -44,11 +44,11 @@ end
 get "/editMentor" do
   headers_common_pages
   prevent_url_hopping
-  errors_page
+  errors_page #Error if email already exists in the entire database
   
-  id = params["id"] #new variable to search the id of corresponding mentor profile to be edited
+  id = params["id"] #new variable to search the id of corresponding mentor profile to be edited, id gotten from link/button clicked
   
-  #If id requested exists then calls the edit mentor form
+  #If id requested exists then calls the edit mentor form based on user session
   @mentors = Mentor[id] if Mentor.id_exists?(id)
   if session[:admins_username] 
     if session[:mentors_username]
@@ -62,9 +62,9 @@ get "/editMentor" do
 end
 
 post "/editMentor" do
-  id = params["id"] #variable to search the id of corresponding mentor profile being edited
+  id = params["id"] #new variable to search the id of corresponding mentor profile to be edited, id gotten from link/button clicked
   
-  #If mentor id exists and field values are valid then saves changes and redirects to mentor dashboard
+  #If mentor id exists and field values are valid then saves changes and redirects apprporiately based on users' session
   if Mentor.id_exists?(id)
     @mentors = Mentor[id]
     old_email = @mentors.email #original email
@@ -95,17 +95,17 @@ end
 get "/editAdmin" do 
   headers_common_pages
   prevent_url_hopping
-  errors_page
+  errors_page #Error if email already exists in the entire database
   
-  id = params["id"] #new variable to search the id of corresponding admin profile to be edited
+  id = params["id"] #new variable to search the id of corresponding admin profile to be edited, id gotten from link clicked
   
-  #If id requested exists then calls the edit mentor form
+  #If id requested exists then calls the edit admin form
   @admins = Admin[id] if Admin.id_exists?(id)
   erb :admin_edit_info
 end
 
 post "/editAdmin" do
-  id = params["id"] #variable to search the id of corresponding admin profile being edited
+  id = params["id"] #new variable to search the id of corresponding admin profile to be edited, id gotten from link clicked
   
   #If admin id exists and field values are valid then saves changes and redirects to admin dashboard
   if Admin.id_exists?(id)
@@ -126,11 +126,12 @@ post "/editAdmin" do
       end
     end
   end
-
+  
 end
 
 def prevent_url_hopping
-  #Checks if the request has come directly from a mentor dashboard to stop users from manually changing the link and accessing other users edit pages
+  #Checks if the request has come directly from a user dashboard to stop users from manually changing the link and accessing other users edit pages
+  #redirects users according to their session
   if request.referer.nil?
       if session[:mentees_username]
           redirect "/MenteeDashboard"
