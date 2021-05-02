@@ -53,8 +53,6 @@ CREATE TABLE requests (
   timeApplicationSent TEXT,
   menteeID INTEGER,
   mentorID INTEGER
---   FOREIGN KEY(menteeID) REFERENCES mentees(id),
---   FOREIGN KEY(mentorID) REFERENCES mentors(id)
 );
 
 CREATE TABLE reports (
@@ -63,5 +61,4 @@ CREATE TABLE reports (
   caption TEXT,
   description TEXT,
   mentorID INTEGER
---   FOREIGN KEY(mentorID) REFERENCES mentors(id)
 );
