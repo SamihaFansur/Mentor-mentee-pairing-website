@@ -60,7 +60,7 @@ post "/matchWithMentee" do
       "A mentor has accepted your application for you to be their mentee!", 
       "Hi "+mentee.fname+" "+mentee.lname+"!\n"+
       $mentors.fname+" "+$mentors.lname+" has accepted the application for you to be their mentee.\n"+
-      "To accept "+$mentors.fname+" "+$mentors.lname+" as your mentor. Please login into your account an accept the application.\n"+
+      "To accept "+$mentors.fname+" "+$mentors.lname+" as your mentor. Please login into your account and accept the application.\n"+
       "\n\n\nRegards\nTeam 6")
     
     send_mail($mentors.email, 
