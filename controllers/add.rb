@@ -41,7 +41,7 @@ def sign_up(user)
         "Your username is: "+user.username+"\n"+
         "You password: "+ user.password+"\n"+
         "Your email: "+user.email+"\n"+
-        "Please use these credentials to login into your account and activate your account \n"+
+        "Please use these credentials to login and activate your account \n"+
         "\n\n\nRegards\nTeam 6")
       redirect "/login"
     end

@@ -59,7 +59,7 @@ get "/AdminDashboard" do
   username = session[:admins_username] #Logs user in
   #Gets the admin information that corresponds to the username
   $admins = Admin.first(username: username) # '$' used to make it a global variable
-  admin_activation_email($admins)
+  admin_activation_email($admins, "Admin")
   erb :admin_dashboard
 end
 
@@ -68,7 +68,7 @@ get "/AdminMentorDashboard" do
   username = session[:mentors_username] #Logs user in
   #Gets the user information that corresponds to the username
   $mentors = Mentor.first(username: username) # '$' used to make it a global variable
-  admin_activation_email($mentors)
+  admin_activation_email($mentors, "Admin + Mentor")
   erb :adminMentor_dashboard
 end
 
@@ -164,16 +164,17 @@ post '/loginAgain' do
 
 end
 
-#Sends account activation email for admin and adminMentor accounts only. Method takes in users as a prameter.
-def admin_activation_email(user)
+#Sends account activation email for admin and adminMentor accounts only. Method takes in users, and account type as prameters.
+def admin_activation_email(user, accountType)
   if user.activationToken != 1 #initially not 1 so account activation email can be sent on the very first login only
     send_mail(user.email, 
       "Successful Account Activation!", 
       "Hi "+user.fname+" "+user.lname+"!\n"+
-      "You have successfully activated your admin account \n"+
+      "You have successfully activated your "+accountType+" account \n"+
       "Your username is: "+user.username+"\n"+
+      "Your password: "+user.password+"\n"+
       "Your email: "+user.email+"\n"+
-      "Please use these credentials to login into your admin account. \n"+
+      "Please use these credentials to login into your "+accountType+" account. \n"+
       "\n\n\nRegards\nTeam 6")
     user.activationToken = 1 #changes value to 1 so activation email not sent again
     user.save_changes
