@@ -67,3 +67,7 @@ end
 def new_admin_instance
   @admins = Admin.new
 end
+
+def new_report_instance
+  @reports = Report.new
+end
