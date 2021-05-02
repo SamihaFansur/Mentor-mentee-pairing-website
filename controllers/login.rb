@@ -4,23 +4,19 @@ get "/MenteeDashboard" do
   #Gets the mentee information that corresponds to the username
   $mentees = Mentee.first(username: username) # '$' used to make it a global variable
   
-  #Initializing the field value for applicationNumber 
-  #So that mentee can only request 1 mentor every 2 weeks
+  #Initializing fields
   if $mentees.applicationNumber == nil 
-    $mentees.applicationNumber  = 1
+    $mentees.applicationNumber  = 1  #Mentee can only request 1 mentor every 2 weeks
   end
   
-  #Initializing mentorMatch field in mentees table
   if $mentees.mentorMatch == nil
     $mentees.mentorMatch = 0
   end
   
-  #Initializing mentorAccept field in mentees table
   if $mentees.mentorAccept == nil
     $mentees.mentorAccept = 0
   end
   
-  #Initializing requestMentorMeeting field in mentees table
   if $mentees.requestMentorMeeting == nil
     $mentees.requestMentorMeeting = 0
   end
@@ -36,26 +32,22 @@ get "/MentorDashboard" do
   #Gets the mentor information that corresponds to the username
   $mentors = Mentor.first(username: username) # '$' used to make it a global variable
   
-  #Initializing menteeMatch field in mentors table
+  #Initializing fields
   if $mentors.menteeMatch == nil
     $mentors.menteeMatch = 0
   end
   
-  #Initializing menteeAccept field in mentors table
   if $mentors.menteeAccept == nil
     $mentors.menteeAccept = 0
   end
   
-  #Initializing reportMentee field in mentors table
   if $mentors.reportMentee == nil
     $mentors.reportMentee = 0
   end
   
-  #initializing the profileStatus field to 0 (CAN CHANGE line 55 to ==nil, and swap 0, 1 vars)
   if $mentors.profileStatus == nil
-    $mentors.profileStatus = 1
+    $mentors.profileStatus = 1 #Sets profile status to public
   end
-  
   
   $mentors.save_changes
   
@@ -63,7 +55,7 @@ get "/MentorDashboard" do
 end
 
 get "/AdminDashboard" do
-  redirect "/login" unless session[:logged_in] #If admin logged in then display admin dashbard, otherwise redirect to login page
+  redirect "/login" unless session[:logged_in] #If admin logged in then display admin dashboard, otherwise redirect to login page
   username = session[:admins_username] #Logs user in
   #Gets the admin information that corresponds to the username
   $admins = Admin.first(username: username) # '$' used to make it a global variable
@@ -72,9 +64,9 @@ get "/AdminDashboard" do
 end
 
 get "/AdminMentorDashboard" do
-  redirect "/login" unless session[:logged_in] #If admin logged in then display dashbard, otherwise redirect to login page
+  redirect "/login" unless session[:logged_in] #If adminMentor logged in then display adminMentor dashbard, otherwise redirect to login page
   username = session[:mentors_username] #Logs user in
-  #Gets the admin information that corresponds to the username
+  #Gets the user information that corresponds to the username
   $mentors = Mentor.first(username: username) # '$' used to make it a global variable
   admin_activation_email($mentors)
   erb :adminMentor_dashboard
@@ -82,18 +74,19 @@ end
 
 post '/login' do
   new_mentee_instance
-  @mentees.load(params) #Loads parameters
+  @mentees.load(params)
   
   new_mentor_instance
-  @mentors.load(params) #Loads parameters
+  @mentors.load(params)
   
   new_admin_instance
-  @admins.load(params) #Loads parameters
+  @admins.load(params)
   
-  @suspend_check = false
+  @suspend_check = false #To check if account is not suspended
   
-  #If mentor username and password match to the values in the database mentor logged in and redirected to mentor dashboard
-  #if combination incorrect then displays error
+  #If username and password match to the values in the database, user logged in and redirected to appropriate dashboard
+  #if combination incorrect then displays error. If admin credentials correct, user direct to another page, incase
+  #admin is also a mentor.
   if @mentees.valid?
     if @mentees.exist_login? && @mentees.account_suspended?.to_s == "false"
       session[:logged_in] = true
@@ -110,8 +103,6 @@ post '/login' do
     @error = "Please correct the information below"
   end
   
-  #If mentor username and password match to the values in the database mentor logged in and redirected to mentor dashboard
-  #if combination incorrect then displays error
   if @mentors.valid?
     if @mentors.exist_login? && @mentors.account_suspended?.to_s == "false"
       session[:logged_in] = true
@@ -128,8 +119,6 @@ post '/login' do
     @error = "Please correct the information below"
   end
   
-  #If admin username and password match to the values in the database admin logged in and redirected to admin dashboard
-  #if combination incorrect then displays error
   if @admins.valid?
     if @admins.exist_login?
       session[:logged_in] = true
@@ -148,12 +137,11 @@ end
 
 post '/loginAgain' do
   new_mentor_instance
-  @mentors.load(params) #Loads parameters
+  @mentors.load(params)
  
-  @error = nil #initializing variable
   @suspend_check = false
   
-  #If mentor username and password match to the values in the database mentor logged in and redirected to mentor dashboard
+  #If mentor username and password match to the values in the database. Mentor logged in and redirected to adminMentor dashboard
   #if combination incorrect then displays error
    if @mentors.valid?
     if @mentors.exist_login? && @mentors.account_suspended?.to_s == "false"
@@ -176,6 +164,7 @@ post '/loginAgain' do
 
 end
 
+#Sends account activation email for admin and adminMentor accounts only. Method takes in users as a prameter.
 def admin_activation_email(user)
   if user.activationToken != 1 #initially not 1 so account activation email can be sent on the very first login only
     send_mail(user.email, 
