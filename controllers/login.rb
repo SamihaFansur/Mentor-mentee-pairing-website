@@ -20,9 +20,7 @@ get "/MenteeDashboard" do
   if $mentees.requestMentorMeeting == nil
     $mentees.requestMentorMeeting = 0
   end
-  
   $mentees.save_changes
-  
   erb :mentee_dashboard
 end
 
@@ -48,9 +46,7 @@ get "/MentorDashboard" do
   if $mentors.profileStatus == nil
     $mentors.profileStatus = 1 #Sets profile status to public
   end
-  
   $mentors.save_changes
-  
   erb :mentor_dashboard
 end
 
@@ -69,6 +65,25 @@ get "/AdminMentorDashboard" do
   #Gets the user information that corresponds to the username
   $mentors = Mentor.first(username: username) # '$' used to make it a global variable
   admin_activation_email($mentors, "Admin + Mentor")
+  $user = "user" #New variable so user is redirected to appropriate page after editing a mentor profile
+  
+  #Initializing fields
+  if $mentors.menteeMatch == nil
+    $mentors.menteeMatch = 0
+  end
+  
+  if $mentors.menteeAccept == nil
+    $mentors.menteeAccept = 0
+  end
+  
+  if $mentors.reportMentee == nil
+    $mentors.reportMentee = 0
+  end
+  
+  if $mentors.profileStatus == nil
+    $mentors.profileStatus = 1 #Sets profile status to public
+  end
+  $mentors.save_changes
   erb :adminMentor_dashboard
 end
 

@@ -38,7 +38,6 @@ post "/editMentee" do
       end
     end
   end
-
 end
 
 get "/editMentor" do
@@ -79,10 +78,10 @@ post "/editMentor" do
     else
       @mentors.save_changes
       if session[:admins_username]
-        if session[:mentors_username] 
+        if $user == "user"
           redirect "/AdminMentorDashboard"
-        else
-          redirect "/searchForAMentor"
+        elsif $user == "adminUser"
+          redirect "searchForAMentor"
         end
       elsif session[:mentors_username] 
         redirect "/MentorDashboard"
@@ -126,7 +125,6 @@ post "/editAdmin" do
       end
     end
   end
-  
 end
 
 def prevent_url_hopping

@@ -75,6 +75,7 @@ end
 
 #Admin searches for a mentor in a list of all mentors
 get "/searchForAMentor" do
+  $user = "adminUser" #New variable so user is redirected to appropriate page after editing a mentor profile
   headers_common_pages    
   admin_user_search("mentor", @userName_search, "userName_search")
   erb :admin_search_mentors
