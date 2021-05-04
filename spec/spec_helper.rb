@@ -60,6 +60,7 @@ def add_test_mentor
   click_button "Submit"
 end
 
+#composition of names
   def name
     "#{fname} #{lname}"
   end
@@ -74,21 +75,21 @@ def clear_database
 end
 
 
-#login methods for each test username
+#login methods for a mentee
 def login_mentee
 visit "/login"
     fill_in "username", with: "123"
     fill_in "password", with: "123"
     click_button "Submit" 
 end
-
+#login methods for a mentor
 def login_mentor
  visit "/login"
     fill_in "username", with: "1234"
     fill_in "password", with: "1234"
     click_button "Submit"
 end
-
+#login methods for an admin
 def login_admin
 visit "/login"
     fill_in "username", with: "admin1"
@@ -96,7 +97,7 @@ visit "/login"
     click_button "Submit"
     click_link "No"
 end
-
+#login methods for an admin_mentor
 def login_admin_mentor
  visit "/login"
     fill_in "username", with: "admin1"

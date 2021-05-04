@@ -512,9 +512,10 @@ describe "the page links" do
         expect(page).to have_content "Everyone using this website"
         clear_database   
     end 
-########################################################################################
-#admin/mentor
-    it "is accessible from the AdminDashboard page" do
+
+#page links tests from PairedMentees
+    #enter the PairedMentees page then through navigation go to logout
+    it "Logout is accessible from the PairedMentees page" do
         
         login_admin_mentor
         visit"/PairedMentees"
@@ -523,7 +524,8 @@ describe "the page links" do
         clear_database   
     end
     
-    it "is accessible from the AdminDashboard page" do
+    #enter the PairedMentees page then through navigation go to our program
+    it "Our Program is accessible from the PairedMentees page" do
         login_admin_mentor
         visit"/PairedMentees"
         click_link "Our Program"
@@ -531,8 +533,8 @@ describe "the page links" do
         clear_database   
     end 
     
-        it "is accessible from the AdminDashboard page" do
-
+    #enter the PairedMentees page then through navigation go to dashboard
+    it "Dashboard is accessible from the PairedMentees page" do
         login_admin_mentor 
         visit"/PairedMentees"
         click_link "Dashboard"
@@ -540,7 +542,8 @@ describe "the page links" do
         clear_database   
     end 
 
- it "is accessible from the AdminDashboard page" do
+    #enter the PairedMentees page then through footer go to view accessibility
+     it "Accessibility is accessible from the PairedMentees page" do
         login_admin_mentor
         visit"/PairedMentees"
         click_link "Accessibility"
@@ -549,11 +552,8 @@ describe "the page links" do
     end 
 
  #page links tests from /searchForAMentee
-    
-
-
-    it "is accessible from the AdminDashboard page" do
-        
+    #enter the searchForAMentee page then through navigation go to logout
+    it "Logout is accessible from the searchForAMentee page" do
         login_admin
         visit"/searchForAMentee"
         click_link "Logout"
@@ -561,7 +561,8 @@ describe "the page links" do
         clear_database   
     end
     
-    it "is accessible from the AdminDashboard page" do
+     #enter the searchForAMentee page then through navigation go to our program
+    it "Our Program is accessible from the searchForAMentee page" do
         login_admin
         visit"/searchForAMentee"
         click_link "Our Program"
@@ -569,8 +570,8 @@ describe "the page links" do
         clear_database   
     end 
     
-        it "is accessible from the AdminDashboard page" do
-
+     #enter the searchForAMentee page then through navigation go to dashboard
+     it "Dashboard is accessible from the searchForAMentee page" do
         login_admin  
         visit"/searchForAMentee"
         click_link "Dashboard"
@@ -578,7 +579,8 @@ describe "the page links" do
         clear_database   
     end 
 
-            it "is accessible from the AdminDashboard page" do
+     #enter the searchForAMentee page then through footer go to view accessibility
+     it "Accessibility is accessible from the searchForAMentee page" do
         login_admin
         visit"/searchForAMentee"
         click_link "Accessibility"
@@ -588,17 +590,17 @@ describe "the page links" do
 
 #page links tests from /searchForAMentor
            
-
-    it "is accessible from the AdminDashboard page" do
-        
+    #enter the searchForAMentor page then through navigation go to logout
+    it "Logged out is accessible from the searchForAMentor page" do        
         login_admin
         visit"/searchForAMentor"
         click_link "Logout"
         expect(page).to have_content "Logged out"
         clear_database   
     end
-    
-    it "is accessible from the AdminDashboard page" do
+
+    #enter the searchForAMentor page then through navigation go to our program
+    it "Our Program is accessible from the searchForAMentor page" do
         login_admin
         visit"/searchForAMentor"
         click_link "Our Program"
@@ -606,8 +608,8 @@ describe "the page links" do
         clear_database   
     end 
     
-        it "is accessible from the AdminDashboard page" do
-
+    #enter the searchForAMentor page then through navigation go to dashboard
+    it "Dashboard is accessible from the searchForAMentor page" do
         login_admin
         visit"/searchForAMentor"
         click_link "Dashboard"
@@ -615,27 +617,27 @@ describe "the page links" do
         clear_database   
     end 
 
-            it "is accessible from the AdminDashboard page" do
+    #enter the searchForAMentor page then through footer go to view accessibility
+    it "Accessibility is accessible from the searchForAMentor page" do
         login_admin  
         visit"/searchForAMentor"
         click_link "Accessibility"
         expect(page).to have_content "Everyone using this website"
         clear_database   
     end 
-
-    #checks if the header is correct for admin
- it "is accessible from the AdminDashboard page" do
+############################################################################
+#page links tests from /AdminDashboard
+    
+    #login as an admin to view the admin dashboard not have content of my mentor schedule
+     it "My Mentor Schedule should not in the AdminDashboard page" do
         login_admin   
         visit"/AdminDashboard"
         expect(page).not_to have_content "My Mentor Schedule"
         clear_database   
     end 
-
-
-   #page links tests from /AdminMentorDashboard
-    
-           
-    it "is accessible from the AdminMentorDashboard page" do
+        
+    #enter the AdminMentorDashboard page then through navigation go to dashboard
+    it "Logout is accessible from the AdminMentorDashboard page" do
         add_test_mentor
         login_admin_mentor
         visit"/AdminMentorDashboard"
@@ -644,14 +646,16 @@ describe "the page links" do
         clear_database   
     end
     
-    it "is accessible from the AdminMentorDashboard page" do
+    #enter the AdminMentorDashboard page then through navigation go to our program
+    it "Our Program is accessible from the AdminMentorDashboard page" do
         visit"/AdminMentorDashboard"
         click_link "Our Program"
         expect(page).to have_content "one-to-one mentoring program"
         clear_database   
     end 
     
-        it "is accessible from the AdminMentorDashboard page" do
+    #enter the AdminMentorDashboard page then through navigation go to dashboard
+    it "Dashboard is accessible from the AdminMentorDashboard page" do
         add_test_mentor
         login_admin_mentor 
         visit"/AdminMentorDashboard"
@@ -660,7 +664,7 @@ describe "the page links" do
         clear_database   
     end 
     
-    it "is accessible from the AdminMentorDashboard page" do
+    it "Mentor List is accessible from the AdminMentorDashboard page" do
         clear_database 
         add_test_mentor
         login_admin_mentor   
@@ -670,7 +674,7 @@ describe "the page links" do
         clear_database   
     end 
     
-            it "is accessible from the AdminMentorDashboard page" do
+    it "Edit Profile is accessible from the AdminMentorDashboard page" do
         add_test_mentor
         visit "/login"
         login_admin_mentor
@@ -680,7 +684,7 @@ describe "the page links" do
         clear_database   
     end 
     
-            it "is accessible from the AdminMentorDashboard page" do
+    it "Mentee List is accessible from the AdminMentorDashboard page" do
         clear_database         
         add_test_mentor
         login_admin_mentor
@@ -690,23 +694,26 @@ describe "the page links" do
         clear_database   
     end 
        
-            it "is accessible from the AdminMentorDashboard page" do
+    #enter the AdminMentorDashboard page then through footer go to view accessibility
+     it "Accessibility is accessible from the AdminMentorDashboard page" do
         add_test_mentor
         login_admin_mentor
         visit"/AdminMentorDashboard"
         click_link "Accessibility"
         expect(page).to have_content "Everyone using this website"
         clear_database   
-    end 
-    #checks if the header is correct for admin
- it "is accessible from the AdminMentorDashboard page" do
+    end
+    
+    #view the AdminMentorDashboard and check it does not have content of "My Mentor Schedule"
+     it "My Mentor Schedule should not appear in the AdminMentorDashboard page" do
        add_test_mentor
         login_admin_mentor 
         visit"/AdminMentorDashboard"
         expect(page).not_to have_content "My Mentor Schedule"
         clear_database   
-    end 
-            it "is accessible from the AdminMentorDashboard page" do
+    end
+    
+     it "My Mentee is accessible from the AdminMentorDashboard page" do
         add_test_mentor
         login_admin_mentor 
         visit"/AdminMentorDashboard"
@@ -715,62 +722,56 @@ describe "the page links" do
         clear_database   
     end 
 
-            it "is accessible from the AdminMentorDashboard page" do
-        add_test_mentor
-        login_admin_mentor
-        visit"/AdminMentorDashboard"
-        click_link "My Mentee"
-        expect(page).to have_content "Details of your current mentee"
-        clear_database   
-    end 
+     
 
 #test buttons and links 
 describe "the page links" do
     
-   
-    
+
  #page links tests from /login  
 
-
-    it "is accessible from the login page" do
+    #enter the Login page then through navigation go to our program
+    it "Our Program is accessible from the login page" do
         visit "/"
         click_link "Login"
         click_link "Our Program"
         expect(page).to have_content "one-to-one mentoring program"
     end
     
-    
-
-    it "is accessible from the login page" do
+    #enter the Login page then through navigation go to contact admin 
+    it "Contact Us is accessible from the login page" do
          visit "/"
         click_link "Login"
         click_link "Contact Us"
         expect(page).to have_content "Contact Admin:"
     end
     
-
-    it "is accessible from the login page" do
+    #enter the Login page then check the content in the Login page 
+    it "Login is accessible from the login page" do
          visit "/"
         click_link "Login"
         click_link "Login"
         expect(page).to have_content "Don't have an account?"
     end    
 
-        it "is accessible from the login page" do
-         visit "/"
+    #enter the Login page then through navigation go to sign up page 
+    it "Sign-Up is accessible from the login page" do
+        visit "/"
         click_link "Login"
         click_link "Sign-Up"
         expect(page).to have_content "Mentee"
         end
     
-    it "is accessible from the login page" do
+    #enter the Login page then through navigation go to contact admin 
+    it "Contact is accessible from the login page" do
          visit "/"
         click_link "Login"
         click_link "Contact"
         expect(page).to have_content "Contact Admin:"
     end 
     
-    it "is accessible from the login page" do   
+    #enter the Login page then through footer go to view accessibility
+    it "Accessibility is accessible from the login page" do   
          visit "/"
         click_link "Login"
         click_link "Accessibility"
@@ -781,44 +782,47 @@ describe "the page links" do
     
  #page links tests from /contact  
 
-    it "is accessible from the contact page" do
+    #enter the Contact page then through navigation go to sign up page
+    it "Sign-Up is accessible from the contact page" do
         visit "/"
         click_link "Contact Us"
         click_link "Sign-Up"
         expect(page).to have_content "Mentee"
     end
         
-
-    it "is accessible from the contact page" do
+    #enter the Contact page then through navigation go to our program
+    it "Our Program is accessible from the contact page" do
         visit "/"
         click_link "Contact Us"
         click_link "Our Program"
         expect(page).to have_content "one-to-one mentoring program"
     end
     
-    
-
-    it "is accessible from the contact page" do
+    #enter the Contact page then check the content of contact page 
+    it "Contact Us is accessible from the contact page" do
         visit "/"
         click_link "Contact Us"
         expect(page).to have_content "Contact Admin:"
     end
 
-    it "is accessible from the contact page" do
+    #enter the Contact page then through navigation go to login
+    it "Login is accessible from the contact page" do
         visit "/"
         click_link "Contact Us"
         click_link "Login"
         expect(page).to have_content "Don't have an account?"
     end  
 
-it "is accessible from the contact page" do
+    #enter the Contact page then through footer go to contact
+    it "Contact is accessible from the contact page" do
         visit "/"
         click_link "Contact Us"
         click_link "Contact"
         expect(page).to have_content "Contact Admin:"
     end 
     
-it "is accessible from the contact page" do   
+    #enter the Contact page then through footer go to view accessibility
+    it "Accessibility is accessible from the contact page" do   
         visit "/"
         click_link "Contact Us"
         click_link "Accessibility"
@@ -827,50 +831,50 @@ it "is accessible from the contact page" do
     
  #page links tests from /SignUpChoices 
 
+    #enter the SignUpChoices page then check the content of sign up page
     it "is accessible from the SignUpChoices page" do
         visit "/"  
         click_link "Sign-Up"
         expect(page).to have_content "Mentee"
     end
         
-
-    it "is accessible from the SignUpChoices page" do
+    #enter the SignUpChoices page then through navigation go to our program
+    it "Our Program is accessible from the SignUpChoices page" do
         visit "/"  
         click_link "Sign-Up"
         click_link "Our Program"
         expect(page).to have_content "one-to-one mentoring program"
     end
     
-    
-
-    it "is accessible from the SignUpChoices page" do
+    #enter the SignUpChoices page then through navigation go to contact admin 
+    it "Contact Us is accessible from the SignUpChoices page" do
         visit "/"  
         click_link "Sign-Up"
         click_link "Contact Us"
         expect(page).to have_content "Contact Admin:"
     end
        
-     
-it "is accessible from the SignUpChoices page" do
+     #enter the SignUpChoices page then through footer go to contact 
+    it "Contact is accessible from the SignUpChoices page" do
         visit "/"  
         click_link "Sign-Up"
         click_link "Contact"
         expect(page).to have_content "Contact Admin:"
     end 
-    
-it "is accessible from the SignUpChoices page" do   
+    #enter the SignUpChoices page then through footer go to view accessibility
+    it "Accessibility is accessible from the SignUpChoices page" do   
         visit "/"  
         click_link "Sign-Up"
         click_link "Accessibility"
         expect(page).to have_content "Everyone using this website"
     end 
-it "is accessible from the SignUpChoices page" do   
+    it "Mentee is accessible from the SignUpChoices page" do   
         visit "/"  
         click_link "Sign-Up"
         click_link "Mentee"
         expect(page).to have_content "Mentee Sign Up"
     end 
-it "is accessible from the SignUpChoices page" do   
+    it "Mentor is accessible from the SignUpChoices page" do   
         visit "/"  
         click_link "Sign-Up"
         click_link "Mentor"
