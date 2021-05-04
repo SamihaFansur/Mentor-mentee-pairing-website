@@ -431,7 +431,7 @@ describe "the page links" do
         clear_database   
     end 
 
-###################################################################################################
+
  #page links tests from /PendingMenteeApplications
     
     #through navigation go to logout
