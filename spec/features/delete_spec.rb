@@ -1,6 +1,8 @@
 require_relative "../spec_helper"
 #tests for deleting mentee
 describe "the delete page" do
+  
+  #Returns to homepage when a mentee deletes their account  
   it "allows deletion of a valid mentee" do
     add_test_user
     login_mentee
@@ -10,7 +12,8 @@ describe "the delete page" do
     expect(page).to have_content "one-to-one mentoring program"
     clear_database
   end
-    #tests for deleting mentor
+    
+   #Returns to homepage when a mentor deletes their account
    it "allows deletion of a valid mentor" do
     add_test_mentor
     login_mentor
@@ -20,8 +23,9 @@ describe "the delete page" do
     expect(page).to have_content "one-to-one mentoring program"
     clear_database
   end
-    
-   it "tests for a mentor delete by admin" do
+   
+   #Admin deletes a mentee account, attempted login by a mentee shows incorrect details entered message 
+   it "tests for a mentee delete by admin" do
   clear_database
     add_test_mentor
     add_test_user
@@ -35,8 +39,10 @@ describe "the delete page" do
 
     clear_database
   end
- it "tests for a mentee delete by admin " do
- clear_database
+    
+    #Admin deletes a mentor account, attempted login by a mentor shows incorrect details entered message
+    it "tests for a mentor delete by admin " do
+  clear_database
     add_test_mentor
     add_test_user
     login_mentor     
@@ -49,8 +55,9 @@ describe "the delete page" do
 
     clear_database
  end
-        
-   it "tests for a mentor delete by admin mentor" do
+      
+   #Admin mentor deletes a mentee account, attempted login by a mentor shows incorrect details entered message 
+   it "tests for a mentee delete by admin mentor" do
   clear_database
     add_test_mentor
     add_test_user
@@ -64,7 +71,9 @@ describe "the delete page" do
 
     clear_database
   end
- it "tests for a mentee delete by admin mentor" do
+    
+    #Admin mentor deletes a mentor account, attempted login by a mentor shows incorrect details entered message
+    it "tests for a mentor delete by admin mentor" do
  clear_database
     add_test_mentor
     add_test_user
@@ -79,6 +88,8 @@ describe "the delete page" do
     clear_database
  end
     
+    #Mentee sends application to mentor, mentor accepts and mentee matches
+    #Mentor account is deleted by an admin mentor, attempted login by a mentor shows incorrect details entered message
     it "tests for a mentee/mentor match deletion of mentor" do
   clear_database
     add_test_mentor
@@ -105,7 +116,10 @@ describe "the delete page" do
 
     clear_database
   end
-        it "tests for a mentee/mentor match deletion of mentee " do
+    
+    #Mentee sends application to mentor, mentor accepts and mentee matches
+    #Mentee account is deleted by an admin mentor, attempted login by a mentee shows incorrect details entered message
+    it "tests for a mentee/mentor match deletion of mentee " do
   clear_database
     add_test_mentor
     add_test_user
@@ -131,7 +145,10 @@ describe "the delete page" do
 
     clear_database
   end
-        it "tests for a mentee/mentor match deletion of mentor by admin/mentor" do
+    
+    #Mentee sends application to mentor, mentor accepts and mentee matches
+    #Mentee account is deleted by an admin, attempted login by a mentee shows incorrect details entered message
+    it "tests for a mentee/mentor match deletion of mentor by admin/mentor" do
   clear_database
     add_test_mentor
     add_test_user
@@ -157,7 +174,10 @@ describe "the delete page" do
 
     clear_database
   end
-        it "tests for a mentee/mentor match deletion of mentee by admin/mentor" do
+    
+    #Mentee sends application to mentor, mentor accepts and mentee matches
+    #Mentee account is deleted by an admin/mentor, attempted login by a mentee shows incorrect details entered message
+    it "tests for a mentee/mentor match deletion of mentee by admin/mentor" do
   clear_database
     add_test_mentor
     add_test_user
