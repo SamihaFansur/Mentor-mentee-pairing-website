@@ -208,7 +208,7 @@ describe "the page links" do
         expect(page).to have_content "Mentor Dashboard"
     end 
     
-    
+    #checks the link in the mentor dashboard could work
    it "View mentee applications is accessible from the MentorDashboard page" do
         add_test_mentor
         login_mentor   
@@ -216,7 +216,7 @@ describe "the page links" do
         click_link "View mentee applications"
         expect(page).to have_content "Mentee Applications"
     end 
-    
+    #checks the link in the mentor dashboard could work
     it "Edit Profile is accessible from the MentorDashboard page" do
         add_test_mentor
         login_mentor  
@@ -224,7 +224,7 @@ describe "the page links" do
         click_link "Edit Profile"
         expect(page).to have_content "Edit your information"
     end 
-    
+    #checks the link in the mentor dashboard could work
     it "My Mentee is accessible from the MentorDashboard page" do
         add_test_mentor
         login_mentor   
@@ -288,7 +288,7 @@ describe "the page links" do
         expect(page).to have_content "Mentee Dashboard"
         clear_database   
     end 
-    
+    #checks the link in the mentee dashboard could work
     it "Find a mentor is accessible from the MenteeDashboard page" do
         add_test_user
          login_mentee
@@ -297,7 +297,7 @@ describe "the page links" do
         expect(page).to have_content "Search for a Mentor"
         clear_database   
     end 
-    
+    #checks the link in the mentee dashboard could work
     it "Edit Profile is accessible from the MenteeDashboard page" do
         add_test_user
         visit "/login"
@@ -307,7 +307,7 @@ describe "the page links" do
         expect(page).to have_content "Edit your information"
         clear_database   
     end 
-    
+    #checks the link in the mentee dashboard could work
     it "My Mentor is accessible from the MenteeDashboard page" do
         add_test_user
          login_mentee 
@@ -373,7 +373,7 @@ describe "the page links" do
         expect(page).to have_content "Admin Dashboard"
         clear_database   
     end 
-    
+    #checks the link in the admin dashboard could work
     it "Mentor List is accessible from the AdminDashboard page" do
         login_admin 
         visit"/AdminDashboard"
@@ -381,7 +381,7 @@ describe "the page links" do
         expect(page).to have_content "Your search revealed no mentors"
         clear_database   
     end 
-    
+    #checks the link in the admin dashboard could work
     it "Edit Profile is accessible from the AdminDashboard page" do
         login_admin
         visit"/AdminDashboard"
@@ -389,7 +389,7 @@ describe "the page links" do
         expect(page).to have_content "Edit your information"
         clear_database   
     end 
-    
+    #checks the link in the admin dashboard could work
     it "Mentee List is accessible from the AdminDashboard page" do
         login_admin
         visit"/AdminDashboard"
@@ -399,7 +399,7 @@ describe "the page links" do
     end 
        
     #through footer go to contact admin  
-    it "Contactis accessible from the AdminDashboard page" do
+    it "Contact is accessible from the AdminDashboard page" do
         login_admin 
         visit"/AdminDashboard"
         click_link "Contact"
@@ -416,6 +416,7 @@ describe "the page links" do
         clear_database   
     end 
 
+    #checks the link in the admin dashboard could work
     it "Pending Mentee Applications is accessible from the AdminDashboard page" do
         login_admin
         visit"/AdminDashboard"
@@ -423,6 +424,7 @@ describe "the page links" do
         expect(page).to have_content "Pending Mentee Requests"
         clear_database   
     end
+    #checks the link in the admin dashboard could work
     it "Paired Mentees is accessible from the AdminDashboard page" do
         login_admin
         visit"/AdminDashboard"
@@ -625,10 +627,10 @@ describe "the page links" do
         expect(page).to have_content "Everyone using this website"
         clear_database   
     end 
-############################################################################
+
 #page links tests from /AdminDashboard
     
-    #login as an admin to view the admin dashboard not have content of my mentor schedule
+    #login as an admin to view the admin dashboard and check the information in the admin dashboard
      it "My Mentor Schedule should not in the AdminDashboard page" do
         login_admin   
         visit"/AdminDashboard"
@@ -636,7 +638,7 @@ describe "the page links" do
         clear_database   
     end 
         
-    #enter the AdminMentorDashboard page then through navigation go to dashboard
+    #enter the AdminMentorDashboard page then through navigation go to logout
     it "Logout is accessible from the AdminMentorDashboard page" do
         add_test_mentor
         login_admin_mentor
@@ -663,7 +665,7 @@ describe "the page links" do
         expect(page).to have_content "Admin + Mentor Dashboard"
         clear_database   
     end 
-    
+    #checks the link in the admin mentor dashboard could work
     it "Mentor List is accessible from the AdminMentorDashboard page" do
         clear_database 
         add_test_mentor
@@ -673,7 +675,7 @@ describe "the page links" do
         expect(page).to have_content "Mentor List"
         clear_database   
     end 
-    
+    #checks the link in the admin mentor dashboard could work
     it "Edit Profile is accessible from the AdminMentorDashboard page" do
         add_test_mentor
         visit "/login"
@@ -683,7 +685,7 @@ describe "the page links" do
         expect(page).to have_content "Edit your information"
         clear_database   
     end 
-    
+    #checks the link in the admin mentor dashboard could work
     it "Mentee List is accessible from the AdminMentorDashboard page" do
         clear_database         
         add_test_mentor
@@ -704,7 +706,7 @@ describe "the page links" do
         clear_database   
     end
     
-    #view the AdminMentorDashboard and check it does not have content of "My Mentor Schedule"
+    #view the AdminMentorDashboard and check the information in the AdminMentorDashboard
      it "My Mentor Schedule should not appear in the AdminMentorDashboard page" do
        add_test_mentor
         login_admin_mentor 
@@ -712,7 +714,7 @@ describe "the page links" do
         expect(page).not_to have_content "My Mentor Schedule"
         clear_database   
     end
-    
+    #checks the link in the admin mentor dashboard could work
      it "My Mentee is accessible from the AdminMentorDashboard page" do
         add_test_mentor
         login_admin_mentor 
@@ -762,7 +764,7 @@ describe "the page links" do
         expect(page).to have_content "Mentee"
         end
     
-    #enter the Login page then through navigation go to contact admin 
+    #enter the Login page then through footer go to contact admin 
     it "Contact is accessible from the login page" do
          visit "/"
         click_link "Login"
@@ -782,7 +784,7 @@ describe "the page links" do
     
  #page links tests from /contact  
 
-    #enter the Contact page then through navigation go to sign up page
+    #enter the Contact Us page then through navigation go to sign up page
     it "Sign-Up is accessible from the contact page" do
         visit "/"
         click_link "Contact Us"
@@ -790,7 +792,7 @@ describe "the page links" do
         expect(page).to have_content "Mentee"
     end
         
-    #enter the Contact page then through navigation go to our program
+    #enter the Contact Us page then through navigation go to our program
     it "Our Program is accessible from the contact page" do
         visit "/"
         click_link "Contact Us"
@@ -798,14 +800,14 @@ describe "the page links" do
         expect(page).to have_content "one-to-one mentoring program"
     end
     
-    #enter the Contact page then check the content of contact page 
+    #enter the Contact Us page then check the content of contact page 
     it "Contact Us is accessible from the contact page" do
         visit "/"
         click_link "Contact Us"
         expect(page).to have_content "Contact Admin:"
     end
 
-    #enter the Contact page then through navigation go to login
+    #enter the Contact Us page then through navigation go to login
     it "Login is accessible from the contact page" do
         visit "/"
         click_link "Contact Us"
@@ -813,7 +815,7 @@ describe "the page links" do
         expect(page).to have_content "Don't have an account?"
     end  
 
-    #enter the Contact page then through footer go to contact
+    #enter the Contact Us page then through footer go to contact
     it "Contact is accessible from the contact page" do
         visit "/"
         click_link "Contact Us"
@@ -821,7 +823,7 @@ describe "the page links" do
         expect(page).to have_content "Contact Admin:"
     end 
     
-    #enter the Contact page then through footer go to view accessibility
+    #enter the Contact Us page then through footer go to view accessibility
     it "Accessibility is accessible from the contact page" do   
         visit "/"
         click_link "Contact Us"
@@ -868,12 +870,14 @@ describe "the page links" do
         click_link "Accessibility"
         expect(page).to have_content "Everyone using this website"
     end 
+    #checks the link in the SignUpChoices page could work
     it "Mentee is accessible from the SignUpChoices page" do   
         visit "/"  
         click_link "Sign-Up"
         click_link "Mentee"
         expect(page).to have_content "Mentee Sign Up"
-    end 
+    end
+    #checks the link in the SignUpChoices page could work
     it "Mentor is accessible from the SignUpChoices page" do   
         visit "/"  
         click_link "Sign-Up"
