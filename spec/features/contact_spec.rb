@@ -2,17 +2,18 @@ require_relative "../spec_helper"
 
 
     
-#checks that a mentee can be edited
-#
-#
+
 #tests that error message shows up when a nil mentee is attempted to be edited
 describe "the contact page" do
+  
+  #error message displayed when contact form not filled in  
   it "shows an error when form not filled in" do
     visit "/"
     click_link "Contact Us"
     expect(page).to have_content "Contact"
   end
-       
+  
+  #correctly filled out form displays no error message  
   it "sends an email" do
     visit "/"
     click_link "Contact Us"
