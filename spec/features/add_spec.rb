@@ -1,7 +1,7 @@
 require_relative "../spec_helper"
 #checks that signup is accessible from /index and that mentee signup is inside
 describe "the signup page" do
-    it "is accessible from the search page" do
+    it "Sign-Up is accessible from the index page" do
         visit"/"
         click_link "Sign-Up"
         expect(page).to have_content "Mentee"
@@ -25,7 +25,7 @@ describe "the signup page" do
     
     
     #checks that signup is accessible from /index and that mentor signup is inside
-        it "is accessible from the search page" do
+        it "Sign-Up is accessible from the index page" do
         visit"/"
         click_link "Sign-Up"
         expect(page).to have_content "Mentor"
@@ -55,7 +55,7 @@ describe "the signup page" do
     
     
    #checks for invalid login for mentee
-            it "adds a mentee into the fields" do
+        it "adds a mentee into the fields" do
         add_test_user
         login_mentor
         expect(page).to have_content "Username/Password combination incorrect"
@@ -86,7 +86,7 @@ describe "the signup page" do
 
         clear_database
     end
-          #checks that adminMentor has error message
+      #checks that adminMentor has error message
         it "checks loginAGain errors" do
         add_test_mentor
         visit "/loginAgain"
@@ -98,7 +98,7 @@ describe "the signup page" do
         clear_database
     end
     
-              #checks that adminMentor has error message
+      #checks that adminMentor has error message
         it "checks loginAGain errors for username/password" do
         add_test_mentor
         visit "/loginAgain"
