@@ -1,17 +1,16 @@
 require_relative "../spec_helper"
-
-
-    
+  
 #checks that a mentee can be edited
-#
-#
 #tests that error message shows up when a nil mentee is attempted to be edited
+
 describe "the mentee edit page" do
+    #displays an error if there are no mentee
   it "shows an error when trying to load an invalid mentee" do
     visit "/editMentee?id=1000000"
     expect(page).to have_no_xpath('a')
   end
-       
+      
+    #login as a mentee and edit the mentee information in person 
   it "allows editing of a valid mentee" do
     add_test_user
     login_mentee
@@ -68,11 +67,12 @@ end
 #checks that a mentor can be edited
 describe "the mentor edit page" do
     
-  it "shows an error when trying to load an invalid mentee" do
+    #displays an error if there are no mentor
+  it "shows an error when trying to load an invalid mentor" do
     visit "/editMentor?id=1000000"
     expect(page).to have_no_xpath('a')
   end    
-    
+    #login as a mentor and edit the mentor information in person 
     it "allows editing of a valid mentor" do
     add_test_mentor
     login_mentor
@@ -125,12 +125,13 @@ describe "the mentor edit page" do
 #checks that a admin can be edited
 describe "the admin edit page" do
     
-  it "shows an error when trying to load an invalid mentee" do
+    #displays an error if there are no admin 
+  it "shows an error when trying to load an invalid admin" do
     visit "/editAdmin?id=1000000"
     expect(page).to have_no_xpath('a')
   end    
-    
-    it "allows editing of a valid mentor" do
+    #login as an admin and edit the admin information in person 
+    it "allows editing of a valid admin" do
     
     login_admin
     visit "/AdminDashboard"
@@ -140,8 +141,8 @@ describe "the admin edit page" do
     expect(page).to have_content "admin1"
     clear_database
   end
-#checks that mentor edit is submitted and displayed
-  it "allows a mentor record to be changed" do
+#checks that admin edit is submitted and displayed
+  it "allows an admin record to be changed" do
     login_admin
     visit "/AdminDashboard"
     click_link "Edit Profile"
@@ -156,7 +157,7 @@ describe "the admin edit page" do
     clear_database
   end
     
-#checks that an empty data field can be submitted for mentor
+#checks that an empty data field can be submitted for admin
   it "will save empty data field" do
     login_admin
     visit "/AdminDashboard"
@@ -192,13 +193,14 @@ end
     
  #checks that a admin+mentor can be edited
 describe "the admin edit page" do
-    
-  it "shows an error when trying to load an invalid mentee" do
+  #displays an error if there are no admin mentor  
+  it "shows an error when trying to load an invalid admin mentor" do
     visit "/editAdmin?id=1000000"
     expect(page).to have_no_xpath('a')
   end    
+  #login as an admin mentor and edit the admin mentor information in person     
+    it "allows editing of a valid admin mentor" do
     
-    it "allows editing of a valid mentor" do
     add_test_mentor
     login_mentor
     login_admin 
@@ -209,8 +211,8 @@ describe "the admin edit page" do
     expect(page).to have_content "Sam"
     clear_database
   end
-#checks that mentor edit is submitted and displayed
-  it "allows a mentor record to be changed" do
+#checks that admin mentor edit is submitted and displayed
+  it "allows an admin mentor record to be changed" do
     add_test_mentor
     login_mentor
     login_admin 
@@ -223,7 +225,7 @@ describe "the admin edit page" do
     clear_database
   end
     
-#checks that an empty data field can be submitted for mentor
+#checks that an empty data field can be submitted for admin mentor
   it "will save empty data field" do
     add_test_mentor
     login_mentor
@@ -257,8 +259,9 @@ describe "the admin edit page" do
     fill_in "description", with: ""
     click_button "Submit"
     clear_database
-  end  
-      it "allows editing of a valid mentor from mentor list" do
+  end
+#admin could edit all mentors' information    
+    it "allows editing of a valid mentor from mentor list" do
     clear_database
     add_test_mentor
     login_mentor
@@ -274,7 +277,8 @@ describe "the admin edit page" do
     expect(page).to have_content "hello"
     clear_database
   end
-          it "allows editing of a valid mentee from mentee list" do
+#admin could edit all mentees' information    
+    it "allows editing of a valid mentee from mentee list" do
     clear_database
     add_test_user
     login_mentor
@@ -287,7 +291,8 @@ describe "the admin edit page" do
     expect(page).to have_content "hello"
     clear_database
   end
-      it "allows editing of a valid mentor from mentor list by admin/mentor" do
+#admin mentor could edit all mentors' information    
+    it "allows editing of a valid mentor from mentor list by admin/mentor" do
     clear_database
     add_test_mentor
     login_mentor
@@ -300,7 +305,8 @@ describe "the admin edit page" do
     expect(page).to have_content "hello"
     clear_database
   end
-          it "allows editing of a valid mentee from mentee list by admin/mentor" do
+#admin mentor could edit all mentees' information
+    it "allows editing of a valid mentee from mentee list by admin/mentor" do
     clear_database
     add_test_user
     add_test_mentor
@@ -314,6 +320,8 @@ describe "the admin edit page" do
     expect(page).to have_content "hello"
     clear_database
   end
+
+#mentee could edit mentee information then back to the mentee dashboard    
 it "tests editMentee from mentee acount" do
     clear_database
     add_test_user
@@ -323,7 +331,7 @@ it "tests editMentee from mentee acount" do
     expect(page).to have_content "Mentee Dashboard"
     clear_database
   end
-
+#mentor could not edit mentee information so that return to mentor dashboard 
 it "tests editMentee from mentor acount" do
     clear_database
     add_test_user
@@ -333,6 +341,7 @@ it "tests editMentee from mentor acount" do
     expect(page).to have_content "Mentor Dashboard"
     clear_database
   end
+#admin could edit mentee information then back to the admin dashboard
 it "tests editMentee from admin acount" do
     clear_database
     add_test_user
@@ -342,6 +351,7 @@ it "tests editMentee from admin acount" do
     expect(page).to have_content "Admin Dashboard"
     clear_database
   end
+#admin mentor could edit mentee information then back to the admin mentor dashboard
 it "tests editMentee from adminMentor acount" do
     clear_database
     add_test_user
@@ -353,7 +363,7 @@ it "tests editMentee from adminMentor acount" do
   end
 
 #editMentor
-
+#mentee could not edit mentor information so that return to the mentee dashboard
 it "tests editMentor from mentee account" do
     clear_database
     add_test_user
@@ -363,7 +373,7 @@ it "tests editMentor from mentee account" do
     expect(page).to have_content "Mentee Dashboard"
     clear_database
   end
-
+#mentor could edit mentor information then back to the mentor dashboard
 it "tests editMentor from mentor account" do
     clear_database
     add_test_user
@@ -373,6 +383,7 @@ it "tests editMentor from mentor account" do
     expect(page).to have_content "Mentor Dashboard"
     clear_database
   end
+#admin could edit mentor information then back to the admin dashboard
 it "tests editMentor from admin account" do
     clear_database
     add_test_user
@@ -382,6 +393,7 @@ it "tests editMentor from admin account" do
     expect(page).to have_content "Admin Dashboard"
     clear_database
   end
+#admin mentor could edit mentor information then back to the admin mentor dashboard
 it "tests editMentor from adminMentor account" do
     clear_database
     add_test_user
@@ -392,7 +404,7 @@ it "tests editMentor from adminMentor account" do
     clear_database
   end
 #editAdmin
-
+#mentee could not edit admin information so that return to the mentee dashboard
 it "tests editAdmin from mentee account" do
     clear_database
     add_test_user
@@ -402,7 +414,7 @@ it "tests editAdmin from mentee account" do
     expect(page).to have_content "Mentee Dashboard"
     clear_database
   end
-
+#mentor could not edit admin information so that return to the mentor dashboard
 it "tests editAdmin from mentor account" do
     clear_database
     add_test_user
@@ -412,6 +424,7 @@ it "tests editAdmin from mentor account" do
     expect(page).to have_content "Mentor Dashboard"
     clear_database
   end
+#admin could edit admin information then back to the admin dashboard
 it "tests editAdmin from admin account" do
     clear_database
     add_test_user
@@ -421,6 +434,7 @@ it "tests editAdmin from admin account" do
     expect(page).to have_content "Admin Dashboard"
     clear_database
   end
+#admin mentor could edit admin information then back to the admin mentor dashboard
 it "tests editAdmin from adminMentor account" do
     clear_database
     add_test_user
