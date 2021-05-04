@@ -3,7 +3,7 @@
       <div class="full">
         <div class="title">Mentor List</div> <!--Main page Title-->      
           
-<!-- Search mentees -->
+<!-- Search mentors -->
        
             <form>
               <p>Enter the <strong>Username</strong> to find a Mentor: 
@@ -73,7 +73,7 @@
                     <input type="hidden" name="mentorID" value="<%= mentor.id %>">
                     <button type="submit">Block</button>
                   </form>
-                    <!--Press the botton to block mentor                     -->
+                    <!--Press the botton to unblock mentor                     -->
                   <form method="post" action="unblockMentor">
                     <input type="hidden" name="mentorID" value="<%= mentor.id %>">
                     <button type="submit">Unblock</button>

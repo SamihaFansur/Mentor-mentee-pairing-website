@@ -2,7 +2,7 @@
   <div class="background" id="statement">
     <div class="full">
       <div class="title">Edit your information</div> <!--Main page Title-->
-        <!-- Checks if there are no mentors           -->
+        <!-- Checks if there are no mentees           -->
       <% if @mentees.nil? %>
           <p class="error"><strong>Unknown mentee</strong></p>
       <% else %>
@@ -28,6 +28,7 @@
         </form>
       </div>
 <% end %>
+          <!--Return to mentee dashboard          -->
          <p class="navigation">Return to <a href="/MenteeDashboard">Mentee Dashboard</a>.</p>
   </div>
 </div>

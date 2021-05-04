@@ -18,7 +18,7 @@
               <input type="submit" value="Submit" />
             </p>
           </form>
-          
+
           <p>Number of Paired Mentees: <%= @mentees.count %></p>
         
           <!--Displays mentee details-->
@@ -47,7 +47,7 @@
             <% end %> 
             </table>
           <% else %>
-           <!-- displays errors if mentor not accept the application             -->
+           <!-- displays errors if no mentor has a mentee            -->
             <p id="searchError">No mentees appear to be paired with a mentor.</p>
           <% end %>
       </div>
