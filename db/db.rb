@@ -2,8 +2,8 @@ require "logger"
 require "sequel"
 
 # what mode are we in?
-type = ENV.fetch("APP_ENV", "production") #use this when its live
-# type = ENV.fetch("APP_ENV", "testing") #use this while developing
+# type = ENV.fetch("APP_ENV", "production") #use this when its live
+type = ENV.fetch("APP_ENV", "testing") #use this while developing
 
 # find the path to the database file
 db_path = File.dirname(__FILE__)
