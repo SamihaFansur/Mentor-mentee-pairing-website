@@ -246,3 +246,51 @@ I, [2021-03-28T01:47:28.811261 #311]  INFO -- : (0.106649s) COMMIT
 I, [2021-03-28T01:47:35.361938 #311]  INFO -- : (0.000149s) SELECT * FROM `mentees` WHERE (`username` = 'testmentor1') LIMIT 1
 I, [2021-03-28T01:47:35.362225 #311]  INFO -- : (0.000116s) SELECT * FROM `mentors` WHERE (`username` = 'testmentor1') LIMIT 1
 I, [2021-03-28T01:47:35.470344 #311]  INFO -- : (0.000143s) SELECT * FROM `mentors` WHERE (`username` = 'testmentor1') LIMIT 1
+I, [2021-05-05T17:02:12.383928 #432]  INFO -- : (0.000184s) PRAGMA foreign_keys = 1
+I, [2021-05-05T17:02:12.387071 #432]  INFO -- : (0.000029s) PRAGMA case_sensitive_like = 1
+I, [2021-05-05T17:02:12.387923 #432]  INFO -- : (0.000056s) SELECT sqlite_version()
+I, [2021-05-05T17:02:12.388155 #432]  INFO -- : (0.000117s) PRAGMA table_info('admins')
+I, [2021-05-05T17:02:12.389410 #432]  INFO -- : (0.000157s) PRAGMA table_info('mentees')
+I, [2021-05-05T17:02:12.390845 #432]  INFO -- : (0.000146s) PRAGMA table_info('mentors')
+I, [2021-05-05T17:02:12.391980 #432]  INFO -- : (0.000098s) PRAGMA table_info('reports')
+I, [2021-05-05T17:02:12.392789 #432]  INFO -- : (0.000097s) PRAGMA table_info('requests')
+I, [2021-05-05T17:03:55.363462 #432]  INFO -- : (0.000174s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2021-05-05T17:03:55.363780 #432]  INFO -- : (0.000110s) SELECT * FROM `mentees` WHERE (`email` = 'jsmith@sheffield.ac.uk') LIMIT 1
+I, [2021-05-05T17:03:55.364861 #432]  INFO -- : (0.000118s) SELECT * FROM `mentors` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2021-05-05T17:03:55.365081 #432]  INFO -- : (0.000093s) SELECT * FROM `mentors` WHERE (`email` = 'jsmith@sheffield.ac.uk') LIMIT 1
+I, [2021-05-05T17:03:55.365279 #432]  INFO -- : (0.000077s) SELECT * FROM `admins` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2021-05-05T17:03:55.366212 #432]  INFO -- : (0.000824s) SELECT * FROM `admins` WHERE (`email` = 'jsmith@sheffield.ac.uk') LIMIT 1
+I, [2021-05-05T17:03:55.366344 #432]  INFO -- : (0.000019s) BEGIN
+I, [2021-05-05T17:03:55.366797 #432]  INFO -- : (0.000282s) INSERT INTO `mentees` (`fname`, `lname`, `email`, `phoneNum`, `courseName`, `faculty`, `cyear`, `username`, `password`) VALUES ('Jane', 'Smith', 'jsmith@sheffield.ac.uk', '+44 1122334455', 'Architecture (BA)', 'Faculty of Science', 1, 'mentee1', 'mentee1')
+I, [2021-05-05T17:03:55.367014 #432]  INFO -- : (0.000105s) SELECT * FROM `mentees` WHERE `id` = 1
+I, [2021-05-05T17:03:55.458622 #432]  INFO -- : (0.091526s) COMMIT
+I, [2021-05-05T17:04:53.565663 #432]  INFO -- : (0.000168s) SELECT * FROM `mentees` WHERE (`username` = 'mentee2') LIMIT 1
+I, [2021-05-05T17:04:53.565917 #432]  INFO -- : (0.000099s) SELECT * FROM `mentees` WHERE (`email` = 'sclark@sheffield.ac.uk') LIMIT 1
+I, [2021-05-05T17:04:53.566187 #432]  INFO -- : (0.000097s) SELECT * FROM `mentors` WHERE (`username` = 'mentee2') LIMIT 1
+I, [2021-05-05T17:04:53.566365 #432]  INFO -- : (0.000090s) SELECT * FROM `mentors` WHERE (`email` = 'sclark@sheffield.ac.uk') LIMIT 1
+I, [2021-05-05T17:04:53.566604 #432]  INFO -- : (0.000098s) SELECT * FROM `admins` WHERE (`username` = 'mentee2') LIMIT 1
+I, [2021-05-05T17:04:53.566751 #432]  INFO -- : (0.000067s) SELECT * FROM `admins` WHERE (`email` = 'sclark@sheffield.ac.uk') LIMIT 1
+I, [2021-05-05T17:04:53.566856 #432]  INFO -- : (0.000019s) BEGIN
+I, [2021-05-05T17:04:53.567210 #432]  INFO -- : (0.000222s) INSERT INTO `mentees` (`fname`, `lname`, `email`, `phoneNum`, `courseName`, `faculty`, `cyear`, `username`, `password`) VALUES ('Sam', 'Clark', 'sclark@sheffield.ac.uk', '+971 123456678', 'Health and Human Sciences (BMedSci)', 'Faculty of Medicine, Dentistry and Health', 2, 'mentee2', 'mentee2')
+I, [2021-05-05T17:04:53.567442 #432]  INFO -- : (0.000115s) SELECT * FROM `mentees` WHERE `id` = 2
+I, [2021-05-05T17:04:53.663705 #432]  INFO -- : (0.096176s) COMMIT
+I, [2021-05-05T17:06:12.233688 #432]  INFO -- : (0.000160s) SELECT * FROM `mentors` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-05-05T17:06:12.233940 #432]  INFO -- : (0.000102s) SELECT * FROM `mentors` WHERE (`email` = 'sjames1@sheffield.ac.uk') LIMIT 1
+I, [2021-05-05T17:06:12.235130 #432]  INFO -- : (0.001101s) SELECT * FROM `mentees` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-05-05T17:06:12.235337 #432]  INFO -- : (0.000102s) SELECT * FROM `mentees` WHERE (`email` = 'sjames1@sheffield.ac.uk') LIMIT 1
+I, [2021-05-05T17:06:12.235484 #432]  INFO -- : (0.000068s) SELECT * FROM `admins` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2021-05-05T17:06:12.235608 #432]  INFO -- : (0.000062s) SELECT * FROM `admins` WHERE (`email` = 'sjames1@sheffield.ac.uk') LIMIT 1
+I, [2021-05-05T17:06:12.235697 #432]  INFO -- : (0.000013s) BEGIN
+I, [2021-05-05T17:06:12.236050 #432]  INFO -- : (0.000222s) INSERT INTO `mentors` (`fname`, `lname`, `email`, `phoneNum`, `username`, `password`, `jobTitle`, `courseName`) VALUES ('Susan', 'James', 'sjames1@sheffield.ac.uk', '+971 8876618', 'mentor1', 'mentor1', 'Administrative Specialist', 'Architecture (BA)')
+I, [2021-05-05T17:06:12.237005 #432]  INFO -- : (0.000850s) SELECT * FROM `mentors` WHERE `id` = 1
+I, [2021-05-05T17:06:12.335155 #432]  INFO -- : (0.098058s) COMMIT
+I, [2021-05-05T17:07:08.928353 #432]  INFO -- : (0.000188s) SELECT * FROM `mentors` WHERE (`username` = 'mentor2') LIMIT 1
+I, [2021-05-05T17:07:08.928633 #432]  INFO -- : (0.000107s) SELECT * FROM `mentors` WHERE (`email` = 'jsmyth2@sheffield.ac.uk') LIMIT 1
+I, [2021-05-05T17:07:08.928839 #432]  INFO -- : (0.000105s) SELECT * FROM `mentees` WHERE (`username` = 'mentor2') LIMIT 1
+I, [2021-05-05T17:07:08.929022 #432]  INFO -- : (0.000096s) SELECT * FROM `mentees` WHERE (`email` = 'jsmyth2@sheffield.ac.uk') LIMIT 1
+I, [2021-05-05T17:07:08.929190 #432]  INFO -- : (0.000077s) SELECT * FROM `admins` WHERE (`username` = 'mentor2') LIMIT 1
+I, [2021-05-05T17:07:08.929340 #432]  INFO -- : (0.000070s) SELECT * FROM `admins` WHERE (`email` = 'jsmyth2@sheffield.ac.uk') LIMIT 1
+I, [2021-05-05T17:07:08.929445 #432]  INFO -- : (0.000015s) BEGIN
+I, [2021-05-05T17:07:08.929766 #432]  INFO -- : (0.000184s) INSERT INTO `mentors` (`fname`, `lname`, `email`, `phoneNum`, `username`, `password`, `jobTitle`, `courseName`) VALUES ('June', 'Smyth', 'jsmyth2@sheffield.ac.uk', '+87 43234343', 'mentor2', 'mentor2', 'Administrative Specialist', 'Architectural Engineering with a Year in Industry (MEng)')
+I, [2021-05-05T17:07:08.929995 #432]  INFO -- : (0.000110s) SELECT * FROM `mentors` WHERE `id` = 2
+I, [2021-05-05T17:07:09.029193 #432]  INFO -- : (0.099117s) COMMIT
