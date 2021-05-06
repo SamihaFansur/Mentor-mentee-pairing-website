@@ -25,6 +25,11 @@ get "/login" do
 end
 
 get "/loginAgain" do
+    
+  if request.referer.nil?
+      redirect "/login"
+  end 
+    
   new_mentor_instance  
   erb :loginAgain
 end
