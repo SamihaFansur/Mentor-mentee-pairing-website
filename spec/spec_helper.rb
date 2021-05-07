@@ -24,7 +24,8 @@ RSpec.configure do |config|
   config.include Rack::Test::Methods
 end
 
-# add a test mentee
+# Adds test users (mentee and mentor) to the database
+# Add a test mentee
 def add_test_user
   visit "/MenteeSignUpForm"
   fill_in "fname", with: "George"
@@ -60,7 +61,6 @@ def add_test_mentor
   click_button "Submit"
 end
 
-#composition of names
   def name
     "#{fname} #{lname}"
   end
@@ -75,21 +75,22 @@ def clear_database
 end
 
 
-#login methods for a mentee
+#login methods for each test username
+#log in for mentee
 def login_mentee
 visit "/login"
     fill_in "username", with: "123"
     fill_in "password", with: "123"
     click_button "Submit" 
 end
-#login methods for a mentor
+# log in for mentor
 def login_mentor
  visit "/login"
     fill_in "username", with: "1234"
     fill_in "password", with: "1234"
     click_button "Submit"
 end
-#login methods for an admin
+#log in for admin
 def login_admin
 visit "/login"
     fill_in "username", with: "admin1"
@@ -97,7 +98,7 @@ visit "/login"
     click_button "Submit"
     click_link "No"
 end
-#login methods for an admin_mentor
+#log in for admin who is also a mentor
 def login_admin_mentor
  visit "/login"
     fill_in "username", with: "admin1"
