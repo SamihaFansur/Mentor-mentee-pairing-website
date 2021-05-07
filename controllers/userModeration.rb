@@ -84,7 +84,7 @@ def suspend_user(user, suspendUserField)
         "\n\nRegards\nTeam 6")
     #User account unsuspended after 2 days, user notified through email of account unsuspension
     Thread.new{
-  #         sleep(2*24*60*60) #2 days in seconds
+  #         sleep(7*24*60*60) #7 days in seconds
         sleep(30) #30 seconds for running rspec tests
         if user.class == Mentee
           user.suspendMentee = 0
