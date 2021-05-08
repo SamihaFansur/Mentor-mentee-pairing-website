@@ -6,7 +6,8 @@ require_relative "../spec_helper"
 
 describe "match page" do
 context "with an empty database" do
-       
+  
+  #Tests that a mentee can match to a mentor and mentor details are show on my mentor page  
   it "tests for a mentee/mentor match" do
 
     add_test_mentor
@@ -29,6 +30,9 @@ context "with an empty database" do
     expect(page).to have_content "Sam Mentor"
     clear_database
   end
+  
+  #Tests that a mentee can not have more than one mentor
+  #Mentee notified that they already have a mentor
       it "tests for a mentee/mentor match when already have mentor" do
 
     add_test_mentor
@@ -68,6 +72,8 @@ context "with an empty database" do
     expect(page).to have_content "You already have a mentor"
     clear_database
   end
+    
+    #Checks that a report sent by a mentee can be dismissed by a mentor successfully
       it "checks report of mentee can be dismissed" do
 
     add_test_mentor
@@ -101,6 +107,8 @@ context "with an empty database" do
     
     clear_database
   end
+    
+    #Checks that a mentor is able to reject a mentees application successfully
       it "tests for a mentee/mentor reject application" do
 
     add_test_mentor
@@ -120,7 +128,8 @@ context "with an empty database" do
     expect(page).to have_content "There are no pending applications"
     clear_database
   end
-
+  
+  #Checks that a mentee is able to send a mentor meeting request successfully
   it "tests for a mentee/mentor meeting request" do
 
     add_test_mentor
@@ -146,6 +155,8 @@ context "with an empty database" do
     login_mentor  
     clear_database
   end
+    
+ #Checks that a mentee and mentor can match   
  it "tests for a mentee/mentor match" do
 
     add_test_mentor
@@ -163,6 +174,8 @@ context "with an empty database" do
     expect(page).to have_content "George"
     clear_database
   end
+    
+  #Checks that a mentee can send a mentor application and a mentor is able to accept it and match
 it "tests for a mentee/mentor match" do
 
     add_test_mentor
@@ -185,6 +198,8 @@ it "tests for a mentee/mentor match" do
     expect(page).to have_content "Sam Mentor"
     clear_database
   end
+
+  #Checks that a mentee and an admin mentor are able to match
   it "tests for a mentee/mentor match using admin mentor account" do
 
     add_test_mentor
