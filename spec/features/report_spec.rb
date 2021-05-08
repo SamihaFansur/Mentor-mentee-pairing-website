@@ -1,7 +1,7 @@
 require_relative "../spec_helper"
   
 #checks that a mentor can send reports
-
+#then checks that an admin can view the report
 describe "mentor report" do
 context "a mentee" do      
   it "tests the mentors can report their mentee" do
@@ -37,6 +37,9 @@ context "a mentee" do
     
     clear_database
   end  
+    
+    #Checks that mentors are able to report mentees along with a description why
+    #Admin mentor is then able to view the reason for the report
       it "tests the mentors can report their mentee" do
   clear_database
     add_test_mentor
