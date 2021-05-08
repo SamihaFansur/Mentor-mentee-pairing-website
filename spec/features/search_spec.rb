@@ -1,8 +1,8 @@
 require_relative "../spec_helper"
 
-#tests the search features on the website
+#Tests the search features on the website
 
-#tests the mentor search when it is empty
+#Tests the mentor search when it is empty
 describe "the search page" do
   context "with an empty database" do
     it "says the database is empty" do
@@ -15,7 +15,7 @@ describe "the search page" do
       clear_database  
     end
       
- #checks if applciaitons are empty        
+ #Checks whether mentee applications have been recieved by mentor        
    it "checks the mentor has been sent an application" do
  clear_database
       add_test_mentor
@@ -34,7 +34,7 @@ describe "the search page" do
       clear_database
     end   
       
-#tests the mentor search when there is only
+#Tests the mentor search when there is only one record of a mentor
   context "with one record in the database" do
     it "lists the mentors" do     
       clear_database
@@ -47,7 +47,7 @@ describe "the search page" do
       expect(page).to have_content "Sam Mentor"
       clear_database
     end
-#checks that mentor doesnt appear when wrong course is entered
+#Checks that mentor does not appear when a different course name is entered
     it "does not list the mentor when a different courseName is searched for" do
       clear_database 
       add_test_mentor
@@ -60,7 +60,7 @@ describe "the search page" do
       expect(page).to have_content "Your search revealed no mentors"
       clear_database
     end
-#checks that mentor appears when wrong course is entered
+#Checks that a mentor appears in the search when their course name is searched for
     it "lists the mentor when their courseName is searched for" do
       clear_database
       add_test_mentor
@@ -76,7 +76,7 @@ describe "the search page" do
 
 
     
-     #checks if applciaitons are empty        
+     #Checks that mentee is able to unsend mentor applications        
    it "checks that unsend applicaiton is working" do
  clear_database
       add_test_mentor
@@ -96,7 +96,9 @@ describe "the search page" do
       expect(page).to have_content "There are no pending applications"
       
       clear_database
-    end 
+    end
+      
+      #Checks that the mentor can check for applications sent to them
        it "checks the mentor has been sent an application" do
  clear_database
       add_test_mentor
