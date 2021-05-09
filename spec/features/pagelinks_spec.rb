@@ -883,8 +883,7 @@ describe "the page links" do
         click_link "Sign-Up"
         click_link "Mentor"
         expect(page).to have_content "Mentor Sign Up"
-    end 
-end
-clear_database    
-    
+      end 
+    end
+  clear_database       
 end

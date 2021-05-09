@@ -1,7 +1,5 @@
 require_relative "../spec_helper"
-
-
-    
+   
 #checks that a mentee can be matched
 
 describe "match page" do
@@ -221,6 +219,6 @@ it "tests for a mentee/mentor match" do
     click_link "My Mentor"
     expect(page).to have_content "Sam Mentor"
     clear_database
+    end
   end
-end
 end

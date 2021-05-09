@@ -2,7 +2,6 @@ require_relative "../spec_helper"
 #
 #All tests on this file will fail to show that the tests will fail when the conditions aren't met.
 #
-
 describe "the signup page" do
 
     #Adds a mentee and tests that they are added to the database and have a profile.

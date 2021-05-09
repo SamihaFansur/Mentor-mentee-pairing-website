@@ -1,6 +1,4 @@
 require_relative "../spec_helper"
-
-
     
 #checks that a user can be blocked
 
@@ -369,6 +367,5 @@ it "tests block of mentee that is already blocked" do
     expect(page).to have_content "Your account is suspended"
     clear_database
   end
-
-        clear_database
+  clear_database
 end

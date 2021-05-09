@@ -138,8 +138,6 @@ describe "the search page" do
       
       clear_database     
       end   
-  
-      
     end
   end   
 end

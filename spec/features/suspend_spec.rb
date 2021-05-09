@@ -184,6 +184,6 @@ describe "admin suspend page" do
     click_button "Submit"
     expect(page).to have_content "Username/Password combination incorrect"
     clear_database
- end
-        clear_database
+  end
+ clear_database
 end

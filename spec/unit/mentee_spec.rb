@@ -99,6 +99,4 @@ RSpec.describe Mentee do
       expect(mentee.suspendMentee).to eq(1)
     end
   end
-
-
 end

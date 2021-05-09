@@ -443,9 +443,7 @@ it "tests editAdmin from adminMentor account" do
     visit "/editAdmin"
     expect(page).to have_content "Admin + Mentor Dashboard"
     clear_database
-  end
-end   
-
-    
-    clear_database
+      end
+    end   
+  clear_database
 end

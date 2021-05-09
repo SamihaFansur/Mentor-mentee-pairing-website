@@ -1,8 +1,5 @@
 require_relative "../spec_helper"
 
-
-    
-
 #tests that error message shows up when a nil mentee is attempted to be edited
 describe "the contact page" do
   

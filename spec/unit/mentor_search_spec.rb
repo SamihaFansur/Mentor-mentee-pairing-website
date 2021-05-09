@@ -10,7 +10,5 @@ RSpec.describe "Mentors App" do
         expect(last_response.body).to include("Your search revealed no mentors")
       end
     end
-
-
   end
 end

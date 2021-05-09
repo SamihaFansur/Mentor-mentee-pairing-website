@@ -72,7 +72,7 @@ context "a mentee" do
     expect(page).to have_content "spam"
     
     clear_database
-  end  
-end
-    clear_database
+      end  
+    end
+  clear_database
 end
