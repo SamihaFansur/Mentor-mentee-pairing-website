@@ -197,7 +197,7 @@ require_relative "../spec_helper"
     login_admin_mentor
     click_link "Mentor List"
     click_button "Block"
-    login_mentee
+    login_mentor
     expect(page).to have_content "Your account is suspended"
     clear_database
  end
