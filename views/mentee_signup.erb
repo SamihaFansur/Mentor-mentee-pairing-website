@@ -1,19 +1,17 @@
 <%= erb :"common/headerB" %>
-    <div class="background" id="statement">
-      <div class="full">
-        <div class="title">Mentee Sign Up</div> <!--Main page Title-->  
-        
-        <!-- Displays any errors -->
-        <% unless @error.nil? %>
-        <h2><strong class="error"><%= @error %></strong></h2>
-        <% end %>
-        
-        <form id="signupForm" name="myform" action="/MenteeSignUpForm" method="post">
-          <%= erb :"common/mentee_signup_form" %>          
-        </form>
+  <div class="background" id="statement">
+    <div class="full">
+      <div class="title">Mentee Sign Up</div>
 
-      </div>
+      <!-- Displays any errors -->
+      <% unless @error.nil? %>
+      <h2><strong class="error"><%= @error %></strong></h2>
+      <% end %>
 
-    </div> 
+      <form id="signupForm" name="myform" action="/MenteeSignUpForm" method="post">
+        <%= erb :"common/mentee_signup_form" %>          
+      </form>
 
+    </div>
+  </div> 
 <%= erb :"common/footer" %>

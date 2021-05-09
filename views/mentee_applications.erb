@@ -1,61 +1,59 @@
 <%= @header %>
 <div class="background" id="statement">
-  
-      <div class="full">
-        <h2>Mentee Applications</h2>
-        <p>You can only accept 1 mentee application!</p>
-        <div class="user_info" id="application">
-          <!-- Displays all the mentee applications the mentor has -->
-          <% if @usersIDList.count > 0 %>
-              <table class="displayTable">
-                <tr>
-                 <!-- The name of each column for the mentee applications table -->
-                  <th>Name</th>
-                  <th>Email</th>
-                  <th>Phone Number</th>
-                  <th>Course Year</th>
-                  <th>Faculty</th>
-                  <th>Course Name</th>
-                  <th>Description</th>
-                  <th>Accept application</th>
-                  <th>Reject application</th>
-                </tr>
-               <!-- Details of each mentee displayed -->
-              <% @usersIDList.each do |mentee| %>
-                <tr>
-                  <td><%= h mentee.name %></td>
-                  <td><%= h mentee.email %></td>
-                  <td><%= h mentee.phoneNum %></td>
-                  <td><%= h mentee.cyear %></td>
-                  <td><%= h mentee.faculty %></td>
-                  <td><%= h mentee.courseName %></td>
-                  <td><%= h mentee.description %></td>
-                  <td>
-                    <!--Action made by mentee to match with mentor -->
-                    <form method="post" action="matchWithMentee">
-                      <input type="hidden" name="menteeID" value="<%= mentee.id %>">
-                      <input type="hidden" name="mentorID" value="<%= $mentors %>">
-                      <button type="submit">Accept application</button>
-                    </form>
-                  </td>
-                   <td>
-                       <!--Action made by mentee to reject the mentor's application -->
-                    <form method="post" action="rejectMentee">
-                      <input type="hidden" name="menteeID" value="<%= mentee.id %>">
-                      <input type="hidden" name="mentorID" value="<%= $mentors %>">
-                      <button type="submit">Reject application</button>
-                    </form>
-                  </td>
-                </tr>
-              <% end %> 
-              </table>
-            <% else %>
-            <!-- Display errors if there are no mentee applications -->
-              <p id="searchError">There are no mentee applications.<br>You may already have a mentee!</p>
-            <% end %>
-         </div>
+  <div class="full">
+    <h2>Mentee Applications</h2>
+    <p>You can only accept 1 mentee application!</p>
+    <div class="user_info" id="application">
+      <!-- Displays all the mentee applications the mentor has -->
+      <% if @usersIDList.count > 0 %>
+          <table class="displayTable">
+            <tr>
+           <!-- Details of each mentee displayed -->
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone Number</th>
+              <th>Course Year</th>
+              <th>Faculty</th>
+              <th>Course Name</th>
+              <th>Description</th>
+              <th>Accept application</th>
+              <th>Reject application</th>
+            </tr>
+          <% @usersIDList.each do |mentee| %>
+            <tr>
+              <td><%= h mentee.name %></td>
+              <td><%= h mentee.email %></td>
+              <td><%= h mentee.phoneNum %></td>
+              <td><%= h mentee.cyear %></td>
+              <td><%= h mentee.faculty %></td>
+              <td><%= h mentee.courseName %></td>
+              <td><%= h mentee.description %></td>
+              <td>
+                <!--Action made by mentor to match with mentee -->
+                <form method="post" action="matchWithMentee">
+                  <input type="hidden" name="menteeID" value="<%= mentee.id %>">
+                  <input type="hidden" name="mentorID" value="<%= $mentors %>">
+                  <button type="submit">Accept application</button>
+                </form>
+              </td>
+               <td>
+                   <!--Action made by mentor to reject the mentee application -->
+                <form method="post" action="rejectMentee">
+                  <input type="hidden" name="menteeID" value="<%= mentee.id %>">
+                  <input type="hidden" name="mentorID" value="<%= $mentors %>">
+                  <button type="submit">Reject application</button>
+                </form>
+              </td>
+            </tr>
+          <% end %> 
+          </table>
+        <% else %>
+        <!-- Display errors if there are no mentee applications -->
+          <p id="searchError">There are no mentee applications.<br>You may already have a mentee!</p>
+        <% end %>
      </div>
-  
+     </div>
+ 
 </div> 
 
 <%= erb :"common/footer" %>

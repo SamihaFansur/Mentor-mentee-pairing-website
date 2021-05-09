@@ -1,7 +1,7 @@
 <%= @header %>
     <div class="background" id="statement">
       <div class="full">
-        <div class="title"><h3>Search for a <strong>Paired</strong> Mentee</h3></div> <!--Main page Title-->  
+        <div class="title"><h3>Search for a <strong>Paired</strong> Mentee</h3></div> 
 
           <form>
             <p>Choose a <strong>FACULTY</strong> to search in: 
@@ -24,8 +24,8 @@
           <!--Displays mentee details-->
           <% if @mentees.count > 0 %>
             <table class="displayTable">
+              <!-- Details of each mentee displayed along with matched mentor details-->
               <tr>
-                <!-- The name of each column for paired mentee table -->
                 <th>Mentee Name</th>
                 <th>Mentee Email</th>
                 <th>Faculty</th>
@@ -36,7 +36,6 @@
                <!--Displays the number of paired mentees -->
             <% (0...@mentees.count).each do |menteeMentor| %>
               <tr>
-                <!-- Details of each mentee displayed -->
                 <td><%= @menteesList[menteeMentor][0] %></td>
                 <td><%= @menteesList[menteeMentor][1] %></td>
                 <td><%= @menteesList[menteeMentor][2] %></td>

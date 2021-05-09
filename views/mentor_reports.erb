@@ -1,51 +1,50 @@
 <!-- Admin views the pending mentee applications mentees sent to potential mentors -->
 <%= @header %>
 <div class="background" id="statement">
-  
-      <div class="full">
-        <h2>Reports from mentors</h2>
-        <div class="userInfo" id="application">
-          <!-- Displays all the reports written by mentors -->
-          <% if @reportsInfo.count > 0 %>
-            <table class="displayTable">
-              <tr>
-                <!-- The name of each column for the mentor reports table -->
-                <th>Mentor ID</th>
-                <th>Mentor username</th>
-                <th>Report caption</th>
-                <th>View Report</th>
-                <th>Dismiss Report</th>
-              </tr>
-            <% (0...@reportsInfo.count).each do |report| %>
-                <!-- Details of each mentor's report -->
-              <tr>
-                <td><%= @reportsInfo[report][0] %></td>
-                <td><%= @reportsInfo[report][1] %></td>
-                <td><%= @reportsInfo[report][2] %></td>
-                <td>
-                <!-- Action to view the descriptions of the mentor -->
-                  <form method="get" action="/viewReport">
-                    <input type="hidden" name="reportID" value="<%= @reportsInfo[report][3] %>">
-                    <button type="submit">View</button>
-                  </form>
-                </td>
-                <td>
-                 <!-- Action to delete the descriptions of the mentor -->
-                  <form method="post" action="dismissReport">
-                    <input type="hidden" name="reportID" value="<%= @reportsInfo[report][3] %>">
-                    <button type="submit" onclick="alert('Report dismissed successfully.')">Dismiss</button>
-                  </form>
-                </td>
-              </tr>
-            <% end %> 
-            </table>
-          <% else %>
-                <!-- Displays error if admin has not received the mentor reports -->
-            <p id="searchError">No mentor has reported their mentee yet!</p>
-          <% end %>
-         </div>
+  <div class="full">
+    <h2>Reports from mentors</h2>
+    <div class="userInfo" id="application">
+      <!-- Displays all the reports written by mentors -->
+      <% if @reportsInfo.count > 0 %>
+        <table class="displayTable">
+          <tr>
+            <!-- The name of each column for the mentor reports table -->
+            <th>Mentor ID</th>
+            <th>Mentor username</th>
+            <th>Report caption</th>
+            <th>View Report</th>
+            <th>Dismiss Report</th>
+          </tr>
+        <% (0...@reportsInfo.count).each do |report| %>
+            <!-- Details of each mentor's report -->
+          <tr>
+            <td><%= @reportsInfo[report][0] %></td>
+            <td><%= @reportsInfo[report][1] %></td>
+            <td><%= @reportsInfo[report][2] %></td>
+            <td>
+            <!-- Action to view the report details-->
+              <form method="get" action="/viewReport">
+                <input type="hidden" name="reportID" value="<%= @reportsInfo[report][3] %>">
+                <button type="submit">View</button>
+              </form>
+            </td>
+            <td>
+             <!-- Action to dismiss the report-->
+              <form method="post" action="dismissReport">
+                <input type="hidden" name="reportID" value="<%= @reportsInfo[report][3] %>">
+                <button type="submit" onclick="alert('Report dismissed successfully.')">Dismiss</button>
+              </form>
+            </td>
+          </tr>
+        <% end %> 
+        </table>
+      <% else %>
+            <!-- Displays error if admin has not received the mentor reports -->
+        <p id="searchError">No mentor has reported their mentee yet!</p>
+      <% end %>
      </div>
-  
+   </div>
+
 </div> 
 
 <%= erb :"common/footer" %>

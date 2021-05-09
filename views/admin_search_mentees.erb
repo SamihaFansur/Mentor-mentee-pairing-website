@@ -1,33 +1,30 @@
 <%= @header %>
     <div class="background" id="statement">
       <div class="full">
-        <div class="title">Mentee List</div>      
+        <div class="title">Mentee List</div>
+          <!-- Using mentee's username to search the mentee database-->
+          <form>
+            <p>Enter the <strong>Username</strong> to find a Mentee: 
+              <input type="text" name="userName_search" id="searchForMentee" placeholder="Enter the username to search..." maxlength="40" size="30" value="<%= h @userName_search %>"/>
+              <input type="submit" value="Submit" />
+            </p>
+          </form>
+
+          <!--List of errors depending on action performed -->
+          <% if @error1 %>
+          <h2><strong class="error">Account has already been suspended</strong></h2>
+          <% end %>
+          <% if @error2 %>
+          <h2><strong class="error">Account has already been unsuspended</strong></h2>
+          <% end %>
+          <% if @error3 %>
+          <h2><strong class="error">Account has already been blocked</strong></h2>
+          <% end %>
+          <% if @error4 %>
+          <h2><strong class="error">Account has already been unblocked</strong></h2>
+          <% end %>
           
-
-            <!-- Using mentee's username to search the mentee database-->
-            <form>
-              <p>Enter the <strong>Username</strong> to find a Mentee: 
-                <input type="text" name="userName_search" id="searchForMentee" placeholder="Enter the username to search..." maxlength="40" size="30" value="<%= h @userName_search %>"/>
-                <input type="submit" value="Submit" />
-              </p>
-            </form>
-
-
-        <!--List of errors depending on action performed -->
-        <% if @error1 %>
-        <h2><strong class="error">Account has already been suspended</strong></h2>
-        <% end %>
-        <% if @error2 %>
-        <h2><strong class="error">Account has already been unsuspended</strong></h2>
-        <% end %>
-        <% if @error3 %>
-        <h2><strong class="error">Account has already been blocked</strong></h2>
-        <% end %>
-        <% if @error4 %>
-        <h2><strong class="error">Account has already been unblocked</strong></h2>
-        <% end %>
-          
-          <!--Displays the mentor details-->
+          <!--Displays the mentee details-->
           <% if @searchedUser.count> 0 %>
             <table class="displayTable">
               <tr id="TableHeadings">
@@ -41,12 +38,12 @@
               </tr>
             <% @searchedUser.each do |mentee| %>
               <tr>
-                <!--display the content from mentee table-->
                 <td><%= h mentee.username %></td>
                 <td><%= h mentee.name %></td>
                 <td><%= h mentee.email %></td>
                 <td><%= h mentee.phoneNum %></td>
                 <td>
+                    <!--Link to edit a mentee profile-->
                     <a href="/editMentee?id=<%= h mentee.id %>"><button>Edit Profile</button></a>
                 </td>
                 <td>
@@ -55,7 +52,7 @@
                     <input type="hidden" name="menteeID" value="<%= mentee.id %>">
                     <button type="submit">Suspend</button>
                   </form>
-                    <!--Suspend mentee-->
+                    <!--Unsuspend mentee-->
                   <form method="post" action="unsuspendMentee">
                     <input type="hidden" name="menteeID" value="<%= mentee.id %>">
                     <button type="submit">Unsuspend</button>

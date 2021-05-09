@@ -1,29 +1,28 @@
 <%= @header %>
     <div class="background" id="statement">
       <div class="full">
-        <div class="title">Mentor List</div>  
-                 
-            <form>
-              <p>Enter the <strong>Username</strong> to find a Mentor: 
-                <!-- Gets the search value(mentor course name) to be searched -->
-                <input type="text" name="userName_search" id="searchForMentor" placeholder="Enter the username to search..." maxlength="40" size="30" value="<%= h @userName_search %>"/>
-                <input type="submit" value="Submit" />
-              </p>
-            </form>
+        <div class="title">Mentor List</div>     
+          <form>
+            <p>Enter the <strong>Username</strong> to find a Mentor: 
+              <!-- Gets the search value(mentor course name) to be searched -->
+              <input type="text" name="userName_search" id="searchForMentor" placeholder="Enter the username to search..." maxlength="40" size="30" value="<%= h @userName_search %>"/>
+              <input type="submit" value="Submit" />
+            </p>
+          </form>
 
-        <!--List of errors depending on action performed -->
-        <% if @error1 %>
-        <h2><strong class="error">Account has already been suspended</strong></h2>
-        <% end %>
-        <% if @error2 %>
-        <h2><strong class="error">Account has already been unsuspended</strong></h2>
-        <% end %>
-        <% if @error3 %>
-        <h2><strong class="error">Account has already been blocked</strong></h2>
-        <% end %>
-        <% if @error4 %>
-        <h2><strong class="error">Account has already been unblocked</strong></h2>
-        <% end %>
+          <!--List of errors depending on action performed -->
+          <% if @error1 %>
+          <h2><strong class="error">Account has already been suspended</strong></h2>
+          <% end %>
+          <% if @error2 %>
+          <h2><strong class="error">Account has already been unsuspended</strong></h2>
+          <% end %>
+          <% if @error3 %>
+          <h2><strong class="error">Account has already been blocked</strong></h2>
+          <% end %>
+          <% if @error4 %>
+          <h2><strong class="error">Account has already been unblocked</strong></h2>
+          <% end %>
           
           <!--Displays the mentor details-->
           <% if @searchedUser.count> 0 %>
@@ -40,7 +39,6 @@
               </tr>
             <% @searchedUser.each do |mentor| %>
               <tr>
-                  <!--display the content from mentee -->
                 <td><%= h mentor.username %></td>
                 <td><%= h mentor.name %></td>
                 <td><%= h mentor.email %></td>

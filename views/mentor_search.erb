@@ -4,7 +4,7 @@
         <div class="title">Search for a Mentor</div> <!--Main page Title-->  
         <h3>You can only send 1 mentor an application within 2 weeks!</h3>
         
-        <!-- Displays error if the mentee has sent the apllication -->
+        <!-- Displays error if the mentee has sent the application -->
         <% if @error1 %>
         <h2><strong class="error">Application already sent!</strong></h2>
         <% end %> 
@@ -13,19 +13,18 @@
         <h2><strong class="error">You already have a mentor!</strong></h2>
         <% end %> 
 
-            <form>
-              <p>Enter a <strong>COURSE NAME</strong> to display mentors: 
-                <!-- Gets the search value(mentor course name) to be searched -->
-                <input type="text" name="courseName_search" id="searchForMentor" placeholder="Enter course name to search..." maxlength="40" size="30" value="<%= h @courseName_search %>"/>
-                <input type="submit" value="Submit" />
-              </p>
-            </form>
+        <form>
+          <p>Enter a <strong>COURSE NAME</strong> to display mentors: 
+            <!-- Gets the search value(mentor course name) to be searched -->
+            <input type="text" name="courseName_search" id="searchForMentor" placeholder="Enter course name to search..." maxlength="40" size="30" value="<%= h @courseName_search %>"/>
+            <input type="submit" value="Submit" />
+          </p>
+        </form>
           
           <!--Displays the mentor details-->
           <% if @mentors.count > 0 %>
             <table class="displayTable">
               <tr>
-                <!-- The name of each column for mentor search table -->
                 <th>Name</th>
                 <th>Email</th>
                 <th>Phone Number</th>
@@ -35,7 +34,6 @@
               </tr>
             <% @mentors.each do |mentor| %>
               <tr>
-                <!-- Diplays mentor's details -->
                 <td><%= h mentor.name %></td>
                 <td><%= h mentor.email %></td>
                 <td><%= h mentor.phoneNum %></td>

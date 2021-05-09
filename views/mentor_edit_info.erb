@@ -1,34 +1,34 @@
 <%= @header %>
-    <div class="background" id="statement">
-      <div class="full">
-        <div class="title">Edit your information</div> <!--Main page Title-->
-          <!-- Checks if the mentor information exists -->
-        <% if @mentors.nil? %>
-            <p class="error"><strong>Unknown mentor</strong></p>
-        <% else %>
-          <!--Checks for errors and displays any error messages -->
-        <% unless @mentors.errors.size.zero? %>
-            <p><strong class="error">Please correct the errors below:</strong></p>
-        <% end %>
-        <% if @error1 %>
-          <p class="error"><strong>Email exists</strong></p>
-        <% end %>
-          <!--Displays the edit information form -->
-        <form method="post">
+  <div class="background" id="statement">
+    <div class="full">
+      <div class="title">Edit your information</div> <!--Main page Title-->
+        <!-- Checks if the mentor information exists -->
+      <% if @mentors.nil? %>
+          <p class="error"><strong>Unknown mentor</strong></p>
+      <% else %>
+        <!--Checks for errors and displays any error messages -->
+      <% unless @mentors.errors.size.zero? %>
+          <p><strong class="error">Please correct the errors below:</strong></p>
+      <% end %>
+      <% if @error1 %>
+        <p class="error"><strong>Email exists</strong></p>
+      <% end %>
+        <!--Displays the edit information form -->
+      <form method="post">
+          <input type="hidden" name="id" value="<%= @mentors.id %>" />
+          <%= erb :"common/mentor_edit_form" %>
+      </form>
+      <div class="warning">
+          <!--Warning message as a deletion removes the record from the database -->
+        <p><strong>WARNING! Deleting your profile cannot be undone.</strong></p>
+        <form method="post" action="/deleteMentor">
             <input type="hidden" name="id" value="<%= @mentors.id %>" />
-            <%= erb :"common/mentor_edit_form" %>
+            <input type="submit" value="Delete" onclick="return confirm('Are you sure?')" />
         </form>
-        <div class="warning">
-            <!--Warning message as a deletion removes the record from the database -->
-          <p><strong>WARNING! Deleting your profile cannot be undone.</strong></p>
-          <form method="post" action="/deleteMentor">
-              <input type="hidden" name="id" value="<%= @mentors.id %>" />
-              <input type="submit" value="Delete" onclick="return confirm('Are you sure?')" />
-          </form>
-        </div>
-<% end %>
-<!--Return to mentor dashboard -->
-<p class="navigation">Return to <a href="/MentorDashboard">Mentor Dashboard</a>.</p>
       </div>
-</div>
+      <% end %>
+      <!--Return to mentor dashboard -->
+      <p class="navigation">Return to <a href="/MentorDashboard">Mentor Dashboard</a>.</p>
+    </div>
+  </div>
 <%= erb :"common/footer" %>

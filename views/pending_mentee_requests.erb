@@ -1,40 +1,39 @@
 <!-- Admin views the pending mentee applications mentees sent to potential mentors -->
 <%= @header %>
 <div class="background" id="statement">
-  
-      <div class="full">
-        <h2>Pending Mentee Requests</h2>
-        <div class="userInfo" id="application">
-          <!-- Displays all the mentee applications that are pending -->
-          <% if @requests.count > 0 %>
-            <table class="displayTable">
-              <tr>
-                <!-- The name of each column for mentee applications table -->
-                <th>Mentee ID</th>
-                <th>Mentee Name</th>
-                <th>Mentee Email</th>
-                <th>Mentor ID</th>
-                <th>Mentor Name</th>
-                <th>Mentor Email</th>
-              </tr>
-            <% (0...@requests.count).each do |request| %>
-              <tr>
-                <!-- diplays mentee's details and mentor's details -->
-                <td><%= @menteesInfo[request][0] %></td>
-                <td><%= @menteesInfo[request][1] %></td>
-                <td><%= @menteesInfo[request][2] %></td>
-                <td><%= @mentorsInfo[request][0] %></td>
-                <td><%= @mentorsInfo[request][1] %></td>
-                <td><%= @mentorsInfo[request][2] %></td>
-              </tr>
-            <% end %> 
-            </table>
-          <% else %>
-               <!--  displays the error if there are no mentee requests -->
-            <p id="searchError">There are no pending mentee requests at this moment!</p>
-          <% end %>
-         </div>
+  <div class="full">
+    <h2>Pending Mentee Requests</h2>
+    <div class="userInfo" id="application">
+      <!-- Displays all the mentee applications that are pending -->
+      <% if @requests.count > 0 %>
+        <table class="displayTable">
+          <tr>
+            <!-- The name of each column for mentee applications table -->
+            <th>Mentee ID</th>
+            <th>Mentee Name</th>
+            <th>Mentee Email</th>
+            <th>Mentor ID</th>
+            <th>Mentor Name</th>
+            <th>Mentor Email</th>
+          </tr>
+        <% (0...@requests.count).each do |request| %>
+          <tr>
+            <!-- diplays mentee's details and mentor's details -->
+            <td><%= @menteesInfo[request][0] %></td>
+            <td><%= @menteesInfo[request][1] %></td>
+            <td><%= @menteesInfo[request][2] %></td>
+            <td><%= @mentorsInfo[request][0] %></td>
+            <td><%= @mentorsInfo[request][1] %></td>
+            <td><%= @mentorsInfo[request][2] %></td>
+          </tr>
+        <% end %> 
+        </table>
+      <% else %>
+           <!--  displays the error if there are no mentee requests -->
+        <p id="searchError">There are no pending mentee requests at this moment!</p>
+      <% end %>
      </div>
+   </div>
   
 </div> 
 

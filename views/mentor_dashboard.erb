@@ -1,39 +1,38 @@
 <%= erb :"common/header_mentorA" %>
 <div class="background" id="statement">
-  
-      <div class="full" id="dashboard">
-        <h2>Mentor Dashboard</h2>
-        <div id="dashboardBody">
-          <aside class="leftSide">
-            <!-- Displays the details of the mentor logged in -->
-            <div class="userInfo">
-              <h3>My Information</h3>
-              <p><b>Name: </b> <i><%= h $mentors.name %></i></p>
-              <p><b>Email: </b> <i><%= h $mentors.email %></i></p>
-              <p><b>Phone Number: </b> <i><%= h $mentors.phoneNum %></i></p>
-              <p><b>Job Title: </b> <i><%= h $mentors.jobTitle %></i></p>
-              <p><b>Course Name: </b> <i><%= h $mentors.courseName %></i> </p>
-              <p><b>Description: </b> <i><%= h $mentors.description %></i> </p>
-            </div>
-          </aside>
-
-          <aside class="rightSide">
-            <div class="full searchOptions">
-              <h3>Options</h3>
-              <!--Link to view mentees that send application to this mentor -->
-              <p class="searchInfo"><a href="/menteeApplications">View mentee applications</a></p>
-              <!--Link to edit personal information -->
-              <p><a href="/editMentor?id=<%= h $mentors.id %>">Edit Profile</a></p>
-            </div>
-
-            <div class="full searchOptions">
-              <h3>My Mentee</h3>
-              <!--Link to view the matched mentee -->             
-              <p class="searchInfo"><a href="/myMentee" class="link">My Mentee</a></p>                
-            </div>
-          </aside>
+  <div class="full" id="dashboard">
+    <h2>Mentor Dashboard</h2>
+    <div id="dashboardBody">
+      <aside class="leftSide">
+        <!-- Displays the details of the mentor logged in -->
+        <div class="userInfo">
+          <h3>My Information</h3>
+          <p><b>Name: </b> <i><%= h $mentors.name %></i></p>
+          <p><b>Email: </b> <i><%= h $mentors.email %></i></p>
+          <p><b>Phone Number: </b> <i><%= h $mentors.phoneNum %></i></p>
+          <p><b>Job Title: </b> <i><%= h $mentors.jobTitle %></i></p>
+          <p><b>Course Name: </b> <i><%= h $mentors.courseName %></i> </p>
+          <p><b>Description: </b> <i><%= h $mentors.description %></i> </p>
         </div>
-     </div>
+      </aside>
+
+      <aside class="rightSide">
+        <div class="full searchOptions">
+          <h3>Options</h3>
+          <!--Link to view mentees that send application to this mentor -->
+          <p class="searchInfo"><a href="/menteeApplications">View mentee applications</a></p>
+          <!--Link to edit personal information -->
+          <p><a href="/editMentor?id=<%= h $mentors.id %>">Edit Profile</a></p>
+        </div>
+
+        <div class="full searchOptions">
+          <h3>My Mentee</h3>
+          <!--Link to view the matched mentee -->             
+          <p class="searchInfo"><a href="/myMentee" class="link">My Mentee</a></p>                
+        </div>
+      </aside>
+    </div>
+ </div>
   
 </div> 
 
