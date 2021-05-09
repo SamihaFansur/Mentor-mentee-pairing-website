@@ -44,4 +44,6 @@ mentor1 mentor1
 mentor2 mentor2
 
 **Running Rspec tests:**
-- To run the tests make sure you're in the project directory and run "rspec spec/features/test-file" or "rspec spec/unit/test-file" where "test-file" is the test you want to run e.g. "edit_spec.rb"
+-To run the tests make sure you're in the project directory and run "rspec spec/features/test-file" or "rspec spec/unit/test-file" where "test-file" is the test you want to run e.g. "edit_spec.rb"
+-To run the entire library of tests the command “rspec” will do this. “Rspec spec” can also be used for this purpose. 
+-The tests will make changes to the database so the tests should be returned to their previous state after running all of the tests. This is done using “git checkout db/testing.sqlite3” 
