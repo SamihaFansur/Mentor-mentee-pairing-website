@@ -25,7 +25,7 @@
 - Install gems by typing "bundle install" in the terminal
 - Type in "ruby app.rb" to start up the website on the webserver
 - in your browser, in a new tab type https://oberon-aurora-4567.codio.io/ in the codio terminal
-    and the portNumber is the port number displayed in the terminal once you run app.rb
+    and the portNumber is the port number displayed in the terminal once you run app.rb, also change "oberon-aurora" to the codio box name in your terminal.
 - In the terminal press "CTRL+C" in the terminal to stop the webserver
 **Make sure the requests table is empty before you run the webserver**
 
