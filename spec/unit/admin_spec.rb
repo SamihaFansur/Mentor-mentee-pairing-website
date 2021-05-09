@@ -50,8 +50,4 @@ RSpec.describe Admin do
       expect(admin.activationToken).to eq(1)
     end
   end
-
-
-
-
 end
