@@ -28,7 +28,7 @@
                   <td><%= h mentor.courseName %></td>
                   <td><%= h mentor.description %></td>
                   <td>
-                    <!-- Not match with mentor so that the mentor could not be My Mentor                       -->
+                    <!-- Unmatch with mentor-->
                     <form method="post" action="unsend">
                       <input type="hidden" name="mentorID" value="<%= mentor.id %>">
                       <input type="hidden" name="menteeID" value="<%= $mentees %>">
@@ -36,7 +36,7 @@
                     </form>
                   </td>
                   <td>
-                    <!-- Match with mentor so that the mentor could be My Mentor                       -->
+                    <!-- Match with mentor-->
                     <form method="post" action="matchWithMentor">
                       <input type="hidden" name="mentorID" value="<%= mentor.id %>">
                       <input type="hidden" name="menteeID" value="<%= $mentees %>">

@@ -25,7 +25,7 @@
           <% if @mentees.count > 0 %>
             <table class="displayTable">
               <tr>
-                <!-- The name of each column for paired mentee table        -->
+                <!-- The name of each column for paired mentee table -->
                 <th>Mentee Name</th>
                 <th>Mentee Email</th>
                 <th>Faculty</th>
@@ -33,7 +33,7 @@
                 <th>Mentor Name</th>
                 <th>Mentor Email</th>
               </tr>
-               <!--Displays the number of paired mentee                  -->
+               <!--Displays the number of paired mentees -->
             <% (0...@mentees.count).each do |menteeMentor| %>
               <tr>
                 <!-- Details of each mentee displayed -->
@@ -47,7 +47,7 @@
             <% end %> 
             </table>
           <% else %>
-           <!-- displays errors if no mentor has a mentee            -->
+           <!-- displays errors if there are no paired mentors/mentees -->
             <p id="searchError">No mentees appear to be paired with a mentor.</p>
           <% end %>
       </div>

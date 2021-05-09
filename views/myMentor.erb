@@ -8,7 +8,7 @@
           <!-- Displays the details of the mentor the mentee is matched to -->
           <% if @usersIDList.count > 0 %>
               <h2>Mentor Infomation:</h2>
-                <!--  Displays my mentor's details            -->
+                <!--  Displays my mentor's details -->
               <% @usersIDList.each do |mentor| %>
                 <p><b>Name: </b> <i><%= h mentor.name %></i></p>
                 <p><b>Email: </b> <i><%= h mentor.email %></i></p>
@@ -19,7 +19,7 @@
                 <!-- Action to request a meeting with my mentor             -->
                 <form method="post" action="requestMentorMeeting">
                   <input type="hidden" name="menteeID" value="<%= $mentees.id %>">
-                  <% if $mentee_req == 1 %> <!--If mentee has requested a meeting within past 24hrs-->
+                  <% if $mentee_req == 1 %> <!--If mentee has requested a meeting within past 24hrs -->
                     <input type="submit" value="Request Mentor Meeting" disabled />
                   <% else %>
                     <input type="submit" value="Request Mentor Meeting" onclick="alert('Your mentor has been notified!\nIf you do not reveive a response from your mentor in 24 hours you can request them again.')"/>
@@ -27,7 +27,7 @@
                 </form>
               <% end %>
             <% else %>
-                <!--Displays errors if the mentee does not have a mentor              -->
+                <!--Displays errors if the mentee does not have a mentor -->
               <p id="searchError">You do not have a mentor yet!</p>
             <% end %>
         </div>

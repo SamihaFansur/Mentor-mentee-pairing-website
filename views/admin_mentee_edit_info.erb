@@ -1,27 +1,25 @@
 <%= @header %>
     <div class="background" id="statement">
       <div class="full">
-        <div class="title">Edit mentee information</div> <!--Main page Title-->
-          <!-- Checks if there are no mentees           -->
+        <div class="title">Edit mentee information</div>
+          <!-- Checks if the mentee information exists -->
         <% if @mentees.nil? %>
             <p class="error"><strong>Unknown mentee</strong></p>
         <% else %>
-          <!--Checks if erros exist and displays error message if they do.-->
+          <!--Checks for errors and displays any error messages -->
         <% unless @mentees.errors.size.zero? %>
             <p><strong class="error">Please correct the errors below:</strong></p>
         <% end %>
-          <!-- Checks if the email is the same with others           -->
         <% if @error1 %>
           <p class="error"><strong>Email exists</strong></p>
         <% end %>
-          <!--If the mentee list is not empty,
-            the admin could display the edit mentee form and edit the mentee's information           -->
+          <!--Displays the edit information form -->
         <form method="post">
             <input type="hidden" name="id" value="<%= @mentees.id %>" />
             <%= erb :"common/mentee_edit_form" %>
         </form>
         <div class="warning">
-            <!--If the admin delete this account, it will not be found in the future               -->
+            <!--Warning message as a deletion removes the record from the database -->
           <p><strong>WARNING! Deleting a profile cannot be undone.</strong></p>
           <form method="post" action="/deleteMentee">
               <input type="hidden" name="id" value="<%= @mentees.id %>" />

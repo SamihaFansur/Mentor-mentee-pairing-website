@@ -25,7 +25,7 @@
           <% if @mentors.count > 0 %>
             <table class="displayTable">
               <tr>
-                <!-- The name of each column for mentor search table         -->
+                <!-- The name of each column for mentor search table -->
                 <th>Name</th>
                 <th>Email</th>
                 <th>Phone Number</th>
@@ -35,13 +35,13 @@
               </tr>
             <% @mentors.each do |mentor| %>
               <tr>
-                <!-- diplays mentors' details                   -->
+                <!-- Diplays mentor's details -->
                 <td><%= h mentor.name %></td>
                 <td><%= h mentor.email %></td>
                 <td><%= h mentor.phoneNum %></td>
                 <td><%= h mentor.jobTitle %></td>
                 <td><%= h mentor.courseName %></td>
-                <!-- Allow mentee sends an application to one of the mentor                 -->
+                <!-- Allow mentee sends an application to one of the mentor -->
                 <td>
                   <form method="post" action="addApplication">
                     <input type="hidden" name="menteeID" value="<%= $mentees.id %>">
@@ -55,7 +55,7 @@
             <% end %> 
             </table>
           <% else %>
-          <!-- displays errors if there are no mentors            -->
+          <!-- displays errors if there are no mentors found in search-->
             <p id="searchError">Your search revealed no mentors</p>
           <% end %>
       </div>

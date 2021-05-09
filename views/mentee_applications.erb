@@ -9,7 +9,7 @@
           <% if @usersIDList.count > 0 %>
               <table class="displayTable">
                 <tr>
-                 <!-- The name of each column for the mentee applications table        -->
+                 <!-- The name of each column for the mentee applications table -->
                   <th>Name</th>
                   <th>Email</th>
                   <th>Phone Number</th>
@@ -31,7 +31,7 @@
                   <td><%= h mentee.courseName %></td>
                   <td><%= h mentee.description %></td>
                   <td>
-                    <!--Action made by mentee to match with mentor                        -->
+                    <!--Action made by mentee to match with mentor -->
                     <form method="post" action="matchWithMentee">
                       <input type="hidden" name="menteeID" value="<%= mentee.id %>">
                       <input type="hidden" name="mentorID" value="<%= $mentors %>">
@@ -39,7 +39,7 @@
                     </form>
                   </td>
                    <td>
-                       <!--Action made by mentee to reject the mentor's application                        -->
+                       <!--Action made by mentee to reject the mentor's application -->
                     <form method="post" action="rejectMentee">
                       <input type="hidden" name="menteeID" value="<%= mentee.id %>">
                       <input type="hidden" name="mentorID" value="<%= $mentors %>">
@@ -50,7 +50,7 @@
               <% end %> 
               </table>
             <% else %>
-            <!-- display errors if there are no mentee applications             -->
+            <!-- Display errors if there are no mentee applications -->
               <p id="searchError">There are no mentee applications.<br>You may already have a mentee!</p>
             <% end %>
          </div>
