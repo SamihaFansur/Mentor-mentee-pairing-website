@@ -19,6 +19,8 @@ class Mentor < Sequel::Model
 
   #Function called when logging in
   def load(params)
+    #Assigns each field from the table to a variable in order to be called upon later
+    #.strip is used to remove any accidental whitespaces
     self.fname = params.fetch("fname", "").strip
     self.lname = params.fetch("lname", "").strip
     self.email = params.fetch("email", "").strip
@@ -38,14 +40,16 @@ class Mentor < Sequel::Model
     self.phoneNum = params.fetch("phoneNum", self.phoneNum).strip
     self.username = params.fetch("username", self.username).strip
     self.password = params.fetch("password", self.password).strip
+    #Unless statements used to account for empty table entries
     self.jobTitle = params.fetch("jobTitle").strip unless params.fetch("jobTitle").strip == ""
     self.courseName = params.fetch("courseName").strip unless params.fetch("courseName").strip == ""
-    #Done the last bit since initially description is empty
+    #Description is initially set to nil so the unless statement is designed to catch that
     self.description = params.fetch("description").strip unless params.fetch("description").strip == "" || params.fetch("description").nil?
   end
 
   #Validates if username and password is empty
   def validate
+    #Sequel contains a validate method, it is called and overridden with our own rules
     super
     errors.add("username", "cannot be empty") if username.empty?
     errors.add("password", "cannot be empty") if password.empty?
@@ -53,6 +57,8 @@ class Mentor < Sequel::Model
   
   #Checks if username/email already in any database to prevent multiple sign ups
   def exist_signup?
+    #Creates an instance of each type of user and then checks to ensure that user does not exist
+    #Checks that both the email and username are not already in use
     other_mentors = Mentor.first(username: username)
     mentors =  Mentor.first(email: email)
     mentor_exist = !other_mentors.nil? ||  !mentors.nil?
@@ -78,6 +84,7 @@ class Mentor < Sequel::Model
   def account_suspended?
     other_mentors = Mentor.first(username: username)
     if !other_mentors.nil? && other_mentors.password == password
+      #The database stores a binary value depending on whether the user has been suspended by an admin or not
       if other_mentors.suspendMentor == 1
         return true
       else

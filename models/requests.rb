@@ -4,6 +4,8 @@ require "time"
 class Request < Sequel::Model 
   #Loads the params from the requests table
   def load(menteeID, mentorID)
+    #Assigns each field from the table to a variable in order to be called upon later
+    #.strip is used to remove any accidental whitespaces
     self.mentorID = mentorID
     self.menteeID = menteeID
   end
