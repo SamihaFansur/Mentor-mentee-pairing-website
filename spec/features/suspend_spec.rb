@@ -98,10 +98,10 @@ describe "admin suspend page" do
     
     #check if the matched mentor could be suspended
     it "test the matched mentor can be suspended" do
-    clear_database
+     clear_database
     add_test_mentor
     add_test_user
-    login_mentor     
+    login_mentor      
     login_mentee
     #check if the mentee could search the mentor using the course name
     visit "/search"
