@@ -168,8 +168,8 @@ post "/requestMentorMeeting" do
   mentee_requesting.save_changes
   
   Thread.new{
-#             sleep(24*60*60) #Button enabled after a day
-            sleep(15) #Button enabled after 15 secs, use when running rspec tests
+            sleep(24*60*60) #Button enabled after a day
+#             sleep(15) #Button enabled after 15 secs, use when running rspec tests
             $mentee_req = 0 #resets so mentee can request mentor for a meeting again
             mentee_requesting.requestMentorMeeting = $mentee_req
             mentee_requesting.save_changes

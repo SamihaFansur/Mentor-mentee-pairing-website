@@ -16,8 +16,8 @@ post "/reportMenteeForm" do
   mentor_reporting.save_changes
   
   Thread.new{
-#             sleep(48*60*60) #Button enabled after 2 days
-            sleep(10) #button enabled after 10 secs, used when running rspec tests
+            sleep(48*60*60) #Button enabled after 2 days
+#             sleep(10) #button enabled after 10 secs, used when running rspec tests
             mentor_reporting.reportMentee = 0 #So mentor can report their mentee again
             mentor_reporting.save_changes
   }

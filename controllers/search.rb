@@ -39,8 +39,8 @@ post "/addApplication" do
       
       #Parallel thread deletes mentee application and sets applicationNumber to 1 after 14 days. So mentee can request another mentor
       Thread.new{
-#         sleep(14*24*60*60) #14 days in seconds
-        sleep(180) #3 mins, use when running rspec tests
+        sleep(14*24*60*60) #14 days in seconds
+#         sleep(180) #3 mins, use when running rspec tests
         @requests.delete #deletes mentee request if its still pending
         @requests.save_changes
         
