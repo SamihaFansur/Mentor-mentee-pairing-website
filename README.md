@@ -1,3 +1,6 @@
+**CONTRIBUTORS**
+[Samiha Fansur](https://github.com/SamihaFansur)
+
 **Setup Guide:**
 
 *~note: all commands are surrounded by speech marks, remove these when runnning the command~*
