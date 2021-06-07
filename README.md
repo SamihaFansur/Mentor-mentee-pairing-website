@@ -1,4 +1,4 @@
-**CONTRIBUTORS: **
+**CONTRIBUTORS**:
 [Samiha Fansur](https://github.com/SamihaFansur)
 
 **Setup Guide:**
