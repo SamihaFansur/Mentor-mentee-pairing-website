@@ -1,5 +1,5 @@
 **CONTRIBUTORS**:
-[Samiha Fansur](https://github.com/SamihaFansur)
+[Samiha Fansur](https://github.com/SamihaFansur) [Euan Goodbrand] (https://github.com/euangoodbrand)
 
 **Setup Guide:**
 
