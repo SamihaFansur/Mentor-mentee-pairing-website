@@ -294,3 +294,139 @@ I, [2021-05-05T17:07:08.929445 #432]  INFO -- : (0.000015s) BEGIN
 I, [2021-05-05T17:07:08.929766 #432]  INFO -- : (0.000184s) INSERT INTO `mentors` (`fname`, `lname`, `email`, `phoneNum`, `username`, `password`, `jobTitle`, `courseName`) VALUES ('June', 'Smyth', 'jsmyth2@sheffield.ac.uk', '+87 43234343', 'mentor2', 'mentor2', 'Administrative Specialist', 'Architectural Engineering with a Year in Industry (MEng)')
 I, [2021-05-05T17:07:08.929995 #432]  INFO -- : (0.000110s) SELECT * FROM `mentors` WHERE `id` = 2
 I, [2021-05-05T17:07:09.029193 #432]  INFO -- : (0.099117s) COMMIT
+I, [2023-06-12T22:50:15.295687 #33600]  INFO -- : (0.000751s) PRAGMA foreign_keys = 1
+I, [2023-06-12T22:50:15.296016 #33600]  INFO -- : (0.000030s) PRAGMA case_sensitive_like = 1
+I, [2023-06-12T22:50:15.306809 #33600]  INFO -- : (0.000114s) SELECT sqlite_version()
+I, [2023-06-12T22:50:15.307292 #33600]  INFO -- : (0.000210s) PRAGMA table_xinfo('admins')
+I, [2023-06-12T22:50:15.315935 #33600]  INFO -- : (0.000263s) PRAGMA table_xinfo('mentees')
+I, [2023-06-12T22:50:15.325795 #33600]  INFO -- : (0.000213s) PRAGMA table_xinfo('mentors')
+I, [2023-06-12T22:50:15.334160 #33600]  INFO -- : (0.000200s) PRAGMA table_xinfo('reports')
+I, [2023-06-12T22:50:15.340550 #33600]  INFO -- : (0.000224s) PRAGMA table_xinfo('requests')
+I, [2023-06-12T22:51:24.325686 #39908]  INFO -- : (0.000306s) PRAGMA foreign_keys = 1
+I, [2023-06-12T22:51:24.326064 #39908]  INFO -- : (0.000041s) PRAGMA case_sensitive_like = 1
+I, [2023-06-12T22:51:24.329881 #39908]  INFO -- : (0.000106s) SELECT sqlite_version()
+I, [2023-06-12T22:51:24.330391 #39908]  INFO -- : (0.000278s) PRAGMA table_xinfo('admins')
+I, [2023-06-12T22:51:24.332814 #39908]  INFO -- : (0.000290s) PRAGMA table_xinfo('mentees')
+I, [2023-06-12T22:51:24.335724 #39908]  INFO -- : (0.000255s) PRAGMA table_xinfo('mentors')
+I, [2023-06-12T22:51:24.337828 #39908]  INFO -- : (0.000142s) PRAGMA table_xinfo('reports')
+I, [2023-06-12T22:51:24.340509 #39908]  INFO -- : (0.000283s) PRAGMA table_xinfo('requests')
+I, [2023-06-12T23:15:29.439374 #39584]  INFO -- : (0.000294s) PRAGMA foreign_keys = 1
+I, [2023-06-12T23:15:29.439715 #39584]  INFO -- : (0.000031s) PRAGMA case_sensitive_like = 1
+I, [2023-06-12T23:15:29.442474 #39584]  INFO -- : (0.000093s) SELECT sqlite_version()
+I, [2023-06-12T23:15:29.442821 #39584]  INFO -- : (0.000167s) PRAGMA table_xinfo('admins')
+I, [2023-06-12T23:15:29.444461 #39584]  INFO -- : (0.000177s) PRAGMA table_xinfo('mentees')
+I, [2023-06-12T23:15:29.446164 #39584]  INFO -- : (0.000170s) PRAGMA table_xinfo('mentors')
+I, [2023-06-12T23:15:29.447614 #39584]  INFO -- : (0.000123s) PRAGMA table_xinfo('reports')
+I, [2023-06-12T23:15:29.448980 #39584]  INFO -- : (0.000151s) PRAGMA table_xinfo('requests')
+I, [2023-06-12T23:17:25.455395 #21976]  INFO -- : (0.000284s) PRAGMA foreign_keys = 1
+I, [2023-06-12T23:17:25.455722 #21976]  INFO -- : (0.000029s) PRAGMA case_sensitive_like = 1
+I, [2023-06-12T23:17:25.458892 #21976]  INFO -- : (0.000070s) SELECT sqlite_version()
+I, [2023-06-12T23:17:25.459484 #21976]  INFO -- : (0.000265s) PRAGMA table_xinfo('admins')
+I, [2023-06-12T23:17:25.461626 #21976]  INFO -- : (0.000172s) PRAGMA table_xinfo('mentees')
+I, [2023-06-12T23:17:25.465681 #21976]  INFO -- : (0.001879s) PRAGMA table_xinfo('mentors')
+I, [2023-06-12T23:17:25.467864 #21976]  INFO -- : (0.000144s) PRAGMA table_xinfo('reports')
+I, [2023-06-12T23:17:25.469713 #21976]  INFO -- : (0.000122s) PRAGMA table_xinfo('requests')
+I, [2023-06-12T23:20:12.582888 #40452]  INFO -- : (0.000312s) PRAGMA foreign_keys = 1
+I, [2023-06-12T23:20:12.583307 #40452]  INFO -- : (0.000047s) PRAGMA case_sensitive_like = 1
+I, [2023-06-12T23:20:12.586086 #40452]  INFO -- : (0.000085s) SELECT sqlite_version()
+I, [2023-06-12T23:20:12.586692 #40452]  INFO -- : (0.000319s) PRAGMA table_xinfo('admins')
+I, [2023-06-12T23:20:12.589219 #40452]  INFO -- : (0.000215s) PRAGMA table_xinfo('mentees')
+I, [2023-06-12T23:20:12.593379 #40452]  INFO -- : (0.002132s) PRAGMA table_xinfo('mentors')
+I, [2023-06-12T23:20:12.595673 #40452]  INFO -- : (0.000281s) PRAGMA table_xinfo('reports')
+I, [2023-06-12T23:20:12.597644 #40452]  INFO -- : (0.000165s) PRAGMA table_xinfo('requests')
+I, [2023-06-12T23:21:56.793683 #34636]  INFO -- : (0.000346s) PRAGMA foreign_keys = 1
+I, [2023-06-12T23:21:56.794065 #34636]  INFO -- : (0.000032s) PRAGMA case_sensitive_like = 1
+I, [2023-06-12T23:21:56.796800 #34636]  INFO -- : (0.000093s) SELECT sqlite_version()
+I, [2023-06-12T23:21:56.797238 #34636]  INFO -- : (0.000203s) PRAGMA table_xinfo('admins')
+I, [2023-06-12T23:21:56.799186 #34636]  INFO -- : (0.000226s) PRAGMA table_xinfo('mentees')
+I, [2023-06-12T23:21:56.801878 #34636]  INFO -- : (0.000209s) PRAGMA table_xinfo('mentors')
+I, [2023-06-12T23:21:56.803909 #34636]  INFO -- : (0.000175s) PRAGMA table_xinfo('reports')
+I, [2023-06-12T23:21:56.805636 #34636]  INFO -- : (0.000183s) PRAGMA table_xinfo('requests')
+I, [2023-06-12T23:25:06.505669 #34636]  INFO -- : (0.000337s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2023-06-12T23:25:06.506534 #34636]  INFO -- : (0.000326s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2023-06-12T23:25:06.527542 #34636]  INFO -- : (0.000288s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2023-06-12T23:25:06.528028 #34636]  INFO -- : (0.000052s) BEGIN
+I, [2023-06-12T23:25:06.529804 #34636]  INFO -- : (0.001450s) UPDATE `mentees` SET `applicationNumber` = 1, `mentorAccept` = 0, `mentorMatch` = 0, `requestMentorMeeting` = 0 WHERE (`id` = 1)
+I, [2023-06-12T23:25:06.536755 #34636]  INFO -- : (0.006758s) COMMIT
+I, [2023-06-12T23:25:10.867859 #34636]  INFO -- : (0.000234s) SELECT count(*) AS 'count' FROM `mentors` WHERE (`profileStatus` LIKE 1 ESCAPE '\') LIMIT 1
+I, [2023-06-12T23:25:14.291207 #34636]  INFO -- : (0.000204s) SELECT * FROM `requests` WHERE (`menteeID` = 1)
+I, [2023-06-12T23:25:15.552610 #34636]  INFO -- : (0.000218s) SELECT * FROM `mentees` WHERE `id` = '1'
+I, [2023-06-12T23:25:15.552881 #34636]  INFO -- : (0.000141s) SELECT * FROM `mentees` WHERE `id` = '1'
+I, [2023-06-12T23:26:54.053489 #34636]  INFO -- : (0.000429s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2023-06-12T23:28:38.187134 #34636]  INFO -- : (0.000222s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2023-06-12T23:29:14.836341 #34636]  INFO -- : (0.000227s) SELECT count(*) AS 'count' FROM `mentors` WHERE (`profileStatus` LIKE 1 ESCAPE '\') LIMIT 1
+I, [2023-06-12T23:29:17.219339 #34636]  INFO -- : (0.000229s) SELECT * FROM `mentees` WHERE `id` = '1'
+I, [2023-06-12T23:29:17.219788 #34636]  INFO -- : (0.000267s) SELECT * FROM `mentees` WHERE `id` = '1'
+I, [2023-06-12T23:29:18.654338 #34636]  INFO -- : (0.000217s) SELECT count(*) AS 'count' FROM `mentors` WHERE (`profileStatus` LIKE 1 ESCAPE '\') LIMIT 1
+I, [2023-06-12T23:29:19.748264 #34636]  INFO -- : (0.000199s) SELECT * FROM `requests` WHERE (`menteeID` = 1)
+I, [2023-06-12T23:30:24.182529 #34636]  INFO -- : (0.001634s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2023-06-12T23:30:37.606032 #34636]  INFO -- : (0.000238s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2023-06-12T23:30:43.343879 #34636]  INFO -- : (0.000239s) SELECT count(*) AS 'count' FROM `mentors` WHERE (`profileStatus` LIKE 1 ESCAPE '\') LIMIT 1
+I, [2023-06-12T23:30:44.497045 #34636]  INFO -- : (0.000457s) SELECT * FROM `requests` WHERE (`menteeID` = 1)
+I, [2023-06-12T23:30:45.444883 #34636]  INFO -- : (0.000220s) SELECT * FROM `mentees` WHERE `id` = '1'
+I, [2023-06-12T23:30:45.445317 #34636]  INFO -- : (0.000248s) SELECT * FROM `mentees` WHERE `id` = '1'
+I, [2023-06-12T23:30:47.744695 #34636]  INFO -- : (0.000371s) SELECT * FROM `mentees` WHERE `id` = '1'
+I, [2023-06-12T23:30:47.745252 #34636]  INFO -- : (0.000284s) SELECT * FROM `mentees` WHERE `id` = '1'
+I, [2023-06-12T23:30:51.448804 #34636]  INFO -- : (0.000372s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2023-06-12T23:30:53.765621 #34636]  INFO -- : (0.000270s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2023-06-12T23:31:05.728196 #34636]  INFO -- : (0.000224s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2023-06-12T23:31:06.974209 #34636]  INFO -- : (0.000258s) SELECT * FROM `mentees` WHERE `id` = '1'
+I, [2023-06-12T23:31:06.974540 #34636]  INFO -- : (0.000183s) SELECT * FROM `mentees` WHERE `id` = '1'
+I, [2023-06-12T23:31:39.721084 #34636]  INFO -- : (0.000252s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2023-06-12T23:31:42.427311 #34636]  INFO -- : (0.000259s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2023-06-12T23:31:43.940813 #34636]  INFO -- : (0.000218s) SELECT * FROM `mentees` WHERE `id` = '1'
+I, [2023-06-12T23:31:43.941291 #34636]  INFO -- : (0.000311s) SELECT * FROM `mentees` WHERE `id` = '1'
+I, [2023-06-12T23:32:04.636348 #34636]  INFO -- : (0.000230s) SELECT * FROM `mentees` WHERE `id` = '1'
+I, [2023-06-12T23:32:04.636690 #34636]  INFO -- : (0.000168s) SELECT * FROM `mentees` WHERE `id` = '1'
+I, [2023-06-12T23:32:06.704039 #34636]  INFO -- : (0.000225s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2023-06-12T23:32:18.638791 #34636]  INFO -- : (0.000284s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2023-06-12T23:32:18.639271 #34636]  INFO -- : (0.000248s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2023-06-12T23:32:18.668195 #34636]  INFO -- : (0.000230s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2023-06-12T23:32:32.796496 #34636]  INFO -- : (0.000220s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2023-06-12T23:32:38.137529 #34636]  INFO -- : (0.000247s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2023-06-12T23:32:38.966786 #34636]  INFO -- : (0.000197s) SELECT count(*) AS 'count' FROM `mentors` WHERE (`profileStatus` LIKE 1 ESCAPE '\') LIMIT 1
+I, [2023-06-12T23:32:40.167775 #34636]  INFO -- : (0.000183s) SELECT * FROM `requests` WHERE (`menteeID` = 1)
+I, [2023-06-12T23:32:41.368887 #34636]  INFO -- : (0.000218s) SELECT * FROM `mentees` WHERE `id` = '1'
+I, [2023-06-12T23:32:41.369308 #34636]  INFO -- : (0.000249s) SELECT * FROM `mentees` WHERE `id` = '1'
+I, [2023-06-12T23:33:01.095924 #34636]  INFO -- : (0.000217s) SELECT * FROM `mentees` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2023-06-12T23:33:01.096237 #34636]  INFO -- : (0.000148s) SELECT * FROM `mentees` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2023-06-12T23:33:01.096632 #34636]  INFO -- : (0.000169s) SELECT * FROM `mentors` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2023-06-12T23:33:01.096989 #34636]  INFO -- : (0.000204s) SELECT * FROM `mentors` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2023-06-12T23:33:01.097399 #34636]  INFO -- : (0.000180s) SELECT * FROM `admins` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2023-06-12T23:33:09.004663 #34636]  INFO -- : (0.000235s) SELECT * FROM `mentees` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2023-06-12T23:33:09.005108 #34636]  INFO -- : (0.000231s) SELECT * FROM `mentees` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2023-06-12T23:33:09.005638 #34636]  INFO -- : (0.000239s) SELECT * FROM `mentors` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2023-06-12T23:33:09.006020 #34636]  INFO -- : (0.000219s) SELECT * FROM `mentors` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2023-06-12T23:33:09.006355 #34636]  INFO -- : (0.000179s) SELECT * FROM `admins` WHERE (`username` = 'mentor1') LIMIT 1
+I, [2023-06-12T23:33:14.916944 #34636]  INFO -- : (0.000223s) SELECT * FROM `mentees` WHERE (`username` = 'mentor2') LIMIT 1
+I, [2023-06-12T23:33:14.917319 #34636]  INFO -- : (0.000154s) SELECT * FROM `mentees` WHERE (`username` = 'mentor2') LIMIT 1
+I, [2023-06-12T23:33:14.917595 #34636]  INFO -- : (0.000149s) SELECT * FROM `mentors` WHERE (`username` = 'mentor2') LIMIT 1
+I, [2023-06-12T23:33:14.917829 #34636]  INFO -- : (0.000133s) SELECT * FROM `mentors` WHERE (`username` = 'mentor2') LIMIT 1
+I, [2023-06-12T23:33:14.932862 #34636]  INFO -- : (0.000232s) SELECT * FROM `mentors` WHERE (`username` = 'mentor2') LIMIT 1
+I, [2023-06-12T23:33:14.933113 #34636]  INFO -- : (0.000017s) BEGIN
+I, [2023-06-12T23:33:14.934341 #34636]  INFO -- : (0.001018s) UPDATE `mentors` SET `menteeAccept` = 0, `menteeMatch` = 0, `profileStatus` = 1, `reportMentee` = 0 WHERE (`id` = 2)
+I, [2023-06-12T23:33:14.940675 #34636]  INFO -- : (0.006066s) COMMIT
+I, [2023-06-12T23:33:19.314907 #34636]  INFO -- : (0.000177s) SELECT * FROM `requests` WHERE (`mentorID` = 2)
+I, [2023-06-12T23:33:20.503532 #34636]  INFO -- : (0.000226s) SELECT * FROM `mentors` WHERE `id` = '2'
+I, [2023-06-12T23:33:20.503988 #34636]  INFO -- : (0.000275s) SELECT * FROM `mentors` WHERE `id` = '2'
+I, [2023-06-12T23:33:22.403805 #34636]  INFO -- : (0.000469s) SELECT * FROM `mentees` WHERE (`id` = 0)
+I, [2023-06-12T23:33:22.404290 #34636]  INFO -- : (0.000262s) SELECT * FROM `mentors` WHERE (`id` = 2) LIMIT 1
+I, [2023-06-12T23:33:50.551763 #34636]  INFO -- : (0.000246s) SELECT * FROM `mentees` WHERE (`username` = 'mentor2') LIMIT 1
+I, [2023-06-12T23:33:50.552218 #34636]  INFO -- : (0.000215s) SELECT * FROM `mentees` WHERE (`username` = 'mentor2') LIMIT 1
+I, [2023-06-12T23:33:50.552566 #34636]  INFO -- : (0.000174s) SELECT * FROM `mentors` WHERE (`username` = 'mentor2') LIMIT 1
+I, [2023-06-12T23:33:50.552843 #34636]  INFO -- : (0.000158s) SELECT * FROM `mentors` WHERE (`username` = 'mentor2') LIMIT 1
+I, [2023-06-12T23:33:50.582352 #34636]  INFO -- : (0.000315s) SELECT * FROM `mentors` WHERE (`username` = 'mentor2') LIMIT 1
+I, [2023-06-12T23:33:51.942458 #34636]  INFO -- : (0.000401s) SELECT * FROM `mentors` WHERE `id` = '2'
+I, [2023-06-12T23:33:51.942944 #34636]  INFO -- : (0.000207s) SELECT * FROM `mentors` WHERE `id` = '2'
+I, [2023-06-12T23:33:54.575688 #34636]  INFO -- : (0.000180s) SELECT * FROM `requests` WHERE (`mentorID` = 2)
+I, [2023-06-12T23:33:55.905762 #34636]  INFO -- : (0.000407s) SELECT * FROM `mentees` WHERE (`id` = 0)
+I, [2023-06-12T23:33:55.906445 #34636]  INFO -- : (0.000289s) SELECT * FROM `mentors` WHERE (`id` = 2) LIMIT 1
+I, [2023-06-12T23:34:05.532849 #34636]  INFO -- : (0.000233s) SELECT * FROM `mentors` WHERE (`username` = 'mentor2') LIMIT 1
+I, [2023-06-12T23:35:52.558455 #34636]  INFO -- : (0.000455s) SELECT * FROM `mentors` WHERE (`username` = 'mentor2') LIMIT 1
+I, [2023-06-12T23:35:54.787928 #34636]  INFO -- : (0.000552s) SELECT * FROM `mentors` WHERE (`username` = 'mentor2') LIMIT 1
+I, [2023-06-12T23:37:42.963547 #34636]  INFO -- : (0.000228s) SELECT * FROM `mentors` WHERE (`username` = 'mentor2') LIMIT 1
+I, [2023-06-12T23:38:11.034949 #34636]  INFO -- : (0.000248s) SELECT * FROM `mentors` WHERE (`username` = 'mentor2') LIMIT 1
+I, [2023-06-12T23:39:00.593922 #34636]  INFO -- : (0.000236s) SELECT * FROM `mentors` WHERE (`username` = 'mentor2') LIMIT 1
+I, [2023-06-12T23:40:29.238850 #34636]  INFO -- : (0.000262s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2023-06-12T23:40:29.239344 #34636]  INFO -- : (0.000225s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1
+I, [2023-06-12T23:40:29.269992 #34636]  INFO -- : (0.000268s) SELECT * FROM `mentees` WHERE (`username` = 'mentee1') LIMIT 1

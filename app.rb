@@ -8,7 +8,7 @@ include ERB::Util
 
 # Sessions
 enable :sessions
-set :session_secret, "$g]Rd2M/WbJ`~~<GZWdH@Fm'ESk2_gckCtLJJkySYG"
+set :session_secret, "f640177efb908d7ea39f9133f7e6a6fa6d7cbfda421618cc0c254a400ca1e7d7"
 
 # Database
 require_relative "db/db"

@@ -102,7 +102,6 @@ form {
   font-weight: bolder;
   align-items: center;
   font-size: 2rem;
-  text-decoration: underline;
   padding: 1% 0;
   color: black;
 }
@@ -237,29 +236,64 @@ form {
 }
 
 /*Contact Form*/
+
 .contactBody h2 {
-  font-weight: normal;
-  font-size: 1.4rem;
+  font-weight: bold; /* Make the heading stand out */
+  font-size: 2rem; /* Bigger font size */
+  color: #333; /* Darker color for better contrast */
+  text-align: center; /* Center align the title */
+  /* padding: 20px 0; Add some vertical spacing */
 }
 
 .contactForm {
-  margin-bottom: 5%;
+  max-width: 500px; /* Restrict the width */
+  margin: 0 auto 5%; /* Center the form and add margin at the bottom */
+  padding: 20px; /*Add some padding*/
   border-radius: 10px;
   display: flex;
-  background-color: #0066b3;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch; /* Stretch the items to fill the form */
+  background-color: #fff; /* Lighter background for the form */
+  box-shadow: 0 0 20px rgba(0,0,0,0.1); /* Add some shadow for a lift effect */
 }
 
 .contactForm h2 {
   font-weight: bold;
-  font-size: 1.6rem;
+  font-size: 2.4rem; /* Bigger font size */
+  color: #333; /* Darker color */
+  text-align: center; /* Center align */
+  margin-bottom: 10px; /* Add some spacing below the title */
 }
 
 .contactForm p {
-  margin: 5% 0;
-  padding: 0%;
+  margin: 20px 0; /* More spacing around paragraphs */
   font-size: 1.4rem;
+  line-height: 1.6; /* Improve readability */
+}
+
+.contactForm input, .contactForm textarea {
+  width: 100%; /* Full width inputs and textareas */
+  padding: 15px; /* Add some padding */
+  margin-bottom: 5px; /* Add some margin at the bottom */
+  border-radius: 5px; /* Round the corners a bit */
+  border: 1px solid #ccc; /* Add some border */
+}
+
+.contactForm button {
+  padding: 10px 10px; /* More padding */
+  background-color: #1c467c; /* Button color */
+  color: #fff; /* Button text color */
+  border: none; /* Remove the border */
+  border-radius: 5px; /* Round the corners a bit */
+  cursor: pointer; /* Change the cursor when hovering */
+}
+
+.contactForm button:hover {
+  background-color: #113f6c; /* Darken the button when hovering */
+}
+
+.contactForm button:active {
+  background-color: #0c2c50; /* Darken the button when active */
 }
 
 .myform {
@@ -275,43 +309,54 @@ form {
 
 /*Mentee and Mentor Dashboards*/
 
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
 #dashboard h2 {
   align-self: flex-start;
   margin-left: 5%;
+  font-size: 2rem;
+  color: #0066b3;
+  text-transform: uppercase;
 }
 
 #dashboardBody {
   margin-bottom: 5%;
-  width: 100%;
-  background-color: #0066b3;
-  border-radius: 4px;
+  width: 90%;
+  background-color: #fff;
+  border-radius: 20px;
   display: flex;
   flex-direction: row;
-  color: #000000;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  color: #333;
+  margin: 2rem auto;
+  padding: 2rem;
 } 
 
 #dashboardBody h3 {
   margin: 1%;
   font-size: 1.6rem;
-  font-style: normal;
-  text-decoration: underline;
-  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: left;
+  color: #0066b3;
 }
 
 #dashboardBody a {
-  color: #000066;
+  color: #0066b3;
+  text-decoration: none;
 }
 
 .leftSide {
   width: 50%;
-  margin: 2.5%;
-  margin-right: 5%;
   align-self: center;
 }
 
 .rightSide {
   width: 40%;
-  margin: 5% 2.5%;
 }
 
 .rightSide p {
@@ -320,31 +365,43 @@ form {
 }
 
 .userInfo {
-  background-color: rgba(255, 255, 255, 0.7);
-  border: 3px solid #000000;
-  border-radius: 3px;
-  font-size: 2.2rem;
+  background-color: #f4f4f4;
+  border: none;
+  border-radius: 15px;
+  font-size: 1.2rem;
   margin: 3% 3%;
   text-align: left;
+  padding: 1rem;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 .userInfo p {
-  margin: 5% 0% 5% 10%;
+  margin: 1.5rem 0rem;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 .userInfo a {
-  font-size: 1.8rem;
+  font-size: 1.2rem;
+  color: #0066b3;
+  text-decoration: none;
 }
 
 .searchInfo {
-  
   text-align: center;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #0066b3;
 }
-
 
 .searchOptions {
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: #f4f4f4;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  margin-top: 2rem;
+  padding: 1rem;
 }
+
 
 /*Mentor Search and Mentee Application Tables*/
 

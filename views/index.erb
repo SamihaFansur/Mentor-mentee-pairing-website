@@ -1,19 +1,38 @@
-<%= @header %>
-  <div class="background" id="statement">
-    <div class="full">
-      <!-- Using the logo picture as the title of our program page-->
-      <div class="title" id="logoTitle"><img src="images/logo.png" alt="logo"></div> 
-      <img src="images/pic.jpg" alt="Mentoring session" id="mentoringSession">
-      <!--Brief introduction of the functions made by our team-->
-      <p class="intro">
-        This program is a <strong>one-to-one mentoring program</strong> which allows university students
-        to find mentors who are available to help them with their work and degree courses. The program allows students 
-        to find mentors from their chosen area of interest so they can help them effectively. University of Sheffield students 
-        can sign-up as mentors as well!
-      </p>        
-      <p class="intro">
-        Mentors will be able to provide information and tell you about their experiences and career path.
-      </p>
-    </div>
-  </div> 
-<%= erb :"common/footer" %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="path-to-your-css.css">
+    <title>Mentoring Program</title>
+</head>
+<body>
+
+    <%= @header %>
+    <section class="hero-section">
+        <div class="container">
+            <div class="intro-content">
+                <h1 class="headline">University Mentoring Program</h1>
+                <p class="description">
+                    This program is a <strong>one-to-one mentoring program</strong> which allows university students
+                    to find mentors who are available to help them with their work and degree courses. The program allows students 
+                    to find mentors from their chosen area of interest so they can help them effectively. University of Sheffield students 
+                    can sign-up as mentors as well!
+                </p>
+                <p class="description">
+                    Mentors will be able to provide information and tell you about their experiences and career path.
+                </p>
+            </div>
+            <div style="text-align: center;">
+            <div class="intro-image" style="display: inline-block;">
+              <img src="images/pic.jpg" alt="Mentoring session" class="mentoring-image">
+            </div>
+          </div>
+          
+        </div>
+    </section>
+    <%= erb :"common/footer" %>
+    
+</body>
+</html>
